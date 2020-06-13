@@ -1,0 +1,27 @@
+{
+  "name": "nextjs-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scwambach/nextjs-boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scwambach/nextjs-boilerplate/issues"
+  },
+  "homepage": "https://github.com/scwambach/nextjs-boilerplate#readme",
+  "dependencies": {
+    "@sanity/client": "^1.149.16",
+    "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
