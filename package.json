@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "start": "next -p 8000",
     "build": "next build",
-    "start": "next start"
+    "dev": "next start"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/scwambach/nextjs-boilerplate#readme",
   "dependencies": {
     "@sanity/client": "^1.149.16",
+    "@sanity/image-url": "^0.140.19",
     "next": "^9.4.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

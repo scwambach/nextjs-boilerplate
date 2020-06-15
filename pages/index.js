@@ -1,3 +1,5 @@
+import Header from '../components/Header';
+
 const Index = () => {
   return (
     <div>

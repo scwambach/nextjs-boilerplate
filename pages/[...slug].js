@@ -1,35 +1,24 @@
-import client from '../client';
+import sanityClient from '../client';
+import Layout from '../components/Layout';
 
-const Post = props => {
-  return (
-    <article>
-      {/* Data Dump */}
-      <code>
-        <pre
-          style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {JSON.stringify(props, null, '    ')}
-        </pre>
-      </code>
-      {/* Data Dump End */}
-    </article>
-  );
+const Post = ({ content, site }) => {
+  return <Layout content={site}>{content.slug.current}</Layout>;
 };
 
 Post.getInitialProps = async function(context) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = '' } = context.query;
-  return await client.fetch(`*[slug.current == $slug][0]`, {
-    slug: `/${slug.join('/')}`,
-  });
+  return await sanityClient.fetch(
+    `*[slug.current == $slug][0]{
+      "content": *[slug.current == $slug][0],
+      "site": {
+        "settings":  *[_type == "siteSettings"][0],
+        "images": *[_type == "sanity.imageAsset"],
+        "menus": *[_type == "menu"],
+      }
+  }`,
+    { slug: `/${slug.join('/')}` }
+  );
 };
 
 export default Post;
