@@ -21,8 +21,12 @@
   "dependencies": {
     "@sanity/client": "^1.149.16",
     "@sanity/image-url": "^0.140.19",
-    "next": "^9.4.4",
+    "next": "^9.5.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.11.1"
   }
 }

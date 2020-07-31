@@ -1,14 +1,35 @@
 import sanityClient from '../client';
 import Layout from '../components/Layout';
 
-const Post = ({ content, site }) => {
-  return <Layout content={site}>{content.slug.current}</Layout>;
+const Post = (props) => {
+  return (
+    <Layout content={props && props.site}>
+      {props.content ? (
+        <code>
+          <pre
+            style={{
+              fontFamily: 'monospace',
+              display: 'block',
+              padding: '50px',
+              color: '#88ffbf',
+              backgroundColor: 'black',
+              textAlign: 'left',
+              whiteSpace: 'pre-wrap',
+            }}
+          >
+            {JSON.stringify(props && props.content, null, '    ')}
+          </pre>
+        </code>
+      ) : (
+        '404 not found'
+      )}
+    </Layout>
+  );
 };
 
-Post.getInitialProps = async function(context) {
-  // It's important to default the slug so that it doesn't return "undefined"
+export async function getServerSideProps(context) {
   const { slug = '' } = context.query;
-  return await sanityClient.fetch(
+  const content = await sanityClient.fetch(
     `*[slug.current == $slug][0]{
       "content": *[slug.current == $slug][0],
       "site": {
@@ -19,6 +40,8 @@ Post.getInitialProps = async function(context) {
   }`,
     { slug: `/${slug.join('/')}` }
   );
-};
+
+  return { props: content };
+}
 
 export default Post;
