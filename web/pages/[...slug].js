@@ -42,7 +42,8 @@ export async function getServerSideProps(context) {
         "lqip": metadata.lqip,
         "palette": metadata.palette,
         "dimensions": metadata.dimensions
-      }
+      },
+      "references": *[references(^._id)]
   }`,
     { slug: `/${slug.join('/')}` }
   );

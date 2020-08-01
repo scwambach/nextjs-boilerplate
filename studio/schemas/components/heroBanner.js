@@ -14,13 +14,30 @@ export default {
     {
       title: 'Parallax',
       name: 'parallax',
-      type: 'boolean'
+      type: 'boolean',
     },
     {
-      title: 'Heading Content',
-      name: 'headingContent',
-      description: 'This component inhereits the main image of the page.',
-      type: 'headingContent'
+      title: 'Heading',
+      name: 'heading',
+      type: 'string',
+    },
+    {
+      title: 'Copy',
+      name: 'copy',
+      type: 'minimalContent',
+    },
+    {
+      title: 'Links',
+      name: 'links',
+      type: 'array',
+      validation: (Rule) => Rule.max(2),
+      of: [
+        {
+          title: 'Link',
+          name: 'link',
+          type: 'link',
+        },
+      ],
     },
     {
       name: 'logo',
@@ -31,24 +48,24 @@ export default {
       title: 'Video URL',
       name: 'videoUrl',
       description: 'Choose either file or url for video.',
-      type: 'url'
+      type: 'url',
     },
     {
       title: 'Video File',
       name: 'video',
       description: 'Choose either file or url for video.',
-      type: 'file'
+      type: 'file',
     },
     {
       title: 'No Margin',
       name: 'noMargin',
-      type: 'boolean'
-    }
+      type: 'boolean',
+    },
   ],
   preview: {
     select: {
       heading: 'headingContent.heading',
-      image: 'logo'
+      image: 'logo',
     },
     prepare(selection) {
       const { heading, image } = selection;
@@ -56,6 +73,6 @@ export default {
         title: heading || 'Hero Banner',
         media: image,
       });
-    }
-  }
+    },
+  },
 };
