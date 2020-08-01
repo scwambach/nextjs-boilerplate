@@ -7,9 +7,27 @@ const Header = () => {
   const props = useContext(LayoutContext);
   return (
     <SHeader>
+      {/* Data Dump */}
+      <code>
+        <pre
+          style={{
+            fontFamily: 'monospace',
+            display: 'block',
+            padding: '50px',
+            color: '#88ffbf',
+            backgroundColor: 'black',
+            textAlign: 'left',
+            whiteSpace: 'pre-wrap',
+          }}
+        >
+          {JSON.stringify(props.mainLogo, null, '    ')}
+        </pre>
+      </code>
+      {/* Data Dump End */}
+
       <Link href="/">
         <a>
-          <img src={urlFor(props.mainLogo)} />
+          <img src={urlFor(props.mainLogo).width(100)} />
         </a>
       </Link>
       <Link href="/other-page">
