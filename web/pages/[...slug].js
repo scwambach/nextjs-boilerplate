@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 
 const Post = ({ content, site }) => {
   return (
-    <Layout pageContent={content} content={site}>
+    <Layout page={content} site={site.settings}>
       {content ? (
         <code>
           <pre

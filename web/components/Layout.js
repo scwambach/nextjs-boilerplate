@@ -5,33 +5,32 @@ import urlFor from '../js/urlFor';
 
 export const LayoutContext = React.createContext();
 
-const Layout = ({ pageContent, content: { settings, menus }, children }) => {
+const Layout = ({ page, site, children }) => {
   return (
-    <LayoutContext.Provider value={{ ...settings }}>
+    <LayoutContext.Provider value={{ ...site }}>
       <Head>
         <title>
-          {pageContent.title !== 'Home'
-            ? `${pageContent.title} | ${settings.title}`
-            : settings.title}
+          {page
+            ? page.title !== 'Home'
+              ? `${page.title} | ${site.title}`
+              : site.title
+            : `404 Page Not Found | ${site.title}`}
         </title>
-        <link
-          rel="icon"
-          href={urlFor(settings.favicon).width(600).quality(100)}
-        />
+        <link rel="icon" href={urlFor(site.favicon).width(600).quality(100)} />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <meta
           property="og:image"
-          content={urlFor(pageContent.mainImage)
+          content={urlFor(page ? page.mainImage : site.siteImage)
             .width(600)
             .quality(100)
             .auto('format')}
         />
         <meta
           property="og:image:secure_url"
-          content={urlFor(pageContent.mainImage)
+          content={urlFor(page ? page.mainImage : site.siteImage)
             .width(600)
             .quality(100)
             .auto('format')}
@@ -40,29 +39,15 @@ const Layout = ({ pageContent, content: { settings, menus }, children }) => {
         <meta
           property="og:title"
           content={
-            pageContent.title !== 'Home'
-              ? `${pageContent.title} | ${settings.title}`
-              : settings.title
+            page
+              ? page.title !== 'Home'
+                ? `${page.title} | ${site.title}`
+                : site.title
+              : `404 Page Not Found | ${site.title}`
           }
         />
-        <meta property="og:site_name" content={settings.title} />
+        <meta property="og:site_name" content={site.title} />
       </Head>
-      <code>
-        <pre
-          style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {JSON.stringify(settings, null, '    ')}
-        </pre>
-      </code>
-
       <Header />
       {children}
     </LayoutContext.Provider>

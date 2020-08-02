@@ -1,12 +1,11 @@
 import sanityClient from '../client';
 import Layout from '../components/Layout';
-import urlFor from '../js/urlFor';
 import ImageLoader from '../tools/ImageLoader';
 import BackgroundImage from '../tools/BackgroundImage';
 
 const Index = ({ site, content, placeholders }) => {
   return (
-    <Layout pageContent={content} content={site}>
+    <Layout page={content} site={site.settings}>
       <p>Hello world!</p>
       <BackgroundImage
         placeholders={placeholders}
