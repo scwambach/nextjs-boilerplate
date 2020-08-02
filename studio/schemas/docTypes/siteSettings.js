@@ -24,6 +24,11 @@ export default {
       type: 'image',
     },
     {
+      name: 'favicon',
+      title: 'Favicon',
+      type: 'image',
+    },
+    {
       name: 'siteImage',
       title: 'Site Image',
       type: 'image',

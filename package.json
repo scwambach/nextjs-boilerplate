@@ -13,7 +13,8 @@
     "lint": "lerna run lint",
     "postinstall": "lerna bootstrap",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "lerna run start --parallel"
+    "start": "lerna run start --parallel",
+    "sanity-deploy": "cd studio && yarn deployall && cd .."
   },
   "repository": {
     "type": "git",

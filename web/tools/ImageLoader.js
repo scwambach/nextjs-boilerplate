@@ -61,7 +61,7 @@ const ImageLoader = ({ src, placeholders, height, width, alt }) => {
         .auto('format')
     );
 
-    const postListing = document.getElementById(imageId);
+    const postListing = document.getElementById(`lqip_${imageId}`);
 
     function handler(entries) {
       entries.forEach((entry) => {
@@ -89,7 +89,7 @@ const ImageLoader = ({ src, placeholders, height, width, alt }) => {
       }}
     >
       <img
-        id={imageId}
+        id={`lqip_${imageId}`}
         className={`placeholder ${loaded && isVisible ? 'ready' : 'loading'}`}
         src={lqip}
         alt={alt || imageId}

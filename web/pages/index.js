@@ -6,7 +6,7 @@ import BackgroundImage from '../tools/BackgroundImage';
 
 const Index = ({ site, content, placeholders }) => {
   return (
-    <Layout content={site && site}>
+    <Layout pageContent={content} content={site}>
       <p>Hello world!</p>
       <BackgroundImage
         placeholders={placeholders}

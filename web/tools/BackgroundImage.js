@@ -59,7 +59,7 @@ const BackgroundImage = ({ src, placeholders, height, width, children }) => {
         .auto('format')
     );
 
-    const postListing = document.getElementById(imageId);
+    const postListing = document.getElementById(`bg_${imageId}`);
 
     function handler(entries) {
       entries.forEach((entry) => {
@@ -78,68 +78,58 @@ const BackgroundImage = ({ src, placeholders, height, width, children }) => {
   });
 
   return (
-    <>
-      <Desktop>
-        <SBackgroundImage
-          image={
-            loaded && isVisible
-              ? urlFor(src)
-                  .width(imageWidth)
-                  .height(height)
-                  .quality(90)
-                  .auto('format')
-              : lqip
-          }
-        >
-          {children}
-        </SBackgroundImage>
-      </Desktop>
-      <TabletLarge>
-        <SBackgroundImage
-          image={
-            loaded && isVisible
-              ? urlFor(src)
-                  .width(imageWidth > 1024 ? 1024 : imageWidth)
-                  .height(height)
-                  .quality(90)
-                  .auto('format')
-              : lqip
-          }
-        >
-          {children}
-        </SBackgroundImage>
-      </TabletLarge>
-      <TabletSmall>
-        <SBackgroundImage
-          image={
-            loaded && isVisible
-              ? urlFor(src)
-                  .width(imageWidth > 768 ? 768 : imageWidth)
-                  .height(height)
-                  .quality(90)
-                  .auto('format')
-              : lqip
-          }
-        >
-          {children}
-        </SBackgroundImage>
-      </TabletSmall>
-      <Mobile>
-        <SBackgroundImage
-          image={
-            loaded && isVisible
-              ? urlFor(src)
-                  .width(imageWidth > 480 ? 480 : imageWidth)
-                  .height(height)
-                  .quality(90)
-                  .auto('format')
-              : lqip
-          }
-        >
-          {children}
-        </SBackgroundImage>
-      </Mobile>
-    </>
+    <div id={`bg_${imageId}`}>
+      {loaded && isVisible ? (
+        <>
+          <Desktop>
+            <SBackgroundImage
+              image={urlFor(src)
+                .width(imageWidth)
+                .height(height)
+                .quality(90)
+                .auto('format')}
+            >
+              {children}
+            </SBackgroundImage>
+          </Desktop>
+          <TabletLarge>
+            <SBackgroundImage
+              image={urlFor(src)
+                .width(imageWidth > 1024 ? 1024 : imageWidth)
+                .height(height)
+                .quality(90)
+                .auto('format')}
+            >
+              {children}
+            </SBackgroundImage>
+          </TabletLarge>
+          <TabletSmall>
+            <SBackgroundImage
+              image={urlFor(src)
+                .width(imageWidth > 768 ? 768 : imageWidth)
+                .height(height)
+                .quality(90)
+                .auto('format')}
+            >
+              {children}
+            </SBackgroundImage>
+          </TabletSmall>
+          <Mobile>
+            <SBackgroundImage
+              image={urlFor(src)
+                .width(imageWidth > 480 ? 480 : imageWidth)
+                .height(height)
+                .quality(90)
+                .auto('format')}
+            >
+              {children}
+            </SBackgroundImage>
+          </Mobile>
+        </>
+      ) : (
+        <SBackgroundImage image={lqip}>{children}</SBackgroundImage>
+      )}
+    </div>
   );
 };
 

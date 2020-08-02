@@ -1,10 +1,10 @@
 import sanityClient from '../client';
 import Layout from '../components/Layout';
 
-const Post = (props) => {
+const Post = ({ content, site }) => {
   return (
-    <Layout content={props && props.site}>
-      {props.content ? (
+    <Layout pageContent={content} content={site}>
+      {content ? (
         <code>
           <pre
             style={{
@@ -17,7 +17,7 @@ const Post = (props) => {
               whiteSpace: 'pre-wrap',
             }}
           >
-            {JSON.stringify(props && props.content, null, '    ')}
+            {JSON.stringify(content, null, '    ')}
           </pre>
         </code>
       ) : (

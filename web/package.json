@@ -22,8 +22,10 @@
     "@sanity/client": "^1.149.16",
     "@sanity/image-url": "^0.140.19",
     "next": "^9.5.1",
+    "next-images": "^1.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
     "react-responsive": "^8.1.0",
     "styled-components": "^5.1.1"
   },
