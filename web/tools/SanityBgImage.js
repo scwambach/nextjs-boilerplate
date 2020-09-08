@@ -26,7 +26,7 @@ export const Mobile = ({ children }) => {
   return isMobile ? children : null;
 };
 
-const BackgroundImage = ({ src, placeholders, height, width, children }) => {
+const SanityBgImage = ({ src, placeholders, height, width, children }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
@@ -82,7 +82,7 @@ const BackgroundImage = ({ src, placeholders, height, width, children }) => {
       {loaded && isVisible ? (
         <>
           <Desktop>
-            <SBackgroundImage
+            <SSanityBgImage
               image={urlFor(src)
                 .width(imageWidth)
                 .height(height)
@@ -90,10 +90,10 @@ const BackgroundImage = ({ src, placeholders, height, width, children }) => {
                 .auto('format')}
             >
               {children}
-            </SBackgroundImage>
+            </SSanityBgImage>
           </Desktop>
           <TabletLarge>
-            <SBackgroundImage
+            <SSanityBgImage
               image={urlFor(src)
                 .width(imageWidth > 1024 ? 1024 : imageWidth)
                 .height(height)
@@ -101,10 +101,10 @@ const BackgroundImage = ({ src, placeholders, height, width, children }) => {
                 .auto('format')}
             >
               {children}
-            </SBackgroundImage>
+            </SSanityBgImage>
           </TabletLarge>
           <TabletSmall>
-            <SBackgroundImage
+            <SSanityBgImage
               image={urlFor(src)
                 .width(imageWidth > 768 ? 768 : imageWidth)
                 .height(height)
@@ -112,10 +112,10 @@ const BackgroundImage = ({ src, placeholders, height, width, children }) => {
                 .auto('format')}
             >
               {children}
-            </SBackgroundImage>
+            </SSanityBgImage>
           </TabletSmall>
           <Mobile>
-            <SBackgroundImage
+            <SSanityBgImage
               image={urlFor(src)
                 .width(imageWidth > 480 ? 480 : imageWidth)
                 .height(height)
@@ -123,19 +123,19 @@ const BackgroundImage = ({ src, placeholders, height, width, children }) => {
                 .auto('format')}
             >
               {children}
-            </SBackgroundImage>
+            </SSanityBgImage>
           </Mobile>
         </>
       ) : (
-        <SBackgroundImage image={lqip}>{children}</SBackgroundImage>
+        <SSanityBgImage image={lqip}>{children}</SSanityBgImage>
       )}
     </div>
   );
 };
 
-export default BackgroundImage;
+export default SanityBgImage;
 
-export const SBackgroundImage = styled.div`
+export const SSanityBgImage = styled.div`
   background-image: url(${({ image }) => image});
   background-size: cover;
   background-repeat: no-repeat;

@@ -1,22 +1,22 @@
 import sanityClient from '../client';
 import Layout from '../components/Layout';
-import ImageLoader from '../tools/ImageLoader';
-import BackgroundImage from '../tools/BackgroundImage';
+import SanityImage from '../tools/SanityImage';
+import SanityBgImage from '../tools/SanityBgImage';
 
 const Index = ({ site, content, placeholders }) => {
   return (
     <Layout page={content} site={site.settings}>
       <p>Hello world!</p>
-      <BackgroundImage
+      <SanityBgImage
         placeholders={placeholders}
         src={content.pageContent[1].features[0].image}
       >
         <h1 style={{ padding: '200px', color: '#fff' }}>
           BACKGROUND IMAGE!!!!
         </h1>
-      </BackgroundImage>
+      </SanityBgImage>
       {content && (
-        <ImageLoader
+        <SanityImage
           placeholders={placeholders}
           src={content.pageContent[1].features[0].image}
         />

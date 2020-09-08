@@ -27,7 +27,7 @@ export const Mobile = ({ children }) => {
   return isMobile ? children : null;
 };
 
-const ImageLoader = ({ src, placeholders, height, width, alt }) => {
+const SanityImage = ({ src, placeholders, height, width, alt }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
@@ -80,7 +80,7 @@ const ImageLoader = ({ src, placeholders, height, width, alt }) => {
   });
 
   return (
-    <SImageLoader
+    <SSanityImage
       style={{
         display: 'block',
         height: 0,
@@ -162,13 +162,13 @@ const ImageLoader = ({ src, placeholders, height, width, alt }) => {
           </Mobile>
         </>
       )}
-    </SImageLoader>
+    </SSanityImage>
   );
 };
 
-export default ImageLoader;
+export default SanityImage;
 
-export const SImageLoader = styled.picture`
+export const SSanityImage = styled.picture`
   position: relative;
 
   img {
