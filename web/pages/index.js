@@ -12,7 +12,7 @@ const Index = ({ site, content, placeholders }) => {
         src={content.pageContent[1].features[0].image}
       >
         <h1 style={{ padding: '200px', color: '#fff' }}>
-          BACKGROUND IMAGE!!!!!
+          BACKGROUND IMAGE!!!!
         </h1>
       </BackgroundImage>
       {content && (
