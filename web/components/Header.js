@@ -13,8 +13,8 @@ const Header = () => {
           <img src={urlFor(props.mainLogo).width(100)} />
         </a>
       </Link>
-      <Link href="/other-page">
-        <a>Other Page</a>
+      <Link href="/about">
+        <a>About</a>
       </Link>
       <Link href="/broken-page">
         <a>broken Page</a>

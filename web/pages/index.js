@@ -25,7 +25,7 @@ const Index = ({ site, content, placeholders }) => {
   );
 };
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const content = await sanityClient.fetch(
     `*[slug.current == "/"][0]{
       "content": *[slug.current == "/"][0],
