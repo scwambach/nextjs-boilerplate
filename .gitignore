@@ -76,4 +76,4 @@ package-lock.json
 studio/dist
 
 .next
-next.config.js
+.env.local
