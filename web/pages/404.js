@@ -26,7 +26,7 @@ const FourOhFour = ({ site }) => {
   );
 };
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const content = await sanityClient.fetch(
     `*[_type == "siteSettings"][0] {
       "site": {
