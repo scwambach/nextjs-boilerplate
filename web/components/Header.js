@@ -5,20 +5,22 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 const Header = () => {
-  const props = useContext(LayoutContext);
+  const { logo, menus } = useContext(LayoutContext);
   return (
     <SHeader>
       <Link href="/">
         <a>
-          <img src={urlFor(props.mainLogo).width(100)} />
+          <img src={urlFor(logo).width(100)} />
         </a>
       </Link>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-      <Link href="/broken-page">
-        <a>broken Page</a>
-      </Link>
+
+      {menus
+        .find(({ title }) => title === 'Main Menu')
+        .items.map(({ _key, link: { copy, url } }) => (
+          <Link key={_key} href={url}>
+            <a>{copy}</a>
+          </Link>
+        ))}
     </SHeader>
   );
 };

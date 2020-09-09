@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 
 const Post = ({ content, site }) => {
   return (
-    <Layout page={content} site={site.settings}>
+    <Layout page={content} site={site}>
       {content ? (
         <code>
           <pre
@@ -34,14 +34,13 @@ export async function getServerSideProps(context) {
       "content": *[slug.current == $slug][0],
       "site": {
         "settings":  *[_type == "siteSettings"][0],
-        "images": *[_type == "sanity.imageAsset"],
         "menus": *[_type == "menu"],
-      },
-      "assetPlaceholder": *[_type == "sanity.imageAsset"] {
-        "_id": _id,
-        "lqip": metadata.lqip,
-        "palette": metadata.palette,
-        "dimensions": metadata.dimensions
+        "placeholders": *[_type == "sanity.imageAsset"] {
+          "_id": _id,
+          "lqip": metadata.lqip,
+          "palette": metadata.palette,
+          "dimensions": metadata.dimensions
+        }
       },
       "references": *[references(^._id)]
   }`,

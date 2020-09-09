@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
 import urlFor from '../js/urlFor';
+import { LayoutContext } from '../components/Layout';
 
 export const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
@@ -26,7 +27,9 @@ export const Mobile = ({ children }) => {
   return isMobile ? children : null;
 };
 
-const SanityBgImage = ({ src, placeholders, height, width, children }) => {
+const SanityBgImage = ({ src, height, width, children }) => {
+  const { placeholders } = useContext(LayoutContext);
+
   const [isVisible, setIsVisible] = useState(false);
   const [loaded, setLoaded] = useState(false);
 

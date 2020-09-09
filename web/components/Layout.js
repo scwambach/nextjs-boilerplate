@@ -1,55 +1,22 @@
 import React from 'react';
 import Header from './Header';
-import Head from 'next/head';
-import urlFor from '../js/urlFor';
+
+import DocHead from './DocHead';
 
 export const LayoutContext = React.createContext();
 
-const Layout = ({ page, site, children }) => {
+const Layout = (props) => {
   return (
-    <LayoutContext.Provider value={{ ...site }}>
-      <Head>
-        <title>
-          {page
-            ? page.title !== 'Home'
-              ? `${page.title} | ${site.title}`
-              : site.title
-            : `404 Page Not Found | ${site.title}`}
-        </title>
-        <link rel="icon" href={urlFor(site.favicon).width(600).quality(100)} />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <meta
-          property="og:image"
-          content={urlFor(page ? page.mainImage : site.siteImage)
-            .width(600)
-            .quality(100)
-            .auto('format')}
-        />
-        <meta
-          property="og:image:secure_url"
-          content={urlFor(page ? page.mainImage : site.siteImage)
-            .width(600)
-            .quality(100)
-            .auto('format')}
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content={
-            page
-              ? page.title !== 'Home'
-                ? `${page.title} | ${site.title}`
-                : site.title
-              : `404 Page Not Found | ${site.title}`
-          }
-        />
-        <meta property="og:site_name" content={site.title} />
-      </Head>
+    <LayoutContext.Provider
+      value={{
+        menus: props.site.menus,
+        logo: props.site.settings.mainLogo,
+        placeholders: props.site.placeholders,
+      }}
+    >
+      <DocHead page={props.page} site={props.site.settings} />
       <Header />
-      {children}
+      {props.children}
     </LayoutContext.Provider>
   );
 };
