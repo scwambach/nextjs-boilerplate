@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import SanityImage from '../tools/SanityImage';
 import SanityBgImage from '../tools/SanityBgImage';
 
-const Index = ({ site, content, placeholders }) => {
+const Index = ({ site, content }) => {
   return (
     <Layout page={content} site={site}>
       <p>Hello world!</p>

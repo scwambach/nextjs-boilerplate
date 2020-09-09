@@ -5,18 +5,22 @@ import DocHead from './DocHead';
 
 export const LayoutContext = React.createContext();
 
-const Layout = (props) => {
+const Layout = ({
+  page,
+  site: { menus, settings, placeholders },
+  children,
+}) => {
   return (
     <LayoutContext.Provider
       value={{
-        menus: props.site.menus,
-        logo: props.site.settings.mainLogo,
-        placeholders: props.site.placeholders,
+        menus: menus,
+        logo: settings.mainLogo,
+        placeholders: placeholders,
       }}
     >
-      <DocHead page={props.page} site={props.site.settings} />
+      <DocHead page={page} site={settings} />
       <Header />
-      {props.children}
+      {children}
     </LayoutContext.Provider>
   );
 };
