@@ -1,7 +1,21 @@
 // import App from 'next/app'
 
+import { useState } from 'react';
+
+export const AppContext = React.createContext();
+
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  const [menuOpen, setMenuOpen] = useState(false);
+  return (
+    <AppContext.Provider
+      value={{
+        menuOpen,
+        setMenuOpen,
+      }}
+    >
+      <Component {...pageProps} />
+    </AppContext.Provider>
+  );
 }
 
 // Only uncomment this method if you have blocking data requirements for
