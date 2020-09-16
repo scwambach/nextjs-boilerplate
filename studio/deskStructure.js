@@ -1,12 +1,13 @@
 import React from 'react';
 import S from '@sanity/desk-tool/structure-builder';
-import { MdSettings, MdCreate } from 'react-icons/lib/md';
-import { FaUser, FaStar, FaShoppingBasket, FaSort } from 'react-icons/lib/fa';
+import { TiHome } from 'react-icons/lib/ti';
+import { MdLibraryBooks, MdBuild, MdCreate } from 'react-icons/lib/md';
+import { FaStar, FaSort } from 'react-icons/lib/fa';
 import EyeIcon from 'part:@sanity/base/eye-icon';
 import EditIcon from 'part:@sanity/base/edit-icon';
 import { previewUrl } from './dashboardConfig';
 
-const hiddenTypes = ['category', 'page', 'post', 'menu', 'siteSettings'];
+const hiddenTypes = ['category', 'homePage', 'aboutPage', 'page', 'post'];
 
 const PreviewModule = ({ url }) => {
   return (
@@ -80,8 +81,38 @@ export default () =>
     .items([
       S.listItem()
         .title('Pages')
-        .schemaType('page')
-        .child(S.documentTypeList('page')),
+        .child(
+          S.list()
+            .title('Pages')
+            .items([
+              S.listItem()
+                .title('Home Page')
+                .child(
+                  S.editor()
+                    .title('Home Page')
+                    .id('homePage')
+                    .schemaType('homePage')
+                    .documentId('homePage')
+                )
+                .icon(TiHome),
+              S.listItem()
+                .title('About Page')
+                .child(
+                  S.editor()
+                    .title('About Page')
+                    .id('aboutPage')
+                    .schemaType('aboutPage')
+                    .documentId('aboutPage')
+                )
+                .icon(MdLibraryBooks),
+              S.listItem()
+                .title('Page Builder')
+                .schemaType('page')
+                .child(S.documentTypeList('page'))
+                .icon(MdBuild),
+            ])
+        )
+        .icon(MdLibraryBooks),
       S.listItem()
         .title('Blog')
         .child(
@@ -115,10 +146,6 @@ export default () =>
             ])
         )
         .icon(MdCreate),
-      S.listItem()
-        .title('Navigation')
-        .schemaType('menu')
-        .child(S.documentTypeList('menu')),
       // S.listItem()
       //   .title('Assets')
       //   .child(
@@ -133,16 +160,6 @@ export default () =>
       //           .child(S.documentTypeList('sanity.fileAsset')),
       //       ])
       //   ),
-      S.listItem()
-        .title('Global Settings')
-        .child(
-          S.editor()
-            .title('Global Settings')
-            .id('siteSettings')
-            .schemaType('siteSettings')
-            .documentId('siteSettings')
-        )
-        .icon(MdSettings),
       ...S.documentTypeListItems().filter(
         (listItem) => !hiddenTypes.includes(listItem.getId())
       ),

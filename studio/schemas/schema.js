@@ -2,7 +2,6 @@
 import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
-import siteSettings from './docTypes/siteSettings';
 import blockContent from './modules/blockContent';
 import simpleContent from './modules/simpleContent';
 import minimalContent from './modules/minimalContent';
@@ -10,7 +9,6 @@ import minimalContent from './modules/minimalContent';
 import post from './docTypes/post';
 import category from './docTypes/category';
 import page from './docTypes/page';
-import menu from './docTypes/menu';
 
 import richText from './components/richText';
 import imageFeatures from './components/imageFeatures';
@@ -24,17 +22,17 @@ import menuItem from './modules/menuItem';
 import socialItem from './modules/socialItem';
 import iconSelector from './modules/iconSelector';
 import colorList from './modules/colorList';
+import homePage from './docTypes/homePage';
+import aboutPage from './docTypes/aboutPage';
 
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
-    // Settings
-    siteSettings,
-
     // Post Types
     post,
     page,
-    menu,
+    homePage,
+    aboutPage,
 
     // Taxonomies
     category,

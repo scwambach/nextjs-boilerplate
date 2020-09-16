@@ -2,11 +2,12 @@ import sanityClient from '../client';
 import Layout from '../components/Layout';
 import SanityImage from '../tools/SanityImage';
 import SanityBgImage from '../tools/SanityBgImage';
+import HtmlKitchenSink from '../components/HtmlKitchenSink';
 
 const Index = ({ site, content }) => {
   return (
     <Layout page={content} site={site}>
-      <p>Hello world!</p>
+      <HtmlKitchenSink />
       <SanityBgImage src={content.pageContent[1].features[0].image}>
         <h1 style={{ padding: '200px', color: '#fff' }}>
           BACKGROUND IMAGE!!!!
