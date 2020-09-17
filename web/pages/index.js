@@ -3,19 +3,42 @@ import Layout from '../components/Layout';
 import SanityImage from '../tools/SanityImage';
 import SanityBgImage from '../tools/SanityBgImage';
 import HtmlKitchenSink from '../components/HtmlKitchenSink';
+import Grid from '../tools/grid/Grid';
+import GridItem from '../tools/grid/GridItem';
+import Wrapper from '../tools/Wrapper';
 
 const Index = ({ site, content }) => {
   return (
     <Layout page={content} site={site}>
-      <HtmlKitchenSink />
-      <SanityBgImage src={content.pageContent[1].features[0].image}>
-        <h1 style={{ padding: '200px', color: '#fff' }}>
-          BACKGROUND IMAGE!!!!
-        </h1>
-      </SanityBgImage>
-      {content && (
-        <SanityImage src={content.pageContent[1].features[0].image} />
-      )}
+      <Wrapper narrow>
+        <SanityBgImage src={content.pageContent[1].features[0].image}>
+          <h1 style={{ padding: '200px', color: '#fff' }}>
+            BACKGROUND IMAGE!!!!
+          </h1>
+        </SanityBgImage>
+        {content && (
+          <SanityImage src={content.pageContent[1].features[0].image} />
+        )}
+        <Grid gutter="10">
+          <GridItem width="third">Dolor ante est</GridItem>
+          <GridItem width="third2">Dolor ante est</GridItem>
+        </Grid>
+
+        <Grid gutter="10" breakThird>
+          <GridItem width="sixth">Dolor ante est</GridItem>
+          <GridItem width="sixth">Dolor ante est</GridItem>
+          <GridItem width="sixth">Dolor ante est</GridItem>
+          <GridItem width="sixth">Dolor ante est</GridItem>
+          <GridItem width="sixth">Dolor ante est</GridItem>
+          <GridItem width="sixth">Dolor ante est</GridItem>
+        </Grid>
+
+        <Grid>
+          <GridItem>test</GridItem>
+        </Grid>
+
+        <HtmlKitchenSink />
+      </Wrapper>
     </Layout>
   );
 };
