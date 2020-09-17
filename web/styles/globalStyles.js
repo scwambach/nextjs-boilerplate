@@ -1,9 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
+import { font } from './settings';
 
 const GlobalStyle = createGlobalStyle`
   body {
     font-size: 18px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: ${font.primary};
     line-height: 1.5;
   }
 
@@ -13,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
+    font-family: ${font.secondary};
     line-height: 1.1;
     font-weight: 600;
     text-transform: uppercase;
@@ -142,10 +144,10 @@ const GlobalStyle = createGlobalStyle`
     border: 1px solid #ccc;
     max-width: 100%;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: ${font.primary};
 
     &::placeholder {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-family: ${font.primary};
     }
   }
 
@@ -155,7 +157,7 @@ const GlobalStyle = createGlobalStyle`
     border: none;
     border-radius: 0px;
     appearance: none;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: ${font.primary};
     border: 1px solid #ccc;
     padding: 10px 20px;
     cursor: pointer;
@@ -170,10 +172,10 @@ const GlobalStyle = createGlobalStyle`
     background: none;
     border-radius: 0px;
     appearance: none;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: ${font.primary};
 
     &::placeholder {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-family: ${font.primary};
     }
 
     &[type="text"],
