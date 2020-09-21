@@ -61,16 +61,16 @@ const ListingPreview = ({ document }) => {
 
 export const getDefaultDocumentNode = ({ schemaType }) => {
   // Conditionally return a different configuration based on the schema type
-  if (schemaType === 'page') {
-    return S.document().views([
-      S.view.form().icon(EditIcon),
-      S.view.component(WebPreview).title('Web Preview').icon(EyeIcon),
-    ]);
-  } else if (schemaType === 'post') {
+  if (schemaType === 'post') {
     return S.document().views([
       S.view.form().icon(EditIcon),
       S.view.component(WebPreview).title('Web Preview').icon(EyeIcon),
       S.view.component(ListingPreview).title('Listing Preview').icon(EyeIcon),
+    ]);
+  } else {
+    return S.document().views([
+      S.view.form().icon(EditIcon),
+      S.view.component(WebPreview).title('Web Preview').icon(EyeIcon),
     ]);
   }
 };

@@ -11,14 +11,12 @@ const Index = ({ site, content }) => {
   return (
     <Layout page={content} site={site}>
       <Wrapper narrow>
-        <SanityBgImage src={content.pageContent[1].features[0].image}>
+        <SanityBgImage src={content.mainImage}>
           <h1 style={{ padding: '200px', color: '#fff' }}>
             BACKGROUND IMAGE!!!!
           </h1>
         </SanityBgImage>
-        {content && (
-          <SanityImage src={content.pageContent[1].features[0].image} />
-        )}
+        {content && <SanityImage src={content.mainImage} />}
         <Grid gutter="10">
           <GridItem width="third">Dolor ante est</GridItem>
           <GridItem width="third2">Dolor ante est</GridItem>
@@ -45,8 +43,8 @@ const Index = ({ site, content }) => {
 
 export async function getServerSideProps(context) {
   const content = await sanityClient.fetch(
-    `*[slug.current == "/"][0]{
-      "content": *[slug.current == "/"][0],
+    `*[_type == "homePage"][0]{
+      "content": *[_type == "homePage"][0],
       "site": {
         "settings":  *[_type == "siteSettings"][0],
         "menus": *[_type == "menu"],

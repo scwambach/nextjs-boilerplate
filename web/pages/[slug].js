@@ -44,7 +44,7 @@ export async function getServerSideProps(context) {
       },
       "references": *[references(^._id)]
   }`,
-    { slug: `/${slug.join('/')}` }
+    { slug: `/${slug}` }
   );
 
   return { props: content };
