@@ -1,13 +1,15 @@
 import Head from 'next/head';
 import urlFor from '../js/urlFor';
 
-const DocHead = ({ page, site }) => {
+const DocHead = ({ page, site, staticTitle }) => {
   return (
     <Head>
       <title>
         {page
-          ? page.title !== 'Home'
+          ? page.title
             ? `${page.title} | ${site.title}`
+            : staticTitle
+            ? `${staticTitle} | ${site.title}`
             : site.title
           : `404 Page Not Found | ${site.title}`}
       </title>

@@ -16,17 +16,12 @@ export default {
           title: 'Image',
           name: 'image',
           type: 'image',
-          validation: Rule => Rule.required(),
+          validation: (Rule) => Rule.required(),
           options: {
             hotspot: true,
           },
         },
       ],
-    },
-    {
-      title: 'No Margin',
-      name: 'noMargin',
-      type: 'boolean'
     },
   ],
   preview: {

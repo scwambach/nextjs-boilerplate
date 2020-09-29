@@ -15,14 +15,14 @@ export default {
       title: 'Component Layout',
       name: 'componentLayout',
       type: 'string',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
       options: {
         list: [
-          {title: 'Contained', value: 'contained'},
-          {title: 'Full Width', value: 'fullWidth'},
-          {title: 'Large', value: 'large'},
+          { title: 'Contained', value: 'contained' },
+          { title: 'Full Width', value: 'fullWidth' },
+          { title: 'Large', value: 'large' },
         ],
-      }
+      },
     },
     {
       title: 'Features',
@@ -35,11 +35,6 @@ export default {
           type: 'imageWText',
         },
       ],
-    },
-    {
-      title: 'No Margin',
-      name: 'noMargin',
-      type: 'boolean'
     },
   ],
   preview: {

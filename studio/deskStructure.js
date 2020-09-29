@@ -1,13 +1,27 @@
 import React from 'react';
 import S from '@sanity/desk-tool/structure-builder';
 import { TiHome } from 'react-icons/lib/ti';
-import { MdLibraryBooks, MdBuild, MdCreate } from 'react-icons/lib/md';
+import {
+  MdLibraryBooks,
+  MdBuild,
+  MdCreate,
+  MdSettings,
+} from 'react-icons/lib/md';
 import { FaStar, FaSort } from 'react-icons/lib/fa';
 import EyeIcon from 'part:@sanity/base/eye-icon';
 import EditIcon from 'part:@sanity/base/edit-icon';
 import { previewUrl } from './dashboardConfig';
 
-const hiddenTypes = ['category', 'homePage', 'aboutPage', 'page', 'post'];
+const hiddenTypes = [
+  'siteSettings',
+  'category',
+  'homePage',
+  'aboutPage',
+  'page',
+  'post',
+  'event',
+  'menu',
+];
 
 const PreviewModule = ({ url }) => {
   return (
@@ -67,7 +81,7 @@ export const getDefaultDocumentNode = ({ schemaType }) => {
       S.view.component(WebPreview).title('Web Preview').icon(EyeIcon),
       S.view.component(ListingPreview).title('Listing Preview').icon(EyeIcon),
     ]);
-  } else {
+  } else if (schemaType !== 'event') {
     return S.document().views([
       S.view.form().icon(EditIcon),
       S.view.component(WebPreview).title('Web Preview').icon(EyeIcon),
@@ -146,6 +160,24 @@ export default () =>
             ])
         )
         .icon(MdCreate),
+      S.listItem()
+        .title('Events')
+        .schemaType('event')
+        .child(S.documentTypeList('event')),
+      S.listItem()
+        .title('Navigation')
+        .schemaType('menu')
+        .child(S.documentTypeList('menu')),
+      S.listItem()
+        .title('Global Settings')
+        .child(
+          S.editor()
+            .title('Global Settings')
+            .id('siteSettings')
+            .schemaType('siteSettings')
+            .documentId('siteSettings')
+        )
+        .icon(MdSettings),
       // S.listItem()
       //   .title('Assets')
       //   .child(

@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 
 const AboutPage = ({ content, site }) => {
   return (
-    <Layout page={content} site={site}>
+    <Layout page={content} staticTitle="About" site={site}>
       {/* Data Dump */}
       <code>
         <pre

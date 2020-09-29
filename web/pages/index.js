@@ -6,37 +6,12 @@ import HtmlKitchenSink from '../components/HtmlKitchenSink';
 import Grid from '../tools/grid/Grid';
 import GridItem from '../tools/grid/GridItem';
 import Wrapper from '../tools/Wrapper';
+import HeroBanner from '../components/pageComponents/HeroBanner';
 
 const Index = ({ site, content }) => {
   return (
     <Layout page={content} site={site}>
-      <Wrapper narrow>
-        <SanityBgImage src={content.mainImage}>
-          <h1 style={{ padding: '200px', color: '#fff' }}>
-            BACKGROUND IMAGE!!!!
-          </h1>
-        </SanityBgImage>
-        {content && <SanityImage src={content.mainImage} />}
-        <Grid gutter="10">
-          <GridItem width="third">Dolor ante est</GridItem>
-          <GridItem width="third2">Dolor ante est</GridItem>
-        </Grid>
-
-        <Grid gutter="10" breakThird>
-          <GridItem width="sixth">Dolor ante est</GridItem>
-          <GridItem width="sixth">Dolor ante est</GridItem>
-          <GridItem width="sixth">Dolor ante est</GridItem>
-          <GridItem width="sixth">Dolor ante est</GridItem>
-          <GridItem width="sixth">Dolor ante est</GridItem>
-          <GridItem width="sixth">Dolor ante est</GridItem>
-        </Grid>
-
-        <Grid>
-          <GridItem>test</GridItem>
-        </Grid>
-
-        <HtmlKitchenSink />
-      </Wrapper>
+      <HeroBanner {...content.staticHeroBanner} mainImage={content.mainImage} />
     </Layout>
   );
 };

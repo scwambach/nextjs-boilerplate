@@ -7,6 +7,7 @@ export const LayoutContext = React.createContext();
 
 const Layout = ({
   page,
+  staticTitle,
   site: { menus, settings, placeholders },
   children,
 }) => {
@@ -18,7 +19,7 @@ const Layout = ({
         placeholders: placeholders,
       }}
     >
-      <DocHead page={page} site={settings} />
+      <DocHead page={page} staticTitle={staticTitle} site={settings} />
       <Header />
       {children}
     </LayoutContext.Provider>

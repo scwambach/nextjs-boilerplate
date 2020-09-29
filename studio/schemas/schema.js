@@ -6,9 +6,11 @@ import blockContent from './modules/blockContent';
 import simpleContent from './modules/simpleContent';
 import minimalContent from './modules/minimalContent';
 
+import siteSettings from './docTypes/siteSettings';
 import post from './docTypes/post';
 import category from './docTypes/category';
 import page from './docTypes/page';
+import event from './docTypes/event';
 
 import richText from './components/richText';
 import imageFeatures from './components/imageFeatures';
@@ -24,20 +26,26 @@ import iconSelector from './modules/iconSelector';
 import colorList from './modules/colorList';
 import homePage from './docTypes/homePage';
 import aboutPage from './docTypes/aboutPage';
+import staticHeroBanner from './components/staticHeroBanner';
+import menu from './docTypes/menu';
 
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
-    // Post Types
+    // Doc Types
+    siteSettings,
+    menu,
     post,
     page,
+    event,
     homePage,
     aboutPage,
 
     // Taxonomies
     category,
 
-    // Flexible Content
+    // Page Components
+    staticHeroBanner,
     richText,
     imageFeatures,
     imageGallery,

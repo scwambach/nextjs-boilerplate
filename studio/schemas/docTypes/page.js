@@ -44,6 +44,12 @@ export default {
         { type: 'sectionHeading' },
       ],
     },
+    {
+      name: 'pageDescription',
+      title: 'Page Description',
+      type: 'text',
+      rows: '4',
+    },
   ],
 
   preview: {

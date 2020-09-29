@@ -17,20 +17,24 @@ export default {
       },
     },
     {
-      name: 'heroHeading',
-      title: 'heroHeading',
-      validation: (Rule) => Rule.required(),
-      type: 'string',
+      name: 'staticHeroBanner',
+      type: 'staticHeroBanner',
     },
     {
-      name: 'bodyCopy',
-      title: 'Body Copy',
+      name: 'richText',
       type: 'richText',
     },
     {
+      name: 'sectionHeading',
+      type: 'sectionHeading',
+    },
+    {
       name: 'imageFeatures',
-      title: 'Image Features',
       type: 'imageFeatures',
+    },
+    {
+      name: 'imageGallery',
+      type: 'imageGallery',
     },
   ],
 };
