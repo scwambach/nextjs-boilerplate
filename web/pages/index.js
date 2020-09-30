@@ -7,11 +7,23 @@ import Grid from '../tools/grid/Grid';
 import GridItem from '../tools/grid/GridItem';
 import Wrapper from '../tools/Wrapper';
 import HeroBanner from '../components/pageComponents/HeroBanner';
+import RichText from '../components/RichText';
+import SectionHeading from '../components/pageComponents/SectionHeading';
+import ImageFeatures from '../components/pageComponents/ImageFeatures';
 
 const Index = ({ site, content }) => {
   return (
     <Layout page={content} site={site}>
       <HeroBanner {...content.staticHeroBanner} mainImage={content.mainImage} />
+      <section>
+        <Wrapper narrow>
+          <RichText content={content.richText.copy} />
+        </Wrapper>
+      </section>
+      <section>
+        <SectionHeading {...content.sectionHeading} />
+      </section>
+      <ImageFeatures {...content.imageFeatures} />
     </Layout>
   );
 };

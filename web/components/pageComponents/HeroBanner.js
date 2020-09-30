@@ -1,20 +1,52 @@
 import React from 'react';
-import SanityBgImage from '../../tools/SanityBgImage';
-import BlockContent from '@sanity/block-content-to-react';
+import SanityBgImage, { SSanityBgImage } from '../../tools/SanityBgImage';
 import RichText from '../RichText';
 import Wrapper from '../../tools/Wrapper';
+import styled from 'styled-components';
+import { colors, breakpoints } from '../../styles/settings';
+import LinkObject from '../../tools/LinkObject';
+import { Button } from '../../styles/bits';
 
 const HeroBanner = (props) => {
   return (
-    <div>
+    <SHeroBanner>
       <SanityBgImage src={props.mainImage}>
         <Wrapper>
-          <h1>{props.heading}</h1>
-          <RichText content={props.copy} />
+          {props.heading && <h1>{props.heading}</h1>}
+          {props.copy && <RichText content={props.copy} />}
+
+          {props.links && (
+            <>
+              {props.links.map((link) => (
+                <LinkObject {...link} />
+              ))}
+            </>
+          )}
         </Wrapper>
       </SanityBgImage>
-    </div>
+    </SHeroBanner>
   );
 };
 
 export default HeroBanner;
+
+const SHeroBanner = styled.section`
+  text-align: center;
+  color: ${colors.white};
+
+  ${SSanityBgImage} {
+    padding: 80px 0;
+
+    @media screen and (min-width: ${breakpoints.ipadPort}px) {
+      padding: 200px 0;
+    }
+  }
+
+  a {
+    ${Button};
+
+    + a {
+      margin-left: 10px;
+    }
+  }
+`;
