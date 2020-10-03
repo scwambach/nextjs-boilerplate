@@ -1,66 +1,63 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import RichText from '../RichText';
-import Grid from '../../tools/grid/Grid';
-import GridItem, { SGridItem } from '../../tools/grid/GridItem';
 import SanityBgImage, { SSanityBgImage } from '../../tools/SanityBgImage';
 import { breakpoints } from '../../styles/settings';
 import Wrapper from '../../tools/Wrapper';
+import LinkObject from '../../tools/LinkObject';
+import { SectionStyle } from '../../styles/bits';
 
-const SingleFeature = (props) => (
-  <SSingleFeature contained={props.contained} reverse={props.index % 2 !== 0}>
-    <SanityBgImage src={props.image} />
-    <div>
+export const ImageFeatureContext = React.createContext();
+
+const SingleFeature = (props) => {
+  const { contained, reverse } = useContext(ImageFeatureContext);
+  return (
+    <SSingleFeature
+      contained={contained}
+      reverse={reverse ? props.index % 2 === 0 : props.index % 2 !== 0}
+    >
+      <SanityBgImage src={props.image} />
       <div>
-        {props.heading && <h3>{props.heading}</h3>}
-        {props.copy && <RichText content={props.copy} />}
+        <div>
+          {props.heading && <h3>{props.heading}</h3>}
+          {props.copy && <RichText content={props.copy} />}
+          {props.link && <LinkObject key={props.link._key} {...props.link} />}
+        </div>
       </div>
-    </div>
-  </SSingleFeature>
-);
+    </SSingleFeature>
+  );
+};
 
 const ImageFeatures = (props) => {
   return (
-    <SImageFeatures layout={props.componentLayout}>
-      {props.componentLayout === 'contained' ? (
-        <Wrapper>
-          {props.features.map((feature, index) => (
-            <SingleFeature
-              contained={props.componentLayout === 'contained'}
-              {...feature}
-              index={index}
-            />
-          ))}
-        </Wrapper>
-      ) : (
-        props.features.map((feature, index) => (
-          <SingleFeature {...feature} index={index} />
-        ))
-      )}
-      {/* Data Dump */}
-      <code>
-        <pre
-          style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {JSON.stringify(props, null, '    ')}
-        </pre>
-      </code>
-      {/* Data Dump End */}
-    </SImageFeatures>
+    <ImageFeatureContext.Provider
+      value={{
+        reverse: props.flipImageSide,
+        contained: props.contained,
+      }}
+    >
+      <SImageFeatures layout={props.componentLayout}>
+        {props.contained ? (
+          <Wrapper>
+            {props.features.map((feature, index) => (
+              <SingleFeature key={feature._key} {...feature} index={index} />
+            ))}
+          </Wrapper>
+        ) : (
+          props.features.map((feature, index) => (
+            <SingleFeature key={feature._key} {...feature} index={index} />
+          ))
+        )}
+      </SImageFeatures>
+    </ImageFeatureContext.Provider>
   );
 };
 
 export default ImageFeatures;
 
-const SImageFeatures = styled.section``;
+const SImageFeatures = styled.section`
+  ${SectionStyle};
+`;
 
 const SSingleFeature = styled.div`
   display: flex;
@@ -72,12 +69,12 @@ const SSingleFeature = styled.div`
     width: 50%;
 
     &:nth-child(2) {
-      padding: 30px;
+      padding: 30px 50px;
       max-width: ${breakpoints.pageWidth / 2}px;
     }
   }
 
   ${SSanityBgImage} {
-    min-height: ${({ contained }) => (contained ? '40vh' : '60vh')};
+    min-height: 600px;
   }
 `;

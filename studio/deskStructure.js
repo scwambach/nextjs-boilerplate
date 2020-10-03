@@ -107,6 +107,13 @@ export default () =>
                     .id('homePage')
                     .schemaType('homePage')
                     .documentId('homePage')
+                    .views([
+                      S.view.form().icon(EditIcon),
+                      S.view
+                        .component(WebPreview)
+                        .title('Web Preview')
+                        .icon(EyeIcon),
+                    ])
                 )
                 .icon(TiHome),
               S.listItem()
@@ -117,6 +124,13 @@ export default () =>
                     .id('aboutPage')
                     .schemaType('aboutPage')
                     .documentId('aboutPage')
+                    .views([
+                      S.view.form().icon(EditIcon),
+                      S.view
+                        .component(WebPreview)
+                        .title('Web Preview')
+                        .icon(EyeIcon),
+                    ])
                 )
                 .icon(MdLibraryBooks),
               S.listItem()

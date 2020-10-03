@@ -7,37 +7,25 @@ export default {
       title: 'Image',
       name: 'image',
       type: 'image',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
       options: {
-        hotspot: true
-      }
-    },
-    {
-      title: 'Parallax',
-      name: 'parallax',
-      type: 'boolean'
-    },
-    {
-      title: 'Video',
-      name: 'video',
-      description:
-        'Retrieve the YouTube ID "https://www.youtube.com/watch?v=YOUTUBE_ID_IS_HERE"',
-      type: 'string'
+        hotspot: true,
+      },
     },
     {
       title: 'Heading',
       name: 'heading',
-      type: 'string'
+      type: 'string',
     },
     {
       title: 'Copy',
       name: 'copy',
-      type: 'simpleContent'
+      type: 'simpleContent',
     },
     {
       title: 'Link',
       name: 'link',
-      type: 'link'
-    }
-  ]
+      type: 'link',
+    },
+  ],
 };

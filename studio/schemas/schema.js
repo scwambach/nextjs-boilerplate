@@ -14,8 +14,6 @@ import event from './docTypes/event';
 
 import richText from './components/richText';
 import imageFeatures from './components/imageFeatures';
-import imageGallery from './components/imageGallery';
-import sectionHeading from './components/sectionHeading';
 import heroBanner from './components/heroBanner';
 
 import link from './modules/link';
@@ -48,8 +46,6 @@ export default createSchema({
     staticHeroBanner,
     richText,
     imageFeatures,
-    imageGallery,
-    sectionHeading,
     heroBanner,
     blockContent,
     simpleContent,

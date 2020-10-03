@@ -12,17 +12,9 @@ export default {
       type: 'boolean',
     },
     {
-      title: 'Component Layout',
-      name: 'componentLayout',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-      options: {
-        list: [
-          { title: 'Contained', value: 'contained' },
-          { title: 'Full Width', value: 'fullWidth' },
-          { title: 'Large', value: 'large' },
-        ],
-      },
+      title: 'Contained',
+      name: 'contained',
+      type: 'boolean',
     },
     {
       title: 'Features',

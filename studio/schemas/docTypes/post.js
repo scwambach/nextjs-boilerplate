@@ -40,7 +40,7 @@ export default {
       options: {
         source: 'title',
         maxLength: 96,
-        slugify: (input) => `/blog/${slugify(input)}`,
+        slugify: (input) => slugify(input),
       },
     },
     {

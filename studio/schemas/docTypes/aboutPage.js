@@ -17,14 +17,12 @@ export default {
       },
     },
     {
-      name: 'heroHeading',
-      title: 'heroHeading',
-      validation: (Rule) => Rule.required(),
-      type: 'string',
+      name: 'staticHeroBanner',
+      type: 'staticHeroBanner',
     },
     {
-      name: 'bodyCopy',
-      title: 'Body Copy',
+      name: 'richText',
+      title: 'Rich Text',
       type: 'richText',
     },
     {

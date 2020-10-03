@@ -1,7 +1,7 @@
-import sanityClient from '../client';
-import Layout from '../components/Layout';
+import sanityClient from '../../client';
+import Layout from '../../components/Layout';
 
-const PageBuilder = ({ content, site }) => {
+const Post = ({ content, site }) => {
   return (
     <Layout page={content} site={site}>
       {content ? (
@@ -50,4 +50,4 @@ export async function getServerSideProps(context) {
   return { props: content };
 }
 
-export default PageBuilder;
+export default Post;

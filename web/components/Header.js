@@ -27,7 +27,7 @@ const Header = () => {
 
 export default Header;
 
-const SHeader = styled.div`
+const SHeader = styled.header`
   img {
     max-width: 100px;
   }

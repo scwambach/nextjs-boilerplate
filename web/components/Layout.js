@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 
 import DocHead from './DocHead';
+import Footer from './Footer';
 
 export const LayoutContext = React.createContext();
 
@@ -14,14 +15,16 @@ const Layout = ({
   return (
     <LayoutContext.Provider
       value={{
-        menus: menus,
+        menus,
+        settings,
         logo: settings.mainLogo,
         placeholders: placeholders,
       }}
     >
       <DocHead page={page} staticTitle={staticTitle} site={settings} />
       <Header />
-      {children}
+      <main>{children}</main>
+      <Footer />
     </LayoutContext.Provider>
   );
 };

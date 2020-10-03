@@ -5,7 +5,7 @@ import Wrapper from '../../tools/Wrapper';
 import styled from 'styled-components';
 import { colors, breakpoints } from '../../styles/settings';
 import LinkObject from '../../tools/LinkObject';
-import { Button } from '../../styles/bits';
+import { Button, SectionStyle } from '../../styles/bits';
 
 const HeroBanner = (props) => {
   return (
@@ -18,7 +18,7 @@ const HeroBanner = (props) => {
           {props.links && (
             <>
               {props.links.map((link) => (
-                <LinkObject {...link} />
+                <LinkObject key={link._key} {...link} />
               ))}
             </>
           )}
@@ -31,6 +31,7 @@ const HeroBanner = (props) => {
 export default HeroBanner;
 
 const SHeroBanner = styled.section`
+  ${SectionStyle};
   text-align: center;
   color: ${colors.white};
 

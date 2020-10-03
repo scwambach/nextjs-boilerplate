@@ -25,16 +25,8 @@ export default {
       type: 'richText',
     },
     {
-      name: 'sectionHeading',
-      type: 'sectionHeading',
-    },
-    {
       name: 'imageFeatures',
       type: 'imageFeatures',
-    },
-    {
-      name: 'imageGallery',
-      type: 'imageGallery',
     },
   ],
 };
