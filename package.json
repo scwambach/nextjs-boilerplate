@@ -7,6 +7,7 @@
     "build": "lerna run build --parallel",
     "build-web": "(cd web && npm run build)",
     "build-studio": "(cd studio && npm run build)",
+    "commit": "git add . && cz",
     "dev": "lerna run dev --parallel",
     "format": "lerna run format",
     "graphql-deploy": "lerna run graphql-deploy",
@@ -27,9 +28,15 @@
   },
   "homepage": "https://github.com/scwambach/gatsby-starter#readme",
   "devDependencies": {
-    "@sanity/cli": "^1.149.19",
-    "lerna": "^3.22.1",
     "@lhci/server": "^0.3.14",
-    "babel-eslint": "^10.1.0"
+    "@sanity/cli": "^1.149.19",
+    "babel-eslint": "^10.1.0",
+    "cz-customizable": "^6.3.0",
+    "lerna": "^3.22.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
   }
 }
