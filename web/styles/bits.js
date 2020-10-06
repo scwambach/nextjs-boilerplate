@@ -11,8 +11,10 @@ export const Button = css`
   box-shadow: 0 0;
   font-size: 0.8em;
 
+  &:focus,
   &:hover {
     @media screen and (min-width: ${breakpoints.ipadLand}px) {
+      color: ${colors.black};
       background-color: ${shade(0.2, colors.gray)};
     }
   }
@@ -20,6 +22,14 @@ export const Button = css`
 
 export const SectionStyle = css`
   margin: 50px 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   @media screen and (max-width: ${breakpoints.ipadPort - 1}px) {
     margin: 20px 0;
