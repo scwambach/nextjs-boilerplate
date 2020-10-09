@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { font, colors } from './settings';
-import { shade } from 'polished';
+import { font } from './settings';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -111,15 +110,6 @@ const GlobalStyle = createGlobalStyle`
 
   ul {
     list-style: disc;
-  }
-
-  a {
-    color: ${colors.blue};
-    text-decoration: none;
-
-    &:hover {
-      color: ${shade(0.2, colors.blue)}
-    }
   }
 
   blockquote {
