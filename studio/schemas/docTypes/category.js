@@ -1,4 +1,4 @@
-import { FaStar } from 'react-icons/lib/fa';
+import { FaStar } from 'react-icons/fa';
 import { slugify } from './post';
 
 export default {
@@ -10,35 +10,35 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
       options: {
         source: 'title',
-        slugify: input => `/category/${slugify(input)}`,
+        slugify: (input) => `/category/${slugify(input)}`,
       },
     },
     {
       name: 'description',
       title: 'Description',
-      type: 'text'
-    }
+      type: 'text',
+    },
   ],
   preview: {
     select: {
       title: 'title',
-      desc: 'description'
+      desc: 'description',
     },
     prepare(selection) {
       const { title, desc } = selection;
       return Object.assign({}, selection, {
         title,
-        subtitle: desc
+        subtitle: desc,
       });
-    }
-  }
+    },
+  },
 };

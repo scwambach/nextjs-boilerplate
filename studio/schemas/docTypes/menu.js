@@ -1,4 +1,4 @@
-import { FaBars } from 'react-icons/lib/fa';
+import { FaBars } from 'react-icons/fa';
 
 export default {
   name: 'menu',

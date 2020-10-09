@@ -1,13 +1,8 @@
 import React from 'react';
 import S from '@sanity/desk-tool/structure-builder';
-import { TiHome } from 'react-icons/lib/ti';
-import {
-  MdLibraryBooks,
-  MdBuild,
-  MdCreate,
-  MdSettings,
-} from 'react-icons/lib/md';
-import { FaStar, FaSort } from 'react-icons/lib/fa';
+import { TiHome } from 'react-icons/ti';
+import { MdLibraryBooks, MdBuild, MdCreate, MdSettings } from 'react-icons/md';
+import { FaStar, FaSort } from 'react-icons/fa';
 import EyeIcon from 'part:@sanity/base/eye-icon';
 import EditIcon from 'part:@sanity/base/edit-icon';
 import { previewUrl } from './dashboardConfig';

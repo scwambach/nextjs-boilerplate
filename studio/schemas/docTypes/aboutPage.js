@@ -1,4 +1,4 @@
-import { MdPages } from 'react-icons/lib/md';
+import { MdPages } from 'react-icons/md';
 
 export default {
   name: 'aboutPage',

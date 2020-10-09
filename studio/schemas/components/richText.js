@@ -1,4 +1,4 @@
-import { MdLibraryBooks } from 'react-icons/lib/md';
+import { MdLibraryBooks } from 'react-icons/md';
 
 export default {
   title: 'Rich Text',

@@ -1,5 +1,5 @@
-import { MdCreate } from 'react-icons/lib/md';
-import { FaStar } from 'react-icons/lib/fa';
+import { MdCreate } from 'react-icons/md';
+import { FaStar } from 'react-icons/fa';
 
 export const slugify = (string) => {
   const a =

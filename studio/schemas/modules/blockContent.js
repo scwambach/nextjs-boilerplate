@@ -1,4 +1,4 @@
-import { IoAndroidRadioButtonOn } from 'react-icons/lib/io';
+import { IoAndroidRadioButtonOn } from 'react-icons/io';
 
 export default {
   title: 'Block Content',

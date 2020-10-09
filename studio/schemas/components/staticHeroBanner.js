@@ -1,4 +1,4 @@
-import { FaImage } from 'react-icons/lib/fa';
+import { FaImage } from 'react-icons/fa';
 
 export default {
   title: 'Hero Banner',

@@ -1,4 +1,4 @@
-import { FaStar } from 'react-icons/lib/fa';
+import { FaStar } from 'react-icons/fa';
 
 export default {
   icon: FaStar,
@@ -10,7 +10,8 @@ export default {
       title: 'Icon',
       name: 'icon',
       type: 'string',
-    }, {
+    },
+    {
       title: 'Link',
       name: 'link',
       type: 'url',

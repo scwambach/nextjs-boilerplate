@@ -1,4 +1,4 @@
-import { FaCalendar, FaTicket } from 'react-icons/lib/fa';
+import { FaCalendar, FaTicket } from 'react-icons/fa';
 
 export default {
   name: 'event',
