@@ -20,26 +20,26 @@
   "homepage": "https://github.com/scwambach/nextjs-boilerplate#readme",
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
-    "@sanity/client": "^2.0.1",
+    "@sanity/client": "^1.149.16",
     "@sanity/image-url": "^0.140.19",
     "axios": "^0.20.0",
     "next": "^9.5.1",
-    "next-images": "^1.6.0",
-    "polished": "^4.0.2",
+    "next-images": "^1.4.1",
+    "polished": "^3.6.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-responsive": "^8.1.0",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^1.11.1",
-    "eslint": "^7.11.0",
+    "eslint": "^7.6.0",
     "eslint-config-airbnb": "^18.2.0",
-    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.21.3"
+    "eslint-plugin-react": "^7.20.5"
   }
 }
