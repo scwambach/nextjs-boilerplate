@@ -3,7 +3,7 @@ import Header from './Header';
 
 import DocHead from './DocHead';
 import Footer from './Footer';
-
+import GlobalStyle from '../styles/globalStyles';
 export const LayoutContext = React.createContext();
 
 const Layout = ({
@@ -23,6 +23,7 @@ const Layout = ({
     >
       <DocHead page={page} staticTitle={staticTitle} site={settings} />
       <Header />
+      <GlobalStyle />
       <main>{children}</main>
       <Footer />
     </LayoutContext.Provider>

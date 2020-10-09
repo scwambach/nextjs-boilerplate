@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 // import Head from 'next/head';
-import GlobalStyle from '../styles/globalStyles';
 import Reset from '../styles/reset';
 
 export const AppContext = React.createContext();
@@ -17,7 +16,6 @@ function MyApp({ Component, pageProps }) {
       }}
     >
       <Reset />
-      <GlobalStyle />
       <Component {...pageProps} />
     </AppContext.Provider>
   );

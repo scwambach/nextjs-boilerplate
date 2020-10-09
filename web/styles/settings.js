@@ -10,6 +10,7 @@ export const colors = {
   black: '#2f2f2f',
   gray: '#eee',
   green: '#bada55',
+  blue: '#8f8fd9',
 };
 
 export const breakpoints = {
