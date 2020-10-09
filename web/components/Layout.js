@@ -22,8 +22,8 @@ const Layout = ({
       }}
     >
       <DocHead page={page} staticTitle={staticTitle} site={settings} />
-      <Header />
       <GlobalStyle />
+      <Header />
       <main>{children}</main>
       <Footer />
     </LayoutContext.Provider>
