@@ -3,6 +3,8 @@
 import { useState } from 'react';
 // import Head from 'next/head';
 import Reset from '../styles/reset';
+import NextNprogress from 'nextjs-progressbar';
+import { colors } from '../styles/settings';
 
 export const AppContext = React.createContext();
 
@@ -15,6 +17,13 @@ function MyApp({ Component, pageProps }) {
         setMenuOpen,
       }}
     >
+      <NextNprogress
+        color={colors.green}
+        options={{
+          easing: 'ease',
+          speed: 500,
+        }}
+      />
       <Reset />
       <Component {...pageProps} />
     </AppContext.Provider>
