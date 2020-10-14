@@ -4,7 +4,9 @@ import Layout from '../components/Layout';
 import Wrapper from '../tools/Wrapper';
 import { Section } from '../styles/Section';
 
-const AboutPage = ({ site }) => {
+// TODO: https://medium.com/@andreiushakov/build-a-subscription-checkout-form-with-next-js-stripe-elements-and-antd-d5434b83bd51
+
+const StorePage = ({ site }) => {
   return (
     <Layout staticTitle="store" site={site}>
       <Section>
@@ -34,4 +36,4 @@ export async function getServerSideProps(context) {
 
   return { props: content };
 }
-export default AboutPage;
+export default StorePage;
