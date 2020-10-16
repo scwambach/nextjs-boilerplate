@@ -116,6 +116,8 @@ const GlobalStyle = createGlobalStyle`
   a {
     color: ${colors.blue};
     text-decoration: none;
+    cursor: pointer;
+
     &:hover {
       color: ${shade(0.2, colors.blue)}
     }

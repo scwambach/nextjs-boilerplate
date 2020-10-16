@@ -7,6 +7,7 @@ import LinkObject from '../tools/LinkObject';
 const Menu = ({ name }) => {
   const { menus } = useContext(LayoutContext);
   const [activeIndex, setActiveIndex] = useState(null);
+  const [activeSubIndex, setActiveSubIndex] = useState(null);
 
   return (
     <SMenu>
@@ -17,7 +18,7 @@ const Menu = ({ name }) => {
             key={_key}
             className={`${subItems ? 'hasSub' : ''} ${
               activeIndex === index ? 'open' : ''
-            }`}
+            } ${activeSubIndex === index ? 'sub-open' : ''}`}
             onMouseLeave={() => {
               setActiveIndex(null);
             }}
@@ -53,6 +54,17 @@ const Menu = ({ name }) => {
                   </li>
                 ))}
               </ul>
+            )}
+            {subItems && (
+              <a
+                className="toggle"
+                href={null}
+                onClick={() => {
+                  setActiveSubIndex(activeSubIndex === index ? null : index);
+                }}
+              >
+                {activeSubIndex === index ? '-' : '+'}
+              </a>
             )}
           </li>
         ))}
