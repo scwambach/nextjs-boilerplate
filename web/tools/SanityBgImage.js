@@ -3,27 +3,28 @@ import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
 import urlFor from '../js/urlFor';
 import { LayoutContext } from '../components/Layout';
+import { breakpoints } from '../styles/settings';
 
 export const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 1024 });
+  const isDesktop = useMediaQuery({ minWidth: breakpoints.ipadLand });
   return isDesktop ? children : null;
 };
 export const TabletLarge = ({ children }) => {
   const isTablet = useMediaQuery({
-    minWidth: 768,
-    maxWidth: 1024,
+    minWidth: breakpoints.ipadPort,
+    maxWidth: breakpoints.ipadLand,
   });
   return isTablet ? children : null;
 };
 export const TabletSmall = ({ children }) => {
   const isTablet = useMediaQuery({
-    minWidth: 480,
-    maxWidth: 768,
+    minWidth: breakpoints.mobile,
+    maxWidth: breakpoints.ipadPort,
   });
   return isTablet ? children : null;
 };
 export const Mobile = ({ children }) => {
-  const isMobile = useMediaQuery({ maxWidth: 480 });
+  const isMobile = useMediaQuery({ maxWidth: breakpoints.mobile });
   return isMobile ? children : null;
 };
 
@@ -36,7 +37,7 @@ const SanityBgImage = ({ src, height, width, children }) => {
   const ph = placeholders.find((o) => o._id === src.asset._ref);
   const imageId = ph._id;
   const lqip = ph.lqip;
-  const imageWidth = width || 1200;
+  const imageWidth = width || breakpoints.pageWidth;
 
   const imageCheck = (imageUrl) => {
     const srcImage = imageUrl;
@@ -54,12 +55,24 @@ const SanityBgImage = ({ src, height, width, children }) => {
   };
 
   useEffect(() => {
+    let widthCheck = width || breakpoints.pageWidth;
+
+    if (
+      global.window.innerWidth >= breakpoints.ipadPort &&
+      global.window.innerWidth <= breakpoints.ipadLand
+    ) {
+      widthCheck = breakpoints.ipadLand;
+    } else if (
+      global.window.innerWidth >= breakpoints.mobile &&
+      global.window.innerWidth <= breakpoints.ipadPort
+    ) {
+      widthCheck = breakpoints.ipadPort;
+    } else if (global.window.innerWidth <= breakpoints.mobile) {
+      widthCheck = breakpoints.mobile;
+    }
+
     imageCheck(
-      urlFor(src)
-        .width(width || 1200)
-        .height(height)
-        .quality(90)
-        .auto('format')
+      urlFor(src).width(widthCheck).height(height).quality(90).auto('format')
     );
 
     const postListing = document.getElementById(`bg_${imageId}`);
@@ -102,7 +115,11 @@ const SanityBgImage = ({ src, height, width, children }) => {
           image={
             loaded && isVisible
               ? urlFor(src)
-                  .width(imageWidth > 1024 ? 1024 : imageWidth)
+                  .width(
+                    imageWidth > breakpoints.ipadLand
+                      ? breakpoints.ipadLand
+                      : imageWidth
+                  )
                   .height(height)
                   .quality(90)
                   .auto('format')
@@ -117,7 +134,11 @@ const SanityBgImage = ({ src, height, width, children }) => {
           image={
             loaded && isVisible
               ? urlFor(src)
-                  .width(imageWidth > 768 ? 768 : imageWidth)
+                  .width(
+                    imageWidth > breakpoints.ipadPort
+                      ? breakpoints.ipadPort
+                      : imageWidth
+                  )
                   .height(height)
                   .quality(90)
                   .auto('format')
@@ -132,7 +153,11 @@ const SanityBgImage = ({ src, height, width, children }) => {
           image={
             loaded && isVisible
               ? urlFor(src)
-                  .width(imageWidth > 480 ? 480 : imageWidth)
+                  .width(
+                    imageWidth > breakpoints.mobile
+                      ? breakpoints.mobile
+                      : imageWidth
+                  )
                   .height(height)
                   .quality(90)
                   .auto('format')
