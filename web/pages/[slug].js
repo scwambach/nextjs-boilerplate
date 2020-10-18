@@ -1,28 +1,36 @@
 import sanityClient from '../client';
 import Layout from '../components/Layout';
+import ImageFeatures from '../components/pageComponents/ImageFeatures';
+import { Section } from '../styles/Section';
+import Wrapper from '../tools/Wrapper';
+import RichText from '../components/RichText';
+import HeroBanner from '../components/pageComponents/HeroBanner';
 
 const PageBuilder = ({ content, site }) => {
   return (
     <Layout page={content} site={site}>
-      {content ? (
-        <code>
-          <pre
-            style={{
-              fontFamily: 'monospace',
-              display: 'block',
-              padding: '50px',
-              color: '#88ffbf',
-              backgroundColor: 'black',
-              textAlign: 'left',
-              whiteSpace: 'pre-wrap',
-            }}
-          >
-            {JSON.stringify(content, null, '    ')}
-          </pre>
-        </code>
-      ) : (
-        '404 not found'
-      )}
+      {content
+        ? content.pageContent.map((component) => (
+            <>
+              {component._type === 'imageFeatures' && (
+                <ImageFeatures {...component} />
+              )}
+              {component._type === 'richText' && (
+                <Section>
+                  <Wrapper narrow>
+                    <RichText content={component.copy} />
+                  </Wrapper>
+                </Section>
+              )}
+              {component._type === 'heroBanner' && (
+                <HeroBanner
+                  {...component}
+                  mainImage={component.backgroundImage || content.mainImage}
+                />
+              )}
+            </>
+          ))
+        : '404 Page Not Found'}
     </Layout>
   );
 };

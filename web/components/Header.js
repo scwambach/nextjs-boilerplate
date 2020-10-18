@@ -9,13 +9,13 @@ import FaHamburger from '@meronex/icons/fa/FaHamburger';
 import GrClose from '@meronex/icons/gr/GrClose';
 
 const Header = () => {
-  const { logo, menuOpen, setMenuOpen } = useContext(LayoutContext);
+  const { settings, logo, menuOpen, setMenuOpen } = useContext(LayoutContext);
 
   return (
     <SHeader open={menuOpen}>
       <Link href="/">
         <a>
-          <img src={urlFor(logo).width(200)} />
+          <img alt={settings.title} src={urlFor(logo).width(200)} />
         </a>
       </Link>
       <nav>
