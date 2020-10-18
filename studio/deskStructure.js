@@ -92,7 +92,7 @@ export default () =>
         .title('Pages')
         .child(
           S.list()
-            .title('Pages')
+            .title('Page Types')
             .items([
               S.listItem()
                 .title('Home Page')
@@ -131,7 +131,7 @@ export default () =>
               S.listItem()
                 .title('Page Builder')
                 .schemaType('page')
-                .child(S.documentTypeList('page'))
+                .child(S.documentTypeList('page').title('Pages'))
                 .icon(MdBuild),
             ])
         )

@@ -7,14 +7,9 @@ export default {
   icon: FaImage,
   fields: [
     {
-      name: 'fullScreen',
-      title: 'Full Screen',
-      type: 'boolean',
-    },
-    {
-      title: 'Parallax',
-      name: 'parallax',
-      type: 'boolean',
+      title: 'Background Image',
+      name: 'backgroundImage',
+      type: 'image',
     },
     {
       title: 'Heading',
@@ -38,23 +33,6 @@ export default {
           type: 'link',
         },
       ],
-    },
-    {
-      name: 'logo',
-      title: 'Logo',
-      type: 'image',
-    },
-    {
-      title: 'Video URL',
-      name: 'videoUrl',
-      description: 'Choose either file or url for video.',
-      type: 'url',
-    },
-    {
-      title: 'Video File',
-      name: 'video',
-      description: 'Choose either file or url for video.',
-      type: 'file',
     },
   ],
   preview: {

@@ -82,56 +82,66 @@ const SanityBgImage = ({ src, height, width, children }) => {
 
   return (
     <div id={`bg_${imageId}`}>
-      {loaded && isVisible ? (
-        <>
-          <Desktop>
-            <SSanityBgImage
-              image={urlFor(src)
-                .width(imageWidth)
-                .height(height)
-                .quality(90)
-                .auto('format')}
-            >
-              {children}
-            </SSanityBgImage>
-          </Desktop>
-          <TabletLarge>
-            <SSanityBgImage
-              image={urlFor(src)
-                .width(imageWidth > 1024 ? 1024 : imageWidth)
-                .height(height)
-                .quality(90)
-                .auto('format')}
-            >
-              {children}
-            </SSanityBgImage>
-          </TabletLarge>
-          <TabletSmall>
-            <SSanityBgImage
-              image={urlFor(src)
-                .width(imageWidth > 768 ? 768 : imageWidth)
-                .height(height)
-                .quality(90)
-                .auto('format')}
-            >
-              {children}
-            </SSanityBgImage>
-          </TabletSmall>
-          <Mobile>
-            <SSanityBgImage
-              image={urlFor(src)
-                .width(imageWidth > 480 ? 480 : imageWidth)
-                .height(height)
-                .quality(90)
-                .auto('format')}
-            >
-              {children}
-            </SSanityBgImage>
-          </Mobile>
-        </>
-      ) : (
-        <SSanityBgImage image={lqip}>{children}</SSanityBgImage>
-      )}
+      <Desktop>
+        <SSanityBgImage
+          image={
+            loaded && isVisible
+              ? urlFor(src)
+                  .width(imageWidth)
+                  .height(height)
+                  .quality(90)
+                  .auto('format')
+              : lqip
+          }
+        >
+          {children}
+        </SSanityBgImage>
+      </Desktop>
+      <TabletLarge>
+        <SSanityBgImage
+          image={
+            loaded && isVisible
+              ? urlFor(src)
+                  .width(imageWidth > 1024 ? 1024 : imageWidth)
+                  .height(height)
+                  .quality(90)
+                  .auto('format')
+              : lqip
+          }
+        >
+          {children}
+        </SSanityBgImage>
+      </TabletLarge>
+      <TabletSmall>
+        <SSanityBgImage
+          image={
+            loaded && isVisible
+              ? urlFor(src)
+                  .width(imageWidth > 768 ? 768 : imageWidth)
+                  .height(height)
+                  .quality(90)
+                  .auto('format')
+              : lqip
+          }
+        >
+          {children}
+        </SSanityBgImage>
+      </TabletSmall>
+      <Mobile>
+        <SSanityBgImage
+          image={
+            loaded && isVisible
+              ? urlFor(src)
+                  .width(imageWidth > 480 ? 480 : imageWidth)
+                  .height(height)
+                  .quality(90)
+                  .auto('format')
+              : lqip
+          }
+        >
+          {children}
+        </SSanityBgImage>
+      </Mobile>
     </div>
   );
 };
@@ -143,4 +153,6 @@ export const SSanityBgImage = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 `;
