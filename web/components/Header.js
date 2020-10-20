@@ -62,6 +62,7 @@ const SHeader = styled.header`
   overflow-y: hidden;
   overflow-y: visible;
   position: relative;
+  z-index: 3;
 
   @media screen and (max-width: ${breakpoints.ipadPort - 1}px) {
     padding: 10px 30px;

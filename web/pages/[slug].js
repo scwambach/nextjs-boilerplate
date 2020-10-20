@@ -11,7 +11,7 @@ const PageBuilder = ({ content, site }) => {
     <Layout page={content} site={site}>
       {content
         ? content.pageContent.map((component) => (
-            <>
+            <React.Fragment key={component._key}>
               {component._type === 'imageFeatures' && (
                 <ImageFeatures {...component} />
               )}
@@ -28,7 +28,7 @@ const PageBuilder = ({ content, site }) => {
                   mainImage={component.backgroundImage || content.mainImage}
                 />
               )}
-            </>
+            </React.Fragment>
           ))
         : '404 Page Not Found'}
     </Layout>

@@ -8,7 +8,7 @@ const Wrapper = ({ children, narrow }) => {
 
 export default Wrapper;
 
-const SWrapper = styled.div`
+export const SWrapper = styled.div`
   width: 100%;
   padding: 0 30px;
   margin: 0 auto;

@@ -34,6 +34,11 @@ export default {
         },
       ],
     },
+    {
+      title: 'Vimeo Video ID',
+      name: 'vimeoVideoId',
+      type: 'string',
+    },
   ],
   preview: {
     select: {
