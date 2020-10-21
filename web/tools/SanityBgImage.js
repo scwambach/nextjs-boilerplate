@@ -96,7 +96,7 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
   return (
     <SSanityBgImage id={`bg_${imageId}`}>
       <Desktop>
-        <div
+        <BgImage
           image={
             loaded && isVisible
               ? urlFor(src)
@@ -108,10 +108,10 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
           }
         >
           {children}
-        </div>
+        </BgImage>
       </Desktop>
       <TabletLarge>
-        <div
+        <BgImage
           image={
             loaded && isVisible
               ? urlFor(src)
@@ -127,10 +127,10 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
           }
         >
           {children}
-        </div>
+        </BgImage>
       </TabletLarge>
       <TabletSmall>
-        <div
+        <BgImage
           image={
             loaded && isVisible
               ? urlFor(src)
@@ -146,10 +146,10 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
           }
         >
           {children}
-        </div>
+        </BgImage>
       </TabletSmall>
       <Mobile>
-        <div
+        <BgImage
           image={
             loaded && isVisible
               ? urlFor(src)
@@ -165,16 +165,16 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
           }
         >
           {children}
-        </div>
+        </BgImage>
       </Mobile>
       {loaded && isVisible && video && (
-        <div className="video-wrapper">
+        <BgImage className="video-wrapper">
           <iframe
             src={`https://player.vimeo.com/video/${video}?background=1&autoplay=1&loop=1&byline=0&title=0`}
             frameBorder="0"
             allowFullScreen
           ></iframe>
-        </div>
+        </BgImage>
       )}
     </SSanityBgImage>
   );
@@ -182,13 +182,13 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
 
 export default SanityBgImage;
 
-export const SSanityBgImage = styled.div`
-  > div {
-    background-image: url(${({ image }) => image});
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-in-out;
-  }
+export const SSanityBgImage = styled.div``;
+
+export const BgImage = styled.div`
+  background-image: url(${({ image }) => image});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 `;
