@@ -4,29 +4,7 @@ import styled from 'styled-components';
 import newRatio from './newRatio';
 import urlFor from '../js/urlFor';
 import { LayoutContext } from '../components/Layout';
-
-export const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 1024 });
-  return isDesktop ? children : null;
-};
-export const TabletLarge = ({ children }) => {
-  const isTablet = useMediaQuery({
-    minWidth: 768,
-    maxWidth: 1024,
-  });
-  return isTablet ? children : null;
-};
-export const TabletSmall = ({ children }) => {
-  const isTablet = useMediaQuery({
-    minWidth: 480,
-    maxWidth: 768,
-  });
-  return isTablet ? children : null;
-};
-export const Mobile = ({ children }) => {
-  const isMobile = useMediaQuery({ maxWidth: 480 });
-  return isMobile ? children : null;
-};
+import { breakpoints } from '../styles/settings';
 
 const SanityImage = ({ src, height, width, alt }) => {
   const { placeholders } = useContext(LayoutContext);
@@ -38,7 +16,23 @@ const SanityImage = ({ src, height, width, alt }) => {
   const imageId = ph._id;
   const dimensions = ph.dimensions;
   const lqip = ph.lqip;
-  const imageWidth = width || 1200;
+  const imageWidth = width || breakpoints.pageWidth;
+
+  const isDesktop = useMediaQuery({
+    query: `(min-width: ${breakpoints.ipadLand}px)`,
+  });
+
+  const isTablet = useMediaQuery({
+    query: `(min-width: ${breakpoints.ipadPort}px)`,
+  });
+
+  const isTabletSmall = useMediaQuery({
+    query: `(min-width: ${breakpoints.mobile}px)`,
+  });
+
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${breakpoints.mobile - 1}px)`,
+  });
 
   const imageCheck = (imageUrl) => {
     const srcImage = imageUrl;
@@ -56,12 +50,24 @@ const SanityImage = ({ src, height, width, alt }) => {
   };
 
   useEffect(() => {
+    let widthCheck = width || breakpoints.pageWidth;
+
+    if (
+      global.window.innerWidth >= breakpoints.ipadPort &&
+      global.window.innerWidth <= breakpoints.ipadLand
+    ) {
+      widthCheck = breakpoints.ipadLand;
+    } else if (
+      global.window.innerWidth >= breakpoints.mobile &&
+      global.window.innerWidth <= breakpoints.ipadPort
+    ) {
+      widthCheck = breakpoints.ipadPort;
+    } else if (global.window.innerWidth <= breakpoints.mobile) {
+      widthCheck = breakpoints.mobile;
+    }
+
     imageCheck(
-      urlFor(src)
-        .width(width || 1200)
-        .height(height)
-        .quality(90)
-        .auto('format')
+      urlFor(src).width(widthCheck).height(height).quality(90).auto('format')
     );
 
     const postListing = document.getElementById(`lqip_${imageId}`);
@@ -98,72 +104,34 @@ const SanityImage = ({ src, height, width, alt }) => {
         alt={alt || imageId}
       />
       {loaded && isVisible && (
-        <>
-          <Desktop>
-            <img
-              id={imageId}
-              classes={`image-loaded ${
-                loaded && isVisible ? 'ready' : 'loading'
-              }`}
-              src={urlFor(src)
-                .width(imageWidth)
-                .height(height)
-                .quality(90)
-                .auto('format')}
-              height={height || null}
-              width={imageWidth + 'px'}
-              alt={alt || imageId}
-            />
-          </Desktop>
-          <TabletLarge>
-            <img
-              id={imageId}
-              classes={`image-loaded ${
-                loaded && isVisible ? 'ready' : 'loading'
-              }`}
-              src={urlFor(src)
-                .width(imageWidth > 1024 ? 1024 : imageWidth)
-                .height(height)
-                .quality(90)
-                .auto('format')}
-              height={height || null}
-              width={imageWidth > 1024 ? 1024 + 'px' : imageWidth + 'px'}
-              alt={alt || imageId}
-            />
-          </TabletLarge>
-          <TabletSmall>
-            <img
-              id={imageId}
-              classes={`image-loaded ${
-                loaded && isVisible ? 'ready' : 'loading'
-              }`}
-              src={urlFor(src)
-                .width(imageWidth > 768 ? 768 : imageWidth)
-                .height(height)
-                .quality(90)
-                .auto('format')}
-              height={height || null}
-              width={imageWidth > 768 ? 768 + 'px' : imageWidth + 'px'}
-              alt={alt || imageId}
-            />
-          </TabletSmall>
-          <Mobile>
-            <img
-              id={imageId}
-              classes={`image-loaded ${
-                loaded && isVisible ? 'ready' : 'loading'
-              }`}
-              src={urlFor(src)
-                .width(imageWidth > 480 ? 480 : imageWidth)
-                .height(height)
-                .quality(90)
-                .auto('format')}
-              height={height || null}
-              width={imageWidth > 480 ? 480 + 'px' : imageWidth + 'px'}
-              alt={alt || imageId}
-            />
-          </Mobile>
-        </>
+        <img
+          id={imageId}
+          classes={`image-loaded ${loaded && isVisible ? 'ready' : 'loading'}`}
+          src={urlFor(src)
+            .width(
+              isDesktop
+                ? imageWidth
+                : isTablet
+                ? imageWidth > breakpoints.ipadLand
+                  ? breakpoints.ipadLand
+                  : imageWidth
+                : isTabletSmall
+                ? imageWidth > breakpoints.ipadPort
+                  ? breakpoints.ipadPort
+                  : imageWidth
+                : isMobile
+                ? imageWidth > breakpoints.mobile
+                  ? breakpoints.mobile
+                  : imageWidth
+                : imageWidth
+            )
+            .height(height)
+            .quality(90)
+            .auto('format')}
+          height={height || null}
+          width={imageWidth + 'px'}
+          alt={alt || imageId}
+        />
       )}
     </SSanityImage>
   );

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import RichText from '../RichText';
-import SanityBgImage, { BackgroundContainer } from '../../tools/SanityBgImage';
+import SanityBgImage, { SSanityBgImage } from '../../tools/SanityBgImage';
 import { breakpoints } from '../../styles/settings';
 import Wrapper from '../../tools/Wrapper';
 import LinkObject from '../../tools/LinkObject';
@@ -74,7 +74,7 @@ const SSingleFeature = styled.div`
     }
   }
 
-  ${BackgroundContainer} {
+  ${SSanityBgImage} {
     min-height: 600px;
   }
 `;

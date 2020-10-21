@@ -5,29 +5,6 @@ import urlFor from '../js/urlFor';
 import { LayoutContext } from '../components/Layout';
 import { breakpoints } from '../styles/settings';
 
-export const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: breakpoints.ipadLand });
-  return isDesktop ? children : null;
-};
-export const TabletLarge = ({ children }) => {
-  const isTablet = useMediaQuery({
-    minWidth: breakpoints.ipadPort,
-    maxWidth: breakpoints.ipadLand,
-  });
-  return isTablet ? children : null;
-};
-export const TabletSmall = ({ children }) => {
-  const isTablet = useMediaQuery({
-    minWidth: breakpoints.mobile,
-    maxWidth: breakpoints.ipadPort,
-  });
-  return isTablet ? children : null;
-};
-export const Mobile = ({ children }) => {
-  const isMobile = useMediaQuery({ maxWidth: breakpoints.mobile });
-  return isMobile ? children : null;
-};
-
 const SanityBgImage = ({ video, src, height, width, children }) => {
   const { placeholders } = useContext(LayoutContext);
 
@@ -38,6 +15,22 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
   const imageId = ph._id;
   const lqip = ph.lqip;
   const imageWidth = width || breakpoints.pageWidth;
+
+  const isDesktop = useMediaQuery({
+    query: `(min-width: ${breakpoints.ipadLand}px)`,
+  });
+
+  const isTablet = useMediaQuery({
+    query: `(min-width: ${breakpoints.ipadPort}px)`,
+  });
+
+  const isTabletSmall = useMediaQuery({
+    query: `(min-width: ${breakpoints.mobile}px)`,
+  });
+
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${breakpoints.mobile - 1}px)`,
+  });
 
   const imageCheck = (imageUrl) => {
     const srcImage = imageUrl;
@@ -94,79 +87,37 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
   });
 
   return (
-    <BackgroundContainer id={`bg_${imageId}`}>
-      <Desktop>
-        <SSanityBgImage
-          image={
-            loaded && isVisible
-              ? urlFor(src)
-                  .width(imageWidth)
-                  .height(height)
-                  .quality(90)
-                  .auto('format')
-              : lqip
-          }
-        >
-          {children}
-        </SSanityBgImage>
-      </Desktop>
-      <TabletLarge>
-        <SSanityBgImage
-          image={
-            loaded && isVisible
-              ? urlFor(src)
-                  .width(
-                    imageWidth > breakpoints.ipadLand
+    <div id={`bg_${imageId}`}>
+      <SSanityBgImage
+        image={
+          loaded && isVisible
+            ? urlFor(src)
+                .width(
+                  isDesktop
+                    ? imageWidth
+                    : isTablet
+                    ? imageWidth > breakpoints.ipadLand
                       ? breakpoints.ipadLand
                       : imageWidth
-                  )
-                  .height(height)
-                  .quality(90)
-                  .auto('format')
-              : lqip
-          }
-        >
-          {children}
-        </SSanityBgImage>
-      </TabletLarge>
-      <TabletSmall>
-        <SSanityBgImage
-          image={
-            loaded && isVisible
-              ? urlFor(src)
-                  .width(
-                    imageWidth > breakpoints.ipadPort
+                    : isTabletSmall
+                    ? imageWidth > breakpoints.ipadPort
                       ? breakpoints.ipadPort
                       : imageWidth
-                  )
-                  .height(height)
-                  .quality(90)
-                  .auto('format')
-              : lqip
-          }
-        >
-          {children}
-        </SSanityBgImage>
-      </TabletSmall>
-      <Mobile>
-        <SSanityBgImage
-          image={
-            loaded && isVisible
-              ? urlFor(src)
-                  .width(
-                    imageWidth > breakpoints.mobile
+                    : isMobile
+                    ? imageWidth > breakpoints.mobile
                       ? breakpoints.mobile
                       : imageWidth
-                  )
-                  .height(height)
-                  .quality(90)
-                  .auto('format')
-              : lqip
-          }
-        >
-          {children}
-        </SSanityBgImage>
-      </Mobile>
+                    : imageWidth
+                )
+                .height(height)
+                .quality(90)
+                .auto('format')
+            : lqip
+        }
+      >
+        {children}
+      </SSanityBgImage>
+
       {loaded && isVisible && video && (
         <div className="video-wrapper">
           <iframe
@@ -176,13 +127,11 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
           ></iframe>
         </div>
       )}
-    </BackgroundContainer>
+    </div>
   );
 };
 
 export default SanityBgImage;
-
-export const BackgroundContainer = styled.div``;
 
 export const SSanityBgImage = styled.div`
   background-image: url(${({ image }) => image});
