@@ -182,7 +182,9 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
 
 export default SanityBgImage;
 
-export const SSanityBgImage = styled.div``;
+export const SSanityBgImage = styled.div`
+  position: relative;
+`;
 
 export const BgImage = styled.div`
   background-image: url(${({ image }) => image});
@@ -191,4 +193,9 @@ export const BgImage = styled.div`
   background-position: center;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `;
