@@ -94,9 +94,9 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
   });
 
   return (
-    <SSanityBgImage id={`bg_${imageId}`}>
+    <BackgroundContainer id={`bg_${imageId}`}>
       <Desktop>
-        <BgImage
+        <SSanityBgImage
           image={
             loaded && isVisible
               ? urlFor(src)
@@ -108,10 +108,10 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
           }
         >
           {children}
-        </BgImage>
+        </SSanityBgImage>
       </Desktop>
       <TabletLarge>
-        <BgImage
+        <SSanityBgImage
           image={
             loaded && isVisible
               ? urlFor(src)
@@ -127,10 +127,10 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
           }
         >
           {children}
-        </BgImage>
+        </SSanityBgImage>
       </TabletLarge>
       <TabletSmall>
-        <BgImage
+        <SSanityBgImage
           image={
             loaded && isVisible
               ? urlFor(src)
@@ -146,10 +146,10 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
           }
         >
           {children}
-        </BgImage>
+        </SSanityBgImage>
       </TabletSmall>
       <Mobile>
-        <BgImage
+        <SSanityBgImage
           image={
             loaded && isVisible
               ? urlFor(src)
@@ -165,37 +165,30 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
           }
         >
           {children}
-        </BgImage>
+        </SSanityBgImage>
       </Mobile>
       {loaded && isVisible && video && (
-        <BgImage className="video-wrapper">
+        <div className="video-wrapper">
           <iframe
             src={`https://player.vimeo.com/video/${video}?background=1&autoplay=1&loop=1&byline=0&title=0`}
             frameBorder="0"
             allowFullScreen
           ></iframe>
-        </BgImage>
+        </div>
       )}
-    </SSanityBgImage>
+    </BackgroundContainer>
   );
 };
 
 export default SanityBgImage;
 
-export const SSanityBgImage = styled.div`
-  position: relative;
-`;
+export const BackgroundContainer = styled.div``;
 
-export const BgImage = styled.div`
+export const SSanityBgImage = styled.div`
   background-image: url(${({ image }) => image});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 `;

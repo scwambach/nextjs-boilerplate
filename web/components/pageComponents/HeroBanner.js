@@ -1,5 +1,5 @@
 import React from 'react';
-import SanityBgImage, { SSanityBgImage } from '../../tools/SanityBgImage';
+import SanityBgImage, { BackgroundContainer } from '../../tools/SanityBgImage';
 import RichText from '../RichText';
 import Wrapper, { SWrapper } from '../../tools/Wrapper';
 import styled from 'styled-components';
@@ -36,7 +36,7 @@ const SHeroBanner = styled.section`
   color: ${colors.white};
   position: relative;
 
-  ${SSanityBgImage} {
+  ${BackgroundContainer} {
     padding: 80px 0;
 
     @media screen and (min-width: ${breakpoints.ipadPort}px) {
