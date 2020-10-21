@@ -95,16 +95,6 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
 
   return (
     <div id={`bg_${imageId}`}>
-      {loaded && isVisible && video && (
-        <div className="video-wrapper">
-          <iframe
-            src={`https://player.vimeo.com/video/${video}?background=1&autoplay=1&loop=1&byline=0&title=0`}
-            frameBorder="0"
-            allowFullScreen
-          ></iframe>
-        </div>
-      )}
-
       <Desktop>
         <SSanityBgImage
           image={
@@ -177,6 +167,15 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
           {children}
         </SSanityBgImage>
       </Mobile>
+      {loaded && isVisible && video && (
+        <div className="video-wrapper">
+          <iframe
+            src={`https://player.vimeo.com/video/${video}?background=1&autoplay=1&loop=1&byline=0&title=0`}
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+        </div>
+      )}
     </div>
   );
 };
