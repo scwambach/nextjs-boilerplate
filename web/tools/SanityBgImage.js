@@ -94,9 +94,9 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
   });
 
   return (
-    <div id={`bg_${imageId}`}>
+    <SSanityBgImage id={`bg_${imageId}`}>
       <Desktop>
-        <SSanityBgImage
+        <div
           image={
             loaded && isVisible
               ? urlFor(src)
@@ -108,10 +108,10 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
           }
         >
           {children}
-        </SSanityBgImage>
+        </div>
       </Desktop>
       <TabletLarge>
-        <SSanityBgImage
+        <div
           image={
             loaded && isVisible
               ? urlFor(src)
@@ -127,10 +127,10 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
           }
         >
           {children}
-        </SSanityBgImage>
+        </div>
       </TabletLarge>
       <TabletSmall>
-        <SSanityBgImage
+        <div
           image={
             loaded && isVisible
               ? urlFor(src)
@@ -146,10 +146,10 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
           }
         >
           {children}
-        </SSanityBgImage>
+        </div>
       </TabletSmall>
       <Mobile>
-        <SSanityBgImage
+        <div
           image={
             loaded && isVisible
               ? urlFor(src)
@@ -165,7 +165,7 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
           }
         >
           {children}
-        </SSanityBgImage>
+        </div>
       </Mobile>
       {loaded && isVisible && video && (
         <div className="video-wrapper">
@@ -176,17 +176,19 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
           ></iframe>
         </div>
       )}
-    </div>
+    </SSanityBgImage>
   );
 };
 
 export default SanityBgImage;
 
 export const SSanityBgImage = styled.div`
-  background-image: url(${({ image }) => image});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
+  > div {
+    background-image: url(${({ image }) => image});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+  }
 `;
