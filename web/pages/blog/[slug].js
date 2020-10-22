@@ -1,25 +1,25 @@
 import sanityClient from '../../client';
 import Layout from '../../components/Layout';
+import HeroBanner from '../../components/pageComponents/HeroBanner';
+import RichText from '../../components/RichText';
+import { Section } from '../../styles/Section';
+import Wrapper from '../../tools/Wrapper';
 
 const Post = ({ content, site }) => {
   return (
     <Layout page={content} site={site}>
       {content ? (
-        <code>
-          <pre
-            style={{
-              fontFamily: 'monospace',
-              display: 'block',
-              padding: '50px',
-              color: '#88ffbf',
-              backgroundColor: 'black',
-              textAlign: 'left',
-              whiteSpace: 'pre-wrap',
-            }}
-          >
-            {JSON.stringify(content, null, '    ')}
-          </pre>
-        </code>
+        <>
+          <HeroBanner post={content} mainImage={content.mainImage} />
+          <Section>
+            <Wrapper narrow>
+              {content.categories.map((category) => (
+                <p>{}</p>
+              ))}
+              <RichText content={content.body} />
+            </Wrapper>
+          </Section>
+        </>
       ) : (
         '404 not found'
       )}

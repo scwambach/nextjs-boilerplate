@@ -6,15 +6,20 @@ import styled from 'styled-components';
 import { colors, breakpoints } from '../../styles/settings';
 import LinkObject from '../../tools/LinkObject';
 import { Button, SectionStyle } from '../../styles/bits';
+import dateToNiceString from '../../js/dateToNiceString';
 
 const HeroBanner = (props) => {
   return (
     <SHeroBanner>
       <SanityBgImage src={props.mainImage} video={props.vimeoVideoId}>
-        <Wrapper>
-          {props.heading && <h1>{props.heading}</h1>}
+        <Wrapper narrow>
+          {(props.heading || props.post) && (
+            <h1>{props.heading || props.post.title}</h1>
+          )}
           {props.copy && <RichText content={props.copy} />}
-
+          {props.post && (
+            <p>{dateToNiceString(new Date(props.post.publishedAt))}</p>
+          )}
           {props.links && (
             <>
               {props.links.map((link) => (
