@@ -48,31 +48,34 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
   };
 
   useEffect(() => {
-    let widthCheck = width || breakpoints.pageWidth;
-
-    if (
-      global.window.innerWidth >= breakpoints.ipadPort &&
-      global.window.innerWidth <= breakpoints.ipadLand
-    ) {
-      widthCheck = breakpoints.ipadLand;
-    } else if (
-      global.window.innerWidth >= breakpoints.mobile &&
-      global.window.innerWidth <= breakpoints.ipadPort
-    ) {
-      widthCheck = breakpoints.ipadPort;
-    } else if (global.window.innerWidth <= breakpoints.mobile) {
-      widthCheck = breakpoints.mobile;
-    }
-
-    imageCheck(
-      urlFor(src).width(widthCheck).height(height).quality(90).auto('format')
-    );
-
     const postListing = document.getElementById(`bg_${imageId}`);
 
     function handler(entries) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          let widthCheck = width || breakpoints.pageWidth;
+
+          if (
+            global.window.innerWidth >= breakpoints.ipadPort &&
+            global.window.innerWidth <= breakpoints.ipadLand
+          ) {
+            widthCheck = breakpoints.ipadLand;
+          } else if (
+            global.window.innerWidth >= breakpoints.mobile &&
+            global.window.innerWidth <= breakpoints.ipadPort
+          ) {
+            widthCheck = breakpoints.ipadPort;
+          } else if (global.window.innerWidth <= breakpoints.mobile) {
+            widthCheck = breakpoints.mobile;
+          }
+
+          imageCheck(
+            urlFor(src)
+              .width(widthCheck)
+              .height(height)
+              .quality(90)
+              .auto('format')
+          );
           setIsVisible(true);
         }
       });
@@ -82,6 +85,7 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
       const observer = new IntersectionObserver(handler);
       observer.observe(postListing);
     } else {
+      setLoaded(true);
       setIsVisible(true);
     }
   });
