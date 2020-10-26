@@ -1,27 +1,19 @@
-import sanityClient from '../../client';
-import Layout from '../../components/Layout';
-import HeroBanner from '../../components/pageComponents/HeroBanner';
-import RichText from '../../components/RichText';
-import { Section } from '../../styles/Section';
-import Wrapper from '../../tools/Wrapper';
+import sanityClient from '../client';
+import Layout from '../components/Layout';
+import PageContent from '../components/docTypes/PageContent';
+import PostContent from '../components/docTypes/PostContent';
 
-const Post = ({ content, site }) => {
+const PageBuilder = ({ content, site }) => {
   return (
     <Layout page={content} site={site}>
       {content ? (
-        <>
-          <HeroBanner post={content} mainImage={content.mainImage} />
-          <Section>
-            <Wrapper narrow>
-              {content.categories.map((category) => (
-                <p>{}</p>
-              ))}
-              <RichText content={content.body} />
-            </Wrapper>
-          </Section>
-        </>
+        content._type === 'page' ? (
+          <PageContent {...content} />
+        ) : (
+          <PostContent {...content} />
+        )
       ) : (
-        '404 not found'
+        '404 Page Not Found'
       )}
     </Layout>
   );
@@ -44,10 +36,10 @@ export async function getServerSideProps(context) {
       },
       "references": *[references(^._id)]
   }`,
-    { slug: slug }
+    { slug: `${slug.join('/')}` }
   );
 
   return { props: content };
 }
 
-export default Post;
+export default PageBuilder;
