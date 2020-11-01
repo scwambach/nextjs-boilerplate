@@ -22,6 +22,7 @@ const AboutPage = ({ content, site }) => {
 };
 
 export async function getServerSideProps(context) {
+  const { slug = '' } = context.query;
   const content = await sanityClient.fetch(
     `*[_type == "aboutPage"][0]{
       "content": *[_type == "aboutPage"][0],
@@ -37,6 +38,13 @@ export async function getServerSideProps(context) {
       },
     }`
   );
+
+  if (slug[0] === 'admin' || slug[0] === 'login' || slug[0] === 'studio') {
+    context.res.writeHead(307, {
+      Location: 'https://scw-starter.sanity.studio/',
+    });
+    context.res.end();
+  }
 
   return { props: content };
 }

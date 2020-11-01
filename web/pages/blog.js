@@ -1,20 +1,19 @@
-import sanityClient from '../client';
+import React from 'react';
 import Layout from '../components/Layout';
-import PageContent from '../components/docTypes/PageContent';
-import PostContent from '../components/docTypes/PostContent';
+import sanityClient from '../client';
+import Link from 'next/link';
+import SanityExcerpt from '../components/SanityExcerpt';
+import Wrapper from '../tools/Wrapper';
+import Post from '../components/Post';
 
-const PageBuilder = ({ content, site }) => {
+const BlogPage = ({ content, site }) => {
   return (
-    <Layout page={content} site={site}>
-      {content ? (
-        content._type === 'page' ? (
-          <PageContent {...content} />
-        ) : (
-          <PostContent {...content} />
-        )
-      ) : (
-        '404 Page Not Found'
-      )}
+    <Layout page={content} staticTitle="Blog" site={site}>
+      <Wrapper>
+        {content.map((post) => (
+          <Post key={post._id} {...post} />
+        ))}
+      </Wrapper>
     </Layout>
   );
 };
@@ -22,8 +21,8 @@ const PageBuilder = ({ content, site }) => {
 export async function getServerSideProps(context) {
   const { slug = '' } = context.query;
   const content = await sanityClient.fetch(
-    `*[slug.current == $slug][0]{
-      "content": *[slug.current == $slug][0],
+    `*[_type == "posts"][0]{
+      "content": *[_type == "post"],
       "site": {
         "settings":  *[_type == "siteSettings"][0],
         "menus": *[_type == "menu"],
@@ -34,9 +33,7 @@ export async function getServerSideProps(context) {
           "dimensions": metadata.dimensions
         }
       },
-      "references": *[references(^._id)]
-  }`,
-    { slug: `${slug.join('/')}` }
+    }`
   );
 
   if (slug[0] === 'admin' || slug[0] === 'login' || slug[0] === 'studio') {
@@ -49,4 +46,4 @@ export async function getServerSideProps(context) {
   return { props: content };
 }
 
-export default PageBuilder;
+export default BlogPage;
