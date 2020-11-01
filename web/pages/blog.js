@@ -22,7 +22,7 @@ export async function getServerSideProps(context) {
   const { slug = '' } = context.query;
   const content = await sanityClient.fetch(
     `*[_type == "posts"][0]{
-      "content": *[_type == "post"],
+      "content": *[_type == "post"] | order(publishedAt desc),
       "site": {
         "settings":  *[_type == "siteSettings"][0],
         "menus": *[_type == "menu"],

@@ -1,6 +1,7 @@
 import React from 'react';
 import SanityExcerpt from './SanityExcerpt';
 import Link from 'next/link';
+import dayjs from 'dayjs';
 
 const Post = (post) => {
   return (
@@ -10,6 +11,7 @@ const Post = (post) => {
       </div>
       <div className="copy">
         <h2>{post.title}</h2>
+        {dayjs(post.publishedAt).format('MMMM D, YYYY')}
         <SanityExcerpt content={post.body} />
         <Link href={`/${post.slug.current}`}>
           <a>Read More</a>
@@ -23,6 +25,7 @@ export default Post;
 
 import styled from 'styled-components';
 import SanityImage from '../tools/SanityImage';
+import dateToNiceString from '../js/dateToNiceString';
 
 const SPost = styled.div`
   display: flex;
