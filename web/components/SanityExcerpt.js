@@ -4,8 +4,6 @@ const Excerpt = ({ content }) => {
   const truncString = (contentArr) => {
     const newString = [];
 
-    console.log(contentArr);
-
     contentArr.forEach((block) => {
       if (block.style === 'normal') {
         block.children.forEach((textObject) => {
