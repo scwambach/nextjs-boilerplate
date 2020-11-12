@@ -3,7 +3,7 @@ import React from 'react';
 const FourOhFour = () => {
   return (
     <>
-      <h1>404 Page Not Foudn</h1>
+      <h1>404&nbsp;Page Not Foudn</h1>
     </>
   );
 };
