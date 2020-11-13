@@ -44,5 +44,7 @@
     "sanity-plugin-tabs": "^2.0.0",
     "sweetalert2": "^10.5.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@sanity/cli": "^2.0.9"
+  }
 }
