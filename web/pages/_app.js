@@ -6,7 +6,14 @@ import { colors } from '../styles/settings';
 import sanityClient from '../client';
 export const AppContext = React.createContext();
 
-function MyApp({ Component, pageProps, settings, menus, placeholders }) {
+function MyApp({
+  Component,
+  pageProps,
+  settings,
+  menus,
+  placeholders,
+  events,
+}) {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <AppContext.Provider
@@ -14,6 +21,7 @@ function MyApp({ Component, pageProps, settings, menus, placeholders }) {
         menuOpen,
         setMenuOpen,
         settings,
+        events,
         logo: settings.mainLogo,
         menus,
         placeholders,
@@ -39,6 +47,8 @@ MyApp.getInitialProps = async (appContext) => {
 
   const content = await sanityClient.fetch(
     `*[_type == "siteSettings"][0]{
+      "posts": *[_type == "post"] | order(publishedAt desc),
+      "events": *[_type == "event"],
       "settings":  *[_type == "siteSettings"][0],
       "menus": *[_type == "menu"],
       "placeholders": *[_type == "sanity.imageAsset"] {

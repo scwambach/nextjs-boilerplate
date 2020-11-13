@@ -3,6 +3,8 @@ import Layout from '../components/Layout';
 import sanityClient from '../client';
 import Wrapper from '../tools/Wrapper';
 import Post from '../components/Post';
+import styled from 'styled-components';
+import { Button } from '../styles/bits';
 
 const BlogPage = ({ content, site }) => {
   const [loadNum, setLoadNum] = useState(5);
@@ -49,9 +51,6 @@ export async function getServerSideProps(context) {
 }
 
 export default BlogPage;
-
-import styled from 'styled-components';
-import { Button } from '../styles/bits';
 
 const BlogLayout = styled.section`
   padding: 100px 0;

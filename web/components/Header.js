@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import urlFor from '../js/urlFor';
 import Link from 'next/link';
 import styled from 'styled-components';
