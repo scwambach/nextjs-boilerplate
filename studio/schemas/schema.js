@@ -26,6 +26,7 @@ import homePage from './docTypes/homePage';
 import aboutPage from './docTypes/aboutPage';
 import staticHeroBanner from './components/staticHeroBanner';
 import menu from './docTypes/menu';
+import imageGallery from './components/imageGallery';
 
 export default createSchema({
   name: 'default',
@@ -47,6 +48,7 @@ export default createSchema({
     richText,
     imageFeatures,
     heroBanner,
+    imageGallery,
     blockContent,
     simpleContent,
     minimalContent,

@@ -10,6 +10,7 @@ export const Button = css`
   transition-duration: 0.3s;
   box-shadow: 0 0;
   font-size: 0.8em;
+  text-align: center;
 
   &:hover {
     @media screen and (min-width: ${breakpoints.ipadLand}px) {
@@ -31,4 +32,11 @@ export const SectionStyle = css`
   @media screen and (max-width: ${breakpoints.ipadPort - 1}px) {
     margin: 20px 0;
   }
+`;
+
+export const absoluteCenter = css`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;

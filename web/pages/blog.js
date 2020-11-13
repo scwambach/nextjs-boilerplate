@@ -1,19 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import sanityClient from '../client';
-import Link from 'next/link';
-import SanityExcerpt from '../components/SanityExcerpt';
 import Wrapper from '../tools/Wrapper';
 import Post from '../components/Post';
 
 const BlogPage = ({ content, site }) => {
+  const [loadNum, setLoadNum] = useState(5);
   return (
     <Layout page={content} staticTitle="Blog" site={site}>
-      <Wrapper>
-        {content.map((post) => (
-          <Post key={post._id} {...post} />
-        ))}
-      </Wrapper>
+      <BlogLayout>
+        <Wrapper>
+          {content.slice(0, loadNum).map((post) => (
+            <Post key={post._id} {...post} />
+          ))}
+          {content.length >= loadNum && (
+            <a
+              href={null}
+              className="load-more"
+              onClick={() => {
+                setLoadNum(loadNum + 5);
+              }}
+            >
+              Load More
+            </a>
+          )}
+        </Wrapper>
+      </BlogLayout>
     </Layout>
   );
 };
@@ -47,3 +59,17 @@ export async function getServerSideProps(context) {
 }
 
 export default BlogPage;
+
+import styled from 'styled-components';
+import { Button } from '../styles/bits';
+
+const BlogLayout = styled.section`
+  padding: 100px 0;
+
+  .load-more {
+    ${Button};
+    display: block;
+    max-width: 200px;
+    margin: 100px auto 0;
+  }
+`;

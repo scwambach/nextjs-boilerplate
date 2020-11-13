@@ -4,6 +4,7 @@ import { Section } from '../../styles/Section';
 import Wrapper from '../../tools/Wrapper';
 import RichText from '../RichText';
 import HeroBanner from '../pageComponents/HeroBanner';
+import ImageGallery from '../pageComponents/ImageGallery';
 
 const PageContent = (content) => {
   return content.pageContent.map((component) => (
@@ -22,6 +23,7 @@ const PageContent = (content) => {
           mainImage={component.backgroundImage || content.mainImage}
         />
       )}
+      {component._type === 'imageGallery' && <ImageGallery {...component} />}
     </React.Fragment>
   ));
 };

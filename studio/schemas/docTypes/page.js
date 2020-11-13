@@ -40,6 +40,7 @@ export default {
         { type: 'heroBanner' },
         { type: 'richText' },
         { type: 'imageFeatures' },
+        { type: 'imageGallery' },
       ],
     },
     {
