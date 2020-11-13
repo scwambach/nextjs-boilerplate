@@ -17,6 +17,7 @@ const hiddenTypes = [
   'event',
   'menu',
 ];
+//
 
 const PreviewModule = ({ url }) => {
   return (
