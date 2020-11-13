@@ -25,16 +25,6 @@ export async function getServerSideProps(context) {
   const content = await sanityClient.fetch(
     `*[_type == "homePage"][0]{
       "content": *[_type == "homePage"][0],
-      "site": {
-        "settings":  *[_type == "siteSettings"][0],
-        "menus": *[_type == "menu"],
-        "placeholders": *[_type == "sanity.imageAsset"] {
-          "_id": _id,
-          "lqip": metadata.lqip,
-          "palette": metadata.palette,
-          "dimensions": metadata.dimensions
-        }
-      },
     }`
   );
 

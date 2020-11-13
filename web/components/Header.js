@@ -1,15 +1,15 @@
 import React, { useContext, useState } from 'react';
 import urlFor from '../js/urlFor';
-import { LayoutContext } from './Layout';
 import Link from 'next/link';
 import styled from 'styled-components';
 import Menu from './Menu';
 import { colors, breakpoints } from '../styles/settings';
 import FaHamburger from '@meronex/icons/fa/FaHamburger';
 import GrClose from '@meronex/icons/gr/GrClose';
+import { AppContext } from '../pages/_app';
 
 const Header = () => {
-  const { settings, logo, menuOpen, setMenuOpen } = useContext(LayoutContext);
+  const { settings, logo, menuOpen, setMenuOpen } = useContext(AppContext);
 
   return (
     <SHeader open={menuOpen}>

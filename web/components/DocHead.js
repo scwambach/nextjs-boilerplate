@@ -1,33 +1,39 @@
 import Head from 'next/head';
 import urlFor from '../js/urlFor';
+import { useContext } from 'react';
+import { AppContext } from '../pages/_app';
 
-const DocHead = ({ page, site, staticTitle }) => {
+const DocHead = ({ page, staticTitle }) => {
+  const { settings } = useContext(AppContext);
   return (
     <Head>
       <title>
         {page
           ? page.title
-            ? `${page.title} | ${site.title}`
+            ? `${page.title} | ${settings.title}`
             : staticTitle
-            ? `${staticTitle} | ${site.title}`
-            : site.title
-          : `404 Page Not Found | ${site.title}`}
+            ? `${staticTitle} | ${settings.title}`
+            : settings.title
+          : `404 Page Not Found | ${settings.title}`}
       </title>
-      <link rel="icon" href={urlFor(site.favicon).width(600).quality(100)} />
+      <link
+        rel="icon"
+        href={urlFor(settings.favicon).width(600).quality(100)}
+      />
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
       <meta
         property="og:image"
-        content={urlFor(page ? page.mainImage : site.siteImage)
+        content={urlFor(page ? page.mainImage : settings.siteImage)
           .width(600)
           .quality(100)
           .auto('format')}
       />
       <meta
         property="og:image:secure_url"
-        content={urlFor(page ? page.mainImage : site.siteImage)
+        content={urlFor(page ? page.mainImage : settings.siteImage)
           .width(600)
           .quality(100)
           .auto('format')}
@@ -38,12 +44,12 @@ const DocHead = ({ page, site, staticTitle }) => {
         content={
           page
             ? page.title !== 'Home'
-              ? `${page.title} | ${site.title}`
-              : site.title
-            : `404 Page Not Found | ${site.title}`
+              ? `${page.title} | ${settings.title}`
+              : settings.title
+            : `404 Page Not Found | ${settings.title}`
         }
       />
-      <meta property="og:site_name" content={site.title} />
+      <meta property="og:site_name" content={settings.title} />
     </Head>
   );
 };

@@ -5,30 +5,15 @@ import Footer from './Footer';
 import GlobalStyle from '../styles/globalStyles';
 export const LayoutContext = React.createContext();
 
-const Layout = ({
-  page,
-  staticTitle,
-  site: { menus, settings, placeholders },
-  children,
-}) => {
-  const [menuOpen, setMenuOpen] = useState(false);
+const Layout = ({ page, staticTitle, children }) => {
   return (
-    <LayoutContext.Provider
-      value={{
-        menus,
-        menuOpen,
-        setMenuOpen,
-        settings,
-        logo: settings.mainLogo,
-        placeholders: placeholders,
-      }}
-    >
-      <DocHead page={page} staticTitle={staticTitle} site={settings} />
+    <>
+      <DocHead page={page} staticTitle={staticTitle} />
       <GlobalStyle />
       <Header />
       <main>{children}</main>
       <Footer />
-    </LayoutContext.Provider>
+    </>
   );
 };
 

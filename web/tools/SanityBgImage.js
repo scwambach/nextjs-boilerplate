@@ -2,11 +2,11 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
 import urlFor from '../js/urlFor';
-import { LayoutContext } from '../components/Layout';
 import { breakpoints } from '../styles/settings';
+import { AppContext } from '../pages/_app';
 
 const SanityBgImage = ({ video, src, height, width, children }) => {
-  const { placeholders } = useContext(LayoutContext);
+  const { placeholders } = useContext(AppContext);
 
   const [isVisible, setIsVisible] = useState(false);
   const [loaded, setLoaded] = useState(false);

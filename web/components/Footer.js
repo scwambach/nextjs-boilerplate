@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { LayoutContext } from './Layout';
 import { colors } from '../styles/settings';
+import { AppContext } from '../pages/_app';
 
 const Footer = () => {
-  const { settings } = useContext(LayoutContext);
+  const { settings } = useContext(AppContext);
   const year = new Date().getFullYear();
   return (
     <SFooter>
