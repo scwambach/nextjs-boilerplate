@@ -8,8 +8,8 @@ const DocHead = ({ page, staticTitle }) => {
   return (
     <Head>
       <title>
-        {page
-          ? page.title
+        {staticTitle || page
+          ? page
             ? `${page.title} | ${settings.title}`
             : staticTitle
             ? `${staticTitle} | ${settings.title}`
