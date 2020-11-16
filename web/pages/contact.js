@@ -5,7 +5,7 @@ import Wrapper from '../tools/Wrapper';
 
 const ContactPage = () => {
   return (
-    <Layout staticTitle="Contact">
+    <Layout page staticTitle="Contact">
       <Wrapper narrow>
         <ContactForm />
       </Wrapper>

@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 
 const events = () => {
   return (
-    <Layout staticTitle="Events">
+    <Layout page staticTitle="Events">
       <EventListing />
     </Layout>
   );

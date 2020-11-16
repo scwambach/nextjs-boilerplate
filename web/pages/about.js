@@ -7,9 +7,9 @@ import RichText from '../components/RichText';
 import ImageFeatures from '../components/pageComponents/ImageFeatures';
 import { Section } from '../styles/Section';
 
-const AboutPage = ({ content, site }) => {
+const AboutPage = ({ content }) => {
   return (
-    <Layout page={content} staticTitle="About" site={site}>
+    <Layout page staticTitle="About">
       <HeroBanner {...content.staticHeroBanner} mainImage={content.mainImage} />
       <Section>
         <Wrapper narrow>

@@ -8,7 +8,7 @@ import { Section } from '../styles/Section';
 
 const Index = ({ site, content }) => {
   return (
-    <Layout page={content} site={site}>
+    <Layout page site={site}>
       <HeroBanner {...content.staticHeroBanner} mainImage={content.mainImage} />
       <Section>
         <Wrapper narrow>

@@ -9,7 +9,7 @@ import { Button } from '../styles/bits';
 const BlogPage = ({ content, site }) => {
   const [loadNum, setLoadNum] = useState(5);
   return (
-    <Layout page={content} staticTitle="Blog" site={site}>
+    <Layout page staticTitle="Blog" site={site}>
       <BlogLayout>
         <Wrapper>
           {content.slice(0, loadNum).map((post) => (
