@@ -13,6 +13,13 @@ export default {
       },
     },
     {
+      title: 'Video',
+      name: 'video',
+      description:
+        'Retrieve the YouTube ID "https://www.youtube.com/watch?v=YOUTUBE_ID_IS_HERE"',
+      type: 'string',
+    },
+    {
       title: 'Heading',
       name: 'heading',
       type: 'string',

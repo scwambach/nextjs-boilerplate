@@ -1,22 +1,44 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import RichText from '../RichText';
 import SanityBgImage, { SSanityBgImage } from '../../tools/SanityBgImage';
-import { breakpoints } from '../../styles/settings';
+import { breakpoints, colors } from '../../styles/settings';
 import Wrapper from '../../tools/Wrapper';
 import LinkObject from '../../tools/LinkObject';
 import { SectionStyle } from '../../styles/bits';
+import FdPlayCircle from '@meronex/icons/fd/FdPlayCircle';
+import YouTubeVideo, { SYouTubeVideo } from '../../tools/YouTubeVideo';
 
 export const ImageFeatureContext = React.createContext();
 
 const SingleFeature = (props) => {
   const { contained, reverse } = useContext(ImageFeatureContext);
+  const [toggleVideo, setToggleVideo] = useState(false);
   return (
     <SSingleFeature
       contained={contained}
       reverse={reverse ? props.index % 2 === 0 : props.index % 2 !== 0}
     >
-      <SanityBgImage src={props.image} />
+      {props.video ? (
+        toggleVideo ? (
+          <YouTubeVideo title={props.heading} videoId={props.video} />
+        ) : (
+          <>
+            <SanityBgImage src={props.image}>
+              <a
+                href={null}
+                onClick={() => {
+                  setToggleVideo(true);
+                }}
+              >
+                <FdPlayCircle />
+              </a>
+            </SanityBgImage>
+          </>
+        )
+      ) : (
+        <SanityBgImage src={props.image} />
+      )}
       <div>
         <div>
           {props.heading && <h3>{props.heading}</h3>}
@@ -76,5 +98,31 @@ const SSingleFeature = styled.div`
 
   ${SSanityBgImage} {
     min-height: 600px;
+    position: relative;
+
+    > a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 150px;
+      color: ${colors.gray};
+      opacity: 0.6;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  ${SYouTubeVideo} {
+    padding-bottom: 27%;
   }
 `;
