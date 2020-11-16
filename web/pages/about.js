@@ -31,7 +31,7 @@ export async function getServerSideProps(context) {
 
   if (slug[0] === 'admin' || slug[0] === 'login' || slug[0] === 'studio') {
     context.res.writeHead(307, {
-      Location: 'https://scw-starter.sanity.studio/',
+      Location: 'https://cms.developersdonating.com/',
     });
     context.res.end();
   }
