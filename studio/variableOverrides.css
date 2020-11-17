@@ -76,3 +76,7 @@ span[class^='DefaultBadge-modules_default_2Hu-p'][title='Netlify Status'] img {
 [class^='DefaultDialog_inner'] {
   width: 100%;
 }
+
+[class^='header_paneActions'] > div:nth-child(3) {
+  display: none;
+}

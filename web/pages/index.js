@@ -1,21 +1,11 @@
 import sanityClient from '../client';
 import Layout from '../components/Layout';
-import Wrapper from '../tools/Wrapper';
-import HeroBanner from '../components/pageComponents/HeroBanner';
-import RichText from '../components/RichText';
-import ImageFeatures from '../components/pageComponents/ImageFeatures';
-import { Section } from '../styles/Section';
+import HomeContent from '../components/docTypes/HomeContent';
 
 const Index = ({ site, content }) => {
   return (
     <Layout page site={site}>
-      <HeroBanner {...content.staticHeroBanner} mainImage={content.mainImage} />
-      <Section>
-        <Wrapper narrow>
-          <RichText content={content.richText.copy} />
-        </Wrapper>
-      </Section>
-      <ImageFeatures {...content.imageFeatures} />
+      <HomeContent {...content} />
     </Layout>
   );
 };

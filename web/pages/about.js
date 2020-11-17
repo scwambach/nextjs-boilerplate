@@ -1,22 +1,12 @@
 import sanityClient from '../client';
 import React from 'react';
 import Layout from '../components/Layout';
-import HeroBanner from '../components/pageComponents/HeroBanner';
-import Wrapper from '../tools/Wrapper';
-import RichText from '../components/RichText';
-import ImageFeatures from '../components/pageComponents/ImageFeatures';
-import { Section } from '../styles/Section';
+import AboutContent from '../components/docTypes/AboutContent';
 
 const AboutPage = ({ content }) => {
   return (
     <Layout page staticTitle="About">
-      <HeroBanner {...content.staticHeroBanner} mainImage={content.mainImage} />
-      <Section>
-        <Wrapper narrow>
-          <RichText content={content.richText.copy} />
-        </Wrapper>
-      </Section>
-      <ImageFeatures {...content.imageFeatures} />
+      <AboutContent {...content} />
     </Layout>
   );
 };

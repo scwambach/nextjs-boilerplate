@@ -75,7 +75,7 @@ export const getDefaultDocumentNode = ({ schemaType }) => {
     return S.document().views([
       S.view.form().icon(EditIcon),
       S.view.component(WebPreview).title('Web Preview').icon(EyeIcon),
-      S.view.component(ListingPreview).title('Listing Preview').icon(EyeIcon),
+      // S.view.component(ListingPreview).title('Listing Preview').icon(EyeIcon),
     ]);
   } else if (schemaType !== 'event') {
     return S.document().views([

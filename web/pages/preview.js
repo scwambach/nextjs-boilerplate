@@ -4,44 +4,34 @@ import Head from 'next/head';
 import { previewClient } from '../client';
 import PageContent from '../components/docTypes/PageContent';
 import PostContent from '../components/docTypes/PostContent';
+import Wrapper from '../tools/Wrapper';
+import HomeContent from '../components/docTypes/HomeContent';
+import AboutContent from '../components/docTypes/AboutContent';
 
 const PreviewPage = ({ content }) => {
-  const contentId = content._id;
-  const isDraft = contentId.split('.')[0] === 'drafts';
-
-  const [liveData, setLiveData] = useState(content);
-
-  useEffect(() => {
-    const query = `*[_id == $id][0]{
-      "content": *[_id == $id][0],
-      "references": *[references(^._id)]
-     }`;
-
-    if (isDraft) {
-      const params = { id: contentId };
-
-      previewClient.listen(query, params).subscribe((update) => {
-        if (update.result && update.result.title) {
-          setLiveData(update.result);
-          console.log('result', liveData);
-        }
-      });
-    }
-  }, []);
-
   return (
     <Layout page staticTitle="Preview">
       <Head>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
-      {liveData ? (
-        liveData._type === 'page' ? (
-          <PageContent {...liveData} />
+      {content ? (
+        content._type === 'page' ? (
+          <PageContent {...content} />
+        ) : content._type === 'post' ? (
+          <PostContent {...content} />
+        ) : content._type === 'homePage' ? (
+          <HomeContent {...content} />
+        ) : content._type === 'aboutPage' ? (
+          <AboutContent {...content} />
         ) : (
-          <PostContent {...liveData} />
+          ''
         )
       ) : (
-        '404 Page Not Found'
+        <Wrapper narrow>
+          <p style={{ fontSize: '20px', padding: '100px 0' }}>
+            Sorry, nothing seems match the content type you're trying to view.
+          </p>
+        </Wrapper>
       )}
     </Layout>
   );
