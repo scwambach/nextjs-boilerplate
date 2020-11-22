@@ -10,7 +10,7 @@ export const colors = {
   black: '#2f2f2f',
   gray: '#eee',
   green: '#bada55',
-  blue: '#5d5df5',
+  blue: '#8A0094',
   shadow: '0 0 30px -15px #2f2f2f',
   blackOverlay: 'rgba(0, 0, 0, .6)',
 };
