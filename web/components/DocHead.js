@@ -25,15 +25,35 @@ const DocHead = ({ page, staticTitle }) => {
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
       <meta
+        name="description"
+        content={
+          page
+            ? page.pageDescription || settings.description
+            : settings.description
+        }
+      />
+      <meta
+        property="og:description"
+        content={
+          page
+            ? page.pageDescription || settings.description
+            : settings.description
+        }
+      />
+      <meta
         property="og:image"
-        content={urlFor(page ? page.mainImage : settings.siteImage)
+        content={urlFor(
+          page ? page.mainImage || settings.siteImage : settings.siteImage
+        )
           .width(600)
           .quality(100)
           .auto('format')}
       />
       <meta
         property="og:image:secure_url"
-        content={urlFor(page ? page.mainImage : settings.siteImage)
+        content={urlFor(
+          page ? page.mainImage || settings.siteImage : settings.siteImage
+        )
           .width(600)
           .quality(100)
           .auto('format')}
