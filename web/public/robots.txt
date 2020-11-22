@@ -1,0 +1,4 @@
+Sitemap: https://developersdonating.com/sitemap.xml
+
+User-agent: *
+Allow: /*
