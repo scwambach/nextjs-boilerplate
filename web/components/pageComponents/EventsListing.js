@@ -74,6 +74,7 @@ const Event = ({
           <strong>Where: </strong>
           <a
             target="_blank"
+            aria-label={`${street} ${cityStateZip}`}
             rel="noopener noreferrer"
             href={`https://www.google.com/maps/dir//${street} ${cityStateZip}`}
           >
@@ -81,7 +82,12 @@ const Event = ({
           </a>
         </p>
         <p>{description}</p>
-        <a href={link} target="_blank" rel="noopener noreferrer">
+        <a
+          href={link}
+          target="_blank"
+          aria-label="Learn More"
+          rel="noopener noreferrer"
+        >
           Learn More
         </a>
       </div>

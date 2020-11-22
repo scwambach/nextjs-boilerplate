@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <SHeader open={menuOpen}>
       <Link href="/">
-        <a>
+        <a aria-label={settings.title}>
           <img alt={settings.title} src={urlFor(logo).width(200)} />
         </a>
       </Link>

@@ -11,7 +11,12 @@ const Footer = () => {
       <p>&copy;{` ${settings.title} ${year}`}</p>
       <p>
         Site by{' '}
-        <a href="https://scottwamba.ch" target="_blank" rel="noreferrer">
+        <a
+          href="https://scottwamba.ch"
+          aria-label="Scott Wambach"
+          target="_blank"
+          rel="noreferrer"
+        >
           Scott Wambach
         </a>
       </p>

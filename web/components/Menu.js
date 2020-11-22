@@ -25,6 +25,7 @@ const Menu = ({ name }) => {
           >
             {newTab ? (
               <a
+                aria-label={copy}
                 onFocus={() => {
                   subItems ? setActiveIndex(index) : setActiveIndex(null);
                 }}
@@ -37,6 +38,7 @@ const Menu = ({ name }) => {
             ) : (
               <Link href={url}>
                 <a
+                  aria-label={copy}
                   onFocus={() => {
                     subItems ? setActiveIndex(index) : setActiveIndex(null);
                   }}
@@ -57,6 +59,7 @@ const Menu = ({ name }) => {
             )}
             {subItems && (
               <a
+                aria-label={copy}
                 className="toggle"
                 href={null}
                 onClick={() => {

@@ -15,7 +15,10 @@ const Post = (post) => {
         <h2>{post.title}</h2>
         {dayjs(post.publishedAt).format('MMMM D, YYYY')}
         <SanityExcerpt content={post.body} />
-        <Link href={`/${post.slug.current}`}>
+        <Link
+          aria-label={`Read More ${post.title}`}
+          href={`/${post.slug.current}`}
+        >
           <a>Read More</a>
         </Link>
       </div>
