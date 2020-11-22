@@ -7,7 +7,7 @@ import RichText from '../RichText';
 const PostContent = (content) => {
   return (
     <>
-      <HeroBanner post={content} mainImage={content.mainImage} />
+      <HeroBanner index={0} post={content} mainImage={content.mainImage} />
       <Section>
         <Wrapper narrow>
           <RichText content={content.body} />

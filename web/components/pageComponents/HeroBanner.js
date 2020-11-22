@@ -13,8 +13,10 @@ const HeroBanner = (props) => {
     <SHeroBanner>
       <SanityBgImage src={props.mainImage} video={props.vimeoVideoId}>
         <Wrapper narrow>
-          {(props.heading || props.post) && (
+          {(props.heading || props.post) && props.index === 0 ? (
             <h1>{props.heading || props.post.title}</h1>
+          ) : (
+            <h2>{props.heading || props.post.title}</h2>
           )}
           {props.copy && <RichText content={props.copy} />}
           {props.post && (

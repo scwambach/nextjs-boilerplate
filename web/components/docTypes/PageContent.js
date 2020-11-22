@@ -7,7 +7,7 @@ import HeroBanner from '../pageComponents/HeroBanner';
 import ImageGallery from '../pageComponents/ImageGallery';
 
 const PageContent = (content) => {
-  return content.pageContent.map((component) => (
+  return content.pageContent.map((component, index) => (
     <React.Fragment key={component._key}>
       {component._type === 'imageFeatures' && <ImageFeatures {...component} />}
       {component._type === 'richText' && (
@@ -20,6 +20,7 @@ const PageContent = (content) => {
       {component._type === 'heroBanner' && (
         <HeroBanner
           {...component}
+          index={index}
           mainImage={component.backgroundImage || content.mainImage}
         />
       )}

@@ -41,7 +41,7 @@ const SingleFeature = (props) => {
       )}
       <div>
         <div>
-          {props.heading && <h3>{props.heading}</h3>}
+          {props.heading && <h2>{props.heading}</h2>}
           {props.copy && <RichText content={props.copy} />}
           {props.link && <LinkObject key={props.link._key} {...props.link} />}
         </div>

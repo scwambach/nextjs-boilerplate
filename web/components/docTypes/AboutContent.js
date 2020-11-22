@@ -8,7 +8,11 @@ import ImageFeatures from '../pageComponents/ImageFeatures';
 const AboutContent = (content) => {
   return (
     <>
-      <HeroBanner {...content.staticHeroBanner} mainImage={content.mainImage} />
+      <HeroBanner
+        index={0}
+        {...content.staticHeroBanner}
+        mainImage={content.mainImage}
+      />
       <Section>
         <Wrapper narrow>
           <RichText content={content.richText.copy} />
