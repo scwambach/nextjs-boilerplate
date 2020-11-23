@@ -15,6 +15,7 @@
     "postinstall": "lerna bootstrap",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "lerna run start --parallel",
+    "backup": "curl https://k702ll7a.api.sanity.io/v1/data/export/production/ > backup.ndjson",
     "sanity-deploy": "cd studio && yarn deployall && cd .."
   },
   "repository": {
