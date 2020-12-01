@@ -1,10 +1,12 @@
 import sanityClient from '../client';
+import FormSpree from '../components/FormSpree';
 import Layout from '../components/Layout';
 import HomeContent from '../components/docTypes/HomeContent';
 
 const Index = ({ site, content }) => {
   return (
     <Layout page site={site}>
+      <FormSpree />
       <HomeContent {...content} />
     </Layout>
   );
