@@ -8,9 +8,9 @@ import Wrapper from '../tools/Wrapper';
 import HomeContent from '../components/docTypes/HomeContent';
 import AboutContent from '../components/docTypes/AboutContent';
 
-const PreviewPage = ({ content }) => {
+const PreviewPage = ({ content, site }) => {
   return (
-    <Layout page staticTitle="Preview">
+    <Layout page staticTitle="Preview" site={site}>
       <Head>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
@@ -43,7 +43,18 @@ export async function getServerSideProps(context) {
   const content = await previewClient.fetch(
     `*[_id == $id][0]{
       "content": *[_id == $id][0],
-      "references": *[references(^._id)]
+      "references": *[references(^._id)],
+      "site": {
+        "events": *[_type == "event"],
+        "settings":  *[_type == "siteSettings"][0],
+        "menus": *[_type == "menu"],
+        "placeholders": *[_type == "sanity.imageAsset"] {
+          "_id": _id,
+          "lqip": metadata.lqip,
+          "palette": metadata.palette,
+          "dimensions": metadata.dimensions
+        }
+      }
   }`,
     { id: docid }
   );
