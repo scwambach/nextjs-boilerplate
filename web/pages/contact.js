@@ -1,14 +1,14 @@
 import React from 'react';
-import ContactForm from '../components/forms/ContactForm';
 import Layout from '../components/Layout';
 import Wrapper from '../tools/Wrapper';
 import sanityClient from '../client';
+import FormSpree from '../components/forms/FormSpree';
 
 const ContactPage = (props) => {
   return (
     <Layout page staticTitle="Contact" site={props}>
       <Wrapper narrow>
-        <ContactForm />
+        <FormSpree />
       </Wrapper>
     </Layout>
   );

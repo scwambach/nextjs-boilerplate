@@ -128,7 +128,7 @@ const ContactForm = () => {
 
 export default ContactForm;
 
-export const SForm = styled.div`
+export const SForm = styled.section`
   input,
   textarea {
     &[type='text'] {
