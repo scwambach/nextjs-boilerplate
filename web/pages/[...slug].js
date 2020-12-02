@@ -3,14 +3,14 @@ import Layout from '../components/Layout';
 import PageContent from '../components/docTypes/PageContent';
 import PostContent from '../components/docTypes/PostContent';
 
-const PageBuilder = ({ content, site }) => {
+const PageBuilder = (props) => {
   return (
-    <Layout page={content} site={site}>
-      {content ? (
-        content._type === 'page' ? (
-          <PageContent {...content} />
+    <Layout page={props.content} site={props.site}>
+      {props.content ? (
+        props.content._type === 'page' ? (
+          <PageContent {...props.content} />
         ) : (
-          <PostContent {...content} />
+          <PostContent {...props.content} />
         )
       ) : (
         '404 Page Not Found'
@@ -24,7 +24,18 @@ export async function getServerSideProps(context) {
   const content = await sanityClient.fetch(
     `*[slug.current == $slug][0]{
       "content": *[slug.current == $slug][0],
-      "references": *[references(^._id)]
+      "references": *[references(^._id)],
+      "site": {
+        "events": *[_type == "event"],
+        "settings":  *[_type == "siteSettings"][0],
+        "menus": *[_type == "menu"],
+        "placeholders": *[_type == "sanity.imageAsset"] {
+          "_id": _id,
+          "lqip": metadata.lqip,
+          "palette": metadata.palette,
+          "dimensions": metadata.dimensions
+        }
+      }
   }`,
     { slug: `${slug.join('/')}` }
   );

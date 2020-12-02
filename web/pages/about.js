@@ -3,28 +3,31 @@ import React from 'react';
 import Layout from '../components/Layout';
 import AboutContent from '../components/docTypes/AboutContent';
 
-const AboutPage = ({ content }) => {
+const AboutPage = ({ content, site }) => {
   return (
-    <Layout page staticTitle="About">
+    <Layout page staticTitle="About" site={site}>
       <AboutContent {...content} />
     </Layout>
   );
 };
 
-export async function getServerSideProps(context) {
-  const { slug = '' } = context.query;
+export async function getStaticProps() {
   const content = await sanityClient.fetch(
     `*[_type == "aboutPage"][0]{
       "content": *[_type == "aboutPage"][0],
+      "site": {
+        "events": *[_type == "event"],
+        "settings":  *[_type == "siteSettings"][0],
+        "menus": *[_type == "menu"],
+        "placeholders": *[_type == "sanity.imageAsset"] {
+          "_id": _id,
+          "lqip": metadata.lqip,
+          "palette": metadata.palette,
+          "dimensions": metadata.dimensions
+        }
+      }
     }`
   );
-
-  if (slug[0] === 'admin' || slug[0] === 'login' || slug[0] === 'studio') {
-    context.res.writeHead(307, {
-      Location: 'https://cms.developersdonating.com/',
-    });
-    context.res.end();
-  }
 
   return { props: content };
 }

@@ -2,10 +2,10 @@ import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import LinkObject from '../tools/LinkObject';
-import { AppContext } from '../pages/_app';
+import { LayoutContext } from './Layout';
 
 const Menu = ({ name }) => {
-  const { menus } = useContext(AppContext);
+  const { menus } = useContext(LayoutContext);
   const [activeIndex, setActiveIndex] = useState(null);
   const [activeSubIndex, setActiveSubIndex] = useState(null);
 

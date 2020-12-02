@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import urlFor from '../js/urlFor';
 import { useContext } from 'react';
-import { AppContext } from '../pages/_app';
+import { LayoutContext } from './Layout';
 
 const DocHead = ({ page, staticTitle }) => {
-  const { settings } = useContext(AppContext);
+  const { settings } = useContext(LayoutContext);
   return (
     <Head>
       <title>

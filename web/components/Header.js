@@ -6,10 +6,10 @@ import Menu from './Menu';
 import { colors, breakpoints } from '../styles/settings';
 import FaHamburger from '@meronex/icons/fa/FaHamburger';
 import GrClose from '@meronex/icons/gr/GrClose';
-import { AppContext } from '../pages/_app';
+import { LayoutContext } from './Layout';
 
 const Header = () => {
-  const { settings, logo, menuOpen, setMenuOpen } = useContext(AppContext);
+  const { settings, logo, menuOpen, setMenuOpen } = useContext(LayoutContext);
 
   return (
     <SHeader open={menuOpen}>

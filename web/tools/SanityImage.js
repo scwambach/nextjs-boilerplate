@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import newRatio from './newRatio';
 import urlFor from '../js/urlFor';
 import { breakpoints } from '../styles/settings';
-import { AppContext } from '../pages/_app';
+import { LayoutContext } from '../components/Layout';
 
 const SanityImage = ({ src, height, width, alt }) => {
-  const { placeholders } = useContext(AppContext);
+  const { placeholders } = useContext(LayoutContext);
 
   const [isVisible, setIsVisible] = useState(false);
   const [loaded, setLoaded] = useState(false);

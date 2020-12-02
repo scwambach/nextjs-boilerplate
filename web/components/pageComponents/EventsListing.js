@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import dateFormatter from '../../js/dateFormatter';
 import Wrapper from '../../tools/Wrapper';
 import { breakpoints, colors } from '../../styles/settings';
-import { AppContext } from '../../pages/_app';
+import { LayoutContext } from '../Layout';
 
 const NewEventsArray = (events) => {
   const updatedEvents = [];
@@ -96,7 +96,7 @@ const Event = ({
 };
 
 const EventListing = () => {
-  const { events } = useContext(AppContext);
+  const { events } = useContext(LayoutContext);
 
   return (
     <SEventListing>
