@@ -70,6 +70,7 @@ const DocHead = ({ page, staticTitle }) => {
         }
       />
       <meta property="og:site_name" content={settings.title} />
+      <meta name="robots" content="noindex" />
     </Head>
   );
 };
