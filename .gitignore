@@ -73,3 +73,5 @@ studio/dist
 
 .next
 .env.local
+
+.vercel
