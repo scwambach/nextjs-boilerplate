@@ -20,6 +20,7 @@
   "homepage": "https://github.com/scwambach/nextjs-boilerplate#readme",
   "dependencies": {
     "@meronex/icons": "^4.0.0",
+    "@prisma/client": "2.13.0",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^2.0.1",
     "@sanity/image-url": "^0.140.19",
@@ -42,6 +43,8 @@
     "styled-components": "^5.2.0"
   },
   "devDependencies": {
+    "@prisma/cli": "2.13.0",
+    "@types/next-auth": "^3.1.18",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^1.11.1",
     "eslint": "^7.11.0",

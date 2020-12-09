@@ -1,5 +1,3 @@
-import App from 'next/app';
-import { useState } from 'react';
 import Reset from '../styles/reset';
 export const AppContext = React.createContext();
 import { Provider } from 'next-auth/client';

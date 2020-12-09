@@ -7,9 +7,11 @@ import { colors, breakpoints } from '../styles/settings';
 import FaHamburger from '@meronex/icons/fa/FaHamburger';
 import GrClose from '@meronex/icons/gr/GrClose';
 import { LayoutContext } from './Layout';
+import { signIn, signOut, useSession } from 'next-auth/client';
 
 const Header = () => {
   const { settings, logo, menuOpen, setMenuOpen } = useContext(LayoutContext);
+  const [session, loading] = useSession();
 
   return (
     <SHeader open={menuOpen}>
@@ -21,6 +23,18 @@ const Header = () => {
       <nav>
         <Menu name="Main Menu" />
       </nav>
+      {!session && (
+        <>
+          <a href={null} onClick={signIn}>
+            Login
+          </a>
+        </>
+      )}
+      {session && (
+        <Link href={'/profile'}>
+          <a>Profile</a>
+        </Link>
+      )}
       <Toggle
         open={menuOpen}
         href={null}

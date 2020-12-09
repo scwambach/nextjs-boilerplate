@@ -15,6 +15,10 @@ const options = {
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
+    Providers.Facebook({
+      clientId: process.env.FACEBOOK_CLIENT_ID,
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+    }),
     Providers.Email({
       server: {
         host: process.env.EMAIL_SERVER_HOST,
@@ -29,11 +33,11 @@ const options = {
   ],
   database: {
     type: 'mysql',
-    host: '162.241.224.92',
-    port: 3306,
-    username: 'develqo3_admin',
-    password: '!@#123Awesome123',
-    database: 'develqo3_nextauth',
+    host: process.env.DATABASE_HOST,
+    port: process.env.DATABASE_PORT,
+    username: process.env.DATABASE_USERNAME,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE_NAME,
   },
 };
 
