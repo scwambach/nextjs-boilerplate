@@ -3,7 +3,7 @@
 
 datasource db {
   provider = "mysql"
-  url      = "mysql://develqo3_admin:!@#123Awesome123@162.241.224.92:3306/develqo3_nextauth?connection_limit=5"
+  url      = env("DATABASE_URL")
 }
 
 generator client {
