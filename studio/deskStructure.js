@@ -5,7 +5,6 @@ import { MdLibraryBooks, MdBuild, MdCreate, MdSettings } from 'react-icons/md';
 import { FaStar, FaSort } from 'react-icons/fa';
 import EyeIcon from 'part:@sanity/base/eye-icon';
 import EditIcon from 'part:@sanity/base/edit-icon';
-import { previewUrl } from './dashboardConfig';
 
 const hiddenTypes = [
   'siteSettings',
@@ -52,22 +51,21 @@ const PreviewModule = ({ url }) => {
 };
 
 const WebPreview = ({ document }) => {
-  return (
-    <PreviewModule
-      document={document}
-      url={previewUrl + `?docid=${document.displayed._id}&listing=0`}
-    />
-  );
+  const previewUrl =
+    process.env.NODE_ENV === 'production'
+      ? `../../${document.displayed?.slug?.current}?preview`
+      : `http://localhost:3000/${document.displayed?.slug?.current}?preview`;
+  return <PreviewModule document={document} url={previewUrl} />;
 };
 
-const ListingPreview = ({ document }) => {
-  return (
-    <PreviewModule
-      document={document}
-      url={previewUrl + `?docid=${document.displayed._id}&listing=1`}
-    />
-  );
-};
+// const ListingPreview = ({ document }) => {
+//   return (
+//     <PreviewModule
+//       document={document}
+//       url={previewUrl + `?docid=${document.displayed._id}&listing=1`}
+//     />
+//   );
+// };
 
 export const getDefaultDocumentNode = ({ schemaType }) => {
   // Conditionally return a different configuration based on the schema type
