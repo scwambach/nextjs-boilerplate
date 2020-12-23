@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
-import urlFor from '../js/urlFor';
+import { urlFor } from '../utils/sanity';
 import { breakpoints } from '../styles/settings';
 import { LayoutContext } from '../components/Layout';
 

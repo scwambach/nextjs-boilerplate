@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import Wrapper from '../tools/Wrapper';
-import sanityClient from '../client';
+import { getClient } from '../utils/sanity';
 import FormSpree from '../components/forms/FormSpree';
 
 const ContactPage = (props) => {
@@ -15,7 +15,7 @@ const ContactPage = (props) => {
 };
 
 export async function getStaticProps() {
-  const content = await sanityClient.fetch(
+  const content = await getClient().fetch(
     `*[_type == "siteSettings"][0] {
       "events": *[_type == "event"],
       "settings":  *[_type == "siteSettings"][0],

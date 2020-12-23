@@ -1,7 +1,7 @@
 import React from 'react';
 import EventListing from '../components/pageComponents/EventsListing';
 import Layout from '../components/Layout';
-import sanityClient from '../client';
+import { getClient } from '../utils/sanity';
 
 const events = (props) => {
   return (
@@ -13,7 +13,7 @@ const events = (props) => {
 
 export async function getServerSideProps(context) {
   const { slug = '' } = context.query;
-  const content = await sanityClient.fetch(
+  const content = await getClient().fetch(
     `*[_type == "siteSettings"][0] {
       "events": *[_type == "event"],
       "settings":  *[_type == "siteSettings"][0],

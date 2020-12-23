@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
-import sanityClient from '../client';
+import { getClient } from '../utils/sanity';
 import Wrapper from '../tools/Wrapper';
 import Post from '../components/Post';
 import styled from 'styled-components';
@@ -34,7 +34,7 @@ const BlogPage = ({ content, site }) => {
 
 export async function getServerSideProps(context) {
   const { slug = '' } = context.query;
-  const content = await sanityClient.fetch(
+  const content = await getClient().fetch(
     `*[_type == "posts"][0]{
       "content": *[_type == "post"] | order(publishedAt desc),
       "site": {

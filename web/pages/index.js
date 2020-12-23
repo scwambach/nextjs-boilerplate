@@ -1,6 +1,8 @@
-import sanityClient from '../client';
+import { getClient } from '../utils/sanity';
 import Layout from '../components/Layout';
 import HomeContent from '../components/docTypes/HomeContent';
+// import { gql } from '@apollo/client';
+// import { wpClient } from '../client';
 
 const Index = (props) => {
   return (
@@ -11,7 +13,19 @@ const Index = (props) => {
 };
 
 export async function getStaticProps() {
-  const content = await sanityClient.fetch(
+  // const { data } = await wpClient.query({
+  //   query: gql`
+  //     {
+  //       posts(first: 9999) {
+  //         nodes {
+  //           title
+  //         }
+  //       }
+  //     }
+  //   `,
+  // });
+
+  const content = await getClient().fetch(
     `*[_type == "homePage"][0]{
       "content": *[_type == "homePage"][0],
       "site": {
@@ -28,7 +42,7 @@ export async function getStaticProps() {
     }`
   );
 
-  return { props: content };
+  return { props: { ...content } };
 }
 
 export default Index;

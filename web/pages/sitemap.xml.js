@@ -1,5 +1,5 @@
 import React from 'react';
-import sanityClient from '../client';
+import { getClient } from '../utils/sanity';
 
 const EXTERNAL_DATA_URL = 'https://nextjs-boilerplate-six.vercel.app';
 
@@ -29,7 +29,8 @@ const createSitemap = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
 
 class Sitemap extends React.Component {
   static async getInitialProps({ res }) {
-    const request = await sanityClient.fetch(`*[_type in ["post", "page", "homePage", "aboutPage"]] {
+    const request = await getClient()
+      .fetch(`*[_type in ["post", "page", "homePage", "aboutPage"]] {
       "slug": slug.current,
       _type,
       _updatedAt

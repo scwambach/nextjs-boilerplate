@@ -1,4 +1,4 @@
-import sanityClient from '../client';
+import { getClient } from '../utils/sanity';
 import React from 'react';
 import Layout from '../components/Layout';
 import AboutContent from '../components/docTypes/AboutContent';
@@ -12,7 +12,7 @@ const AboutPage = ({ content, site }) => {
 };
 
 export async function getStaticProps() {
-  const content = await sanityClient.fetch(
+  const content = await getClient().fetch(
     `*[_type == "aboutPage"][0]{
       "content": *[_type == "aboutPage"][0],
       "site": {
