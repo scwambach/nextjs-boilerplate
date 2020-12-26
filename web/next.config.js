@@ -3,5 +3,6 @@ module.exports = {
     SANITY_ID: process.env.SANITY_ID,
     SANITY_DATASET: process.env.SANITY_DATASET,
     SANITY_TOKEN: process.env.SANITY_TOKEN,
+    CMS_URL: process.env.CMS_URL,
   },
 };

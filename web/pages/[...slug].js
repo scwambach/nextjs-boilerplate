@@ -37,6 +37,7 @@ export default function PageBuilder({ doc, preview }) {
 }
 
 export async function getServerSideProps({
+  res,
   query,
   params = {},
   preview = false,
@@ -65,10 +66,10 @@ export async function getServerSideProps({
   );
 
   if (slug[0] === 'admin' || slug[0] === 'login' || slug[0] === 'studio') {
-    context.res.writeHead(307, {
-      Location: 'https://cms.developersdonating.com/',
+    res.writeHead(307, {
+      Location: process.env.CMS_URL,
     });
-    context.res.end();
+    res.end();
   }
 
   return { props: { doc, preview } };

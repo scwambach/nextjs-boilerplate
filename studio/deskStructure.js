@@ -5,6 +5,7 @@ import { MdLibraryBooks, MdBuild, MdCreate, MdSettings } from 'react-icons/md';
 import { FaStar, FaSort } from 'react-icons/fa';
 import EyeIcon from 'part:@sanity/base/eye-icon';
 import EditIcon from 'part:@sanity/base/edit-icon';
+import { appUrl } from './dashboardConfig';
 
 const hiddenTypes = [
   'siteSettings',
@@ -53,8 +54,8 @@ const PreviewModule = ({ url }) => {
 const WebPreview = ({ document }) => {
   const previewUrl =
     process.env.NODE_ENV === 'production'
-      ? `../../${document.displayed?.slug?.current}?preview`
-      : `http://localhost:3000/${document.displayed?.slug?.current}?preview`;
+      ? `${appUrl}/${document.displayed?.slug?.current}?preview`
+      : `${appUrl}/${document.displayed?.slug?.current}?preview`;
   return <PreviewModule document={document} url={previewUrl} />;
 };
 
