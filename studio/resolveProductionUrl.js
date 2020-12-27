@@ -1,9 +1,15 @@
-import { previewUrl } from './dashboardConfig';
+import { appUrl } from './dashboardConfig';
 
 export default function resolveProductionUrl(document) {
   const previewUrl =
     process.env.NODE_ENV === 'production'
-      ? `../../${document?.slug?.current}?preview`
-      : `http://localhost:3000/${document?.slug?.current}?preview`;
+      ? `${appUrl}/${document.displayed?.slug?.current}?preview`
+      : `${appUrl}/${
+          document.displayed._type === 'aboutPage'
+            ? 'about'
+            : document.displayed._type === 'homePage'
+            ? ''
+            : document.displayed?.slug?.current
+        }?preview`;
   return previewUrl;
 }

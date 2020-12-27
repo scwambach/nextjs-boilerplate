@@ -1,18 +1,34 @@
-import { getClient } from '../utils/sanity';
+import { getClient, usePreviewSubscription } from '../utils/sanity';
 import React from 'react';
 import Layout from '../components/Layout';
 import AboutContent from '../components/docTypes/AboutContent';
+import { useRouter } from 'next/router';
+import { groq } from 'next-sanity';
 
-const AboutPage = ({ content, site }) => {
+const query = groq`*[_type == "aboutPage"][0]{
+  "content": *[_type == "aboutPage"][0],
+}`;
+
+const AboutPage = ({ doc, preview }) => {
+  const router = useRouter();
+  if (!router.isFallback && !doc) {
+    return <Error statusCode={404} />;
+  }
+
+  const { data = {} } = usePreviewSubscription(query, {
+    initialData: doc,
+    enabled: router.query.preview === '',
+  });
+
   return (
-    <Layout page staticTitle="About" site={site}>
-      <AboutContent {...content} />
+    <Layout page staticTitle="About" site={doc.site}>
+      <AboutContent {...data.content} />
     </Layout>
   );
 };
 
-export async function getStaticProps() {
-  const content = await getClient().fetch(
+export async function getStaticProps({ query, preview = false }) {
+  const doc = await getClient(query?.preview === '').fetch(
     `*[_type == "aboutPage"][0]{
       "content": *[_type == "aboutPage"][0],
       "site": {
@@ -29,6 +45,6 @@ export async function getStaticProps() {
     }`
   );
 
-  return { props: content };
+  return { props: { doc, preview } };
 }
 export default AboutPage;

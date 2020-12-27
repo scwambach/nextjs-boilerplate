@@ -55,7 +55,13 @@ const WebPreview = ({ document }) => {
   const previewUrl =
     process.env.NODE_ENV === 'production'
       ? `${appUrl}/${document.displayed?.slug?.current}?preview`
-      : `${appUrl}/${document.displayed?.slug?.current}?preview`;
+      : `${appUrl}/${
+          document.displayed._type === 'aboutPage'
+            ? 'about'
+            : document.displayed._type === 'homePage'
+            ? ''
+            : document.displayed?.slug?.current
+        }?preview`;
   return <PreviewModule document={document} url={previewUrl} />;
 };
 
