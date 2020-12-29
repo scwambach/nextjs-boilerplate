@@ -11,7 +11,7 @@ const LinkObject = (props) => {
     >
       {props.copy}
     </a>
-  ) : (
+  ) : props.url ? (
     <Link href={props.url}>
       <a
         aria-label={props.copy}
@@ -21,6 +21,8 @@ const LinkObject = (props) => {
         {props.copy}
       </a>
     </Link>
+  ) : (
+    ''
   );
 };
 

@@ -23,7 +23,7 @@ const SingleFeature = (props) => {
         toggleVideo ? (
           <YouTubeVideo title={props.heading} videoId={props.video} />
         ) : (
-          <>
+          props.image && (
             <SanityBgImage src={props.image}>
               <a
                 href={null}
@@ -34,10 +34,10 @@ const SingleFeature = (props) => {
                 <FdPlayCircle />
               </a>
             </SanityBgImage>
-          </>
+          )
         )
       ) : (
-        <SanityBgImage src={props.image} />
+        props.image && <SanityBgImage src={props.image} />
       )}
       <div>
         <div>

@@ -43,7 +43,9 @@ const ImageGallery = ({ gallery }) => {
               setModalOpen(true);
             }}
           >
-            <SanityImage src={image} height={300} width={300} />
+            {image.asset && (
+              <SanityImage src={image} height={300} width={300} />
+            )}
           </a>
         ))}
         {modalOpen && (
