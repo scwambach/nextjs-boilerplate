@@ -16,6 +16,7 @@
     "sanity"
   ],
   "dependencies": {
+    "@meronex/icons": "^4.0.0",
     "@sanity/base": "^2.0.9",
     "@sanity/code-input": "^2.0.9",
     "@sanity/color-input": "^2.0.9",
@@ -26,7 +27,6 @@
     "@sanity/default-login": "^2.0.9",
     "@sanity/desk-tool": "^2.0.9",
     "@sanity/google-maps-input": "^2.0.9",
-    "@sanity/production-preview": "^2.0.5",
     "@sanity/react-hooks": "^2.0.9",
     "@sanity/vision": "^2.0.9",
     "axios": "^0.20.0",

@@ -1,11 +1,20 @@
 import React from 'react';
 import S from '@sanity/desk-tool/structure-builder';
-import { TiHome } from 'react-icons/ti';
-import { MdLibraryBooks, MdBuild, MdCreate, MdSettings } from 'react-icons/md';
+import { MdCreate, MdSettings } from 'react-icons/md';
 import { FaStar, FaSort } from 'react-icons/fa';
 import EyeIcon from 'part:@sanity/base/eye-icon';
 import EditIcon from 'part:@sanity/base/edit-icon';
-import { appUrl } from './dashboardConfig';
+import MdLibraryBooks from '@meronex/icons/md/MdLibraryBooks';
+import RiPagesLine from '@meronex/icons/ri/RiPagesLine';
+import FdPageMultiple from '@meronex/icons/fd/FdPageMultiple';
+import BiHome from '@meronex/icons/bi/BiHome';
+import AiOutlineBuild from '@meronex/icons/ai/AiOutlineBuild';
+
+const remoteURL = 'https://developersdonating.com';
+const localURL = 'http://localhost:3000';
+
+export const appUrl =
+  window.location.hostname === 'localhost' ? localURL : remoteURL;
 
 const hiddenTypes = [
   'siteSettings',
@@ -116,7 +125,7 @@ export default () =>
                         .icon(EyeIcon),
                     ])
                 )
-                .icon(TiHome),
+                .icon(BiHome),
               S.listItem()
                 .title('About Page')
                 .child(
@@ -133,15 +142,15 @@ export default () =>
                         .icon(EyeIcon),
                     ])
                 )
-                .icon(MdLibraryBooks),
+                .icon(RiPagesLine),
               S.listItem()
                 .title('Page Builder')
                 .schemaType('page')
                 .child(S.documentTypeList('page').title('Pages'))
-                .icon(MdBuild),
+                .icon(AiOutlineBuild),
             ])
         )
-        .icon(MdLibraryBooks),
+        .icon(FdPageMultiple),
       S.listItem()
         .title('Blog')
         .child(
@@ -193,20 +202,6 @@ export default () =>
             .documentId('siteSettings')
         )
         .icon(MdSettings),
-      // S.listItem()
-      //   .title('Assets')
-      //   .child(
-      //     S.list()
-      //       .title('Assets')
-      //       .items([
-      //         S.listItem()
-      //           .title('Image Library')
-      //           .child(S.documentTypeList('sanity.imageAsset')),
-      //         S.listItem()
-      //           .title('File Library')
-      //           .child(S.documentTypeList('sanity.fileAsset')),
-      //       ])
-      //   ),
       ...S.documentTypeListItems().filter(
         (listItem) => !hiddenTypes.includes(listItem.getId())
       ),
