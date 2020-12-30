@@ -13,8 +13,7 @@ import AiOutlineBuild from '@meronex/icons/ai/AiOutlineBuild';
 const remoteURL = 'https://developersdonating.com';
 const localURL = 'http://localhost:3000';
 
-export const appUrl =
-  window.location.hostname === 'localhost' ? localURL : remoteURL;
+const appUrl = window.location.hostname === 'localhosst' ? localURL : remoteURL;
 
 const hiddenTypes = [
   'siteSettings',
@@ -61,16 +60,18 @@ const PreviewModule = ({ url }) => {
 };
 
 const WebPreview = ({ document }) => {
-  const previewUrl =
-    process.env.NODE_ENV === 'production'
-      ? `${appUrl}/${document.displayed?.slug?.current}?preview`
-      : `${appUrl}/${
-          document.displayed._type === 'aboutPage'
-            ? 'about'
-            : document.displayed._type === 'homePage'
-            ? ''
-            : document.displayed?.slug?.current
-        }?preview`;
+  const previewUrl = `${appUrl}/${document.displayed?.slug?.current}?preview`;
+  return <PreviewModule document={document} url={previewUrl} />;
+};
+
+const HomePreview = () => {
+  const previewUrl = `${appUrl}/?preview`;
+
+  return <PreviewModule document={document} url={previewUrl} />;
+};
+const AboutPreview = () => {
+  const previewUrl = `${appUrl}/about?preview`;
+
   return <PreviewModule document={document} url={previewUrl} />;
 };
 
@@ -120,7 +121,7 @@ export default () =>
                     .views([
                       S.view.form().icon(EditIcon),
                       S.view
-                        .component(WebPreview)
+                        .component(HomePreview)
                         .title('Web Preview')
                         .icon(EyeIcon),
                     ])
@@ -137,7 +138,7 @@ export default () =>
                     .views([
                       S.view.form().icon(EditIcon),
                       S.view
-                        .component(WebPreview)
+                        .component(AboutPreview)
                         .title('Web Preview')
                         .icon(EyeIcon),
                     ])

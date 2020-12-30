@@ -2,13 +2,13 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Wrapper from '../tools/Wrapper';
 import { getClient } from '../utils/sanity';
-import FormSpree from '../components/forms/FormSpree';
+import ContactForm from '../components/forms/ContactForm';
 
 const ContactPage = (props) => {
   return (
     <Layout page staticTitle="Contact" site={props}>
       <Wrapper narrow>
-        <FormSpree />
+        <ContactForm />
       </Wrapper>
     </Layout>
   );

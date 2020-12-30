@@ -17,8 +17,6 @@ const Message = ({ children }) => (
   </div>
 );
 
-const postUrl = 'https://form.developersdonating.com/index.php';
-
 const ContactForm = () => {
   const [serial, setSerial] = useState(null);
   const [honeypot, setHoneypot] = useState(false);
@@ -45,7 +43,7 @@ const ContactForm = () => {
   };
 
   const postForm = () => {
-    Axios.post(postUrl, serial)
+    Axios.post('/api/mailer', serial)
       .then((response) => {
         console.log(response);
         setSubmitted(true);

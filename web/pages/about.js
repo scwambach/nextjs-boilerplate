@@ -1,9 +1,13 @@
 import { getClient, usePreviewSubscription } from '../utils/sanity';
 import React from 'react';
 import Layout from '../components/Layout';
-import AboutContent from '../components/docTypes/AboutContent';
 import { useRouter } from 'next/router';
 import { groq } from 'next-sanity';
+import HeroBanner from '../components/pageComponents/HeroBanner';
+import { Section } from '../styles/Section';
+import Wrapper from '../tools/Wrapper';
+import RichText from '../components/RichText';
+import ImageFeatures from '../components/pageComponents/ImageFeatures';
 
 const query = groq`*[_type == "aboutPage"][0]{
   "content": *[_type == "aboutPage"][0],
@@ -22,7 +26,17 @@ const AboutPage = ({ doc, preview }) => {
 
   return (
     <Layout page staticTitle="About" site={doc.site}>
-      <AboutContent {...data.content} />
+      <HeroBanner
+        index={0}
+        {...data.content.staticHeroBanner}
+        mainImage={data.content.mainImage}
+      />
+      <Section>
+        <Wrapper narrow>
+          <RichText content={data.content.richText.copy} />
+        </Wrapper>
+      </Section>
+      <ImageFeatures {...data.content.imageFeatures} />
     </Layout>
   );
 };

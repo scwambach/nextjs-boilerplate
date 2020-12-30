@@ -1,8 +1,12 @@
 import { getClient, usePreviewSubscription } from '../utils/sanity';
 import Layout from '../components/Layout';
-import HomeContent from '../components/docTypes/HomeContent';
 import { useRouter } from 'next/router';
 import { groq } from 'next-sanity';
+import HeroBanner from '../components/pageComponents/HeroBanner';
+import { Section } from '../styles/Section';
+import Wrapper from '../tools/Wrapper';
+import RichText from '../components/RichText';
+import ImageFeatures from '../components/pageComponents/ImageFeatures';
 // import { gql } from '@apollo/client';
 // import { wpClient } from '../client';
 const query = groq`*[_type == "homePage"][0]{
@@ -33,7 +37,17 @@ const Index = ({ doc, preview }) => {
 
   return (
     <Layout page site={doc.site}>
-      <HomeContent {...data.content} />
+      <HeroBanner
+        index={0}
+        {...data.content.staticHeroBanner}
+        mainImage={data.content.mainImage}
+      />
+      <Section>
+        <Wrapper narrow>
+          <RichText content={data.content.richText.copy} />
+        </Wrapper>
+      </Section>
+      <ImageFeatures {...data.content.imageFeatures} />
     </Layout>
   );
 };
