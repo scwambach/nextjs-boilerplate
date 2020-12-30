@@ -1,16 +1,17 @@
-import { FaImage } from 'react-icons/fa';
+import BsImages from '@meronex/icons/bs/BsImages';
+import BsImage from '@meronex/icons/bs/BsImage';
 
 export default {
   title: 'Image Gallery',
   name: 'imageGallery',
   type: 'object',
-  icon: FaImage,
+  icon: BsImages,
   fields: [
     {
       title: 'Gallery',
       name: 'gallery',
       type: 'array',
-      icon: FaImage,
+      icon: BsImage,
       of: [
         {
           title: 'Image',

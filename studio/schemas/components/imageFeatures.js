@@ -1,10 +1,10 @@
-import { FaImage } from 'react-icons/fa';
+import BsImages from '@meronex/icons/bs/BsImages';
 
 export default {
   title: 'Image Features',
   name: 'imageFeatures',
   type: 'object',
-  icon: FaImage,
+  icon: BsImages,
   fields: [
     {
       title: 'Flip Image Side',

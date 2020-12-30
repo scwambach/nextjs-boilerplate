@@ -1,10 +1,11 @@
-import { FaCalendar, FaTicket } from 'react-icons/fa';
+import MdEventNote from '@meronex/icons/md/MdEventNote';
+import MdEventAvailable from '@meronex/icons/md/MdEventAvailable';
 
 export default {
   name: 'event',
   title: 'Event',
   type: 'document',
-  icon: FaCalendar,
+  icon: MdEventNote,
   fields: [
     {
       name: 'title',
@@ -26,7 +27,7 @@ export default {
       title: 'Reoccuring Dates',
       name: 'reoccuringDates',
       type: 'array',
-      icon: FaCalendar,
+      icon: MdEventAvailable,
       of: [
         {
           title: 'Date',
@@ -69,12 +70,6 @@ export default {
       type: 'text',
       description: 'Keep it short and sweet!',
       validation: (Rule) => Rule.required().max(200),
-    },
-    {
-      name: 'ticketPrice',
-      title: 'Ticket Price',
-      type: 'number',
-      validation: (Rule) => Rule.integer().positive(),
     },
     {
       title: 'Link',

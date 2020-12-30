@@ -15,7 +15,6 @@
     "@sanity/desk-tool",
     "studio-logo",
     "@sanity/dashboard",
-    "media",
     "@sanity/code-input",
     "asset-source-unsplash",
     "color-list",
@@ -24,7 +23,8 @@
     "@sanity/google-maps-input",
     "@sanity/color-input",
     "tabs",
-    "position-input"
+    "position-input",
+    "media-library"
   ],
   "parts": [
     {
@@ -42,6 +42,10 @@
     {
       "implements": "part:@sanity/base/theme/variables/override-style",
       "path": "./variableOverrides.css"
+    },
+    {
+      "implements": "part:@sanity/form-builder/input/image/asset-source",
+      "path": "./assetSource.js"
     }
   ]
 }

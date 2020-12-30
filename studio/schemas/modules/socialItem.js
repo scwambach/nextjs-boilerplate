@@ -1,7 +1,7 @@
-import { FaStar } from 'react-icons/fa';
+import FaGrinStars from '@meronex/icons/fa/FaGrinStars';
 
 export default {
-  icon: FaStar,
+  icon: FaGrinStars,
   title: 'Social Item',
   name: 'socialItem',
   type: 'object',

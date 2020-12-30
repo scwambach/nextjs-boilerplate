@@ -1,4 +1,4 @@
-import { IoAndroidRadioButtonOn } from 'react-icons/io';
+import AiOutlineLink from '@meronex/icons/ai/AiOutlineLink';
 
 export default {
   title: 'Block Content',
@@ -62,7 +62,7 @@ export default {
     {
       type: 'link',
       title: 'Button',
-      icon: IoAndroidRadioButtonOn,
+      icon: AiOutlineLink,
     },
   ],
 };

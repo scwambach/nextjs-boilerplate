@@ -1,12 +1,10 @@
-import { MdPages } from 'react-icons/md';
+import BiHome from '@meronex/icons/bi/BiHome';
 
 export default {
   name: 'homePage',
   title: 'Home Page',
   type: 'document',
-  liveEdit: false,
-  __experimental_actions: ['update', 'publish'],
-  icon: MdPages,
+  icon: BiHome,
   fields: [
     {
       name: 'mainImage',

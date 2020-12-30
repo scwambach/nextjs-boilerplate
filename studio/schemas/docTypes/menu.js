@@ -1,10 +1,10 @@
-import { FaBars } from 'react-icons/fa';
+import HiMenuAlt3 from '@meronex/icons/hi/HiMenuAlt3';
 
 export default {
   name: 'menu',
   title: 'Menu',
   type: 'document',
-  icon: FaBars,
+  icon: HiMenuAlt3,
   fields: [
     {
       name: 'title',

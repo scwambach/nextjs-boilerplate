@@ -1,10 +1,10 @@
-import { FaImage } from 'react-icons/fa';
+import BsImage from '@meronex/icons/bs/BsImage';
 
 export default {
   title: 'Hero Banner',
   name: 'heroBanner',
   type: 'object',
-  icon: FaImage,
+  icon: BsImage,
   fields: [
     {
       title: 'Background Image',

@@ -1,5 +1,3 @@
-export const appName = 'gatsby-starter';
-
 export default {
   widgets: [
     {

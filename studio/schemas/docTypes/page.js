@@ -1,11 +1,11 @@
-import { MdLibraryBooks } from 'react-icons/md';
 import { slugify } from './post';
+import FdPageMultiple from '@meronex/icons/fd/FdPageMultiple';
 
 export default {
   name: 'page',
   title: 'Page',
   type: 'document',
-  icon: MdLibraryBooks,
+  icon: FdPageMultiple,
   fields: [
     {
       name: 'title',

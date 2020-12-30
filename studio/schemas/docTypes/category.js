@@ -1,11 +1,11 @@
-import { FaStar } from 'react-icons/fa';
+import FiStar from '@meronex/icons/fi/FiStar';
 import { slugify } from './post';
 
 export default {
   name: 'category',
   title: 'Category',
   type: 'document',
-  icon: FaStar,
+  icon: FiStar,
   fields: [
     {
       name: 'title',

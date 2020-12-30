@@ -1,10 +1,11 @@
 import React from 'react';
 import S from '@sanity/desk-tool/structure-builder';
-import { MdCreate, MdSettings } from 'react-icons/md';
-import { FaStar, FaSort } from 'react-icons/fa';
+import FaCogs from '@meronex/icons/fa/FaCogs';
+import SuCreate from '@meronex/icons/su/SuCreate';
+import FiStar from '@meronex/icons/fi/FiStar';
+import BiSort from '@meronex/icons/bi/BiSort';
 import EyeIcon from 'part:@sanity/base/eye-icon';
 import EditIcon from 'part:@sanity/base/edit-icon';
-import MdLibraryBooks from '@meronex/icons/md/MdLibraryBooks';
 import RiPagesLine from '@meronex/icons/ri/RiPagesLine';
 import FdPageMultiple from '@meronex/icons/fd/FdPageMultiple';
 import BiHome from '@meronex/icons/bi/BiHome';
@@ -25,7 +26,6 @@ const hiddenTypes = [
   'event',
   'menu',
 ];
-//
 
 const PreviewModule = ({ url }) => {
   return (
@@ -75,24 +75,12 @@ const AboutPreview = () => {
   return <PreviewModule document={document} url={previewUrl} />;
 };
 
-// const ListingPreview = ({ document }) => {
-//   return (
-//     <PreviewModule
-//       document={document}
-//       url={previewUrl + `?docid=${document.displayed._id}&listing=1`}
-//     />
-//   );
-// };
-
 export const getDefaultDocumentNode = ({ schemaType }) => {
-  // Conditionally return a different configuration based on the schema type
-  if (schemaType === 'post') {
-    return S.document().views([
-      S.view.form().icon(EditIcon),
-      S.view.component(WebPreview).title('Web Preview').icon(EyeIcon),
-      // S.view.component(ListingPreview).title('Listing Preview').icon(EyeIcon),
-    ]);
-  } else if (schemaType !== 'event') {
+  if (
+    schemaType !== 'event' &&
+    schemaType !== 'category' &&
+    schemaType !== 'menu'
+  ) {
     return S.document().views([
       S.view.form().icon(EditIcon),
       S.view.component(WebPreview).title('Web Preview').icon(EyeIcon),
@@ -176,15 +164,15 @@ export default () =>
                         .params({ id })
                     )
                 )
-                .icon(FaSort),
+                .icon(BiSort),
               S.listItem()
                 .title('Categories')
                 .schemaType('category')
                 .child(S.documentTypeList('category'))
-                .icon(FaStar),
+                .icon(FiStar),
             ])
         )
-        .icon(MdCreate),
+        .icon(SuCreate),
       S.listItem()
         .title('Events')
         .schemaType('event')
@@ -202,7 +190,7 @@ export default () =>
             .schemaType('siteSettings')
             .documentId('siteSettings')
         )
-        .icon(MdSettings),
+        .icon(FaCogs),
       ...S.documentTypeListItems().filter(
         (listItem) => !hiddenTypes.includes(listItem.getId())
       ),

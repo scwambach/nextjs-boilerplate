@@ -1,10 +1,10 @@
-import { MdLibraryBooks } from 'react-icons/md';
+import BsTextLeft from '@meronex/icons/bs/BsTextLeft';
 
 export default {
   title: 'Rich Text',
   name: 'richText',
   type: 'object',
-  icon: MdLibraryBooks,
+  icon: BsTextLeft,
   fields: [
     {
       title: 'Copy',

@@ -1,4 +1,4 @@
-import { MdSettings } from 'react-icons/md';
+import FaCogs from '@meronex/icons/fa/FaCogs';
 
 export default {
   name: 'siteSettings',
@@ -6,7 +6,7 @@ export default {
   type: 'document',
   liveEdit: false,
   __experimental_actions: ['update', 'publish'],
-  icon: MdSettings,
+  icon: FaCogs,
   fields: [
     {
       name: 'title',

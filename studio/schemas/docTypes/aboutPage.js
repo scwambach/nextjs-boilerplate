@@ -1,12 +1,10 @@
-import { MdPages } from 'react-icons/md';
+import FdPageFilled from '@meronex/icons/fd/FdPageFilled';
 
 export default {
   name: 'aboutPage',
   title: 'About Page',
   type: 'document',
-  liveEdit: false,
-  __experimental_actions: ['update', 'publish'],
-  icon: MdPages,
+  icon: FdPageFilled,
   fields: [
     {
       name: 'mainImage',

@@ -1,5 +1,5 @@
-import { MdCreate } from 'react-icons/md';
-import { FaStar } from 'react-icons/fa';
+import FiStar from '@meronex/icons/fi/FiStar';
+import SuCreate from '@meronex/icons/su/SuCreate';
 
 export const slugify = (string) => {
   const a =
@@ -24,7 +24,7 @@ export default {
   name: 'post',
   title: 'Post',
   type: 'document',
-  icon: MdCreate,
+  icon: SuCreate,
   fields: [
     {
       name: 'title',
@@ -57,7 +57,7 @@ export default {
       title: 'Categories',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'category' } }],
-      icon: FaStar,
+      icon: FiStar,
       validation: (Rule) => Rule.min(1),
     },
     {
