@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { groq } from 'next-sanity';
 import PostContent from '../components/docTypes/PostContent';
 import { getClient, usePreviewSubscription } from '../utils/sanity';
+import { useRouter } from 'next/router';
 
 const query = groq`*[slug.current == $slug][0]{
   "content": *[slug.current == $slug][0],
@@ -20,6 +21,10 @@ export default function PageBuilder({ doc }) {
     initialData: doc,
     enabled: router.query.preview === '',
   });
+
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
 
   return (
     data && (
