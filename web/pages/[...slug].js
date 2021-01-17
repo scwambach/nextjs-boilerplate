@@ -9,7 +9,7 @@ const query = groq`*[slug.current == $slug][0]{
   "content": *[slug.current == $slug][0],
 }`;
 
-export default function PageBuilder({ doc, preview }) {
+export default function PageBuilder({ doc }) {
   const router = useRouter();
   if (!router.isFallback && !doc) {
     return <Error statusCode={404} />;
@@ -22,32 +22,36 @@ export default function PageBuilder({ doc, preview }) {
   });
 
   return (
-    <Layout page={data.content} site={doc.site}>
-      {data ? (
-        data.content._type === 'page' ? (
+    data && (
+      <Layout page={data && data.content} site={doc.site}>
+        {data.content._type === 'page' ? (
           <PageContent {...data.content} />
         ) : (
           <PostContent {...data.content} />
-        )
-      ) : (
-        '404 Page Not Found'
-      )}
-    </Layout>
+        )}
+      </Layout>
+    )
   );
 }
 
-export async function getServerSideProps({
-  res,
-  query,
-  params = {},
-  preview = false,
-}) {
+export async function getStaticPaths() {
+  const res = await getClient().fetch(`*[_type == "page" || _type == "post"]`);
+  const docs = await res;
+  const paths = docs.map((doc) => ({
+    params: { slug: doc.slug.current.split('/') },
+  }));
+  console.log(paths);
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params, preview = false }) {
   const { slug = '' } = params;
 
-  const doc = await getClient(query.preview === '').fetch(
+  const doc = await getClient().fetch(
     `*[slug.current == $slug][0]{
     "content": *[slug.current == $slug][0],
-    "references": *[references(^._id)],
+    "references": *[references(^._slug)],
     "site": {
       "events": *[_type == "event"],
       "settings":  *[_type == "siteSettings"][0],
@@ -64,13 +68,6 @@ export async function getServerSideProps({
       slug: `${slug.join('/')}`,
     }
   );
-
-  if (slug[0] === 'admin' || slug[0] === 'login' || slug[0] === 'studio') {
-    res.writeHead(307, {
-      Location: process.env.CMS_URL,
-    });
-    res.end();
-  }
 
   return { props: { doc, preview } };
 }

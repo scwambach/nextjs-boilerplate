@@ -12,8 +12,8 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
   const [loaded, setLoaded] = useState(false);
 
   const ph = placeholders.find((o) => o._id === src.asset._ref);
-  const imageId = ph._id;
-  const lqip = ph.lqip;
+  const imageId = ph ? ph._id : '';
+  const lqip = ph ? ph.lqip : '';
   const imageWidth = width || breakpoints.pageWidth;
 
   const isDesktop = useMediaQuery({

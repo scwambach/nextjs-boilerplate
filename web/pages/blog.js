@@ -32,8 +32,7 @@ const BlogPage = ({ content, site }) => {
   );
 };
 
-export async function getServerSideProps(context) {
-  const { slug = '' } = context.query;
+export async function getStaticProps() {
   const content = await getClient().fetch(
     `*[_type == "posts"][0]{
       "content": *[_type == "post"] | order(publishedAt desc),
@@ -50,13 +49,6 @@ export async function getServerSideProps(context) {
       }
     }`
   );
-
-  if (slug[0] === 'admin' || slug[0] === 'login' || slug[0] === 'studio') {
-    context.res.writeHead(307, {
-      Location: 'https://cms.developersdonating.com/',
-    });
-    context.res.end();
-  }
 
   return { props: content };
 }

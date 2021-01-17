@@ -14,7 +14,7 @@ import AiOutlineBuild from '@meronex/icons/ai/AiOutlineBuild';
 const remoteURL = 'https://developersdonating.com';
 const localURL = 'http://localhost:3000';
 
-const appUrl = window.location.hostname === 'localhosst' ? localURL : remoteURL;
+const appUrl = window.location.hostname === 'localhost' ? localURL : remoteURL;
 
 const hiddenTypes = [
   'siteSettings',

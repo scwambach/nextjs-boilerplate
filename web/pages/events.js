@@ -11,8 +11,7 @@ const events = (props) => {
   );
 };
 
-export async function getServerSideProps(context) {
-  const { slug = '' } = context.query;
+export async function getStaticProps() {
   const content = await getClient().fetch(
     `*[_type == "siteSettings"][0] {
       "events": *[_type == "event"],
@@ -26,13 +25,6 @@ export async function getServerSideProps(context) {
       }
     }`
   );
-
-  if (slug[0] === 'admin' || slug[0] === 'login' || slug[0] === 'studio') {
-    context.res.writeHead(307, {
-      Location: 'https://cms.developersdonating.com/',
-    });
-    context.res.end();
-  }
 
   return { props: content };
 }

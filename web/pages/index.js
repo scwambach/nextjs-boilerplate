@@ -37,11 +37,13 @@ const Index = ({ doc, preview }) => {
 
   return (
     <Layout page site={doc.site}>
-      <HeroBanner
-        index={0}
-        {...data.content.staticHeroBanner}
-        mainImage={data.content.mainImage}
-      />
+      {data.content.mainImage && (
+        <HeroBanner
+          index={0}
+          {...data.content.staticHeroBanner}
+          mainImage={data.content.mainImage}
+        />
+      )}
       <Section>
         <Wrapper narrow>
           <RichText content={data.content.richText.copy} />
