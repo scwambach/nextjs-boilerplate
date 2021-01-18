@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { groq } from 'next-sanity';
 import PostContent from '../components/docTypes/PostContent';
 import { getClient, usePreviewSubscription } from '../utils/sanity';
-import { useRouter } from 'next/router';
 
 const query = groq`*[slug.current == $slug][0]{
   "content": *[slug.current == $slug][0],
@@ -17,7 +16,7 @@ export default function PageBuilder({ doc }) {
   }
 
   const { data = {} } = usePreviewSubscription(query, {
-    params: { slug: doc.content.slug.current },
+    params: { slug: doc?.content.slug.current },
     initialData: doc,
     enabled: router.query.preview === '',
   });
@@ -28,7 +27,7 @@ export default function PageBuilder({ doc }) {
 
   return (
     data && (
-      <Layout page={data && data.content} site={doc.site}>
+      <Layout page={data.content} site={doc.site}>
         {data.content._type === 'page' ? (
           <PageContent {...data.content} />
         ) : (
@@ -45,7 +44,6 @@ export async function getStaticPaths() {
   const paths = docs.map((doc) => ({
     params: { slug: doc.slug.current.split('/') },
   }));
-  console.log(paths);
 
   return { paths, fallback: true };
 }
