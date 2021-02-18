@@ -7,8 +7,7 @@ import { Section } from '../styles/Section';
 import Wrapper from '../tools/Wrapper';
 import RichText from '../components/RichText';
 import ImageFeatures from '../components/pageComponents/ImageFeatures';
-// import { gql } from '@apollo/client';
-// import { wpClient } from '../client';
+
 const query = groq`*[_type == "homePage"][0]{
   "content": *[_type == "homePage"][0],
   "site": {
@@ -55,18 +54,6 @@ const Index = ({ doc, preview }) => {
 };
 
 export async function getStaticProps({ query, preview = false }) {
-  // const { data } = await wpClient.query({
-  //   query: gql`
-  //     {
-  //       posts(first: 9999) {
-  //         nodes {
-  //           title
-  //         }
-  //       }
-  //     }
-  //   `,
-  // });
-
   const doc = await getClient(query?.preview === '').fetch(
     `*[_type == "homePage"][0]{
       "content": *[_type == "homePage"][0],
