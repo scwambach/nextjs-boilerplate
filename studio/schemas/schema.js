@@ -21,7 +21,6 @@ import imageWText from './modules/imageWText';
 import menuItem from './modules/menuItem';
 import socialItem from './modules/socialItem';
 import iconSelector from './modules/iconSelector';
-import colorList from './modules/colorList';
 import homePage from './docTypes/homePage';
 import aboutPage from './docTypes/aboutPage';
 import staticHeroBanner from './components/staticHeroBanner';
@@ -59,6 +58,5 @@ export default createSchema({
     menuItem,
     socialItem,
     iconSelector,
-    colorList,
   ]),
 });

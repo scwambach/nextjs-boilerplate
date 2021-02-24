@@ -42,10 +42,6 @@
     {
       "implements": "part:@sanity/base/theme/variables/override-style",
       "path": "./variableOverrides.css"
-    },
-    {
-      "implements": "part:@sanity/form-builder/input/image/asset-source",
-      "path": "./assetSource.js"
     }
   ]
 }

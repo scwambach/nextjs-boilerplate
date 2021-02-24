@@ -29,8 +29,7 @@
   },
   "homepage": "https://github.com/scwambach/gatsby-starter#readme",
   "devDependencies": {
-    "@lhci/server": "^0.3.14",
-    "@sanity/cli": "^1.149.19",
+    "@lhci/server": "^0.7.0",
     "babel-eslint": "^10.1.0",
     "cz-customizable": "^6.3.0",
     "lerna": "^3.22.1"
@@ -41,6 +40,6 @@
     }
   },
   "dependencies": {
-    "next-sanity": "^0.1.8"
+    "next-sanity": "^0.1.10"
   }
 }
