@@ -1,45 +1,59 @@
 {
-  "name": "gatsby-sanity-starter",
+  "name": "nextjs-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "lerna run build --parallel",
-    "build-web": "(cd web && npm run build)",
-    "build-studio": "(cd studio && npm run build)",
-    "commit": "git add . && cz",
-    "dev": "lerna run dev --parallel",
-    "format": "lerna run format",
-    "graphql-deploy": "lerna run graphql-deploy",
-    "lint": "lerna run lint",
-    "postinstall": "lerna bootstrap",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "lerna run start --parallel",
-    "backup": "curl https://k702ll7a.api.sanity.io/v1/data/export/production/ > backup.ndjson",
-    "sanity-deploy": "cd studio && yarn deployall && cd .."
+    "start": "next",
+    "build": "next build",
+    "dev": "next start",
+    "commit": "git add . && cz"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/scwambach/gatsby-starter.git"
+    "url": "git+https://github.com/scwambach/nextjs-boilerplate.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/scwambach/gatsby-starter/issues"
+    "url": "https://github.com/scwambach/nextjs-boilerplate/issues"
   },
-  "homepage": "https://github.com/scwambach/gatsby-starter#readme",
+  "homepage": "https://github.com/scwambach/nextjs-boilerplate#readme",
+  "dependencies": {
+    "@meronex/icons": "^4.0.0",
+    "@sanity/block-content-to-react": "^2.0.7",
+    "@sanity/client": "^2.2.6",
+    "@sanity/image-url": "^0.140.22",
+    "axios": "^0.21.1",
+    "dayjs": "^1.10.4",
+    "next": "^10.0.7",
+    "next-images": "^1.7.0",
+    "next-sanity": "^0.1.10",
+    "nextjs-progressbar": "^0.0.7",
+    "node-mailjet": "^3.3.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-player": "^2.9.0",
+    "react-responsive": "^8.2.0",
+    "react-spinners": "^0.10.6",
+    "react-vimeo": "^2.0.0",
+    "styled-components": "^5.2.1"
+  },
   "devDependencies": {
-    "@lhci/server": "^0.7.0",
     "babel-eslint": "^10.1.0",
+    "babel-plugin-styled-components": "^1.12.0",
     "cz-customizable": "^6.3.0",
-    "lerna": "^3.22.1"
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-customizable"
     }
-  },
-  "dependencies": {
-    "next-sanity": "^0.1.10"
   }
 }

@@ -69,7 +69,7 @@ yarn-error.log
 
 package-lock.json
 
-studio/dist
+_studio/dist
 
 .next
 .env.local

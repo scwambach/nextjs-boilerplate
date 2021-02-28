@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import { font, colors } from './settings';
-import { shade } from 'polished';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -119,7 +118,7 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
 
     &:hover {
-      color: ${shade(0.2, colors.blue)}
+      color: ${colors.green}
     }
   }
 

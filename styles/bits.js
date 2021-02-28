@@ -1,6 +1,5 @@
 import { css } from 'styled-components';
 import { colors, breakpoints } from './settings';
-import { shade } from 'polished';
 
 export const Button = css`
   background-color: ${colors.gray};
@@ -14,7 +13,7 @@ export const Button = css`
 
   &:hover {
     @media screen and (min-width: ${breakpoints.ipadLand}px) {
-      background-color: ${shade(0.2, colors.gray)};
+      background-color: ${colors.gray};
     }
   }
 `;
