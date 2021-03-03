@@ -1,13 +1,15 @@
 import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
-import RichText from '../RichText';
-import SanityBgImage, { SSanityBgImage } from '../../tools/SanityBgImage';
-import { breakpoints, colors } from '../../styles/settings';
-import Wrapper from '../../tools/Wrapper';
-import LinkObject from '../../tools/LinkObject';
-import { SectionStyle } from '../../styles/bits';
 import FdPlayCircle from '@meronex/icons/fd/FdPlayCircle';
-import YouTubeVideo, { SYouTubeVideo } from '../../tools/YouTubeVideo';
+import { breakpoints, colors } from '@/styles/settings';
+import { SectionStyle } from '@/styles/bits';
+import SanityBgImage, {
+  SSanityBgImage,
+} from '@/components/tools/SanityBgImage';
+import Wrapper from '@/components/tools/Wrapper';
+import LinkObject from '@/components/tools/LinkObject';
+import YouTubeVideo, { SYouTubeVideo } from '@/components/tools/YouTubeVideo';
+import RichText from '../RichText';
 
 export const ImageFeatureContext = React.createContext();
 
@@ -50,30 +52,28 @@ const SingleFeature = (props) => {
   );
 };
 
-const ImageFeatures = (props) => {
-  return (
-    <ImageFeatureContext.Provider
-      value={{
-        reverse: props.flipImageSide,
-        contained: props.contained,
-      }}
-    >
-      <SImageFeatures layout={props.componentLayout}>
-        {props.contained ? (
-          <Wrapper>
-            {props.features.map((feature, index) => (
-              <SingleFeature key={feature._key} {...feature} index={index} />
-            ))}
-          </Wrapper>
-        ) : (
-          props.features.map((feature, index) => (
+const ImageFeatures = (props) => (
+  <ImageFeatureContext.Provider
+    value={{
+      reverse: props.flipImageSide,
+      contained: props.contained,
+    }}
+  >
+    <SImageFeatures layout={props.componentLayout}>
+      {props.contained ? (
+        <Wrapper>
+          {props.features.map((feature, index) => (
             <SingleFeature key={feature._key} {...feature} index={index} />
-          ))
-        )}
-      </SImageFeatures>
-    </ImageFeatureContext.Provider>
-  );
-};
+          ))}
+        </Wrapper>
+      ) : (
+        props.features.map((feature, index) => (
+          <SingleFeature key={feature._key} {...feature} index={index} />
+        ))
+      )}
+    </SImageFeatures>
+  </ImageFeatureContext.Provider>
+);
 
 export default ImageFeatures;
 

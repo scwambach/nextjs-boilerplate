@@ -1,18 +1,16 @@
 import React from 'react';
+import Wrapper from '@/components/tools/Wrapper';
 import Layout from '../components/Layout';
-import Wrapper from '../tools/Wrapper';
 import { getClient } from '../utils/sanity';
 import ContactForm from '../components/forms/ContactForm';
 
-const ContactPage = (props) => {
-  return (
-    <Layout page staticTitle="Contact" site={props}>
-      <Wrapper narrow>
-        <ContactForm />
-      </Wrapper>
-    </Layout>
-  );
-};
+const ContactPage = (props) => (
+  <Layout page staticTitle="Contact" site={props}>
+    <Wrapper narrow>
+      <ContactForm />
+    </Wrapper>
+  </Layout>
+);
 
 export async function getStaticProps() {
   const content = await getClient().fetch(

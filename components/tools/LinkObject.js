@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 
-const LinkObject = (props) => {
-  return props.newTab ? (
+const LinkObject = (props) =>
+  props.newTab ? (
     <a
       aria-label={props.copy}
       href={props.url}
@@ -24,6 +24,5 @@ const LinkObject = (props) => {
   ) : (
     ''
   );
-};
 
 export default LinkObject;

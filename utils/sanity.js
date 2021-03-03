@@ -12,7 +12,7 @@ const config = {
    * if you want differ between local dev and production.
    *
    * https://nextjs.org/docs/basic-features/environment-variables
-   **/
+   * */
   dataset: process.env.SANITY_DATASET,
   projectId: process.env.SANITY_ID,
   useCdn: process.env.NODE_ENV === 'production',
@@ -20,7 +20,7 @@ const config = {
    * Set useCdn to `false` if your application require the freshest possible
    * data always (potentially slightly slower and a bit more expensive).
    * Authenticated request (like preview) will always bypass the CDN
-   **/
+   * */
 };
 
 if (!config.projectId) {
@@ -33,7 +33,7 @@ if (!config.dataset) {
 /**
  * Set up a helper function for generating Image URLs with only the asset reference data in your documents.
  * Read more: https://www.sanity.io/docs/image-url
- **/
+ * */
 export const urlFor = (source) => createImageUrlBuilder(config).image(source);
 
 // Set up the live preview subsscription hook

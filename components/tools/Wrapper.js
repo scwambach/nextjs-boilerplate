@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoints } from '../styles/settings';
+import { breakpoints } from '@/styles/settings';
 
-const Wrapper = ({ children, narrow }) => {
-  return <SWrapper narrow={narrow}>{children}</SWrapper>;
-};
+const Wrapper = ({ children, narrow }) => (
+  <SWrapper narrow={narrow}>{children}</SWrapper>
+);
 
 export default Wrapper;
 

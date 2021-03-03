@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { colors, breakpoints, font } from '../../styles/settings';
 import styled from 'styled-components';
 import Axios from 'axios';
+import { colors, font } from '@/styles/settings';
 
 const Message = ({ children }) => (
   <div
@@ -44,12 +44,10 @@ const ContactForm = () => {
 
   const postForm = () => {
     Axios.post('/api/mailer', serial)
-      .then((response) => {
-        console.log(response);
+      .then(() => {
         setSubmitted(true);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
         setSubmitError(true);
       });
   };

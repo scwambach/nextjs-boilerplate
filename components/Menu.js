@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import LinkObject from '../tools/LinkObject';
+import LinkObject from './tools/LinkObject';
 import { LayoutContext } from './Layout';
 
 const Menu = ({ name }) => {

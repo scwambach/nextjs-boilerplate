@@ -94,13 +94,13 @@ const GlobalStyle = createGlobalStyle`
   dl,
   ol,
   ul {
-    padding-left: 30px;
+    padding-left: 15px;
 
   }
 
   dl {
     dd {
-      margin-left: 30px;
+      margin-left: 15px;
     }
   }
 

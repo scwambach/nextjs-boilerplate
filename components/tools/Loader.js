@@ -1,7 +1,7 @@
 import React from 'react';
 import GridLoader from 'react-spinners/GridLoader';
 import styled from 'styled-components';
-import { colors } from '../styles/settings';
+import { colors } from '@/styles/settings';
 
 const Loader = ({ bg }) => (
   <SLoader bg={bg}>

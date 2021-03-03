@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Wrapper from '../../tools/Wrapper';
-import { colors, font, breakpoints } from '../../styles/settings';
-import { absoluteCenter } from '../../styles/bits';
-import urlFor from '../../js/urlFor';
-import Loader from '../../tools/Loader';
-import Delayed from '../../js/Delayed';
-import SanityImage from '../../tools/SanityImage';
+import { colors, font, breakpoints } from '@/styles/settings';
+import { absoluteCenter } from '@/styles/bits';
+import urlFor from '@/utils/urlFor';
+import Wrapper from '@/components/tools/Wrapper';
+import Loader from '@/components/tools/Loader';
+import Delayed from '@/components/tools/Delayed';
+import SanityImage from '@/components/tools/SanityImage';
 
 const ImageGallery = ({ gallery }) => {
   const [modalOpen, setModalOpen] = useState(false);
