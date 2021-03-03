@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Axios from 'axios';
-import { colors, font } from '../../styles/settings';
+import { colors, font } from '@/styles/settings';
 
 const Message = ({ children }) => (
   <div

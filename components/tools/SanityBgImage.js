@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
+import { breakpoints } from '@/styles/settings';
 import { urlFor } from '../../utils/sanity';
-import { breakpoints } from '../../styles/settings';
 import { LayoutContext } from '../Layout';
 
 const SanityBgImage = ({ video, src, height, width, children }) => {

@@ -1,7 +1,6 @@
 import React from 'react';
+import Wrapper from '@/components/tools/Wrapper';
 import ImageFeatures from '../pageComponents/ImageFeatures';
-import { Section } from '../../styles/Section';
-import Wrapper from '../../tools/Wrapper';
 import RichText from '../RichText';
 import HeroBanner from '../pageComponents/HeroBanner';
 import ImageGallery from '../pageComponents/ImageGallery';
@@ -11,11 +10,11 @@ const PageContent = (content) =>
     <React.Fragment key={component._key}>
       {component._type === 'imageFeatures' && <ImageFeatures {...component} />}
       {component._type === 'richText' && (
-        <Section>
+        <section>
           <Wrapper narrow>
             <RichText content={component.copy} />
           </Wrapper>
-        </Section>
+        </section>
       )}
       {component._type === 'heroBanner' && (
         <HeroBanner

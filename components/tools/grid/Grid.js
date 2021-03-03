@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { breakpoints } from '@/styles/settings';
 import { ItemWrapper } from './GridItem';
-import { breakpoints } from '../../../styles/settings';
 
 const Grid = ({ children, gutter, reverse, breakThird }) => (
   <GridContainer gutter={gutter} reverse={reverse} breakThird={breakThird}>

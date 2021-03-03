@@ -1,5 +1,5 @@
 import React from 'react';
-import Reset from '../styles/reset';
+import Reset from '@/styles/reset';
 
 export const AppContext = React.createContext();
 function MyApp({ Component, pageProps }) {

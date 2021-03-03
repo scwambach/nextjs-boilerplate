@@ -2,11 +2,10 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { groq } from 'next-sanity';
 import Error from 'next/error';
+import Wrapper from '@/components/tools/Wrapper';
 import { getClient, usePreviewSubscription } from '../utils/sanity';
 import Layout from '../components/Layout';
 import HeroBanner from '../components/pageComponents/HeroBanner';
-import { Section } from '../styles/Section';
-import Wrapper from '../tools/Wrapper';
 import RichText from '../components/RichText';
 import ImageFeatures from '../components/pageComponents/ImageFeatures';
 
@@ -45,11 +44,11 @@ const Index = ({ doc }) => {
           mainImage={data.content.mainImage}
         />
       )}
-      <Section>
+      <section>
         <Wrapper narrow>
           <RichText content={data.content.richText.copy} />
         </Wrapper>
-      </Section>
+      </section>
       <ImageFeatures {...data.content.imageFeatures} />
     </Layout>
   );

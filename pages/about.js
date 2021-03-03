@@ -2,11 +2,10 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Error from 'next/error';
 import { groq } from 'next-sanity';
+import Wrapper from '@/components/tools/Wrapper';
 import Layout from '../components/Layout';
 import { getClient, usePreviewSubscription } from '../utils/sanity';
 import HeroBanner from '../components/pageComponents/HeroBanner';
-import { Section } from '../styles/Section';
-import Wrapper from '../tools/Wrapper';
 import RichText from '../components/RichText';
 import ImageFeatures from '../components/pageComponents/ImageFeatures';
 
@@ -32,11 +31,11 @@ const AboutPage = ({ doc }) => {
         {...data.content.staticHeroBanner}
         mainImage={data.content.mainImage}
       />
-      <Section>
+      <section>
         <Wrapper narrow>
           <RichText content={data.content.richText.copy} />
         </Wrapper>
-      </Section>
+      </section>
       <ImageFeatures {...data.content.imageFeatures} />
     </Layout>
   );

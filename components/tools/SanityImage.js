@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
-import newRatio from './newRatio';
-import urlFor from '../js/urlFor';
-import { breakpoints } from '../styles/settings';
+import { breakpoints } from '@/styles/settings';
+import urlFor from '@/utils/urlFor';
+import newRatio from '@/utils/newRatio';
 import { LayoutContext } from '../Layout';
 
 const SanityImage = ({ src, height, width, alt }) => {

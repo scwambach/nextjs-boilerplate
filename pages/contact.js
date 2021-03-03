@@ -1,6 +1,6 @@
 import React from 'react';
+import Wrapper from '@/components/tools/Wrapper';
 import Layout from '../components/Layout';
-import Wrapper from '../tools/Wrapper';
 import { getClient } from '../utils/sanity';
 import ContactForm from '../components/forms/ContactForm';
 

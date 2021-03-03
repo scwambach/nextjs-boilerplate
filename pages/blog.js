@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Button } from '@/styles/bits';
+import Wrapper from '@/components/tools/Wrapper';
 import Layout from '../components/Layout';
 import { getClient } from '../utils/sanity';
-import Wrapper from '../tools/Wrapper';
 import Post from '../components/Post';
-import { Button } from '../styles/bits';
 
 const BlogPage = ({ content, site }) => {
   const [loadNum, setLoadNum] = useState(5);

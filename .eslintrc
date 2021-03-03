@@ -23,6 +23,7 @@
     "no-multi-spaces": "off",
     "comma-dangle": "off",
     "operator-linebreak": "off",
+    "import/no-unresolved": "off",
     "no-array-constructor": "off",
     "no-confusing-arrow": "off",
     "implicit-arrow-linebreak": "off",

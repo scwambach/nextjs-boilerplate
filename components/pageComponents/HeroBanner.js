@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import SanityBgImage, { SSanityBgImage } from '../tools/SanityBgImage';
+import { colors, breakpoints } from '@/styles/settings';
+import { Button, SectionStyle } from '@/styles/bits';
+import SanityBgImage, {
+  SSanityBgImage,
+} from '@/components/tools/SanityBgImage';
+import Wrapper, { SWrapper } from '@/components/tools/Wrapper';
+import LinkObject from '@/components/tools/LinkObject';
 import RichText from '../RichText';
-import Wrapper, { SWrapper } from '../tools/Wrapper';
-import { colors, breakpoints } from '../../styles/settings';
-import LinkObject from '../tools/LinkObject';
-import { Button, SectionStyle } from '../../styles/bits';
 import dateToNiceString from '../../utils/dateToNiceString';
 
 const HeroBanner = (props) => (

@@ -3,9 +3,9 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import FaHamburger from '@meronex/icons/fa/FaHamburger';
 import GrClose from '@meronex/icons/gr/GrClose';
+import { colors, breakpoints } from '@/styles/settings';
+import urlFor from '@/utils/urlFor';
 import Menu from './Menu';
-import { colors, breakpoints } from '../styles/settings';
-import urlFor from '../js/urlFor';
 import { LayoutContext } from './Layout';
 
 const Header = () => {

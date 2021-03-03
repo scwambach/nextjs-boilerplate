@@ -1,13 +1,15 @@
 import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import FdPlayCircle from '@meronex/icons/fd/FdPlayCircle';
+import { breakpoints, colors } from '@/styles/settings';
+import { SectionStyle } from '@/styles/bits';
+import SanityBgImage, {
+  SSanityBgImage,
+} from '@/components/tools/SanityBgImage';
+import Wrapper from '@/components/tools/Wrapper';
+import LinkObject from '@/components/tools/LinkObject';
+import YouTubeVideo, { SYouTubeVideo } from '@/components/tools/YouTubeVideo';
 import RichText from '../RichText';
-import SanityBgImage, { SSanityBgImage } from '../tools/SanityBgImage';
-import { breakpoints, colors } from '../../styles/settings';
-import Wrapper from '../tools/Wrapper';
-import LinkObject from '../tools/LinkObject';
-import { SectionStyle } from '../../styles/bits';
-import YouTubeVideo, { SYouTubeVideo } from '../tools/YouTubeVideo';
 
 export const ImageFeatureContext = React.createContext();
 
