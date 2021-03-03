@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
-import { urlFor } from '../utils/sanity';
-import { breakpoints } from '../styles/settings';
-import { LayoutContext } from '../components/Layout';
+import { urlFor } from '../../utils/sanity';
+import { breakpoints } from '../../styles/settings';
+import { LayoutContext } from '../Layout';
 
 const SanityBgImage = ({ video, src, height, width, children }) => {
   const { placeholders } = useContext(LayoutContext);
@@ -128,7 +128,7 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
             src={`https://player.vimeo.com/video/${video}?background=1&autoplay=1&loop=1&byline=0&title=0`}
             frameBorder="0"
             allowFullScreen
-          ></iframe>
+          />
         </div>
       )}
     </div>

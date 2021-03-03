@@ -1,14 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoints } from '../../styles/settings';
+import { breakpoints } from '../../../styles/settings';
 
-const GridItem = ({ children, width }) => {
-  return (
-    <ItemWrapper width={width}>
-      <SGridItem>{children}</SGridItem>
-    </ItemWrapper>
-  );
-};
+const GridItem = ({ children, width }) => (
+  <ItemWrapper width={width}>
+    <SGridItem>{children}</SGridItem>
+  </ItemWrapper>
+);
 
 export default GridItem;
 

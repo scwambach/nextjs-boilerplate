@@ -1,6 +1,6 @@
 import React from 'react';
 import BlockContent from '@sanity/block-content-to-react';
-import SanityImage from '../tools/SanityImage';
+import SanityImage from './tools/SanityImage';
 
 const RichText = ({ content }) => {
   const serializers = {

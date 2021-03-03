@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 import styled from 'styled-components';
 import GridLoader from 'react-spinners/GridLoader';
-import { colors } from '../styles/settings';
+import { colors } from '../../styles/settings';
 
 const YouTubeVideo = ({ title, videoId }) => {
   const [started, setStarted] = useState(false);

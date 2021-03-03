@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import Layout from '../components/Layout';
 import { getClient } from '../utils/sanity';
 import Wrapper from '../tools/Wrapper';
 import Post from '../components/Post';
-import styled from 'styled-components';
 import { Button } from '../styles/bits';
 
 const BlogPage = ({ content, site }) => {

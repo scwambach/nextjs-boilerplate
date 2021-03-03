@@ -3,13 +3,11 @@ import EventListing from '../components/pageComponents/EventsListing';
 import Layout from '../components/Layout';
 import { getClient } from '../utils/sanity';
 
-const events = (props) => {
-  return (
-    <Layout page staticTitle="Events" site={props}>
-      <EventListing />
-    </Layout>
-  );
-};
+const events = (props) => (
+  <Layout page staticTitle="Events" site={props}>
+    <EventListing />
+  </Layout>
+);
 
 export async function getStaticProps() {
   const content = await getClient().fetch(

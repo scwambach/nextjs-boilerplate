@@ -6,8 +6,8 @@ const EXTERNAL_DATA_URL = 'https://nextjs-boilerplate-six.vercel.app';
 const createSitemap = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     ${posts
-      .map(({ slug, _type, _updatedAt }) => {
-        return `
+      .map(
+        ({ slug, _type, _updatedAt }) => `
           <url>
             <loc>${`${EXTERNAL_DATA_URL}/${
               _type === 'homePage'
@@ -21,8 +21,8 @@ const createSitemap = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
             <lastmod>${_updatedAt}</lastmod>
             <priority>0.80</priority>
           </url>
-      `;
-      })
+      `
+      )
       .join('')}
   </urlset>
   `;

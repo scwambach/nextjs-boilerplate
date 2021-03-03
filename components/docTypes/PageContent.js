@@ -6,8 +6,8 @@ import RichText from '../RichText';
 import HeroBanner from '../pageComponents/HeroBanner';
 import ImageGallery from '../pageComponents/ImageGallery';
 
-const PageContent = (content) => {
-  return content.pageContent.map((component, index) => (
+const PageContent = (content) =>
+  content.pageContent.map((component, index) => (
     <React.Fragment key={component._key}>
       {component._type === 'imageFeatures' && <ImageFeatures {...component} />}
       {component._type === 'richText' && (
@@ -27,6 +27,5 @@ const PageContent = (content) => {
       {component._type === 'imageGallery' && <ImageGallery {...component} />}
     </React.Fragment>
   ));
-};
 
 export default PageContent;

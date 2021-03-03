@@ -1,15 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ItemWrapper } from './GridItem';
-import { breakpoints } from '../../styles/settings';
+import { breakpoints } from '../../../styles/settings';
 
-const Grid = ({ children, gutter, reverse, breakThird }) => {
-  return (
-    <GridContainer gutter={gutter} reverse={reverse} breakThird={breakThird}>
-      <Row>{children}</Row>
-    </GridContainer>
-  );
-};
+const Grid = ({ children, gutter, reverse, breakThird }) => (
+  <GridContainer gutter={gutter} reverse={reverse} breakThird={breakThird}>
+    <Row>{children}</Row>
+  </GridContainer>
+);
 
 export default Grid;
 

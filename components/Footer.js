@@ -8,9 +8,12 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <SFooter>
-      <p>&copy;{` ${settings.title} ${year}`}</p>
       <p>
-        Site by{' '}
+        &copy;
+        {` ${settings.title} ${year}`}
+      </p>
+      <p>
+        Site by&nbsp;
         <a
           href="https://scottwamba.ch"
           aria-label="Scott Wambach"

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import Header from './Header';
 import NextNprogress from 'nextjs-progressbar';
+import Header from './Header';
 import DocHead from './DocHead';
 import Footer from './Footer';
 import GlobalStyle from '../styles/globalStyles';
 import { colors } from '../styles/settings';
+
 export const LayoutContext = React.createContext();
 
 const Layout = ({ page, site, staticTitle, children }) => {

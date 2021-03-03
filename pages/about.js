@@ -1,25 +1,26 @@
-import { getClient, usePreviewSubscription } from '../utils/sanity';
 import React from 'react';
-import Layout from '../components/Layout';
 import { useRouter } from 'next/router';
+import Error from 'next/error';
 import { groq } from 'next-sanity';
+import Layout from '../components/Layout';
+import { getClient, usePreviewSubscription } from '../utils/sanity';
 import HeroBanner from '../components/pageComponents/HeroBanner';
 import { Section } from '../styles/Section';
 import Wrapper from '../tools/Wrapper';
 import RichText from '../components/RichText';
 import ImageFeatures from '../components/pageComponents/ImageFeatures';
 
-const query = groq`*[_type == "aboutPage"][0]{
+const pageQuery = groq`*[_type == "aboutPage"][0]{
   "content": *[_type == "aboutPage"][0],
 }`;
 
-const AboutPage = ({ doc, preview }) => {
+const AboutPage = ({ doc }) => {
   const router = useRouter();
   if (!router.isFallback && !doc) {
     return <Error statusCode={404} />;
   }
 
-  const { data = {} } = usePreviewSubscription(query, {
+  const { data = {} } = usePreviewSubscription(pageQuery, {
     initialData: doc,
     enabled: router.query.preview === '',
   });

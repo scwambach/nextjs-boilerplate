@@ -1,6 +1,6 @@
+import React, { useContext } from 'react';
 import Head from 'next/head';
 import urlFor from '../js/urlFor';
-import { useContext } from 'react';
 import { LayoutContext } from './Layout';
 
 const DocHead = ({ page, staticTitle }) => {

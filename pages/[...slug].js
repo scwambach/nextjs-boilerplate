@@ -1,11 +1,13 @@
-import Layout from '../components/Layout';
-import PageContent from '../components/docTypes/PageContent';
+import React from 'react';
 import { useRouter } from 'next/router';
 import { groq } from 'next-sanity';
+import Error from 'next/error';
+import Layout from '../components/Layout';
+import PageContent from '../components/docTypes/PageContent';
 import PostContent from '../components/docTypes/PostContent';
 import { getClient, usePreviewSubscription } from '../utils/sanity';
 
-const query = groq`*[slug.current == $slug][0]{
+const pageQuery = groq`*[slug.current == $slug][0]{
   "content": *[slug.current == $slug][0],
 }`;
 
@@ -15,7 +17,7 @@ export default function PageBuilder({ doc }) {
     return <Error statusCode={404} />;
   }
 
-  const { data = {} } = usePreviewSubscription(query, {
+  const { data = {} } = usePreviewSubscription(pageQuery, {
     params: { slug: doc?.content.slug.current },
     initialData: doc,
     enabled: router.query.preview === '',
@@ -39,7 +41,7 @@ export default function PageBuilder({ doc }) {
 }
 
 export async function getStaticPaths() {
-  const res = await getClient().fetch(`*[_type == "page" || _type == "post"]`);
+  const res = await getClient().fetch('*[_type == "page" || _type == "post"]');
   const docs = await res;
   const paths = docs.map((doc) => ({
     params: { slug: doc.slug.current.split('/') },

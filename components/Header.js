@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import urlFor from '../js/urlFor';
 import Link from 'next/link';
 import styled from 'styled-components';
-import Menu from './Menu';
-import { colors, breakpoints } from '../styles/settings';
 import FaHamburger from '@meronex/icons/fa/FaHamburger';
 import GrClose from '@meronex/icons/gr/GrClose';
+import Menu from './Menu';
+import { colors, breakpoints } from '../styles/settings';
+import urlFor from '../js/urlFor';
 import { LayoutContext } from './Layout';
 
 const Header = () => {
