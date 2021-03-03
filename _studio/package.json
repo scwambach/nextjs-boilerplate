@@ -39,7 +39,7 @@
     "sanity-plugin-color-list": "^2.0.1",
     "sanity-plugin-dashboard-widget-netlify": "^1.0.1",
     "sanity-plugin-datatable": "^1.1.0",
-    "sanity-plugin-media": "^1.1.0",
+    "sanity-plugin-media": "^1.1.2",
     "sanity-plugin-media-library": "^1.0.5",
     "sanity-plugin-position-input": "^1.0.4",
     "sanity-plugin-tabs": "^2.0.1",

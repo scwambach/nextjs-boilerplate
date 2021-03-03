@@ -3,11 +3,11 @@ import { useRouter } from 'next/router';
 import Error from 'next/error';
 import { groq } from 'next-sanity';
 import Wrapper from '@/components/tools/Wrapper';
-import Layout from '../components/Layout';
+import Layout from '@/components/Layout';
+import HeroBanner from '@/components/pageComponents/HeroBanner';
+import RichText from '@/components/RichText';
+import ImageFeatures from '@/components/pageComponents/ImageFeatures';
 import { getClient, usePreviewSubscription } from '../utils/sanity';
-import HeroBanner from '../components/pageComponents/HeroBanner';
-import RichText from '../components/RichText';
-import ImageFeatures from '../components/pageComponents/ImageFeatures';
 
 const pageQuery = groq`*[_type == "aboutPage"][0]{
   "content": *[_type == "aboutPage"][0],

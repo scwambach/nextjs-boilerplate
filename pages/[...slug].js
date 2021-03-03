@@ -2,9 +2,9 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { groq } from 'next-sanity';
 import Error from 'next/error';
-import Layout from '../components/Layout';
-import PageContent from '../components/docTypes/PageContent';
-import PostContent from '../components/docTypes/PostContent';
+import Layout from '@/components/Layout';
+import PageContent from '@/components/docTypes/PageContent';
+import PostContent from '@/components/docTypes/PostContent';
 import { getClient, usePreviewSubscription } from '../utils/sanity';
 
 const pageQuery = groq`*[slug.current == $slug][0]{

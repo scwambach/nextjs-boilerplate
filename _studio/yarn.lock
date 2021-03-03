@@ -8222,9 +8222,10 @@ sanity-plugin-media-library@^1.0.5:
   dependencies:
     styled-components "^5.2.1"
 
-sanity-plugin-media@^1.1.0:
+sanity-plugin-media@^1.1.2:
   version "1.1.2"
-  resolved "https://registry.npmjs.org/sanity-plugin-media/-/sanity-plugin-media-1.1.2.tgz#6b7e77de858e04d0007cdc22192b4225c64b262d"
+  resolved "https://registry.yarnpkg.com/sanity-plugin-media/-/sanity-plugin-media-1.1.2.tgz#6b7e77de858e04d0007cdc22192b4225c64b262d"
+  integrity sha512-8BdZiIOG/8runl0PEeJAZfGOQeoO5ISIQO4/oVLEwE+L3WWjLo4ZfcZgwMGg7c1mtKY054E6fZ5XgrgJUu4v0w==
   dependencies:
     "@hookform/resolvers" "2.0.0-beta.3"
     "@reduxjs/toolkit" "1.5.0"

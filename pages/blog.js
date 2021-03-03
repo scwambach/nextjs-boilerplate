@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Button } from '@/styles/bits';
 import Wrapper from '@/components/tools/Wrapper';
-import Layout from '../components/Layout';
+import Layout from '@/components/Layout';
+import Post from '@/components/Post';
 import { getClient } from '../utils/sanity';
-import Post from '../components/Post';
 
 const BlogPage = ({ content, site }) => {
   const [loadNum, setLoadNum] = useState(5);
