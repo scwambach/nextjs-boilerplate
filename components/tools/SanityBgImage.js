@@ -125,6 +125,7 @@ const SanityBgImage = ({ video, src, height, width, children }) => {
       {loaded && isVisible && video && (
         <div className="video-wrapper">
           <iframe
+            title="Video Background"
             src={`https://player.vimeo.com/video/${video}?background=1&autoplay=1&loop=1&byline=0&title=0`}
             frameBorder="0"
             allowFullScreen
