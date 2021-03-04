@@ -6,7 +6,7 @@ import urlFor from '@/utils/urlFor';
 import Wrapper from '@/components/tools/Wrapper';
 import Loader from '@/components/tools/Loader';
 import Delayed from '@/components/tools/Delayed';
-import SanityImage from '@/components/tools/SanityImage';
+import Image from '../tools/Image';
 
 const ImageGallery = ({ gallery }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -43,9 +43,7 @@ const ImageGallery = ({ gallery }) => {
               setModalOpen(true);
             }}
           >
-            {image.asset && (
-              <SanityImage src={image} height={300} width={300} />
-            )}
+            {image.asset && <Image crop src={image} height={300} width={300} />}
           </a>
         ))}
         {modalOpen && (

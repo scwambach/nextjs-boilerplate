@@ -1,9 +1,9 @@
 import React from 'react';
 import Wrapper from '@/components/tools/Wrapper';
-import ImageFeatures from '../pageComponents/ImageFeatures';
-import RichText from '../RichText';
-import HeroBanner from '../pageComponents/HeroBanner';
-import ImageGallery from '../pageComponents/ImageGallery';
+import ImageFeatures from '@/components/pageComponents/ImageFeatures';
+import RichText from '@/components/RichText';
+import HeroBanner from '@/components/pageComponents/HeroBanner';
+import ImageGallery from '@/components/pageComponents/ImageGallery';
 
 const PageContent = (content) =>
   content.pageContent.map((component, index) => (

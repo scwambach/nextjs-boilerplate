@@ -1,7 +1,7 @@
 import React from 'react';
 import Wrapper from '@/components/tools/Wrapper';
-import HeroBanner from '../pageComponents/HeroBanner';
-import RichText from '../RichText';
+import HeroBanner from '@/components/pageComponents/HeroBanner';
+import RichText from '@/components/RichText';
 
 const PostContent = (content) => (
   <>

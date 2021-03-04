@@ -1,5 +1,5 @@
 import React from 'react';
-import { getClient } from '../utils/sanity';
+import { getClient } from '@/utils/sanity';
 
 const EXTERNAL_DATA_URL = 'https://nextjs-boilerplate-six.vercel.app';
 

@@ -1,56 +1,17 @@
 import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import FdPlayCircle from '@meronex/icons/fd/FdPlayCircle';
-import { breakpoints, colors } from '@/styles/settings';
-import { SectionStyle } from '@/styles/bits';
-import SanityBgImage, {
-  SSanityBgImage,
-} from '@/components/tools/SanityBgImage';
+import { colors } from '@/styles/settings';
 import Wrapper from '@/components/tools/Wrapper';
 import LinkObject from '@/components/tools/LinkObject';
-import YouTubeVideo, { SYouTubeVideo } from '@/components/tools/YouTubeVideo';
-import RichText from '../RichText';
+import YouTubeVideo from '@/components/tools/YouTubeVideo';
+import RichText from '@/components/RichText';
+import Grid, { Row } from '@/components/tools/grid/Grid';
+import GridItem from '@/components/tools/grid/GridItem';
+import { SectionStyle } from '@/styles/bits';
+import BackgroundImage, { ScBackgroundImage } from '../tools/BackgroundImage';
 
 export const ImageFeatureContext = React.createContext();
-
-const SingleFeature = (props) => {
-  const { contained, reverse } = useContext(ImageFeatureContext);
-  const [toggleVideo, setToggleVideo] = useState(false);
-  return (
-    <SSingleFeature
-      contained={contained}
-      reverse={reverse ? props.index % 2 === 0 : props.index % 2 !== 0}
-    >
-      {props.video ? (
-        toggleVideo ? (
-          <YouTubeVideo title={props.heading} videoId={props.video} />
-        ) : (
-          props.image && (
-            <SanityBgImage src={props.image}>
-              <a
-                href={null}
-                onClick={() => {
-                  setToggleVideo(true);
-                }}
-              >
-                <FdPlayCircle />
-              </a>
-            </SanityBgImage>
-          )
-        )
-      ) : (
-        props.image && <SanityBgImage src={props.image} />
-      )}
-      <div>
-        <div>
-          {props.heading && <h2>{props.heading}</h2>}
-          {props.copy && <RichText content={props.copy} />}
-          {props.link && <LinkObject key={props.link._key} {...props.link} />}
-        </div>
-      </div>
-    </SSingleFeature>
-  );
-};
 
 const ImageFeatures = (props) => (
   <ImageFeatureContext.Provider
@@ -77,27 +38,63 @@ const ImageFeatures = (props) => (
 
 export default ImageFeatures;
 
+const SingleFeature = (props) => {
+  const { contained, reverse } = useContext(ImageFeatureContext);
+  const [toggleVideo, setToggleVideo] = useState(false);
+  return (
+    <SSingleFeature
+      contained={contained}
+      reverse={reverse ? props.index % 2 === 0 : props.index % 2 !== 0}
+    >
+      <Grid
+        gutter={50}
+        reverse={reverse ? props.index % 2 === 0 : props.index % 2 !== 0}
+      >
+        <GridItem width="half">
+          {props.video ? (
+            toggleVideo ? (
+              <YouTubeVideo title={props.heading} videoId={props.video} />
+            ) : (
+              props.image && (
+                <BackgroundImage src={props.image}>
+                  <a
+                    href={null}
+                    onClick={() => {
+                      setToggleVideo(true);
+                    }}
+                  >
+                    <FdPlayCircle />
+                  </a>
+                </BackgroundImage>
+              )
+            )
+          ) : (
+            props.image && <BackgroundImage src={props.image} />
+          )}
+        </GridItem>
+        <GridItem width="half">
+          <div>
+            <div>
+              {props.heading && <h2>{props.heading}</h2>}
+              {props.copy && <RichText content={props.copy} />}
+              {props.link && (
+                <LinkObject key={props.link._key} {...props.link} />
+              )}
+            </div>
+          </div>
+        </GridItem>
+      </Grid>
+    </SSingleFeature>
+  );
+};
+
 const SImageFeatures = styled.section`
   ${SectionStyle};
 `;
 
 const SSingleFeature = styled.div`
-  display: flex;
-  flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
-  justify-content: ${({ reverse }) => (reverse ? 'end' : 'flex-start')};
-  align-items: center;
-
-  > div {
-    width: 50%;
-
-    &:nth-child(2) {
-      padding: 30px 50px;
-      max-width: ${breakpoints.pageWidth / 2}px;
-    }
-  }
-
-  ${SSanityBgImage} {
-    min-height: 600px;
+  ${ScBackgroundImage} {
+    min-height: 400px;
     position: relative;
 
     > a {
@@ -122,7 +119,7 @@ const SSingleFeature = styled.div`
     }
   }
 
-  ${SYouTubeVideo} {
-    padding-bottom: 27%;
+  ${Row} {
+    align-items: center;
   }
 `;

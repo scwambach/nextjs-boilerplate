@@ -7,7 +7,7 @@ import Layout from '@/components/Layout';
 import HeroBanner from '@/components/pageComponents/HeroBanner';
 import RichText from '@/components/RichText';
 import ImageFeatures from '@/components/pageComponents/ImageFeatures';
-import { getClient, usePreviewSubscription } from '../utils/sanity';
+import { getClient, usePreviewSubscription } from '@/utils/sanity';
 
 const pageQuery = groq`*[_type == "homePage"][0]{
   "content": *[_type == "homePage"][0],

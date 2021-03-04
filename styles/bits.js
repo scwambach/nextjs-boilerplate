@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { colors, breakpoints } from './settings';
+import { colors, breakpoints } from '@/styles/settings';
 
 export const Button = css`
   background-color: ${colors.gray};
@@ -38,4 +38,28 @@ export const absoluteCenter = css`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+`;
+
+export const Shimmer = css`
+  @keyframes placeHolderShimmer {
+    0% {
+      background-position: 0px 0;
+    }
+    100% {
+      background-position: 100vw 0;
+    }
+  }
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: fff;
+  background: linear-gradient(
+    90deg,
+    ${colors.gray} 0%,
+    ${colors.white} 33%,
+    ${colors.gray} 100%
+  );
+  left: 0;
 `;

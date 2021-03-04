@@ -5,7 +5,7 @@ import Error from 'next/error';
 import Layout from '@/components/Layout';
 import PageContent from '@/components/docTypes/PageContent';
 import PostContent from '@/components/docTypes/PostContent';
-import { getClient, usePreviewSubscription } from '../utils/sanity';
+import { getClient, usePreviewSubscription } from '@/utils/sanity';
 
 const pageQuery = groq`*[slug.current == $slug][0]{
   "content": *[slug.current == $slug][0],

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import NextNprogress from 'nextjs-progressbar';
 import GlobalStyle from '@/styles/globalStyles';
 import { colors } from '@/styles/settings';
-import Header from './Header';
-import DocHead from './DocHead';
-import Footer from './Footer';
+import Header from '@/components/Header';
+import DocHead from '@/components/DocHead';
+import Footer from '@/components/Footer';
 
 export const LayoutContext = React.createContext();
 

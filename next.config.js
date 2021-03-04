@@ -5,4 +5,7 @@ module.exports = {
     SANITY_TOKEN: process.env.SANITY_TOKEN,
     CMS_URL: process.env.CMS_URL,
   },
+  images: {
+    domains: ['cdn.sanity.io'],
+  },
 };

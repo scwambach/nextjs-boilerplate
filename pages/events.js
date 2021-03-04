@@ -1,7 +1,7 @@
 import React from 'react';
 import EventListing from '@/components/pageComponents/EventsListing';
 import Layout from '@/components/Layout';
-import { getClient } from '../utils/sanity';
+import { getClient } from '@/utils/sanity';
 
 const events = (props) => (
   <Layout page staticTitle="Events" site={props}>

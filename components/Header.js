@@ -5,8 +5,8 @@ import FaHamburger from '@meronex/icons/fa/FaHamburger';
 import GrClose from '@meronex/icons/gr/GrClose';
 import { colors, breakpoints } from '@/styles/settings';
 import urlFor from '@/utils/urlFor';
-import Menu from './Menu';
-import { LayoutContext } from './Layout';
+import Menu from '@/components/Menu';
+import { LayoutContext } from '@/components/Layout';
 
 const Header = () => {
   const { settings, logo, menuOpen, setMenuOpen } = useContext(LayoutContext);

@@ -2,7 +2,7 @@ import React from 'react';
 import Wrapper from '@/components/tools/Wrapper';
 import Layout from '@/components/Layout';
 import ContactForm from '@/components/forms/ContactForm';
-import { getClient } from '../utils/sanity';
+import { getClient } from '@/utils/sanity';
 
 const ContactPage = (props) => (
   <Layout page staticTitle="Contact" site={props}>

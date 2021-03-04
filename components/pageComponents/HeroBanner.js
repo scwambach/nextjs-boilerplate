@@ -2,17 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import { colors, breakpoints } from '@/styles/settings';
 import { Button, SectionStyle } from '@/styles/bits';
-import SanityBgImage, {
-  SSanityBgImage,
-} from '@/components/tools/SanityBgImage';
 import Wrapper, { SWrapper } from '@/components/tools/Wrapper';
 import LinkObject from '@/components/tools/LinkObject';
-import RichText from '../RichText';
-import dateToNiceString from '../../utils/dateToNiceString';
+import BackgroundImage, {
+  ScBackgroundImage,
+} from '@/components/tools/BackgroundImage';
+import dateToNiceString from '@/utils/dateToNiceString';
+import RichText from '@/components//RichText';
 
 const HeroBanner = (props) => (
   <SHeroBanner>
-    <SanityBgImage src={props.mainImage} video={props.vimeoVideoId}>
+    <BackgroundImage src={props.mainImage} video={props.vimeoVideoId}>
       <Wrapper narrow>
         {(props.heading || props.post) && props.index === 0 ? (
           <h1>{props.heading || props.post?.title}</h1>
@@ -31,7 +31,7 @@ const HeroBanner = (props) => (
           </>
         )}
       </Wrapper>
-    </SanityBgImage>
+    </BackgroundImage>
   </SHeroBanner>
 );
 
@@ -43,7 +43,7 @@ const SHeroBanner = styled.section`
   color: ${colors.white};
   position: relative;
 
-  ${SSanityBgImage} {
+  ${ScBackgroundImage} {
     padding: 80px 0;
 
     @media screen and (min-width: ${breakpoints.ipadPort}px) {

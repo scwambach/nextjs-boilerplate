@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { breakpoints, colors } from '@/styles/settings';
 import dateFormatter from '@/utils/dateFormatter';
 import Wrapper from '@/components/tools/Wrapper';
-import { LayoutContext } from '../Layout';
+import { LayoutContext } from '@/components/Layout';
 
 const NewEventsArray = (events) => {
   const updatedEvents = [];

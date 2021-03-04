@@ -2,13 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import dayjs from 'dayjs';
 import styled from 'styled-components';
-import SanityExcerpt from './SanityExcerpt';
-import SanityImage from './tools/SanityImage';
+import SanityExcerpt from '@/components/SanityExcerpt';
+import Image from './tools/Image';
 
 const Post = (post) => (
   <SPost>
     <div className="image">
-      <SanityImage src={post.mainImage} width={500} height={400} />
+      <Image crop src={post.mainImage} width={500} height={400} />
     </div>
     <div className="copy">
       <h2>{post.title}</h2>

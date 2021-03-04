@@ -29,6 +29,7 @@
     "next": "^10.0.7",
     "next-images": "^1.7.0",
     "next-sanity": "^0.1.10",
+    "next-sanity-image": "^1.0.1",
     "nextjs-progressbar": "^0.0.7",
     "node-mailjet": "^3.3.1",
     "react": "17.0.1",

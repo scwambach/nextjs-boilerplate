@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { colors } from '@/styles/settings';
-import { LayoutContext } from './Layout';
+import { LayoutContext } from '@/components/Layout';
 
 const Footer = () => {
   const { settings } = useContext(LayoutContext);

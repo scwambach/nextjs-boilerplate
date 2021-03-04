@@ -4,7 +4,7 @@ import { Button } from '@/styles/bits';
 import Wrapper from '@/components/tools/Wrapper';
 import Layout from '@/components/Layout';
 import Post from '@/components/Post';
-import { getClient } from '../utils/sanity';
+import { getClient } from '@/utils/sanity';
 
 const BlogPage = ({ content, site }) => {
   const [loadNum, setLoadNum] = useState(5);

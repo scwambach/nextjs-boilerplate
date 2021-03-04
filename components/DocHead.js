@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Head from 'next/head';
 import urlFor from '@/utils/urlFor';
-import { LayoutContext } from './Layout';
+import { LayoutContext } from '@/components/Layout';
 
 const DocHead = ({ page, staticTitle }) => {
   const { settings } = useContext(LayoutContext);
