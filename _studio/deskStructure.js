@@ -11,7 +11,7 @@ import FdPageMultiple from '@meronex/icons/fd/FdPageMultiple';
 import BiHome from '@meronex/icons/bi/BiHome';
 import AiOutlineBuild from '@meronex/icons/ai/AiOutlineBuild';
 
-const remoteURL = 'https://developersdonating.com';
+const remoteURL = 'https://sandbachs.vercel.app';
 const localURL = 'http://localhost:3000';
 
 const appUrl = window.location.hostname === 'localhost' ? localURL : remoteURL;
@@ -27,37 +27,16 @@ const hiddenTypes = [
   'menu',
 ];
 
-const PreviewModule = ({ url }) => {
-  return (
-    <>
-      <a
-        style={{
-          display: 'block',
-          textDecoration: 'none',
-          textAlign: 'right',
-          fontSize: '12px',
-          position: 'fixed',
-          zIndex: '431',
-          right: '20px',
-          top: '107px',
-          border: '1px solid',
-          padding: '0 5px',
-        }}
-        href={url}
-        target="_blank"
-      >
-        New tab
-      </a>
-      <div className="container" style={{ height: '100%' }}>
-        <iframe
-          src={url}
-          frameBorder={0}
-          style={{ width: '100%', height: '100%', overflow: 'hidden' }}
-        />
-      </div>
-    </>
-  );
-};
+const PreviewModule = ({ url }) => (
+  <div className="container" style={{ height: '100%' }}>
+    <iframe
+      title="Preview"
+      src={url}
+      frameBorder={0}
+      style={{ width: '100%', height: '100%', overflow: 'hidden' }}
+    />
+  </div>
+);
 
 const WebPreview = ({ document }) => {
   const previewUrl = `${appUrl}/${document.displayed?.slug?.current}?preview`;
