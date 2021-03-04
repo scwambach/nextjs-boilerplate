@@ -15,7 +15,12 @@ const Header = () => {
     <SHeader open={menuOpen}>
       <Link href="/">
         <a aria-label={settings.title}>
-          <img alt={settings.title} src={urlFor(logo).width(200)} />
+          <img
+            alt={settings.title}
+            src={urlFor(logo).width(200)}
+            width={200}
+            height={33}
+          />
         </a>
       </Link>
       <nav>

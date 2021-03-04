@@ -12,6 +12,7 @@ const BackgroundImage = ({
   src,
   height,
   width,
+  quality,
   overlay,
   video,
 }) => {
@@ -28,11 +29,15 @@ const BackgroundImage = ({
       placeholder={ph}
     >
       <Image
-        layout="fill"
+        layout={height || width ? 'responsive' : 'fill'}
+        objectFit={height || (width && 'cover')}
         src={imageProps.src}
-        quality={100}
+        height={height}
+        width={width}
+        quality={quality || 100}
         alt={id && `bg_${id}`}
       />
+
       {children}
       {video && (
         <div className="video-wrapper">
@@ -49,6 +54,16 @@ const BackgroundImage = ({
 };
 
 export default BackgroundImage;
+
+export const Inner = styled.div`
+  > div {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+    height: 100%;
+  }
+`;
 
 export const ScBackgroundImage = styled.div`
   position: relative;
@@ -70,8 +85,19 @@ export const ScBackgroundImage = styled.div`
     object-position: center;
   }
 
-  div {
+  > * {
     position: relative;
+  }
+
+  div {
+    &:first-child {
+      position: absolute !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translateX(-50%) translateY(-50%);
+      width: 100%;
+      height: 100%;
+    }
   }
 
   ${({ height }) => height && `height: ${height}`};
