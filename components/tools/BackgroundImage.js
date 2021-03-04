@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { colors } from '@/styles/settings';
-import Image from 'next/image';
+import Img from 'next/image';
 import { useNextSanityImage } from 'next-sanity-image';
 import { getClient } from '@/utils/sanity';
 import { LayoutContext } from '@/components/Layout';
@@ -28,16 +28,12 @@ const BackgroundImage = ({
       image={src}
       placeholder={ph}
     >
-      <Image
-        layout={height || width ? 'responsive' : 'fill'}
-        objectFit={height || (width && 'cover')}
+      <Img
+        layout="fill"
         src={imageProps.src}
-        height={height}
-        width={width}
         quality={quality || 100}
         alt={id && `bg_${id}`}
       />
-
       {children}
       {video && (
         <div className="video-wrapper">
@@ -87,17 +83,6 @@ export const ScBackgroundImage = styled.div`
 
   > * {
     position: relative;
-  }
-
-  div {
-    &:first-child {
-      position: absolute !important;
-      top: 50% !important;
-      left: 50% !important;
-      transform: translateX(-50%) translateY(-50%);
-      width: 100%;
-      height: 100%;
-    }
   }
 
   ${({ height }) => height && `height: ${height}`};
