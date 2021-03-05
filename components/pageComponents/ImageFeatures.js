@@ -56,7 +56,12 @@ const SingleFeature = (props) => {
               <YouTubeVideo title={props.heading} videoId={props.video} />
             ) : (
               props.image && (
-                <BackgroundImage src={props.image} width={650} height={400}>
+                <BackgroundImage
+                  alt={props.heading || 'imageFeature'}
+                  src={props.image}
+                  width={650}
+                  height={400}
+                >
                   <a
                     href={null}
                     onClick={() => {
@@ -70,7 +75,12 @@ const SingleFeature = (props) => {
             )
           ) : (
             props.image && (
-              <BackgroundImage src={props.image} width={650} height={400} />
+              <BackgroundImage
+                alt={props.heading || 'imageFeature'}
+                src={props.image}
+                width={650}
+                height={400}
+              />
             )
           )}
         </GridItem>

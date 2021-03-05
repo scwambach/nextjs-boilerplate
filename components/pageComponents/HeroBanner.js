@@ -12,7 +12,11 @@ import RichText from '@/components//RichText';
 
 const HeroBanner = (props) => (
   <SHeroBanner>
-    <BackgroundImage src={props.mainImage} video={props.vimeoVideoId}>
+    <BackgroundImage
+      src={props.mainImage}
+      alt={props.heading || props.post?.title}
+      video={props.vimeoVideoId}
+    >
       <Wrapper narrow>
         {(props.heading || props.post) && props.index === 0 ? (
           <h1>{props.heading || props.post?.title}</h1>

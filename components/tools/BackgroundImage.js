@@ -8,7 +8,7 @@ import { LayoutContext } from '@/components/Layout';
 
 const BackgroundImage = ({
   children,
-  id,
+  alt,
   src,
   height,
   width,
@@ -32,7 +32,7 @@ const BackgroundImage = ({
         layout="fill"
         src={imageProps.src}
         quality={quality || 100}
-        alt={id && `bg_${id}`}
+        alt={alt}
       />
       {children}
       {video && (
