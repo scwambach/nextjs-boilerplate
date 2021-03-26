@@ -1,5 +1,6 @@
-import { slugify } from './post';
 import FdPageMultiple from '@meronex/icons/fd/FdPageMultiple';
+import AiFillWarning from '@meronex/icons/ai/AiFillWarning';
+import { slugify } from './post';
 
 export default {
   name: 'page',
@@ -12,6 +13,17 @@ export default {
       title: 'Title',
       validation: (Rule) => Rule.required(),
       type: 'string',
+    },
+    {
+      name: 'gridNote2',
+      type: 'note',
+      options: {
+        icon: AiFillWarning,
+        headline: 'Hold up!',
+        message:
+          'Please do not type your own slug in the Slug field. Just click "Generate" button.',
+        tone: 'caution',
+      },
     },
     {
       name: 'slug',
@@ -33,15 +45,10 @@ export default {
       },
     },
     {
-      name: 'pageContent',
-      title: 'Page Content',
-      type: 'array',
-      of: [
-        { type: 'heroBanner' },
-        { type: 'richText' },
-        { type: 'imageFeatures' },
-        { type: 'imageGallery' },
-      ],
+      title: 'Body Content',
+      name: 'bodyContent',
+      validation: (Rule) => Rule.required(),
+      type: 'blockContent',
     },
     {
       name: 'pageDescription',
@@ -59,10 +66,7 @@ export default {
     },
     prepare(selection) {
       const { title, slug } = selection;
-      return Object.assign({}, selection, {
-        title,
-        subtitle: `${slug}`,
-      });
+      return { ...selection, title, subtitle: `${slug}` };
     },
   },
 };

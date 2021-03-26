@@ -76,6 +76,18 @@ const ContactForm = () => {
               }}
             />
             <input
+              type="text"
+              name="subject"
+              defaultValue="Contact Form"
+              style={{ display: 'none' }}
+            />
+            <input
+              type="text"
+              name="recipient"
+              defaultValue="scott@scottwamba.ch"
+              style={{ display: 'none' }}
+            />
+            <input
               required
               placeholder="Name"
               type="text"

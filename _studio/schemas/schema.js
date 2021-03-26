@@ -22,10 +22,10 @@ import menuItem from './modules/menuItem';
 import socialItem from './modules/socialItem';
 import iconSelector from './modules/iconSelector';
 import homePage from './docTypes/homePage';
-import aboutPage from './docTypes/aboutPage';
-import staticHeroBanner from './components/staticHeroBanner';
 import menu from './docTypes/menu';
 import imageGallery from './components/imageGallery';
+import twoColCopy from './components/twoColCopy';
+import eventsList from './components/eventsList';
 
 export default createSchema({
   name: 'default',
@@ -37,17 +37,17 @@ export default createSchema({
     page,
     event,
     homePage,
-    aboutPage,
 
     // Taxonomies
     category,
 
     // Page Components
-    staticHeroBanner,
     richText,
+    twoColCopy,
     imageFeatures,
     heroBanner,
     imageGallery,
+    eventsList,
     blockContent,
     simpleContent,
     minimalContent,

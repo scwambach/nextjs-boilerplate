@@ -21,10 +21,7 @@ export default {
     },
     prepare(selection) {
       const { icon } = selection;
-      return Object.assign({}, selection, {
-        title: 'Icon Selector',
-        subtitle: icon,
-      });
+      return { ...selection, title: 'Icon Selector', subtitle: icon };
     },
   },
 };

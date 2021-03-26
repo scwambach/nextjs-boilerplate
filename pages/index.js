@@ -2,12 +2,9 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { groq } from 'next-sanity';
 import Error from 'next/error';
-import Wrapper from '@/components/tools/Wrapper';
 import Layout from '@/components/Layout';
-import HeroBanner from '@/components/pageComponents/HeroBanner';
-import RichText from '@/components/RichText';
-import ImageFeatures from '@/components/pageComponents/ImageFeatures';
 import { getClient, usePreviewSubscription } from '@/utils/sanity';
+import BodyContent from '@/components/BodyContent';
 
 const pageQuery = groq`*[_type == "homePage"][0]{
   "content": *[_type == "homePage"][0],
@@ -37,19 +34,10 @@ const Index = ({ doc }) => {
 
   return (
     <Layout page site={doc.site}>
-      {data.content.mainImage && (
-        <HeroBanner
-          index={0}
-          {...data.content.staticHeroBanner}
-          mainImage={data.content.mainImage}
-        />
-      )}
-      <section>
-        <Wrapper narrow>
-          <RichText content={data.content.richText.copy} />
-        </Wrapper>
-      </section>
-      <ImageFeatures {...data.content.imageFeatures} />
+      <BodyContent
+        mainImage={data.content.mainImage}
+        content={data.content.bodyContent}
+      />
     </Layout>
   );
 };

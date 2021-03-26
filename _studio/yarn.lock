@@ -1418,7 +1418,7 @@
   version "1.0.5"
   resolved "https://registry.npmjs.org/@sanity/icons/-/icons-1.0.5.tgz#e00fb474f48e57b90bd169e668c37422d6dae3b0"
 
-"@sanity/image-url@^0.140.19":
+"@sanity/image-url@^0.140.19", "@sanity/image-url@^0.140.22":
   version "0.140.22"
   resolved "https://registry.npmjs.org/@sanity/image-url/-/image-url-0.140.22.tgz#7a65f56bb751f7b1c5dfacfadd34ee10fc4f0fde"
 
@@ -8266,11 +8266,23 @@ sanity-plugin-media@^1.1.2:
     theme-ui "0.3.5"
     yup "0.32.8"
 
+sanity-plugin-note-field@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/sanity-plugin-note-field/-/sanity-plugin-note-field-1.1.1.tgz#f181736d4acc82922e80478945c46d8b39161b2b"
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+
 sanity-plugin-position-input@^1.0.4:
   version "1.0.4"
   resolved "https://registry.npmjs.org/sanity-plugin-position-input/-/sanity-plugin-position-input-1.0.4.tgz#805b5251e3e9019b91b76214782c9b205d9fe61b"
   dependencies:
     styled-components "^5.0.1"
+
+sanity-plugin-social-preview@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.npmjs.org/sanity-plugin-social-preview/-/sanity-plugin-social-preview-0.1.5.tgz#4f1f10e9078b9906b6d0924f99f7c79d379efb07"
+  dependencies:
+    "@sanity/image-url" "^0.140.22"
 
 sanity-plugin-tabs@^2.0.1:
   version "2.0.1"

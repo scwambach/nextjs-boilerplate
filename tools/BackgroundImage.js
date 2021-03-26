@@ -26,7 +26,7 @@ const BackgroundImage = ({
       height={height}
       width={width}
       image={src}
-      placeholder={ph}
+      ph={ph}
     >
       <Img
         layout="fill"
@@ -64,7 +64,7 @@ export const Inner = styled.div`
 export const ScBackgroundImage = styled.div`
   position: relative;
   width: 100%;
-  background-image: url(${({ placeholder }) => placeholder});
+  background-image: url(${({ ph }) => ph});
   background-size: cover;
   background-position: center;
 

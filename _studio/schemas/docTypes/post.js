@@ -1,3 +1,4 @@
+import AiFillWarning from '@meronex/icons/ai/AiFillWarning';
 import FiStar from '@meronex/icons/fi/FiStar';
 import SuCreate from '@meronex/icons/su/SuCreate';
 
@@ -31,6 +32,17 @@ export default {
       title: 'Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'gridNote2',
+      type: 'note',
+      options: {
+        icon: AiFillWarning,
+        headline: 'Hold up!',
+        message:
+          'Please do not type your own slug in the Slug field. Just click "Generate" button.',
+        tone: 'caution',
+      },
     },
     {
       name: 'slug',
@@ -71,8 +83,8 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'body',
-      title: 'Body',
+      name: 'bodyContent',
+      title: 'Body Content',
       type: 'blockContent',
       validation: (Rule) => Rule.required(),
     },

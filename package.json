@@ -7,7 +7,8 @@
     "start": "next",
     "build": "next build",
     "dev": "next start",
-    "commit": "git add . && cz"
+    "commit": "git add . && cz",
+    "email": "mjml -r emails/contact.mjml --config.minify --config.minifyOptions='{\"minifyCSS\": true, \"removeEmptyAttributes\": false}' -o emails/contact.html"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "@sanity/image-url": "^0.140.22",
     "axios": "^0.21.1",
     "dayjs": "^1.10.4",
+    "mjml": "^4.9.0",
     "next": "^10.0.7",
     "next-images": "^1.7.0",
     "next-sanity": "^0.1.10",
@@ -56,5 +58,6 @@
     "commitizen": {
       "path": "./node_modules/cz-customizable"
     }
-  }
+  },
+  "keywords": []
 }

@@ -86,10 +86,7 @@ export default {
     },
     prepare(selection) {
       const { title, link } = selection;
-      return Object.assign({}, selection, {
-        title,
-        subtitle: `${link}`,
-      });
+      return { ...selection, title, subtitle: `${link}` };
     },
   },
 };

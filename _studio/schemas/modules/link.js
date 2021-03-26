@@ -13,7 +13,7 @@ export default {
       name: 'url',
       type: 'url',
       description: 'Can be full URL or relative path (e.g. "/about")',
-      validation: Rule =>
+      validation: (Rule) =>
         Rule.uri({
           allowRelative: true,
         }),

@@ -1,5 +1,3 @@
-import AiOutlineLink from '@meronex/icons/ai/AiOutlineLink';
-
 export default {
   title: 'Block Content',
   name: 'blockContent',
@@ -59,10 +57,10 @@ export default {
       type: 'image',
       options: { hotspot: true },
     },
-    {
-      type: 'link',
-      title: 'Button',
-      icon: AiOutlineLink,
-    },
+    { type: 'imageFeatures' },
+    { type: 'heroBanner' },
+    { type: 'imageGallery' },
+    { type: 'twoColCopy' },
+    { type: 'eventsList' },
   ],
 };

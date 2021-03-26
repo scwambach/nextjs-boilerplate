@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { breakpoints, colors } from '@/styles/settings';
 import dateFormatter from '@/utils/dateFormatter';
-import Wrapper from '@/components/tools/Wrapper';
+import Wrapper from '@/tools/Wrapper';
 import { LayoutContext } from '@/components/Layout';
 
 const NewEventsArray = (events) => {
@@ -113,7 +113,7 @@ const EventListing = () => {
 
 export default EventListing;
 
-export const SEventListing = styled.div`
+export const SEventListing = styled.section`
   margin-bottom: -30px;
 
   .listing {

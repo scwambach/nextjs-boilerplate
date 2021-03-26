@@ -2,49 +2,41 @@ import React from 'react';
 import BlockContent from '@sanity/block-content-to-react';
 import Link from 'next/link';
 import Image from '@/tools/Image';
-import Wrapper from '@/tools/Wrapper';
 import ImageFeatures from './pageComponents/ImageFeatures';
+import HeroBanner from './pageComponents/HeroBanner';
+import ImageGallery from './pageComponents/ImageGallery';
+import TwoColumnCopy from './pageComponents/TwoColumnCopy';
+import EventListing from './pageComponents/EventsListing';
 
-const RichText = ({ content }) => {
+const BodyContent = ({ content, mainImage }) => {
   const serializers = {
     types: {
       image: ({ node }) => <Image src={node} />,
       imageFeatures: ({ node }) => <ImageFeatures {...node} />,
+      imageGallery: ({ node }) => <ImageGallery {...node} />,
+      heroBanner: ({ node }) => (
+        <HeroBanner mainImage={node.backgroundImage || mainImage} {...node} />
+      ),
+      eventsList: ({ node }) => <EventListing {...node} />,
+      twoColCopy: ({ node }) => <TwoColumnCopy {...node} />,
       block: (props) => (
-        <Wrapper narrow>
+        <div className="wrapper narrow">
           {BlockContent.defaultSerializers.types.block(props)}
-        </Wrapper>
+        </div>
       ),
     },
     list: (props) =>
       props.type === 'bullet' ? (
-        <Wrapper narrow>
+        <div className="wrapper narrow">
           <ul>{props.children}</ul>
-        </Wrapper>
+        </div>
       ) : (
-        <Wrapper narrow>
+        <div className="wrapper narrow">
           <ol>{props.children}</ol>
-        </Wrapper>
+        </div>
       ),
 
     marks: {
-      code: (props) => (
-        <code>
-          <pre
-            style={{
-              fontFamily: 'monospace',
-              display: 'block',
-              padding: '50px',
-              color: '#88ffbf',
-              backgroundColor: 'black',
-              textAlign: 'left',
-              whiteSpace: 'pre-wrap',
-            }}
-          >
-            {props.children}
-          </pre>
-        </code>
-      ),
       link: ({ mark, children }) => {
         const { blank, href } = mark;
         return blank ? (
@@ -70,4 +62,4 @@ const RichText = ({ content }) => {
   );
 };
 
-export default RichText;
+export default BodyContent;

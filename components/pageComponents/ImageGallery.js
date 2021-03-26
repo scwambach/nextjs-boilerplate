@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { colors, font, breakpoints } from '@/styles/settings';
 import { absoluteCenter } from '@/styles/bits';
 import urlFor from '@/utils/urlFor';
-import Wrapper from '@/components/tools/Wrapper';
-import Loader from '@/components/tools/Loader';
-import Delayed from '@/components/tools/Delayed';
-import Image from '../tools/Image';
+import Wrapper from '@/tools/Wrapper';
+import Loader from '@/tools/Loader';
+import Delayed from '@/tools/Delayed';
+import Image from '@/tools/Image';
 
 const ImageGallery = ({ gallery }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -33,7 +33,7 @@ const ImageGallery = ({ gallery }) => {
   return (
     <Wrapper narrow>
       <SGallery>
-        {gallery.map((image, index) => (
+        {gallery?.map((image, index) => (
           <a
             key={`image${index}`}
             href={null}

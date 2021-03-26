@@ -3,7 +3,7 @@ import Link from 'next/link';
 import dayjs from 'dayjs';
 import styled from 'styled-components';
 import SanityExcerpt from '@/components/SanityExcerpt';
-import Image from './tools/Image';
+import Image from '@/tools/Image';
 
 const Post = (post) => (
   <SPost>
@@ -13,7 +13,7 @@ const Post = (post) => (
     <div className="copy">
       <h2>{post.title}</h2>
       {dayjs(post.publishedAt).format('MMMM D, YYYY')}
-      <SanityExcerpt content={post.body} />
+      <SanityExcerpt content={post.bodyContent} />
       <Link
         aria-label={`Read More ${post.title}`}
         href={`/${post.slug.current}`}

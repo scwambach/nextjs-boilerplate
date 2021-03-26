@@ -2,11 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { colors, breakpoints } from '@/styles/settings';
 import { Button, SectionStyle } from '@/styles/bits';
-import Wrapper, { SWrapper } from '@/components/tools/Wrapper';
-import LinkObject from '@/components/tools/LinkObject';
-import BackgroundImage, {
-  ScBackgroundImage,
-} from '@/components/tools/BackgroundImage';
+import Wrapper, { SWrapper } from '@/tools/Wrapper';
+import LinkObject from '@/tools/LinkObject';
+import BackgroundImage, { ScBackgroundImage } from '@/tools/BackgroundImage';
 import dateToNiceString from '@/utils/dateToNiceString';
 import RichText from '@/components//RichText';
 

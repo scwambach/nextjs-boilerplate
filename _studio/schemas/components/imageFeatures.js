@@ -36,11 +36,12 @@ export default {
     },
     prepare(selection) {
       const { title, image } = selection;
-      return Object.assign({}, selection, {
+      return {
+        ...selection,
         title: 'Image Features',
         subtitle: title,
         media: image,
-      });
+      };
     },
   },
 };

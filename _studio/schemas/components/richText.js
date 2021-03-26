@@ -19,10 +19,7 @@ export default {
     },
     prepare(selection) {
       const { title } = selection;
-      return Object.assign({}, selection, {
-        title: 'Rich Text',
-        subtitle: title,
-      });
+      return { ...selection, title: 'Rich Text', subtitle: title };
     },
   },
 };

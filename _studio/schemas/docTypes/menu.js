@@ -34,10 +34,11 @@ export default {
     },
     prepare(selection) {
       const { title, items } = selection;
-      return Object.assign({}, selection, {
+      return {
+        ...selection,
         title,
         subtitle: `${items.length > 0 ? `${items.length} items` : ''}`,
-      });
+      };
     },
   },
 };

@@ -6,10 +6,10 @@ import FiStar from '@meronex/icons/fi/FiStar';
 import BiSort from '@meronex/icons/bi/BiSort';
 import EyeIcon from 'part:@sanity/base/eye-icon';
 import EditIcon from 'part:@sanity/base/edit-icon';
-import RiPagesLine from '@meronex/icons/ri/RiPagesLine';
 import FdPageMultiple from '@meronex/icons/fd/FdPageMultiple';
 import BiHome from '@meronex/icons/bi/BiHome';
-import AiOutlineBuild from '@meronex/icons/ai/AiOutlineBuild';
+import SocialPreview from 'part:social-preview/component';
+import AiOutlineShareAlt from '@meronex/icons/ai/AiOutlineShareAlt';
 
 const remoteURL = 'https://sandbachs.vercel.app';
 const localURL = 'http://localhost:3000';
@@ -20,7 +20,6 @@ const hiddenTypes = [
   'siteSettings',
   'category',
   'homePage',
-  'aboutPage',
   'page',
   'post',
   'event',
@@ -48,11 +47,6 @@ const HomePreview = () => {
 
   return <PreviewModule document={document} url={previewUrl} />;
 };
-const AboutPreview = () => {
-  const previewUrl = `${appUrl}/about?preview`;
-
-  return <PreviewModule document={document} url={previewUrl} />;
-};
 
 export const getDefaultDocumentNode = ({ schemaType }) => {
   if (
@@ -63,6 +57,20 @@ export const getDefaultDocumentNode = ({ schemaType }) => {
     return S.document().views([
       S.view.form().icon(EditIcon),
       S.view.component(WebPreview).title('Web Preview').icon(EyeIcon),
+      S.view
+        .component(
+          SocialPreview({
+            prepareFunction: ({ title, mainImage, pageDescription, slug }) => ({
+              title: `${title} | Sandbachs`,
+              description: pageDescription,
+              siteUrl: appUrl,
+              ogImage: mainImage,
+              slug: `/${slug.current}`,
+            }),
+          })
+        )
+        .title('Social & SEO')
+        .icon(AiOutlineShareAlt),
     ]);
   }
 };
@@ -72,52 +80,38 @@ export default () =>
     .title('Content')
     .items([
       S.listItem()
-        .title('Pages')
+        .title('Home Page')
         .child(
-          S.list()
-            .title('Page Types')
-            .items([
-              S.listItem()
-                .title('Home Page')
-                .child(
-                  S.editor()
-                    .title('Home Page')
-                    .id('homePage')
-                    .schemaType('homePage')
-                    .documentId('homePage')
-                    .views([
-                      S.view.form().icon(EditIcon),
-                      S.view
-                        .component(HomePreview)
-                        .title('Web Preview')
-                        .icon(EyeIcon),
-                    ])
+          S.editor()
+            .title('Home Page')
+            .id('homePage')
+            .schemaType('homePage')
+            .documentId('homePage')
+            .views([
+              S.view.form().icon(EditIcon),
+              S.view.component(HomePreview).title('Web Preview').icon(EyeIcon),
+              S.view
+                .component(
+                  SocialPreview({
+                    // Overwrite prepareFunction to pick the right fields
+                    prepareFunction: ({ mainImage, pageDescription }) => ({
+                      title: 'Sandbachs',
+                      description: pageDescription,
+                      siteUrl: appUrl,
+                      ogImage: mainImage,
+                      slug: '/',
+                    }),
+                  })
                 )
-                .icon(BiHome),
-              S.listItem()
-                .title('About Page')
-                .child(
-                  S.editor()
-                    .title('About Page')
-                    .id('aboutPage')
-                    .schemaType('aboutPage')
-                    .documentId('aboutPage')
-                    .views([
-                      S.view.form().icon(EditIcon),
-                      S.view
-                        .component(AboutPreview)
-                        .title('Web Preview')
-                        .icon(EyeIcon),
-                    ])
-                )
-                .icon(RiPagesLine),
-              S.listItem()
-                .title('Page Builder')
-                .schemaType('page')
-                .child(S.documentTypeList('page').title('Pages'))
-                .icon(AiOutlineBuild),
+                .title('Social & SEO')
+                .icon(AiOutlineShareAlt),
             ])
         )
+        .icon(BiHome),
+      S.listItem()
+        .title('Pages')
+        .schemaType('page')
+        .child(S.documentTypeList('page').title('Pages'))
         .icon(FdPageMultiple),
       S.listItem()
         .title('Blog')

@@ -2,14 +2,14 @@ import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import FdPlayCircle from '@meronex/icons/fd/FdPlayCircle';
 import { colors } from '@/styles/settings';
-import Wrapper from '@/components/tools/Wrapper';
-import LinkObject from '@/components/tools/LinkObject';
-import YouTubeVideo from '@/components/tools/YouTubeVideo';
+import Wrapper, { SWrapper } from '@/tools/Wrapper';
+import LinkObject from '@/tools/LinkObject';
+import YouTubeVideo from '@/tools/YouTubeVideo';
 import RichText from '@/components/RichText';
-import Grid, { Row } from '@/components/tools/grid/Grid';
-import GridItem from '@/components/tools/grid/GridItem';
+import Grid, { Row } from '@/tools/grid/Grid';
+import GridItem from '@/tools/grid/GridItem';
 import { SectionStyle } from '@/styles/bits';
-import BackgroundImage, { ScBackgroundImage } from '../tools/BackgroundImage';
+import BackgroundImage, { ScBackgroundImage } from '@/tools/BackgroundImage';
 
 export const ImageFeatureContext = React.createContext();
 
@@ -23,12 +23,12 @@ const ImageFeatures = (props) => (
     <SImageFeatures layout={props.componentLayout}>
       {props.contained ? (
         <Wrapper>
-          {props.features.map((feature, index) => (
+          {props.features?.map((feature, index) => (
             <SingleFeature key={feature._key} {...feature} index={index} />
           ))}
         </Wrapper>
       ) : (
-        props.features.map((feature, index) => (
+        props.features?.map((feature, index) => (
           <SingleFeature key={feature._key} {...feature} index={index} />
         ))
       )}
@@ -133,5 +133,10 @@ const SSingleFeature = styled.div`
 
   ${Row} {
     align-items: center;
+
+    ${SWrapper} {
+      padding: 0;
+      max-width: none;
+    }
   }
 `;

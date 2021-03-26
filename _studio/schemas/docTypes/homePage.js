@@ -15,16 +15,16 @@ export default {
       },
     },
     {
-      name: 'staticHeroBanner',
-      type: 'staticHeroBanner',
+      title: 'Body Content',
+      name: 'bodyContent',
+      validation: (Rule) => Rule.required(),
+      type: 'blockContent',
     },
     {
-      name: 'richText',
-      type: 'richText',
-    },
-    {
-      name: 'imageFeatures',
-      type: 'imageFeatures',
+      name: 'pageDescription',
+      title: 'Page Description',
+      type: 'text',
+      rows: 4,
     },
   ],
 };

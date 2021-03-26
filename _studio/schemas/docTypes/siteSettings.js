@@ -4,8 +4,6 @@ export default {
   name: 'siteSettings',
   title: 'Site Settings',
   type: 'document',
-  liveEdit: false,
-  __experimental_actions: ['update', 'publish'],
   icon: FaCogs,
   fields: [
     {
@@ -47,16 +45,6 @@ export default {
           type: 'socialItem',
         },
       ],
-    },
-    {
-      title: 'Alert Bar',
-      name: 'alertBar',
-      type: 'simpleContent',
-    },
-    {
-      title: 'Copyright',
-      name: 'copyright',
-      type: 'string',
     },
   ],
 };

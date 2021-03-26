@@ -10,7 +10,7 @@ export default {
         { title: 'Normal', value: 'normal' },
         { title: 'H2', value: 'h2' },
         { title: 'H3', value: 'h3' },
-        { title: 'H4', value: 'h4' }
+        { title: 'H4', value: 'h4' },
       ],
       marks: {
         annotations: [
@@ -22,15 +22,15 @@ export default {
               {
                 name: 'href',
                 type: 'url',
-                title: 'URL'
+                title: 'URL',
               },
               {
                 title: 'Open in new tab',
                 name: 'blank',
                 description: 'Read https://css-tricks.com/use-target_blank/',
-                type: 'boolean'
-              }
-            ]
+                type: 'boolean',
+              },
+            ],
           },
           {
             name: 'internalLink',
@@ -43,14 +43,14 @@ export default {
                 title: 'Reference',
                 to: [
                   { type: 'post' },
-                  { type: 'page' }
+                  { type: 'page' },
                   // other types you may want to link to
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    }
-  ]
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    },
+  ],
 };

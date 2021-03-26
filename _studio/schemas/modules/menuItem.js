@@ -35,13 +35,16 @@ export default {
       classes: 'classes',
     },
     prepare(selection) {
-      const {
-        title, subtitle, subItems, classes,
-      } = selection;
-      return Object.assign({}, selection, {
+      const { title, subtitle, subItems, classes } = selection;
+      return {
+        ...selection,
         title,
-        subtitle: `${subtitle}${subItems && subItems.length > 0 ? ` (${subItems.length} subitems)` : ''}${classes ? ` [${classes}]` : ''}`,
-      });
+        subtitle: `${subtitle}${
+          subItems && subItems.length > 0
+            ? ` (${subItems.length} subitems)`
+            : ''
+        }${classes ? ` [${classes}]` : ''}`,
+      };
     },
   },
 };

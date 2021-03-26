@@ -47,10 +47,7 @@ export default {
     },
     prepare(selection) {
       const { heading, image } = selection;
-      return Object.assign({}, selection, {
-        title: heading || 'Hero Banner',
-        media: image,
-      });
+      return { ...selection, title: heading || 'Hero Banner', media: image };
     },
   },
 };

@@ -17,14 +17,13 @@
     "@sanity/dashboard",
     "@sanity/code-input",
     "asset-source-unsplash",
-    "color-list",
-    "datatable",
     "@sanity/vision",
-    "@sanity/google-maps-input",
     "@sanity/color-input",
     "tabs",
     "position-input",
-    "media-library"
+    "media-library",
+    "note-field",
+    "social-preview"
   ],
   "parts": [
     {

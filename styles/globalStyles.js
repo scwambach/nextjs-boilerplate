@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import { font, colors } from '@/styles/settings';
+import { font, colors, breakpoints } from '@/styles/settings';
+import { SWrapper } from '@/tools/Wrapper';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -246,6 +247,24 @@ const GlobalStyle = createGlobalStyle`
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+    }
+  }
+
+  .wrapper,
+  ${SWrapper} {
+    width: 100%;
+    padding: 0 30px;
+    margin: 0 auto;
+    max-width: ${breakpoints.pageWidth}px;
+
+    &.narrow {
+      max-width: ${breakpoints.pageWidthNarrow}px;
+    }
+
+    .wrapper,
+    ${SWrapper} {
+      max-width: none;
+      padding: 0;
     }
   }
 `;

@@ -39,10 +39,7 @@ export default {
     },
     prepare(selection) {
       const { image } = selection;
-      return Object.assign({}, selection, {
-        title: 'Image Gallery',
-        media: image,
-      });
+      return { ...selection, title: 'Image Gallery', media: image };
     },
   },
 };

@@ -75,3 +75,6 @@ _studio/dist
 .env.local
 
 .vercel
+
+emails/contact.html
+emails/contact.min.html

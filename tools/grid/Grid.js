@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '@/styles/settings';
-import { ItemWrapper } from '@/components/tools/grid/GridItem';
+import { ItemWrapper } from '@/tools/grid/GridItem';
 
 const Grid = ({ children, gutter, reverse, breakThird }) => (
   <GridContainer gutter={gutter} reverse={reverse} breakThird={breakThird}>
@@ -22,12 +22,12 @@ export const GridContainer = styled.div`
   overflow-x: hidden;
 
   ${Row} {
-    margin-right: -${({ gutter }) => gutter || '30'}px;
+    margin-right: -${({ gutter }) => gutter || '30'}px !important;
     flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
   }
 
   ${ItemWrapper} {
-    padding-right: ${({ gutter }) => gutter || '30'}px;
+    padding-right: ${({ gutter }) => gutter || '30'}px !important;
 
     @media (max-width: ${breakpoints.ipadLand -
       1}px) and (min-width: ${breakpoints.ipadPort}px) {

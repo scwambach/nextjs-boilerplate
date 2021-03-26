@@ -35,10 +35,7 @@ export default {
     },
     prepare(selection) {
       const { title, desc } = selection;
-      return Object.assign({}, selection, {
-        title,
-        subtitle: desc,
-      });
+      return { ...selection, title, subtitle: desc };
     },
   },
 };
