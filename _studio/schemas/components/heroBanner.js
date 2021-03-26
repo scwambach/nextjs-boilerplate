@@ -1,4 +1,5 @@
 import BsImage from '@meronex/icons/bs/BsImage';
+import FaRegLightbulb from '@meronex/icons/fa/FaRegLightbulb';
 
 export default {
   title: 'Hero Banner',
@@ -10,6 +11,17 @@ export default {
       title: 'Background Image',
       name: 'backgroundImage',
       type: 'image',
+    },
+    {
+      name: 'gridNote2',
+      type: 'note',
+      options: {
+        icon: FaRegLightbulb,
+        headline: 'Pro Tip!',
+        message:
+          'If you leave the Background Image empty, it will inherit the "Main Image" field.',
+        tone: 'positive',
+      },
     },
     {
       title: 'Heading',

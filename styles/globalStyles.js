@@ -250,8 +250,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  .wrapper,
-  ${SWrapper} {
+  .wrapper {
     width: 100%;
     padding: 0 30px;
     margin: 0 auto;
@@ -260,7 +259,10 @@ const GlobalStyle = createGlobalStyle`
     &.narrow {
       max-width: ${breakpoints.pageWidthNarrow}px;
     }
+  }
 
+  .wrapper,
+  ${SWrapper} {
     .wrapper,
     ${SWrapper} {
       max-width: none;

@@ -54,7 +54,7 @@ export default {
       name: 'pageDescription',
       title: 'Page Description',
       type: 'text',
-      rows: '4',
+      rows: 4,
     },
   ],
 

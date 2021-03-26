@@ -26,6 +26,8 @@ import menu from './docTypes/menu';
 import imageGallery from './components/imageGallery';
 import twoColCopy from './components/twoColCopy';
 import eventsList from './components/eventsList';
+import formCreator from './components/formCreator';
+import formField from './modules/formField';
 
 export default createSchema({
   name: 'default',
@@ -51,6 +53,7 @@ export default createSchema({
     blockContent,
     simpleContent,
     minimalContent,
+    formCreator,
 
     // Reusable Objects
     link,
@@ -58,5 +61,6 @@ export default createSchema({
     menuItem,
     socialItem,
     iconSelector,
+    formField,
   ]),
 });

@@ -7,6 +7,7 @@ import HeroBanner from './pageComponents/HeroBanner';
 import ImageGallery from './pageComponents/ImageGallery';
 import TwoColumnCopy from './pageComponents/TwoColumnCopy';
 import EventListing from './pageComponents/EventsListing';
+import FormCreator from './pageComponents/FormCreator';
 
 const BodyContent = ({ content, mainImage }) => {
   const serializers = {
@@ -19,6 +20,7 @@ const BodyContent = ({ content, mainImage }) => {
       ),
       eventsList: ({ node }) => <EventListing {...node} />,
       twoColCopy: ({ node }) => <TwoColumnCopy {...node} />,
+      formCreator: ({ node }) => <FormCreator {...node} />,
       block: (props) => (
         <div className="wrapper narrow">
           {BlockContent.defaultSerializers.types.block(props)}
