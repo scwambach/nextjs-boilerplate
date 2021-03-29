@@ -28,9 +28,9 @@ export default {
       },
     },
     {
-      title: 'No Margin',
-      name: 'noMargin',
-      type: 'boolean',
+      name: 'backgroundColor',
+      title: 'Background Color',
+      type: 'colorSelector',
     },
   ],
   preview: {

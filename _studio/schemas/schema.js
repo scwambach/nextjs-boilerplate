@@ -20,7 +20,7 @@ import link from './modules/link';
 import imageWText from './modules/imageWText';
 import menuItem from './modules/menuItem';
 import socialItem from './modules/socialItem';
-import iconSelector from './modules/iconSelector';
+import colorSelector from './modules/colorSelector';
 import homePage from './docTypes/homePage';
 import menu from './docTypes/menu';
 import imageGallery from './components/imageGallery';
@@ -28,6 +28,10 @@ import twoColCopy from './components/twoColCopy';
 import eventsList from './components/eventsList';
 import formCreator from './components/formCreator';
 import formField from './modules/formField';
+import resource from './docTypes/resource';
+import resourceCategory from './docTypes/resourceCategory';
+import tiledLinks from './components/tiledLinks';
+import tile from './modules/tile';
 
 export default createSchema({
   name: 'default',
@@ -38,9 +42,11 @@ export default createSchema({
     post,
     page,
     event,
+    resource,
     homePage,
 
     // Taxonomies
+    resourceCategory,
     category,
 
     // Page Components
@@ -54,13 +60,15 @@ export default createSchema({
     simpleContent,
     minimalContent,
     formCreator,
+    tiledLinks,
 
     // Reusable Objects
     link,
+    tile,
     imageWText,
     menuItem,
     socialItem,
-    iconSelector,
+    colorSelector,
     formField,
   ]),
 });

@@ -45,6 +45,11 @@ export default {
       type: 'text',
       rows: 4,
     },
+    {
+      name: 'backgroundColor',
+      title: 'Background Color',
+      type: 'colorSelector',
+    },
   ],
   preview: {
     select: {

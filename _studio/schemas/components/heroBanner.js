@@ -8,14 +8,6 @@ export default {
   icon: BsImage,
   fields: [
     {
-      title: 'Background Image',
-      name: 'backgroundImage',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    },
-    {
       name: 'gridNote2',
       type: 'note',
       options: {
@@ -25,6 +17,20 @@ export default {
           'If you leave the Background Image empty, it will inherit the "Main Image" field.',
         tone: 'positive',
       },
+    },
+    {
+      title: 'Background Image',
+      name: 'backgroundImage',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      title: 'Alt Layout',
+      name: 'altLayout',
+      description: 'This will layout the content side-by-side.',
+      type: 'boolean',
     },
     {
       title: 'Heading',
@@ -48,6 +54,11 @@ export default {
           type: 'link',
         },
       ],
+    },
+    {
+      name: 'backgroundColor',
+      title: 'Background Color',
+      type: 'colorSelector',
     },
     {
       title: 'Vimeo Video ID',

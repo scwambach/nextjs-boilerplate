@@ -4,7 +4,7 @@ import { SWrapper } from '@/tools/Wrapper';
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-size: 18px;
+    font-size: 16px;
     font-family: ${font.primary};
     line-height: 1.5;
   }
@@ -17,8 +17,6 @@ const GlobalStyle = createGlobalStyle`
   h6 {
     font-family: ${font.secondary};
     line-height: 1.1;
-    font-weight: 600;
-    text-transform: uppercase;
   }
 
   h1 {
@@ -117,34 +115,10 @@ const GlobalStyle = createGlobalStyle`
     color: ${colors.blue};
     text-decoration: none;
     cursor: pointer;
-
-    &:hover {
-      color: ${colors.green}
-    }
-  }
-
-  blockquote {
-    background-color: #eee;
-    width: 75%;
-    padding: 30px;
-
-    footer {
-      background-color: #fff;
-      padding: 5px 15px;
-      display: inline-block;
-    }
-  }
-
-  pre {
-    background-color: #eee;
-    font-family: monospace;
-    overflow: auto;
-    width: 100%;
   }
 
   form {
     width: 100%;
-
   }
 
   textarea {

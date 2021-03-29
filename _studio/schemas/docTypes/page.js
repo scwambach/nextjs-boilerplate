@@ -54,6 +54,7 @@ export default {
         { type: 'imageGallery' },
         { type: 'twoColCopy' },
         { type: 'eventsList' },
+        { type: 'tiledLinks' },
         { type: 'formCreator' },
       ],
     },

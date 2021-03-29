@@ -7,6 +7,11 @@ export default {
   icon: MdEventNote,
   fields: [
     {
+      name: 'backgroundColor',
+      title: 'Background Color',
+      type: 'colorSelector',
+    },
+    {
       name: 'heading',
       title: 'Heading',
       type: 'string',

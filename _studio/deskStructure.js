@@ -10,6 +10,8 @@ import FdPageMultiple from '@meronex/icons/fd/FdPageMultiple';
 import BiHome from '@meronex/icons/bi/BiHome';
 import SocialPreview from 'part:social-preview/component';
 import AiOutlineShareAlt from '@meronex/icons/ai/AiOutlineShareAlt';
+import AiFillStar from '@meronex/icons/ai/AiFillStar';
+import GrResources from '@meronex/icons/gr/GrResources';
 
 const remoteURL = 'https://sandbachs.vercel.app';
 const localURL = 'http://localhost:3000';
@@ -19,6 +21,8 @@ const appUrl = window.location.hostname === 'localhost' ? localURL : remoteURL;
 const hiddenTypes = [
   'siteSettings',
   'category',
+  'resource',
+  'resourceCategory',
   'homePage',
   'page',
   'post',
@@ -146,6 +150,41 @@ export default () =>
             ])
         )
         .icon(SuCreate),
+      S.listItem()
+        .title('Resources')
+        .child(
+          S.list()
+            .title('Resources')
+            .items([
+              S.listItem()
+                .title('All Resources')
+                .schemaType('resource')
+                .child(S.documentTypeList('resource')),
+              S.listItem()
+                .title('Sorted Resources')
+                .schemaType('resource')
+                .child(
+                  S.documentTypeList('resource')
+                    .filter('_type == "resourceCategory"')
+                    .child((id) =>
+                      S.documentList()
+                        .title('Resources by Category')
+                        .schemaType('resource')
+                        .filter(
+                          '_type == "resource" && $id in resourceCategories[]._ref'
+                        )
+                        .params({ id })
+                    )
+                )
+                .icon(BiSort),
+              S.listItem()
+                .title('Categories')
+                .schemaType('resourceCategory')
+                .child(S.documentTypeList('resourceCategory'))
+                .icon(AiFillStar),
+            ])
+        )
+        .icon(GrResources),
       S.listItem()
         .title('Events')
         .schemaType('event')

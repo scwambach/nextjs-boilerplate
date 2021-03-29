@@ -12,6 +12,11 @@ export default {
       validation: (Rule) => Rule.required(),
       type: 'blockContent',
     },
+    {
+      name: 'backgroundColor',
+      title: 'Background Color',
+      type: 'colorSelector',
+    },
   ],
   preview: {
     select: {

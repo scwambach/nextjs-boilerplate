@@ -28,6 +28,11 @@ export default {
         },
       ],
     },
+    {
+      name: 'backgroundColor',
+      title: 'Background Color',
+      type: 'colorSelector',
+    },
   ],
   preview: {
     select: {
