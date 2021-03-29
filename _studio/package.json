@@ -10,7 +10,9 @@
     "start": "sanity start",
     "local-build": "sanity build",
     "deployall": "sanity graphql deploy && sanity deploy",
-    "test": "sanity check"
+    "test": "sanity check",
+    "backup": "curl https://k702ll7a.api.sanity.io/v1/data/export/production/ > backup.ndjson",
+    "upload": "sanity dataset import backup.ndjson production"
   },
   "keywords": [
     "sanity"
