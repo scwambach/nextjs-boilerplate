@@ -13,64 +13,68 @@ const Menu = ({ name }) => {
     <SMenu>
       {menus
         .find(({ title }) => title === name)
-        .items.map(({ _key, subItems, link: { newTab, copy, url } }, index) => (
-          <li
-            key={_key}
-            className={`${subItems ? 'hasSub' : ''} ${
-              activeIndex === index ? 'open' : ''
-            } ${activeSubIndex === index ? 'sub-open' : ''}`}
-            onMouseLeave={() => {
-              setActiveIndex(null);
-            }}
-          >
-            {newTab ? (
-              <a
-                aria-label={copy}
-                onFocus={() => {
-                  subItems ? setActiveIndex(index) : setActiveIndex(null);
-                }}
-                href={url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {copy}
-              </a>
-            ) : (
-              <Link href={url}>
+        .items.map(
+          ({ _key, classes, subItems, link: { newTab, copy, url } }, index) => (
+            <li
+              key={_key}
+              className={`${classes ? `${classes} ` : ''}${
+                subItems ? 'hasSub' : ''
+              }${activeIndex === index ? ' open' : ''}${
+                activeSubIndex === index ? ' sub-open' : ''
+              }`}
+              onMouseLeave={() => {
+                setActiveIndex(null);
+              }}
+            >
+              {newTab ? (
                 <a
                   aria-label={copy}
                   onFocus={() => {
                     subItems ? setActiveIndex(index) : setActiveIndex(null);
                   }}
+                  href={url}
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   {copy}
                 </a>
-              </Link>
-            )}
+              ) : (
+                <Link href={url}>
+                  <a
+                    aria-label={copy}
+                    onFocus={() => {
+                      subItems ? setActiveIndex(index) : setActiveIndex(null);
+                    }}
+                  >
+                    {copy}
+                  </a>
+                </Link>
+              )}
 
-            {subItems && (
-              <ul>
-                {subItems.map((subItem) => (
-                  <li key={subItem._key}>
-                    <LinkObject {...subItem} />
-                  </li>
-                ))}
-              </ul>
-            )}
-            {subItems && (
-              <a
-                aria-label={copy}
-                className="toggle"
-                href={null}
-                onClick={() => {
-                  setActiveSubIndex(activeSubIndex === index ? null : index);
-                }}
-              >
-                {activeSubIndex === index ? '-' : '+'}
-              </a>
-            )}
-          </li>
-        ))}
+              {subItems && (
+                <ul>
+                  {subItems.map((subItem) => (
+                    <li key={subItem._key}>
+                      <LinkObject {...subItem} />
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {subItems && (
+                <a
+                  aria-label={copy}
+                  className="toggle"
+                  href={null}
+                  onClick={() => {
+                    setActiveSubIndex(activeSubIndex === index ? null : index);
+                  }}
+                >
+                  {activeSubIndex === index ? '-' : '+'}
+                </a>
+              )}
+            </li>
+          )
+        )}
     </SMenu>
   );
 };

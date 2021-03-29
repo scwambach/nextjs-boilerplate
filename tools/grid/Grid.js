@@ -33,5 +33,26 @@ export const GridContainer = styled.div`
       1}px) and (min-width: ${breakpoints.ipadPort}px) {
       width: ${({ breakThird }) => (breakThird ? '33.333%' : '50%')};
     }
+
+    + ${ItemWrapper} {
+      @media screen and (max-width: ${breakpoints.ipadLand}px) {
+        margin-top: ${({ gutter }) => gutter || '30'}px;
+      }
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        @media (max-width: ${breakpoints.ipadLand -
+          1}px) and (min-width: ${breakpoints.ipadPort}px) {
+          margin-top: 0px;
+        }
+      }
+      &:nth-child(3) {
+        @media (max-width: ${breakpoints.ipadLand -
+          1}px) and (min-width: ${breakpoints.ipadPort}px) {
+          margin-top: ${({ breakThird, gutter }) =>
+            breakThird ? '0' : gutter || '30'}px;
+        }
+      }
+    }
   }
 `;

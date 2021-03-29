@@ -13,6 +13,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Sub Title',
+      name: 'subTitle',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Link',
       name: 'link',
       type: 'link',
@@ -22,14 +28,15 @@ export default {
   preview: {
     select: {
       title: 'title',
+      subTitle: 'subTitle',
       link: 'link',
     },
     prepare(selection) {
-      const { link, title } = selection;
+      const { link, title, subTitle } = selection;
       return {
         ...selection,
         title,
-        subtitle: link.url,
+        subtitle: `${subTitle} | ${link.url}`,
       };
     },
   },
