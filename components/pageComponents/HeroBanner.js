@@ -6,7 +6,7 @@ import Wrapper, { SWrapper } from '@/tools/Wrapper';
 import LinkObject from '@/tools/LinkObject';
 import BackgroundImage, { ScBackgroundImage } from '@/tools/BackgroundImage';
 import dateToNiceString from '@/utils/dateToNiceString';
-import RichText from '@/components//RichText';
+import BodyContent from '../BodyContent';
 
 const HeroBanner = (props) => (
   <SHeroBanner>
@@ -21,7 +21,7 @@ const HeroBanner = (props) => (
         ) : (
           <h2>{props.heading || props.post?.title}</h2>
         )}
-        {props.copy && <RichText content={props.copy} />}
+        {props.copy && <BodyContent content={props.copy} />}
         {props.post && (
           <p>{dateToNiceString(new Date(props.post.publishedAt))}</p>
         )}

@@ -5,11 +5,12 @@ import { colors } from '@/styles/settings';
 import Wrapper, { SWrapper } from '@/tools/Wrapper';
 import LinkObject from '@/tools/LinkObject';
 import YouTubeVideo from '@/tools/YouTubeVideo';
-import RichText from '@/components/RichText';
 import Grid, { Row } from '@/tools/grid/Grid';
 import GridItem from '@/tools/grid/GridItem';
 import { SectionStyle } from '@/styles/bits';
 import BackgroundImage, { ScBackgroundImage } from '@/tools/BackgroundImage';
+import SanityBlockContent from '@sanity/block-content-to-react';
+import serializers from '@/utils/serializers';
 
 export const ImageFeatureContext = React.createContext();
 
@@ -88,7 +89,15 @@ const SingleFeature = (props) => {
           <div>
             <div>
               {props.heading && <h2>{props.heading}</h2>}
-              {props.copy && <RichText content={props.copy} />}
+              {props.copy && (
+                <SanityBlockContent
+                  projectId={process.env.GATSBY_SANITY_ID}
+                  dataset={process.env.SANITY_DATASET}
+                  serializers={serializers}
+                  renderContainerOnSingleChild
+                  blocks={props.copy}
+                />
+              )}
               {props.link && (
                 <LinkObject key={props.link._key} {...props.link} />
               )}

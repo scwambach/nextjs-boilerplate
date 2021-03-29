@@ -45,14 +45,25 @@ export default {
       },
     },
     {
-      title: 'Body Content',
-      name: 'bodyContent',
-      validation: (Rule) => Rule.required(),
-      type: 'blockContent',
+      name: 'pageContent',
+      title: 'Page Content',
+      type: 'array',
+      of: [
+        { type: 'imageFeatures' },
+        { type: 'heroBanner' },
+        { type: 'imageGallery' },
+        { type: 'twoColCopy' },
+        { type: 'eventsList' },
+        { type: 'formCreator' },
+      ],
     },
+
     {
       name: 'pageDescription',
       title: 'Page Description',
+      validation: (Rule) => Rule.required(),
+      description:
+        'For optimal search and sharing, please provide a breif description of the page. Use the "Social & SEO" preview tab at the top to see changes.',
       type: 'text',
       rows: 4,
     },

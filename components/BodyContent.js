@@ -21,22 +21,7 @@ const BodyContent = ({ content, mainImage }) => {
       eventsList: ({ node }) => <EventListing {...node} />,
       twoColCopy: ({ node }) => <TwoColumnCopy {...node} />,
       formCreator: ({ node }) => <FormCreator {...node} />,
-      block: (props) => (
-        <div className="wrapper narrow">
-          {BlockContent.defaultSerializers.types.block(props)}
-        </div>
-      ),
     },
-    list: (props) =>
-      props.type === 'bullet' ? (
-        <div className="wrapper narrow">
-          <ul>{props.children}</ul>
-        </div>
-      ) : (
-        <div className="wrapper narrow">
-          <ol>{props.children}</ol>
-        </div>
-      ),
 
     marks: {
       link: ({ mark, children }) => {

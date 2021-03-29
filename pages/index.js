@@ -4,7 +4,7 @@ import { groq } from 'next-sanity';
 import Error from 'next/error';
 import Layout from '@/components/Layout';
 import { getClient, usePreviewSubscription } from '@/utils/sanity';
-import BodyContent from '@/components/BodyContent';
+import PageContent from '@/components/docTypes/PageContent';
 
 const pageQuery = groq`*[_type == "homePage"][0]{
   "content": *[_type == "homePage"][0],
@@ -34,10 +34,7 @@ const Index = ({ doc }) => {
 
   return (
     <Layout page site={doc.site}>
-      <BodyContent
-        mainImage={data.content.mainImage}
-        content={data.content.bodyContent}
-      />
+      <PageContent {...data.content} />
     </Layout>
   );
 };

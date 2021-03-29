@@ -53,6 +53,7 @@ export default {
         ],
       },
     },
+    { type: 'twoColCopy' },
     {
       type: 'image',
       options: { hotspot: true },
@@ -60,8 +61,5 @@ export default {
     { type: 'imageFeatures' },
     { type: 'heroBanner' },
     { type: 'imageGallery' },
-    { type: 'twoColCopy' },
-    { type: 'eventsList' },
-    { type: 'formCreator' },
   ],
 };

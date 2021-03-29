@@ -15,10 +15,17 @@ export default {
       },
     },
     {
-      title: 'Body Content',
-      name: 'bodyContent',
-      validation: (Rule) => Rule.required(),
-      type: 'blockContent',
+      name: 'pageContent',
+      title: 'Page Content',
+      type: 'array',
+      of: [
+        { type: 'imageFeatures' },
+        { type: 'heroBanner' },
+        { type: 'imageGallery' },
+        { type: 'twoColCopy' },
+        { type: 'eventsList' },
+        { type: 'formCreator' },
+      ],
     },
     {
       name: 'pageDescription',

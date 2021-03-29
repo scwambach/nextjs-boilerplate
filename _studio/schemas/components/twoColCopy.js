@@ -10,13 +10,13 @@ export default {
       title: 'Column 1 Copy',
       name: 'columnOneCopy',
       validation: (Rule) => Rule.required(),
-      type: 'blockContent',
+      type: 'simpleContent',
     },
     {
       title: 'Column 2 Copy',
       name: 'columnTwoCopy',
       validation: (Rule) => Rule.required(),
-      type: 'blockContent',
+      type: 'simpleContent',
     },
   ],
   preview: {

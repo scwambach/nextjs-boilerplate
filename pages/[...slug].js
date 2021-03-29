@@ -6,6 +6,8 @@ import Layout from '@/components/Layout';
 import { getClient, usePreviewSubscription } from '@/utils/sanity';
 import BodyContent from '@/components/BodyContent';
 import HeroBanner from '@/components/pageComponents/HeroBanner';
+import PageContent from '@/components/docTypes/PageContent';
+import Wrapper from '@/tools/Wrapper';
 
 const pageQuery = groq`*[slug.current == $slug][0]{
   "content": *[slug.current == $slug][0],
@@ -30,17 +32,23 @@ export default function PageBuilder({ doc }) {
   return (
     data && (
       <Layout page={data.content} site={doc.site}>
-        {data.content._type === 'post' && (
-          <HeroBanner
-            index={0}
-            post={data.content}
-            mainImage={data.content.mainImage}
-          />
+        {data.content._type === 'post' ? (
+          <>
+            <HeroBanner
+              index={0}
+              post={data.content}
+              mainImage={data.content.mainImage}
+            />
+            <Wrapper narrow>
+              <BodyContent
+                mainImage={data.content.mainImage}
+                content={data.content.bodyContent}
+              />
+            </Wrapper>
+          </>
+        ) : (
+          <PageContent {...data.content} />
         )}
-        <BodyContent
-          mainImage={data.content.mainImage}
-          content={data.content.bodyContent}
-        />
       </Layout>
     )
   );

@@ -11,6 +11,9 @@ export default {
       title: 'Background Image',
       name: 'backgroundImage',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: 'gridNote2',
