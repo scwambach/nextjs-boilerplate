@@ -70,7 +70,7 @@ export async function getStaticProps({ params, preview = false }) {
   const doc = await getClient().fetch(
     `*[slug.current == $slug][0]{
     "content": *[slug.current == $slug][0],
-    "references": *[references(^._slug)],
+    "references": *[references(^._id)],
     "site": {
       "events": *[_type == "event"],
       "settings":  *[_type == "siteSettings"][0],
