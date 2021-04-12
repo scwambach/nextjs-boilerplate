@@ -19,18 +19,18 @@
   ],
   "dependencies": {
     "@meronex/icons": "^4.0.0",
-    "@sanity/base": "^2.7.2",
+    "@sanity/base": "^2.7.4",
     "@sanity/code-input": "^2.2.6",
     "@sanity/color-input": "^2.2.6",
     "@sanity/components": "^2.2.6",
-    "@sanity/core": "^2.7.2",
+    "@sanity/core": "^2.7.4",
     "@sanity/dashboard": "^2.7.0",
-    "@sanity/default-layout": "^2.7.2",
+    "@sanity/default-layout": "^2.7.4",
     "@sanity/default-login": "^2.7.0",
-    "@sanity/desk-tool": "^2.7.2",
-    "@sanity/google-maps-input": "^2.7.2",
-    "@sanity/react-hooks": "^2.7.2",
-    "@sanity/vision": "^2.7.3",
+    "@sanity/desk-tool": "^2.7.4",
+    "@sanity/google-maps-input": "^2.7.4",
+    "@sanity/react-hooks": "^2.7.4",
+    "@sanity/vision": "^2.7.4",
     "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
     "dotenv": "^8.2.0",
@@ -47,9 +47,9 @@
     "sanity-plugin-position-input": "^1.0.4",
     "sanity-plugin-social-preview": "^0.1.5",
     "sanity-plugin-tabs": "^2.0.1",
-    "sweetalert2": "^10.15.7"
+    "sweetalert2": "^10.16.0"
   },
   "devDependencies": {
-    "@sanity/cli": "^2.7.2"
+    "@sanity/cli": "^2.7.4"
   }
 }
