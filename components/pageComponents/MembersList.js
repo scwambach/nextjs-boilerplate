@@ -13,7 +13,6 @@ const MemberListing = ({ backgroundColor, heading }) => {
   return (
     <ScMemberListing bgColor={backgroundColor?.color}>
       {heading && <h2>{heading}</h2>}
-
       <Wrapper width={1250}>
         <Grid gutter={30}>
           {members.map(({ _key, name, headshot, description }) => (

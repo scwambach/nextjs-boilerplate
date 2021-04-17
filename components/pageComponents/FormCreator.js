@@ -6,6 +6,7 @@ import Grid from '@/tools/grid/Grid';
 import GridItem from '@/tools/grid/GridItem';
 import Field from '../Field';
 import BodyContent from '../BodyContent';
+import Socials from '../Socials';
 
 export const Message = ({ children }) => <ScMessage>{children}</ScMessage>;
 
@@ -55,7 +56,7 @@ const FormCreator = (props) => {
             <GridItem width="half">
               {props.heading && <h2>{props.heading}</h2>}
               {props.message && <BodyContent content={props.message} />}
-              {props.showSocials && <h2>PUT SOCIALS HERE</h2>}
+              {props.showSocials && <Socials />}
             </GridItem>
             <GridItem width="half">
               <h3>{props.title}</h3>
@@ -109,7 +110,7 @@ const FormCreator = (props) => {
             <div>
               {props.heading && <h2>{props.heading}</h2>}
               {props.message && <BodyContent content={props.message} />}
-              {props.showSocials && <h2>PUT SOCIALS HERE</h2>}
+              {props.showSocials && <Socials />}
             </div>
             <h3>{props.title}</h3>
             {!submitted && !submitError && (

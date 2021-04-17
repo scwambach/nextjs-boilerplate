@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors } from '@/styles/settings';
+import Socials from './Socials';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -21,6 +22,7 @@ const Footer = () => {
           Scott Wambach
         </a>
       </p>
+      <Socials />
     </SFooter>
   );
 };
