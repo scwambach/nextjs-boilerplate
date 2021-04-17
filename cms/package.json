@@ -44,6 +44,7 @@
     "sanity-plugin-media": "^1.2.2",
     "sanity-plugin-media-library": "^1.0.5",
     "sanity-plugin-note-field": "^1.1.1",
+    "sanity-plugin-order-documents": "^0.0.16",
     "sanity-plugin-position-input": "^1.0.4",
     "sanity-plugin-social-preview": "^0.1.5",
     "sanity-plugin-tabs": "^2.0.1",

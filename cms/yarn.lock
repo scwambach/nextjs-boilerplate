@@ -1034,6 +1034,18 @@
     tiny-warning "^1.0.3"
     tslib "^2.1.0"
 
+"@react-dnd/asap@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/@react-dnd/asap/-/asap-4.0.0.tgz#b300eeed83e9801f51bd66b0337c9a6f04548651"
+
+"@react-dnd/invariant@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/@react-dnd/invariant/-/invariant-2.0.0.tgz#09d2e81cd39e0e767d7da62df9325860f24e517e"
+
+"@react-dnd/shallowequal@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/@react-dnd/shallowequal/-/shallowequal-2.0.0.tgz#a3031eb54129f2c66b2753f8404266ec7bf67f0a"
+
 "@reduxjs/toolkit@1.5.0":
   version "1.5.0"
   resolved "https://registry.npmjs.org/@reduxjs/toolkit/-/toolkit-1.5.0.tgz#1025c1ccb224d1fc06d8d98a61f6717d57e6d477"
@@ -3626,6 +3638,14 @@ direction@^1.0.3:
   version "1.0.4"
   resolved "https://registry.npmjs.org/direction/-/direction-1.0.4.tgz#2b86fb686967e987088caf8b89059370d4837442"
 
+dnd-core@14.0.0:
+  version "14.0.0"
+  resolved "https://registry.npmjs.org/dnd-core/-/dnd-core-14.0.0.tgz#973ab3470d0a9ac5a0fa9021c4feba93ad12347d"
+  dependencies:
+    "@react-dnd/asap" "^4.0.0"
+    "@react-dnd/invariant" "^2.0.0"
+    redux "^4.0.5"
+
 dom-event@1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/dom-event/-/dom-event-1.0.0.tgz#690dcc4992d82281c068e2e166e377eeb1e56837"
@@ -4864,6 +4884,10 @@ immer@^5.0.0:
 immer@^8.0.0:
   version "8.0.4"
   resolved "https://registry.npmjs.org/immer/-/immer-8.0.4.tgz#3a21605a4e2dded852fb2afd208ad50969737b7a"
+
+immutability-helper@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.npmjs.org/immutability-helper/-/immutability-helper-3.1.1.tgz#2b86b2286ed3b1241c9e23b7b21e0444f52f77b7"
 
 import-cwd@^2.0.0:
   version "2.1.0"
@@ -6500,6 +6524,10 @@ popper-max-size-modifier@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npmjs.org/popper-max-size-modifier/-/popper-max-size-modifier-0.2.0.tgz#1574744401296a488b4974909d130a85db94256f"
 
+popper.js@^1.11.1:
+  version "1.16.1"
+  resolved "https://registry.npmjs.org/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
+
 posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://registry.npmjs.org/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
@@ -7352,6 +7380,22 @@ react-color@^2.13.8:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
+react-dnd-html5-backend@^14.0.0:
+  version "14.0.0"
+  resolved "https://registry.npmjs.org/react-dnd-html5-backend/-/react-dnd-html5-backend-14.0.0.tgz#28d660a2ad1e07447c34a65cd25f7de8f1657194"
+  dependencies:
+    dnd-core "14.0.0"
+
+react-dnd@^14.0.2:
+  version "14.0.2"
+  resolved "https://registry.npmjs.org/react-dnd/-/react-dnd-14.0.2.tgz#57266baec92b887301f81fa3b77f87168d159733"
+  dependencies:
+    "@react-dnd/invariant" "^2.0.0"
+    "@react-dnd/shallowequal" "^2.0.0"
+    dnd-core "14.0.0"
+    fast-deep-equal "^3.1.3"
+    hoist-non-react-statics "^3.3.2"
+
 react-dom@^16.13.1:
   version "16.14.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-16.14.0.tgz#7ad838ec29a777fb3c75c3a190f661cf92ab8b89"
@@ -7511,6 +7555,18 @@ react-select@4.1.0:
     react-input-autosize "^3.0.0"
     react-transition-group "^4.3.0"
 
+react-select@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.npmjs.org/react-select/-/react-select-4.3.0.tgz#6bde634ae7a378b49f3833c85c126f533483fa2e"
+  dependencies:
+    "@babel/runtime" "^7.12.0"
+    "@emotion/cache" "^11.0.0"
+    "@emotion/react" "^11.1.1"
+    memoize-one "^5.0.0"
+    prop-types "^15.6.0"
+    react-input-autosize "^3.0.0"
+    react-transition-group "^4.3.0"
+
 react-sortable-hoc@^1.11.0:
   version "1.11.0"
   resolved "https://registry.npmjs.org/react-sortable-hoc/-/react-sortable-hoc-1.11.0.tgz#fe4022362bbafc4b836f5104b9676608a40a278f"
@@ -7550,6 +7606,12 @@ react-tiny-virtual-list@^2.0.5:
   resolved "https://registry.npmjs.org/react-tiny-virtual-list/-/react-tiny-virtual-list-2.2.0.tgz#eafb6fcf764e4ed41150ff9752cdaad8b35edf4a"
   dependencies:
     prop-types "^15.5.7"
+
+react-tippy@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/react-tippy/-/react-tippy-1.4.0.tgz#e8a8b4085ec985e5c94fe128918b733b588a1465"
+  dependencies:
+    popper.js "^1.11.1"
 
 react-transition-group@^4.3.0:
   version "4.4.1"
@@ -7735,7 +7797,7 @@ redux-thunk@^2.3.0:
   version "2.3.0"
   resolved "https://registry.npmjs.org/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
 
-redux@4.0.5, redux@^4.0.0:
+redux@4.0.5, redux@^4.0.0, redux@^4.0.5:
   version "4.0.5"
   resolved "https://registry.npmjs.org/redux/-/redux-4.0.5.tgz#4db5de5816e17891de8a80c424232d06f051d93f"
   dependencies:
@@ -8088,6 +8150,16 @@ sanity-plugin-note-field@^1.1.1:
   resolved "https://registry.npmjs.org/sanity-plugin-note-field/-/sanity-plugin-note-field-1.1.1.tgz#f181736d4acc82922e80478945c46d8b39161b2b"
   dependencies:
     "@babel/runtime" "^7.12.5"
+
+sanity-plugin-order-documents@^0.0.16:
+  version "0.0.16"
+  resolved "https://registry.npmjs.org/sanity-plugin-order-documents/-/sanity-plugin-order-documents-0.0.16.tgz#5aaf35c508918d6eb5af35f62ad6869f4df3e593"
+  dependencies:
+    immutability-helper "^3.1.1"
+    react-dnd "^14.0.2"
+    react-dnd-html5-backend "^14.0.0"
+    react-select "^4.3.0"
+    react-tippy "^1.4.0"
 
 sanity-plugin-position-input@^1.0.4:
   version "1.0.4"
@@ -8743,7 +8815,6 @@ svgo@^1.0.0:
 sweetalert2@^10.16.0:
   version "10.16.0"
   resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-10.16.0.tgz#33d527af90689baab1078bf447b1986b796d4c75"
-  integrity sha512-qJp4nIpx0MPDnAdY6MurwH/mAovfCzWo07hFoQ41C46XGLpNkxiqBbJDNdhGfMFwbDY1e9jfttNFxe5IsrkEtA==
 
 symbol-observable@^1.2.0:
   version "1.2.0"

@@ -23,7 +23,8 @@
     "position-input",
     "media-library",
     "note-field",
-    "social-preview"
+    "social-preview",
+    "order-documents"
   ],
   "parts": [
     {

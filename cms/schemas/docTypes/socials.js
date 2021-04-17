@@ -18,6 +18,12 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'order',
+      title: 'Order',
+      type: 'number',
+      hidden: true,
+    },
+    {
       title: 'Icon',
       name: 'icon',
       type: 'string',
