@@ -1,3 +1,5 @@
+import AiOutlineLink from '@meronex/icons/ai/AiOutlineLink';
+
 export default {
   title: 'Image w/Text',
   name: 'imageWText',
@@ -30,9 +32,18 @@ export default {
       type: 'simpleContent',
     },
     {
-      title: 'Link',
-      name: 'link',
-      type: 'link',
+      title: 'Links',
+      name: 'links',
+      type: 'array',
+      validation: (Rule) => Rule.max(2),
+      of: [
+        {
+          title: 'Link',
+          name: 'link',
+          type: 'link',
+          icon: AiOutlineLink,
+        },
+      ],
     },
   ],
 };

@@ -98,9 +98,10 @@ const SingleFeature = (props) => {
                   blocks={props.copy}
                 />
               )}
-              {props.link && (
-                <LinkObject key={props.link._key} {...props.link} />
-              )}
+
+              {props.links?.map((link) => (
+                <LinkObject key={link._key} {...link} />
+              ))}
             </div>
           </div>
         </GridItem>

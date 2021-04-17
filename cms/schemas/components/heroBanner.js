@@ -1,5 +1,6 @@
 import BsImage from '@meronex/icons/bs/BsImage';
 import FaRegLightbulb from '@meronex/icons/fa/FaRegLightbulb';
+import AiOutlineLink from '@meronex/icons/ai/AiOutlineLink';
 
 export default {
   title: 'Hero Banner',
@@ -46,6 +47,7 @@ export default {
       title: 'Links',
       name: 'links',
       type: 'array',
+      icon: AiOutlineLink,
       validation: (Rule) => Rule.max(2),
       of: [
         {
