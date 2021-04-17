@@ -1,6 +1,5 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { groq } from 'next-sanity';
 import Error from 'next/error';
 import Layout from '@/components/Layout';
 import { getClient, usePreviewSubscription } from '@/utils/sanity';
@@ -8,10 +7,9 @@ import BodyContent from '@/components/BodyContent';
 import HeroBanner from '@/components/pageComponents/HeroBanner';
 import PageContent from '@/components/docTypes/PageContent';
 import Wrapper from '@/tools/Wrapper';
+import { singlePagePreviewQuery, singlePageQuery } from '@/utils/queries';
 
-const pageQuery = groq`*[slug.current == $slug][0]{
-  "content": *[slug.current == $slug][0],
-}`;
+const pageQuery = singlePagePreviewQuery;
 
 export default function PageBuilder({ doc }) {
   const router = useRouter();
@@ -67,26 +65,9 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params, preview = false }) {
   const { slug = '' } = params;
 
-  const doc = await getClient().fetch(
-    `*[slug.current == $slug][0]{
-    "content": *[slug.current == $slug][0],
-    "references": *[references(^._id)],
-    "site": {
-      "events": *[_type == "event"],
-      "settings":  *[_type == "siteSettings"][0],
-      "menus": *[_type == "menu"],
-      "placeholders": *[_type == "sanity.imageAsset"] {
-        "_id": _id,
-        "lqip": metadata.lqip,
-        "palette": metadata.palette,
-        "dimensions": metadata.dimensions
-      }
-    }
-  }`,
-    {
-      slug: `${slug.join('/')}`,
-    }
-  );
+  const doc = await getClient().fetch(singlePageQuery, {
+    slug: `${slug.join('/')}`,
+  });
 
   return { props: { doc, preview } };
 }

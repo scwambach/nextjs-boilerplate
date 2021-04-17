@@ -15,10 +15,9 @@ const Layout = ({ page, site, staticTitle, children }) => {
       value={{
         menuOpen,
         setMenuOpen,
-        settings: site.settings,
         events: site.events,
-        logo: site.settings.mainLogo,
         menus: site.menus,
+        socials: site.socials,
         placeholders: site.placeholders,
       }}
     >

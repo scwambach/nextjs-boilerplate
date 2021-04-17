@@ -1,25 +1,12 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { groq } from 'next-sanity';
 import Error from 'next/error';
 import Layout from '@/components/Layout';
 import { getClient, usePreviewSubscription } from '@/utils/sanity';
 import PageContent from '@/components/docTypes/PageContent';
+import { homePreviewQuery, homeQuery } from '@/utils/queries';
 
-const pageQuery = groq`*[_type == "homePage"][0]{
-  "content": *[_type == "homePage"][0],
-  "site": {
-    "events": *[_type == "event"],
-    "settings":  *[_type == "siteSettings"][0],
-    "menus": *[_type == "menu"],
-    "placeholders": *[_type == "sanity.imageAsset"] {
-      "_id": _id,
-      "lqip": metadata.lqip,
-      "palette": metadata.palette,
-      "dimensions": metadata.dimensions
-    }
-  }
-}`;
+const pageQuery = homePreviewQuery;
 
 const Index = ({ doc }) => {
   const router = useRouter();
@@ -40,22 +27,7 @@ const Index = ({ doc }) => {
 };
 
 export async function getStaticProps({ query, preview = false }) {
-  const doc = await getClient(query?.preview === '').fetch(
-    `*[_type == "homePage"][0]{
-      "content": *[_type == "homePage"][0],
-      "site": {
-        "events": *[_type == "event"],
-        "settings":  *[_type == "siteSettings"][0],
-        "menus": *[_type == "menu"],
-        "placeholders": *[_type == "sanity.imageAsset"] {
-          "_id": _id,
-          "lqip": metadata.lqip,
-          "palette": metadata.palette,
-          "dimensions": metadata.dimensions
-        }
-      }
-    }`
-  );
+  const doc = await getClient(query?.preview === '').fetch(homeQuery);
 
   return { props: { doc, preview } };
 }

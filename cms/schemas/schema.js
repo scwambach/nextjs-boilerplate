@@ -6,7 +6,7 @@ import blockContent from './modules/blockContent';
 import simpleContent from './modules/simpleContent';
 import minimalContent from './modules/minimalContent';
 
-import siteSettings from './docTypes/siteSettings';
+import socials from './docTypes/socials';
 import post from './docTypes/post';
 import category from './docTypes/category';
 import page from './docTypes/page';
@@ -37,7 +37,7 @@ export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
     // Doc Types
-    siteSettings,
+    socials,
     menu,
     post,
     page,

@@ -1,16 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { colors } from '@/styles/settings';
-import { LayoutContext } from '@/components/Layout';
 
 const Footer = () => {
-  const { settings } = useContext(LayoutContext);
   const year = new Date().getFullYear();
   return (
     <SFooter>
       <p>
         &copy;
-        {` ${settings.title} ${year}`}
+        {` SandBachs ${year}`}
       </p>
       <p>
         Site by&nbsp;

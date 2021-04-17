@@ -3,6 +3,11 @@ import { font, colors, breakpoints } from '@/styles/settings';
 import { SWrapper } from '@/tools/Wrapper';
 
 const GlobalStyle = createGlobalStyle`
+  ::selection {
+    background: ${colors.green};
+    color: ${colors.white};
+  }
+
   body {
     font-size: 16px;
     font-family: ${font.primary};

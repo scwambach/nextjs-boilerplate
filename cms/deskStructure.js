@@ -1,6 +1,5 @@
 import React from 'react';
 import S from '@sanity/desk-tool/structure-builder';
-import FaCogs from '@meronex/icons/fa/FaCogs';
 import SuCreate from '@meronex/icons/su/SuCreate';
 import FiStar from '@meronex/icons/fi/FiStar';
 import BiSort from '@meronex/icons/bi/BiSort';
@@ -12,6 +11,7 @@ import SocialPreview from 'part:social-preview/component';
 import AiOutlineShareAlt from '@meronex/icons/ai/AiOutlineShareAlt';
 import AiFillStar from '@meronex/icons/ai/AiFillStar';
 import GrResources from '@meronex/icons/gr/GrResources';
+import ImBubbles3 from '@meronex/icons/im/ImBubbles3';
 
 const remoteURL = 'https://sandbachs.vercel.app';
 const localURL = 'http://localhost:3000';
@@ -19,7 +19,7 @@ const localURL = 'http://localhost:3000';
 const appUrl = window.location.hostname === 'localhost' ? localURL : remoteURL;
 
 const hiddenTypes = [
-  'siteSettings',
+  'socials',
   'category',
   'resource',
   'resourceCategory',
@@ -56,6 +56,7 @@ export const getDefaultDocumentNode = ({ schemaType }) => {
   if (
     schemaType !== 'event' &&
     schemaType !== 'category' &&
+    schemaType !== 'socials' &&
     schemaType !== 'menu'
   ) {
     return S.document().views([
@@ -194,15 +195,11 @@ export default () =>
         .schemaType('menu')
         .child(S.documentTypeList('menu')),
       S.listItem()
-        .title('Global Settings')
-        .child(
-          S.editor()
-            .title('Global Settings')
-            .id('siteSettings')
-            .schemaType('siteSettings')
-            .documentId('siteSettings')
-        )
-        .icon(FaCogs),
+        .title('Socials')
+        .schemaType('socials')
+        .child(S.documentTypeList('socials'))
+        .icon(ImBubbles3),
+
       ...S.documentTypeListItems().filter(
         (listItem) => !hiddenTypes.includes(listItem.getId())
       ),

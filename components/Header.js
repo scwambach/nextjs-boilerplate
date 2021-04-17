@@ -4,23 +4,18 @@ import styled from 'styled-components';
 import FaHamburger from '@meronex/icons/fa/FaHamburger';
 import GrClose from '@meronex/icons/gr/GrClose';
 import { colors, breakpoints } from '@/styles/settings';
-import urlFor from '@/utils/urlFor';
 import Menu from '@/components/Menu';
 import { LayoutContext } from '@/components/Layout';
+import Img from 'next/image';
 
 const Header = () => {
-  const { settings, logo, menuOpen, setMenuOpen } = useContext(LayoutContext);
+  const { menuOpen, setMenuOpen } = useContext(LayoutContext);
 
   return (
     <SHeader open={menuOpen}>
       <Link href="/">
-        <a aria-label={settings.title}>
-          <img
-            alt={settings.title}
-            src={urlFor(logo).width(200)}
-            width={200}
-            height={33}
-          />
+        <a aria-label="SandBachs">
+          <Img height="42" width="256" quality="100" src="/mainLogo.png" />
         </a>
       </Link>
       <nav>

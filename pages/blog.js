@@ -5,6 +5,7 @@ import Wrapper from '@/tools/Wrapper';
 import Layout from '@/components/Layout';
 import Post from '@/components/Post';
 import { getClient } from '@/utils/sanity';
+import { blogQuery } from '@/utils/queries';
 
 const BlogPage = ({ content, site }) => {
   const [loadNum, setLoadNum] = useState(5);
@@ -33,22 +34,7 @@ const BlogPage = ({ content, site }) => {
 };
 
 export async function getStaticProps() {
-  const content = await getClient().fetch(
-    `*[_type == "posts"][0]{
-      "content": *[_type == "post"] | order(publishedAt desc),
-      "site": {
-        "events": *[_type == "event"],
-        "settings":  *[_type == "siteSettings"][0],
-        "menus": *[_type == "menu"],
-        "placeholders": *[_type == "sanity.imageAsset"] {
-          "_id": _id,
-          "lqip": metadata.lqip,
-          "palette": metadata.palette,
-          "dimensions": metadata.dimensions
-        }
-      }
-    }`
-  );
+  const content = await getClient().fetch(blogQuery);
 
   return { props: content };
 }

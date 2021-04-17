@@ -69,7 +69,7 @@ export default {
       name: 'description',
       type: 'text',
       description: 'Keep it short and sweet!',
-      validation: (Rule) => Rule.required().max(200),
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Link',
