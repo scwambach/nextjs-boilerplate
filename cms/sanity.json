@@ -24,7 +24,8 @@
     "media-library",
     "note-field",
     "social-preview",
-    "order-documents"
+    "order-documents",
+    "asset-source-cloudinary"
   ],
   "parts": [
     {
