@@ -101,7 +101,7 @@ export const ScBackgroundImage = styled.div`
       top: 0;
       left: 0;
       background-color: ${colors.black};
-      z-index: 0;
+      z-index: 1;
       opacity: 0.2;
     }
 

@@ -56,6 +56,7 @@ export default {
         { type: 'eventsList' },
         { type: 'tiledLinks' },
         { type: 'formCreator' },
+        { type: 'membersList' },
       ],
     },
 

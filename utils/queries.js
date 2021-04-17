@@ -3,7 +3,8 @@ import groq from 'groq';
 export const siteQuery = `"site": {
   "events": *[_type == "event"],
   "menus": *[_type == "menu"],
-  "socials": *[_type == "socials"],
+  "members": *[_type == "member"] | order(order asc),
+  "socials": *[_type == "socials"] | order(order asc),
   "placeholders": *[_type == "sanity.imageAsset"] {
     "_id": _id,
     "lqip": metadata.lqip,

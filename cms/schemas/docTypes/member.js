@@ -1,11 +1,17 @@
-import GiTeacher from '@meronex/icons/gi/GiTeacher';
+import FaUsers from '@meronex/icons/fa/FaUsers';
 
 export default {
   name: 'member',
   title: 'Member',
   type: 'document',
-  icon: GiTeacher,
+  icon: FaUsers,
   fields: [
+    {
+      name: 'order',
+      title: 'Order',
+      type: 'number',
+      hidden: true,
+    },
     {
       name: 'name',
       title: 'Name',
@@ -32,11 +38,11 @@ export default {
     select: {
       title: 'name',
       media: 'headshot',
-      cred: 'crendentials',
+      cred: 'description',
     },
     prepare(selection) {
       const { title, cred } = selection;
-      return { ...selection, title, subtitle: `${cred[0]}` };
+      return { ...selection, title, subtitle: `${cred}` };
     },
   },
 };

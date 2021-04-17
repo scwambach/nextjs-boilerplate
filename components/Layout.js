@@ -17,6 +17,7 @@ const Layout = ({ page, site, staticTitle, children }) => {
         setMenuOpen,
         events: site.events,
         menus: site.menus,
+        members: site.members,
         socials: site.socials,
         placeholders: site.placeholders,
       }}

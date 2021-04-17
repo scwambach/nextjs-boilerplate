@@ -27,6 +27,7 @@ const hiddenTypes = [
   'page',
   'post',
   'event',
+  'member',
   'menu',
 ];
 
@@ -56,6 +57,7 @@ export const getDefaultDocumentNode = ({ schemaType }) => {
   if (
     schemaType !== 'event' &&
     schemaType !== 'category' &&
+    schemaType !== 'member' &&
     schemaType !== 'socials' &&
     schemaType !== 'menu'
   ) {
@@ -186,6 +188,10 @@ export default () =>
             ])
         )
         .icon(GrResources),
+      S.listItem()
+        .title('Members')
+        .schemaType('member')
+        .child(S.documentTypeList('member')),
       S.listItem()
         .title('Events')
         .schemaType('event')

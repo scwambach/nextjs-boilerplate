@@ -32,6 +32,8 @@ import resource from './docTypes/resource';
 import resourceCategory from './docTypes/resourceCategory';
 import tiledLinks from './components/tiledLinks';
 import tile from './modules/tile';
+import member from './docTypes/member';
+import membersList from './components/membersList';
 
 export default createSchema({
   name: 'default',
@@ -44,6 +46,7 @@ export default createSchema({
     event,
     resource,
     homePage,
+    member,
 
     // Taxonomies
     resourceCategory,
@@ -61,6 +64,7 @@ export default createSchema({
     minimalContent,
     formCreator,
     tiledLinks,
+    membersList,
 
     // Reusable Objects
     link,

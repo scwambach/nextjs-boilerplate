@@ -6,6 +6,7 @@ import TwoColumnCopy from '@/components/pageComponents/TwoColumnCopy';
 import FormCreator from '@/components/pageComponents/FormCreator';
 import EventListing from '@/components/pageComponents/EventsListing';
 import TiledLinks from '../pageComponents/TiledLinks';
+import MemberListing from '../pageComponents/MembersList';
 
 const PageContent = (content) =>
   content.pageContent.map((component, index) => (
@@ -23,6 +24,7 @@ const PageContent = (content) =>
       {component._type === 'twoColCopy' && <TwoColumnCopy {...component} />}
       {component._type === 'tiledLinks' && <TiledLinks {...component} />}
       {component._type === 'formCreator' && <FormCreator {...component} />}
+      {component._type === 'membersList' && <MemberListing {...component} />}
     </React.Fragment>
   ));
 
