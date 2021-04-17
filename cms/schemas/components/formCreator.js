@@ -17,6 +17,16 @@ export default {
       type: 'email',
     },
     {
+      name: 'heading',
+      title: 'Heading',
+      type: 'string',
+    },
+    {
+      name: 'message',
+      title: 'Message',
+      type: 'minimalContent',
+    },
+    {
       title: 'Fields',
       name: 'fields',
       type: 'array',
