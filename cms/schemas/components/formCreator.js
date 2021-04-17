@@ -27,6 +27,16 @@ export default {
       type: 'minimalContent',
     },
     {
+      name: 'showSocials',
+      title: 'Show Socials',
+      type: 'boolean',
+    },
+    {
+      name: 'columns',
+      title: 'Two Column Layout',
+      type: 'boolean',
+    },
+    {
       title: 'Fields',
       name: 'fields',
       type: 'array',

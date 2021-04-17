@@ -49,12 +49,13 @@ const FormCreator = (props) => {
   };
   return (
     <section>
-      <Wrapper narrow={!props.heading || !props.message}>
-        {props.heading || props.message ? (
+      <Wrapper narrow={!props.columns}>
+        {props.columns ? (
           <Grid gutter={50}>
             <GridItem width="half">
-              <h2>{props.heading}</h2>
-              <BodyContent content={props.message} />
+              {props.heading && <h2>{props.heading}</h2>}
+              {props.message && <BodyContent content={props.message} />}
+              {props.showSocials && <h2>PUT SOCIALS HERE</h2>}
             </GridItem>
             <GridItem width="half">
               <h3>{props.title}</h3>
@@ -105,6 +106,11 @@ const FormCreator = (props) => {
           </Grid>
         ) : (
           <>
+            <div>
+              {props.heading && <h2>{props.heading}</h2>}
+              {props.message && <BodyContent content={props.message} />}
+              {props.showSocials && <h2>PUT SOCIALS HERE</h2>}
+            </div>
             <h3>{props.title}</h3>
             {!submitted && !submitError && (
               <form
