@@ -1,4 +1,5 @@
 import HiOutlineUserGroup from '@meronex/icons/hi/HiOutlineUserGroup';
+import { backgroundColor } from '../commonFields';
 
 export default {
   name: 'membersList',
@@ -11,10 +12,6 @@ export default {
       title: 'Heading',
       type: 'string',
     },
-    {
-      name: 'backgroundColor',
-      title: 'Background Color',
-      type: 'colorSelector',
-    },
+    { ...backgroundColor },
   ],
 };

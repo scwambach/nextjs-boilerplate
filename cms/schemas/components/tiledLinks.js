@@ -1,4 +1,5 @@
 import ZoViewTile from '@meronex/icons/zo/ZoViewTile';
+import { backgroundColor } from '../commonFields';
 
 export default {
   title: 'Tiled Links',
@@ -18,11 +19,7 @@ export default {
         },
       ],
     },
-    {
-      name: 'backgroundColor',
-      title: 'Background Color',
-      type: 'colorSelector',
-    },
+    { ...backgroundColor },
   ],
   preview: {
     select: {

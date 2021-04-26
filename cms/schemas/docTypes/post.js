@@ -1,6 +1,6 @@
-import AiFillWarning from '@meronex/icons/ai/AiFillWarning';
 import FiStar from '@meronex/icons/fi/FiStar';
 import SuCreate from '@meronex/icons/su/SuCreate';
+import { mainImage, objectTitle, slug, slugWarning } from '../commonFields';
 
 export const slugify = (string) => {
   const a =
@@ -27,43 +27,10 @@ export default {
   type: 'document',
   icon: SuCreate,
   fields: [
-    {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'gridNote2',
-      type: 'note',
-      options: {
-        icon: AiFillWarning,
-        headline: 'Hold up!',
-        message:
-          'Please do not type your own slug in the Slug field. Just click "Generate" button.',
-        tone: 'caution',
-      },
-    },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      validation: (Rule) => Rule.required(),
-      options: {
-        source: 'title',
-        maxLength: 96,
-        slugify: (input) => `blog/${slugify(input)}`,
-      },
-    },
-    {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      validation: (Rule) => Rule.required(),
-      options: {
-        hotspot: true,
-      },
-    },
+    { ...objectTitle },
+    { ...slugWarning },
+    { ...slug('blog') },
+    { ...mainImage },
     {
       name: 'categories',
       title: 'Categories',

@@ -1,5 +1,6 @@
 import MdEventNote from '@meronex/icons/md/MdEventNote';
 import MdEventAvailable from '@meronex/icons/md/MdEventAvailable';
+import { objectTitle } from '../commonFields';
 
 export default {
   name: 'event',
@@ -7,12 +8,7 @@ export default {
   type: 'document',
   icon: MdEventNote,
   fields: [
-    {
-      name: 'title',
-      title: 'Title',
-      validation: (Rule) => Rule.required(),
-      type: 'string',
-    },
+    { ...objectTitle },
     {
       title: 'Date',
       name: 'date',

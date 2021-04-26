@@ -1,4 +1,5 @@
 import MdFormatListBulleted from '@meronex/icons/md/MdFormatListBulleted';
+import { backgroundColor } from '../commonFields';
 
 export default {
   name: 'formCreator',
@@ -65,11 +66,7 @@ export default {
       type: 'text',
       rows: 4,
     },
-    {
-      name: 'backgroundColor',
-      title: 'Background Color',
-      type: 'colorSelector',
-    },
+    { ...backgroundColor },
   ],
   preview: {
     select: {

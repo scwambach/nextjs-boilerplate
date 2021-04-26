@@ -7,7 +7,6 @@ import LinkObject from '@/tools/LinkObject';
 import YouTubeVideo from '@/tools/YouTubeVideo';
 import Grid, { Row } from '@/tools/grid/Grid';
 import GridItem from '@/tools/grid/GridItem';
-import { SectionStyle } from '@/styles/bits';
 import BackgroundImage, { ScBackgroundImage } from '@/tools/BackgroundImage';
 import SanityBlockContent from '@sanity/block-content-to-react';
 import serializers from '@/utils/serializers';
@@ -110,9 +109,7 @@ const SingleFeature = (props) => {
   );
 };
 
-const SImageFeatures = styled.section`
-  ${SectionStyle};
-`;
+const SImageFeatures = styled.div``;
 
 const SSingleFeature = styled.div`
   ${ScBackgroundImage} {

@@ -95,11 +95,11 @@ const Event = ({
   );
 };
 
-const EventListing = () => {
+const EventsList = () => {
   const { events } = useContext(LayoutContext);
 
   return (
-    <SEventListing>
+    <SEventsList>
       <Wrapper>
         <div className="listing">
           {NewEventsArray(events).map(({ event }, index) => (
@@ -107,13 +107,13 @@ const EventListing = () => {
           ))}
         </div>
       </Wrapper>
-    </SEventListing>
+    </SEventsList>
   );
 };
 
-export default EventListing;
+export default EventsList;
 
-export const SEventListing = styled.section`
+export const SEventsList = styled.div`
   margin-bottom: -30px;
 
   .listing {

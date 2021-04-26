@@ -5,8 +5,8 @@ import Image from '@/tools/Image';
 import ImageFeatures from './pageComponents/ImageFeatures';
 import HeroBanner from './pageComponents/HeroBanner';
 import ImageGallery from './pageComponents/ImageGallery';
-import TwoColumnCopy from './pageComponents/TwoColumnCopy';
-import EventListing from './pageComponents/EventsListing';
+import TwoColCopy from './pageComponents/TwoColCopy';
+import EventsList from './pageComponents/EventsList';
 import FormCreator from './pageComponents/FormCreator';
 
 const BodyContent = ({ content, mainImage }) => {
@@ -18,8 +18,8 @@ const BodyContent = ({ content, mainImage }) => {
       heroBanner: ({ node }) => (
         <HeroBanner mainImage={node.backgroundImage || mainImage} {...node} />
       ),
-      eventsList: ({ node }) => <EventListing {...node} />,
-      twoColCopy: ({ node }) => <TwoColumnCopy {...node} />,
+      eventsList: ({ node }) => <EventsList {...node} />,
+      twoColCopy: ({ node }) => <TwoColCopy {...node} />,
       formCreator: ({ node }) => <FormCreator {...node} />,
     },
 

@@ -1,6 +1,7 @@
 import BsImage from '@meronex/icons/bs/BsImage';
 import FaRegLightbulb from '@meronex/icons/fa/FaRegLightbulb';
 import AiOutlineLink from '@meronex/icons/ai/AiOutlineLink';
+import { backgroundColor } from '../commonFields';
 
 export default {
   title: 'Hero Banner',
@@ -57,11 +58,7 @@ export default {
         },
       ],
     },
-    {
-      name: 'backgroundColor',
-      title: 'Background Color',
-      type: 'colorSelector',
-    },
+    { ...backgroundColor },
     {
       title: 'Vimeo Video ID',
       name: 'vimeoVideoId',

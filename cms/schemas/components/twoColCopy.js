@@ -1,4 +1,5 @@
 import MdcFormatColumns from '@meronex/icons/mdc/MdcFormatColumns';
+import { backgroundColor } from '../commonFields';
 
 export default {
   title: 'Two Column Copy',
@@ -18,11 +19,7 @@ export default {
       validation: (Rule) => Rule.required(),
       type: 'simpleContent',
     },
-    {
-      name: 'backgroundColor',
-      title: 'Background Color',
-      type: 'colorSelector',
-    },
+    { ...backgroundColor },
   ],
   preview: {
     select: {

@@ -18,21 +18,6 @@ export const Button = css`
   }
 `;
 
-export const SectionStyle = css`
-  margin: 50px 0;
-
-  &:first-child {
-    margin-top: 0;
-  }
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  @media screen and (max-width: ${breakpoints.ipadPort - 1}px) {
-    margin: 20px 0;
-  }
-`;
-
 export const absoluteCenter = css`
   position: absolute;
   top: 50%;

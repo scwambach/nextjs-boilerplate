@@ -3,6 +3,7 @@ import VscFilePdf from '@meronex/icons/vsc/VscFilePdf';
 import BiLinkExternal from '@meronex/icons/bi/BiLinkExternal';
 import FdPageMultiple from '@meronex/icons/fd/FdPageMultiple';
 import AiFillStar from '@meronex/icons/ai/AiFillStar';
+import { objectTitle, slug } from '../commonFields';
 
 export default {
   name: 'resource',
@@ -10,12 +11,8 @@ export default {
   type: 'document',
   icon: GrResources,
   fields: [
-    {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
+    { ...objectTitle },
+    { ...slug('resource') },
     {
       name: 'description',
       title: 'Description',

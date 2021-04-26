@@ -1,4 +1,5 @@
 import MdEventNote from '@meronex/icons/md/MdEventNote';
+import { backgroundColor } from '../commonFields';
 
 export default {
   name: 'eventsList',
@@ -6,11 +7,7 @@ export default {
   type: 'object',
   icon: MdEventNote,
   fields: [
-    {
-      name: 'backgroundColor',
-      title: 'Background Color',
-      type: 'colorSelector',
-    },
+    { ...backgroundColor },
     {
       name: 'heading',
       title: 'Heading',

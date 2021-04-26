@@ -31,86 +31,90 @@ const ImageGallery = ({ gallery }) => {
     };
   }, []);
   return (
-    <Wrapper narrow>
-      <SGallery>
-        {gallery?.map((image, index) => (
-          <a
-            key={`image${index}`}
-            href={null}
-            onClick={() => {
-              setActiveIndex(index);
-              setImageLoading(true);
-              setModalOpen(true);
-            }}
-          >
-            {image.asset && <Image crop src={image} height={300} width={300} />}
-          </a>
-        ))}
-        {modalOpen && (
-          <SLightBox id="outter">
-            {imageLoading && (
-              <Delayed waitBeforeShow={100}>
-                <Loader />
-              </Delayed>
-            )}
+    <div>
+      <Wrapper narrow>
+        <SGallery>
+          {gallery?.map((image, index) => (
             <a
+              key={`image${index}`}
               href={null}
               onClick={() => {
-                setModalOpen(false);
+                setActiveIndex(index);
+                setImageLoading(true);
+                setModalOpen(true);
               }}
-              className="close"
             >
-              <span />
-              <span />
+              {image.asset && (
+                <Image crop src={image} height={300} width={300} />
+              )}
             </a>
-            {activeIndex - 1 !== -1 && (
+          ))}
+          {modalOpen && (
+            <SLightBox id="outter">
+              {imageLoading && (
+                <Delayed waitBeforeShow={100}>
+                  <Loader />
+                </Delayed>
+              )}
               <a
                 href={null}
                 onClick={() => {
-                  setImageLoading(true);
-                  setActiveIndex(activeIndex - 1);
+                  setModalOpen(false);
                 }}
-                className="control previous"
+                className="close"
               >
                 <span />
                 <span />
               </a>
-            )}
-            {activeIndex !== gallery.length - 1 && (
-              <a
-                href={null}
-                onClick={() => {
-                  setImageLoading(true);
-                  setActiveIndex(activeIndex + 1);
-                }}
-                className="control next"
-              >
-                <span />
-                <span />
-              </a>
-            )}
-            <div className="inner" id="lightboxInner">
-              <div
-                className={`image-container${imageLoading ? ' loading' : ''}`}
-              >
-                <img
-                  onLoad={() => {
-                    setImageLoading(false);
+              {activeIndex - 1 !== -1 && (
+                <a
+                  href={null}
+                  onClick={() => {
+                    setImageLoading(true);
+                    setActiveIndex(activeIndex - 1);
                   }}
-                  alt="..."
-                  src={urlFor(gallery[activeIndex])
-                    .quality(100)
-                    .width(breakpoints.pageWidth)
-                    .fit('crop')
-                    .auto('format')
-                    .url()}
-                />
+                  className="control previous"
+                >
+                  <span />
+                  <span />
+                </a>
+              )}
+              {activeIndex !== gallery.length - 1 && (
+                <a
+                  href={null}
+                  onClick={() => {
+                    setImageLoading(true);
+                    setActiveIndex(activeIndex + 1);
+                  }}
+                  className="control next"
+                >
+                  <span />
+                  <span />
+                </a>
+              )}
+              <div className="inner" id="lightboxInner">
+                <div
+                  className={`image-container${imageLoading ? ' loading' : ''}`}
+                >
+                  <img
+                    onLoad={() => {
+                      setImageLoading(false);
+                    }}
+                    alt="..."
+                    src={urlFor(gallery[activeIndex])
+                      .quality(100)
+                      .width(breakpoints.pageWidth)
+                      .fit('crop')
+                      .auto('format')
+                      .url()}
+                  />
+                </div>
               </div>
-            </div>
-          </SLightBox>
-        )}
-      </SGallery>
-    </Wrapper>
+            </SLightBox>
+          )}
+        </SGallery>
+      </Wrapper>
+    </div>
   );
 };
 
@@ -244,6 +248,7 @@ const SGallery = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0 -20px 50px 0;
+  justify-content: center;
 
   > a {
     padding: 0 20px 20px 0;

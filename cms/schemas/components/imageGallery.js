@@ -1,5 +1,6 @@
 import BsImages from '@meronex/icons/bs/BsImages';
 import BsImage from '@meronex/icons/bs/BsImage';
+import { backgroundColor } from '../commonFields';
 
 export default {
   title: 'Image Gallery',
@@ -27,11 +28,7 @@ export default {
         layout: 'grid',
       },
     },
-    {
-      name: 'backgroundColor',
-      title: 'Background Color',
-      type: 'colorSelector',
-    },
+    { ...backgroundColor },
   ],
   preview: {
     select: {

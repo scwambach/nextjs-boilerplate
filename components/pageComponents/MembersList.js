@@ -5,7 +5,6 @@ import Wrapper from '@/tools/Wrapper';
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { colors } from '@/styles/settings';
-import { SectionStyle } from '@/styles/bits';
 import { LayoutContext } from '../Layout';
 
 const MemberListing = ({ backgroundColor, heading }) => {
@@ -33,9 +32,7 @@ const MemberListing = ({ backgroundColor, heading }) => {
 
 export default MemberListing;
 
-export const ScMemberListing = styled.section`
-  ${SectionStyle};
-
+export const ScMemberListing = styled.div`
   h2 {
     text-align: center;
     font-size: 60px;

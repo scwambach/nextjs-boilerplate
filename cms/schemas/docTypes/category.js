@@ -1,5 +1,10 @@
 import FiStar from '@meronex/icons/fi/FiStar';
-import { slugify } from './post';
+import {
+  objectTitle,
+  pageDescription,
+  slug,
+  slugWarning,
+} from '../commonFields';
 
 export default {
   name: 'category',
@@ -7,26 +12,10 @@ export default {
   type: 'document',
   icon: FiStar,
   fields: [
-    {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-    },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      validation: (Rule) => Rule.required(),
-      options: {
-        source: 'title',
-        slugify: (input) => `/category/${slugify(input)}`,
-      },
-    },
-    {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-    },
+    { ...objectTitle },
+    { ...slugWarning },
+    { ...slug('category') },
+    { ...pageDescription },
   ],
   preview: {
     select: {

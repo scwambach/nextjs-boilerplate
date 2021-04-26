@@ -1,4 +1,5 @@
 import FaUsers from '@meronex/icons/fa/FaUsers';
+import { orderNumber } from '../commonFields';
 
 export default {
   name: 'member',
@@ -6,12 +7,7 @@ export default {
   type: 'document',
   icon: FaUsers,
   fields: [
-    {
-      name: 'order',
-      title: 'Order',
-      type: 'number',
-      hidden: true,
-    },
+    { ...orderNumber },
     {
       name: 'name',
       title: 'Name',

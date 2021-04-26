@@ -3,8 +3,8 @@ import ImageFeatures from '@/components/pageComponents/ImageFeatures';
 import ImageGallery from '@/components/pageComponents/ImageGallery';
 import Image from '@/tools/Image';
 import HeroBanner from '@/components/pageComponents/HeroBanner';
-import EventListing from '@/components/pageComponents/EventsListing';
-import TwoColumnCopy from '@/components/pageComponents/TwoColumnCopy';
+import EventsList from '@/components/pageComponents/EventsList';
+import TwoColCopy from '@/components/pageComponents/TwoColCopy';
 import FormCreator from '@/components/pageComponents/FormCreator';
 import Link from 'next/link';
 
@@ -16,8 +16,8 @@ const serializers = {
     heroBanner: ({ node }) => (
       <HeroBanner mainImage={node.backgroundImage} {...node} />
     ),
-    eventsList: ({ node }) => <EventListing {...node} />,
-    twoColCopy: ({ node }) => <TwoColumnCopy {...node} />,
+    eventsList: ({ node }) => <EventsList {...node} />,
+    twoColCopy: ({ node }) => <TwoColCopy {...node} />,
     formCreator: ({ node }) => <FormCreator {...node} />,
   },
 

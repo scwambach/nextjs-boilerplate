@@ -5,8 +5,8 @@ import GridItem from '@/tools/grid/GridItem';
 import Wrapper from '@/tools/Wrapper';
 import BodyContent from '@/components/BodyContent';
 
-const TwoColumnCopy = ({ columnOneCopy, columnTwoCopy }) => (
-  <ScTwoColumnCopy>
+const TwoColCopy = ({ columnOneCopy, columnTwoCopy }) => (
+  <ScTwoColCopy>
     <Wrapper>
       <Grid gutter={50}>
         <GridItem width="half">
@@ -17,9 +17,9 @@ const TwoColumnCopy = ({ columnOneCopy, columnTwoCopy }) => (
         </GridItem>
       </Grid>
     </Wrapper>
-  </ScTwoColumnCopy>
+  </ScTwoColCopy>
 );
 
-export default TwoColumnCopy;
+export default TwoColCopy;
 
-const ScTwoColumnCopy = styled.section``;
+const ScTwoColCopy = styled.div``;

@@ -1,5 +1,10 @@
 import AiFillStar from '@meronex/icons/ai/AiFillStar';
-import { slugify } from './post';
+import {
+  objectTitle,
+  pageDescription,
+  slug,
+  slugWarning,
+} from '../commonFields';
 
 export default {
   name: 'resourceCategory',
@@ -7,26 +12,10 @@ export default {
   type: 'document',
   icon: AiFillStar,
   fields: [
-    {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-    },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      validation: (Rule) => Rule.required(),
-      options: {
-        source: 'title',
-        slugify: (input) => `/resource-category/${slugify(input)}`,
-      },
-    },
-    {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-    },
+    { ...objectTitle },
+    { ...slugWarning },
+    { ...slug('resource/category') },
+    { ...pageDescription },
   ],
   preview: {
     select: {

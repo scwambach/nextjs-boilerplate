@@ -1,13 +1,7 @@
-import React from 'react';
 import * as Icons from '@meronex/icons/ai';
 
 const DynamicFaIcon = (name) => {
   const IconComponent = Icons[name];
-
-  if (!IconComponent) {
-    // Return a default one
-    return <Icons.AiFillFire />;
-  }
 
   return IconComponent;
 };

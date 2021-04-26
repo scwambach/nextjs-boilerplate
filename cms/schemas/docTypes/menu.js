@@ -1,4 +1,5 @@
 import HiMenuAlt3 from '@meronex/icons/hi/HiMenuAlt3';
+import { objectTitle } from '../commonFields';
 
 export default {
   name: 'menu',
@@ -6,12 +7,7 @@ export default {
   type: 'document',
   icon: HiMenuAlt3,
   fields: [
-    {
-      name: 'title',
-      title: 'Title',
-      validation: (Rule) => Rule.required(),
-      type: 'string',
-    },
+    { ...objectTitle },
     {
       name: 'items',
       title: 'Items',

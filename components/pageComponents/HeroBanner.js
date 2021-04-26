@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors, breakpoints } from '@/styles/settings';
-import { Button, SectionStyle } from '@/styles/bits';
+import { Button } from '@/styles/bits';
 import Wrapper, { SWrapper } from '@/tools/Wrapper';
 import LinkObject from '@/tools/LinkObject';
 import BackgroundImage, { ScBackgroundImage } from '@/tools/BackgroundImage';
@@ -39,8 +39,7 @@ const HeroBanner = (props) => (
 
 export default HeroBanner;
 
-const SHeroBanner = styled.section`
-  ${SectionStyle};
+const SHeroBanner = styled.div`
   text-align: center;
   color: ${colors.white};
   position: relative;
