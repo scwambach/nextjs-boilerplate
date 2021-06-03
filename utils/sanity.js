@@ -4,6 +4,7 @@ import {
   createPortableTextComponent,
   createPreviewSubscriptionHook,
 } from 'next-sanity';
+import dayjs from 'dayjs';
 
 const config = {
   /**
@@ -16,6 +17,7 @@ const config = {
   dataset: process.env.SANITY_DATASET,
   projectId: process.env.SANITY_ID,
   useCdn: process.env.NODE_ENV === 'production',
+  apiVersion: dayjs(new Date()).format('YYYY-MM-DD'),
   /**
    * Set useCdn to `false` if your application require the freshest possible
    * data always (potentially slightly slower and a bit more expensive).
