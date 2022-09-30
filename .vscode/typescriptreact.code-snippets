@@ -1,0 +1,54 @@
+{
+  "Component": {
+    "prefix": "newComponent",
+    "body": [
+      "interface ${TM_FILENAME_BASE/(.*)/${1}/}Props {}",
+      "",
+      "const ${TM_FILENAME_BASE/(.*)/${1}/} = (props: ${TM_FILENAME_BASE/(.*)/${1}/}Props) => {",
+      "  return (",
+      "    <div className=\"${TM_FILENAME_BASE/(.*)/${1:/downcase}/}\">",
+      "      $1",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export { ${TM_FILENAME_BASE/(.*)/${1}/} };",
+      "export default ${TM_FILENAME_BASE/(.*)/${1}/};",
+      ""
+    ],
+    "description": "Component"
+  },
+  "Map Loop": {
+    "prefix": "map-loop",
+    "body": ["{$1.map($2 => (", "  $3", "))}"]
+  },
+  "Dangerously Set HTML": {
+    "prefix": "danger-html",
+    "body": ["<div dangerouslySetInnerHTML={{", "  __html: copy,", "}}", "/>"]
+  },
+  "Dump": {
+    "prefix": "dump",
+    "body": [
+      "",
+      "",
+      "",
+      "<code>",
+      "  <pre style={{",
+      "    fontFamily: 'monospace',",
+      "    display: 'block',",
+      "    padding: '50px',",
+      "    color: '#88ffbf',",
+      "    backgroundColor: 'black',",
+      "    textAlign: 'left',",
+      "    whiteSpace: 'pre-wrap',",
+      "  }}",
+      "  >",
+      "    {JSON.stringify($1, null, '    ')}",
+      "  </pre>",
+      "</code>",
+      "",
+      "",
+      ""
+    ]
+  }
+}

@@ -1,63 +1,28 @@
 {
   "name": "nextjs-boilerplate",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "next",
+    "dev": "next dev",
     "build": "next build",
-    "dev": "next start",
-    "commit": "git add . && cz",
-    "email": "mjml -r emails/contact.mjml --config.minify --config.minifyOptions='{\"minifyCSS\": true, \"removeEmptyAttributes\": false}' -o emails/contact.html"
+    "start": "next start",
+    "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/scwambach/nextjs-boilerplate.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/scwambach/nextjs-boilerplate/issues"
-  },
-  "homepage": "https://github.com/scwambach/nextjs-boilerplate#readme",
   "dependencies": {
-    "@meronex/icons": "^4.0.0",
-    "@sanity/block-content-to-react": "^3.0.0",
-    "@sanity/client": "^2.10.5",
-    "@sanity/image-url": "^0.140.22",
-    "axios": "^0.21.1",
-    "dayjs": "^1.10.5",
-    "mjml": "^4.9.3",
-    "next": "^10.2.3",
-    "next-images": "^1.7.0",
-    "next-sanity": "^0.2.0",
-    "next-sanity-image": "^3.0.0",
-    "nextjs-progressbar": "^0.0.10",
-    "node-mailjet": "^3.3.4",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-helmet": "^6.1.0",
-    "react-player": "^2.9.0",
-    "react-spinners": "^0.11.0",
-    "react-vimeo": "^2.0.0",
-    "styled-components": "^5.3.0"
+    "next": "12.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "^1.55.0"
   },
   "devDependencies": {
-    "agent-base": "^6.0.2",
-    "babel-eslint": "^10.1.0",
-    "babel-plugin-styled-components": "^1.12.0",
-    "cz-customizable": "^6.3.0",
-    "eslint": "^7.27.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.24.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-customizable"
-    }
-  },
-  "keywords": []
+    "@types/node": "18.7.23",
+    "@types/react": "18.0.21",
+    "@types/react-dom": "18.0.6",
+    "autoprefixer": "^10.4.12",
+    "eslint": "8.24.0",
+    "eslint-config-next": "12.3.1",
+    "postcss": "^8.4.17",
+    "tailwindcss": "^3.1.8",
+    "typescript": "4.8.4"
+  }
 }

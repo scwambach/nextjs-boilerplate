@@ -1,8 +1,10 @@
 {
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
   "workbench.colorCustomizations": {
-    "titleBar.activeForeground": "#735541",
-    "titleBar.inactiveForeground": "#e9ca61",
-    "titleBar.activeBackground": "#e9ca61",
-    "titleBar.inactiveBackground": "#735541"
+    "titleBar.activeForeground": "#fff",
+    "titleBar.inactiveForeground": "#2f2f2f",
+    "titleBar.activeBackground": "#128878",
+    "titleBar.inactiveBackground": "#21c991"
   }
 }
