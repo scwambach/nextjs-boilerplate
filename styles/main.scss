@@ -2,4 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "home";
+@import './global';
+@import './home';
