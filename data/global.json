@@ -1,0 +1,15 @@
+{
+  "siteTitle": "My Site",
+  "siteDescription": "My site description",
+  "favicon": "/favicon.ico",
+  "socials": [
+    {
+      "name": "instagram",
+      "url": "https://instagram.com/evansvillemusicscene"
+    },
+    {
+      "name": "github",
+      "url": "https://github.com/scwambach"
+    }
+  ]
+}
