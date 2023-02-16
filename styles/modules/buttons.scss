@@ -1,0 +1,41 @@
+.button {
+  border-radius: 5px;
+  color: $white;
+  display: inline-block;
+  background-color: $blue;
+  transition-duration: 0.2s;
+
+  &.secondary {
+    background-color: $red;
+
+    &:hover {
+      background-color: $orange;
+      a,
+      button {
+        color: $black;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: $green;
+    a,
+    button {
+      color: $black;
+    }
+  }
+
+  + .button {
+    margin-left: 10px;
+  }
+
+  a,
+  button {
+    transition-duration: 0.2s;
+    cursor: pointer;
+    color: $white;
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+}
