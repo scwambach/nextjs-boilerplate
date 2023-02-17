@@ -1,3 +1,12 @@
+@mixin buttonItem {
+  transition-duration: 0.2s;
+  cursor: pointer;
+  color: $white;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
 .button {
   border-radius: 5px;
   color: $white;
@@ -31,11 +40,13 @@
 
   a,
   button {
-    transition-duration: 0.2s;
-    cursor: pointer;
-    color: $white;
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
+    @include buttonItem;
+  }
+}
+
+input[type='submit'] {
+  &.button {
+    @extend .button;
+    @include buttonItem;
   }
 }

@@ -1,0 +1,63 @@
+form {
+  label {
+    display: block;
+    span {
+      display: block;
+    }
+  }
+
+  input:not([type='submit'], [type='radio'], [type='checkbox']),
+  textarea {
+    border: 1px solid;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .radio,
+  .checkbox {
+    label {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: start;
+      gap: 0.5rem;
+      cursor: pointer;
+
+      span {
+        + input {
+          background-color: $white;
+          height: 0;
+          width: 0;
+          overflow: hidden;
+          opacity: 0;
+
+          &:checked {
+            + [class$='-indicator'] {
+              background-color: $red;
+            }
+          }
+          + [class$='-indicator'] {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 1px solid $black;
+          }
+        }
+      }
+    }
+  }
+
+  .radio {
+    label {
+      span {
+        + input {
+          + [class$='-indicator'] {
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
