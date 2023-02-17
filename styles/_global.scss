@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $black;
+  background-color: $white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.skip-to-content {
+  position: absolute;
+  transform: translateY(-150%);
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  background-color: $white;
+  color: $black;
+  border-radius: 5px;
+  padding: 10px 20px;
+  z-index: 0;
+
+  &:focus {
+    transform: translateY(0);
+    z-index: 99;
+  }
+}

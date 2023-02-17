@@ -53,10 +53,14 @@ export default function Home() {
         <a href="#">In non</a>
       </Button>
       <Button>
-        <button>Aliquam luctus</button>
+        <button tabIndex={0} type="button">
+          Aliquam luctus
+        </button>
       </Button>
       <Button className="secondary">
-        <button>Ut vestibulum</button>
+        <button tabIndex={0} type="button">
+          Ut vestibulum
+        </button>
       </Button>
     </Layout>
   )

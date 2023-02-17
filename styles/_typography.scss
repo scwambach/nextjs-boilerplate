@@ -25,37 +25,53 @@ h4,
 h5,
 h6 {
   font-weight: 800;
-  line-height: 1.2;
 }
 
-h1 {
+.text-4xl {
+  font-size: 4rem;
+}
+
+.text-3xl {
+  font-size: 3rem;
+}
+
+h1,
+.text-2xl {
   font-size: 2.5rem;
 }
 
-h2 {
+h2,
+.text-xl {
   font-size: 2rem;
 }
 
-h3 {
+h3,
+.text-lrg {
   font-size: 1.5rem;
 }
 
-h4 {
+h4,
+.text-md {
   font-size: 1.25rem;
 }
 
-h5 {
+h5,
+.text-base {
   font-size: 1rem;
 }
 
-h6 {
+h6,
+.text-sm {
   font-size: 0.75rem;
+}
+
+.text-xs {
+  font-size: 0.5rem;
 }
 
 p,
 li {
   font-size: 1rem;
-  line-height: 1.2;
 }
 
 ul,
@@ -89,6 +105,22 @@ th {
 a {
   color: $blue;
   text-decoration: underline;
+  display: inline-block;
+  position: relative;
+
+  &:focus {
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      border: 2px solid $green;
+    }
+  }
 
   &:hover {
     color: $purple;
