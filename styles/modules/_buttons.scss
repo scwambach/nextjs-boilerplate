@@ -1,17 +1,16 @@
 @mixin buttonItem {
   transition-duration: 0.2s;
   cursor: pointer;
-  color: $white;
+  color: $black;
   display: block;
   padding: 10px 20px;
   text-decoration: none;
 }
 
 .button {
-  border-radius: 5px;
-  color: $white;
   display: inline-block;
-  background-color: $blue;
+  border: 2px solid $black;
+  background-color: $white;
   transition-duration: 0.2s;
 
   &.secondary {

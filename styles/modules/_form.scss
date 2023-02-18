@@ -8,7 +8,7 @@ form {
 
   input:not([type='submit'], [type='radio'], [type='checkbox']),
   textarea {
-    border: 1px solid;
+    border: 2px solid;
     padding: 10px;
     width: 100%;
   }
@@ -18,7 +18,7 @@ form {
     label {
       display: flex;
       flex-direction: row-reverse;
-      justify-content: start;
+      justify-content: flex-end;
       gap: 0.5rem;
       cursor: pointer;
 
@@ -42,7 +42,7 @@ form {
             justify-items: center;
             width: 1.5rem;
             height: 1.5rem;
-            border: 1px solid $black;
+            border: 2px solid $black;
           }
         }
       }
