@@ -84,7 +84,6 @@ const Field = ({
                 key={choice._key}
                 htmlFor={`${slugify(choice.copy)}_${choice._key}`}
               >
-                test
                 <span>{choice.copy}</span>
                 <input
                   type={type}
