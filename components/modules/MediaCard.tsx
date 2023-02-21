@@ -8,10 +8,17 @@ interface MediaCardProps {
   }
   title: string
   description?: string
+  headingLevel?: 1 | 2 | 3 | 4 | 5 | 6
   url?: string
 }
 
-const Content = ({ image, title, description }: MediaCardProps) => {
+const Content = ({
+  image,
+  headingLevel = 3,
+  title,
+  description,
+}: MediaCardProps) => {
+  const Heading = `h${headingLevel}` as keyof JSX.IntrinsicElements
   return (
     <>
       {image && (
@@ -24,7 +31,7 @@ const Content = ({ image, title, description }: MediaCardProps) => {
           />
         </div>
       )}
-      {title && <h3>{title}</h3>}
+      {title && <Heading>{title}</Heading>}
       {description && <p>{description}</p>}
       <span className="link">Read More</span>
     </>
