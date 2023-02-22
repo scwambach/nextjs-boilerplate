@@ -1,3 +1,4 @@
+import { Divider } from '@components/modules/Divider'
 import { Form } from '@components/modules/Form'
 import { MediaCard } from '@components/modules/MediaCard'
 import { Layout } from '@components/wrappers/Layout'
@@ -6,6 +7,7 @@ export default function Home() {
   return (
     <Layout>
       <Form />
+      <Divider size="lg" line />
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}>
         <MediaCard
           title={'Donec [[fringilla]] magna non scelerisque sodales.'}
