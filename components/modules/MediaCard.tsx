@@ -1,3 +1,4 @@
+import { highlighter } from '@utils/highlighter'
 import { LinkObject } from './LinkObject'
 import { ResponsiveImage } from './ResponsiveImage'
 
@@ -31,8 +32,8 @@ const Content = ({
           />
         </div>
       )}
-      {title && <Heading>{title}</Heading>}
-      {description && <p>{description}</p>}
+      {title && <Heading>{highlighter(title)}</Heading>}
+      {description && <p>{highlighter(description)}</p>}
       <span className="link">Read More</span>
     </>
   )

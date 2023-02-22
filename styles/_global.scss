@@ -36,3 +36,11 @@ body {
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
 }
+
+.highlight {
+  display: inline-block;
+  color: $red;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
