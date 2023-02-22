@@ -32,8 +32,20 @@ const Content = ({
           />
         </div>
       )}
-      {title && <Heading>{highlighter(title)}</Heading>}
-      {description && <p>{highlighter(description)}</p>}
+      {title && (
+        <Heading
+          dangerouslySetInnerHTML={{
+            __html: highlighter(title),
+          }}
+        />
+      )}
+      {description && (
+        <p
+          dangerouslySetInnerHTML={{
+            __html: highlighter(description),
+          }}
+        />
+      )}
       <span className="link">Read More</span>
     </>
   )
