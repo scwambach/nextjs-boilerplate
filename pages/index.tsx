@@ -6,6 +6,38 @@ import { Layout } from '@components/wrappers/Layout'
 export default function Home() {
   return (
     <Layout>
+      <table>
+        <caption>Example Table</caption>
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Smith</td>
+            <td>30</td>
+            <td>john.smith@example.com</td>
+          </tr>
+          <tr>
+            <td>Jane Doe</td>
+            <td>25</td>
+            <td>jane.doe@example.com</td>
+          </tr>
+          <tr>
+            <td>John Smith</td>
+            <td>30</td>
+            <td>john.smith@example.com</td>
+          </tr>
+          <tr>
+            <td>Jane Doe</td>
+            <td>25</td>
+            <td>jane.doe@example.com</td>
+          </tr>
+        </tbody>
+      </table>
       <Form />
       <Divider size="lg" line />
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}>
