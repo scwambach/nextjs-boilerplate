@@ -1,0 +1,12 @@
+{
+  "pages": [
+    {
+      "title": "Home",
+      "slug": "/",
+      "description": "Sed nisi mi, suscipit sit amet lobortis a, semper ut urna. Pellentesque posuere gravida scelerisque. Aenean rutrum ut ex sit amet euismod. Suspendisse viverra consequat.",
+      "content": {
+
+      }
+    }
+  ]
+}
