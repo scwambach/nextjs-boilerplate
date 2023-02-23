@@ -2,14 +2,18 @@
   "siteTitle": "My Site",
   "siteDescription": "My site description",
   "favicon": "/favicon.ico",
-  "socials": [
+  "navigation": [
     {
-      "name": "instagram",
-      "url": "https://instagram.com/evansvillemusicscene"
+      "title": "Home",
+      "url": "/"
     },
     {
-      "name": "github",
-      "url": "https://github.com/scwambach"
+      "title": "About",
+      "url": "/about"
+    },
+    {
+      "title": "Contact",
+      "url": "/contact"
     }
   ]
 }

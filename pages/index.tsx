@@ -73,8 +73,8 @@ export default function Home() {
         risus. Praesent finibus aliquet neque. [[Pellentesque]] dignissim aliquam."
           url="#"
           image={{
-            url: 'https://cdn.sanity.io/images/l977smc4/production/b4dac4aef757e8ccb4c00d1184ece230f21d1ca7-3675x2558.jpg',
-            lqip: 'https://cdn.sanity.io/images/l977smc4/production/b4dac4aef757e8ccb4c00d1184ece230f21d1ca7-3675x2558.jpg?w=10&blur=10',
+            url: 'https://cdn.sanity.io/images/ohidjqnu/production/4045fe8a31a3dae83730bb070dda2a66e0909c7a-6000x4000.jpg',
+            lqip: 'https://cdn.sanity.io/images/ohidjqnu/production/4045fe8a31a3dae83730bb070dda2a66e0909c7a-6000x4000.jpg?w=10&blur=10',
           }}
         />
       </div>
