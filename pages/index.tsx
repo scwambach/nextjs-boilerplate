@@ -2,10 +2,35 @@ import { Divider } from '@components/modules/Divider'
 import { Form } from '@components/modules/Form'
 import { MediaCard } from '@components/modules/MediaCard'
 import { Layout } from '@components/wrappers/Layout'
+import { colors } from '@utils/settings'
+
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 export default function Home() {
+  const MySwal = withReactContent(Swal)
+
+  const open = () => {
+    MySwal.fire({
+      title: <p>You can put anything in here</p>,
+      html: (
+        <div>
+          <p>test</p>
+        </div>
+      ),
+      width: '80vw',
+      showClass: {
+        popup: '',
+      },
+      hideClass: {
+        popup: '',
+      },
+    })
+  }
+
   return (
     <Layout>
+      <button onClick={open}>OPEN</button>
       <table>
         <caption>Example Table</caption>
         <thead>
