@@ -2,7 +2,6 @@ import { Divider } from '@components/modules/Divider'
 import { Form } from '@components/modules/Form'
 import { MediaCard } from '@components/modules/MediaCard'
 import { Layout } from '@components/wrappers/Layout'
-import { colors } from '@utils/settings'
 
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
