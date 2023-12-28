@@ -3,20 +3,28 @@
 const Header = () => {
   return (
     <header>
-      <h1>My Website</h1>
-      <nav>
-        <ul>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-      </nav>
+      <div className="container">
+        <div className="grid">
+          <nav>
+            <ul>
+              <li>
+                <strong>My Website</strong>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </header>
   )
 }

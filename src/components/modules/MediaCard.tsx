@@ -58,13 +58,15 @@ const MediaCard = ({ image, title, description, url }: MediaCardProps) => {
     description,
   }
   return url ? (
-    <LinkObject url={url} className="media-card">
-      <Content {...cardProps} />
-    </LinkObject>
+    <article>
+      <LinkObject url={url} className="media-card">
+        <Content {...cardProps} />
+      </LinkObject>
+    </article>
   ) : (
-    <div className="media-card">
+    <article className="media-card">
       <Content {...cardProps} />
-    </div>
+    </article>
   )
 }
 

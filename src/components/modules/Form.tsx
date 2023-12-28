@@ -1,47 +1,49 @@
+// import { Field } from './Field'
+
 import { Field } from './Field'
 
 const Form = () => {
   return (
     <form>
-      <fieldset>
-        <Field type="text" _key="2i34y2oihebf" label="Field 1" />
-        <Field type="textarea" _key="sdfkjshi3" label="Field 2" />
+      <div className="grid">
         <Field
-          type="checkbox"
-          _key="sdfksdfgsjshi3"
-          label="Field 2"
-          choices={[
-            {
-              copy: 'Choice 1',
-              value: 'choice-1',
-              _key: 'sdfkjshi3',
-            },
-            {
-              copy: 'Choice 2',
-              value: 'choice-2',
-              _key: 'sdfgpo432uj',
-            },
-          ]}
+          type="text"
+          fieldId="firstname"
+          fieldName="firstname"
+          label="First name"
+          placeholder="First name"
+          required
         />
         <Field
-          type="radio"
-          _key="sdflsndvl23"
-          label="Field 2"
-          choices={[
-            {
-              copy: 'Choice 1',
-              value: 'choice-1',
-              _key: 'i2uy3ibjkf',
-            },
-            {
-              copy: 'Choice 2',
-              value: 'choice-2',
-              _key: 'olkbv8749820',
-            },
-          ]}
+          type="text"
+          fieldId="lastname"
+          fieldName="lastname"
+          label="Last name"
+          placeholder="Last name"
+          required
         />
-      </fieldset>
-      <input className="button" type="submit" value="Submit this form" />
+      </div>
+      <Field
+        type="email"
+        fieldId="email"
+        fieldName="email"
+        label="Email address"
+        placeholder="Email address"
+        required
+      />
+
+      <Field
+        type="textarea"
+        fieldId="message"
+        fieldName="message"
+        label="Message"
+        placeholder="Message"
+        required
+      />
+
+      <p>We&apos;ll never share your email with anyone else.</p>
+
+      <button type="submit">Submit</button>
     </form>
   )
 }

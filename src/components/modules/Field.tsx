@@ -1,21 +1,19 @@
-import { slugify } from '@utils/slugify'
-import { GoPrimitiveDot } from '@meronex/icons/go'
-import { FaCheck } from '@meronex/icons/fa'
-
 interface FieldProps {
   choices?: {
-    _key: string
-    copy: string
-    value?: string
+    label: string
+    value: string
+    checked?: boolean
   }[]
-  description?: string
+  className?: string
   disabled?: boolean
-  _key: string
-  label: string
+  fieldId: string
+  fieldName?: string
+  invalid?: boolean
+  label?: string
   placeholder?: string
-  readOnly?: boolean
+  readonly?: boolean
   required?: boolean
-  type?:
+  type:
     | 'checkbox'
     | 'date'
     | 'datetime-local'
@@ -25,6 +23,7 @@ interface FieldProps {
     | 'number'
     | 'radio'
     | 'select'
+    | 'switch'
     | 'tel'
     | 'text'
     | 'textarea'
@@ -33,79 +32,94 @@ interface FieldProps {
     | 'week'
 }
 
-const Label = ({
-  label,
-  description,
-}: {
-  label: string
-  description?: string
-}) => {
-  return (
-    <>
-      <span>{label}</span>
-      {description && <p>{description}</p>}
-    </>
-  )
-}
-
-const Field = ({
+export const Field = ({
   choices,
-  description,
+  className,
   disabled,
-  _key,
+  fieldId,
+  fieldName,
+  invalid,
   label,
   placeholder,
-  readOnly,
+  readonly,
   required,
-  type,
+  type = 'text',
 }: FieldProps) => {
-  const fieldId = `${label ? slugify(label) : 'input'}_${_key}`
-  const fieldArgs = {
-    name: fieldId,
-    id: fieldId,
-    disabled,
-    required,
-    readOnly,
-    placeholder,
+  if (type === 'textarea') {
+    return (
+      <label htmlFor={fieldId} className={className}>
+        {label && <span>{label}</span>}
+        <textarea
+          placeholder={placeholder}
+          readOnly={readonly}
+          required={required}
+          disabled={disabled}
+          id={fieldId}
+          name={fieldName || fieldId}
+          aria-invalid={invalid}
+        />
+      </label>
+    )
   }
+
+  if (type === 'select') {
+    return (
+      <label htmlFor={fieldId} className={className}>
+        {label && <span>{label}</span>}
+        <select
+          id={fieldId}
+          name={fieldName || fieldId}
+          required={required}
+          aria-invalid={invalid}
+          disabled={disabled}
+        >
+          {choices?.map((choice) => (
+            <option key={choice.value} value={choice.value}>
+              {choice.label}
+            </option>
+          ))}
+        </select>
+      </label>
+    )
+  }
+
+  if (type === 'checkbox' || type === 'radio' || type === 'switch') {
+    return (
+      <fieldset className={className}>
+        {label && <legend>{label}</legend>}
+        {choices?.map((choice) => (
+          <label key={choice.value} htmlFor={choice.value}>
+            <input
+              role={type === 'switch' ? 'switch' : undefined}
+              type={type}
+              readOnly={readonly}
+              required={required}
+              disabled={disabled}
+              checked={choice.checked}
+              id={choice.value}
+              name={fieldName || fieldId}
+              value={choice.value}
+            />
+            {choice.label}
+          </label>
+        ))}
+      </fieldset>
+    )
+  }
+
   return (
-    <>
-      {type === 'textarea' ? (
-        <label className={`${type}`} htmlFor={fieldId}>
-          <Label label={label} description={description} />
-          <textarea {...fieldArgs} rows={4} />
-        </label>
-      ) : type === 'checkbox' || type === 'radio' ? (
-        <div className={`${type}`}>
-          <Label label={label} description={description} />
-          <div className="choices">
-            {choices?.map((choice) => (
-              <label
-                key={choice._key}
-                htmlFor={`${slugify(choice.copy)}_${choice._key}`}
-              >
-                <span>{choice.copy}</span>
-                <input
-                  type={type}
-                  id={`${slugify(choice.copy)}_${choice._key}`}
-                  name={fieldId}
-                />
-                <div className={`${type}-indicator`}>
-                  {type === 'radio' && <GoPrimitiveDot size={15} />}
-                  {type === 'checkbox' && <FaCheck size={12} />}
-                </div>
-              </label>
-            ))}
-          </div>
-        </div>
-      ) : (
-        <label htmlFor={fieldId} className={`${type}`}>
-          <Label label={label} description={description} />
-          <input {...fieldArgs} type={type} />
-        </label>
-      )}
-    </>
+    <label htmlFor={fieldId} className={className}>
+      {label && <span>{label}</span>}
+      <input
+        type={type}
+        id={fieldId}
+        disabled={disabled}
+        required={required}
+        readOnly={readonly}
+        name={fieldName || fieldId}
+        placeholder={placeholder}
+        aria-invalid={invalid}
+      />
+    </label>
   )
 }
-
-export { Field }

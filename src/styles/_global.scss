@@ -1,13 +1,10 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: $font-family;
-  font-size: $font-size;
-  line-height: $line-height;
-  color: $black;
-  background-color: $white;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  > header,
+  > main,
+  > footer,
+  section {
+    --block-spacing-vertical: 2rem;
+  }
 }
 
 .skip-to-content {
@@ -33,29 +30,14 @@ body {
   height: 1px;
   width: 1px;
   overflow: hidden;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
 }
 
 .highlight {
   display: inline-block;
-  color: $red;
+  color: $red-500;
   font-weight: bold;
   font-size: 1.2em;
   text-transform: uppercase;
-}
-
-hr {
-  height: 2px;
-  background-color: $black;
-}
-
-table {
-  th,
-  td {
-    padding: 0.5rem;
-  }
-  thead {
-    border-bottom: 2px solid $black;
-  }
 }
