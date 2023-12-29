@@ -7,7 +7,7 @@ export default function Home() {
     <Layout>
       <div className="container">
         <Form />
-        <div className="grid">
+        <div className="grid row-2">
           <MediaCard
             title={'Donec [[fringilla]] magna non scelerisque sodales.'}
             description=" Vivamus eu rutrum mi, eget posuere quam. Curabitur sit amet quam

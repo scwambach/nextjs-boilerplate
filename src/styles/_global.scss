@@ -41,3 +41,42 @@ body {
   font-size: 1.2em;
   text-transform: uppercase;
 }
+
+.grid {
+  &.row-2,
+  &.row-3,
+  &.row-4,
+  &.row-5,
+  &.row-6 {
+    @media screen and (min-width: ($xs)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &.row-3,
+  &.row-4,
+  &.row-5,
+  &.row-6 {
+    @media screen and (min-width: ($sm)) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &.row-4,
+  &.row-5,
+  &.row-6 {
+    @media screen and (min-width: ($md)) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  &.row-5 {
+    @media screen and (min-width: ($lg)) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+  &.row-6 {
+    @media screen and (min-width: ($lg)) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+}
