@@ -51,7 +51,12 @@ const Content = ({
   )
 }
 
-const MediaCard = ({ image, title, description, url }: MediaCardProps) => {
+export const MediaCard = ({
+  image,
+  title,
+  description,
+  url,
+}: MediaCardProps) => {
   const cardProps = {
     image,
     title,
@@ -69,5 +74,3 @@ const MediaCard = ({ image, title, description, url }: MediaCardProps) => {
     </article>
   )
 }
-
-export { MediaCard }

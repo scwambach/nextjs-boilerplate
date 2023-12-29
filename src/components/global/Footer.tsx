@@ -1,9 +1,10 @@
-const Footer = () => {
+'use client'
+
+export const Footer = () => {
+  const year = new Date().getFullYear()
   return (
     <footer className="container">
-      <p>&copy; 2023 My Website</p>
+      <p>&copy; {year} My Website</p>
     </footer>
   )
 }
-
-export { Footer }

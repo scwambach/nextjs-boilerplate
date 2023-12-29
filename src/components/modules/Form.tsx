@@ -1,8 +1,6 @@
-// import { Field } from './Field'
-
 import { Field } from './Field'
 
-const Form = () => {
+export const Form = () => {
   return (
     <form>
       <div className="grid">
@@ -47,5 +45,3 @@ const Form = () => {
     </form>
   )
 }
-
-export { Form }

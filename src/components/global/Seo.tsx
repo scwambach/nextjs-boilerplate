@@ -6,7 +6,7 @@ interface SeoProps {
   favicon: string
 }
 
-const Seo = ({ title, description, favicon }: SeoProps) => {
+export const Seo = ({ title, description, favicon }: SeoProps) => {
   return (
     <Head>
       <title>{title}</title>
@@ -16,5 +16,3 @@ const Seo = ({ title, description, favicon }: SeoProps) => {
     </Head>
   )
 }
-
-export { Seo }

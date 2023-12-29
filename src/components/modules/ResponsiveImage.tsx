@@ -10,7 +10,7 @@ interface ImageProps {
   width?: number
 }
 
-const ResponsiveImage = ({
+export const ResponsiveImage = ({
   alt,
   height,
   isBackground,
@@ -34,5 +34,3 @@ const ResponsiveImage = ({
     </div>
   )
 }
-
-export { ResponsiveImage }

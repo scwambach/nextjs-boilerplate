@@ -6,7 +6,7 @@ interface LinkObjectProps {
   url: string
 }
 
-const LinkObject = ({ children, className, url }: LinkObjectProps) => {
+export const LinkObject = ({ children, className, url }: LinkObjectProps) => {
   const isInternal = url.startsWith('/')
   return isInternal ? (
     <Link className={className} href={url}>
@@ -23,5 +23,3 @@ const LinkObject = ({ children, className, url }: LinkObjectProps) => {
     </a>
   )
 }
-
-export { LinkObject }

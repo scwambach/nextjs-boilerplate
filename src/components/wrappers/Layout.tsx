@@ -6,7 +6,7 @@ interface LayoutProps {
   children?: any
 }
 
-const Layout = ({ children }: LayoutProps) => {
+export const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Seo
@@ -23,5 +23,3 @@ const Layout = ({ children }: LayoutProps) => {
     </>
   )
 }
-
-export { Layout }

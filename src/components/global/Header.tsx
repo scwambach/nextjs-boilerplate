@@ -1,6 +1,4 @@
-// basic header component
-
-const Header = () => {
+export const Header = () => {
   return (
     <header>
       <div className="container">
@@ -28,5 +26,3 @@ const Header = () => {
     </header>
   )
 }
-
-export { Header }
