@@ -3,13 +3,17 @@ import { LinkObject } from './LinkObject'
 import { ResponsiveImage } from './ResponsiveImage'
 
 interface MediaCardProps {
-  image?: {
-    url: string
-    lqip?: string
-  }
-  title: string
   description?: string
   headingLevel?: 1 | 2 | 3 | 4 | 5 | 6
+  image?: {
+    height?: number
+    lqip?: string
+    query?: string
+    url?: string
+    width?: number
+  }
+  index?: number
+  title: string
   url?: string
 }
 
@@ -17,6 +21,7 @@ const Content = ({
   image,
   headingLevel = 3,
   title,
+  index,
   description,
 }: MediaCardProps) => {
   const Heading = `h${headingLevel}` as keyof JSX.IntrinsicElements
@@ -26,7 +31,10 @@ const Content = ({
         <div className="image">
           <ResponsiveImage
             src={image.url}
+            query={image.query ? `${image.query} ${index}` : undefined}
             lqip={image.lqip}
+            width={image.width}
+            height={image.height}
             isBackground
             alt={`Image for "${title}"`}
           />
@@ -52,15 +60,17 @@ const Content = ({
 }
 
 export const MediaCard = ({
-  image,
-  title,
   description,
+  image,
+  index,
+  title,
   url,
 }: MediaCardProps) => {
   const cardProps = {
-    image,
-    title,
     description,
+    image,
+    index,
+    title,
   }
   return url ? (
     <article>

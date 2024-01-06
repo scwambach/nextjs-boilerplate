@@ -1,3 +1,6 @@
+import { LinkObject } from '@components/modules/LinkObject'
+import data from '@data/global.json'
+
 export const Header = () => {
   return (
     <header>
@@ -6,19 +9,15 @@ export const Header = () => {
           <nav>
             <ul>
               <li>
-                <strong>My Website</strong>
+                <strong>{data.siteTitle}</strong>
               </li>
             </ul>
             <ul>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">About</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
-              </li>
+              {data.navigation.map((item) => (
+                <li key={item.url}>
+                  <LinkObject url={item.url}>{item.title}</LinkObject>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>

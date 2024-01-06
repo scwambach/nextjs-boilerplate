@@ -1,6 +1,7 @@
 import { Form } from '@components/modules/Form'
 import { MediaCard } from '@components/modules/MediaCard'
 import { Layout } from '@components/wrappers/Layout'
+// import data from '@data/test.yml'
 
 export default function Home() {
   return (
@@ -15,9 +16,11 @@ export default function Home() {
         diam id elementum. Aenean ac velit tempor, dignissim diam id, viverra
         risus. Praesent finibus aliquet neque. [[Pellentesque]] dignissim aliquam."
             url="#"
+            index={0}
             image={{
-              url: 'https://cdn.sanity.io/images/ohidjqnu/production/4045fe8a31a3dae83730bb070dda2a66e0909c7a-6000x4000.jpg',
-              lqip: 'https://cdn.sanity.io/images/ohidjqnu/production/4045fe8a31a3dae83730bb070dda2a66e0909c7a-6000x4000.jpg?w=10&blur=10',
+              query: 'music concert',
+              width: 475,
+              height: 200,
             }}
           />
           <MediaCard
@@ -27,9 +30,11 @@ export default function Home() {
         diam id elementum. Aenean ac velit tempor, dignissim diam id, viverra
         risus. Praesent finibus aliquet neque. [[Pellentesque]] dignissim aliquam."
             url="#"
+            index={1}
             image={{
-              url: 'https://cdn.sanity.io/images/ohidjqnu/production/4045fe8a31a3dae83730bb070dda2a66e0909c7a-6000x4000.jpg',
-              lqip: 'https://cdn.sanity.io/images/ohidjqnu/production/4045fe8a31a3dae83730bb070dda2a66e0909c7a-6000x4000.jpg?w=10&blur=10',
+              query: 'music concert',
+              width: 475,
+              height: 200,
             }}
           />
         </div>
