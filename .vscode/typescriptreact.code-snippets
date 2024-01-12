@@ -1,20 +1,4 @@
 {
-  "New Block Query": {
-    "prefix": "newBlockQuery",
-    "body": [
-      "import { groq } from 'next-sanity';",
-      "import { commonBlockProps } from './common';",
-      "",
-      "export const ${TM_FILENAME_BASE/(.*)/${1:/camelcase}/} = groq`",
-      "_type == '${TM_FILENAME_BASE/(.*)/${1:/camelcase}/}' => {",
-      "  ${${commonBlockProps}},",
-      "  ...,",
-      "}",
-      "`;",
-      ""
-    ],
-    "description": "Module"
-  },
   "New Test": {
     "prefix": "newTest",
     "body": [
