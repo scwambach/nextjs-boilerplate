@@ -11,9 +11,8 @@
     "check-lint": "eslint . --ext ts --ext tsx --ext js"
   },
   "dependencies": {
-    "@meronex/icons": "^4.0.0",
     "@next/font": "14.0.3",
-    "@radix-ui/themes": "^2.0.3",
+    "@picocss/pico": "^1.5.11",
     "@types/node": "20.10.3",
     "@types/react": "18.2.42",
     "@types/react-dom": "18.2.17",

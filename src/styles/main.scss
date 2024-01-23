@@ -1,3 +1,48 @@
+@import '@picocss/pico/scss/pico';
 @import './settings';
 @import './global';
+
+// Components UTILITY
+
+@import './components/utility/divider';
+@import './components/utility/drawer';
+@import './components/utility/flex';
+@import './components/utility/grid';
+@import './components/utility/loading';
+@import './components/utility/modal';
+@import './components/utility/spacer';
+@import './components/utility/tooltip';
+
+// Components BLOCKS
+
+@import './components/blocks/accordion';
+@import './components/blocks/alert';
+@import './components/blocks/articles';
+@import './components/blocks/banner';
+@import './components/blocks/calendar';
+@import './components/blocks/cards';
+@import './components/blocks/carousel';
+@import './components/blocks/form';
+@import './components/blocks/gallery';
+@import './components/blocks/people';
+@import './components/blocks/river';
+@import './components/blocks/stats';
+@import './components/blocks/tabs';
+@import './components/blocks/timeline';
+
+// Components MODULES
+
+@import './components/modules/article';
+@import './components/modules/avatar';
+@import './components/modules/badge';
+@import './components/modules/breadcrumbs';
+@import './components/modules/button';
+@import './components/modules/card';
+@import './components/modules/dropdown';
 @import './components/modules/imageObject';
+@import './components/modules/input';
+@import './components/modules/linkObject';
+@import './components/modules/person';
+@import './components/modules/stat';
+@import './components/modules/table';
+@import './components/modules/tag';

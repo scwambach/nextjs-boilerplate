@@ -9,12 +9,15 @@ interface LinkObjectProps {
 export const LinkObject = ({ children, className, url }: LinkObjectProps) => {
   const isInternal = url.startsWith('/')
   return isInternal ? (
-    <Link className={className} href={url}>
+    <Link
+      className={`linkObject${className ? ` ${className}` : ''}`}
+      href={url}
+    >
       {children}
     </Link>
   ) : (
     <a
-      className={className}
+      className={`linkObject${className ? ` ${className}` : ''}`}
       href={url}
       target="_blank"
       rel="noopener noreferrer"

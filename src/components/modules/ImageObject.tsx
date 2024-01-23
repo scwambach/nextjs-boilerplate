@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 interface ImageProps {
   alt: string
+  className?: string
   height?: number
   isBackground?: boolean
   lqip?: string
@@ -13,6 +14,7 @@ interface ImageProps {
 
 export const ImageObject = ({
   alt,
+  className,
   height,
   isBackground,
   lqip,
@@ -25,7 +27,10 @@ export const ImageObject = ({
     ? `https://source.unsplash.com/random/${width}x${height}?${query}`
     : src
   return (
-    <div data-label={`${isBackground ? 'background' : 'image'}-container`}>
+    <div
+      className={`imageObject${className ? ` ${className}` : ''}`}
+      data-label={`${isBackground ? 'background' : 'image'}-container`}
+    >
       <Image
         src={`${imageSrc}`}
         alt={alt}
