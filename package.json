@@ -11,6 +11,7 @@
     "check-lint": "eslint . --ext ts --ext tsx --ext js"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.0.15",
     "@picocss/pico": "^1.5.11",
     "@types/node": "20.10.3",
     "@types/react": "18.2.42",
