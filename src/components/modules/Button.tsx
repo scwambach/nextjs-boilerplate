@@ -1,27 +1,34 @@
 import { ComponentProps } from '@utils/types'
+import { LinkObject } from './LinkObject'
 
-// TODO: Create Button component
-
-interface ButtonProps extends ComponentProps {}
+interface ButtonProps extends ComponentProps {
+  type?: 'button' | 'submit' | 'reset' | 'link'
+  href?: string
+  onClick?: () => void
+}
 
 export const Button = (props: ButtonProps) => {
   return (
-    <div className={`button${props.className ? ` ${props.className}` : ''}`}>
-      <code>
-        <pre
-          style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
-          }}
+    <>
+      {props.type === 'link' && (
+        <LinkObject
+          href={props.href || '/'}
+          role="button"
+          className={`button${props.className ? ` ${props.className}` : ''}`}
+          onClick={props.onClick}
         >
-          {JSON.stringify(props, null, '    ')}
-        </pre>
-      </code>
-    </div>
+          {props.children}
+        </LinkObject>
+      )}
+      {props.type !== 'link' && (
+        <button
+          type={props.type}
+          className={`button${props.className ? ` ${props.className}` : ''}`}
+          onClick={props.onClick}
+        >
+          {props.children}
+        </button>
+      )}
+    </>
   )
 }
