@@ -1,0 +1,33 @@
+.alert {
+  background: $lightBlue;
+  padding: $size-16;
+  display: flex;
+  gap: $size-16;
+  box-shadow: $box-shadow-1;
+
+  svg {
+    width: $size-60 / 2;
+  }
+
+  > div {
+    width: calc(100% - $size-60);
+  }
+
+  &.info {
+    background: $info;
+  }
+
+  &.success {
+    background: $success;
+    color: $white;
+  }
+
+  &.warning {
+    background: $warning;
+  }
+
+  &.error {
+    background: $error;
+    color: $white;
+  }
+}

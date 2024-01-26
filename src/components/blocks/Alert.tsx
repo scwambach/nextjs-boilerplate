@@ -1,27 +1,68 @@
+'use client'
+import { Button } from '@components/modules'
+import { IconSelector } from '@components/utility/IconSelector'
 import { ComponentProps } from '@utils/types'
+import { useEffect, useState } from 'react'
+import * as Icon from '@phosphor-icons/react'
 
-// TODO: Create Alert component
+interface AlertProps extends ComponentProps {
+  type: 'success' | 'warning' | 'error' | 'info'
+  alertId?: string
+  message: string
+}
 
-interface AlertProps extends ComponentProps {}
+export const Alert = ({ type, className, alertId, message }: AlertProps) => {
+  const [remove, setRemove] = useState(false)
+  const [loading, setLoading] = useState(true)
 
-export const Alert = (props: AlertProps) => {
+  useEffect(() => {
+    if (!alertId) {
+      return
+    }
+
+    if (sessionStorage.getItem(`alert_${alertId}`)) {
+      setRemove(true)
+    }
+
+    if (remove) {
+      sessionStorage.setItem(`alert_${alertId}`, 'true')
+    }
+
+    setLoading(false)
+  }, [remove])
+
+  const iconMap = {
+    success: 'Confetti',
+    warning: 'Warning',
+    error: 'XCircle',
+    info: 'Info',
+  }
+
   return (
-    <div className={`alert${props.className ? ` ${props.className}` : ''}`}>
-      <code>
-        <pre
-          style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
+    <div
+      id={alertId}
+      className={`alert ${type}${className ? ` ${className}` : ''}${
+        loading || remove ? ' hide' : ''
+      }`}
+    >
+      <IconSelector
+        icon={iconMap[type] as keyof typeof Icon}
+        weight="fill"
+        size={30}
+      />
+      <div>{message}</div>
+      {alertId && (
+        <Button
+          type="button"
+          unstyled
+          onClick={() => {
+            sessionStorage.setItem(`alert_${alertId}`, 'true')
+            setRemove(true)
           }}
         >
-          {JSON.stringify(props, null, '    ')}
-        </pre>
-      </code>
+          <IconSelector icon="X" size={18} />
+        </Button>
+      )}
     </div>
   )
 }

@@ -1,8 +1,15 @@
-import { Accordion } from '@components/blocks'
+import { Accordion, Alert } from '@components/blocks'
 
 export default function Home() {
   return (
     <main className="container">
+      <Alert
+        type="success"
+        alertId="test"
+        message="Cras et scelerisque mauris. Pellentesque tincidunt condimentum lectus,
+      eget commodo leo dictum sit amet. Pellentesque nibh mi, lobortis a
+      tincidunt."
+      />
       <Accordion heading="Accordion">
         <p>
           Ut vel diam et eros cursus interdum. Vivamus efficitur dolor id nulla

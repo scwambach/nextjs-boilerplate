@@ -56,3 +56,23 @@ $size-148: 9.25rem;
 $size-152: 9.5rem;
 $size-156: 9.75rem;
 $size-160: 10rem;
+
+$red: #b8343a;
+$blue: #1484a4;
+$lightBlue: #d5e3f7;
+$green: #0f7173;
+$orange: #f7a25d;
+$black: #123346;
+$white: #fcffff;
+
+$error: $red;
+$success: $green;
+$warning: $orange;
+$info: $lightBlue;
+
+$box-shadow-1: 0 10px 30px -20px rgba($black, 1);
+$box-shadow-2: 0 15px 30px -15px rgba($black, 1);
+$box-shadow-3: 0 20px 40px -15px rgba($black, 1);
+$box-shadow-4: 0 25px 50px -15px rgba($black, 1);
+
+$transition: all 0.3s ease-in-out;

@@ -4,29 +4,41 @@ import { LinkObject } from './LinkObject'
 interface ButtonProps extends ComponentProps {
   type?: 'button' | 'submit' | 'reset' | 'link'
   href?: string
+  unstyled?: boolean
   onClick?: () => void
 }
 
-export const Button = (props: ButtonProps) => {
+export const Button = ({
+  type = 'button',
+  href,
+  unstyled,
+  className,
+  children,
+  onClick,
+}: ButtonProps) => {
   return (
     <>
-      {props.type === 'link' && (
+      {type === 'link' && (
         <LinkObject
-          href={props.href || '/'}
+          href={href || '/'}
           role="button"
-          className={`button${props.className ? ` ${props.className}` : ''}`}
-          onClick={props.onClick}
+          className={`button${className ? ` ${className}` : ''}${
+            unstyled ? ' unstyled' : ''
+          }`}
+          onClick={onClick}
         >
-          {props.children}
+          {children}
         </LinkObject>
       )}
-      {props.type !== 'link' && (
+      {type !== 'link' && (
         <button
-          type={props.type}
-          className={`button${props.className ? ` ${props.className}` : ''}`}
-          onClick={props.onClick}
+          type={type}
+          className={`button${className ? ` ${className}` : ''}${
+            unstyled ? ' unstyled' : ''
+          }`}
+          onClick={onClick}
         >
-          {props.children}
+          {children}
         </button>
       )}
     </>
