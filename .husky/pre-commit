@@ -1,23 +1,24 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 echo "Pre-Commit ✅"
 
-yarn check-format
-
-# Check ESLint Standards
-yarn check-lint ||
+# Run Jest tests
+npm run test ||
 (
-  echo 'Found some lint that needs cleaning.'
+  echo 'Jest tests failed: Fix failing tests before committing.'
   false;
 )
 
-# echo 'So far so good! Testing the build now.'
+# Check code formatting
+npm run check-format ||
+(
+  echo 'Found code formatting issues that need to be fixed.'
+  false;
+)
 
-# npm run build ||
-# (
-#   echo 'Next build failed: View the errors above to see why.'
-#   false;
-# )
+# Check ESLint standards
+npm run check-lint ||
+(
+  echo 'Found linting issues that need to be fixed.'
+  false;
+)
 
-echo 'All looks good! Committing now.'
+echo 'All checks passed! Committing now.'
