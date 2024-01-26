@@ -15,7 +15,7 @@ export const Header = () => {
             <ul>
               {data.navigation.map((item) => (
                 <li key={item.url}>
-                  <LinkObject url={item.url}>{item.title}</LinkObject>
+                  <LinkObject href={item.url}>{item.title}</LinkObject>
                 </li>
               ))}
             </ul>

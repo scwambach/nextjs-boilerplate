@@ -15,7 +15,7 @@ describe('Alert component', () => {
 
     const alertElement = getByText(message)
     expect(alertElement).toBeInTheDocument()
-    expect(alertElement.parentElement).toHaveClass(`aldert ${type}`)
+    expect(alertElement.parentElement).toHaveClass(`alert ${type}`)
   })
 
   it('hides alert on close button click', () => {
