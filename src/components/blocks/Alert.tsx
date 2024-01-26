@@ -55,6 +55,7 @@ export const Alert = ({ type, className, alertId, message }: AlertProps) => {
         <Button
           type="button"
           unstyled
+          testId="closeButton"
           onClick={() => {
             sessionStorage.setItem(`alert_${alertId}`, 'true')
             setRemove(true)

@@ -15,6 +15,7 @@ export const Button = ({
   className,
   children,
   onClick,
+  testId,
 }: ButtonProps) => {
   return (
     <>
@@ -22,6 +23,7 @@ export const Button = ({
         <LinkObject
           href={href || '/'}
           role="button"
+          data-testid={testId}
           className={`button${className ? ` ${className}` : ''}${
             unstyled ? ' unstyled' : ''
           }`}
@@ -33,6 +35,7 @@ export const Button = ({
       {type !== 'link' && (
         <button
           type={type}
+          data-testid={testId}
           className={`button${className ? ` ${className}` : ''}${
             unstyled ? ' unstyled' : ''
           }`}
