@@ -2,7 +2,7 @@
 import * as Icon from '@phosphor-icons/react'
 import { ComponentType } from 'react'
 
-interface IconSelectorProps {
+export interface IconSelectorProps {
   icon: keyof typeof Icon
   alt?: string
   color?: string
