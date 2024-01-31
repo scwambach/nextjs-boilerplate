@@ -1,7 +1,7 @@
-import MarkdownIt from "markdown-it";
+import MarkdownIt from 'markdown-it'
 
-const mdParser = new MarkdownIt(/* Markdown-it options */);
+const mdParser = new MarkdownIt()
 
 export const parseMarkdownToHTML = (markdown: string): string => {
-  return mdParser.render(markdown);
-};
+  return mdParser.render(markdown)
+}
