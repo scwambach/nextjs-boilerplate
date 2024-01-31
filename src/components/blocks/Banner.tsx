@@ -1,27 +1,54 @@
-import { ComponentProps } from '@utils/types'
+import { ImageObject } from '@components/modules'
+import { Heading } from '@components/utility/Heading'
+import {
+  ButtonProps,
+  ComponentProps,
+  HeadingLevel,
+  ImageProps,
+} from '@utils/types'
 
-// TODO: Create Banner component
+interface BannerProps extends ComponentProps {
+  img?: ImageProps
+  headingLevel?: HeadingLevel
+  heading: string
+  subheading?: string
+  message?: string
+  bgColor?: 'red' | 'blue' | 'green' | 'orange'
+  links?: ButtonProps[]
+}
 
-interface BannerProps extends ComponentProps {}
-
-export const Banner = (props: BannerProps) => {
+export const Banner = ({
+  img,
+  className,
+  heading,
+  subheading,
+  bgColor = 'blue',
+  message,
+  headingLevel = 2,
+}: BannerProps) => {
   return (
-    <div className={`banner${props.className ? ` ${props.className}` : ''}`}>
-      <code>
-        <pre
-          style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {JSON.stringify(props, null, '    ')}
-        </pre>
-      </code>
+    <div
+      className={`banner ${bgColor}${className ? ` ${className}` : ''}${
+        img ? ' has-image' : ''
+      }`}
+    >
+      {img && (
+        <ImageObject
+          {...img}
+          isBackground
+          className="banner__image"
+          sizes="(max-width: 767px) 100vw, 50vw"
+        />
+      )}
+      <div className="inner">
+        <Heading level={headingLevel}>{heading}</Heading>
+        {subheading && (
+          <p>
+            <strong>{subheading}</strong>
+          </p>
+        )}
+        {message && <p>{message}</p>}
+      </div>
     </div>
   )
 }

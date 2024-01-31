@@ -39,6 +39,14 @@
 
 html {
   background: $white;
+
+  main {
+  }
+
+  &::selection {
+    background: $red;
+    color: $white;
+  }
 }
 
 .hide {

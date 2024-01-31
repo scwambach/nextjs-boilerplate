@@ -5,3 +5,22 @@ export interface ComponentProps {
   className?: string
   testId?: string
 }
+
+export interface ImageProps {
+  alt: string
+  className?: string
+  height?: number
+  isBackground?: boolean
+  lqip?: string
+  query?: string
+  sizes?: string
+  src?: string
+  width?: number
+}
+
+export interface ButtonProps extends ComponentProps {
+  type?: 'button' | 'submit' | 'reset' | 'link'
+  href?: string
+  unstyled?: boolean
+  onClick?: () => void
+}

@@ -1,16 +1,5 @@
+import { ImageProps } from '@utils/types'
 import Image from 'next/image'
-
-interface ImageProps {
-  alt: string
-  className?: string
-  height?: number
-  isBackground?: boolean
-  lqip?: string
-  query?: string
-  sizes?: string
-  src?: string
-  width?: number
-}
 
 export const ImageObject = ({
   alt,
@@ -25,26 +14,29 @@ export const ImageObject = ({
 }: ImageProps) => {
   const imageSrc = query
     ? `https://source.unsplash.com/random/${width}x${height}?${query}`
-    : src
+    : src ||
+      `https://fakeimg.pl/${height && width ? `${width}x${height}` : '600x400'}?text=url+is+broken&font=bebas`
   return (
     <div
       className={`imageObject${className ? ` ${className}` : ''}`}
       data-label={`${isBackground ? 'background' : 'image'}-container`}
     >
-      <Image
-        src={`${imageSrc}`}
-        alt={alt}
-        fill={isBackground}
-        sizes={sizes}
-        width={!isBackground ? width : undefined}
-        height={!isBackground ? height : undefined}
-        placeholder={lqip || query ? 'blur' : undefined}
-        blurDataURL={
-          query
-            ? `https://source.unsplash.com/random/${width}x${height}?${query}`
-            : lqip
-        }
-      />
+      {imageSrc && (
+        <Image
+          src={`${imageSrc}`}
+          alt={alt}
+          fill={isBackground}
+          sizes={sizes}
+          width={!isBackground ? width : undefined}
+          height={!isBackground ? height : undefined}
+          placeholder={lqip || query ? 'blur' : undefined}
+          blurDataURL={
+            query
+              ? `https://source.unsplash.com/random/${width}x${height}?${query}`
+              : lqip
+          }
+        />
+      )}
     </div>
   )
 }

@@ -1,12 +1,5 @@
-import { ComponentProps } from '@utils/types'
+import { ButtonProps } from '@utils/types'
 import { LinkObject } from './LinkObject'
-
-interface ButtonProps extends ComponentProps {
-  type?: 'button' | 'submit' | 'reset' | 'link'
-  href?: string
-  unstyled?: boolean
-  onClick?: () => void
-}
 
 export const Button = ({
   type = 'button',
@@ -23,7 +16,7 @@ export const Button = ({
         <LinkObject
           href={href || '/'}
           role="button"
-          data-testid={testId}
+          testId={testId}
           className={`button${className ? ` ${className}` : ''}${
             unstyled ? ' unstyled' : ''
           }`}
