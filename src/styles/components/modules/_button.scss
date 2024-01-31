@@ -1,8 +1,30 @@
 .button {
+  appearance: none;
+  border: none;
+  outline-offset: $size-2;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  background: $blue;
+  color: $white;
+  cursor: pointer;
+  letter-spacing: $size-1 / 2;
+
+  &:focus {
+    outline: $size-4 solid $blue;
+  }
+
+  &:hover {
+    text-decoration: none;
+    background-color: $lightBlue;
+    color: $black;
+    box-shadow: $box-shadow-1;
+  }
+
   &.unstyled {
     padding: 0;
     display: inline-block;
     background: none;
+    outline: none;
     color: inherit;
     border: none;
     font: inherit;
@@ -13,6 +35,29 @@
 
     &:hover {
       opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: $size-4 solid $blue;
+    }
+  }
+
+  &.secondary {
+    background-color: $green;
+
+    &:hover {
+      background-color: $lightGreen;
+      color: $black;
+    }
+  }
+
+  &.tertiary {
+    background-color: $orange;
+
+    &:hover {
+      background-color: $lightOrange;
+      color: $black;
     }
   }
 }

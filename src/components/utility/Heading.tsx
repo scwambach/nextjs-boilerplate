@@ -1,3 +1,4 @@
+import { alfaSlabOne } from '@utils/headingFont'
 import { HeadingLevel } from '@utils/types'
 import { ReactNode } from 'react'
 
@@ -11,7 +12,11 @@ export const Heading = ({ level, children, className }: HeadingProps) => {
   const HeadingTag = `h${level}` as keyof JSX.IntrinsicElements
 
   return (
-    <HeadingTag className={`heading ${className ? ` ${className}` : ''}`}>
+    <HeadingTag
+      className={`heading ${
+        alfaSlabOne.className
+      }${className ? ` ${className}` : ''}`}
+    >
       {children}
     </HeadingTag>
   )

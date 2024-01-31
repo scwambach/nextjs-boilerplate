@@ -20,6 +20,7 @@ export interface ImageProps {
 
 export interface ButtonProps extends ComponentProps {
   type?: 'button' | 'submit' | 'reset' | 'link'
+  theme?: 'primary' | 'secondary' | 'tertiary'
   href?: string
   unstyled?: boolean
   onClick?: () => void

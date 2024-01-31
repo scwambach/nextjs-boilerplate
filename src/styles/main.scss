@@ -1,8 +1,10 @@
-@import '@picocss/pico/scss/pico';
+// @import '@picocss/pico/scss/pico';
+@import './reset';
 @import './overrides';
 @import './settings';
 @import './global';
 @import './mixins';
+@import './typography';
 
 // Components UTILITY
 

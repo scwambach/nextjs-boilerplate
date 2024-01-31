@@ -1,5 +1,6 @@
-import { ImageObject } from '@components/modules'
+import { Button, ImageObject } from '@components/modules'
 import { Heading } from '@components/utility/Heading'
+import { parseMarkdownToHTML } from '@utils/parseMarkdownToHTML'
 import {
   ButtonProps,
   ComponentProps,
@@ -25,6 +26,7 @@ export const Banner = ({
   bgColor = 'blue',
   message,
   headingLevel = 2,
+  links,
 }: BannerProps) => {
   return (
     <div
@@ -40,14 +42,27 @@ export const Banner = ({
           sizes="(max-width: 767px) 100vw, 50vw"
         />
       )}
-      <div className="inner">
+      <div className="container">
         <Heading level={headingLevel}>{heading}</Heading>
         {subheading && (
           <p>
             <strong>{subheading}</strong>
           </p>
         )}
-        {message && <p>{message}</p>}
+        {message && (
+          <div
+            dangerouslySetInnerHTML={{
+              __html: parseMarkdownToHTML(message),
+            }}
+          />
+        )}
+        {links && (
+          <div className="links">
+            {links.map((link, index) => (
+              <Button key={index} {...link} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   )

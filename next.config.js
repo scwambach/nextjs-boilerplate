@@ -1,7 +1,28 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['source.unsplash.com', 'images.unsplash.com', 'cdn.sanity.io', 'fakeimg.pl'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'source.unsplash.com',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'fakeimg.pl',
+        port: '',
+      },
+    ],
   }
 }
 

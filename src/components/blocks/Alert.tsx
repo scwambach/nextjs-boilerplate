@@ -4,6 +4,7 @@ import { IconSelector } from '@components/utility/IconSelector'
 import { ComponentProps } from '@utils/types'
 import { useEffect, useState } from 'react'
 import * as Icon from '@phosphor-icons/react'
+import { parseMarkdownToHTML } from '@utils/parseMarkdownToHTML'
 
 interface AlertProps extends ComponentProps {
   type: 'success' | 'warning' | 'error' | 'info'
@@ -50,7 +51,11 @@ export const Alert = ({ type, className, alertId, message }: AlertProps) => {
         weight="fill"
         size={30}
       />
-      <div>{message}</div>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: parseMarkdownToHTML(message),
+        }}
+      />
       {alertId && (
         <Button
           type="button"

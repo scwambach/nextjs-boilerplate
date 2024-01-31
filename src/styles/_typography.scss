@@ -1,0 +1,101 @@
+main {
+  line-height: $line-height-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+ul,
+ol,
+blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Roboto', sans-serif;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: $line-height-tight;
+  margin-bottom: $size-24;
+}
+
+p,
+li,
+ul,
+ol,
+blockquote {
+  margin-bottom: $size-8;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: $size-48;
+}
+
+h2 {
+  font-size: $size-40;
+}
+
+h3 {
+  font-size: $size-32;
+}
+
+h4 {
+  font-size: $size-24;
+}
+
+h5 {
+  font-size: $size-20;
+}
+
+h6 {
+  font-size: $size-18;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+small {
+  font-size: $size-14;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+
+  &:hover {
+    color: $lightBlue;
+    text-decoration: underline;
+  }
+}
+
+ul,
+ol {
+  padding-left: $size-16;
+
+  &.unstyled {
+    list-style: none;
+    padding: 0;
+  }
+}
