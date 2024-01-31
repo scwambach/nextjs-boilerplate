@@ -1,0 +1,77 @@
+.card,
+button.card.unstyled {
+  background-color: $lightGray;
+  color: $black;
+  padding: $size-16;
+  box-shadow: 0;
+  transition: $transition;
+  box-shadow: $box-shadow-1;
+
+  .image {
+    margin-bottom: $size-16;
+  }
+
+  .links {
+    margin-top: $size-32;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $size-16;
+
+    @media screen and (min-width: ($xs)) {
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+}
+
+.card {
+  border: $size-1 solid $lightGray;
+
+  .inner {
+    padding: $size-8;
+  }
+
+  .image {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    z-index: 1;
+    padding-bottom: 56.25%;
+  }
+}
+
+button.card.unstyled {
+  transform: translateZ(0);
+
+  &:hover {
+    transform: translateY(-$size-4);
+    box-shadow: $box-shadow-4;
+    background-color: $lightBlue;
+    opacity: 1;
+
+    text-decoration: none;
+  }
+
+  &.primary {
+    &:hover {
+      background-color: $lightBlue;
+      color: $black;
+    }
+  }
+
+  &.secondary {
+    &:hover {
+      background-color: $lightGreen;
+      color: $black;
+    }
+  }
+
+  &.tertiary {
+    &:hover {
+      background-color: $lightOrange;
+      color: $black;
+    }
+  }
+}

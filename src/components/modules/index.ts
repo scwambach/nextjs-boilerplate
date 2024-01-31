@@ -1,4 +1,3 @@
-export { Article } from './Article'
 export { Avatar } from './Avatar'
 export { Badge } from './Badge'
 export { Breadcrumbs } from './Breadcrumbs'

@@ -1,8 +1,6 @@
 export { Accordion } from './Accordion'
 export { Alert } from './Alert'
-export { Articles } from './Articles'
 export { Banner } from './Banner'
-export { Calendar } from './Calendar'
 export { Cards } from './Cards'
 export { Carousel } from './Carousel'
 export { Form } from './Form'

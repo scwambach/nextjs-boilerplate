@@ -8,6 +8,7 @@
   color: $white;
   cursor: pointer;
   letter-spacing: $size-1 / 2;
+  text-align: center;
 
   &:focus {
     outline: $size-4 solid $blue;
@@ -27,6 +28,7 @@
     outline: none;
     color: inherit;
     border: none;
+    text-align: left;
     font: inherit;
     border-radius: 0;
     width: auto;

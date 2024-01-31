@@ -1,14 +1,16 @@
 import { ComponentProps } from '@utils/types'
+import { ReactNode } from 'react'
 
 interface AccordionProps extends ComponentProps {
+  children: ReactNode
   heading: string
 }
 
-export const Accordion = (props: AccordionProps) => {
+export const Accordion = ({ heading, children }: AccordionProps) => {
   return (
     <details>
-      <summary>{props.heading}</summary>
-      {props.children}
+      <summary>{heading}</summary>
+      {children}
     </details>
   )
 }

@@ -5,11 +5,11 @@ import {
   ButtonProps,
   ComponentProps,
   HeadingLevel,
-  ImageProps,
+  ImageObjectProps,
 } from '@utils/types'
 
 interface BannerProps extends ComponentProps {
-  img?: ImageProps
+  img?: ImageObjectProps
   headingLevel?: HeadingLevel
   heading: string
   subheading?: string

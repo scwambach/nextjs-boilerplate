@@ -1,4 +1,4 @@
-import { ImageProps } from '@utils/types'
+import { ImageObjectProps } from '@utils/types'
 import Image from 'next/image'
 
 export const ImageObject = ({
@@ -6,13 +6,13 @@ export const ImageObject = ({
   className,
   height,
   isBackground,
-  lqip,
+  blurDataURL,
   query,
   testId,
   sizes,
   src,
   width,
-}: ImageProps) => {
+}: ImageObjectProps) => {
   const imageSrc = query
     ? `https://source.unsplash.com/random/${width}x${height}?${query}`
     : src ||
@@ -31,11 +31,11 @@ export const ImageObject = ({
           sizes={sizes}
           width={!isBackground ? width : undefined}
           height={!isBackground ? height : undefined}
-          placeholder={lqip || query ? 'blur' : undefined}
+          placeholder={blurDataURL || query ? 'blur' : undefined}
           blurDataURL={
             query
               ? `https://source.unsplash.com/random/${width}x${height}?${query}`
-              : lqip
+              : blurDataURL
           }
         />
       )}
