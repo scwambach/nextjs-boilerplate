@@ -9,6 +9,7 @@ export const Button = ({
   className,
   children,
   onClick,
+  label,
   theme,
   testId,
 }: ButtonProps) => {
@@ -24,7 +25,7 @@ export const Button = ({
           }${theme && !unstyled ? ` ${theme}` : ''}${className ? ` ${className}` : ''}${unstyled ? ' unstyled' : ''}`}
           onClick={onClick}
         >
-          {children}
+          {label || children}
         </LinkObject>
       )}
       {type !== 'link' && (
@@ -36,7 +37,7 @@ export const Button = ({
           }${theme && !unstyled ? ` ${theme}` : ''}${className ? ` ${className}` : ''}${unstyled ? ' unstyled' : ''}`}
           onClick={onClick}
         >
-          {children}
+          {label || children}
         </button>
       )}
     </>

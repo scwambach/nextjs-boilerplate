@@ -8,6 +8,7 @@ export const ImageObject = ({
   isBackground,
   lqip,
   query,
+  testId,
   sizes,
   src,
   width,
@@ -18,6 +19,7 @@ export const ImageObject = ({
       `https://fakeimg.pl/${height && width ? `${width}x${height}` : '600x400'}?text=url+is+broken&font=bebas`
   return (
     <div
+      data-testid={testId}
       className={`imageObject${className ? ` ${className}` : ''}`}
       data-label={`${isBackground ? 'background' : 'image'}-container`}
     >

@@ -10,6 +10,7 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
+    "coverage": "jest --coverage",
     "prepare": "husky install",
     "check-format": "prettier --write .",
     "check-lint": "eslint . --ext ts --ext tsx --ext js"

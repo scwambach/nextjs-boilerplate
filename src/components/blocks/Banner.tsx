@@ -38,12 +38,15 @@ export const Banner = ({
         <ImageObject
           {...img}
           isBackground
+          testId="banner-image"
           className="banner__image"
           sizes="(max-width: 767px) 100vw, 50vw"
         />
       )}
       <div className="container">
-        <Heading level={headingLevel}>{heading}</Heading>
+        <Heading testId="banner-heading" level={headingLevel}>
+          {heading}
+        </Heading>
         {subheading && (
           <p>
             <strong>{subheading}</strong>
@@ -51,6 +54,7 @@ export const Banner = ({
         )}
         {message && (
           <div
+            data-testid="banner-message"
             dangerouslySetInnerHTML={{
               __html: parseMarkdownToHTML(message),
             }}

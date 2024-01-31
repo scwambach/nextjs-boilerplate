@@ -11,6 +11,7 @@ export interface ImageProps {
   className?: string
   height?: number
   isBackground?: boolean
+  testId?: string
   lqip?: string
   query?: string
   sizes?: string
@@ -22,6 +23,7 @@ export interface ButtonProps extends ComponentProps {
   type?: 'button' | 'submit' | 'reset' | 'link'
   theme?: 'primary' | 'secondary' | 'tertiary'
   href?: string
+  label?: string
   unstyled?: boolean
   onClick?: () => void
 }
