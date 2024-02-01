@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "dev:test": "concurrently \"next dev\" \"yarn test:watch\"",
+    "dev": "next dev -p 3030",
+    "dev:test": "concurrently \"next dev -p 3030\" \"yarn test:watch\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

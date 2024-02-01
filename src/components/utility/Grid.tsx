@@ -1,47 +1,11 @@
 'use client'
-import { Breakpoints, ComponentProps, Elements } from '@utils/types'
+import { ColumnSize, ColumnSizeObject, FlexGridProps } from '@utils/types'
 import { useWindowWidth } from '@hooks/useWindowWidth'
-import { ReactNode, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { breakpoints } from '@utils/settings'
+import { calculateColumnSize } from '@utils/calculateColumnSize'
 
-type ColumnSize = 1 | 2 | 3 | 4 | 5 | 6
-
-type ColumnSizeObject = {
-  xs?: ColumnSize
-  sm?: ColumnSize
-  md?: ColumnSize
-  lg?: ColumnSize
-  xl?: ColumnSize
-  xxl?: ColumnSize
-}
-
-function calculateColumnSize(
-  columnsObject: ColumnSizeObject,
-  windowWidth: number,
-  breakpoints: Breakpoints
-): number | null {
-  let columnSize: number | null = null
-
-  const existingKeys = Object.keys(columnsObject).filter(
-    (key) => breakpoints[key]
-  )
-
-  for (let i = existingKeys.length - 1; i >= 0; i--) {
-    const key = existingKeys[i] as keyof ColumnSizeObject
-    const size = columnsObject[key]
-    if (size !== undefined && windowWidth >= (breakpoints as any)[key]) {
-      columnSize = size
-      break
-    }
-  }
-
-  return columnSize
-}
-
-interface GridProps extends ComponentProps {
-  children: ReactNode
-  parentTagName?: Elements
-  gap?: number
+interface GridProps extends FlexGridProps {
   columns?: ColumnSize | ColumnSizeObject
 }
 
@@ -54,6 +18,7 @@ export const Grid = ({
   columns = 2,
 }: GridProps) => {
   const [columnSize, setColumnSize] = useState<ColumnSize>(2)
+  const [rendering, setRendering] = useState(true)
   const elementTag = parentTagName || 'div'
   const Element = elementTag as keyof JSX.IntrinsicElements
 
@@ -74,6 +39,7 @@ export const Grid = ({
     } else {
       setColumnSize(columns)
     }
+    setRendering(false)
   }, [windowWidth])
 
   return (
@@ -84,7 +50,7 @@ export const Grid = ({
         gap: gap ? `${gap}rem` : '0',
       }}
     >
-      {children}
+      {!rendering && children}
     </Element>
   )
 }
