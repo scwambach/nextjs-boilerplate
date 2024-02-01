@@ -1,0 +1,16 @@
+.avatar {
+  position: relative;
+  border-radius: 100%;
+  overflow: hidden;
+
+  span {
+    background-color: $lightRed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}

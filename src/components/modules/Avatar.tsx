@@ -1,27 +1,46 @@
-import { ComponentProps } from '@utils/types'
+import { ComponentProps, ImageObjectProps } from '@utils/types'
+import { ImageObject } from './ImageObject'
 
-// TODO: Create Avatar component
+interface AvatarProps extends ComponentProps {
+  image?: ImageObjectProps
+  firstName: string
+  lastName: string
+  size?: number
+}
 
-interface AvatarProps extends ComponentProps {}
+const getFirstLetters = (firstName: string, lastName: string) => {
+  return `${firstName.charAt(0)}${lastName.charAt(0)}`
+}
 
-export const Avatar = (props: AvatarProps) => {
+export const Avatar = ({
+  testId,
+  className,
+  image,
+  firstName,
+  lastName,
+  size = 5,
+}: AvatarProps) => {
   return (
-    <div className={`avatar${props.className ? ` ${props.className}` : ''}`}>
-      <code>
-        <pre
+    <div
+      data-testid={testId}
+      style={{
+        height: `${size}rem`,
+        width: `${size}rem`,
+      }}
+      className={`avatar${className ? ` ${className}` : ''}`}
+    >
+      {!image && (
+        <span
           style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
+            fontSize: `${size / 3 + 0.5}rem`,
           }}
         >
-          {JSON.stringify(props, null, '    ')}
-        </pre>
-      </code>
+          {getFirstLetters(firstName, lastName)}
+        </span>
+      )}
+      {image && (
+        <ImageObject {...image} alt={`${firstName} ${lastName}`} isBackground />
+      )}
     </div>
   )
 }
