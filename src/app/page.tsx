@@ -1,5 +1,5 @@
 import { Card } from '@components/modules'
-import { Grid } from '@components/utility'
+import { Flex } from '@components/utility'
 import nature from '@images/nature2.webp'
 
 export default function Home() {
@@ -8,14 +8,7 @@ export default function Home() {
   return (
     <main>
       <div className="container wide">
-        <Grid
-          gap={1}
-          columns={{
-            xs: 1,
-            sm: 2,
-            lg: 4,
-          }}
-        >
+        <Flex gap={1}>
           {emptyArray.map(() => (
             <Card
               key={Math.random()}
@@ -35,7 +28,7 @@ export default function Home() {
               ]}
             />
           ))}
-        </Grid>
+        </Flex>
       </div>
     </main>
   )

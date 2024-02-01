@@ -4,7 +4,6 @@ button.card.unstyled {
   color: $black;
   padding: $size-16;
   box-shadow: 0;
-  transition: $transition;
   box-shadow: $box-shadow-1;
 
   .image {
@@ -43,6 +42,7 @@ button.card.unstyled {
 }
 
 button.card.unstyled {
+  transition: $transition;
   transform: translateZ(0);
 
   &:hover {
