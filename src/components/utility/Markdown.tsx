@@ -1,11 +1,12 @@
 import { parseMarkdownToHTML } from '@utils/parseMarkdownToHTML'
+import { Elements } from '@utils/types'
 
 export const Markdown = ({
   children,
   className,
   parentTagName,
 }: {
-  parentTagName?: string
+  parentTagName?: Elements
   children: string
   className?: string
 }) => {

@@ -19,10 +19,14 @@
   position: relative;
 
   &.wide {
-    max-width: none;
+    max-width: $xxl + $sm;
   }
 
   &.narrow {
     max-width: $lg;
+  }
+
+  &.full {
+    max-width: 100%;
   }
 }
