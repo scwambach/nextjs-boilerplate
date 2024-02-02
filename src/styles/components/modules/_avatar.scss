@@ -1,9 +1,10 @@
 .avatar {
   position: relative;
-  border-radius: 100%;
-  overflow: hidden;
 
-  span {
+  span:not(.badge),
+  .imageObject {
+    border-radius: 100%;
+    overflow: hidden;
     background-color: $lightRed;
     display: flex;
     align-items: center;
@@ -12,5 +13,11 @@
     position: absolute;
     height: 100%;
     width: 100%;
+  }
+
+  .badge {
+    position: absolute;
+    top: 0;
+    right: -$size-3;
   }
 }

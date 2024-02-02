@@ -2,6 +2,8 @@ import { ReactNode } from 'react'
 
 export type BreakNames = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 
+export type Colors = 'red' | 'blue' | 'green' | 'orange'
+
 export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
 
 export type ColumnSize = 1 | 2 | 3 | 4 | 5 | 6
@@ -100,4 +102,11 @@ export interface BreadcrumbsProps extends ComponentProps {
     href: string
   }[]
   current: string
+}
+
+export interface BadgeProps extends ComponentProps {
+  number: number
+  maxNumber?: number
+  elementTag?: 'div' | 'span'
+  color?: 'red' | 'blue' | 'green' | 'orange'
 }

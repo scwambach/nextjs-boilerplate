@@ -1,11 +1,13 @@
-import { ComponentProps, ImageObjectProps } from '@utils/types'
+import { BadgeProps, ComponentProps, ImageObjectProps } from '@utils/types'
 import { ImageObject } from './ImageObject'
+import { Badge } from './Badge'
 
 interface AvatarProps extends ComponentProps {
   image?: ImageObjectProps
   firstName: string
   lastName: string
   size?: number
+  badge?: BadgeProps
 }
 
 const getFirstLetters = (firstName: string, lastName: string) => {
@@ -19,6 +21,7 @@ export const Avatar = ({
   firstName,
   lastName,
   size = 5,
+  badge,
 }: AvatarProps) => {
   return (
     <div
@@ -41,6 +44,7 @@ export const Avatar = ({
       {image && (
         <ImageObject {...image} alt={`${firstName} ${lastName}`} isBackground />
       )}
+      {badge && badge.number > 0 && <Badge {...badge} />}
     </div>
   )
 }
