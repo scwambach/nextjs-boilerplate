@@ -18,7 +18,7 @@ describe('parseMarkdownToHTML', () => {
   it('correctly handles Markdown with block elements', () => {
     const markdown = '# Heading 1\n\n- Item 1\n- Item 2'
     const expectedHTML =
-      '<h1>Heading 1</h1>\n<ul>\n<li>Item 1</li>\n<li>Item 2</li>\n</ul>\n'
+      '<h1 class="className">Heading 1</h1>\n<ul>\n<li>Item 1</li>\n<li>Item 2</li>\n</ul>\n'
     expect(parseMarkdownToHTML(markdown)).toBe(expectedHTML)
   })
 

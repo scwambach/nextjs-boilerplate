@@ -1,7 +1,7 @@
 .banner {
+  @include vertical-spacing;
   position: relative;
   overflow: hidden;
-  padding: $size-40 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,6 +62,18 @@
     @media screen and (min-width: ($sm)) {
       align-items: center;
       flex-direction: row;
+    }
+  }
+
+  .heading {
+    font-size: $size-48;
+
+    @media screen and (max-width: ($md - 1)) {
+      font-size: $size-40;
+    }
+
+    @media screen and (max-width: ($sm - 1)) {
+      font-size: $size-32;
     }
   }
 }
