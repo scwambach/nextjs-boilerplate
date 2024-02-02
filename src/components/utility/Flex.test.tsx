@@ -1,4 +1,3 @@
-import React from 'react'
 import { render } from '@testing-library/react'
 import { Flex } from './Flex' // Assuming the component file is named 'Flex.tsx'
 

@@ -1,8 +1,5 @@
-import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { Grid } from './Grid'
-
-// Mocking the useWindowWidth hook
 
 describe('Grid Component', () => {
   it('renders with default props', () => {
