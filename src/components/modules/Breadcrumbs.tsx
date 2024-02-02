@@ -1,29 +1,45 @@
-import { ComponentProps } from '@utils/types'
+import { BreadcrumbsProps } from '@utils/types'
+import { LinkObject } from './LinkObject'
+import { IconSelector } from '@components/utility/IconSelector'
+import { Flex } from '@components/utility'
 
-// TODO: Create Breadcrumbs component
-
-interface BreadcrumbsProps extends ComponentProps {}
-
-export const Breadcrumbs = (props: BreadcrumbsProps) => {
+export const Breadcrumbs = ({
+  crumbs,
+  current,
+  testId,
+  className,
+}: BreadcrumbsProps) => {
   return (
     <div
-      className={`breadcrumbs${props.className ? ` ${props.className}` : ''}`}
+      data-testid={testId}
+      className={`breadcrumbs${className ? ` ${className}` : ''}`}
     >
-      <code>
-        <pre
-          style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
-          }}
+      <nav>
+        <Flex
+          elementTag="ul"
+          alignItems="center"
+          gap={0.5}
+          noBreak
+          className="unstyled"
         >
-          {JSON.stringify(props, null, '    ')}
-        </pre>
-      </code>
+          <IconSelector icon="Compass" weight="bold" size={20} />
+          {crumbs.map((crumb) => (
+            <Flex
+              noBreak
+              elementTag="li"
+              gap={0.5}
+              alignItems="center"
+              key={crumb.label}
+            >
+              <LinkObject href={crumb.href}>{crumb.label}</LinkObject>
+              <IconSelector icon="CaretRight" weight="bold" />
+            </Flex>
+          ))}
+          <li>
+            <span>{current}</span>
+          </li>
+        </Flex>
+      </nav>
     </div>
   )
 }

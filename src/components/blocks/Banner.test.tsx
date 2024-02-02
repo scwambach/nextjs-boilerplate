@@ -21,6 +21,16 @@ describe('Banner', () => {
           query: 'tech',
         }}
         links={[{ label: 'Button 1' }, { label: 'Button 2' }]}
+        crumbs={{
+          current: 'Current',
+          items: [
+            {
+              label: 'Item 1',
+              href: '/item-1',
+            },
+            { label: 'Item 2', href: '/item-2' },
+          ],
+        }}
       />
     )
     expect(getByText('Test Heading')).toBeInTheDocument()
@@ -30,6 +40,8 @@ describe('Banner', () => {
     expect(getByTestId('banner-heading')).toBeInTheDocument()
     expect(getByText('Button 1')).toBeInTheDocument()
     expect(getByText('Button 2')).toBeInTheDocument()
+    expect(getByText('Item 1')).toBeInTheDocument()
+    expect(getByText('Item 2')).toBeInTheDocument()
   })
 
   it('renders with custom className', () => {
@@ -63,6 +75,37 @@ describe('Banner', () => {
 
   it('renders without links when links prop is not provided', () => {
     const { queryByText } = render(<Banner heading="Test Heading" />)
+    expect(queryByText('Button 1')).toBeNull()
+    expect(queryByText('Button 2')).toBeNull()
+  })
+
+  it('renders with breadcrumbs when crumbs prop is provided', () => {
+    const { getByText } = render(
+      <Banner
+        heading="Test Heading"
+        crumbs={{
+          current: 'Current',
+          items: [
+            {
+              label: 'Item 1',
+              href: '/item-1',
+            },
+            { label: 'Item 2', href: '/item-2' },
+          ],
+        }}
+      />
+    )
+    expect(getByText('Item 1')).toBeInTheDocument()
+    expect(getByText('Item 2')).toBeInTheDocument()
+  })
+
+  it('does not render breadcrumbs when crumbs prop is not provided', () => {
+    const { queryByTestId } = render(<Banner heading="Test Heading" />)
+    expect(queryByTestId('breadcrumbs')).toBeNull()
+  })
+
+  it('does not render links when links prop is an empty array', () => {
+    const { queryByText } = render(<Banner heading="Test Heading" links={[]} />)
     expect(queryByText('Button 1')).toBeNull()
     expect(queryByText('Button 2')).toBeNull()
   })

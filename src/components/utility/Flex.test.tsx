@@ -11,7 +11,7 @@ describe('Flex component', () => {
     )
     const flexElement = getByTestId('flex-test')
     expect(flexElement).toBeInTheDocument()
-    expect(flexElement.tagName).toBe('DIV') // Assuming the default parentTagName is 'div'
+    expect(flexElement.tagName).toBe('DIV') // Assuming the default elementTag is 'div'
   })
 
   it('renders with custom props', () => {
@@ -38,9 +38,9 @@ describe('Flex component', () => {
     expect(flexElement).toHaveStyle('gap: 2rem;')
   })
 
-  it('renders with default parentTagName', () => {
+  it('renders with default elementTag', () => {
     const { getByTestId } = render(
-      <Flex testId="flex-test" parentTagName="section">
+      <Flex testId="flex-test" elementTag="section">
         <div>Child 1</div>
       </Flex>
     )

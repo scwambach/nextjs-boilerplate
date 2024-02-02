@@ -1,7 +1,8 @@
-import { Button, ImageObject } from '@components/modules'
+import { Breadcrumbs, Button, ImageObject } from '@components/modules'
 import { Heading } from '@components/utility/Heading'
 import { parseMarkdownToHTML } from '@utils/parseMarkdownToHTML'
 import {
+  BreadcrumbsProps,
   ButtonProps,
   ComponentProps,
   HeadingLevel,
@@ -16,6 +17,10 @@ interface BannerProps extends ComponentProps {
   message?: string
   bgColor?: 'red' | 'blue' | 'green' | 'orange'
   links?: ButtonProps[]
+  crumbs?: {
+    current: string
+    items: BreadcrumbsProps['crumbs']
+  }
 }
 
 export const Banner = ({
@@ -23,6 +28,7 @@ export const Banner = ({
   className,
   heading,
   subheading,
+  crumbs,
   bgColor = 'blue',
   message,
   headingLevel = 2,
@@ -44,6 +50,9 @@ export const Banner = ({
         />
       )}
       <div className="container">
+        {crumbs && crumbs.items && (
+          <Breadcrumbs current={crumbs.current} crumbs={crumbs.items} />
+        )}
         <Heading testId="banner-heading" level={headingLevel}>
           {heading}
         </Heading>

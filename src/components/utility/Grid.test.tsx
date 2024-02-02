@@ -23,7 +23,7 @@ describe('Grid Component', () => {
       <Grid
         className="custom-grid"
         testId="custom-grid"
-        parentTagName="section"
+        elementTag="section"
         gap={2}
         columns={3}
       >

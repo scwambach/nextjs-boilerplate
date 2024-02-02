@@ -8,6 +8,13 @@ export default function Home() {
         message="This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and Tailwind CSS."
         headingLevel={1}
         bgColor="green"
+        crumbs={{
+          current: 'Nam felis',
+          items: [
+            { label: 'Home', href: '/' },
+            { label: 'About', href: '/about' },
+          ],
+        }}
         links={[
           {
             href: 'https://github.com/scwambach/nextjs-boilerplate',

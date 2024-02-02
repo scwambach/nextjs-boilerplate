@@ -17,7 +17,37 @@ export type ColumnSizeObject = {
 
 export type Themes = 'primary' | 'secondary' | 'tertiary'
 
-export type Elements = 'div' | 'section' | 'article' | 'aside' | 'span'
+export type Elements =
+  | 'div'
+  | 'section'
+  | 'article'
+  | 'aside'
+  | 'span'
+  | 'header'
+  | 'footer'
+  | 'nav'
+  | 'main'
+  | 'li'
+  | 'ul'
+  | 'ol'
+  | 'p'
+  | 'a'
+  | 'button'
+  | 'form'
+  | 'input'
+  | 'label'
+  | 'select'
+  | 'textarea'
+  | 'img'
+  | 'picture'
+  | 'figure'
+  | 'figcaption'
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6'
 
 export interface Breakpoints {
   [key: string]: number | undefined
@@ -60,6 +90,14 @@ export interface ButtonProps extends ComponentProps {
 
 export interface FlexGridProps extends ComponentProps {
   children: ReactNode
-  parentTagName?: Elements
+  elementTag?: Elements
   gap?: number
+}
+
+export interface BreadcrumbsProps extends ComponentProps {
+  crumbs: {
+    label: string
+    href: string
+  }[]
+  current: string
 }

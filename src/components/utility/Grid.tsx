@@ -10,7 +10,7 @@ interface GridProps extends FlexGridProps {
 }
 
 export const Grid = ({
-  parentTagName,
+  elementTag,
   children,
   className,
   testId,
@@ -19,8 +19,8 @@ export const Grid = ({
 }: GridProps) => {
   const [columnSize, setColumnSize] = useState<ColumnSize>(2)
   const [rendering, setRendering] = useState(true)
-  const elementTag = parentTagName || 'div'
-  const Element = elementTag as keyof JSX.IntrinsicElements
+  const elm = elementTag || 'div'
+  const Element = elm as keyof JSX.IntrinsicElements
 
   const columnsClass = columnSize ? `cols-${columnSize}` : ''
 

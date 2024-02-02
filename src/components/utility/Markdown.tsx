@@ -4,14 +4,14 @@ import { Elements } from '@utils/types'
 export const Markdown = ({
   children,
   className,
-  parentTagName,
+  elementTag,
 }: {
-  parentTagName?: Elements
+  elementTag?: Elements
   children: string
   className?: string
 }) => {
-  const elementTag = parentTagName || 'div'
-  const Element = elementTag as keyof JSX.IntrinsicElements
+  const elm = elementTag || 'div'
+  const Element = elm as keyof JSX.IntrinsicElements
 
   return (
     <Element

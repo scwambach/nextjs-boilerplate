@@ -124,4 +124,8 @@
       flex-direction: column;
     }
   }
+
+  &.no-break {
+    flex-wrap: nowrap;
+  }
 }
