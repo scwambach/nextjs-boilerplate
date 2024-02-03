@@ -1,0 +1,7 @@
+.sectionHeading {
+  margin-bottom: $vertical-spacing / 1.5;
+
+  @media screen and (max-width: ($md - 1)) {
+    margin-bottom: $vertical-spacing-mobile / 1.5;
+  }
+}

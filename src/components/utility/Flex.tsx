@@ -6,6 +6,7 @@ interface FlexProps extends FlexGridProps {
   breakpoint?: BreakNames
   columnBreak?: BreakNames
   noBreak?: boolean
+  fill?: boolean
   alignItems?: 'center' | 'flex-start' | 'flex-end' | 'stretch'
   justifyContent?:
     | 'center'
@@ -13,7 +14,7 @@ interface FlexProps extends FlexGridProps {
     | 'flex-end'
     | 'space-between'
     | 'space-around'
-  customLauout?:
+  customLayout?:
     | `one-third-two-thirds`
     | `two-thirds-one-third`
     | `one-quarter-three-quarters`
@@ -21,17 +22,18 @@ interface FlexProps extends FlexGridProps {
 }
 
 export const Flex = ({
-  elementTag,
+  alignItems,
+  breakpoint,
   children,
   className,
   columnBreak = 'sm',
-  customLauout,
-  noBreak,
-  breakpoint,
-  testId,
-  alignItems,
-  justifyContent,
+  customLayout,
+  elementTag,
+  fill,
   gap,
+  justifyContent,
+  noBreak,
+  testId,
 }: FlexProps) => {
   const elm = elementTag || 'div'
   const Element = elm as keyof JSX.IntrinsicElements
@@ -41,10 +43,10 @@ export const Flex = ({
       className={`flex column-${
         columnBreak && !noBreak ? columnBreak : ''
       }${className ? ` ${className}` : ''}${
-        customLauout ? ` ${customLauout}` : ''
+        customLayout ? ` ${customLayout}` : ''
       }${breakpoint && !noBreak ? ` break-${breakpoint}` : ''}${
-        noBreak ? ' no-break' : ''
-      }`}
+        fill ? ' fill' : ''
+      }${noBreak ? ' no-break' : ''}`}
       data-testid={testId}
       style={{
         alignItems: alignItems || 'flex-start',

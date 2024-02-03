@@ -33,17 +33,12 @@ const Content = ({
     <div className={className}>
       {image && (
         <div className="image">
-          <ImageObject
-            src={image.src}
-            alt={image.alt}
-            blurDataURL={image.blurDataURL}
-            isBackground
-          />
+          <ImageObject {...image} isBackground />
         </div>
       )}
       <div className="inner">
         <Heading level={headingLevel}>{title}</Heading>
-        {description && <Markdown>{description}</Markdown>}
+        {description && <Markdown className="copy">{description}</Markdown>}
         {links && !href && (
           <div className="links">
             {links.map((link, index) => (

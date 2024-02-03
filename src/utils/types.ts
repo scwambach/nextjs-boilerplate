@@ -65,6 +65,12 @@ export interface ComponentProps {
   testId?: string
 }
 
+export interface BlockProps extends ComponentProps {
+  heading?: string
+  level?: HeadingLevel
+  subheading?: string
+}
+
 export interface ImageObjectProps {
   alt: string
   className?: string

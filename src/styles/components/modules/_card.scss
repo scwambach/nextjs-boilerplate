@@ -6,6 +6,22 @@ button.card.unstyled {
   box-shadow: 0;
   box-shadow: $box-shadow-1;
 
+  .heading {
+    font-size: $size-24;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+  }
+
+  .copy {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+  }
+
   .image {
     margin-bottom: $size-16;
   }

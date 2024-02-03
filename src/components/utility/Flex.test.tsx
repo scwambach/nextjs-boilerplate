@@ -19,7 +19,7 @@ describe('Flex component', () => {
         testId="flex-test"
         className="custom-class"
         columnBreak="lg"
-        customLauout="one-third-two-thirds"
+        customLayout="one-third-two-thirds"
         breakpoint="md"
         gap={2}
       >

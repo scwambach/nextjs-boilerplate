@@ -128,4 +128,10 @@
   &.no-break {
     flex-wrap: nowrap;
   }
+
+  &.fill {
+    > * {
+      width: 100%;
+    }
+  }
 }
