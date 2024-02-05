@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { Flex } from './Flex' // Assuming the component file is named 'Flex.tsx'
+import { Flex } from './Flex'
 
 describe('Flex component', () => {
   it('renders with default props', () => {
@@ -10,7 +10,7 @@ describe('Flex component', () => {
     )
     const flexElement = getByTestId('flex-test')
     expect(flexElement).toBeInTheDocument()
-    expect(flexElement.tagName).toBe('DIV') // Assuming the default elementTag is 'div'
+    expect(flexElement.tagName).toBe('DIV')
   })
 
   it('renders with custom props', () => {
@@ -46,6 +46,4 @@ describe('Flex component', () => {
     const flexElement = getByTestId('flex-test')
     expect(flexElement.tagName).toBe('SECTION')
   })
-
-  // Add more test cases to cover other variations in props and conditional logic
 })

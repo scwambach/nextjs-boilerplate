@@ -9,6 +9,7 @@ export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
 export type ColumnSize = 1 | 2 | 3 | 4 | 5 | 6
 
 export type ColumnSizeObject = {
+  xxs?: ColumnSize
   xs?: ColumnSize
   sm?: ColumnSize
   md?: ColumnSize
@@ -53,11 +54,13 @@ export type Elements =
 
 export interface Breakpoints {
   [key: string]: number | undefined
+  xxs: number
   xs: number
   sm: number
   md: number
   lg: number
   xl: number
+  xxl: number
 }
 
 export interface ComponentProps {
@@ -115,4 +118,8 @@ export interface BadgeProps extends ComponentProps {
   maxNumber?: number
   elementTag?: 'div' | 'span'
   color?: 'red' | 'blue' | 'green' | 'orange'
+}
+
+export interface GridProps extends FlexGridProps {
+  columns?: ColumnSize | ColumnSizeObject
 }

@@ -1,13 +1,9 @@
 'use client'
-import { ColumnSize, ColumnSizeObject, FlexGridProps } from '@utils/types'
+import { ColumnSize, GridProps } from '@utils/types'
 import { useWindowWidth } from '@hooks/useWindowWidth'
 import { useEffect, useState } from 'react'
 import { breakpoints } from '@utils/settings'
 import { calculateColumnSize } from '@utils/calculateColumnSize'
-
-interface GridProps extends FlexGridProps {
-  columns?: ColumnSize | ColumnSizeObject
-}
 
 export const Grid = ({
   elementTag,
@@ -15,7 +11,7 @@ export const Grid = ({
   className,
   testId,
   gap,
-  columns = 2,
+  columns = 3,
 }: GridProps) => {
   const [columnSize, setColumnSize] = useState<ColumnSize>(2)
   const [rendering, setRendering] = useState(true)

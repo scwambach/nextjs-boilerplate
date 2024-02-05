@@ -9,6 +9,8 @@
   cursor: pointer;
   letter-spacing: $size-1 / 2;
   text-align: center;
+  transition: $transition;
+  transition-property: background-color, color, box-shadow;
 
   &:focus {
     outline: $size-4 solid $blue;
@@ -17,6 +19,7 @@
   &:hover {
     text-decoration: none;
     background-color: $lightBlue;
+    opacity: 1;
     color: $black;
     box-shadow: $box-shadow-1;
   }

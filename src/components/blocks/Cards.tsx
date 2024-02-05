@@ -1,11 +1,12 @@
 import { Card, CardProps } from '@components/modules/Card'
 import { SectionHeading } from '@components/modules/SectionHeading'
-import { Flex } from '@components/utility'
-import { BlockProps } from '@utils/types'
+import { Grid } from '@components/utility'
+import { BlockProps, GridProps } from '@utils/types'
 
 interface CardsProps extends BlockProps {
   items: CardProps[]
   gap?: number
+  columns?: GridProps['columns']
 }
 
 export const Cards = ({
@@ -13,6 +14,7 @@ export const Cards = ({
   className,
   gap,
   subheading,
+  columns,
   heading,
   level = 3,
 }: CardsProps) => {
@@ -29,15 +31,9 @@ export const Cards = ({
           subheading={subheading}
         />
       )}
-      <Flex
-        gap={gap}
-        columnBreak="sm"
-        breakpoint="md"
-        fill
-        justifyContent="center"
-      >
+      <Grid gap={gap} columns={columns}>
         {renderedCards}
-      </Flex>
+      </Grid>
     </div>
   )
 }

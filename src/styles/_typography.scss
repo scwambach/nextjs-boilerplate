@@ -83,10 +83,16 @@ small {
 a {
   color: $blue;
   text-decoration: none;
+  transition: $transition;
+  transition-property: opacity;
 
   &:hover {
-    color: $lightBlue;
+    opacity: 0.5;
     text-decoration: underline;
+  }
+
+  &:focus {
+    outline: $size-2 solid $blue;
   }
 }
 

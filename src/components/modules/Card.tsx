@@ -9,6 +9,7 @@ import { Button } from './Button'
 import { ImageObject } from './ImageObject'
 import { Heading } from '@components/utility/Heading'
 import { Markdown } from '@components/utility/Markdown'
+import { Flex } from '@components/utility'
 
 export interface CardProps extends ComponentProps {
   image?: ImageObjectProps
@@ -37,14 +38,16 @@ const Content = ({
         </div>
       )}
       <div className="inner">
-        <Heading level={headingLevel}>{title}</Heading>
-        {description && <Markdown className="copy">{description}</Markdown>}
+        <div>
+          <Heading level={headingLevel}>{title}</Heading>
+          {description && <Markdown className="copy">{description}</Markdown>}
+        </div>
         {links && !href && (
-          <div className="links">
+          <Flex gap={1} className="links">
             {links.map((link, index) => (
               <Button key={index} {...link} />
             ))}
-          </div>
+          </Flex>
         )}
       </div>
     </div>

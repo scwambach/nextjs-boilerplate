@@ -7,7 +7,7 @@ export default function Home() {
         heading="Welcome to the Next.js Starter"
         message="This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and Tailwind CSS."
         headingLevel={1}
-        bgColor="green"
+        bgColor="orange"
         crumbs={{
           current: 'Nam felis',
           items: [
@@ -26,7 +26,11 @@ export default function Home() {
         <Cards
           heading="Recent Posts"
           subheading="The latest and greatest from our blog."
-          gap={2}
+          gap={1}
+          columns={{
+            sm: 2,
+            lg: 4,
+          }}
           items={[
             {
               title: 'Ut facilisis dictum urna',
@@ -60,6 +64,16 @@ export default function Home() {
                 { label: 'Read More', href: '/about' },
                 { label: 'Contact Us', href: '/contact' },
               ],
+            },
+            {
+              title: 'Pellentesque habitant morbi tristique sen',
+              description:
+                'Vivamus quis lacinia ligula, vitae pharetra turpis. Sed vestibulum porta eros, quis bibendum tellus euismod quis. Sed diam diam, ullamcorper sed mauris nec, consectetur...',
+              image: {
+                query: 'tech minimal 4',
+                alt: 'Placeholder Image',
+              },
+              links: [{ label: 'Read More', href: '/about' }],
             },
           ]}
         />

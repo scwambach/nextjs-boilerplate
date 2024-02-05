@@ -53,6 +53,12 @@
   align-items: flex-start;
   justify-content: flex-start;
 
+  &.break-xxs {
+    @media screen and (min-width: ($xxs)) {
+      @include customLayouts;
+    }
+  }
+
   &.break-xs {
     @media screen and (min-width: ($xs)) {
       @include customLayouts;

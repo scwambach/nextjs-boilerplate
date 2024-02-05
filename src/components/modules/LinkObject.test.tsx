@@ -9,9 +9,9 @@ describe('LinkObject', () => {
       </LinkObject>
     )
     const link = getByTestId('internal-link')
-    expect(link.tagName).toBe('A') // It should render an anchor tag for internal links
+    expect(link.tagName).toBe('A')
     expect(link.getAttribute('href')).toBe('/internal')
-    expect(link.getAttribute('target')).toBeNull() // Internal links should not have target attribute
+    expect(link.getAttribute('target')).toBeNull()
   })
 
   it('renders an external link correctly', () => {
@@ -21,10 +21,10 @@ describe('LinkObject', () => {
       </LinkObject>
     )
     const link = getByTestId('external-link')
-    expect(link.tagName).toBe('A') // It should render an anchor tag for external links
+    expect(link.tagName).toBe('A')
     expect(link.getAttribute('href')).toBe('http://external.com')
-    expect(link.getAttribute('target')).toBe('_blank') // External links should have target="_blank"
-    expect(link.getAttribute('rel')).toBe('noopener noreferrer') // External links should have rel="noopener noreferrer"
+    expect(link.getAttribute('target')).toBe('_blank')
+    expect(link.getAttribute('rel')).toBe('noopener noreferrer')
   })
 
   it('applies className and onClick prop correctly', () => {
@@ -42,6 +42,6 @@ describe('LinkObject', () => {
     const link = getByTestId('internal-link')
     expect(link).toHaveClass('linkObject custom-class')
     fireEvent.click(link)
-    expect(onClickMock).toHaveBeenCalled() // onClick prop should be called when link is clicked
+    expect(onClickMock).toHaveBeenCalled()
   })
 })
