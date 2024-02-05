@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { Card, CardProps } from './Card'
+import { Card, CardProps } from '../Card'
 import nature from '../../images/nature2.webp'
 
 describe('Card', () => {

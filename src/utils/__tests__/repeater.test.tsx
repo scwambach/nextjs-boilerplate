@@ -1,4 +1,4 @@
-import { repeater } from './repeater'
+import { repeater } from '../repeater'
 
 describe('repeater function', () => {
   it('returns an array of repeated elements', () => {

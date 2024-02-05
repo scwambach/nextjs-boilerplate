@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { Flex } from './Flex'
+import { Flex } from '../Flex'
 
 describe('Flex component', () => {
   it('renders with default props', () => {

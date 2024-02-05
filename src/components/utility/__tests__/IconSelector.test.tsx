@@ -1,4 +1,4 @@
-import { IconSelector } from './IconSelector'
+import { IconSelector } from '../IconSelector'
 import { render } from '@testing-library/react'
 
 describe('IconSelector', () => {

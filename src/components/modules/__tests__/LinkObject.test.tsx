@@ -1,5 +1,5 @@
 import { render, fireEvent } from '@testing-library/react'
-import { LinkObject } from './LinkObject'
+import { LinkObject } from '../LinkObject'
 
 describe('LinkObject', () => {
   it('renders an internal link correctly', () => {

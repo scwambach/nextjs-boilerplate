@@ -1,4 +1,4 @@
-import { addCommas } from './addCommas'
+import { addCommas } from '../addCommas'
 
 describe('addCommas', () => {
   it('formats numbers with commas for thousands separators', () => {

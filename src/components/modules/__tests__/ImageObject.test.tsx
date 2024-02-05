@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { ImageObject } from './ImageObject'
+import { ImageObject } from '../ImageObject'
 
 const imageUrl = 'https://source.unsplash.com/random/800x600'
 

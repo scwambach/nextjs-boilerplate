@@ -1,5 +1,5 @@
-import { calculateColumnSize } from './calculateColumnSize'
-import { Breakpoints, ColumnSizeObject } from './types'
+import { calculateColumnSize } from '../calculateColumnSize'
+import { Breakpoints, ColumnSizeObject } from '../types'
 
 describe('calculateColumnSize function', () => {
   it('calculates column size correctly for different window widths', () => {
