@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, ChangeEvent } from 'react'
 
 export type BreakNames = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 
@@ -122,4 +122,53 @@ export interface BadgeProps extends ComponentProps {
 
 export interface GridProps extends FlexGridProps {
   columns?: ColumnSize | ColumnSizeObject
+}
+
+export interface FormProps extends BlockProps {
+  children?: ReactNode
+  submitCopy?: string
+  onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void
+}
+
+export interface FieldProps extends ComponentProps {
+  choices?: {
+    id: string
+    copy: string
+    disabled?: boolean
+    value?: string
+  }[]
+  multiChoices?: {
+    label: string
+    value?: string
+  }[]
+  description?: string
+  className?: string
+  disabled?: boolean
+  id: string
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+  onChangeArea?: (e: ChangeEvent<HTMLTextAreaElement>) => void
+  onChangeSelect?: (e: ChangeEvent<HTMLSelectElement>) => void
+  label: string
+  placeholder?: string
+  readOnly?: boolean
+  required?: boolean
+  type?:
+    | 'checkbox'
+    | 'date'
+    | 'datetime-local'
+    | 'email'
+    | 'hidden'
+    | 'month'
+    | 'multiselect'
+    | 'number'
+    | 'password'
+    | 'radio'
+    | 'select'
+    | 'tel'
+    | 'text'
+    | 'textarea'
+    | 'time'
+    | 'url'
+    | 'week'
+    | string
 }
