@@ -6,6 +6,7 @@ interface FlexProps extends FlexGridProps {
   breakpoint?: BreakNames
   columnBreak?: BreakNames
   noBreak?: boolean
+  direction?: 'row' | 'column'
   fill?: boolean
   alignItems?: 'center' | 'flex-start' | 'flex-end' | 'stretch'
   justifyContent?:
@@ -25,6 +26,7 @@ export const Flex = ({
   alignItems,
   breakpoint,
   children,
+  direction,
   className,
   columnBreak = 'sm',
   customLayout,
@@ -49,6 +51,7 @@ export const Flex = ({
       }${noBreak ? ' no-break' : ''}`}
       data-testid={testId}
       style={{
+        flexDirection: direction || 'row',
         alignItems: alignItems || 'flex-start',
         justifyContent: justifyContent || 'flex-start',
         gap: gap ? `${gap}rem` : '0',

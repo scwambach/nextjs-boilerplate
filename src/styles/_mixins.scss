@@ -1,7 +1,15 @@
-@mixin vertical-spacing {
+@mixin vertical-spacing-padding {
   padding: $vertical-spacing 0;
 
   @media screen and (max-width: ($md - 1)) {
     padding: $vertical-spacing-mobile 0;
+  }
+}
+
+@mixin vertical-spacing-margin {
+  margin: $vertical-spacing 0;
+
+  @media screen and (max-width: ($md - 1)) {
+    margin: $vertical-spacing-mobile 0;
   }
 }

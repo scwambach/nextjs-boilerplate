@@ -11,9 +11,13 @@ const Form = ({
   heading,
   subheading,
   level,
+  testId,
 }: FormProps) => {
   return (
-    <div className={`form${className ? ` ${className}` : ''}`}>
+    <div
+      className={`form${className ? ` ${className}` : ''}`}
+      data-testid={testId}
+    >
       {heading && (
         <SectionHeading
           heading={heading}

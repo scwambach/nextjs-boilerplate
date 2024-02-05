@@ -25,7 +25,7 @@ const Label = ({
   )
 }
 
-const Field = ({
+export const FormField = ({
   choices,
   className,
   description,
@@ -39,6 +39,7 @@ const Field = ({
   placeholder,
   readOnly,
   required,
+  testId,
   type,
 }: FieldProps) => {
   const fieldId = `${label ? slugify(label) : 'input'}_${id}`
@@ -54,6 +55,7 @@ const Field = ({
     <>
       {type === 'textarea' ? (
         <label
+          data-testid={testId}
           className={`formField${className ? ` ${className}` : ''} ${type}${
             disabled ? ' disabled' : ''
           }`}
@@ -64,6 +66,7 @@ const Field = ({
         </label>
       ) : type === 'select' ? (
         <label
+          data-testid={testId}
           className={`formField${className ? ` ${className}` : ''} ${type}`}
           htmlFor={fieldId}
         >
@@ -78,6 +81,7 @@ const Field = ({
         </label>
       ) : type === 'checkbox' || type === 'radio' ? (
         <div
+          data-testid={testId}
           className={`formField${className ? ` ${className}` : ''} ${type}${
             disabled ? ' disabled' : ''
           }`}
@@ -112,6 +116,7 @@ const Field = ({
         </div>
       ) : type === 'multiselect' ? (
         <label
+          data-testid={testId}
           className={`formField${className ? ` ${className}` : ''} ${type}`}
           htmlFor={fieldId}
         >
@@ -120,6 +125,7 @@ const Field = ({
         </label>
       ) : (
         <label
+          data-testid={testId}
           htmlFor={fieldId}
           className={`formField${className ? ` ${className}` : ''} ${type}${
             disabled ? ' disabled' : ''
@@ -132,5 +138,3 @@ const Field = ({
     </>
   )
 }
-
-export { Field }

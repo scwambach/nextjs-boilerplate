@@ -1,5 +1,5 @@
 .banner {
-  @include vertical-spacing;
+  @include vertical-spacing-padding;
   position: relative;
   overflow: hidden;
   display: flex;
