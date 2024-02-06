@@ -38,6 +38,7 @@ export const ContactForm = (props: ContactFormProps) => {
           >
             <FormField
               id="firstName"
+              description="Please enter your first name."
               label="First Name"
               type="text"
               onChange={(e) => handleInputChange(e, formData, setFormData)}
@@ -70,12 +71,21 @@ export const ContactForm = (props: ContactFormProps) => {
             <FormField
               id="fieldID4"
               label="test4"
-              type="radio"
+              type="multiselect"
               onChange={(e) => handleRadioChange(e, formData, setFormData)}
-              choices={[
-                { copy: 'Choice 1', value: 'choice1', id: 'choice1' },
-                { copy: 'Choice 2', value: 'choice2', id: 'choice2' },
-                { copy: 'Choice 3', value: 'choice3', id: 'choice3' },
+              multiChoices={[
+                {
+                  label: 'Choice 1',
+                  value: 'choice1',
+                },
+                {
+                  label: 'Choice 2',
+                  value: 'choice2',
+                },
+                {
+                  label: 'Choice 3',
+                  value: 'choice3',
+                },
               ]}
             />
             <FormField

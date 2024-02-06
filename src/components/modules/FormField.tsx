@@ -23,7 +23,7 @@ const Label = ({
   description?: string
 }) => {
   return (
-    <>
+    <Flex direction="column" gap={0.5}>
       <span
         className={`label ${alfaSlabOne.className}`}
         dangerouslySetInnerHTML={{
@@ -31,7 +31,7 @@ const Label = ({
         }}
       />
       {description && <Markdown>{description}</Markdown>}
-    </>
+    </Flex>
   )
 }
 
@@ -76,7 +76,7 @@ export const FormField = ({
           }`}
           htmlFor={fieldId}
         >
-          <Flex direction="column" gap={0.5}>
+          <Flex direction="column" gap={1}>
             <Label label={label} description={description} />
             <textarea
               {...fieldArgs}
@@ -92,7 +92,7 @@ export const FormField = ({
           className={`formField${className ? ` ${className}` : ''} ${type}`}
           htmlFor={fieldId}
         >
-          <Flex direction="column" gap={0.5}>
+          <Flex direction="column" gap={1}>
             <Label label={label} description={description} />
             <select
               {...fieldArgs}
@@ -120,7 +120,7 @@ export const FormField = ({
             disabled ? ' disabled' : ''
           }`}
         >
-          <Flex direction="column" gap={0.5}>
+          <Flex direction="column" gap={1}>
             <Label label={label} description={description} />
             <Grid columns={choiceGridColumns} gap={1} className="choices">
               {choices?.map((choice) => (
@@ -174,10 +174,24 @@ export const FormField = ({
           className={`formField${className ? ` ${className}` : ''} ${type}`}
           htmlFor={fieldId}
         >
-          <Flex direction="column" gap={0.5}>
+          <Flex direction="column" gap={1}>
             <Label label={label} description={description} />
             <ReactSelect
               isMulti
+              onFocus={(e) => {
+                if (e.target.parentElement) {
+                  e.target.parentElement.parentElement?.parentElement?.parentElement?.classList.add(
+                    'focused'
+                  )
+                }
+              }}
+              onBlur={(e) => {
+                if (e.target.parentElement) {
+                  e.target.parentElement.parentElement?.parentElement?.parentElement?.classList.remove(
+                    'focused'
+                  )
+                }
+              }}
               options={multiChoices}
               name={fieldId}
               className={roboto.className}
@@ -192,13 +206,14 @@ export const FormField = ({
             disabled ? ' disabled' : ''
           }`}
         >
-          <Flex direction="column" gap={0.5}>
+          <Flex direction="column" gap={1}>
             <Label label={label} description={description} />
             <input {...fieldArgs} type={type} onChange={onChange} />
             <Flex
               direction="column"
               gap={0.5}
               justifyContent="center"
+              className="dropzone"
               alignItems="center"
             >
               <IconSelector icon="Upload" size={20} />
@@ -214,7 +229,7 @@ export const FormField = ({
             disabled ? ' disabled' : ''
           }`}
         >
-          <Flex direction="column" gap={0.5}>
+          <Flex direction="column" gap={1}>
             <Label label={label} description={description} />
             <input {...fieldArgs} type={type} onChange={onChange} />
           </Flex>
