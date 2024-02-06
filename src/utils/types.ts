@@ -1,4 +1,4 @@
-import { ReactNode, ChangeEvent } from 'react'
+import { ReactNode, ChangeEvent, FormEvent } from 'react'
 
 export type BreakNames = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 
@@ -7,6 +7,34 @@ export type Colors = 'red' | 'blue' | 'green' | 'orange'
 export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
 
 export type ColumnSize = 1 | 2 | 3 | 4 | 5 | 6
+
+export type FieldTypes =
+  | 'checkbox'
+  | 'date'
+  | 'datetime-local'
+  | 'email'
+  | 'hidden'
+  | 'month'
+  | 'multiselect'
+  | 'number'
+  | 'password'
+  | 'radio'
+  | 'select'
+  | 'tel'
+  | 'text'
+  | 'textarea'
+  | 'time'
+  | 'url'
+  | 'week'
+  | string
+
+export interface FormDataProps {
+  [key: string]: string | string[]
+}
+
+export interface SetFormDataProps {
+  (formData: FormDataProps): void
+}
 
 export type ColumnSizeObject = {
   xxs?: ColumnSize
@@ -127,7 +155,8 @@ export interface GridProps extends FlexGridProps {
 export interface FormProps extends BlockProps {
   children?: ReactNode
   submitCopy?: string
-  onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void
+  onSubmit?: (e: FormEvent<HTMLFormElement>) => void
+  onChange?: (e: FormEvent<HTMLFieldSetElement>) => void
 }
 
 export interface FieldProps extends ComponentProps {
@@ -143,6 +172,8 @@ export interface FieldProps extends ComponentProps {
   }[]
   description?: string
   className?: string
+  defaultValue?: string
+  value?: string
   disabled?: boolean
   id: string
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
@@ -152,23 +183,6 @@ export interface FieldProps extends ComponentProps {
   placeholder?: string
   readOnly?: boolean
   required?: boolean
-  type?:
-    | 'checkbox'
-    | 'date'
-    | 'datetime-local'
-    | 'email'
-    | 'hidden'
-    | 'month'
-    | 'multiselect'
-    | 'number'
-    | 'password'
-    | 'radio'
-    | 'select'
-    | 'tel'
-    | 'text'
-    | 'textarea'
-    | 'time'
-    | 'url'
-    | 'week'
-    | string
+  choiceGridColumns?: ColumnSize | ColumnSizeObject
+  type?: FieldTypes
 }

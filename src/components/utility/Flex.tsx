@@ -6,7 +6,7 @@ interface FlexProps extends FlexGridProps {
   breakpoint?: BreakNames
   columnBreak?: BreakNames
   noBreak?: boolean
-  direction?: 'row' | 'column'
+  direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse'
   fill?: boolean
   alignItems?: 'center' | 'flex-start' | 'flex-end' | 'stretch'
   justifyContent?:

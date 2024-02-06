@@ -8,13 +8,12 @@
 
 // Components UTILITY
 
-@import './components/utility/divider';
 @import './components/utility/drawer';
 @import './components/utility/flex';
 @import './components/utility/grid';
 @import './components/utility/loading';
 @import './components/utility/modal';
-@import './components/utility/spacer';
+@import './components/utility/spinner';
 @import './components/utility/tooltip';
 
 // Components BLOCKS
@@ -45,7 +44,7 @@
 @import './components/modules/sectionHeading';
 @import './components/modules/dropdown';
 @import './components/modules/imageObject';
-@import './components/modules/input';
+@import './components/modules/formField';
 @import './components/modules/linkObject';
 @import './components/modules/person';
 @import './components/modules/stat';
