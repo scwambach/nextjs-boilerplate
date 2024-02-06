@@ -139,6 +139,16 @@ export const FormField = ({
                     <input
                       className={roboto.className}
                       type={type}
+                      onFocus={(e) => {
+                        if (e.target.parentElement) {
+                          e.target.parentElement.classList.add('focused')
+                        }
+                      }}
+                      onBlur={(e) => {
+                        if (e.target.parentElement) {
+                          e.target.parentElement.classList.remove('focused')
+                        }
+                      }}
                       onChange={onChange}
                       disabled={choice.disabled}
                       id={`${type}_${slugify(choice.copy)}_${choice.id}`}

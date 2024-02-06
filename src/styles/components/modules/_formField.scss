@@ -50,6 +50,16 @@
       opacity: 0;
     }
 
+    label {
+      > div {
+        outline-offset: $size-2;
+        &.focused {
+          outline: none;
+          outline: $size-4 solid $blue;
+        }
+      }
+    }
+
     input {
       height: 0;
       width: 0;
@@ -57,6 +67,11 @@
       position: absolute;
       overflow: hidden;
       appearance: none;
+
+      &:focus {
+        outline: none;
+        outline: $size-4 solid $blue;
+      }
 
       &:checked + [class$='indicator'] {
         outline-color: transparent;
