@@ -23,17 +23,17 @@ interface FlexProps extends FlexGridProps {
 }
 
 export const Flex = ({
-  alignItems,
+  alignItems = 'flex-start',
   breakpoint,
   children,
-  direction,
+  direction = 'row',
   className,
   columnBreak = 'sm',
   customLayout,
   elementTag,
   fill,
-  gap,
-  justifyContent,
+  gap = 'md',
+  justifyContent = 'flex-start',
   noBreak,
   testId,
 }: FlexProps) => {
@@ -42,7 +42,7 @@ export const Flex = ({
 
   return (
     <Element
-      className={`flex column-${
+      className={`flex direction-${direction} align-${alignItems} justify-${justifyContent} gap-${gap} column-${
         columnBreak && !noBreak ? columnBreak : ''
       }${className ? ` ${className}` : ''}${
         customLayout ? ` ${customLayout}` : ''
@@ -50,12 +50,6 @@ export const Flex = ({
         fill ? ' fill' : ''
       }${noBreak ? ' no-break' : ''}`}
       data-testid={testId}
-      style={{
-        flexDirection: direction || 'row',
-        alignItems: alignItems || 'flex-start',
-        justifyContent: justifyContent || 'flex-start',
-        gap: gap ? `${gap}rem` : '0',
-      }}
     >
       {children}
     </Element>

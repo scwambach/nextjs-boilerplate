@@ -21,7 +21,7 @@ describe('Grid Component', () => {
         className="custom-grid"
         testId="custom-grid"
         elementTag="section"
-        gap={2}
+        gap="xs"
         columns={3}
       >
         <div>Child 1</div>
@@ -35,7 +35,7 @@ describe('Grid Component', () => {
 
     const gridElement = screen.getByTestId('custom-grid')
     expect(gridElement).toHaveClass('custom-grid')
+    expect(gridElement).toHaveClass('gap-xs')
     expect(gridElement.tagName.toLowerCase()).toEqual('section')
-    expect(gridElement).toHaveStyle('gap: 2rem')
   })
 })

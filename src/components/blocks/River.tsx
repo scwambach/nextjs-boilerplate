@@ -1,27 +1,71 @@
-import { ComponentProps } from '@utils/types'
+import { Button, ImageObject } from '@components/modules'
+import { Flex } from '@components/utility'
+import { Heading } from '@components/utility/Heading'
+import { Markdown } from '@components/utility/Markdown'
+import {
+  ComponentProps,
+  ButtonProps,
+  HeadingLevel,
+  ImageObjectProps,
+  Themes,
+} from '@utils/types'
 
-// TODO: Create River component
+interface RiverProps extends ComponentProps {
+  theme?: Themes
+  headingLevel?: HeadingLevel
+  items: {
+    title?: string
+    description: string
+    image: ImageObjectProps
+    links: ButtonProps[]
+  }[]
+}
 
-interface RiverProps extends ComponentProps {}
-
-export const River = (props: RiverProps) => {
+export const River = ({
+  className,
+  testId,
+  items,
+  headingLevel = 3,
+  theme = 'primary',
+}: RiverProps) => {
   return (
-    <div className={`river${props.className ? ` ${props.className}` : ''}`}>
-      <code>
-        <pre
-          style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {JSON.stringify(props, null, '    ')}
-        </pre>
-      </code>
-    </div>
+    <Flex
+      direction="column"
+      gap="sm"
+      data-testid={testId}
+      className={`river${className ? ` ${className}` : ''}`}
+    >
+      {items.map((item, index: number) => {
+        const isEven = index % 2 === 0
+        return (
+          <Flex
+            fill
+            gap="sm"
+            direction={isEven ? 'row' : 'row-reverse'}
+            alignItems="stretch"
+            key={index + (item.title || item.description)}
+          >
+            <div className="image">
+              <ImageObject {...item.image} isBackground />
+            </div>
+            <div className="copy">
+              <Heading level={headingLevel}>{item.title}</Heading>
+              <Markdown>{item.description}</Markdown>
+              {item.links && (
+                <div className="links">
+                  {item.links.map((link, index) => (
+                    <Button
+                      theme={theme}
+                      key={'river' + link.label + index}
+                      {...link}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          </Flex>
+        )
+      })}
+    </Flex>
   )
 }

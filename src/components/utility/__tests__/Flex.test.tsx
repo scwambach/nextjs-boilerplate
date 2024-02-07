@@ -21,7 +21,7 @@ describe('Flex component', () => {
         columnBreak="lg"
         customLayout="one-third-two-thirds"
         breakpoint="md"
-        gap={2}
+        gap="xs"
       >
         <div>Child 1</div>
         <div>Child 2</div>
@@ -34,7 +34,7 @@ describe('Flex component', () => {
     expect(flexElement).toHaveClass('column-lg')
     expect(flexElement).toHaveClass('one-third-two-thirds')
     expect(flexElement).toHaveClass('break-md')
-    expect(flexElement).toHaveStyle('gap: 2rem;')
+    expect(flexElement).toHaveClass('gap-xs')
   })
 
   it('renders with default elementTag', () => {

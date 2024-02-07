@@ -23,7 +23,7 @@ const Label = ({
   description?: string
 }) => {
   return (
-    <Flex direction="column" gap={0.5}>
+    <Flex direction="column" gap="micro">
       <span
         className={`label ${alfaSlabOne.className}`}
         dangerouslySetInnerHTML={{
@@ -76,7 +76,7 @@ export const FormField = ({
           }`}
           htmlFor={fieldId}
         >
-          <Flex direction="column" gap={1}>
+          <Flex direction="column" gap="xxs">
             <Label label={label} description={description} />
             <textarea
               {...fieldArgs}
@@ -92,7 +92,7 @@ export const FormField = ({
           className={`formField${className ? ` ${className}` : ''} ${type}`}
           htmlFor={fieldId}
         >
-          <Flex direction="column" gap={1}>
+          <Flex direction="column" gap="xxs">
             <Label label={label} description={description} />
             <select
               {...fieldArgs}
@@ -120,16 +120,16 @@ export const FormField = ({
             disabled ? ' disabled' : ''
           }`}
         >
-          <Flex direction="column" gap={1}>
+          <Flex direction="column" gap="xxs">
             <Label label={label} description={description} />
-            <Grid columns={choiceGridColumns} gap={1} className="choices">
+            <Grid columns={choiceGridColumns} gap="xxs" className="choices">
               {choices?.map((choice) => (
                 <label
                   key={choice.id}
                   htmlFor={`${type}_${slugify(choice.copy)}_${choice.id}`}
                   className={`choice${choice.disabled ? ' disabled' : ''}`}
                 >
-                  <Flex direction="row-reverse" alignItems="center" gap={0.4}>
+                  <Flex direction="row-reverse" alignItems="center" gap="micro">
                     <span
                       className={roboto.className}
                       dangerouslySetInnerHTML={{
@@ -174,7 +174,7 @@ export const FormField = ({
           className={`formField${className ? ` ${className}` : ''} ${type}`}
           htmlFor={fieldId}
         >
-          <Flex direction="column" gap={1}>
+          <Flex direction="column" gap="xxs">
             <Label label={label} description={description} />
             <ReactSelect
               isMulti
@@ -206,12 +206,12 @@ export const FormField = ({
             disabled ? ' disabled' : ''
           }`}
         >
-          <Flex direction="column" gap={1}>
+          <Flex direction="column" gap="xxs">
             <Label label={label} description={description} />
             <input {...fieldArgs} type={type} onChange={onChange} />
             <Flex
               direction="column"
-              gap={0.5}
+              gap="micro"
               justifyContent="center"
               className="dropzone"
               alignItems="center"
@@ -229,7 +229,7 @@ export const FormField = ({
             disabled ? ' disabled' : ''
           }`}
         >
-          <Flex direction="column" gap={1}>
+          <Flex direction="column" gap="xxs">
             <Label label={label} description={description} />
             <input {...fieldArgs} type={type} onChange={onChange} />
           </Flex>

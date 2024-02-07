@@ -4,6 +4,7 @@ import { parseMarkdownToHTML } from '@utils/parseMarkdownToHTML'
 import {
   BreadcrumbsProps,
   ButtonProps,
+  Colors,
   ComponentProps,
   HeadingLevel,
   ImageObjectProps,
@@ -15,7 +16,7 @@ interface BannerProps extends ComponentProps {
   heading: string
   subheading?: string
   message?: string
-  bgColor?: 'red' | 'blue' | 'green' | 'orange'
+  bgColor?: Colors
   links?: ButtonProps[]
   crumbs?: {
     current: string

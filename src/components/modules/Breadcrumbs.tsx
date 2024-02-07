@@ -18,7 +18,7 @@ export const Breadcrumbs = ({
         <Flex
           elementTag="ul"
           alignItems="center"
-          gap={0.5}
+          gap="micro"
           noBreak
           className="unstyled"
         >
@@ -27,7 +27,7 @@ export const Breadcrumbs = ({
             <Flex
               noBreak
               elementTag="li"
-              gap={0.5}
+              gap="micro"
               alignItems="center"
               key={crumb.label}
             >

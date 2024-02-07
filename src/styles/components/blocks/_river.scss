@@ -1,0 +1,29 @@
+.river {
+  @include vertical-spacing-margin;
+
+  > .flex {
+    @media screen and (max-width: ($md - 1)) {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  .image {
+    position: relative;
+    @media screen and (max-width: ($md - 1)) {
+      padding-bottom: 66.6666666667%;
+    }
+  }
+
+  .copy {
+    padding: $size-64 0;
+
+    @media screen and (max-width: ($md - 1)) {
+      padding: $size-32 0;
+    }
+  }
+
+  .links {
+    margin-top: $size-32;
+  }
+}

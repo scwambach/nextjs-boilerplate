@@ -34,3 +34,39 @@
 .box {
   @include vertical-spacing-padding;
 }
+
+.gap-none {
+  gap: 0;
+}
+
+.gap-micro {
+  gap: $size-4;
+}
+
+.gap-xxs {
+  gap: $size-16;
+}
+
+.gap-xs {
+  gap: $size-32;
+}
+
+.gap-sm {
+  gap: $size-48;
+}
+
+.gap-md {
+  gap: $size-64;
+}
+
+.gap-lg {
+  gap: $size-96;
+}
+
+.gap-xl {
+  gap: $size-128;
+}
+
+.gap-xxl {
+  gap: $size-160;
+}

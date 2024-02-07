@@ -2,7 +2,7 @@
 import { ComponentProps } from '@utils/types'
 import { Form } from './blocks'
 import { FormField } from './modules'
-import { Flex, Grid } from './utility'
+import { Grid } from './utility'
 import { useState } from 'react'
 import { handleInputChange } from '@utils/handleInputChange'
 import { handleRadioChange } from '@utils/handleRadioChange'
@@ -29,9 +29,9 @@ export const ContactForm = (props: ContactFormProps) => {
         subheading="Nunc nunc tortor, viverra id diam non, commodo lobortis elit. In nec finibus justo, in consectetur arcu. Aliquam aliquet egestas."
         onSubmit={(e) => e.preventDefault()}
       >
-        <Flex direction="column" gap={1} fill>
+        <div>
           <Grid
-            gap={1}
+            gap="xxs"
             columns={{
               md: 2,
             }}
@@ -108,7 +108,7 @@ export const ContactForm = (props: ContactFormProps) => {
               }}
             />
           </Grid>
-        </Flex>
+        </div>
       </Form>
     </div>
   )

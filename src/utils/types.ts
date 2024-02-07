@@ -1,12 +1,14 @@
 import { ReactNode, ChangeEvent, FormEvent } from 'react'
 
-export type BreakNames = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+export type BreakNames = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 
 export type Colors = 'red' | 'blue' | 'green' | 'orange'
 
 export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
 
 export type ColumnSize = 1 | 2 | 3 | 4 | 5 | 6
+
+export type Gaps = BreakNames | 'none' | 'micro'
 
 export type FieldTypes =
   | 'checkbox'
@@ -130,7 +132,7 @@ export interface ButtonProps extends ComponentProps {
 export interface FlexGridProps extends ComponentProps {
   children: ReactNode
   elementTag?: Elements
-  gap?: number
+  gap?: Gaps
 }
 
 export interface BreadcrumbsProps extends ComponentProps {

@@ -43,7 +43,7 @@ const Content = ({
           {description && <Markdown className="copy">{description}</Markdown>}
         </div>
         {links && !href && (
-          <Flex gap={1} className="links">
+          <Flex gap="xxs" className="links">
             {links.map((link, index) => (
               <Button key={index} {...link} />
             ))}

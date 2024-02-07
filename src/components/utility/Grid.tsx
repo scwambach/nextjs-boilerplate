@@ -40,11 +40,8 @@ export const Grid = ({
 
   return (
     <Element
-      className={`grid ${columnsClass}${className ? ` ${className}` : ''}`}
+      className={`grid gap-${gap} ${columnsClass}${className ? ` ${className}` : ''}`}
       data-testid={testId}
-      style={{
-        gap: gap ? `${gap}rem` : '0',
-      }}
     >
       {!rendering && children}
     </Element>

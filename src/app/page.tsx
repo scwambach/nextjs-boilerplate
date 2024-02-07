@@ -1,5 +1,5 @@
 import { ContactForm } from '@components/ContactForm'
-import { Banner, Cards } from '@components/blocks'
+import { Banner, Cards, River } from '@components/blocks'
 
 export default function Home() {
   return (
@@ -24,10 +24,34 @@ export default function Home() {
         ]}
       />
       <div className="container">
+        <River
+          items={[
+            {
+              title: 'Ut facilisis dictum urna',
+              description:
+                'Aenean at venenatis dolor. Integer pretium nulla id magna dictum malesuada. Praesent quis porttitor mauris. Mauris vitae mollis enim, aliquet convallis elit. Sed ornare vel augue vitae efficitur. Duis ut...',
+              image: {
+                query: 'tech minimal 5',
+                alt: 'Placeholder Image',
+              },
+              links: [{ label: 'Read More', href: '/about' }],
+            },
+            {
+              title: 'Nullam euismod suscipit enim',
+              description:
+                'Maecenas vitae risus at massa fringilla mattis. Proin a turpis in libero convallis maximus. Mauris eu mauris ut nunc porttitor tristique non eget arcu...',
+              image: {
+                query: 'tech minimal 2',
+                alt: 'Placeholder Image',
+              },
+              links: [{ label: 'Read More', href: '/about' }],
+            },
+          ]}
+        />
         <Cards
           heading="Recent Posts"
           subheading="The latest and greatest from our blog."
-          gap={1}
+          gap="xxs"
           columns={{
             md: 2,
             lg: 4,
