@@ -1,27 +1,52 @@
-import { ComponentProps } from '@utils/types'
+import { ComponentProps, ImageObjectProps } from '@utils/types'
+import { alfaSlabOne } from '@utils/headingFont'
+import { ImageObject } from './ImageObject'
+import * as Icon from '@phosphor-icons/react'
+import { IconSelector } from '@components/utility/IconSelector'
+import { Flex } from '@components/utility'
 
-// TODO: Create Person component
+interface PersonProps extends ComponentProps {
+  firstName: string
+  lastName: string
+  title?: string
+  image: ImageObjectProps
+  socials?: {
+    icon: keyof typeof Icon
+    screenReader: string
+    href: string
+  }[]
+}
 
-interface PersonProps extends ComponentProps {}
-
-export const Person = (props: PersonProps) => {
+export const Person = ({
+  firstName,
+  lastName,
+  className,
+  image,
+  socials,
+  title,
+}: PersonProps) => {
   return (
-    <div className={`person${props.className ? ` ${props.className}` : ''}`}>
-      <code>
-        <pre
-          style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {JSON.stringify(props, null, '    ')}
-        </pre>
-      </code>
+    <div className={`person${className ? ` ${className}` : ''}`}>
+      <Flex direction="column" gap="xxs" alignItems="stretch">
+        <div className="image">
+          <ImageObject {...image} isBackground />
+        </div>
+        <p className={alfaSlabOne.className}>
+          {firstName} {lastName}
+        </p>
+        <p>{title}</p>
+        {socials && (
+          <Flex elementTag="ul" className="unstyled" gap="micro">
+            {socials.map((social, index) => (
+              <li key={index}>
+                <a href={social.href} aria-label={social.screenReader}>
+                  <IconSelector icon={social.icon} weight="fill" />
+                </a>
+              </li>
+            ))}
+          </Flex>
+        )}
+      </Flex>
     </div>
   )
 }
