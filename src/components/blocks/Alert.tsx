@@ -18,6 +18,7 @@ export const Alert = ({ type, className, alertId, message }: AlertProps) => {
 
   useEffect(() => {
     if (!alertId) {
+      setLoading(false)
       return
     }
 

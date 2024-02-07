@@ -1,5 +1,5 @@
 'use client'
-import { ColumnSize, GridProps } from '@utils/types'
+import { ColumnSize, ColumnSizeObject, GridProps } from '@utils/types'
 import { useWindowWidth } from '@hooks/useWindowWidth'
 import { useEffect, useState } from 'react'
 import { breakpoints } from '@utils/settings'
@@ -13,7 +13,7 @@ export const Grid = ({
   gap,
   columns = 3,
 }: GridProps) => {
-  const [columnSize, setColumnSize] = useState<ColumnSize>(2)
+  const [columnSize, setColumnSize] = useState<ColumnSize | ColumnSizeObject>(2)
   const [rendering, setRendering] = useState(true)
   const elm = elementTag || 'div'
   const Element = elm as keyof JSX.IntrinsicElements
@@ -23,7 +23,7 @@ export const Grid = ({
   const windowWidth = useWindowWidth()
 
   useEffect(() => {
-    if (typeof columns === 'object') {
+    if (typeof columns === 'object' && windowWidth) {
       const newColumnSize = calculateColumnSize(
         columns,
         windowWidth,
@@ -36,7 +36,7 @@ export const Grid = ({
       setColumnSize(columns)
     }
     setRendering(false)
-  }, [windowWidth])
+  }, [windowWidth, columns])
 
   return (
     <Element

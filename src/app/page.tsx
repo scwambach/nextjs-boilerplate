@@ -23,14 +23,14 @@ export default function Home() {
           },
         ]}
       />
-      <div className="container narrow">
-        <ContactForm />
+      <div className="container">
         <Cards
           heading="Recent Posts"
           subheading="The latest and greatest from our blog."
           gap={1}
           columns={{
-            sm: 2,
+            md: 2,
+            lg: 4,
           }}
           items={[
             {
@@ -78,6 +78,9 @@ export default function Home() {
             },
           ]}
         />
+        <div className="container narrow">
+          <ContactForm />
+        </div>
       </div>
     </main>
   )
