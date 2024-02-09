@@ -1,28 +1,7 @@
 import { Breadcrumbs, Button, ImageObject } from '@components/modules'
 import { Heading } from '@components/utility/Heading'
 import { parseMarkdownToHTML } from '@utils/parseMarkdownToHTML'
-import {
-  BreadcrumbsProps,
-  ButtonProps,
-  Colors,
-  ComponentProps,
-  HeadingLevel,
-  ImageObjectProps,
-} from '@utils/types'
-
-interface BannerProps extends ComponentProps {
-  img?: ImageObjectProps
-  headingLevel?: HeadingLevel
-  heading: string
-  subheading?: string
-  message?: string
-  bgColor?: Colors
-  links?: ButtonProps[]
-  crumbs?: {
-    current: string
-    items: BreadcrumbsProps['crumbs']
-  }
-}
+import { BannerProps } from '@utils/types'
 
 export const Banner = ({
   img,
@@ -34,12 +13,14 @@ export const Banner = ({
   message,
   headingLevel = 2,
   links,
+  style,
 }: BannerProps) => {
   return (
     <div
       className={`banner ${bgColor}${className ? ` ${className}` : ''}${
         img ? ' has-image' : ''
       }`}
+      style={style}
     >
       {img && (
         <ImageObject

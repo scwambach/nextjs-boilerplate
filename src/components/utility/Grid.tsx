@@ -6,6 +6,7 @@ export const Grid = ({
   className,
   testId,
   gap,
+  style,
   columns = 3,
 }: GridProps) => {
   const elm = elementTag || 'div'
@@ -13,6 +14,7 @@ export const Grid = ({
 
   return (
     <Element
+      style={style}
       className={`grid gap-${gap} columns-${columns}${className ? ` ${className}` : ''}`}
       data-testid={testId}
     >

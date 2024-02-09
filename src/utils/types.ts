@@ -1,5 +1,5 @@
 import * as Icon from '@phosphor-icons/react'
-import { ReactNode, ChangeEvent, FormEvent } from 'react'
+import { ReactNode, ChangeEvent, FormEvent, CSSProperties } from 'react'
 
 export type BreakNames = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 
@@ -132,6 +132,7 @@ export interface LinkObjectProps {
 export interface FlexGridProps extends ComponentProps {
   children: ReactNode
   elementTag?: Elements
+  style?: CSSProperties
   gap?: Gaps
 }
 
@@ -199,4 +200,19 @@ export interface PersonProps extends ComponentProps {
     screenReader: string
     href: string
   }[]
+}
+
+export interface BannerProps extends ComponentProps {
+  img?: ImageObjectProps
+  style?: CSSProperties
+  headingLevel?: HeadingLevel
+  heading: string
+  subheading?: string
+  message?: string
+  bgColor?: Colors
+  links?: ButtonProps[]
+  crumbs?: {
+    current: string
+    items: BreadcrumbsProps['crumbs']
+  }
 }

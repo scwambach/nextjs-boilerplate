@@ -1,0 +1,15 @@
+.carousel {
+  position: relative;
+
+  .slider {
+    transition: $transition;
+  }
+
+  .dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+  }
+}

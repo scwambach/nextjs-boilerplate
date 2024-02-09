@@ -31,6 +31,7 @@ export const Flex = ({
   customLayout,
   elementTag,
   fill,
+  style,
   gap = 'md',
   justifyContent = 'flex-start',
   noBreak,
@@ -41,6 +42,7 @@ export const Flex = ({
 
   return (
     <Element
+      style={style}
       className={`flex direction-${direction} align-${alignItems} justify-${justifyContent} gap-${gap} column-${
         columnBreak && !noBreak ? columnBreak : ''
       }${className ? ` ${className}` : ''}${

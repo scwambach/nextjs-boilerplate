@@ -1,4 +1,4 @@
-import { Banner } from '@components/blocks'
+import { Banner, Carousel } from '@components/blocks'
 
 export default function Home() {
   return (
@@ -19,6 +19,25 @@ export default function Home() {
           {
             href: 'https://github.com/scwambach/nextjs-boilerplate',
             label: 'Check out the GitHub Repo',
+          },
+        ]}
+      />
+      <Carousel
+        items={[
+          {
+            heading: 'First Slide',
+            message: 'This is the first slide in the carousel.',
+            bgColor: 'blue',
+          },
+          {
+            heading: 'Second Slide',
+            message: 'This is the second slide in the carousel.',
+            bgColor: 'green',
+          },
+          {
+            heading: 'Third Slide',
+            message: 'This is the third slide in the carousel.',
+            bgColor: 'red',
           },
         ]}
       />

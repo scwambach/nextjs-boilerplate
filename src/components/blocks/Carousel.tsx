@@ -1,27 +1,46 @@
-import { ComponentProps } from '@utils/types'
+'use client'
+import { BannerProps, ComponentProps } from '@utils/types'
+import { Banner } from './Banner'
+import { Dots } from '@components/modules/Dots'
+import { Flex } from '@components/utility'
+import { useEffect, useState } from 'react'
 
-// TODO: Create Carousel component
+interface CarouselProps extends ComponentProps {
+  items: BannerProps[]
+}
 
-interface CarouselProps extends ComponentProps {}
+export const Carousel = ({ items, className }: CarouselProps) => {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const renderedItems = items.map((item, index) => (
+    <Banner key={index} {...item} />
+  ))
 
-export const Carousel = (props: CarouselProps) => {
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % items.length)
+    }, 7000)
+    return () => clearInterval(interval)
+  }, [items.length])
+
   return (
-    <div className={`carousel${props.className ? ` ${props.className}` : ''}`}>
-      <code>
-        <pre
-          style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {JSON.stringify(props, null, '    ')}
-        </pre>
-      </code>
+    <div className={`carousel${className ? ` ${className}` : ''}`}>
+      <Flex
+        className="slider"
+        style={{
+          width: `${100 * items.length}%`,
+          transform: `translateX(-${activeIndex * (100 / items.length)}%)`,
+        }}
+        gap="none"
+        fill
+        noBreak
+      >
+        {renderedItems}
+      </Flex>
+      <Dots
+        count={items.length}
+        activeIndex={activeIndex}
+        setActiveIndex={setActiveIndex}
+      />
     </div>
   )
 }
