@@ -1,4 +1,4 @@
-import { maxPlus } from '../maxPlus'
+import { maxPlus } from './maxPlus'
 
 describe('maxPlus', () => {
   it('returns maxNumber with a plus sign when num is greater than maxNumber', () => {

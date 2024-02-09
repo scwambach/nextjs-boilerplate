@@ -1,4 +1,4 @@
-import { parseMarkdownToHTML } from '../parseMarkdownToHTML'
+import { parseMarkdownToHTML } from './parseMarkdownToHTML'
 
 describe('parseMarkdownToHTML', () => {
   it('correctly converts basic Markdown to HTML', () => {

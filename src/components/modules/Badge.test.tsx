@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { Badge } from '../Badge'
+import { Badge } from './Badge'
 
 describe('Badge', () => {
   it('renders with required props', () => {

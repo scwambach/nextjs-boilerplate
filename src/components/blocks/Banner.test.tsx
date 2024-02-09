@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { Banner } from '../Banner'
+import { Banner } from './Banner'
 
 describe('Banner', () => {
   it('renders with required props', () => {

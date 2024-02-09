@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { FormField } from '../FormField'
+import { FormField } from './FormField'
 
 describe('FormField component', () => {
   it('renders textarea type correctly', () => {

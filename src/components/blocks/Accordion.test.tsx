@@ -1,5 +1,5 @@
 import { render, fireEvent } from '@testing-library/react'
-import { Accordion } from '../Accordion'
+import { Accordion } from './Accordion'
 
 describe('Accordion component', () => {
   it('renders with heading', () => {

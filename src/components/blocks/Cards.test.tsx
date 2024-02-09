@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { Cards } from '../Cards'
+import { Cards } from './Cards'
 
 const mockItems = [
   { title: 'Card 1', description: 'Description 1' },
