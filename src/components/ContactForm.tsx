@@ -30,12 +30,7 @@ export const ContactForm = (props: ContactFormProps) => {
         onSubmit={(e) => e.preventDefault()}
       >
         <div>
-          <Grid
-            gap="xxs"
-            columns={{
-              md: 2,
-            }}
-          >
+          <Grid gap="sm" columns={2}>
             <FormField
               id="firstName"
               description="Please enter your first name."
