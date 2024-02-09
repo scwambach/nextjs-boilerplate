@@ -1,4 +1,3 @@
-'use client'
 import { Button } from '@components/modules'
 import { SectionHeading } from '@components/modules/SectionHeading'
 import { FormProps } from '@utils/types'
