@@ -1,13 +1,5 @@
+import { LinkObjectProps } from '@utils/types'
 import Link from 'next/link'
-
-interface LinkObjectProps {
-  children: React.ReactNode
-  className?: string
-  role?: string
-  testId?: string
-  href: string
-  onClick?: () => void
-}
 
 export const LinkObject = ({
   children,

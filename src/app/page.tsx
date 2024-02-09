@@ -1,7 +1,4 @@
-import { Banner } from '@components/blocks'
-import { Person } from '@components/modules'
-import { Grid } from '@components/utility'
-import { repeater } from '@utils/repeater'
+import { Banner, People } from '@components/blocks'
 
 export default function Home() {
   return (
@@ -26,18 +23,20 @@ export default function Home() {
         ]}
       />
       <div className="container">
-        <Grid columns={3} gap="sm">
-          {repeater(
-            3,
-            <Person
-              firstName="Scott"
-              lastName="Wambach"
-              title="Frontend Developer"
-              image={{
-                query: 'human male face',
+        <People
+          heading="Meet the Team"
+          subheading="We are a team of developers, designers, and creators."
+          columns={4}
+          items={[
+            {
+              firstName: 'Scott',
+              lastName: 'Wambach',
+              title: 'Frontend Developer',
+              image: {
+                query: 'male face',
                 alt: 'Scott Wambach',
-              }}
-              socials={[
+              },
+              socials: [
                 {
                   icon: 'GithubLogo',
                   screenReader: 'GitHub',
@@ -53,10 +52,88 @@ export default function Home() {
                   screenReader: 'LinkedIn',
                   href: 'https://www.linkedin.com/in/scwambach',
                 },
-              ]}
-            />
-          )}
-        </Grid>
+              ],
+            },
+            {
+              firstName: 'Scott',
+              lastName: 'Wambach',
+              title: 'Frontend Developer',
+              image: {
+                query: 'male face',
+                alt: 'Scott Wambach',
+              },
+              socials: [
+                {
+                  icon: 'GithubLogo',
+                  screenReader: 'GitHub',
+                  href: 'https://github.com/scwambach',
+                },
+                {
+                  icon: 'TwitterLogo',
+                  screenReader: 'Twitter',
+                  href: 'https://twitter.com/scwambach',
+                },
+                {
+                  icon: 'LinkedinLogo',
+                  screenReader: 'LinkedIn',
+                  href: 'https://www.linkedin.com/in/scwambach',
+                },
+              ],
+            },
+            {
+              firstName: 'Scott',
+              lastName: 'Wambach',
+              title: 'Frontend Developer',
+              image: {
+                query: 'male face',
+                alt: 'Scott Wambach',
+              },
+              socials: [
+                {
+                  icon: 'GithubLogo',
+                  screenReader: 'GitHub',
+                  href: 'https://github.com/scwambach',
+                },
+                {
+                  icon: 'TwitterLogo',
+                  screenReader: 'Twitter',
+                  href: 'https://twitter.com/scwambach',
+                },
+                {
+                  icon: 'LinkedinLogo',
+                  screenReader: 'LinkedIn',
+                  href: 'https://www.linkedin.com/in/scwambach',
+                },
+              ],
+            },
+            {
+              firstName: 'Scott',
+              lastName: 'Wambach',
+              title: 'Frontend Developer',
+              image: {
+                query: 'male face',
+                alt: 'Scott Wambach',
+              },
+              socials: [
+                {
+                  icon: 'GithubLogo',
+                  screenReader: 'GitHub',
+                  href: 'https://github.com/scwambach',
+                },
+                {
+                  icon: 'TwitterLogo',
+                  screenReader: 'Twitter',
+                  href: 'https://twitter.com/scwambach',
+                },
+                {
+                  icon: 'LinkedinLogo',
+                  screenReader: 'LinkedIn',
+                  href: 'https://www.linkedin.com/in/scwambach',
+                },
+              ],
+            },
+          ]}
+        />
       </div>
     </main>
   )

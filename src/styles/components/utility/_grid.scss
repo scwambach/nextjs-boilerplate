@@ -1,27 +1,71 @@
 .grid {
   display: grid;
 
-  &.cols-1 {
+  &.columns-1 {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  &.cols-2 {
+  &.columns-2 {
     grid-template-columns: repeat(2, 1fr);
+
+    @media screen and (max-width: ($sm - 1)) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
-  &.cols-3 {
+  &.columns-3 {
     grid-template-columns: repeat(3, 1fr);
+
+    @media screen and (max-width: ($lg - 1)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: ($sm - 1)) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
-  &.cols-4 {
+  &.columns-4 {
     grid-template-columns: repeat(4, 1fr);
+
+    @media screen and (max-width: ($lg - 1)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: ($sm - 1)) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
-  &.cols-5 {
+  &.columns-5 {
     grid-template-columns: repeat(5, 1fr);
+
+    @media screen and (max-width: ($xl - 1)) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: ($lg - 1)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: ($sm - 1)) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
-  &.cols-6 {
+  &.columns-6 {
     grid-template-columns: repeat(6, 1fr);
+
+    @media screen and (max-width: ($xl - 1)) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: ($lg - 1)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: ($sm - 1)) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 }

@@ -1,4 +1,3 @@
-'use client'
 import { BreakNames, FlexGridProps } from '@utils/types'
 
 interface FlexProps extends FlexGridProps {

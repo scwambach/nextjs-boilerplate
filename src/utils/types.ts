@@ -1,3 +1,4 @@
+import * as Icon from '@phosphor-icons/react'
 import { ReactNode, ChangeEvent, FormEvent } from 'react'
 
 export type BreakNames = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
@@ -8,7 +9,7 @@ export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
 
 export type ColumnSize = 1 | 2 | 3 | 4 | 5 | 6
 
-export type Gaps = BreakNames | 'none' | 'micro'
+export type Gaps = BreakNames | 'none' | 'micro' | 'mega'
 
 export type FieldTypes =
   | 'checkbox'
@@ -36,16 +37,6 @@ export interface FormDataProps {
 
 export interface SetFormDataProps {
   (formData: FormDataProps): void
-}
-
-export type ColumnSizeObject = {
-  xxs?: ColumnSize
-  xs?: ColumnSize
-  sm?: ColumnSize
-  md?: ColumnSize
-  lg?: ColumnSize
-  xl?: ColumnSize
-  xxl?: ColumnSize
 }
 
 export type Themes = 'primary' | 'secondary' | 'tertiary'
@@ -129,6 +120,15 @@ export interface ButtonProps extends ComponentProps {
   onClick?: () => void
 }
 
+export interface LinkObjectProps {
+  children: ReactNode
+  className?: string
+  role?: string
+  testId?: string
+  href: string
+  onClick?: () => void
+}
+
 export interface FlexGridProps extends ComponentProps {
   children: ReactNode
   elementTag?: Elements
@@ -151,7 +151,7 @@ export interface BadgeProps extends ComponentProps {
 }
 
 export interface GridProps extends FlexGridProps {
-  columns?: ColumnSize | ColumnSizeObject
+  columns?: ColumnSize
 }
 
 export interface FormProps extends BlockProps {
@@ -185,6 +185,18 @@ export interface FieldProps extends ComponentProps {
   placeholder?: string
   readOnly?: boolean
   required?: boolean
-  choiceGridColumns?: ColumnSize | ColumnSizeObject
+  choiceGridColumns?: ColumnSize
   type?: FieldTypes
+}
+
+export interface PersonProps extends ComponentProps {
+  firstName: string
+  lastName: string
+  title?: string
+  image: ImageObjectProps
+  socials?: {
+    icon: keyof typeof Icon
+    screenReader: string
+    href: string
+  }[]
 }

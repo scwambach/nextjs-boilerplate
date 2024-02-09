@@ -1,21 +1,10 @@
-import { ComponentProps, ImageObjectProps } from '@utils/types'
+import { PersonProps } from '@utils/types'
 import { alfaSlabOne } from '@utils/headingFont'
 import { ImageObject } from './ImageObject'
 import * as Icon from '@phosphor-icons/react'
 import { IconSelector } from '@components/utility/IconSelector'
 import { Flex } from '@components/utility'
-
-interface PersonProps extends ComponentProps {
-  firstName: string
-  lastName: string
-  title?: string
-  image: ImageObjectProps
-  socials?: {
-    icon: keyof typeof Icon
-    screenReader: string
-    href: string
-  }[]
-}
+import { LinkObject } from './LinkObject'
 
 export const Person = ({
   firstName,
@@ -39,9 +28,12 @@ export const Person = ({
           <Flex elementTag="ul" className="unstyled" gap="micro">
             {socials.map((social, index) => (
               <li key={index}>
-                <a href={social.href} aria-label={social.screenReader}>
-                  <IconSelector icon={social.icon} weight="fill" />
-                </a>
+                <LinkObject href={social.href} aria-label={social.screenReader}>
+                  <IconSelector
+                    icon={social.icon as keyof typeof Icon}
+                    weight="fill"
+                  />
+                </LinkObject>
               </li>
             ))}
           </Flex>

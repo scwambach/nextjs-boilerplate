@@ -48,25 +48,29 @@
 }
 
 .gap-xs {
-  gap: $size-32;
+  gap: $size-20;
 }
 
 .gap-sm {
-  gap: $size-48;
+  gap: $size-32;
 }
 
 .gap-md {
-  gap: $size-64;
+  gap: $size-40;
 }
 
 .gap-lg {
-  gap: $size-96;
+  gap: $size-52;
 }
 
 .gap-xl {
-  gap: $size-128;
+  gap: $size-72;
 }
 
 .gap-xxl {
-  gap: $size-160;
+  gap: $size-84;
+}
+
+.gap-mega {
+  gap: $size-120;
 }
