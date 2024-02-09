@@ -17,7 +17,9 @@ export const Carousel = ({ items, className }: CarouselProps) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % items.length)
+      if (!document.querySelector('.carousel:hover')) {
+        setActiveIndex((prev) => (prev + 1) % items.length)
+      }
     }, 7000)
     return () => clearInterval(interval)
   }, [items.length])
