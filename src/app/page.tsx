@@ -1,4 +1,4 @@
-import { Banner, Carousel } from '@components/blocks'
+import { Banner, Gallery } from '@components/blocks'
 
 export default function Home() {
   return (
@@ -22,25 +22,85 @@ export default function Home() {
           },
         ]}
       />
-      <Carousel
-        items={[
-          {
-            heading: 'First Slide',
-            message: 'This is the first slide in the carousel.',
-            bgColor: 'blue',
-          },
-          {
-            heading: 'Second Slide',
-            message: 'This is the second slide in the carousel.',
-            bgColor: 'green',
-          },
-          {
-            heading: 'Third Slide',
-            message: 'This is the third slide in the carousel.',
-            bgColor: 'red',
-          },
-        ]}
-      />
+      <div className="container">
+        <Gallery
+          gap="micro"
+          items={[
+            {
+              query: 'nature 1',
+              alt: 'Placeholder Image',
+              height: 800,
+              width: 1500,
+            },
+            {
+              query: 'nature 2',
+              alt: 'Placeholder Image',
+              height: 800,
+              width: 1500,
+            },
+            {
+              query: 'nature 3',
+              alt: 'Placeholder Image',
+              height: 800,
+              width: 1500,
+            },
+            {
+              query: 'nature 4',
+              alt: 'Placeholder Image',
+              height: 800,
+              width: 1500,
+            },
+            {
+              query: 'nature 5',
+              alt: 'Placeholder Image',
+              height: 800,
+              width: 1500,
+            },
+            {
+              query: 'nature 6',
+              alt: 'Placeholder Image',
+              height: 800,
+              width: 1500,
+            },
+            {
+              query: 'nature 7',
+              alt: 'Placeholder Image',
+              height: 800,
+              width: 1500,
+            },
+            {
+              query: 'nature 8',
+              alt: 'Placeholder Image',
+              height: 800,
+              width: 1500,
+            },
+            {
+              query: 'nature 9',
+              alt: 'Placeholder Image',
+              height: 800,
+              width: 1500,
+            },
+            {
+              query: 'nature 10',
+              alt: 'Placeholder Image',
+              height: 800,
+              width: 1500,
+            },
+            {
+              query: 'nature 11',
+              alt: 'Placeholder Image',
+              height: 800,
+              width: 1500,
+            },
+            {
+              query: 'nature 12',
+              alt: 'Placeholder Image',
+              height: 800,
+              width: 1500,
+            },
+          ]}
+        />
+      </div>
     </main>
   )
 }

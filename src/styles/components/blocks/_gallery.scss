@@ -1,0 +1,65 @@
+.gallery {
+  button {
+    &.button {
+      &.galleryItem {
+        display: block;
+        position: relative;
+        height: $size-156;
+      }
+    }
+  }
+
+  .galleryModal {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($black, 0.8);
+  }
+
+  .activeImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    max-height: 90%;
+    width: 100%;
+  }
+
+  .close {
+    position: absolute;
+    top: $size-8;
+    right: $size-8;
+    padding: $size-8;
+    cursor: pointer;
+  }
+
+  .control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: $size-24;
+    height: $size-24;
+    background: $white;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 99;
+
+    &.disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    &.prev {
+      left: $size-8;
+    }
+
+    &.next {
+      right: $size-8;
+    }
+  }
+}

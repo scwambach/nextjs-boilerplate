@@ -1,12 +1,12 @@
 import { Card, CardProps } from '@components/modules/Card'
 import { SectionHeading } from '@components/modules/SectionHeading'
 import { Grid } from '@components/utility'
-import { BlockProps, Gaps, GridProps } from '@utils/types'
+import { BlockProps, ColumnSize, Gaps } from '@utils/types'
 
 interface CardsProps extends BlockProps {
   items: CardProps[]
   gap?: Gaps
-  columns?: GridProps['columns']
+  columns?: ColumnSize
 }
 
 export const Cards = ({

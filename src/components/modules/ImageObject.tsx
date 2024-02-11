@@ -34,7 +34,7 @@ export const ImageObject = ({
           placeholder={blurDataURL || query ? 'blur' : undefined}
           blurDataURL={
             query
-              ? `https://source.unsplash.com/random/${width}x${height}?${query}`
+              ? `https://source.unsplash.com/random/10x10?${query}`
               : blurDataURL
           }
         />
