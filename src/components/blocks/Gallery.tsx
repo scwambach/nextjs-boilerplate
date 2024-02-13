@@ -21,11 +21,12 @@ export const Gallery = ({
   gap,
   items,
 }: GalleryProps) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+  const [activeIndex, setActiveIndex] = useState<number>(0)
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
 
   useEffect(() => {
     const closeOnEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setActiveIndex(null)
+      if (e.key === 'Escape') setIsModalOpen(false)
     }
     document.addEventListener('keydown', closeOnEscape)
   }, [activeIndex])
@@ -46,46 +47,48 @@ export const Gallery = ({
             key={item.query || item.src}
             type="button"
             unstyled
-            onClick={() => setActiveIndex(items.indexOf(item))}
+            onClick={() => {
+              setIsModalOpen(true)
+              setActiveIndex(items.indexOf(item))
+            }}
           >
             <ImageObject {...item} isBackground width={200} height={200} />
           </Button>
         ))}
       </Grid>
-      {activeIndex !== null && (
-        <div className="galleryModal">
-          <Button
-            className="close"
-            type="button"
-            unstyled
-            onClick={() => setActiveIndex(null)}
-          >
-            <X color={colors.white} size={50} />
-          </Button>
-          <Button
-            className={`control prev${activeIndex === 0 ? ' disabled' : ''}`}
-            type="button"
-            unstyled
-            onClick={() => setActiveIndex(activeIndex - 1)}
-          >
-            <CaretLeft color={colors.white} size={50} />
-            <div className="srOnly">Previous Image</div>
-          </Button>
+      <div className={`galleryModal ${isModalOpen ? 'open' : 'closed'}`}>
+        <Button
+          className="close"
+          type="button"
+          unstyled
+          onClick={() => setIsModalOpen(false)}
+        >
+          <X color={colors.white} size={50} />
+        </Button>
+        <Button
+          className={`control prev${activeIndex === 0 ? ' disabled' : ''}`}
+          type="button"
+          unstyled
+          onClick={() => setActiveIndex(activeIndex - 1)}
+        >
+          <CaretLeft color={colors.white} size={50} />
+          <div className="srOnly">Previous Image</div>
+        </Button>
 
-          <ImageObject {...items[activeIndex]} className="activeImage" />
-          <Button
-            className={`control next${
-              activeIndex === items.length - 1 ? ' disabled' : ''
-            }`}
-            type="button"
-            unstyled
-            onClick={() => setActiveIndex(activeIndex + 1)}
-          >
-            <CaretRight color={colors.white} size={50} />
-            <div className="srOnly">Next Image</div>
-          </Button>
-        </div>
-      )}
+        <ImageObject {...items[activeIndex]} className="activeImage" />
+
+        <Button
+          className={`control next${
+            activeIndex === items.length - 1 ? ' disabled' : ''
+          }`}
+          type="button"
+          unstyled
+          onClick={() => setActiveIndex(activeIndex + 1)}
+        >
+          <CaretRight color={colors.white} size={50} />
+          <div className="srOnly">Next Image</div>
+        </Button>
+      </div>
     </div>
   )
 }
