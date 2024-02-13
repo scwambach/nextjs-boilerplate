@@ -1,4 +1,5 @@
 import { Banner } from '@components/blocks'
+import { Tooltip } from '@components/utility'
 import { Heading } from '@components/utility/Heading'
 
 export default function Home() {
@@ -26,8 +27,11 @@ export default function Home() {
 
       <div className="container">
         <Heading level={2}>
-          This is a simple starter for Next.js with TypeScript, ESLint,
-          Prettier, and Tailwind CSS.
+          This is a simple{' '}
+          <Tooltip copy="Duis suscipit a dui pretium mollis. Integer dignissim.">
+            starter for Next.js with
+          </Tooltip>{' '}
+          TypeScript, ESLint, Prettier, and Tailwind CSS.
         </Heading>
       </div>
     </main>

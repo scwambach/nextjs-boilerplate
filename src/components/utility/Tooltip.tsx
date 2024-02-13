@@ -1,27 +1,23 @@
 import { ComponentProps } from '@utils/types'
+import { ReactNode } from 'react'
 
-// TODO: Create Tooltip component
+import { Roboto } from 'next/font/google'
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+})
 
-interface TooltipProps extends ComponentProps {}
+interface TooltipProps extends ComponentProps {
+  children: ReactNode
+  copy: string
+}
 
-export const Tooltip = (props: TooltipProps) => {
+export const Tooltip = ({ className, children, copy }: TooltipProps) => {
   return (
-    <div className={`tooltip${props.className ? ` ${props.className}` : ''}`}>
-      <code>
-        <pre
-          style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {JSON.stringify(props, null, '    ')}
-        </pre>
-      </code>
-    </div>
+    <span className={`tooltip${className ? ` ${className}` : ''}`}>
+      {children}
+      <span className={roboto.className}>{copy}</span>
+    </span>
   )
 }
