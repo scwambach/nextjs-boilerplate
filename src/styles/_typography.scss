@@ -105,3 +105,9 @@ ol {
     padding: 0;
   }
 }
+
+hr {
+  border: 0;
+  border-top: $size-1 solid $black;
+  margin: 0;
+}
