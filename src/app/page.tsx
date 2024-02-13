@@ -1,4 +1,11 @@
 import { Banner, Gallery } from '@components/blocks'
+import image1 from '@images/placeholder1.webp'
+import image2 from '@images/placeholder2.webp'
+import image3 from '@images/placeholder3.webp'
+import image4 from '@images/placeholder4.webp'
+import image5 from '@images/placeholder5.webp'
+import image6 from '@images/placeholder6.webp'
+import image7 from '@images/placeholder7.webp'
 
 export default function Home() {
   return (
@@ -24,79 +31,38 @@ export default function Home() {
       />
       <div className="container">
         <Gallery
-          gap="micro"
+          heading="Gallery"
+          level={2}
+          subheading="A collection of placeholder images. Click an image to view it in a modal."
+          gap="xxs"
           items={[
             {
-              query: 'nature 1',
+              ...image1,
               alt: 'Placeholder Image',
-              height: 800,
-              width: 1500,
             },
             {
-              query: 'nature 2',
+              ...image2,
               alt: 'Placeholder Image',
-              height: 800,
-              width: 1500,
             },
             {
-              query: 'nature 3',
+              ...image3,
               alt: 'Placeholder Image',
-              height: 800,
-              width: 1500,
             },
             {
-              query: 'nature 4',
+              ...image4,
               alt: 'Placeholder Image',
-              height: 800,
-              width: 1500,
             },
             {
-              query: 'nature 5',
+              ...image5,
               alt: 'Placeholder Image',
-              height: 800,
-              width: 1500,
             },
             {
-              query: 'nature 6',
+              ...image6,
               alt: 'Placeholder Image',
-              height: 800,
-              width: 1500,
             },
             {
-              query: 'nature 7',
+              ...image7,
               alt: 'Placeholder Image',
-              height: 800,
-              width: 1500,
-            },
-            {
-              query: 'nature 8',
-              alt: 'Placeholder Image',
-              height: 800,
-              width: 1500,
-            },
-            {
-              query: 'nature 9',
-              alt: 'Placeholder Image',
-              height: 800,
-              width: 1500,
-            },
-            {
-              query: 'nature 10',
-              alt: 'Placeholder Image',
-              height: 800,
-              width: 1500,
-            },
-            {
-              query: 'nature 11',
-              alt: 'Placeholder Image',
-              height: 800,
-              width: 1500,
-            },
-            {
-              query: 'nature 12',
-              alt: 'Placeholder Image',
-              height: 800,
-              width: 1500,
             },
           ]}
         />

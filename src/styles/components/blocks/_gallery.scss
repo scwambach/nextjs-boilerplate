@@ -1,4 +1,6 @@
 .gallery {
+  @include vertical-spacing-margin;
+
   button {
     &.button {
       &.galleryItem {
@@ -6,6 +8,16 @@
         position: relative;
         height: $size-156;
       }
+    }
+  }
+
+  .grid {
+    @media screen and (max-width: ($sm - 1)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: ($micro - 1)) {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 
@@ -24,9 +36,19 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 80%;
-    max-height: 90%;
+    max-width: $xxl;
+    max-height: $md;
+    height: 90%;
+    overflow: hidden;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      height: auto;
+      width: 100%;
+    }
   }
 
   .close {

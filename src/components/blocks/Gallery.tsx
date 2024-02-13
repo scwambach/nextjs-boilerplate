@@ -21,22 +21,13 @@ export const Gallery = ({
   gap,
   items,
 }: GalleryProps) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0)
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   useEffect(() => {
-    // escape key closes modal as well as clicking outside of .activeImage
     const closeOnEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setActiveIndex(null)
     }
     document.addEventListener('keydown', closeOnEscape)
-
-    // if (activeIndex) {
-    //   const closeOnOutsideClick = (e: MouseEvent) => {
-    //     if (e.target === document.querySelector('.galleryModal'))
-    //       setActiveIndex(null)
-    //   }
-    //   document.addEventListener('click', closeOnOutsideClick)
-    // }
   }, [activeIndex])
 
   return (
