@@ -27,11 +27,11 @@ export default function Home() {
 
       <div className="container">
         <Heading level={2}>
-          This is a simple{' '}
+          This is a sample of the{' '}
           <Tooltip copy="Duis suscipit a dui pretium mollis. Integer dignissim.">
-            starter for Next.js with
+            Tooltip
           </Tooltip>{' '}
-          TypeScript, ESLint, Prettier, and Tailwind CSS.
+          component and this is extra text.
         </Heading>
       </div>
     </main>
