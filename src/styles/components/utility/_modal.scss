@@ -10,11 +10,42 @@
     height: 100%;
     background: rgba($black, 0.8);
     transition: $transition;
+
+    &.closed {
+      pointer-events: none;
+      opacity: 0;
+
+      .contentBox {
+        top: -$size-100;
+      }
+    }
   }
 
-  .box {
+  .contentBox {
+    position: relative;
+    top: 0;
     background-color: $white;
+    transition: $transition;
     border-radius: $size-8;
-    min-width: $sm;
+    width: 100%;
+    max-width: $sm;
+    margin: 0 $size-16;
+    padding: $size-32 $size-16;
+    max-height: 90vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .buttons {
+    margin-top: $size-24;
+
+    @media screen and (min-width: ($xxs)) {
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    @media screen and (max-width: ($xxs - 1)) {
+      flex-direction: column;
+    }
   }
 }

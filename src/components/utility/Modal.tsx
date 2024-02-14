@@ -1,7 +1,7 @@
 'use client'
 import { Button } from '@components/modules'
 import { ButtonProps, ComponentProps, Themes } from '@utils/types'
-import { ReactNode, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import { Flex } from './Flex'
 
 interface ModalProps extends ComponentProps {
@@ -24,6 +24,13 @@ export const Modal = ({
   triggerUnstyled,
 }: ModalProps) => {
   const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    const closeOnEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false)
+    }
+    document.addEventListener('keydown', closeOnEscape)
+  }, [])
   return (
     <span className={`modal${className ? ` ${className}` : ''}`}>
       <Button
@@ -38,9 +45,9 @@ export const Modal = ({
       <Flex
         justifyContent="center"
         alignItems="center"
-        className={`modalBox${isOpen ? ' open' : ''}`}
+        className={`modalBox ${isOpen ? 'open' : 'closed'}`}
       >
-        <Flex gap="xxs" className="box" direction="column">
+        <Flex gap="xxs" className="contentBox" direction="column">
           <div className="body">{children}</div>
 
           <Flex gap="xxs" className="buttons">
