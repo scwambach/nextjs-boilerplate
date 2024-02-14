@@ -61,8 +61,8 @@ export default function Home() {
 
         <Drawer
           triggerCopy="Open this fancy drawer"
-          triggerUnstyled={true}
           buttonTheme="secondary"
+          direction="right"
           buttons={[
             {
               label: 'Do something',

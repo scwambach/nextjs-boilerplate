@@ -1,11 +1,13 @@
 'use client'
 import { Button } from '@components/modules'
+import { X } from '@phosphor-icons/react'
 import { ButtonProps, ComponentProps, Themes } from '@utils/types'
 import { ReactNode, useEffect, useState } from 'react'
 
 interface DrawerProps extends ComponentProps {
   drawerId: string
   triggerCopy: string
+  direction?: 'left' | 'right' | 'top' | 'bottom'
   triggerUnstyled?: boolean
   triggerTheme?: Themes
   buttonTheme?: Themes
@@ -20,6 +22,7 @@ export const Drawer = ({
   triggerCopy,
   open,
   triggerTheme,
+  direction = 'right',
   triggerUnstyled,
 }: DrawerProps) => {
   const [isOpen, setIsOpen] = useState(open || false)
@@ -41,7 +44,17 @@ export const Drawer = ({
           setIsOpen(!isOpen)
         }}
       />
-      <div className={`drawerBox ${isOpen ? 'open' : 'closed'}`}>
+      <div className={`screen ${isOpen ? 'open' : 'closed'}`} />
+      <div className={`drawerBox ${direction} ${isOpen ? 'open' : 'closed'}`}>
+        <Button
+          className="close"
+          type="button"
+          unstyled
+          onClick={() => setIsOpen(false)}
+        >
+          <X size={30} />
+        </Button>
+
         <div className="body">{children}</div>
       </div>
     </span>
