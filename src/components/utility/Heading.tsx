@@ -1,4 +1,4 @@
-import { alfaSlabOne } from '@utils/headingFont'
+import { headingFont } from '@utils/fonts'
 import { HeadingLevel } from '@utils/types'
 import { ReactNode } from 'react'
 
@@ -21,7 +21,7 @@ export const Heading = ({
     <HeadingTag
       data-testid={testId}
       className={`heading ${
-        alfaSlabOne.className
+        headingFont.className
       }${className ? ` ${className}` : ''}`}
     >
       {children}

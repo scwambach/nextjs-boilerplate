@@ -1,5 +1,5 @@
 import MarkdownIt from 'markdown-it'
-import { alfaSlabOne } from '@utils/headingFont'
+import { headingFont } from './fonts'
 
 const mdParser = new MarkdownIt()
 
@@ -12,7 +12,7 @@ mdParser.use((md: any) => {
     env: any,
     self: any
   ) {
-    tokens[idx].attrJoin('class', alfaSlabOne.className)
+    tokens[idx].attrJoin('class', headingFont.className)
     if (defaultRender) {
       return defaultRender(tokens, idx, options, env, self)
     } else {

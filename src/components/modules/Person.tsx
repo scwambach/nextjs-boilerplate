@@ -1,10 +1,10 @@
 import { PersonProps } from '@utils/types'
-import { alfaSlabOne } from '@utils/headingFont'
 import { ImageObject } from './ImageObject'
 import * as Icon from '@phosphor-icons/react'
 import { IconSelector } from '@components/utility/IconSelector'
 import { Flex } from '@components/utility'
 import { LinkObject } from './LinkObject'
+import { headingFont } from '@utils/fonts'
 
 export const Person = ({
   firstName,
@@ -20,7 +20,7 @@ export const Person = ({
         <div className="image">
           <ImageObject {...image} isBackground />
         </div>
-        <p className={alfaSlabOne.className}>
+        <p className={headingFont.className}>
           {firstName} {lastName}
         </p>
         <p>{title}</p>

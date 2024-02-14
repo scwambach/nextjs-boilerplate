@@ -55,10 +55,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: $xl;
+    max-width: 90%;
     transition: $transition;
-    max-height: $md;
-    height: 90%;
+    max-height: 90%;
+    height: 100%;
     overflow: hidden;
     width: 100%;
     display: flex;
@@ -67,7 +67,10 @@
 
     img {
       height: auto;
-      width: 100%;
+      width: auto;
+      max-width: 100%;
+      max-height: 100%;
+      box-shadow: $box-shadow-4;
     }
   }
 

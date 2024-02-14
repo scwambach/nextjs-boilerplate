@@ -1,5 +1,5 @@
-import { Banner } from '@components/blocks'
-import { Tooltip } from '@components/utility'
+import { Banner, Gallery } from '@components/blocks'
+import { Modal, Tooltip } from '@components/utility'
 import { Heading } from '@components/utility/Heading'
 
 export default function Home() {
@@ -26,13 +26,32 @@ export default function Home() {
       />
 
       <div className="container">
-        <Heading level={2}>
-          This is a sample of the{' '}
-          <Tooltip copy="Duis suscipit a dui pretium mollis. Integer dignissim.">
-            Tooltip
-          </Tooltip>{' '}
-          component and this is extra text.
-        </Heading>
+        <Gallery
+          items={[
+            {
+              query: 'gallery-item-1',
+              width: 1200,
+              height: 500,
+              alt: 'Gallery Item 1',
+            },
+          ]}
+        />
+
+        <Modal
+          triggerCopy="Open this fancy modal"
+          triggerUnstyled={true}
+          buttonTheme="secondary"
+          buttons={[
+            {
+              label: 'Do something',
+              theme: 'secondary',
+            },
+          ]}
+          modalId="modal-1"
+        >
+          <Heading level={2}>Modal</Heading>
+          <Tooltip copy="This is a tooltip">Hover over me</Tooltip>
+        </Modal>
       </div>
     </main>
   )

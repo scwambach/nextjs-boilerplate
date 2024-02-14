@@ -5,15 +5,8 @@ import { Markdown } from '@components/utility/Markdown'
 import { CaretDown, CheckSquare, RadioButton } from '@phosphor-icons/react'
 import { FieldProps } from '@utils/types'
 import { Flex, Grid } from '@components/utility'
-import { Roboto } from 'next/font/google'
-import { alfaSlabOne } from '@utils/headingFont'
 import { IconSelector } from '@components/utility/IconSelector'
-
-const roboto = Roboto({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-})
+import { bodyFont, headingFont } from '@utils/fonts'
 
 const Label = ({
   label,
@@ -25,7 +18,7 @@ const Label = ({
   return (
     <Flex direction="column" gap="micro">
       <span
-        className={`label ${alfaSlabOne.className}`}
+        className={`label ${headingFont.className}`}
         dangerouslySetInnerHTML={{
           __html: label,
         }}
@@ -82,7 +75,7 @@ export const FormField = ({
               {...fieldArgs}
               rows={4}
               onChange={onChangeArea}
-              className={roboto.className}
+              className={bodyFont.className}
             />
           </Flex>
         </label>
@@ -97,7 +90,7 @@ export const FormField = ({
             <select
               {...fieldArgs}
               onChange={onChangeSelect}
-              className={roboto.className}
+              className={bodyFont.className}
             >
               {choices?.map((choice) => (
                 <option key={choice.id} value={choice.value}>
@@ -131,13 +124,13 @@ export const FormField = ({
                 >
                   <Flex direction="row-reverse" alignItems="center" gap="micro">
                     <span
-                      className={roboto.className}
+                      className={bodyFont.className}
                       dangerouslySetInnerHTML={{
                         __html: choice.copy,
                       }}
                     />
                     <input
-                      className={roboto.className}
+                      className={bodyFont.className}
                       type={type}
                       onFocus={(e) => {
                         if (e.target.parentElement) {
@@ -194,7 +187,7 @@ export const FormField = ({
               }}
               options={multiChoices}
               name={fieldId}
-              className={roboto.className}
+              className={bodyFont.className}
             />
           </Flex>
         </label>

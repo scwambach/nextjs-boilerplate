@@ -1,6 +1,6 @@
 import { ButtonProps } from '@utils/types'
 import { LinkObject } from './LinkObject'
-import { alfaSlabOne } from '@utils/headingFont'
+import { headingFont } from '@utils/fonts'
 
 export const Button = ({
   type = 'button',
@@ -21,7 +21,7 @@ export const Button = ({
           role="button"
           testId={testId}
           className={`button ${
-            alfaSlabOne.className
+            headingFont.className
           }${theme && !unstyled ? ` ${theme}` : ''}${className ? ` ${className}` : ''}${unstyled ? ' unstyled' : ''}`}
           onClick={onClick}
         >
@@ -33,7 +33,7 @@ export const Button = ({
           type={type}
           data-testid={testId}
           className={`button ${
-            alfaSlabOne.className
+            headingFont.className
           }${theme && !unstyled ? ` ${theme}` : ''}${className ? ` ${className}` : ''}${unstyled ? ' unstyled' : ''}`}
           onClick={onClick}
         >

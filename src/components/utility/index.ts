@@ -1,6 +1,5 @@
 export { Drawer } from './Drawer'
 export { Flex } from './Flex'
 export { Grid } from './Grid'
-export { Loading } from './Loading'
 export { Modal } from './Modal'
 export { Tooltip } from './Tooltip'
