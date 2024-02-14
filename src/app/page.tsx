@@ -27,12 +27,34 @@ export default function Home() {
 
       <div className="container">
         <Gallery
+          gap="xxs"
+          heading="Gallery"
+          level={2}
+          subheading="Click on an image to open a modal."
           items={[
             {
               query: 'gallery-item-1',
               width: 1200,
               height: 500,
               alt: 'Gallery Item 1',
+            },
+            {
+              query: 'gallery-item-2',
+              width: 1200,
+              height: 500,
+              alt: 'Gallery Item 2',
+            },
+            {
+              query: 'gallery-item-3',
+              width: 1200,
+              height: 500,
+              alt: 'Gallery Item 3',
+            },
+            {
+              query: 'gallery-item-4',
+              width: 1200,
+              height: 500,
+              alt: 'Gallery Item 4',
             },
           ]}
         />

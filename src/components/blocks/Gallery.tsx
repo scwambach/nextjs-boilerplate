@@ -18,6 +18,7 @@ export const Gallery = ({
   heading,
   level,
   subheading,
+  columns = 4,
   gap,
   items,
 }: GalleryProps) => {
@@ -40,7 +41,7 @@ export const Gallery = ({
           subheading={subheading}
         />
       )}
-      <Grid gap={gap} columns={4}>
+      <Grid gap={gap} columns={columns}>
         {items.map((item) => (
           <Button
             className="galleryItem"
