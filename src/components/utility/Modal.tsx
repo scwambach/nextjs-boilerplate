@@ -12,6 +12,7 @@ interface ModalProps extends ComponentProps {
   buttonTheme?: Themes
   buttons?: ButtonProps[]
   children: ReactNode
+  open?: boolean
 }
 
 export const Modal = ({
@@ -19,11 +20,12 @@ export const Modal = ({
   children,
   buttons,
   triggerCopy,
+  open,
   triggerTheme,
   buttonTheme,
   triggerUnstyled,
 }: ModalProps) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(open || false)
 
   useEffect(() => {
     const closeOnEscape = (e: KeyboardEvent) => {
