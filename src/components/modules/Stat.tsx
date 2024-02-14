@@ -40,7 +40,7 @@ export const Stat = ({
       className={`stat ${theme}${className ? ` ${className}` : ''}`}
       data-testid={testId}
     >
-      <Flex gap="xs">
+      <Flex columnBreak="xxs" gap="xs">
         {icon && (
           <div className="icon">
             <IconSelector icon={icon} size={32} />
@@ -65,7 +65,7 @@ export const Stat = ({
           </div>
 
           {tags && tags.length > 0 && (
-            <Flex className="tags" gap="micro">
+            <Flex columnBreak="none" className="tags" gap="micro">
               {tags.map((tag) => (
                 <Tag theme={theme} key={tag} label={tag} />
               ))}

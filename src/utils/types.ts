@@ -1,7 +1,15 @@
 import * as Icon from '@phosphor-icons/react'
 import { ReactNode, ChangeEvent, FormEvent, CSSProperties } from 'react'
 
-export type BreakNames = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+export type BreakNames =
+  | 'none'
+  | 'xxs'
+  | 'xs'
+  | 'sm'
+  | 'md'
+  | 'lg'
+  | 'xl'
+  | 'xxl'
 
 export type Colors = 'red' | 'blue' | 'green' | 'orange'
 

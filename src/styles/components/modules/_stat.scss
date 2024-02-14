@@ -20,6 +20,10 @@
     align-items: center;
     justify-content: center;
     border-radius: 100%;
+
+    + div {
+      width: calc(100% - $size-48);
+    }
   }
 
   .value {

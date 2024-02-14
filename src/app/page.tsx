@@ -1,5 +1,4 @@
-import { Banner, Gallery } from '@components/blocks'
-import { Stat } from '@components/modules'
+import { Banner, Gallery, Stats } from '@components/blocks'
 import { Drawer } from '@components/utility'
 import { Heading } from '@components/utility/Heading'
 
@@ -27,15 +26,43 @@ export default function Home() {
       />
 
       <div className="container">
-        <Stat
-          title="Stat 1"
-          theme="tertiary"
-          value={123}
-          tags={['tag1', 'tag2', 'tag3']}
-          icon="RocketLaunch"
-          subtitle="Phasellus viverra, sapien a tincidunt luctus, ipsum."
-          type="percentage"
+        <Stats
+          heading="Stats"
+          level={2}
+          subheading="Some stats about something."
+          items={[
+            {
+              value: 12334876938,
+              maxValue: 10000,
+              numberPrefix: 'est.',
+              title: 'Stat 1',
+              tags: ['tag1', 'tag2', 'tag3'],
+              icon: 'RocketLaunch',
+              theme: 'secondary',
+              subtitle:
+                'Phasellus viverra, sapien a dfg tincidunt luctus, ipsum.',
+            },
+            {
+              value: 456,
+              title: 'Stat 2',
+              tags: ['tag1', 'tag2', 'tag3'],
+              icon: 'Backpack',
+              type: 'percentage',
+              theme: 'tertiary',
+              subtitle: 'Phasellus viverra, sapien a tincidunt luctus, ipsum.',
+            },
+            {
+              value: 789.542,
+              title: 'Stat 3',
+              tags: ['tag1', 'tag2', 'tag3'],
+              icon: 'Television',
+              type: 'currency',
+              decimals: true,
+              subtitle: 'Phasellus viverra, sapien a tincidunt luctus, ipsum.',
+            },
+          ]}
         />
+
         <Gallery
           gap="xxs"
           heading="Gallery"

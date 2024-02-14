@@ -48,10 +48,49 @@
   }
 }
 
+@mixin columnBreaks {
+  &.column-xs {
+    @media screen and (max-width: ($xs - 1)) {
+      flex-direction: column;
+    }
+  }
+
+  &.column-sm {
+    @media screen and (max-width: ($sm - 1)) {
+      flex-direction: column;
+    }
+  }
+
+  &.column-md {
+    @media screen and (max-width: ($md - 1)) {
+      flex-direction: column;
+    }
+  }
+
+  &.column-lg {
+    @media screen and (max-width: ($lg - 1)) {
+      flex-direction: column;
+    }
+  }
+
+  &.column-xl {
+    @media screen and (max-width: ($xl - 1)) {
+      flex-direction: column;
+    }
+  }
+
+  &.column-xxl {
+    @media screen and (max-width: ($xxl - 1)) {
+      flex-direction: column;
+    }
+  }
+}
+
 .flex {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  @include columnBreaks;
 
   &.break-xxs {
     @media screen and (min-width: ($xxs)) {
@@ -95,42 +134,6 @@
     }
   }
 
-  &.column-xs {
-    @media screen and (max-width: ($xs - 1)) {
-      flex-direction: column;
-    }
-  }
-
-  &.column-sm {
-    @media screen and (max-width: ($sm - 1)) {
-      flex-direction: column;
-    }
-  }
-
-  &.column-md {
-    @media screen and (max-width: ($md - 1)) {
-      flex-direction: column;
-    }
-  }
-
-  &.column-lg {
-    @media screen and (max-width: ($lg - 1)) {
-      flex-direction: column;
-    }
-  }
-
-  &.column-xl {
-    @media screen and (max-width: ($xl - 1)) {
-      flex-direction: column;
-    }
-  }
-
-  &.column-xxl {
-    @media screen and (max-width: ($xxl - 1)) {
-      flex-direction: column;
-    }
-  }
-
   &.no-break {
     flex-wrap: nowrap;
   }
@@ -145,10 +148,12 @@
 
   &.direction-row {
     flex-direction: row;
+    @include columnBreaks;
   }
 
   &.direction-row-reverse {
     flex-direction: row-reverse;
+    @include columnBreaks;
   }
 
   &.direction-column {

@@ -1,27 +1,38 @@
-import { ComponentProps } from '@utils/types'
+import { Stat } from '@components/modules'
+import { SectionHeading } from '@components/modules/SectionHeading'
+import { Grid } from '@components/utility'
+import { BlockProps, ColumnSize, Gaps, StatProps } from '@utils/types'
 
-// TODO: Create Stats component
+interface StatsProps extends BlockProps {
+  items: StatProps[]
+  gap?: Gaps
+}
 
-interface StatsProps extends ComponentProps {}
+export const Stats = ({
+  heading,
+  level,
+  subheading,
+  className,
+  items,
+  gap = 'xs',
+}: StatsProps) => {
+  const columns =
+    items && items.length > 0 ? (items.length > 6 ? 6 : items.length) : 1
 
-export const Stats = (props: StatsProps) => {
   return (
-    <div className={`stats${props.className ? ` ${props.className}` : ''}`}>
-      <code>
-        <pre
-          style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {JSON.stringify(props, null, '    ')}
-        </pre>
-      </code>
+    <div className={`stats${className ? ` ${className}` : ''}`}>
+      {heading && (
+        <SectionHeading
+          heading={heading}
+          level={level}
+          subheading={subheading}
+        />
+      )}
+      <Grid columns={columns as ColumnSize} gap={gap}>
+        {items?.map((item, index) => (
+          <Stat key={index + item.value} {...item} />
+        ))}
+      </Grid>
     </div>
   )
 }
