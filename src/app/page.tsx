@@ -1,5 +1,5 @@
 import { Banner, Gallery } from '@components/blocks'
-import { Modal } from '@components/utility'
+import { Drawer } from '@components/utility'
 import { Heading } from '@components/utility/Heading'
 
 export default function Home() {
@@ -59,20 +59,19 @@ export default function Home() {
           ]}
         />
 
-        <Modal
-          triggerCopy="Open this fancy modal"
+        <Drawer
+          triggerCopy="Open this fancy drawer"
           triggerUnstyled={true}
           buttonTheme="secondary"
-          open={true}
           buttons={[
             {
               label: 'Do something',
               theme: 'secondary',
             },
           ]}
-          modalId="modal-1"
+          drawerId="drawer-1"
         >
-          <Heading level={2}>Modal</Heading>
+          <Heading level={2}>Drawer</Heading>
           <p>
             Vivamus et nisi turpis. Suspendisse elementum et metus sed accumsan.
             Class aptent taciti sociosqu ad litora torquent per conubia nostra,
@@ -83,7 +82,7 @@ export default function Home() {
             venenatis mattis ex. Mauris suscipit mi quis massa iaculis
             dignissim.
           </p>
-        </Modal>
+        </Drawer>
       </div>
     </main>
   )
