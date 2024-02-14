@@ -216,3 +216,17 @@ export interface BannerProps extends ComponentProps {
     items: BreadcrumbsProps['crumbs']
   }
 }
+
+export interface StatProps extends ComponentProps {
+  title?: string
+  value: number
+  icon?: keyof typeof Icon
+  type?: 'currency' | 'percentage' | 'number'
+  numberPrefix?: string
+  numberSuffix?: string
+  subtitle?: string
+  theme?: Themes
+  maxValue?: number
+  decimals?: boolean
+  tags?: string[]
+}

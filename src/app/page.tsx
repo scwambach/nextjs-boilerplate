@@ -1,4 +1,5 @@
 import { Banner, Gallery } from '@components/blocks'
+import { Stat } from '@components/modules'
 import { Drawer } from '@components/utility'
 import { Heading } from '@components/utility/Heading'
 
@@ -26,6 +27,15 @@ export default function Home() {
       />
 
       <div className="container">
+        <Stat
+          title="Stat 1"
+          theme="tertiary"
+          value={123}
+          tags={['tag1', 'tag2', 'tag3']}
+          icon="RocketLaunch"
+          subtitle="Phasellus viverra, sapien a tincidunt luctus, ipsum."
+          type="percentage"
+        />
         <Gallery
           gap="xxs"
           heading="Gallery"

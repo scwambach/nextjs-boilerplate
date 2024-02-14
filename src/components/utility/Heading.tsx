@@ -7,15 +7,18 @@ interface HeadingProps {
   children: ReactNode
   testId?: string
   className?: string
+  nonHeadingElement?: 'p' | 'span'
 }
 
 export const Heading = ({
   level,
   children,
   className,
+  nonHeadingElement,
   testId,
 }: HeadingProps) => {
-  const HeadingTag = `h${level}` as keyof JSX.IntrinsicElements
+  const HeadingTag =
+    nonHeadingElement || (`h${level}` as keyof JSX.IntrinsicElements)
 
   return (
     <HeadingTag

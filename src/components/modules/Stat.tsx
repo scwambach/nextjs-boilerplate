@@ -1,27 +1,78 @@
-import { ComponentProps } from '@utils/types'
+import { Flex } from '@components/utility'
+import { Heading } from '@components/utility/Heading'
+import { IconSelector } from '@components/utility/IconSelector'
+import { addCommas } from '@utils/addCommas'
+import { toUsCurrency } from '@utils/toUsCurrency'
+import { StatProps } from '@utils/types'
+import { Tag } from './Tag'
 
-// TODO: Create Stat component
+export const Stat = ({
+  className,
+  icon,
+  numberPrefix,
+  numberSuffix,
+  subtitle,
+  tags,
+  testId,
+  decimals,
+  theme = 'primary',
+  maxValue,
+  title,
+  type,
+  value,
+}: StatProps) => {
+  const limitedValue = maxValue ? Math.min(value, maxValue) : value
 
-interface StatProps extends ComponentProps {}
+  const hasExceededMaxValue = maxValue ? value > maxValue : false
 
-export const Stat = (props: StatProps) => {
+  const formattedValue = (val: number) => {
+    if (type === 'currency') {
+      return toUsCurrency(val, decimals)
+    }
+    if (type === 'percentage') {
+      return `${val}%`
+    }
+    return addCommas(val)
+  }
+
   return (
-    <div className={`stat${props.className ? ` ${props.className}` : ''}`}>
-      <code>
-        <pre
-          style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {JSON.stringify(props, null, '    ')}
-        </pre>
-      </code>
+    <div
+      className={`stat ${theme}${className ? ` ${className}` : ''}`}
+      data-testid={testId}
+    >
+      <Flex gap="xs">
+        {icon && (
+          <div className="icon">
+            <IconSelector icon={icon} size={32} />
+          </div>
+        )}
+        <Flex direction="column" gap="xxs">
+          <Heading nonHeadingElement="p" level={6} className="title">
+            {title}
+          </Heading>
+
+          <div>
+            <p className="value">
+              {numberPrefix && <span className="prefix">{numberPrefix}</span>}
+              <span className="main">
+                {`${formattedValue(limitedValue)}`}
+                {hasExceededMaxValue && <span>{'+'}</span>}
+              </span>
+              {numberSuffix && <span className="suffix">{numberSuffix}</span>}
+            </p>
+
+            {subtitle && <p>{subtitle}</p>}
+          </div>
+
+          {tags && tags.length > 0 && (
+            <Flex className="tags" gap="micro">
+              {tags.map((tag) => (
+                <Tag theme={theme} key={tag} label={tag} />
+              ))}
+            </Flex>
+          )}
+        </Flex>
+      </Flex>
     </div>
   )
 }

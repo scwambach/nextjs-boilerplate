@@ -1,0 +1,54 @@
+.stat {
+  border: $size-1 solid $lightGray;
+  border-radius: $size-8;
+  box-shadow: $box-shadow-2;
+  padding: $size-16;
+
+  p {
+    margin: 0;
+  }
+
+  .title {
+    font-size: $size-20;
+    margin: 0;
+  }
+
+  .icon {
+    height: $size-44;
+    width: $size-44;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+  }
+
+  .value {
+    font-size: $size-32;
+    display: flex;
+    gap: $size-3;
+    margin-bottom: $size-8;
+    line-height: 1;
+  }
+
+  &.primary {
+    .icon {
+      background-color: $lightBlue;
+    }
+  }
+
+  &.secondary {
+    .icon {
+      background-color: $lightGreen;
+    }
+  }
+
+  &.tertiary {
+    .icon {
+      background-color: $lightOrange;
+    }
+  }
+
+  .tags {
+    margin-top: $size-8;
+  }
+}
