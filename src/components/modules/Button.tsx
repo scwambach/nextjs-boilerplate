@@ -11,6 +11,7 @@ export const Button = ({
   onClick,
   label,
   theme,
+  style,
   testId,
 }: ButtonProps) => {
   return (
@@ -18,6 +19,7 @@ export const Button = ({
       {type === 'link' && (
         <LinkObject
           href={href || '/'}
+          style={style}
           role="button"
           testId={testId}
           className={`button ${
@@ -32,6 +34,7 @@ export const Button = ({
         <button
           type={type}
           data-testid={testId}
+          style={style}
           className={`button ${
             headingFont.className
           }${theme && !unstyled ? ` ${theme}` : ''}${className ? ` ${className}` : ''}${unstyled ? ' unstyled' : ''}`}

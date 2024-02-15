@@ -6,6 +6,7 @@ export const LinkObject = ({
   className,
   href,
   testId,
+  style,
   role,
   onClick,
 }: LinkObjectProps) => {
@@ -13,6 +14,7 @@ export const LinkObject = ({
   return isInternal ? (
     <Link
       role={role}
+      style={style}
       data-testid={testId}
       className={`linkObject${className ? ` ${className}` : ''}`}
       href={href}
@@ -23,6 +25,7 @@ export const LinkObject = ({
   ) : (
     <a
       role={role}
+      style={style}
       data-testid={testId}
       className={`linkObject${className ? ` ${className}` : ''}`}
       href={href}

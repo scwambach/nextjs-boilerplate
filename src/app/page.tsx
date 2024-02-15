@@ -1,6 +1,7 @@
-import { Banner, Gallery, Stats } from '@components/blocks'
+import { Banner, Gallery, Stats, Tabs } from '@components/blocks'
 import { Drawer } from '@components/utility'
 import { Heading } from '@components/utility/Heading'
+import { Markdown } from '@components/utility/Markdown'
 
 export default function Home() {
   return (
@@ -26,6 +27,48 @@ export default function Home() {
       />
 
       <div className="container">
+        <Tabs
+          heading="Tabs"
+          level={2}
+          theme="secondary"
+          subheading="Some tabs about something."
+          items={[
+            {
+              label: 'Tab 1',
+              content: (
+                <div>
+                  <Markdown>
+                    Nullam vel ligula mauris. Ut vitae efficitur nisl. Integer
+                    at justo vitae felis sodales rutrum. Mauris consectetur
+                    lacus a enim pharetra, sit amet sagittis mauris elementum.
+                    Nam ac magna placerat, eleifend tortor non, tincidunt arcu.
+                    Mauris at tempor ex. Nunc pretium efficitur eros, eget
+                    egestas ipsum sagittis vitae. Quisque mattis enim vel
+                    lobortis consectetur. Suspendisse potenti. Nam sed justo nec
+                    ex auctor maximus. Integer sed volutpat justo. Cras
+                    tincidunt eleifend lectus eu varius. Vivamus molestie,
+                    mauris et interdum auctor, libero lectus volutpat urna, et
+                    accumsan ante magna nec nisl. Cras maximus venenatis lectus,
+                    efficitur rhoncus urna consequat a. Cras ultrices venenatis
+                    leo ac luctus.
+                  </Markdown>
+                </div>
+              ),
+            },
+            {
+              label: 'Tab 2',
+              content: <Markdown>Tab 2 content</Markdown>,
+            },
+            {
+              label: 'Tab 3',
+              content: <Markdown>Tab 3 content</Markdown>,
+            },
+            {
+              label: 'Tab 4',
+              content: <Markdown>Tab 4 content</Markdown>,
+            },
+          ]}
+        />
         <Stats
           heading="Stats"
           level={2}

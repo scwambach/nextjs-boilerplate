@@ -25,27 +25,7 @@
   }
 
   &.unstyled {
-    padding: 0;
-    display: inline-block;
-    background: none;
-    outline: none;
-    color: inherit;
-    border: none;
-    text-align: left;
-    font: inherit;
-    border-radius: 0;
-    width: auto;
-    height: fit-content;
-    margin: 0;
-
-    &:hover {
-      opacity: 0.8;
-      text-decoration: underline;
-    }
-
-    &:focus {
-      outline: $size-4 solid $blue;
-    }
+    @include unstyledButton;
   }
 
   &.secondary {

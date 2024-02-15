@@ -9,6 +9,7 @@ export interface IconSelectorProps {
   size?: string | number
   weight?: Icon.IconWeight
   mirrored?: boolean
+  className?: string
 }
 
 export const IconSelector = ({
@@ -17,6 +18,7 @@ export const IconSelector = ({
   color,
   size,
   weight,
+  className,
   mirrored,
 }: IconSelectorProps) => {
   const IconComponent = Icon[icon] as ComponentType<Icon.IconProps>
@@ -27,6 +29,7 @@ export const IconSelector = ({
     size,
     weight,
     mirrored,
+    className,
   }
 
   return <IconComponent {...phosphorProps} />

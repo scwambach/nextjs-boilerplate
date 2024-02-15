@@ -123,6 +123,7 @@ export interface ButtonProps extends ComponentProps {
   theme?: Themes
   href?: string
   children?: ReactNode
+  style?: CSSProperties
   label?: string
   unstyled?: boolean
   onClick?: () => void
@@ -131,6 +132,7 @@ export interface ButtonProps extends ComponentProps {
 export interface LinkObjectProps {
   children: ReactNode
   className?: string
+  style?: CSSProperties
   role?: string
   testId?: string
   href: string
