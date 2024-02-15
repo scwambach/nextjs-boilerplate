@@ -26,7 +26,7 @@ export default function Home() {
         ]}
       />
 
-      <div className="container">
+      <div className="container narrow">
         <Tabs
           heading="Tabs"
           level={2}
@@ -69,6 +69,8 @@ export default function Home() {
             },
           ]}
         />
+      </div>
+      <div className="container">
         <Stats
           heading="Stats"
           level={2}
