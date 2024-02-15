@@ -3,7 +3,8 @@
   border: none;
   outline-offset: $size-2;
   padding: 0.5rem 1rem;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   background: $blue;
   color: $white;
   cursor: pointer;

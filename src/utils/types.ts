@@ -122,20 +122,31 @@ export interface ButtonProps extends ComponentProps {
   type?: 'button' | 'submit' | 'reset' | 'link'
   theme?: Themes
   href?: string
+  icon?: keyof typeof Icon
+  suffixIcon?: keyof typeof Icon
   children?: ReactNode
   style?: CSSProperties
   label?: string
   unstyled?: boolean
+  onMouseOver?: () => void
+  onMouseOut?: () => void
+  onFocus?: () => void
+  onBlur?: () => void
   onClick?: () => void
 }
 
 export interface LinkObjectProps {
-  children: ReactNode
+  children?: ReactNode
   className?: string
   style?: CSSProperties
   role?: string
   testId?: string
+  copy?: string
   href: string
+  onMouseOver?: () => void
+  onMouseOut?: () => void
+  onFocus?: () => void
+  onBlur?: () => void
   onClick?: () => void
 }
 

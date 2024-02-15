@@ -16,7 +16,9 @@
 
 @mixin unstyledButton {
   padding: 0;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: $size-5;
   background: none;
   outline: none;
   color: inherit;

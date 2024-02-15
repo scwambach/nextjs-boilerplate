@@ -1,14 +1,21 @@
 import { ButtonProps } from '@utils/types'
 import { LinkObject } from './LinkObject'
 import { headingFont } from '@utils/fonts'
+import { IconSelector } from '@components/utility/IconSelector'
 
 export const Button = ({
   type = 'button',
   href,
   unstyled,
+  icon,
+  suffixIcon,
   className,
   children,
   onClick,
+  onMouseOver,
+  onMouseOut,
+  onBlur,
+  onFocus,
   label,
   theme,
   style,
@@ -26,8 +33,14 @@ export const Button = ({
             headingFont.className
           }${theme && !unstyled ? ` ${theme}` : ''}${className ? ` ${className}` : ''}${unstyled ? ' unstyled' : ''}`}
           onClick={onClick}
+          onMouseOut={onMouseOut}
+          onMouseOver={onMouseOver}
+          onFocus={onFocus}
+          onBlur={onBlur}
         >
+          {icon && <IconSelector icon={icon} />}
           {label || children}
+          {suffixIcon && <IconSelector icon={suffixIcon} />}
         </LinkObject>
       )}
       {type !== 'link' && (
@@ -39,8 +52,14 @@ export const Button = ({
             headingFont.className
           }${theme && !unstyled ? ` ${theme}` : ''}${className ? ` ${className}` : ''}${unstyled ? ' unstyled' : ''}`}
           onClick={onClick}
+          onMouseOver={onMouseOver}
+          onMouseOut={onMouseOut}
+          onFocus={onFocus}
+          onBlur={onBlur}
         >
+          {icon && <IconSelector icon={icon} />}
           {label || children}
+          {suffixIcon && <IconSelector icon={suffixIcon} />}
         </button>
       )}
     </>

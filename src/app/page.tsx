@@ -1,4 +1,5 @@
 import { Banner, Gallery, Stats, Tabs } from '@components/blocks'
+import { Dropdown } from '@components/modules'
 import { Drawer } from '@components/utility'
 import { Heading } from '@components/utility/Heading'
 import { Markdown } from '@components/utility/Markdown'
@@ -23,6 +24,17 @@ export default function Home() {
             href: 'https://github.com/scwambach/nextjs-boilerplate',
             label: 'Check out the GitHub Repo',
           },
+        ]}
+      />
+
+      <Dropdown
+        label="Dropdown"
+        suffixIcon="CaretDown"
+        unstyled
+        items={[
+          { href: '/link-1', copy: 'Link 1' },
+          { href: '/link-2', copy: 'Link 2' },
+          { href: '/link-3', copy: 'Link 3' },
         ]}
       />
 

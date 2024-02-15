@@ -1,27 +1,73 @@
-import { ComponentProps } from '@utils/types'
+'use client'
+import { ButtonProps, LinkObjectProps } from '@utils/types'
+import { Button } from './Button'
+import { useEffect, useRef, useState } from 'react'
+import { LinkObject } from './LinkObject'
 
-// TODO: Create Dropdown component
+interface DropdownProps extends ButtonProps {
+  items?: LinkObjectProps[]
+}
 
-interface DropdownProps extends ComponentProps {}
+export const Dropdown = ({ items, ...props }: DropdownProps) => {
+  const [open, setOpen] = useState(false)
 
-export const Dropdown = (props: DropdownProps) => {
+  const ref = useRef<HTMLDivElement>(null)
+
+  const doAnyListItemsHaveFocus = () => {
+    if (!ref.current) {
+      return false
+    }
+    const listItems = ref.current.querySelectorAll('.menu .linkObject')
+    let hasFocus = false
+    listItems.forEach((item) => {
+      if (item === document.activeElement) {
+        hasFocus = true
+      }
+    })
+    console.log(hasFocus)
+    return hasFocus
+  }
+
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.addEventListener('mouseenter', () => {
+        setOpen(true)
+      })
+
+      ref.current.addEventListener('mouseleave', () => {
+        setOpen(false)
+      })
+    }
+  }, [])
+
   return (
-    <div className={`dropdown${props.className ? ` ${props.className}` : ''}`}>
-      <code>
-        <pre
-          style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {JSON.stringify(props, null, '    ')}
-        </pre>
-      </code>
+    <div
+      ref={ref}
+      className={`dropdown${open ? ' open' : ''}${props.className ? ` ${props.className}` : ''}`}
+    >
+      <Button
+        {...props}
+        className="toggle"
+        onFocus={() => {
+          setOpen(true)
+        }}
+      />
+      <div className="menu">
+        {items?.map((item, index) => (
+          <LinkObject
+            key={item.href + index}
+            {...item}
+            onClick={() => {
+              setOpen(false)
+            }}
+            onBlur={() => {
+              setTimeout(() => {
+                doAnyListItemsHaveFocus() ? setOpen(true) : setOpen(false)
+              }, 10)
+            }}
+          />
+        ))}
+      </div>
     </div>
   )
 }

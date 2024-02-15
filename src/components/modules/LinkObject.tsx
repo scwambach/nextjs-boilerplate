@@ -6,9 +6,14 @@ export const LinkObject = ({
   className,
   href,
   testId,
+  copy,
   style,
   role,
   onClick,
+  onMouseOver,
+  onMouseOut,
+  onFocus,
+  onBlur,
 }: LinkObjectProps) => {
   const isInternal = href.startsWith('/')
   return isInternal ? (
@@ -18,9 +23,13 @@ export const LinkObject = ({
       data-testid={testId}
       className={`linkObject${className ? ` ${className}` : ''}`}
       href={href}
+      onMouseOver={onMouseOver}
+      onMouseOut={onMouseOut}
+      onFocus={onFocus}
+      onBlur={onBlur}
       onClick={onClick}
     >
-      {children}
+      {children || copy}
     </Link>
   ) : (
     <a
@@ -31,9 +40,13 @@ export const LinkObject = ({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      onMouseOver={onMouseOver}
+      onMouseOut={onMouseOut}
+      onFocus={onFocus}
+      onBlur={onBlur}
       onClick={onClick}
     >
-      {children}
+      {children || copy}
     </a>
   )
 }
