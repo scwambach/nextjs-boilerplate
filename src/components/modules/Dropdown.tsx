@@ -47,6 +47,7 @@ export const Dropdown = ({ items, ...props }: DropdownProps) => {
       className={`dropdown${open ? ' open' : ''}${props.className ? ` ${props.className}` : ''}`}
     >
       <Button
+        suffixIcon="CaretDown"
         {...props}
         className="toggle"
         onFocus={() => {

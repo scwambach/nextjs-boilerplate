@@ -30,7 +30,7 @@ export default function Home() {
       <div className="container narrow">
         <Dropdown
           label="Dropdown"
-          suffixIcon="CaretDown"
+          unstyled
           items={[
             { href: '/link-1', copy: 'Link 1' },
             { href: '/link-2', copy: 'Link 2' },

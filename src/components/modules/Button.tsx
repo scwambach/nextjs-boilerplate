@@ -39,11 +39,16 @@ export const Button = ({
           onBlur={onBlur}
         >
           {icon && (
-            <IconSelector icon={icon} weight={unstyled ? 'regular' : 'bold'} />
+            <IconSelector
+              className="prefix"
+              icon={icon}
+              weight={unstyled ? 'regular' : 'bold'}
+            />
           )}
           {label || children}
           {suffixIcon && (
             <IconSelector
+              className="suffix"
               icon={suffixIcon}
               weight={unstyled ? 'regular' : 'bold'}
             />
@@ -65,11 +70,16 @@ export const Button = ({
           onBlur={onBlur}
         >
           {icon && (
-            <IconSelector icon={icon} weight={unstyled ? 'regular' : 'bold'} />
+            <IconSelector
+              className="prefix"
+              icon={icon}
+              weight={unstyled ? 'regular' : 'bold'}
+            />
           )}
           {label || children}
           {suffixIcon && (
             <IconSelector
+              className="suffix"
               icon={suffixIcon}
               weight={unstyled ? 'regular' : 'bold'}
             />

@@ -47,6 +47,7 @@ export const Tabs = ({
           gap="none"
           justifyContent="space-between"
           alignItems="center"
+          style={{ width: '100%' }}
         >
           <Flex columnBreak="none" gap="xxs" alignItems="center">
             <IconSelector icon="List" size={22} />
