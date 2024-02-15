@@ -9,7 +9,7 @@ export default function Home() {
         heading="Welcome to the Next.js Starter"
         message="This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and Tailwind CSS."
         headingLevel={1}
-        bgColor="orange"
+        bgColor="blue"
         crumbs={{
           current: 'Nam felis',
           items: [
