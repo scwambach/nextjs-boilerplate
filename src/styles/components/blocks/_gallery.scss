@@ -7,6 +7,8 @@
         display: block;
         position: relative;
         height: $size-156;
+        border-radius: $size-8;
+        overflow: hidden;
       }
     }
   }
