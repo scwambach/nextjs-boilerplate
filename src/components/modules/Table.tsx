@@ -1,27 +1,42 @@
 import { ComponentProps } from '@utils/types'
+import { headingFont } from '@utils/fonts'
+import { ReactNode } from 'react'
 
-// TODO: Create Table component
+interface TableProps extends ComponentProps {
+  headingRow?: string[]
+  controlCell?: ReactNode
+  rows: {
+    cells: string[]
+  }[]
+}
 
-interface TableProps extends ComponentProps {}
-
-export const Table = (props: TableProps) => {
+export const Table = ({
+  className,
+  headingRow,
+  rows,
+  controlCell,
+}: TableProps) => {
   return (
-    <div className={`table${props.className ? ` ${props.className}` : ''}`}>
-      <code>
-        <pre
-          style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {JSON.stringify(props, null, '    ')}
-        </pre>
-      </code>
-    </div>
+    <table className={`table${className ? ` ${className}` : ''}`}>
+      {headingRow && headingRow.length > 0 && (
+        <thead className={headingFont.className}>
+          <tr>
+            {headingRow.map((cell) => (
+              <th key={cell}>{cell}</th>
+            ))}
+          </tr>
+        </thead>
+      )}
+      <tbody>
+        {rows.map((row, index) => (
+          <tr key={`row${index}${row.cells[0]}`}>
+            {row.cells.map((cell) => (
+              <td key={cell}>{cell}</td>
+            ))}
+            {controlCell && <td>{controlCell}</td>}
+          </tr>
+        ))}
+      </tbody>
+    </table>
   )
 }
