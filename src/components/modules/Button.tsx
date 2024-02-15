@@ -38,9 +38,16 @@ export const Button = ({
           onFocus={onFocus}
           onBlur={onBlur}
         >
-          {icon && <IconSelector icon={icon} />}
+          {icon && (
+            <IconSelector icon={icon} weight={unstyled ? 'regular' : 'bold'} />
+          )}
           {label || children}
-          {suffixIcon && <IconSelector icon={suffixIcon} />}
+          {suffixIcon && (
+            <IconSelector
+              icon={suffixIcon}
+              weight={unstyled ? 'regular' : 'bold'}
+            />
+          )}
         </LinkObject>
       )}
       {type !== 'link' && (
@@ -57,9 +64,16 @@ export const Button = ({
           onFocus={onFocus}
           onBlur={onBlur}
         >
-          {icon && <IconSelector icon={icon} />}
+          {icon && (
+            <IconSelector icon={icon} weight={unstyled ? 'regular' : 'bold'} />
+          )}
           {label || children}
-          {suffixIcon && <IconSelector icon={suffixIcon} />}
+          {suffixIcon && (
+            <IconSelector
+              icon={suffixIcon}
+              weight={unstyled ? 'regular' : 'bold'}
+            />
+          )}
         </button>
       )}
     </>

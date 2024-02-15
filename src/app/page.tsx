@@ -27,18 +27,16 @@ export default function Home() {
         ]}
       />
 
-      <Dropdown
-        label="Dropdown"
-        suffixIcon="CaretDown"
-        unstyled
-        items={[
-          { href: '/link-1', copy: 'Link 1' },
-          { href: '/link-2', copy: 'Link 2' },
-          { href: '/link-3', copy: 'Link 3' },
-        ]}
-      />
-
       <div className="container narrow">
+        <Dropdown
+          label="Dropdown"
+          suffixIcon="CaretDown"
+          items={[
+            { href: '/link-1', copy: 'Link 1' },
+            { href: '/link-2', copy: 'Link 2' },
+            { href: '/link-3', copy: 'Link 3' },
+          ]}
+        />
         <Tabs
           heading="Tabs"
           level={2}

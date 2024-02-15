@@ -3,6 +3,7 @@ import { ButtonProps, LinkObjectProps } from '@utils/types'
 import { Button } from './Button'
 import { useEffect, useRef, useState } from 'react'
 import { LinkObject } from './LinkObject'
+import { Flex } from '@components/utility'
 
 interface DropdownProps extends ButtonProps {
   items?: LinkObjectProps[]
@@ -52,7 +53,7 @@ export const Dropdown = ({ items, ...props }: DropdownProps) => {
           setOpen(true)
         }}
       />
-      <div className="menu">
+      <Flex direction="column" gap="none" className="menu">
         {items?.map((item, index) => (
           <LinkObject
             key={item.href + index}
@@ -67,7 +68,7 @@ export const Dropdown = ({ items, ...props }: DropdownProps) => {
             }}
           />
         ))}
-      </div>
+      </Flex>
     </div>
   )
 }
