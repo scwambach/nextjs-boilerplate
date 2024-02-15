@@ -23,6 +23,7 @@
     "@picocss/pico": "^1.5.11",
     "@types/node": "20.10.3",
     "@types/react-dom": "18.2.17",
+    "dayjs": "^1.11.10",
     "eslint": "8.55.0",
     "eslint-config-next": "14.0.3",
     "markdown-it": "^14.0.0",

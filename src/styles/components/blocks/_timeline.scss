@@ -1,0 +1,63 @@
+.timeline {
+  position: relative;
+  @include vertical-spacing-margin;
+
+  .event {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    @include vertical-spacing-margin;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+      .year {
+        right: calc(100% + $size-24);
+      }
+    }
+
+    &:nth-child(odd) {
+      .year {
+        left: calc(100% + $size-24);
+      }
+    }
+
+    .inner {
+      width: calc(50% - ($size-48 + 0.1rem));
+    }
+  }
+
+  .inner {
+    position: relative;
+    background-color: $white;
+    padding: $size-24;
+    border-radius: $size-8;
+    box-shadow: $box-shadow-2;
+
+    .year {
+      position: absolute;
+      color: $white;
+      background-color: $black;
+      width: $size-52;
+      height: $size-52;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 100%;
+    }
+
+    .date {
+      color: $red;
+      font-weight: bold;
+      background-color: $white;
+    }
+  }
+}

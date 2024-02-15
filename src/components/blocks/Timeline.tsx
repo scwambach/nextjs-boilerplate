@@ -1,27 +1,54 @@
-import { ComponentProps } from '@utils/types'
+import { ImageObject } from '@components/modules'
+import { SectionHeading } from '@components/modules/SectionHeading'
+import { Flex } from '@components/utility'
+import { Markdown } from '@components/utility/Markdown'
+import { headingFont } from '@utils/fonts'
+import { BlockProps, ImageObjectProps } from '@utils/types'
+import dayjs from 'dayjs'
 
-// TODO: Create Timeline component
+interface TimelineProps extends BlockProps {
+  events: {
+    date: string
+    title: string
+    description?: string
+    image?: ImageObjectProps
+  }[]
+}
 
-interface TimelineProps extends ComponentProps {}
-
-export const Timeline = (props: TimelineProps) => {
+export const Timeline = ({
+  heading,
+  level,
+  events,
+  subheading,
+  className,
+}: TimelineProps) => {
   return (
-    <div className={`timeline${props.className ? ` ${props.className}` : ''}`}>
-      <code>
-        <pre
-          style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {JSON.stringify(props, null, '    ')}
-        </pre>
-      </code>
+    <div className={`timeline${className ? ` ${className}` : ''}`}>
+      {heading && (
+        <SectionHeading
+          heading={heading}
+          level={level}
+          subheading={subheading}
+        />
+      )}
+
+      {events.map((event) => (
+        <div key={event.date} className="event">
+          <Flex className="inner" direction="column" gap="xxs">
+            <div>
+              <p className="year">{dayjs(event.date).format('YYYY')}</p>
+              <p className="date">{dayjs(event.date).format('MMM DD, YYYY')}</p>
+              <p className={`title ${headingFont.className}`}>{event.title}</p>
+              {event.description && (
+                <div className="description">
+                  <Markdown>{event.description}</Markdown>
+                </div>
+              )}
+            </div>
+            {event.image && <ImageObject {...event.image} />}
+          </Flex>
+        </div>
+      ))}
     </div>
   )
 }

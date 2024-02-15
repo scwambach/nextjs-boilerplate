@@ -1,6 +1,4 @@
-import { Accordion, Banner } from '@components/blocks'
-import { Button, Table } from '@components/modules'
-import { Flex } from '@components/utility'
+import { Banner, Timeline } from '@components/blocks'
 
 export default function Home() {
   return (
@@ -25,42 +23,36 @@ export default function Home() {
         ]}
       />
       <div className="container">
-        <Accordion heading="This is a question?" theme="secondary">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            sapien, tincidunt quis nunc ac, lacinia tincidunt eros. Sed
-            condimentum, libero non placerat lacinia, elit nunc faucibus elit,
-            nec fermentum nunc nisl id eros. In hac habitasse platea dictumst
-            eget.
-          </p>
-        </Accordion>
-        <Accordion heading="Accordion Heading">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
-            sapien, tincidunt quis nunc ac, lacinia tincidunt eros. Sed
-            condimentum, libero non placerat lacinia, elit nunc faucibus elit,
-            nec fermentum nunc nisl id eros. In hac habitasse platea dictumst
-            eget.
-          </p>
-        </Accordion>
-        <Table
-          headingRow={['First Name', 'Last Name', 'Age', 'Actions']}
-          rows={[
-            { cells: ['John', 'Doe', '25'] },
-            { cells: ['Jane', 'Doe', '23'] },
-            { cells: ['Mike', 'Smith', '32'] },
-            { cells: ['Emily', 'Johnson', '29'] },
+        <Timeline
+          events={[
+            {
+              date: '2019-01-01',
+              title: 'First Event',
+              description: 'This is the first event on the timeline.',
+              image: {
+                query: 'history 1',
+                alt: 'Placeholder Image',
+                width: 500,
+                height: 500,
+              },
+            },
+            {
+              date: '2019-01-02',
+              title: 'Second Event',
+              description: 'This is the second event on the timeline.',
+            },
+            {
+              date: '2019-01-03',
+              title: 'Third Event',
+              description: 'This is the third event on the timeline.',
+              image: {
+                query: 'history 3',
+                alt: 'Placeholder Image',
+                width: 500,
+                height: 500,
+              },
+            },
           ]}
-          controlCell={
-            <Flex gap="micro">
-              <Button theme="secondary" className="btn btn-primary">
-                Edit
-              </Button>
-              <Button theme="tertiary" className="btn btn-danger">
-                Delete
-              </Button>
-            </Flex>
-          }
         />
       </div>
     </main>
