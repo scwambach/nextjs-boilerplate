@@ -1,4 +1,4 @@
-import { Banner } from '@components/blocks'
+import { Accordion, Banner } from '@components/blocks'
 import { Button, Table } from '@components/modules'
 import { Flex } from '@components/utility'
 
@@ -25,6 +25,24 @@ export default function Home() {
         ]}
       />
       <div className="container">
+        <Accordion heading="This is a question?" theme="secondary">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
+            sapien, tincidunt quis nunc ac, lacinia tincidunt eros. Sed
+            condimentum, libero non placerat lacinia, elit nunc faucibus elit,
+            nec fermentum nunc nisl id eros. In hac habitasse platea dictumst
+            eget.
+          </p>
+        </Accordion>
+        <Accordion heading="Accordion Heading">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis
+            sapien, tincidunt quis nunc ac, lacinia tincidunt eros. Sed
+            condimentum, libero non placerat lacinia, elit nunc faucibus elit,
+            nec fermentum nunc nisl id eros. In hac habitasse platea dictumst
+            eget.
+          </p>
+        </Accordion>
         <Table
           headingRow={['First Name', 'Last Name', 'Age', 'Actions']}
           rows={[
