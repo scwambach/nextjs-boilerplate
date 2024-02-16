@@ -8,6 +8,8 @@
   "scripts": {
     "dev": "next dev -p 3030",
     "dev:test": "concurrently \"next dev -p 3030\" \"yarn test:watch\"",
+    "dev:storybook": "concurrently \"next dev -p 3030\" \"yarn storybook\"",
+    "dev:fullapp": "concurrently \"next dev -p 3030\" \"yarn storybook\" \"yarn test:watch\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
