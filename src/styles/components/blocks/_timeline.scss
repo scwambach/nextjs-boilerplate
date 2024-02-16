@@ -2,6 +2,33 @@
   position: relative;
   @include vertical-spacing-margin;
 
+  &:before {
+    content: '';
+    position: absolute;
+    top: $size-10;
+    left: 50%;
+    width: $size-4;
+    height: calc(100% - $size-10);
+    background-color: $green;
+    transform: translateX(-50%);
+
+    @media screen and (max-width: ($sm - 1)) {
+      left: $size-16;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: $size-32;
+    height: $size-32;
+    background-color: $green;
+    border-radius: 100%;
+    transform: translate(-50%, -$size-8);
+  }
+
   .event {
     display: flex;
     flex-direction: row;
@@ -21,11 +48,30 @@
       .year {
         right: calc(100% + $size-24);
       }
+
+      .date {
+        &:after {
+          right: calc(100% + $size-8);
+          width: $size-40;
+        }
+      }
     }
 
     &:nth-child(odd) {
       .year {
         left: calc(100% + $size-24);
+      }
+
+      .date {
+        width: 100%;
+        span {
+          padding-right: $size-8;
+        }
+
+        &:after {
+          left: $size-8;
+          width: calc(100% + $size-40);
+        }
       }
     }
 
@@ -34,16 +80,24 @@
     }
   }
 
+  .info {
+    width: 100%;
+  }
+
   .inner {
-    position: relative;
     background-color: $white;
     padding: $size-24;
     border-radius: $size-8;
     box-shadow: $box-shadow-2;
 
+    @media screen and (min-width: ($sm)) {
+      position: relative;
+    }
+
     .year {
       position: absolute;
       color: $white;
+      top: $size-9;
       background-color: $black;
       width: $size-52;
       height: $size-52;
@@ -51,13 +105,38 @@
       align-items: center;
       justify-content: center;
       font-weight: bold;
+      z-index: 1;
       border-radius: 100%;
+
+      @media screen and (max-width: ($sm - 1)) {
+        left: 0;
+      }
     }
 
     .date {
       color: $red;
       font-weight: bold;
-      background-color: $white;
+      position: relative;
+
+      span {
+        display: inline-block;
+        position: relative;
+        z-index: 2;
+        background-color: $white;
+      }
+
+      &:after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        content: '';
+        border-top: $size-3 dashed $red;
+      }
+    }
+
+    .imageObject {
+      width: 100%;
     }
   }
 }
