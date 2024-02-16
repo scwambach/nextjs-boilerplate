@@ -9,6 +9,7 @@ export const LinkObject = ({
   copy,
   style,
   role,
+  ariaLabel,
   onClick,
   onMouseOver,
   onMouseOut,
@@ -21,6 +22,7 @@ export const LinkObject = ({
       role={role}
       style={style}
       data-testid={testId}
+      aria-label={ariaLabel}
       className={`linkObject${className ? ` ${className}` : ''}`}
       href={href}
       onMouseOver={onMouseOver}
@@ -38,6 +40,7 @@ export const LinkObject = ({
       data-testid={testId}
       className={`linkObject${className ? ` ${className}` : ''}`}
       href={href}
+      aria-label={ariaLabel}
       target="_blank"
       rel="noopener noreferrer"
       onMouseOver={onMouseOver}

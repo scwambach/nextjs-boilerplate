@@ -33,7 +33,7 @@ export const Person = ({
           >
             {socials.map((social, index) => (
               <li key={index}>
-                <LinkObject href={social.href} aria-label={social.screenReader}>
+                <LinkObject href={social.href} ariaLabel={social.screenReader}>
                   <IconSelector
                     icon={social.icon as keyof typeof Icon}
                     weight="fill"

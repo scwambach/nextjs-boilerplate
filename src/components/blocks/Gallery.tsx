@@ -7,7 +7,7 @@ import { colors } from '@utils/settings'
 import { BlockProps, ColumnSize, Gaps, ImageObjectProps } from '@utils/types'
 import { useEffect, useState } from 'react'
 
-interface GalleryProps extends BlockProps {
+export interface GalleryProps extends BlockProps {
   items: ImageObjectProps[]
   gap?: Gaps
   columns?: ColumnSize
@@ -18,6 +18,7 @@ export const Gallery = ({
   heading,
   level,
   subheading,
+  testId,
   columns = 4,
   gap,
   items,
@@ -33,7 +34,10 @@ export const Gallery = ({
   }, [activeIndex])
 
   return (
-    <div className={`gallery${className ? ` ${className}` : ''}`}>
+    <div
+      data-testid={testId}
+      className={`gallery${className ? ` ${className}` : ''}`}
+    >
       {heading && (
         <SectionHeading
           heading={heading}
@@ -42,8 +46,9 @@ export const Gallery = ({
         />
       )}
       <Grid gap={gap} columns={columns}>
-        {items.map((item) => (
+        {items.map((item, index) => (
           <Button
+            testId={testId ? `${testId}-item-${index}` : undefined}
             className="galleryItem"
             key={item.query || item.src}
             type="button"
@@ -61,14 +66,17 @@ export const Gallery = ({
         <Button
           className="close"
           type="button"
+          ariaLabel="Close Modal"
           unstyled
           onClick={() => setIsModalOpen(false)}
         >
           <X color={colors.white} size={50} />
+          <div className="srOnly">Close Modal</div>
         </Button>
         <Button
           className={`control prev${activeIndex === 0 ? ' disabled' : ''}`}
           type="button"
+          disabled={activeIndex === 0}
           unstyled
           onClick={() => setActiveIndex(activeIndex - 1)}
         >
@@ -84,6 +92,7 @@ export const Gallery = ({
           }`}
           type="button"
           unstyled
+          disabled={activeIndex === items.length - 1}
           onClick={() => setActiveIndex(activeIndex + 1)}
         >
           <CaretRight color={colors.white} size={50} />

@@ -6,7 +6,7 @@ import { IconSelector } from '@components/utility/IconSelector'
 import { BlockProps, Themes } from '@utils/types'
 import { useState } from 'react'
 
-interface TabsProps extends BlockProps {
+export interface TabsProps extends BlockProps {
   items: {
     label: string
     content: React.ReactNode

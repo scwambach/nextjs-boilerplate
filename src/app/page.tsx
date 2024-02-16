@@ -1,6 +1,11 @@
-import { Banner, Timeline } from '@components/blocks'
+import { Banner, Gallery, Timeline } from '@components/blocks'
 
 export default function Home() {
+  const items = [
+    { query: 'technology 1', alt: 'Image 1', width: 100, height: 100 },
+    { query: 'technology 2', alt: 'Image 2', width: 100, height: 100 },
+    { query: 'technology 3', alt: 'Image 3', width: 100, height: 100 },
+  ]
   return (
     <main>
       <Banner
@@ -23,6 +28,15 @@ export default function Home() {
         ]}
       />
       <div className="container narrow">
+        <Gallery
+          items={items}
+          className={'custom-class'}
+          heading={'Gallery Heading'}
+          level={3}
+          subheading={'Gallery Subheading'}
+          columns={4}
+          gap={'md'}
+        />
         <Timeline
           events={[
             {

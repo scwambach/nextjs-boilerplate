@@ -3,7 +3,7 @@ import { Button } from '@components/modules'
 import { ComponentProps, Themes } from '@utils/types'
 import { ReactNode, useEffect, useRef, useState } from 'react'
 
-interface AccordionProps extends ComponentProps {
+export interface AccordionProps extends ComponentProps {
   children: ReactNode
   heading: string
   theme?: Themes
@@ -12,6 +12,7 @@ interface AccordionProps extends ComponentProps {
 export const Accordion = ({
   heading,
   theme,
+  testId,
   children,
   className,
 }: AccordionProps) => {
@@ -40,12 +41,11 @@ export const Accordion = ({
 
       window.addEventListener('resize', handleResize)
     }
-
-    // if open and on window resize, reset height to auto
   }, [open])
 
   return (
     <div
+      data-testid={testId}
       ref={ref}
       className={`accordion${
         open ? ' open' : ''
@@ -55,8 +55,8 @@ export const Accordion = ({
         theme={theme}
         suffixIcon="CaretDown"
         onClick={() => setOpen(!open)}
-        aria-expanded={open}
-        aria-controls="accordion-content"
+        ariaExpanded={open}
+        ariaControls="accordion-content"
       >
         {heading}
       </Button>

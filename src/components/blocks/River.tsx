@@ -10,7 +10,7 @@ import {
   Themes,
 } from '@utils/types'
 
-interface RiverProps extends ComponentProps {
+export interface RiverProps extends ComponentProps {
   theme?: Themes
   headingLevel?: HeadingLevel
   items: {
@@ -41,6 +41,7 @@ export const River = ({
           <Flex
             fill
             gap="sm"
+            testId={testId ? `item-${index}` : undefined}
             direction={isEven ? 'row' : 'row-reverse'}
             alignItems="stretch"
             key={index + (item.title || item.description)}

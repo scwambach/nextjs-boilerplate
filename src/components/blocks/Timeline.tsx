@@ -6,7 +6,7 @@ import { headingFont } from '@utils/fonts'
 import { BlockProps, ImageObjectProps } from '@utils/types'
 import dayjs from 'dayjs'
 
-interface TimelineProps extends BlockProps {
+export interface TimelineProps extends BlockProps {
   events: {
     date: string
     title: string

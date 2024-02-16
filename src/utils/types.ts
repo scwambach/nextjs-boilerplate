@@ -123,11 +123,13 @@ export interface ImageObjectProps {
 export interface ButtonProps extends ComponentProps {
   type?: 'button' | 'submit' | 'reset' | 'link'
   theme?: Themes
+  role?: string
   href?: string
   icon?: keyof typeof Icon
   suffixIcon?: keyof typeof Icon
   children?: ReactNode
   style?: CSSProperties
+  disabled?: boolean
   label?: string
   unstyled?: boolean
   onMouseOver?: () => void
@@ -135,6 +137,9 @@ export interface ButtonProps extends ComponentProps {
   onFocus?: () => void
   onBlur?: () => void
   onClick?: () => void
+  ariaExpanded?: boolean
+  ariaControls?: string
+  ariaLabel?: string
 }
 
 export interface LinkObjectProps {
@@ -145,6 +150,7 @@ export interface LinkObjectProps {
   testId?: string
   copy?: string
   href: string
+  ariaLabel?: string
   onMouseOver?: () => void
   onMouseOut?: () => void
   onFocus?: () => void

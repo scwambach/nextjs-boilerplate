@@ -7,7 +7,9 @@ export const Button = ({
   type = 'button',
   href,
   unstyled,
+  disabled,
   icon,
+  role = 'button',
   suffixIcon,
   className,
   children,
@@ -19,6 +21,9 @@ export const Button = ({
   label,
   theme,
   style,
+  ariaExpanded,
+  ariaControls,
+  ariaLabel,
   testId,
 }: ButtonProps) => {
   return (
@@ -27,7 +32,7 @@ export const Button = ({
         <LinkObject
           href={href || '/'}
           style={style}
-          role="button"
+          role={role}
           testId={testId}
           className={`button ${
             headingFont.className
@@ -59,6 +64,7 @@ export const Button = ({
         <button
           type={type}
           data-testid={testId}
+          disabled={disabled}
           style={style}
           className={`button ${
             headingFont.className
@@ -66,8 +72,12 @@ export const Button = ({
           onClick={onClick}
           onMouseOver={onMouseOver}
           onMouseOut={onMouseOut}
+          role={role}
           onFocus={onFocus}
           onBlur={onBlur}
+          aria-expanded={ariaExpanded}
+          aria-controls={ariaControls}
+          aria-label={ariaLabel}
         >
           {icon && (
             <IconSelector

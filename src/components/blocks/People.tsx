@@ -3,7 +3,7 @@ import { SectionHeading } from '@components/modules/SectionHeading'
 import { Grid } from '@components/utility'
 import { ColumnSize, BlockProps, Gaps, PersonProps } from '@utils/types'
 
-interface PeopleProps extends BlockProps {
+export interface PeopleProps extends BlockProps {
   items: PersonProps[]
   columns?: ColumnSize
   gap?: Gaps

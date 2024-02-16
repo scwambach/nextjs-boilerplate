@@ -2,7 +2,7 @@ import { Heading } from '@components/utility/Heading'
 import { Markdown } from '@components/utility/Markdown'
 import { ComponentProps, HeadingLevel } from '@utils/types'
 
-interface SectionHeadingProps extends ComponentProps {
+export interface SectionHeadingProps extends ComponentProps {
   heading?: string
   level?: HeadingLevel
   subheading?: string
