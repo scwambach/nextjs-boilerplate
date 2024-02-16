@@ -32,6 +32,7 @@ export const Person = ({
                   <IconSelector
                     icon={social.icon as keyof typeof Icon}
                     weight="fill"
+                    size={24}
                   />
                 </LinkObject>
               </li>

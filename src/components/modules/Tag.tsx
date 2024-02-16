@@ -14,7 +14,7 @@ export const Tag = ({
 }: TagProps) => {
   const Element = elementTag as keyof JSX.IntrinsicElements
   return (
-    <Element className={`tag ${theme}${className ? ` ${className}` : ''}`}>
+    <Element className={`tagItem ${theme}${className ? ` ${className}` : ''}`}>
       {label}
     </Element>
   )

@@ -1,4 +1,3 @@
-export { Accordion } from './Accordion'
 export { Alert } from './Alert'
 export { Banner } from './Banner'
 export { Cards } from './Cards'
