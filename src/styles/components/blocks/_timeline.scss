@@ -3,14 +3,16 @@
   @include vertical-spacing-margin;
 
   &:before {
-    content: '';
-    position: absolute;
-    top: $size-10;
-    left: 50%;
-    width: $size-4;
-    height: calc(100% - $size-10);
-    background-color: $green;
-    transform: translateX(-50%);
+    @media screen and (min-width: ($xxs)) {
+      content: '';
+      position: absolute;
+      top: $size-10;
+      left: 50%;
+      width: $size-4;
+      height: calc(100% - $size-10);
+      background-color: $green;
+      transform: translateX(-50%);
+    }
 
     @media screen and (max-width: ($sm - 1)) {
       left: $size-16;
@@ -18,15 +20,21 @@
   }
 
   &:after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    width: $size-32;
-    height: $size-32;
-    background-color: $green;
-    border-radius: 100%;
-    transform: translate(-50%, -$size-8);
+    @media screen and (min-width: ($xxs)) {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: $size-32;
+      height: $size-32;
+      background-color: $green;
+      border-radius: 100%;
+      transform: translate(-50%, -$size-8);
+    }
+
+    @media screen and (max-width: ($sm - 1)) {
+      left: $size-16;
+    }
   }
 
   .event {
@@ -44,9 +52,14 @@
     }
 
     &:nth-child(even) {
-      flex-direction: row-reverse;
+      @media screen and (min-width: ($sm)) {
+        flex-direction: row-reverse;
+      }
+
       .year {
-        right: calc(100% + $size-24);
+        @media screen and (min-width: ($sm)) {
+          right: calc(100% + $size-24);
+        }
       }
 
       .date {
@@ -59,7 +72,9 @@
 
     &:nth-child(odd) {
       .year {
-        left: calc(100% + $size-24);
+        @media screen and (min-width: ($sm)) {
+          left: calc(100% + $size-24);
+        }
       }
 
       .date {
@@ -69,14 +84,17 @@
         }
 
         &:after {
-          left: $size-8;
-          width: calc(100% + $size-40);
+          @media screen and (min-width: ($sm)) {
+            left: $size-8;
+            width: calc(100% + $size-40);
+          }
+
+          @media screen and (max-width: ($sm - 1)) {
+            right: calc(100% + $size-8);
+            width: $size-40;
+          }
         }
       }
-    }
-
-    .inner {
-      width: calc(50% - ($size-48 + 0.1rem));
     }
   }
 
@@ -89,15 +107,24 @@
     padding: $size-24;
     border-radius: $size-8;
     box-shadow: $box-shadow-2;
+    width: calc(50% - ($size-48 + 0.1rem));
 
     @media screen and (min-width: ($sm)) {
       position: relative;
     }
 
+    @media screen and (max-width: ($sm - 1)) {
+      margin-left: $size-72;
+      width: calc(100% - ($size-48 + 0.1rem));
+    }
+
+    @media screen and (max-width: ($xxs - 1)) {
+      margin-left: 0;
+      width: 100%;
+    }
+
     .year {
-      position: absolute;
       color: $white;
-      top: $size-9;
       background-color: $black;
       width: $size-52;
       height: $size-52;
@@ -106,10 +133,16 @@
       justify-content: center;
       font-weight: bold;
       z-index: 1;
+      position: absolute;
+      top: $size-9;
       border-radius: 100%;
 
       @media screen and (max-width: ($sm - 1)) {
-        left: 0;
+        left: -$size-9;
+      }
+
+      @media screen and (max-width: ($xxs - 1)) {
+        display: none;
       }
     }
 
@@ -126,12 +159,14 @@
       }
 
       &:after {
-        display: block;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        content: '';
-        border-top: $size-3 dashed $red;
+        @media screen and (min-width: ($xxs)) {
+          display: block;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          content: '';
+          border-top: $size-3 dashed $red;
+        }
       }
     }
 
