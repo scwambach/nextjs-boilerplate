@@ -17,7 +17,7 @@ interface RiverProps extends ComponentProps {
     title?: string
     description: string
     image: ImageObjectProps
-    links: ButtonProps[]
+    links?: ButtonProps[]
   }[]
 }
 
@@ -51,7 +51,7 @@ export const River = ({
             <div className="copy">
               <Heading level={headingLevel}>{item.title}</Heading>
               <Markdown>{item.description}</Markdown>
-              {item.links && (
+              {item.links && item.links.length > 0 && (
                 <div className="links">
                   {item.links.map((link, index) => (
                     <Button
