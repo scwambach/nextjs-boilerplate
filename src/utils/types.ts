@@ -34,6 +34,8 @@ export type FieldTypes =
   | 'tel'
   | 'text'
   | 'textarea'
+  | 'search'
+  | 'color'
   | 'time'
   | 'url'
   | 'week'

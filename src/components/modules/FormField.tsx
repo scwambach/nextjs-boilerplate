@@ -225,6 +225,9 @@ export const FormField = ({
           <Flex direction="column" gap="xxs">
             <Label label={label} description={description} />
             <input {...fieldArgs} type={type} onChange={onChange} />
+            {type === 'search' && (
+              <IconSelector icon="MagnifyingGlass" size={20} weight="bold" />
+            )}
           </Flex>
         </label>
       )}

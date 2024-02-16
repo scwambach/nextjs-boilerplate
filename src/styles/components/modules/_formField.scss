@@ -10,6 +10,7 @@
     border: $size-1 solid $lightBlue;
     padding: $size-4 $size-8;
     min-height: $size-32;
+    border-radius: $size-4;
     outline-offset: $size-2;
     width: 100%;
 
@@ -90,6 +91,8 @@
   &.date,
   &.datetime-local,
   &.email,
+  &.search,
+  &.color,
   &.month,
   &.number,
   &.password,
@@ -149,6 +152,7 @@
       cursor: pointer;
       width: 100%;
       padding: $size-16;
+      border-radius: $size-4;
       border: $size-1 solid $lightBlue;
       background-color: $white;
 
@@ -173,6 +177,7 @@
       border-radius: 0;
       min-height: $size-32;
       border: $size-1 solid $lightBlue;
+      border-radius: $size-4;
     }
     [class$='-ValueContainer'] {
       padding: $size-5 $size-8 $size-4;
@@ -197,6 +202,18 @@
       svg {
         color: $black;
       }
+    }
+  }
+  &.search {
+    position: relative;
+
+    svg {
+      position: absolute;
+      right: $size-8;
+      bottom: $size-7;
+      z-index: 2;
+      width: $size-20;
+      height: $size-20;
     }
   }
 }

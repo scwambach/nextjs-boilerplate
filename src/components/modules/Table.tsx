@@ -6,7 +6,7 @@ interface TableProps extends ComponentProps {
   headingRow?: string[]
   controlCell?: ReactNode
   rows: {
-    cells: string[]
+    cells: (string | number)[]
   }[]
 }
 
