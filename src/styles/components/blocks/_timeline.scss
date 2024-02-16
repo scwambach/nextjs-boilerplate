@@ -172,6 +172,8 @@
 
     .imageObject {
       width: 100%;
+      border-radius: $size-8;
+      overflow: hidden;
     }
   }
 }
