@@ -25,7 +25,12 @@ export const Person = ({
         </p>
         <p>{title}</p>
         {socials && (
-          <Flex elementTag="ul" className="unstyled" gap="micro">
+          <Flex
+            columnBreak="none"
+            elementTag="ul"
+            className="unstyled"
+            gap="micro"
+          >
             {socials.map((social, index) => (
               <li key={index}>
                 <LinkObject href={social.href} aria-label={social.screenReader}>
