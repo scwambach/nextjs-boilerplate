@@ -68,6 +68,7 @@ button.card.unstyled {
 button.card.unstyled {
   transition: $transition;
   transform: translateZ(0);
+  width: 100%;
 
   > div {
     width: 100%;

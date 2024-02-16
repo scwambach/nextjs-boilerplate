@@ -26,6 +26,7 @@ export const Avatar = ({
   return (
     <div
       data-testid={testId}
+      title={`${firstName} ${lastName}`}
       style={{
         height: `${size}rem`,
         width: `${size}rem`,
@@ -44,6 +45,10 @@ export const Avatar = ({
       {image && (
         <ImageObject {...image} alt={`${firstName} ${lastName}`} isBackground />
       )}
+      <div className="srOnly">
+        <span>{firstName}</span>
+        <span>{lastName}</span>
+      </div>
       {badge && badge.number > 0 && <Badge {...badge} />}
     </div>
   )
