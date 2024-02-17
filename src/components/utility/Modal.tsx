@@ -5,7 +5,6 @@ import { ReactNode, useEffect, useState } from 'react'
 import { Flex } from './Flex'
 
 interface ModalProps extends ComponentProps {
-  modalId: string
   triggerCopy: string
   triggerUnstyled?: boolean
   triggerTheme?: Themes

@@ -92,48 +92,6 @@
   justify-content: flex-start;
   @include columnBreaks;
 
-  &.break-xxs {
-    @media screen and (min-width: ($xxs)) {
-      @include customLayouts;
-    }
-  }
-
-  &.break-xs {
-    @media screen and (min-width: ($xs)) {
-      @include customLayouts;
-    }
-  }
-
-  &.break-sm {
-    @media screen and (min-width: ($sm)) {
-      @include customLayouts;
-    }
-  }
-
-  &.break-md {
-    @media screen and (min-width: ($md)) {
-      @include customLayouts;
-    }
-  }
-
-  &.break-lg {
-    @media screen and (min-width: $lg) {
-      @include customLayouts;
-    }
-  }
-
-  &.break-xl {
-    @media screen and (min-width: $xl) {
-      @include customLayouts;
-    }
-  }
-
-  &.break-xxl {
-    @media screen and (min-width: $xxl) {
-      @include customLayouts;
-    }
-  }
-
   &.no-break {
     flex-wrap: nowrap;
   }
@@ -198,5 +156,47 @@
 
   &.justify-space-around {
     justify-content: space-around;
+  }
+
+  &.break-xxs {
+    @media screen and (min-width: ($xxs)) {
+      @include customLayouts;
+    }
+  }
+
+  &.break-xs {
+    @media screen and (min-width: ($xs)) {
+      @include customLayouts;
+    }
+  }
+
+  &.break-sm {
+    @media screen and (min-width: ($sm)) {
+      @include customLayouts;
+    }
+  }
+
+  &.break-md {
+    @media screen and (min-width: ($md)) {
+      @include customLayouts;
+    }
+  }
+
+  &.break-lg {
+    @media screen and (min-width: $lg) {
+      @include customLayouts;
+    }
+  }
+
+  &.break-xl {
+    @media screen and (min-width: $xl) {
+      @include customLayouts;
+    }
+  }
+
+  &.break-xxl {
+    @media screen and (min-width: $xxl) {
+      @include customLayouts;
+    }
   }
 }
