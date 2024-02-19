@@ -259,3 +259,17 @@ export interface StatProps extends ComponentProps {
   decimals?: boolean
   tags?: string[]
 }
+
+export interface TableProps extends ComponentProps {
+  headingRow?: string[]
+  controlCell?: ReactNode
+  rows: {
+    cells: (string | number)[]
+  }[]
+}
+
+export interface TagProps extends ComponentProps {
+  label: string
+  theme?: Themes
+  elementTag?: 'div' | 'span' | 'li'
+}

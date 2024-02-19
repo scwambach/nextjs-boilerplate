@@ -1,14 +1,5 @@
-import { ComponentProps } from '@utils/types'
 import { headingFont } from '@utils/fonts'
-import { ReactNode } from 'react'
-
-interface TableProps extends ComponentProps {
-  headingRow?: string[]
-  controlCell?: ReactNode
-  rows: {
-    cells: (string | number)[]
-  }[]
-}
+import { TableProps } from '@utils/types'
 
 export const Table = ({
   className,

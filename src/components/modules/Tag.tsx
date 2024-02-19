@@ -1,10 +1,4 @@
-import { ComponentProps, Themes } from '@utils/types'
-
-interface TagProps extends ComponentProps {
-  label: string
-  theme?: Themes
-  elementTag?: 'div' | 'span' | 'li'
-}
+import { TagProps } from '@utils/types'
 
 export const Tag = ({
   className,

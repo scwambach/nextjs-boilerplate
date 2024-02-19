@@ -1,4 +1,5 @@
 import { Banner, Gallery, Timeline } from '@components/blocks'
+import { Table } from '@components/modules'
 
 export default function Home() {
   const items = [
@@ -36,6 +37,11 @@ export default function Home() {
           subheading={'Gallery Subheading'}
           columns={4}
           gap={'md'}
+        />
+        <Table
+          controlCell={<button>Edit</button>}
+          headingRow={['Name', 'Age']}
+          rows={[{ cells: ['John', 25] }, { cells: ['Alice', 30] }]}
         />
         <Timeline
           events={[

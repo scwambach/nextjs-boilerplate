@@ -4,7 +4,7 @@ import { ButtonProps, ComponentProps, Themes } from '@utils/types'
 import { ReactNode, useEffect, useState } from 'react'
 import { Flex } from './Flex'
 
-interface ModalProps extends ComponentProps {
+export interface ModalProps extends ComponentProps {
   triggerCopy: string
   triggerUnstyled?: boolean
   triggerTheme?: Themes
