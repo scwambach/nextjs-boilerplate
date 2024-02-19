@@ -107,6 +107,14 @@ ol {
   }
 }
 
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
 hr {
   border: 0;
   border-top: $size-1 solid $black;

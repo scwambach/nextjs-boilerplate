@@ -17,7 +17,7 @@ export const Modal: Story = {
       {
         label: 'Submit',
         theme: 'primary',
-        onClick: () => console.log('Submit'),
+        onClick: () => alert('Submitted'),
       },
     ],
     children: (
