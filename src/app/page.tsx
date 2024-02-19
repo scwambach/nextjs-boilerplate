@@ -44,6 +44,9 @@ export default function Home() {
           rows={[{ cells: ['John', 25] }, { cells: ['Alice', 30] }]}
         />
         <Timeline
+          heading="Timeline Heading"
+          level={2}
+          subheading="Timeline Subheading"
           events={[
             {
               date: '2019-01-01',
