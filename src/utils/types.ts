@@ -19,6 +19,8 @@ export type ColumnSize = 1 | 2 | 3 | 4 | 5 | 6
 
 export type Gaps = BreakNames | 'none' | 'micro' | 'mega'
 
+export type ButtonTypes = 'button' | 'submit' | 'reset' | 'link'
+
 export type FieldTypes =
   | 'checkbox'
   | 'date'
@@ -121,7 +123,7 @@ export interface ImageObjectProps {
 }
 
 export interface ButtonProps extends ComponentProps {
-  type?: 'button' | 'submit' | 'reset' | 'link'
+  type?: ButtonTypes
   theme?: Themes
   role?: string
   href?: string
@@ -272,4 +274,19 @@ export interface TagProps extends ComponentProps {
   label: string
   theme?: Themes
   elementTag?: 'div' | 'span' | 'li'
+}
+
+export interface GlobalProps {
+  siteTitle: string
+  siteDescription: string
+  favicon: string
+  navigation: {
+    label: string
+    href?: string
+    type?: ButtonTypes
+    subnav?: {
+      label: string
+      href: string
+    }[]
+  }[]
 }

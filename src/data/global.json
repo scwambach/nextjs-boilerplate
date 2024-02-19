@@ -4,16 +4,30 @@
   "favicon": "/favicon.ico",
   "navigation": [
     {
-      "title": "Home",
-      "url": "/"
+      "label": "Home",
+      "href": "/",
+      "type": "link"
     },
     {
-      "title": "About",
-      "url": "/about"
+      "label": "About",
+      "type": "button",
+      "href": "/about",
+      "subnav": [
+        {
+          "copy": "Our Team",
+          "href": "/about/team"
+        },
+        {
+          "copy": "Our Mission",
+          "href": "/about/mission"
+        }
+      ]
     },
     {
-      "title": "Contact",
-      "url": "/contact"
+      "label": "Contact",
+      "href": "/contact",
+      "type": "link"
+      
     }
   ]
 }

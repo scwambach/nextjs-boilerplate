@@ -49,11 +49,13 @@ export const Dropdown = ({ items, ...props }: DropdownProps) => {
       <Button
         suffixIcon="CaretDown"
         {...props}
+        type={props.href ? 'link' : 'button'}
         className="toggle"
         onFocus={() => {
           setOpen(true)
         }}
       />
+
       <Flex direction="column" gap="none" className="menu">
         {items?.map((item, index) => (
           <LinkObject

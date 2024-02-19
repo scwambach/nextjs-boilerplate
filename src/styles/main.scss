@@ -6,6 +6,10 @@
 @import './global';
 @import './typography';
 
+// Components GLOBAL
+@import './components/global/header';
+@import './components/global/footer';
+
 // Components UTILITY
 
 @import './components/utility/drawer';

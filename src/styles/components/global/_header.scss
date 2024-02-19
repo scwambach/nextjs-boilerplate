@@ -1,0 +1,21 @@
+header {
+  padding: $vertical-spacing / 3 0;
+
+  @media screen and (max-width: ($md - 1)) {
+    padding: $vertical-spacing-mobile / 3 0;
+  }
+
+  .heading {
+    margin: 0;
+  }
+  li {
+    margin: 0;
+  }
+
+  .dropdown {
+    .menu {
+      right: 0;
+      min-width: $size-200;
+    }
+  }
+}

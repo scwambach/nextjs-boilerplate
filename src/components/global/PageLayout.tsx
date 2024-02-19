@@ -1,12 +1,19 @@
+import { ReactNode } from 'react'
 import { Footer } from './Footer'
 import { Header } from './Header'
+import { GlobalProps } from '@utils/types'
 
-// TODO: Create PageLayout component
-export const PageLayout = () => {
+export const PageLayout = ({
+  children,
+  global,
+}: {
+  children: ReactNode
+  global: GlobalProps
+}) => {
   return (
     <main>
-      <Header />
-      PageLayout
+      <Header menu={global.navigation} title={global.siteTitle} />
+      {children}
       <Footer />
     </main>
   )

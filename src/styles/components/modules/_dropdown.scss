@@ -25,7 +25,7 @@
     border-bottom: $size-1 solid $lightGray;
     overflow: hidden;
     border-radius: $size-8;
-    min-width: $xxs;
+    min-width: $size-200;
     background-color: $white;
     z-index: 10;
 
@@ -35,7 +35,8 @@
       width: 100%;
       padding: $size-8 $size-16;
 
-      &:hover {
+      &:hover,
+      &:focus {
         text-decoration: none;
         opacity: 1;
         background-color: $lightGray;
