@@ -15,8 +15,10 @@
     width: 100%;
 
     &:focus {
-      outline: none;
-      outline: $size-4 solid $blue;
+      @media screen and (min-width: ($sm)) {
+        outline: none;
+        outline: $size-4 solid $blue;
+      }
     }
   }
 }
@@ -56,8 +58,10 @@
       > div {
         outline-offset: $size-2;
         &.focused {
-          outline: none;
-          outline: $size-4 solid $blue;
+          @media screen and (min-width: ($sm)) {
+            outline: none;
+            outline: $size-4 solid $blue;
+          }
         }
       }
     }
@@ -71,8 +75,10 @@
       appearance: none;
 
       &:focus {
-        outline: none;
-        outline: $size-4 solid $blue;
+        @media screen and (min-width: ($sm)) {
+          outline: none;
+          outline: $size-4 solid $blue;
+        }
       }
 
       &:checked + [class$='indicator'] {
@@ -142,8 +148,10 @@
 
       &:focus {
         + .dropzone {
-          background-color: $lightBlue;
-          outline: $size-4 solid $blue;
+          @media screen and (min-width: ($sm)) {
+            background-color: $lightBlue;
+            outline: $size-4 solid $blue;
+          }
         }
       }
     }
@@ -157,7 +165,9 @@
       background-color: $white;
 
       &:hover {
-        background-color: $lightBlue;
+        @media screen and (min-width: ($sm)) {
+          background-color: $lightBlue;
+        }
       }
     }
   }
@@ -168,9 +178,11 @@
     }
 
     .focused {
-      width: 100%;
-      outline-offset: $size-2;
-      outline: $size-4 solid $blue;
+      @media screen and (min-width: ($sm)) {
+        width: 100%;
+        outline-offset: $size-2;
+        outline: $size-4 solid $blue;
+      }
     }
 
     [class$='-control'] {

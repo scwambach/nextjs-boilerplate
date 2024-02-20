@@ -31,11 +31,15 @@
   margin: 0;
 
   &:hover {
-    opacity: 0.8;
-    text-decoration: underline;
+    @media screen and (min-width: ($sm)) {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
   }
 
   &:focus {
-    outline: $size-4 solid $blue;
+    @media screen and (min-width: ($sm)) {
+      outline: $size-4 solid $blue;
+    }
   }
 }

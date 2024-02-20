@@ -88,12 +88,16 @@ a {
   transition-property: opacity;
 
   &:hover {
-    opacity: 0.5;
-    text-decoration: underline;
+    @media screen and (min-width: ($sm)) {
+      opacity: 0.5;
+      text-decoration: underline;
+    }
   }
 
   &:focus {
-    outline: $size-2 solid $blue;
+    @media screen and (min-width: ($sm)) {
+      outline: $size-2 solid $blue;
+    }
   }
 }
 

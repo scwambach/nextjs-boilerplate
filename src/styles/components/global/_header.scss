@@ -18,4 +18,81 @@ header {
       min-width: $size-200;
     }
   }
+
+  .navToggle {
+    &.button {
+      position: relative;
+      z-index: 101;
+      display: flex;
+      flex-direction: column;
+      transition: $transition;
+
+      @media screen and (min-width: ($sm)) {
+        display: none;
+      }
+
+      span {
+        display: block;
+        position: relative;
+        background-color: $black;
+        height: $size-2;
+        width: $size-24;
+        transition: $transition;
+      }
+
+      &.open {
+        transform: rotate(180deg);
+        span {
+          background-color: $white;
+
+          &:nth-child(1) {
+            transform: rotate(45deg);
+            top: $size-7;
+          }
+          &:nth-child(2) {
+            transform: scale(0);
+          }
+          &:nth-child(3) {
+            transform: rotate(-45deg);
+            bottom: $size-7;
+          }
+        }
+      }
+    }
+  }
+
+  .mainNav {
+    @media screen and (max-width: ($sm - 1)) {
+      opacity: 0;
+      pointer-events: none;
+      transition: $transition;
+
+      &.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+
+    &.flex {
+      @media screen and (max-width: ($sm - 1)) {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        z-index: 100;
+        background-color: rgba($blue, 0.9);
+        top: 0;
+        left: 0;
+        color: $white;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: $size-16;
+        font-size: $size-40;
+
+        a {
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }

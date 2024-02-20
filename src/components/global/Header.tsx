@@ -1,7 +1,9 @@
+'use client'
 import { Button, Dropdown } from '@components/modules'
 import { Flex } from '@components/utility'
 import { Heading } from '@components/utility/Heading'
 import { ButtonTypes, GlobalProps } from '@utils/types'
+import { useState } from 'react'
 
 export const Header = ({
   menu,
@@ -10,14 +12,34 @@ export const Header = ({
   menu: GlobalProps['navigation']
   title: GlobalProps['siteTitle']
 }) => {
+  const [menuOpen, setMenuOpen] = useState(false)
   return (
     <header>
       <div className="container">
-        <Flex elementTag="nav" justifyContent="space-between">
+        <Flex
+          columnBreak="none"
+          elementTag="nav"
+          justifyContent="space-between"
+        >
           <Heading level={1} nonHeadingElement="p">
             {title}
           </Heading>
-          <Flex elementTag="ul" className="unstyled">
+          <Button
+            unstyled
+            className={`navToggle${menuOpen ? ' open' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span />
+            <span />
+            <span />
+            <div className="srOnly">
+              <span>Toggle Menu</span>
+            </div>
+          </Button>
+          <Flex
+            elementTag="ul"
+            className={`unstyled mainNav${menuOpen ? ' open' : ''} `}
+          >
             {menu.map((item) => (
               <li key={item.href}>
                 {item.subnav ? (

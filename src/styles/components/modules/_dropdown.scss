@@ -16,6 +16,34 @@
     transition: $transition;
   }
 
+  &.touch {
+    .toggle {
+      display: none;
+    }
+
+    .mobileToggle,
+    .toggleScreen {
+      display: flex;
+    }
+  }
+
+  .mobileToggle {
+    position: relative;
+  }
+  .mobileToggle,
+  .toggleScreen {
+    display: none;
+  }
+
+  .toggleScreen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 40px;
+    opacity: 0;
+  }
+
   .menu {
     display: none;
     position: absolute;

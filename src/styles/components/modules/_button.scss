@@ -16,15 +16,19 @@
   transition-property: background-color, color, box-shadow;
 
   &:focus {
-    outline: $size-4 solid $blue;
+    @media screen and (min-width: ($sm)) {
+      outline: $size-4 solid $blue;
+    }
   }
 
   &:hover {
-    text-decoration: none;
-    background-color: $lightBlue;
-    opacity: 1;
-    color: $black;
-    box-shadow: $box-shadow-1;
+    @media screen and (min-width: ($sm)) {
+      text-decoration: none;
+      background-color: $lightBlue;
+      opacity: 1;
+      color: $black;
+      box-shadow: $box-shadow-1;
+    }
   }
 
   &.unstyled {

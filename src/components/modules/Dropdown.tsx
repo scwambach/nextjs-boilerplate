@@ -11,6 +11,7 @@ interface DropdownProps extends ButtonProps {
 
 export const Dropdown = ({ items, ...props }: DropdownProps) => {
   const [open, setOpen] = useState(false)
+  const [hasTouch, setHasTouch] = useState(false)
 
   const ref = useRef<HTMLDivElement>(null)
 
@@ -25,7 +26,6 @@ export const Dropdown = ({ items, ...props }: DropdownProps) => {
         hasFocus = true
       }
     })
-    console.log(hasFocus)
     return hasFocus
   }
 
@@ -39,12 +39,20 @@ export const Dropdown = ({ items, ...props }: DropdownProps) => {
         setOpen(false)
       })
     }
+
+    // detect window
+    if (typeof window !== 'undefined') {
+      const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints
+      setHasTouch(hasTouch as boolean)
+    }
   }, [])
 
   return (
     <div
       ref={ref}
-      className={`dropdown${open ? ' open' : ''}${props.className ? ` ${props.className}` : ''}`}
+      className={`dropdown${
+        hasTouch ? ' touch' : ''
+      }${open ? ' open' : ''}${props.className ? ` ${props.className}` : ''}`}
     >
       <Button
         suffixIcon="CaretDown"
@@ -55,6 +63,21 @@ export const Dropdown = ({ items, ...props }: DropdownProps) => {
           setOpen(true)
         }}
       />
+
+      <Button
+        suffixIcon={open ? 'Minus' : 'Plus'}
+        {...props}
+        type={props.href ? 'link' : 'button'}
+        className="mobileToggle"
+      />
+      <button
+        className="toggleScreen"
+        onClick={() => {
+          setOpen(!open)
+        }}
+      >
+        <span className="sr-only">Toggle Dropdown</span>
+      </button>
 
       <Flex direction="column" gap="none" className="menu">
         {items?.map((item, index) => (
