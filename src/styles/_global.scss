@@ -1,5 +1,9 @@
 html {
-  background-color: $eggShell;
+  background-color: $black;
+
+  main {
+    background-color: $eggShell;
+  }
 }
 
 ::selection {
@@ -95,4 +99,15 @@ html {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.skipToMain {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+
+  &:focus {
+    top: $size-10;
+    left: $size-10;
+  }
 }
