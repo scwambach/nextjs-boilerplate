@@ -42,4 +42,11 @@ export const Stats: Story = {
       },
     ],
   },
+  decorators: [
+    (Story) => (
+      <div className="container">
+        <Story />
+      </div>
+    ),
+  ],
 }

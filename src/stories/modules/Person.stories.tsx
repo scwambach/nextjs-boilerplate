@@ -32,4 +32,15 @@ export const Person: Story = {
       },
     ],
   },
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          maxWidth: '350px',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 }

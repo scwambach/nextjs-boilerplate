@@ -38,4 +38,16 @@ export const Background: Story = {
     blurDataURL:
       'data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAXABQDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAMGBwQF/8QAJBAAAgEEAgIBBQAAAAAAAAAAAQIDAAQFEQYSITGBBxNBUbH/xAAYAQACAwAAAAAAAAAAAAAAAAACBQMEBv/EACERAAICAgIBBQAAAAAAAAAAAAECABEDBBIiQQUxUXGx/9oADAMBAAIRAxEAPwDPOEW8GS5jj47xQ9tKOrjevxWg80+n8eJha8s5g9sW0EPsfNZPxmUz5S3jjZvuIfHX38Vd4uQyw3CW2SvpBZltMrnev1Uabewu4pTJ0NWD+whqY31WcjsLqeFcQwW8nSWZEbW9E0rj5emLus3JIt2jL1ABTyCKU/b1CmIFV9xUuCxZkfFMZK2SgZArhvQY6/lSclsZJ4WiTqjk+waUrIg+7eY+wMeBXxUra4vajtJ2YeCaUpR82+ZW4if/2Q==',
   },
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          height: '300px',
+          maxWidth: '350px',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 }

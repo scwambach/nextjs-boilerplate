@@ -19,6 +19,17 @@ export const Primary: Story = {
     theme: 'primary',
     tags: ['+10%', 'from last month'],
   },
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          maxWidth: '400px',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export const Secondary: Story = {
@@ -31,6 +42,17 @@ export const Secondary: Story = {
     theme: 'secondary',
     tags: ['+10%', 'from last month'],
   },
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          maxWidth: '400px',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export const Tertiary: Story = {
@@ -42,4 +64,15 @@ export const Tertiary: Story = {
     theme: 'tertiary',
     tags: ['+10%', 'from last month'],
   },
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          maxWidth: '400px',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 }

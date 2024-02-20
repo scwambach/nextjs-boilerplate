@@ -31,4 +31,11 @@ export const Table: Story = {
       </>
     ),
   },
+  decorators: [
+    (Story) => (
+      <div className="container narrow">
+        <Story />
+      </div>
+    ),
+  ],
 }

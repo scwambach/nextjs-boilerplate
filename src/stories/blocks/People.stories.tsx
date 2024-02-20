@@ -143,4 +143,11 @@ export const People: Story = {
       },
     ],
   },
+  decorators: [
+    (Story) => (
+      <div className="container">
+        <Story />
+      </div>
+    ),
+  ],
 }

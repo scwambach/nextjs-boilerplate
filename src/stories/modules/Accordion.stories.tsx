@@ -33,6 +33,13 @@ export const Primary: Story = {
       </>
     ),
   },
+  decorators: [
+    (Story) => (
+      <div className="container narrow">
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export const Secondary: Story = {
@@ -57,6 +64,13 @@ export const Secondary: Story = {
       </>
     ),
   },
+  decorators: [
+    (Story) => (
+      <div className="container narrow">
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export const Tertiary: Story = {
@@ -81,4 +95,11 @@ export const Tertiary: Story = {
       </>
     ),
   },
+  decorators: [
+    (Story) => (
+      <div className="container narrow">
+        <Story />
+      </div>
+    ),
+  ],
 }

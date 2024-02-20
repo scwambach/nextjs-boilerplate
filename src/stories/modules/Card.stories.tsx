@@ -30,6 +30,17 @@ export const Links: Story = {
       },
     ],
   },
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          maxWidth: '350px',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export const Clickable: Story = {
@@ -43,6 +54,17 @@ export const Clickable: Story = {
     href: '/clickable',
     description: 'This is a card without a link',
   },
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          maxWidth: '350px',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export const NoImage: Story = {
@@ -57,4 +79,15 @@ export const NoImage: Story = {
       },
     ],
   },
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          maxWidth: '350px',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 }

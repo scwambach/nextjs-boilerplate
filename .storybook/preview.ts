@@ -1,6 +1,6 @@
 import type { Preview } from "@storybook/react";
-import "./storybook.css";
 import "../src/styles/main.scss";
+import "./storybook.css";
 import { CssBaseline, createTheme, ThemeProvider } from "@material-ui/core";
 import { withThemeFromJSXProvider } from "@storybook/addon-styling";
 import DocumentationTemplate from "./DocumentationTemplate.mdx";
