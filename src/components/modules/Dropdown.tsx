@@ -11,7 +11,6 @@ interface DropdownProps extends ButtonProps {
 
 export const Dropdown = ({ items, ...props }: DropdownProps) => {
   const [open, setOpen] = useState(false)
-  const [hasTouch, setHasTouch] = useState(false)
 
   const ref = useRef<HTMLDivElement>(null)
 
@@ -30,55 +29,30 @@ export const Dropdown = ({ items, ...props }: DropdownProps) => {
   }
 
   useEffect(() => {
-    if (ref.current) {
-      ref.current.addEventListener('mouseenter', () => {
-        setOpen(true)
-      })
-
-      ref.current.addEventListener('mouseleave', () => {
+    // click anywhere outside the ref to close the dropdown
+    const handleClick = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
         setOpen(false)
-      })
+      }
     }
-
-    // detect window
-    if (typeof window !== 'undefined') {
-      const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints
-      setHasTouch(hasTouch as boolean)
-    }
+    document.addEventListener('mousedown', handleClick)
   }, [])
 
   return (
     <div
       ref={ref}
-      className={`dropdown${
-        hasTouch ? ' touch' : ''
-      }${open ? ' open' : ''}${props.className ? ` ${props.className}` : ''}`}
+      className={`dropdown${open ? ' open' : ''}${props.className ? ` ${props.className}` : ''}`}
     >
       <Button
         suffixIcon="CaretDown"
         {...props}
-        type={props.href ? 'link' : 'button'}
+        type="button"
+        href={undefined}
         className="toggle"
-        onFocus={() => {
-          setOpen(true)
-        }}
-      />
-
-      <Button
-        suffixIcon={open ? 'Minus' : 'Plus'}
-        {...props}
-        type={props.href ? 'link' : 'button'}
-        className="mobileToggle"
-      />
-      <button
-        className="toggleScreen"
         onClick={() => {
           setOpen(!open)
         }}
-      >
-        <span className="sr-only">Toggle Dropdown</span>
-      </button>
-
+      />
       <Flex direction="column" gap="none" className="menu">
         {items?.map((item, index) => (
           <LinkObject

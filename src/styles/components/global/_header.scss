@@ -16,6 +16,22 @@ header {
     .menu {
       right: 0;
       min-width: $size-200;
+
+      @media screen and (max-width: ($sm - 1)) {
+        position: relative;
+        font-size: $size-20;
+        background-color: transparent;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+
+        a {
+          &.linkObject {
+            border-bottom: 1px solid $white;
+            color: $white;
+          }
+        }
+      }
     }
   }
 
@@ -88,9 +104,12 @@ header {
         text-align: center;
         gap: $size-16;
         font-size: $size-40;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
 
-        a {
-          font-weight: bold;
+        a,
+        button {
+          font-family: '__Alfa_Slab_One_2c873c';
         }
       }
     }
