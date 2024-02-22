@@ -1,4 +1,5 @@
-import { Banner, Cards } from '@components/blocks'
+import { Banner } from '@components/blocks'
+import { Events } from '@components/blocks/Events'
 import { PageLayout } from '@components/global'
 import { GlobalProps } from '@utils/types'
 
@@ -49,106 +50,39 @@ export default async function Home() {
         ]}
       />
       <div className="container">
-        <Cards
-          heading="Cards"
-          subheading="Praesent convallis dui eu pretium porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lorem ex, pharetra eget scelerisque fringilla, finibus ac mi. Vivamus placerat vestibulum tincidunt. Nam nec venenatis quam, at condimentum justo. Pellentesque eu tempus justo, id."
+        <Events
+          heading="Events"
+          subheading="Upcoming Events"
           items={[
             {
-              title: 'Card 1',
-              description: 'This is a card',
               date: '2022-01-01',
-              authors: [
-                {
-                  firstName: 'John',
-                  lastName: 'Doe',
-                  href: '/john-doe',
-                  image: {
-                    alt: 'John Doe',
-                    query: 'face 1',
-                  },
-                },
-                {
-                  firstName: 'Jane',
-                  lastName: 'Doe',
-                  href: '/jane-doe',
-                  image: {
-                    alt: 'Jane Doe',
-                    query: 'face 3',
-                  },
-                },
-                {
-                  firstName: 'John',
-                  lastName: 'Smith',
-                  href: '/john-smith',
-                  image: {
-                    alt: 'John Smith',
-                    query: 'face 5',
-                  },
-                },
-              ],
-              tags: [
-                {
-                  label: 'Tag 1',
-                  theme: 'primary',
-                },
-              ],
-              href: '/card1',
-              image: {
-                alt: 'Card 1',
-                query: 'nature 1',
+              title: 'New Year',
+              startTime: '5:00 PM',
+              doorsOpenTime: '4:00 PM',
+              endTime: '12:00 AM',
+              location: {
+                name: 'The Party Place',
+                address: '123 Main St, Anytown, USA',
               },
+              links: [
+                { href: '/new-year', label: 'More Info' },
+                { href: '/tickets', label: 'Get Tickets' },
+              ],
             },
             {
-              title: 'Card 2',
-              authors: [
-                {
-                  firstName: 'John',
-                  lastName: 'Doe',
-                  href: '/john-doe',
-                  image: {
-                    alt: 'John Doe',
-                    query: 'face 2',
-                  },
-                },
-              ],
-              description: 'This is a card',
-              href: '/card2',
-              date: '2022-01-01',
-              tags: [
-                {
-                  label: 'Tag 2',
-                  theme: 'secondary',
-                },
-                {
-                  label: 'Tag 3',
-                  theme: 'tertiary',
-                },
-              ],
-              image: {
-                alt: 'Card 2',
-                query: 'nature 2',
+              date: '2022-12-25',
+              title: 'Christmas',
+              startTime: '5:00 PM',
+              doorsOpenTime: '4:00 PM',
+              endTime: '12:00 AM',
+              location: {
+                name: 'The Party Place',
+                address: '123 Main St, Anytown, USA',
               },
-            },
-            {
-              title: 'Card 3',
-              description: 'This is a card',
-              href: '/card3',
-              date: '2022-01-01',
-              authors: [
-                {
-                  firstName: 'John',
-                  lastName: 'Doe',
-                  href: '/john-doe',
-                  image: {
-                    alt: 'John Doe',
-                    query: 'face 4',
-                  },
-                },
+              links: [
+                { href: '/christmas', label: 'More Info' },
+                { href: '/tickets', label: 'Get Tickets' },
               ],
-              image: {
-                alt: 'Card 3',
-                query: 'nature 3',
-              },
             },
           ]}
         />

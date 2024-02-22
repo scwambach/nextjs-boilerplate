@@ -220,6 +220,19 @@ export interface DropdownProps extends ButtonProps {
   items?: LinkObjectProps[]
 }
 
+export interface EventProps extends ComponentProps {
+  title: string
+  date: string
+  location?: {
+    name: string
+    address?: string
+  }
+  doorsOpenTime?: string
+  startTime: string
+  endTime?: string
+  links?: ButtonProps[]
+}
+
 export interface FieldProps extends ComponentProps {
   choices?: {
     id: string
@@ -362,6 +375,10 @@ export interface CardsProps extends BlockProps {
 
 export interface CarouselProps extends ComponentProps {
   items: BannerProps[]
+}
+
+export interface EventsProps extends BlockProps {
+  items: EventProps[]
 }
 
 export interface FormProps extends BlockProps {

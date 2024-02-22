@@ -28,6 +28,7 @@
 @import './components/blocks/calendar';
 @import './components/blocks/cards';
 @import './components/blocks/carousel';
+@import './components/blocks/events';
 @import './components/blocks/form';
 @import './components/blocks/gallery';
 @import './components/blocks/people';
@@ -44,12 +45,13 @@
 @import './components/modules/breadcrumbs';
 @import './components/modules/button';
 @import './components/modules/card';
-@import './components/modules/sectionHeading';
 @import './components/modules/dropdown';
-@import './components/modules/imageObject';
+@import './components/modules/event';
 @import './components/modules/formField';
+@import './components/modules/imageObject';
 @import './components/modules/linkObject';
 @import './components/modules/person';
+@import './components/modules/sectionHeading';
 @import './components/modules/stat';
 @import './components/modules/table';
 @import './components/modules/tag';
