@@ -3,16 +3,8 @@ import { Button } from '@components/modules'
 import { SectionHeading } from '@components/modules/SectionHeading'
 import { Flex } from '@components/utility'
 import { IconSelector } from '@components/utility/IconSelector'
-import { BlockProps, Themes } from '@utils/types'
+import { TabsProps } from '@utils/types'
 import { useState } from 'react'
-
-export interface TabsProps extends BlockProps {
-  items: {
-    label: string
-    content: React.ReactNode
-  }[]
-  theme?: Themes
-}
 
 export const Tabs = ({
   className,

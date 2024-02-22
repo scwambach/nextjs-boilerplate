@@ -1,6 +1,427 @@
 import * as Icon from '@phosphor-icons/react'
 import { ReactNode, ChangeEvent, FormEvent, CSSProperties } from 'react'
 
+//////////////////////////
+//////////////////////////
+///////// GLOBAL /////////
+//////////////////////////
+//////////////////////////
+
+export interface Breakpoints {
+  [key: string]: number | undefined
+  xxs: number
+  xs: number
+  sm: number
+  md: number
+  lg: number
+  xl: number
+  xxl: number
+}
+
+export interface ComponentProps {
+  className?: string
+  testId?: string
+}
+
+export interface BlockProps extends ComponentProps {
+  heading?: string
+  level?: HeadingLevel
+  subheading?: string
+}
+
+export interface FlexGridProps extends ComponentProps {
+  children: ReactNode
+  elementTag?: Elements
+  style?: CSSProperties
+  gap?: Gaps
+}
+
+export interface GlobalProps {
+  favicon: string
+  siteDescription: string
+  siteTitle: string
+  navigation: {
+    label: string
+    href?: string
+    type?: ButtonTypes
+    subnav?: {
+      label: string
+      href: string
+    }[]
+  }[]
+}
+
+///////////////////////////
+///////////////////////////
+///////// UTILITY /////////
+///////////////////////////
+///////////////////////////
+
+export interface DrawerProps extends ComponentProps {
+  triggerCopy: string
+  direction?: 'left' | 'right' | 'top' | 'bottom'
+  triggerUnstyled?: boolean
+  triggerTheme?: Themes
+  buttonTheme?: Themes
+  children: ReactNode
+  open?: boolean
+}
+
+export interface FlexProps extends FlexGridProps {
+  center?: boolean
+  breakpoint?: BreakNames
+  columnBreak?: BreakNames
+  noBreak?: boolean
+  direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse'
+  fill?: boolean
+  alignItems?: 'center' | 'flex-start' | 'flex-end' | 'stretch'
+  justifyContent?:
+    | 'center'
+    | 'flex-start'
+    | 'flex-end'
+    | 'space-between'
+    | 'space-around'
+  customLayout?:
+    | `one-third-two-thirds`
+    | `two-thirds-one-third`
+    | `one-quarter-three-quarters`
+    | `three-quarters-one-quarter`
+}
+
+export interface GridProps extends FlexGridProps {
+  columns?: ColumnSize
+}
+
+export interface HeadingProps {
+  level: HeadingLevel
+  children: ReactNode
+  testId?: string
+  className?: string
+  nonHeadingElement?: 'p' | 'span'
+}
+
+export interface IconSelectorProps {
+  icon: keyof typeof Icon
+  alt?: string
+  color?: string
+  size?: string | number
+  weight?: Icon.IconWeight
+  mirrored?: boolean
+  className?: string
+}
+
+export interface MarkdownProps {
+  elementTag?: Elements
+  children: string
+  className?: string
+}
+
+export interface ModalProps extends ComponentProps {
+  triggerCopy: string
+  triggerUnstyled?: boolean
+  triggerTheme?: Themes
+  buttonTheme?: Themes
+  buttons?: ButtonProps[]
+  children: ReactNode
+  open?: boolean
+}
+
+export interface SpacerProps extends ComponentProps {
+  size: number
+  divide?: boolean
+}
+
+export interface SpinnerProps extends ComponentProps {
+  size?: number
+}
+
+export interface TooltipProps extends ComponentProps {
+  children: ReactNode
+  copy: string
+}
+
+///////////////////////////
+///////////////////////////
+///////// MODULES /////////
+///////////////////////////
+///////////////////////////
+
+export interface AccordionProps extends ComponentProps {
+  children: ReactNode
+  heading: string
+  theme?: Themes
+}
+
+export interface AvatarProps extends ComponentProps {
+  image?: ImageObjectProps
+  firstName: string
+  lastName: string
+  size?: number
+  badge?: BadgeProps
+}
+
+export interface BadgeProps extends ComponentProps {
+  number: number
+  maxNumber?: number
+  elementTag?: 'div' | 'span'
+  color?: Colors
+}
+
+export interface BreadcrumbsProps extends ComponentProps {
+  crumbs: {
+    label: string
+    href: string
+  }[]
+  current: string
+}
+
+export interface ButtonProps extends ComponentProps {
+  type?: ButtonTypes
+  theme?: Themes
+  role?: string
+  href?: string
+  icon?: keyof typeof Icon
+  suffixIcon?: keyof typeof Icon
+  children?: ReactNode
+  style?: CSSProperties
+  disabled?: boolean
+  label?: string
+  unstyled?: boolean
+  onMouseOver?: () => void
+  onMouseOut?: () => void
+  onFocus?: () => void
+  onBlur?: () => void
+  onClick?: () => void
+  ariaExpanded?: boolean
+  ariaControls?: string
+  ariaLabel?: string
+}
+
+export interface CardProps extends ComponentProps {
+  image?: ImageObjectProps
+  title: string
+  tags?: TagProps[]
+  authors?: PersonProps[]
+  date?: string
+  description?: string
+  theme?: Themes
+  href?: string
+  headingLevel?: HeadingLevel
+  links?: ButtonProps[]
+}
+
+export interface DotsProps extends ComponentProps {
+  count: number
+  activeIndex: number
+  setActiveIndex: (index: number) => void
+}
+
+export interface DropdownProps extends ButtonProps {
+  items?: LinkObjectProps[]
+}
+
+export interface FieldProps extends ComponentProps {
+  choices?: {
+    id: string
+    copy: string
+    disabled?: boolean
+    value?: string
+  }[]
+  multiChoices?: {
+    label: string
+    value?: string
+  }[]
+  description?: string
+  className?: string
+  defaultValue?: string
+  value?: string
+  disabled?: boolean
+  id: string
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+  onChangeArea?: (e: ChangeEvent<HTMLTextAreaElement>) => void
+  onChangeSelect?: (e: ChangeEvent<HTMLSelectElement>) => void
+  label: string
+  placeholder?: string
+  readOnly?: boolean
+  required?: boolean
+  choiceGridColumns?: ColumnSize
+  type?: FieldTypes
+}
+
+export interface ImageObjectProps {
+  alt: string
+  className?: string
+  isBackground?: boolean
+  testId?: string
+  query?: string
+  sizes?: string
+  src?: string
+  height?: number
+  width?: number
+  blurWidth?: number
+  blurHeight?: number
+  blurDataURL?: string
+}
+
+export interface LinkObjectProps {
+  children?: ReactNode
+  className?: string
+  style?: CSSProperties
+  role?: string
+  testId?: string
+  copy?: string
+  href: string
+  ariaLabel?: string
+  onMouseOver?: () => void
+  onMouseOut?: () => void
+  onFocus?: () => void
+  onBlur?: () => void
+  onClick?: () => void
+}
+
+export interface PersonProps extends ComponentProps {
+  firstName: string
+  lastName: string
+  title?: string
+  href?: string
+  image: ImageObjectProps
+  socials?: {
+    icon: keyof typeof Icon
+    screenReader: string
+    href: string
+  }[]
+}
+
+export interface SectionHeadingProps extends ComponentProps {
+  heading?: string
+  level?: HeadingLevel
+  subheading?: string
+}
+
+export interface StatProps extends ComponentProps {
+  title?: string
+  value: number
+  icon?: keyof typeof Icon
+  type?: 'currency' | 'percentage' | 'number'
+  numberPrefix?: string
+  numberSuffix?: string
+  subtitle?: string
+  theme?: Themes
+  maxValue?: number
+  decimals?: boolean
+  tags?: string[]
+}
+
+export interface TableProps extends ComponentProps {
+  headingRow?: string[]
+  controlCell?: ReactNode
+  rows: {
+    cells: (string | number)[]
+  }[]
+}
+
+export interface TagProps extends ComponentProps {
+  label: string
+  theme?: Themes
+  href?: string
+  elementTag?: 'div' | 'span' | 'li'
+}
+
+//////////////////////////
+//////////////////////////
+///////// BLOCKS /////////
+//////////////////////////
+//////////////////////////
+
+export interface AlertProps extends ComponentProps {
+  alertId?: string
+  message: string
+  type: AlertTypes
+}
+
+export interface BannerProps extends ComponentProps {
+  bgColor?: Colors
+  crumbs?: {
+    current: string
+    items: BreadcrumbsProps['crumbs']
+  }
+  heading: string
+  headingLevel?: HeadingLevel
+  img?: ImageObjectProps
+  links?: ButtonProps[]
+  message?: string
+  style?: CSSProperties
+  subheading?: string
+}
+
+export interface CardsProps extends BlockProps {
+  items: CardProps[]
+  gap?: Gaps
+  columns?: ColumnSize
+}
+
+export interface CarouselProps extends ComponentProps {
+  items: BannerProps[]
+}
+
+export interface FormProps extends BlockProps {
+  children?: ReactNode
+  submitCopy?: string
+  onSubmit?: (e: FormEvent<HTMLFormElement>) => void
+  onChange?: (e: FormEvent<HTMLFieldSetElement>) => void
+}
+
+export interface GalleryProps extends BlockProps {
+  items: ImageObjectProps[]
+  gap?: Gaps
+  columns?: ColumnSize
+}
+
+export interface PeopleProps extends BlockProps {
+  items: PersonProps[]
+  columns?: ColumnSize
+  gap?: Gaps
+}
+
+export interface RiverProps extends ComponentProps {
+  theme?: Themes
+  headingLevel?: HeadingLevel
+  items: {
+    title?: string
+    description: string
+    image: ImageObjectProps
+    links?: ButtonProps[]
+  }[]
+}
+
+export interface StatsProps extends BlockProps {
+  items: StatProps[]
+  gap?: Gaps
+}
+
+export interface TabsProps extends BlockProps {
+  items: {
+    label: string
+    content: React.ReactNode
+  }[]
+  theme?: Themes
+}
+
+export interface TimelineProps extends BlockProps {
+  events: {
+    date: string
+    title: string
+    description?: string
+    image?: ImageObjectProps
+  }[]
+}
+
+//////////////////////////
+//////////////////////////
+///////// TYPES //////////
+//////////////////////////
+//////////////////////////
+
 export type BreakNames =
   | 'none'
   | 'xxs'
@@ -12,6 +433,8 @@ export type BreakNames =
   | 'xxl'
 
 export type Colors = 'red' | 'blue' | 'green' | 'orange'
+
+export type AlertTypes = 'success' | 'warning' | 'error' | 'info'
 
 export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
 
@@ -84,211 +507,3 @@ export type Elements =
   | 'h4'
   | 'h5'
   | 'h6'
-
-export interface Breakpoints {
-  [key: string]: number | undefined
-  xxs: number
-  xs: number
-  sm: number
-  md: number
-  lg: number
-  xl: number
-  xxl: number
-}
-
-export interface ComponentProps {
-  className?: string
-  testId?: string
-}
-
-export interface BlockProps extends ComponentProps {
-  heading?: string
-  level?: HeadingLevel
-  subheading?: string
-}
-
-export interface ImageObjectProps {
-  alt: string
-  className?: string
-  isBackground?: boolean
-  testId?: string
-  query?: string
-  sizes?: string
-  src?: string
-  height?: number
-  width?: number
-  blurWidth?: number
-  blurHeight?: number
-  blurDataURL?: string
-}
-
-export interface ButtonProps extends ComponentProps {
-  type?: ButtonTypes
-  theme?: Themes
-  role?: string
-  href?: string
-  icon?: keyof typeof Icon
-  suffixIcon?: keyof typeof Icon
-  children?: ReactNode
-  style?: CSSProperties
-  disabled?: boolean
-  label?: string
-  unstyled?: boolean
-  onMouseOver?: () => void
-  onMouseOut?: () => void
-  onFocus?: () => void
-  onBlur?: () => void
-  onClick?: () => void
-  ariaExpanded?: boolean
-  ariaControls?: string
-  ariaLabel?: string
-}
-
-export interface LinkObjectProps {
-  children?: ReactNode
-  className?: string
-  style?: CSSProperties
-  role?: string
-  testId?: string
-  copy?: string
-  href: string
-  ariaLabel?: string
-  onMouseOver?: () => void
-  onMouseOut?: () => void
-  onFocus?: () => void
-  onBlur?: () => void
-  onClick?: () => void
-}
-
-export interface FlexGridProps extends ComponentProps {
-  children: ReactNode
-  elementTag?: Elements
-  style?: CSSProperties
-  gap?: Gaps
-}
-
-export interface BreadcrumbsProps extends ComponentProps {
-  crumbs: {
-    label: string
-    href: string
-  }[]
-  current: string
-}
-
-export interface BadgeProps extends ComponentProps {
-  number: number
-  maxNumber?: number
-  elementTag?: 'div' | 'span'
-  color?: 'red' | 'blue' | 'green' | 'orange'
-}
-
-export interface GridProps extends FlexGridProps {
-  columns?: ColumnSize
-}
-
-export interface FormProps extends BlockProps {
-  children?: ReactNode
-  submitCopy?: string
-  onSubmit?: (e: FormEvent<HTMLFormElement>) => void
-  onChange?: (e: FormEvent<HTMLFieldSetElement>) => void
-}
-
-export interface FieldProps extends ComponentProps {
-  choices?: {
-    id: string
-    copy: string
-    disabled?: boolean
-    value?: string
-  }[]
-  multiChoices?: {
-    label: string
-    value?: string
-  }[]
-  description?: string
-  className?: string
-  defaultValue?: string
-  value?: string
-  disabled?: boolean
-  id: string
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
-  onChangeArea?: (e: ChangeEvent<HTMLTextAreaElement>) => void
-  onChangeSelect?: (e: ChangeEvent<HTMLSelectElement>) => void
-  label: string
-  placeholder?: string
-  readOnly?: boolean
-  required?: boolean
-  choiceGridColumns?: ColumnSize
-  type?: FieldTypes
-}
-
-export interface PersonProps extends ComponentProps {
-  firstName: string
-  lastName: string
-  title?: string
-  href?: string
-  image: ImageObjectProps
-  socials?: {
-    icon: keyof typeof Icon
-    screenReader: string
-    href: string
-  }[]
-}
-
-export interface BannerProps extends ComponentProps {
-  img?: ImageObjectProps
-  style?: CSSProperties
-  headingLevel?: HeadingLevel
-  heading: string
-  subheading?: string
-  message?: string
-  bgColor?: Colors
-  links?: ButtonProps[]
-  crumbs?: {
-    current: string
-    items: BreadcrumbsProps['crumbs']
-  }
-}
-
-export interface StatProps extends ComponentProps {
-  title?: string
-  value: number
-  icon?: keyof typeof Icon
-  type?: 'currency' | 'percentage' | 'number'
-  numberPrefix?: string
-  numberSuffix?: string
-  subtitle?: string
-  theme?: Themes
-  maxValue?: number
-  decimals?: boolean
-  tags?: string[]
-}
-
-export interface TableProps extends ComponentProps {
-  headingRow?: string[]
-  controlCell?: ReactNode
-  rows: {
-    cells: (string | number)[]
-  }[]
-}
-
-export interface TagProps extends ComponentProps {
-  label: string
-  theme?: Themes
-  href?: string
-  elementTag?: 'div' | 'span' | 'li'
-}
-
-export interface GlobalProps {
-  siteTitle: string
-  siteDescription: string
-  favicon: string
-  navigation: {
-    label: string
-    href?: string
-    type?: ButtonTypes
-    subnav?: {
-      label: string
-      href: string
-    }[]
-  }[]
-}

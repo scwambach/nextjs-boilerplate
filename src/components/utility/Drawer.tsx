@@ -1,18 +1,8 @@
 'use client'
 import { Button } from '@components/modules'
 import { X } from '@phosphor-icons/react'
-import { ComponentProps, Themes } from '@utils/types'
-import { ReactNode, useEffect, useState } from 'react'
-
-interface DrawerProps extends ComponentProps {
-  triggerCopy: string
-  direction?: 'left' | 'right' | 'top' | 'bottom'
-  triggerUnstyled?: boolean
-  triggerTheme?: Themes
-  buttonTheme?: Themes
-  children: ReactNode
-  open?: boolean
-}
+import { DrawerProps } from '@utils/types'
+import { useEffect, useState } from 'react'
 
 export const Drawer = ({
   className,

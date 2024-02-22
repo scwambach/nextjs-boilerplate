@@ -1,13 +1,7 @@
-import { ComponentProps } from '@utils/types'
+import { DotsProps } from '@utils/types'
 import { Button } from './Button'
 import { IconSelector } from '@components/utility/IconSelector'
 import { Flex } from '@components/utility'
-
-interface DotsProps extends ComponentProps {
-  count: number
-  activeIndex: number
-  setActiveIndex: (index: number) => void
-}
 
 export const Dots = ({
   className,

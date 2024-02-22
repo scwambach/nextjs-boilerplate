@@ -1,13 +1,6 @@
 import { addCommas } from '@utils/addCommas'
 import { maxPlus } from '@utils/maxPlus'
-import { Colors, ComponentProps } from '@utils/types'
-
-interface BadgeProps extends ComponentProps {
-  number: number
-  maxNumber?: number
-  elementTag?: 'div' | 'span'
-  color?: Colors
-}
+import { BadgeProps } from '@utils/types'
 
 export const Badge = ({
   className,

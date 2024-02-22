@@ -1,13 +1,9 @@
 'use client'
-import { ButtonProps, LinkObjectProps } from '@utils/types'
 import { Button } from './Button'
 import { useEffect, useRef, useState } from 'react'
 import { LinkObject } from './LinkObject'
 import { Flex } from '@components/utility'
-
-interface DropdownProps extends ButtonProps {
-  items?: LinkObjectProps[]
-}
+import { DropdownProps } from '@utils/types'
 
 export const Dropdown = ({ items, ...props }: DropdownProps) => {
   const [open, setOpen] = useState(false)

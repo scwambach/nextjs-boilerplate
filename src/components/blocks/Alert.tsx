@@ -1,16 +1,10 @@
 'use client'
 import { Button } from '@components/modules'
 import { IconSelector } from '@components/utility/IconSelector'
-import { ComponentProps } from '@utils/types'
+import { AlertProps } from '@utils/types'
 import { useEffect, useState } from 'react'
 import * as Icon from '@phosphor-icons/react'
 import { parseMarkdownToHTML } from '@utils/parseMarkdownToHTML'
-
-interface AlertProps extends ComponentProps {
-  type: 'success' | 'warning' | 'error' | 'info'
-  alertId?: string
-  message: string
-}
 
 export const Alert = ({ type, className, alertId, message }: AlertProps) => {
   const [remove, setRemove] = useState(false)

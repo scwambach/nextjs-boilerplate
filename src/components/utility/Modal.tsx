@@ -1,18 +1,8 @@
 'use client'
 import { Button } from '@components/modules'
-import { ButtonProps, ComponentProps, Themes } from '@utils/types'
-import { ReactNode, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Flex } from './Flex'
-
-export interface ModalProps extends ComponentProps {
-  triggerCopy: string
-  triggerUnstyled?: boolean
-  triggerTheme?: Themes
-  buttonTheme?: Themes
-  buttons?: ButtonProps[]
-  children: ReactNode
-  open?: boolean
-}
+import { ModalProps } from '@utils/types'
 
 export const Modal = ({
   className,

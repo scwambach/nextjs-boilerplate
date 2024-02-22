@@ -4,14 +4,8 @@ import { SectionHeading } from '@components/modules/SectionHeading'
 import { Grid } from '@components/utility'
 import { CaretLeft, CaretRight, X } from '@phosphor-icons/react'
 import { colors } from '@utils/settings'
-import { BlockProps, ColumnSize, Gaps, ImageObjectProps } from '@utils/types'
+import { GalleryProps } from '@utils/types'
 import { useEffect, useState } from 'react'
-
-export interface GalleryProps extends BlockProps {
-  items: ImageObjectProps[]
-  gap?: Gaps
-  columns?: ColumnSize
-}
 
 export const Gallery = ({
   className,

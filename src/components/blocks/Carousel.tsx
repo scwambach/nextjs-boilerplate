@@ -1,13 +1,9 @@
 'use client'
-import { BannerProps, ComponentProps } from '@utils/types'
+import { CarouselProps } from '@utils/types'
 import { Banner } from './Banner'
 import { Dots } from '@components/modules/Dots'
 import { Flex } from '@components/utility'
 import { useEffect, useState } from 'react'
-
-interface CarouselProps extends ComponentProps {
-  items: BannerProps[]
-}
 
 export const Carousel = ({ items, className }: CarouselProps) => {
   const [activeIndex, setActiveIndex] = useState(0)

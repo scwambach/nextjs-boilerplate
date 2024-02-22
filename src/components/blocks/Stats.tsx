@@ -1,12 +1,7 @@
 import { Stat } from '@components/modules'
 import { SectionHeading } from '@components/modules/SectionHeading'
 import { Grid } from '@components/utility'
-import { BlockProps, ColumnSize, Gaps, StatProps } from '@utils/types'
-
-export interface StatsProps extends BlockProps {
-  items: StatProps[]
-  gap?: Gaps
-}
+import { ColumnSize, StatsProps } from '@utils/types'
 
 export const Stats = ({
   heading,

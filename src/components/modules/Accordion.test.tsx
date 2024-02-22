@@ -1,5 +1,6 @@
 import { render, fireEvent } from '@testing-library/react'
-import { Accordion, AccordionProps } from './Accordion'
+import { Accordion } from './Accordion'
+import { AccordionProps } from '@utils/types'
 
 describe('Accordion Component', () => {
   const defaultProps: AccordionProps = {

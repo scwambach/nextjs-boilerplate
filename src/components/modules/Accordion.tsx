@@ -1,13 +1,7 @@
 'use client'
 import { Button } from '@components/modules'
-import { ComponentProps, Themes } from '@utils/types'
-import { ReactNode, useEffect, useRef, useState } from 'react'
-
-export interface AccordionProps extends ComponentProps {
-  children: ReactNode
-  heading: string
-  theme?: Themes
-}
+import { AccordionProps } from '@utils/types'
+import { useEffect, useRef, useState } from 'react'
 
 export const Accordion = ({
   heading,

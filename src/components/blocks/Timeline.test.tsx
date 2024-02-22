@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react'
-import { Timeline, TimelineProps } from './Timeline'
+import { Timeline } from './Timeline'
+import { TimelineProps } from '@utils/types'
 
 describe('Timeline Component', () => {
   const defaultProps: TimelineProps = {

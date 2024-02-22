@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react'
-import { Stats, StatsProps } from './Stats'
+import { Stats } from './Stats'
+import { StatsProps } from '@utils/types'
 
 describe('Stats Component', () => {
   const defaultProps: StatsProps = {

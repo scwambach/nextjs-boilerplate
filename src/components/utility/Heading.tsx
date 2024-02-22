@@ -1,14 +1,5 @@
 import { headingFont } from '@utils/fonts'
-import { HeadingLevel } from '@utils/types'
-import { ReactNode } from 'react'
-
-interface HeadingProps {
-  level: HeadingLevel
-  children: ReactNode
-  testId?: string
-  className?: string
-  nonHeadingElement?: 'p' | 'span'
-}
+import { HeadingProps } from '@utils/types'
 
 export const Heading = ({
   level,

@@ -2,24 +2,7 @@ import { Button, ImageObject } from '@components/modules'
 import { Flex } from '@components/utility'
 import { Heading } from '@components/utility/Heading'
 import { Markdown } from '@components/utility/Markdown'
-import {
-  ComponentProps,
-  ButtonProps,
-  HeadingLevel,
-  ImageObjectProps,
-  Themes,
-} from '@utils/types'
-
-export interface RiverProps extends ComponentProps {
-  theme?: Themes
-  headingLevel?: HeadingLevel
-  items: {
-    title?: string
-    description: string
-    image: ImageObjectProps
-    links?: ButtonProps[]
-  }[]
-}
+import { RiverProps } from '@utils/types'
 
 export const River = ({
   className,

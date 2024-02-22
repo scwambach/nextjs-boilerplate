@@ -1,25 +1,4 @@
-import { BreakNames, FlexGridProps } from '@utils/types'
-
-interface FlexProps extends FlexGridProps {
-  center?: boolean
-  breakpoint?: BreakNames
-  columnBreak?: BreakNames
-  noBreak?: boolean
-  direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse'
-  fill?: boolean
-  alignItems?: 'center' | 'flex-start' | 'flex-end' | 'stretch'
-  justifyContent?:
-    | 'center'
-    | 'flex-start'
-    | 'flex-end'
-    | 'space-between'
-    | 'space-around'
-  customLayout?:
-    | `one-third-two-thirds`
-    | `two-thirds-one-third`
-    | `one-quarter-three-quarters`
-    | `three-quarters-one-quarter`
-}
+import { FlexProps } from '@utils/types'
 
 export const Flex = ({
   alignItems = 'flex-start',

@@ -1,5 +1,6 @@
 import { render, fireEvent } from '@testing-library/react'
-import { Tabs, TabsProps } from './Tabs'
+import { Tabs } from './Tabs'
+import { TabsProps } from '@utils/types'
 
 describe('Tabs Component', () => {
   const defaultProps: TabsProps = {

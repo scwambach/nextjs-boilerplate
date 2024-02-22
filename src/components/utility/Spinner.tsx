@@ -1,9 +1,5 @@
-import { ComponentProps } from '@utils/types'
+import { SpinnerProps } from '@utils/types'
 import { IconSelector } from './IconSelector'
-
-interface SpinnerProps extends ComponentProps {
-  size?: number
-}
 
 export const Spinner = ({ className, size = 3, testId }: SpinnerProps) => {
   return (

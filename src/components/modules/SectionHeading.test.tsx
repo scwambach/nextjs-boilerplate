@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react'
-import { SectionHeading, SectionHeadingProps } from './SectionHeading'
+import { SectionHeading } from './SectionHeading'
+import { SectionHeadingProps } from '@utils/types'
 
 describe('SectionHeading Component', () => {
   const defaultProps: SectionHeadingProps = {

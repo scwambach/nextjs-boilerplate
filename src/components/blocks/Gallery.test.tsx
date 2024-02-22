@@ -1,5 +1,6 @@
 import { render, fireEvent } from '@testing-library/react'
-import { Gallery, GalleryProps } from './Gallery'
+import { Gallery } from './Gallery'
+import { GalleryProps } from '@utils/types'
 
 describe('Gallery Component', () => {
   const items = [

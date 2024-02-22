@@ -3,17 +3,8 @@ import { SectionHeading } from '@components/modules/SectionHeading'
 import { Flex } from '@components/utility'
 import { Markdown } from '@components/utility/Markdown'
 import { headingFont } from '@utils/fonts'
-import { BlockProps, ImageObjectProps } from '@utils/types'
+import { TimelineProps } from '@utils/types'
 import dayjs from 'dayjs'
-
-export interface TimelineProps extends BlockProps {
-  events: {
-    date: string
-    title: string
-    description?: string
-    image?: ImageObjectProps
-  }[]
-}
 
 export const Timeline = ({
   heading,

@@ -1,13 +1,7 @@
 import { Person } from '@components/modules'
 import { SectionHeading } from '@components/modules/SectionHeading'
 import { Grid } from '@components/utility'
-import { ColumnSize, BlockProps, Gaps, PersonProps } from '@utils/types'
-
-export interface PeopleProps extends BlockProps {
-  items: PersonProps[]
-  columns?: ColumnSize
-  gap?: Gaps
-}
+import { PeopleProps } from '@utils/types'
 
 export const People = ({
   className,

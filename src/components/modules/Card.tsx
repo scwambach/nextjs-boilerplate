@@ -1,12 +1,4 @@
-import {
-  ButtonProps,
-  ComponentProps,
-  HeadingLevel,
-  ImageObjectProps,
-  PersonProps,
-  TagProps,
-  Themes,
-} from '@utils/types'
+import { CardProps, PersonProps } from '@utils/types'
 import { Button } from './Button'
 import { ImageObject } from './ImageObject'
 import { Heading } from '@components/utility/Heading'
@@ -18,18 +10,6 @@ import { Tag } from './Tag'
 
 // TODO: Create new stories and tests for this component's updated features
 
-export interface CardProps extends ComponentProps {
-  image?: ImageObjectProps
-  title: string
-  tags?: TagProps[]
-  authors?: PersonProps[]
-  date?: string
-  description?: string
-  theme?: Themes
-  href?: string
-  headingLevel?: HeadingLevel
-  links?: ButtonProps[]
-}
 const compileAuthorNames = (authors: PersonProps[]) => {
   const names = authors.map(
     (author) => `${author.firstName} ${author.lastName}`

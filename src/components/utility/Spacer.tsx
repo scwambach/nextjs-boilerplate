@@ -1,9 +1,4 @@
-import { ComponentProps } from '@utils/types'
-
-interface SpacerProps extends ComponentProps {
-  size: number
-  divide?: boolean
-}
+import { SpacerProps } from '@utils/types'
 
 export const Spacer = ({ className, size, divide }: SpacerProps) => {
   return (

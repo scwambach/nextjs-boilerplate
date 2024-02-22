@@ -1,14 +1,6 @@
-import { BadgeProps, ComponentProps, ImageObjectProps } from '@utils/types'
 import { ImageObject } from './ImageObject'
 import { Badge } from './Badge'
-
-interface AvatarProps extends ComponentProps {
-  image?: ImageObjectProps
-  firstName: string
-  lastName: string
-  size?: number
-  badge?: BadgeProps
-}
+import { AvatarProps } from '@utils/types'
 
 const getFirstLetters = (firstName: string, lastName: string) => {
   return `${firstName.charAt(0)}${lastName.charAt(0)}`

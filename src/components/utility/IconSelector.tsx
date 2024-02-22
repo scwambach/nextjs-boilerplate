@@ -1,16 +1,7 @@
 'use client'
 import * as Icon from '@phosphor-icons/react'
+import { IconSelectorProps } from '@utils/types'
 import { ComponentType } from 'react'
-
-export interface IconSelectorProps {
-  icon: keyof typeof Icon
-  alt?: string
-  color?: string
-  size?: string | number
-  weight?: Icon.IconWeight
-  mirrored?: boolean
-  className?: string
-}
 
 export const IconSelector = ({
   icon,
