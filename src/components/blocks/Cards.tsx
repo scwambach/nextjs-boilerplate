@@ -12,7 +12,7 @@ interface CardsProps extends BlockProps {
 export const Cards = ({
   items,
   className,
-  gap,
+  gap = 'xs',
   subheading,
   columns,
   heading,

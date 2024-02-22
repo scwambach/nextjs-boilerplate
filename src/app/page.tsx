@@ -1,4 +1,4 @@
-import { Banner, Gallery } from '@components/blocks'
+import { Banner, Cards } from '@components/blocks'
 import { PageLayout } from '@components/global'
 import { GlobalProps } from '@utils/types'
 
@@ -27,11 +27,6 @@ export default async function Home() {
     body: GlobalProps
   } = await getData()
 
-  const items = [
-    { query: 'technology 1', alt: 'Image 1', width: 100, height: 100 },
-    { query: 'technology 2', alt: 'Image 2', width: 100, height: 100 },
-    { query: 'technology 3', alt: 'Image 3', width: 100, height: 100 },
-  ]
   return (
     <PageLayout global={globalData.body}>
       <Banner
@@ -53,15 +48,109 @@ export default async function Home() {
           },
         ]}
       />
-      <div className="container narrow">
-        <Gallery
-          items={items}
-          className={'custom-class'}
-          heading={'Gallery Heading'}
-          level={3}
-          subheading={'Gallery Subheading'}
-          columns={4}
-          gap={'md'}
+      <div className="container">
+        <Cards
+          heading="Cards"
+          subheading="Praesent convallis dui eu pretium porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lorem ex, pharetra eget scelerisque fringilla, finibus ac mi. Vivamus placerat vestibulum tincidunt. Nam nec venenatis quam, at condimentum justo. Pellentesque eu tempus justo, id."
+          items={[
+            {
+              title: 'Card 1',
+              description: 'This is a card',
+              date: '2022-01-01',
+              authors: [
+                {
+                  firstName: 'John',
+                  lastName: 'Doe',
+                  href: '/john-doe',
+                  image: {
+                    alt: 'John Doe',
+                    query: 'face 1',
+                  },
+                },
+                {
+                  firstName: 'Jane',
+                  lastName: 'Doe',
+                  href: '/jane-doe',
+                  image: {
+                    alt: 'Jane Doe',
+                    query: 'face 3',
+                  },
+                },
+                {
+                  firstName: 'John',
+                  lastName: 'Smith',
+                  href: '/john-smith',
+                  image: {
+                    alt: 'John Smith',
+                    query: 'face 5',
+                  },
+                },
+              ],
+              tags: [
+                {
+                  label: 'Tag 1',
+                  theme: 'primary',
+                },
+              ],
+              href: '/card1',
+              image: {
+                alt: 'Card 1',
+                query: 'nature 1',
+              },
+            },
+            {
+              title: 'Card 2',
+              authors: [
+                {
+                  firstName: 'John',
+                  lastName: 'Doe',
+                  href: '/john-doe',
+                  image: {
+                    alt: 'John Doe',
+                    query: 'face 2',
+                  },
+                },
+              ],
+              description: 'This is a card',
+              href: '/card2',
+              date: '2022-01-01',
+              tags: [
+                {
+                  label: 'Tag 2',
+                  theme: 'secondary',
+                },
+                {
+                  label: 'Tag 3',
+                  theme: 'tertiary',
+                },
+              ],
+              image: {
+                alt: 'Card 2',
+                query: 'nature 2',
+              },
+            },
+            {
+              title: 'Card 3',
+              description: 'This is a card',
+              href: '/card3',
+              date: '2022-01-01',
+              authors: [
+                {
+                  firstName: 'John',
+                  lastName: 'Doe',
+                  href: '/john-doe',
+                  image: {
+                    alt: 'John Doe',
+                    query: 'face 4',
+                  },
+                },
+              ],
+              image: {
+                alt: 'Card 3',
+                query: 'nature 3',
+              },
+            },
+          ]}
         />
       </div>
     </PageLayout>

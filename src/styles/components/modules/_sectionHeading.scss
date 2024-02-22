@@ -7,5 +7,9 @@
 
   .heading {
     font-size: $size-32;
+
+    + div {
+      max-width: $md;
+    }
   }
 }

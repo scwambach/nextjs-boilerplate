@@ -225,6 +225,7 @@ export interface PersonProps extends ComponentProps {
   firstName: string
   lastName: string
   title?: string
+  href?: string
   image: ImageObjectProps
   socials?: {
     icon: keyof typeof Icon
@@ -273,6 +274,7 @@ export interface TableProps extends ComponentProps {
 export interface TagProps extends ComponentProps {
   label: string
   theme?: Themes
+  href?: string
   elementTag?: 'div' | 'span' | 'li'
 }
 
