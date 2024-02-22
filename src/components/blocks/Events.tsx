@@ -14,18 +14,20 @@ export const Events = ({
 }: EventsProps) => {
   return (
     <div className={`events${className ? ` ${className}` : ''}`}>
-      {heading && (
-        <SectionHeading
-          heading={heading}
-          level={level}
-          subheading={subheading}
-        />
-      )}
-      <Flex direction="column" gap="md" fill className="events-list">
-        {items.map((item) => (
-          <Event className="event" key={item.date + item.title} {...item} />
-        ))}
-      </Flex>
+      <div className="container narrow left">
+        {heading && (
+          <SectionHeading
+            heading={heading}
+            level={level}
+            subheading={subheading}
+          />
+        )}
+        <Flex direction="column" gap="md" fill className="events-list">
+          {items.map((item) => (
+            <Event className="event" key={item.date + item.title} {...item} />
+          ))}
+        </Flex>
+      </div>
     </div>
   )
 }

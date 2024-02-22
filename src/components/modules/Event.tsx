@@ -4,7 +4,7 @@ import { EventProps } from '@utils/types'
 import { LinkObject } from './LinkObject'
 import { Button } from './Button'
 
-// TODO: Create Event component
+// TODO: Create tests and stories
 
 export const Event = ({
   className,
@@ -37,7 +37,7 @@ export const Event = ({
           </div>
         </Flex>
         {links && links.length > 0 && (
-          <Flex className="links" justifyContent="flex-end">
+          <Flex className="links" gap="xs" columnBreak="xxs">
             {links.map((link) => (
               <Button
                 type="link"

@@ -49,6 +49,12 @@
 }
 
 @mixin columnBreaks {
+  &.column-xxs {
+    @media screen and (max-width: ($xxs - 1)) {
+      flex-direction: column;
+    }
+  }
+
   &.column-xs {
     @media screen and (max-width: ($xs - 1)) {
       flex-direction: column;

@@ -49,44 +49,43 @@ export default async function Home() {
           },
         ]}
       />
-      <div className="container">
-        <Events
-          heading="Events"
-          subheading="Upcoming Events"
-          items={[
-            {
-              date: '2022-01-01',
-              title: 'New Year',
-              startTime: '5:00 PM',
-              doorsOpenTime: '4:00 PM',
-              endTime: '12:00 AM',
-              location: {
-                name: 'The Party Place',
-                address: '123 Main St, Anytown, USA',
-              },
-              links: [
-                { href: '/new-year', label: 'More Info' },
-                { href: '/tickets', label: 'Get Tickets' },
-              ],
+
+      <Events
+        heading="Events"
+        subheading="Upcoming Events"
+        items={[
+          {
+            date: '2022-01-01',
+            title: 'New Year',
+            startTime: '5:00 PM',
+            doorsOpenTime: '4:00 PM',
+            endTime: '12:00 AM',
+            location: {
+              name: 'The Party Place',
+              address: '123 Main St, Anytown, USA',
             },
-            {
-              date: '2022-12-25',
-              title: 'Christmas',
-              startTime: '5:00 PM',
-              doorsOpenTime: '4:00 PM',
-              endTime: '12:00 AM',
-              location: {
-                name: 'The Party Place',
-                address: '123 Main St, Anytown, USA',
-              },
-              links: [
-                { href: '/christmas', label: 'More Info' },
-                { href: '/tickets', label: 'Get Tickets' },
-              ],
+            links: [
+              { href: '/new-year', label: 'More Info' },
+              { href: '/tickets', label: 'Get Tickets' },
+            ],
+          },
+          {
+            date: '2022-12-25',
+            title: 'Christmas',
+            startTime: '5:00 PM',
+            doorsOpenTime: '4:00 PM',
+            endTime: '12:00 AM',
+            location: {
+              name: 'The Party Place',
+              address: '123 Main St, Anytown, USA',
             },
-          ]}
-        />
-      </div>
+            links: [
+              { href: '/christmas', label: 'More Info' },
+              { href: '/tickets', label: 'Get Tickets' },
+            ],
+          },
+        ]}
+      />
     </PageLayout>
   )
 }
