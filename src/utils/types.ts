@@ -180,6 +180,7 @@ export interface ButtonProps extends ComponentProps {
   theme?: Themes
   role?: string
   href?: string
+  small?: boolean
   icon?: keyof typeof Icon
   suffixIcon?: keyof typeof Icon
   children?: ReactNode
@@ -223,6 +224,7 @@ export interface DropdownProps extends ButtonProps {
 export interface EventProps extends ComponentProps {
   title: string
   date: string
+  poster?: ImageObjectProps
   location?: {
     name: string
     address?: string

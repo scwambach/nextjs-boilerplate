@@ -64,6 +64,12 @@ export default async function Home() {
               name: 'The Party Place',
               address: '123 Main St, Anytown, USA',
             },
+            poster: {
+              query: 'new year party 1',
+              alt: 'New Year Party',
+              width: 1200,
+              height: 800,
+            },
             links: [
               { href: '/new-year', label: 'More Info' },
               { href: '/tickets', label: 'Get Tickets' },
@@ -75,6 +81,12 @@ export default async function Home() {
             startTime: '5:00 PM',
             doorsOpenTime: '4:00 PM',
             endTime: '12:00 AM',
+            poster: {
+              query: 'christmas party 1',
+              alt: 'Christmas Party',
+              width: 1200,
+              height: 800,
+            },
             location: {
               name: 'The Party Place',
               address: '123 Main St, Anytown, USA',

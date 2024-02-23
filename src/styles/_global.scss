@@ -36,8 +36,16 @@ html {
     max-width: $xxl + $sm;
   }
 
+  &.wider {
+    max-width: $xxl + $md;
+  }
+
   &.narrow {
     max-width: $lg;
+  }
+
+  &.narrower {
+    max-width: $md;
   }
 
   &.full {

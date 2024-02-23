@@ -1,6 +1,7 @@
 import { Event } from '@components/modules/Event'
 import { SectionHeading } from '@components/modules/SectionHeading'
 import { Flex } from '@components/utility'
+import { Spacer } from '@components/utility/Spacer'
 import { EventsProps } from '@utils/types'
 
 // TODO: Create Events tests and stories
@@ -14,7 +15,7 @@ export const Events = ({
 }: EventsProps) => {
   return (
     <div className={`events${className ? ` ${className}` : ''}`}>
-      <div className="container narrow left">
+      <div className="container narrower">
         {heading && (
           <SectionHeading
             heading={heading}
@@ -22,9 +23,12 @@ export const Events = ({
             subheading={subheading}
           />
         )}
-        <Flex direction="column" gap="md" fill className="events-list">
-          {items.map((item) => (
-            <Event className="event" key={item.date + item.title} {...item} />
+        <Flex direction="column" fill gap="none" className="events-list">
+          {items.map((item, index) => (
+            <>
+              {index > 0 && <Spacer size={1} divide />}
+              <Event className="event" key={item.date + item.title} {...item} />
+            </>
           ))}
         </Flex>
       </div>

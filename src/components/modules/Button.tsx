@@ -9,6 +9,7 @@ export const Button = ({
   unstyled,
   disabled,
   icon,
+  small,
   role = 'button',
   suffixIcon,
   className,
@@ -26,6 +27,11 @@ export const Button = ({
   ariaLabel,
   testId,
 }: ButtonProps) => {
+  const classList = `button ${
+    headingFont.className
+  }${theme && !unstyled ? ` ${theme}` : ''}${className ? ` ${className}` : ''}${unstyled ? ' unstyled' : ''}${
+    small ? ' small' : ''
+  }${disabled ? ' disabled' : ''}`
   return (
     <>
       {type === 'link' && (
@@ -34,9 +40,7 @@ export const Button = ({
           style={style}
           role={role}
           testId={testId}
-          className={`button ${
-            headingFont.className
-          }${theme && !unstyled ? ` ${theme}` : ''}${className ? ` ${className}` : ''}${unstyled ? ' unstyled' : ''}`}
+          className={classList}
           onClick={onClick}
           onMouseOut={onMouseOut}
           onMouseOver={onMouseOver}
@@ -66,9 +70,7 @@ export const Button = ({
           data-testid={testId}
           disabled={disabled}
           style={style}
-          className={`button ${
-            headingFont.className
-          }${theme && !unstyled ? ` ${theme}` : ''}${className ? ` ${className}` : ''}${unstyled ? ' unstyled' : ''}`}
+          className={classList}
           onClick={onClick}
           onMouseOver={onMouseOver}
           onMouseOut={onMouseOut}

@@ -1,9 +1,7 @@
 'use client'
-import { Button, ImageObject } from '@components/modules'
+import { Button, ImageObject, GalleryModal } from '@components/modules'
 import { SectionHeading } from '@components/modules/SectionHeading'
 import { Grid } from '@components/utility'
-import { CaretLeft, CaretRight, X } from '@phosphor-icons/react'
-import { colors } from '@utils/settings'
 import { GalleryProps } from '@utils/types'
 import { useEffect, useState } from 'react'
 
@@ -56,43 +54,14 @@ export const Gallery = ({
           </Button>
         ))}
       </Grid>
-      <div className={`galleryModal ${isModalOpen ? 'open' : 'closed'}`}>
-        <Button
-          className="close"
-          type="button"
-          ariaLabel="Close Modal"
-          unstyled
-          onClick={() => setIsModalOpen(false)}
-        >
-          <X color={colors.white} size={50} />
-          <div className="srOnly">Close Modal</div>
-        </Button>
-        <Button
-          className={`control prev${activeIndex === 0 ? ' disabled' : ''}`}
-          type="button"
-          disabled={activeIndex === 0}
-          unstyled
-          onClick={() => setActiveIndex(activeIndex - 1)}
-        >
-          <CaretLeft color={colors.white} size={50} />
-          <div className="srOnly">Previous Image</div>
-        </Button>
-
-        <ImageObject {...items[activeIndex]} className="activeImage" />
-
-        <Button
-          className={`control next${
-            activeIndex === items.length - 1 ? ' disabled' : ''
-          }`}
-          type="button"
-          unstyled
-          disabled={activeIndex === items.length - 1}
-          onClick={() => setActiveIndex(activeIndex + 1)}
-        >
-          <CaretRight color={colors.white} size={50} />
-          <div className="srOnly">Next Image</div>
-        </Button>
-      </div>
+      <GalleryModal
+        items={items}
+        activeIndex={activeIndex}
+        isModalOpen={isModalOpen}
+        setActiveIndex={setActiveIndex}
+        setIsModalOpen={setIsModalOpen}
+        controls
+      />
     </div>
   )
 }

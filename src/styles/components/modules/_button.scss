@@ -13,6 +13,7 @@
   letter-spacing: $size-1 / 2;
   text-align: center;
   transition: $transition;
+  line-height: 1;
   transition-property: background-color, color, box-shadow;
 
   &:focus {
@@ -29,6 +30,10 @@
       color: $black;
       box-shadow: $box-shadow-1;
     }
+  }
+
+  &.small {
+    font-size: $size-12;
   }
 
   &.unstyled {
