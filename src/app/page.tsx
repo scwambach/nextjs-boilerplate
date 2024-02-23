@@ -1,6 +1,6 @@
 import { Banner } from '@components/blocks'
-import { Events } from '@components/blocks/Events'
 import { PageLayout } from '@components/global'
+import { VideoBlock } from '@components/modules/VideoBlock'
 import { GlobalProps } from '@utils/types'
 
 async function getData() {
@@ -49,55 +49,18 @@ export default async function Home() {
           },
         ]}
       />
-
-      <Events
-        heading="Events"
-        subheading="Upcoming Events"
-        items={[
-          {
-            date: '2024-02-29',
-            title: 'New Year',
-            startTime: '14:00',
-            endTime: '16:00',
-            doorsOpenTime: '4:00 PM',
-            location: {
-              name: 'The Party Place',
-              address: '123 Main St, Anytown, USA',
-            },
-            poster: {
-              query: 'new year party 1',
-              alt: 'New Year Party',
-              width: 1200,
-              height: 800,
-            },
-            links: [
-              { href: '/new-year', label: 'More Info' },
-              { href: '/tickets', label: 'Get Tickets' },
-            ],
-          },
-          {
-            date: '2023-12-25',
-            title: 'Christmas',
-            startTime: '5:00 PM',
-            doorsOpenTime: '4:00 PM',
-            endTime: '12:00 AM',
-            poster: {
-              query: 'christmas party 1',
-              alt: 'Christmas Party',
-              width: 1200,
-              height: 800,
-            },
-            location: {
-              name: 'The Party Place',
-              address: '123 Main St, Anytown, USA',
-            },
-            links: [
-              { href: '/christmas', label: 'More Info' },
-              { href: '/tickets', label: 'Get Tickets' },
-            ],
-          },
-        ]}
-      />
+      <div className="container narrower">
+        <VideoBlock
+          url="https://www.youtube.com/embed/7e90gBu4pas"
+          title="Official Music Video on YouTube"
+          copy="Watch the official music video for 'Nam felis' on YouTube."
+          poster={{
+            alt: 'Nam felis',
+            query: 'corporate',
+            src: 'https://source.unsplash.com/random/800x400?corporate',
+          }}
+        />
+      </div>
     </PageLayout>
   )
 }
