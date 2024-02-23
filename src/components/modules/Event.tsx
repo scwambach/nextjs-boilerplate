@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react'
 import { headingFont } from '@utils/fonts'
 import { convertTime } from '@utils/convertTime'
 
-// TODO: Create tests and stories
+// TODO: Create stories
 
 export const Event = ({
   className,

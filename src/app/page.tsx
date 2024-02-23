@@ -55,9 +55,10 @@ export default async function Home() {
         subheading="Upcoming Events"
         items={[
           {
-            date: '2024-01-01',
+            date: '2024-02-29',
             title: 'New Year',
-            startTime: '5:00 PM',
+            startTime: '14:00',
+            endTime: '16:00',
             doorsOpenTime: '4:00 PM',
             location: {
               name: 'The Party Place',
@@ -75,7 +76,7 @@ export default async function Home() {
             ],
           },
           {
-            date: '2022-12-25',
+            date: '2023-12-25',
             title: 'Christmas',
             startTime: '5:00 PM',
             doorsOpenTime: '4:00 PM',
