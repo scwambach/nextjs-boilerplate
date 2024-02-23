@@ -91,3 +91,93 @@ export const NoImage: Story = {
     ),
   ],
 }
+
+export const WithTags: Story = {
+  args: {
+    title: 'Card',
+    theme: 'primary',
+    image: {
+      query: 'nature',
+      alt: 'nature',
+    },
+    description: 'This is a card with tags',
+    tags: [
+      {
+        label: 'Tag',
+      },
+      {
+        label: 'Another tag',
+        theme: 'secondary',
+      },
+    ],
+    links: [
+      {
+        label: 'Link',
+        href: '/link',
+      },
+    ],
+  },
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          maxWidth: '350px',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
+}
+
+export const AsPost: Story = {
+  args: {
+    title: 'Post',
+    theme: 'primary',
+    image: {
+      query: 'nature',
+      alt: 'nature',
+    },
+    href: '/post',
+    date: '2024-02-29',
+    authors: [
+      {
+        firstName: 'John',
+        lastName: 'Doe',
+        image: {
+          query: 'face 1',
+          alt: 'John Doe',
+        },
+      },
+      {
+        firstName: 'Jane',
+        lastName: 'Doe',
+        image: {
+          query: 'face',
+          alt: 'Jane Doe',
+        },
+      },
+    ],
+    description: 'This is a card with a date',
+    tags: [
+      {
+        label: 'Tag',
+      },
+      {
+        label: 'Another tag',
+        theme: 'secondary',
+      },
+    ],
+  },
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          maxWidth: '350px',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
+}

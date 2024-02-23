@@ -8,8 +8,6 @@ import dayjs from 'dayjs'
 import { Avatar } from './Avatar'
 import { Tag } from './Tag'
 
-// TODO: Create new stories and tests for this component's updated features
-
 const compileAuthorNames = (authors: PersonProps[]) => {
   const names = authors.map(
     (author) => `${author.firstName} ${author.lastName}`
@@ -26,7 +24,7 @@ const compileAuthorNames = (authors: PersonProps[]) => {
   return `${names.join(', ')}, and ${lastName}`
 }
 
-const Content = ({
+export const Content = ({
   className,
   title,
   description,

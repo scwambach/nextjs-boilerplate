@@ -3,8 +3,7 @@ import { SectionHeading } from '@components/modules/SectionHeading'
 import { Flex } from '@components/utility'
 import { Spacer } from '@components/utility/Spacer'
 import { EventsProps } from '@utils/types'
-
-// TODO: Create Events tests and stories
+import { Fragment } from 'react'
 
 export const Events = ({
   className,
@@ -25,10 +24,10 @@ export const Events = ({
         )}
         <Flex direction="column" fill gap="none" className="events-list">
           {items.map((item, index) => (
-            <>
+            <Fragment key={item.title + index}>
               {index > 0 && <Spacer size={1} divide />}
               <Event className="event" key={item.date + item.title} {...item} />
-            </>
+            </Fragment>
           ))}
         </Flex>
       </div>

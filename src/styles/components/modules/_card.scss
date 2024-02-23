@@ -5,9 +5,76 @@ button.card.unstyled {
   border: $size-1 solid $lightGray;
   color: $black;
   padding: $size-8;
+  position: relative;
   box-shadow: 0;
   box-shadow: $box-shadow-1;
   border-radius: $size-8;
+
+  .tags {
+    position: absolute;
+    top: $size-16;
+    left: $size-16;
+    z-index: 2;
+  }
+
+  .date {
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: $size-16;
+  }
+
+  .avatars {
+    position: relative;
+    z-index: 2;
+  }
+
+  .authors {
+    margin-top: $size-16;
+
+    @media screen and (max-width: ($md - 1)) {
+      align-items: flex-start;
+    }
+
+    &.multiple {
+      &:hover {
+        .author {
+          + .author {
+            @media screen and (min-width: ($sm)) {
+              margin-left: $size-4;
+            }
+          }
+        }
+
+        .authorNames {
+          @media screen and (min-width: ($sm)) {
+            margin-left: -$size-36;
+          }
+        }
+      }
+    }
+
+    .authorNames {
+      position: relative;
+      transition: $transition;
+    }
+
+    .author {
+      position: relative;
+      transition: $transition;
+
+      + .author {
+        margin-left: $size-8;
+        @media screen and (min-width: ($md)) {
+          margin-left: -$size-28;
+        }
+      }
+
+      .avatar {
+        border-radius: 100%;
+        outline: $size-1 solid $white;
+      }
+    }
+  }
 
   .heading {
     font-size: $size-24;
@@ -104,66 +171,5 @@ a.card.unstyled {
       background-color: $lightOrange;
       color: $black;
     }
-  }
-
-  .authors {
-    margin-top: $size-16;
-
-    @media screen and (max-width: ($md - 1)) {
-      align-items: flex-start;
-    }
-
-    &.multiple {
-      &:hover {
-        .author {
-          + .author {
-            @media screen and (min-width: ($sm)) {
-              margin-left: $size-4;
-            }
-          }
-        }
-
-        .authorNames {
-          @media screen and (min-width: ($sm)) {
-            margin-left: -$size-36;
-          }
-        }
-      }
-    }
-
-    .authorNames {
-      position: relative;
-      transition: $transition;
-    }
-
-    .author {
-      position: relative;
-      transition: $transition;
-
-      + .author {
-        margin-left: $size-8;
-        @media screen and (min-width: ($md)) {
-          margin-left: -$size-28;
-        }
-      }
-
-      .avatar {
-        border-radius: 100%;
-        outline: $size-1 solid $white;
-      }
-    }
-  }
-
-  .tags {
-    position: absolute;
-    top: $size-16;
-    left: $size-16;
-    z-index: 2;
-  }
-
-  .date {
-    font-weight: bold;
-    font-style: italic;
-    margin-bottom: $size-16;
   }
 }
