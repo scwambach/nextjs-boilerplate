@@ -1,7 +1,6 @@
 import { DotsProps } from '@utils/types'
-import { Button } from './Button'
-import { IconSelector } from '@components/utility/IconSelector'
-import { Flex } from '@components/utility'
+import { Button } from '@components/modules'
+import { Flex, IconSelector } from '@components/utility'
 
 export const Dots = ({
   className,

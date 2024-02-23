@@ -1,7 +1,7 @@
 import { ButtonProps } from '@utils/types'
-import { LinkObject } from './LinkObject'
 import { headingFont } from '@utils/fonts'
-import { IconSelector } from '@components/utility/IconSelector'
+import { IconSelector } from '@components/utility'
+import { LinkObject } from '@components/modules'
 
 export const Button = ({
   type = 'button',

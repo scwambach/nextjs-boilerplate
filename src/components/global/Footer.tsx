@@ -1,5 +1,5 @@
 'use client'
-import { Markdown } from '@components/utility/Markdown'
+import { Markdown } from '@components/utility'
 import data from '@data/global.json'
 
 export const Footer = ({ copy }: { copy?: string }) => {

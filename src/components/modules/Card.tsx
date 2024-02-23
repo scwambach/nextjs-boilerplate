@@ -1,12 +1,7 @@
 import { CardProps, PersonProps } from '@utils/types'
-import { Button } from './Button'
-import { ImageObject } from './ImageObject'
-import { Heading } from '@components/utility/Heading'
-import { Markdown } from '@components/utility/Markdown'
-import { Flex } from '@components/utility'
+import { Button, ImageObject, Avatar, Tag } from '@components/modules'
+import { Heading, Markdown, Flex } from '@components/utility'
 import dayjs from 'dayjs'
-import { Avatar } from './Avatar'
-import { Tag } from './Tag'
 
 const compileAuthorNames = (authors: PersonProps[]) => {
   const names = authors.map(

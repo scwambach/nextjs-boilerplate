@@ -1,7 +1,6 @@
 'use client'
 import { Button, Dropdown } from '@components/modules'
-import { Flex } from '@components/utility'
-import { Heading } from '@components/utility/Heading'
+import { Flex, Heading } from '@components/utility'
 import { ButtonTypes, GlobalProps } from '@utils/types'
 import { useState } from 'react'
 

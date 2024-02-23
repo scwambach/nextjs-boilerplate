@@ -1,6 +1,6 @@
 'use client'
 import { Button } from '@components/modules'
-import { IconSelector } from '@components/utility/IconSelector'
+import { IconSelector } from '@components/utility'
 import { AlertProps } from '@utils/types'
 import { useEffect, useState } from 'react'
 import * as Icon from '@phosphor-icons/react'

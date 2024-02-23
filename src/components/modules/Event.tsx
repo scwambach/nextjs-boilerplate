@@ -1,12 +1,13 @@
 'use client'
-import { Flex } from '@components/utility'
-import { Heading } from '@components/utility/Heading'
+import { Flex, Heading } from '@components/utility'
 import { EventProps } from '@utils/types'
-import { LinkObject } from './LinkObject'
-import { Button } from './Button'
+import {
+  ImageObject,
+  GalleryModal,
+  Button,
+  LinkObject,
+} from '@components/modules'
 import dayjs from 'dayjs'
-import { ImageObject } from './ImageObject'
-import { GalleryModal } from './GalleryModal'
 import { useEffect, useState } from 'react'
 import { headingFont } from '@utils/fonts'
 import { convertTime } from '@utils/convertTime'

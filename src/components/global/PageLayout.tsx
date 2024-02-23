@@ -1,8 +1,7 @@
 import { ReactNode } from 'react'
-import { Footer } from './Footer'
-import { Header } from './Header'
+import { Header, Footer } from '@components/global'
+import { SkipToMain } from '@components/utility'
 import { GlobalProps } from '@utils/types'
-import { SkipToMain } from '@components/utility/SkipToMain'
 
 export const PageLayout = ({
   children,

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useHasWindow } from './useHasWindow'
+import { useHasWindow } from '@hooks/useHasWindow'
 
 export const useScrollingDown = () => {
   const [scrollingDown, setScrollingDown] = useState(false)

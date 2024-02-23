@@ -1,5 +1,5 @@
 import { TagProps } from '@utils/types'
-import { LinkObject } from './LinkObject'
+import { LinkObject } from '@components/modules'
 
 export const Tag = ({
   className,

@@ -1,5 +1,5 @@
 import { Breadcrumbs, Button, ImageObject } from '@components/modules'
-import { Heading } from '@components/utility/Heading'
+import { Heading } from '@components/utility'
 import { parseMarkdownToHTML } from '@utils/parseMarkdownToHTML'
 import { BannerProps } from '@utils/types'
 

@@ -1,7 +1,5 @@
 import { Button, ImageObject } from '@components/modules'
-import { Flex } from '@components/utility'
-import { Heading } from '@components/utility/Heading'
-import { Markdown } from '@components/utility/Markdown'
+import { Flex, Heading, Markdown } from '@components/utility'
 import { RiverProps } from '@utils/types'
 
 export const River = ({

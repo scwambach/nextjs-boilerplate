@@ -1,7 +1,6 @@
 'use client'
-import { Button } from './Button'
 import { useEffect, useRef, useState } from 'react'
-import { LinkObject } from './LinkObject'
+import { Button, LinkObject } from '@components/modules'
 import { Flex } from '@components/utility'
 import { DropdownProps } from '@utils/types'
 

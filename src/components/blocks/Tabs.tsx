@@ -1,8 +1,8 @@
 'use client'
 import { Button } from '@components/modules'
-import { SectionHeading } from '@components/modules/SectionHeading'
+import { SectionHeading } from '@components/modules'
 import { Flex } from '@components/utility'
-import { IconSelector } from '@components/utility/IconSelector'
+import { IconSelector } from '@components/utility'
 import { TabsProps } from '@utils/types'
 import { useState } from 'react'
 

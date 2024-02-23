@@ -1,7 +1,7 @@
 'use client'
-import { Button } from '@components/modules'
 import { useEffect, useState } from 'react'
-import { Flex } from './Flex'
+import { Flex } from '@components/utility'
+import { Button } from '@components/modules'
 import { ModalProps } from '@utils/types'
 
 export const Modal = ({

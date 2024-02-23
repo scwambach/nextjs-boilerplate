@@ -1,7 +1,7 @@
 import { Event } from '@components/modules/Event'
 import { SectionHeading } from '@components/modules/SectionHeading'
 import { Flex } from '@components/utility'
-import { Spacer } from '@components/utility/Spacer'
+import { Spacer } from '@components/utility'
 import { EventsProps } from '@utils/types'
 import { Fragment } from 'react'
 

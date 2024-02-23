@@ -1,5 +1,5 @@
 import { SpinnerProps } from '@utils/types'
-import { IconSelector } from './IconSelector'
+import { IconSelector } from '@components/utility'
 
 export const Spinner = ({ className, size = 3, testId }: SpinnerProps) => {
   return (
