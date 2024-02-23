@@ -59,7 +59,6 @@ export default async function Home() {
             title: 'New Year',
             startTime: '5:00 PM',
             doorsOpenTime: '4:00 PM',
-            endTime: '12:00 AM',
             location: {
               name: 'The Party Place',
               address: '123 Main St, Anytown, USA',

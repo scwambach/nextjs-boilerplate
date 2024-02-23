@@ -10,7 +10,7 @@
 
   .info {
     @media screen and (min-width: ($sm)) {
-      width: calc(100% - 50px);
+      width: calc(100% - $size-60);
     }
   }
 
@@ -18,7 +18,7 @@
     width: 100%;
 
     @media screen and (min-width: ($sm)) {
-      width: 60%;
+      width: calc(100% - ($size-200 + $size-52));
     }
   }
 
@@ -71,7 +71,7 @@
     text-align: center;
     background-color: $orange;
     color: $white;
-    width: 50px;
+    width: 60px;
     padding: $size-6 $size-4 $size-4 $size-4;
     line-height: 1;
     border-radius: $size-4;
@@ -87,8 +87,17 @@
   }
 
   .links {
+    @media screen and (min-width: ($sm)) {
+      width: $size-200 + $size-52;
+    }
+
     @media screen and (max-width: ($sm - 1)) {
       justify-content: flex-start;
     }
+  }
+
+  .times {
+    margin-top: $size-8;
+    line-height: 1;
   }
 }

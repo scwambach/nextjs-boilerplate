@@ -9,6 +9,7 @@ import { ImageObject } from './ImageObject'
 import { GalleryModal } from './GalleryModal'
 import { useEffect, useState } from 'react'
 import { headingFont } from '@utils/fonts'
+import { convertTime } from '@utils/convertTime'
 
 // TODO: Create tests and stories
 
@@ -16,6 +17,9 @@ export const Event = ({
   className,
   location,
   title,
+  startTime,
+  doorsOpenTime,
+  endTime,
   links,
   poster,
   date,
@@ -29,6 +33,33 @@ export const Event = ({
   }, [])
 
   const isDateThisYear = dayjs(date).isSame(new Date(), 'year')
+
+  const timeString = () => {
+    const mainTime =
+      startTime && endTime ? (
+        <>
+          <strong>Event time:</strong>{' '}
+          {convertTime(startTime).toLocaleTimeString([], {
+            hour: 'numeric',
+            minute: '2-digit',
+          })}{' '}
+          -{' '}
+          {convertTime(endTime).toLocaleTimeString([], {
+            hour: 'numeric',
+            minute: '2-digit',
+          })}
+        </>
+      ) : (
+        <>
+          <strong>Event Starts at </strong>
+          {convertTime(startTime).toLocaleTimeString([], {
+            hour: 'numeric',
+            minute: '2-digit',
+          })}
+        </>
+      )
+    return mainTime
+  }
 
   return (
     <div className={`event${className ? ` ${className}` : ''}`}>
@@ -97,6 +128,22 @@ export const Event = ({
                   )}
                 </>
               )}
+              <div className="times">
+                <p>
+                  <small>{timeString()}</small>
+                </p>
+                {doorsOpenTime && (
+                  <p>
+                    <small>
+                      <strong>Doors open at </strong>
+                      {convertTime(doorsOpenTime).toLocaleTimeString([], {
+                        hour: 'numeric',
+                        minute: '2-digit',
+                      })}
+                    </small>
+                  </p>
+                )}
+              </div>
             </div>
           </Flex>
         </Flex>
