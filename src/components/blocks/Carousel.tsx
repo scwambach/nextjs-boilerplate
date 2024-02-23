@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 
 // TODO: Create tests
 
-export const Carousel = ({ items, className }: CarouselProps) => {
+export const Carousel = ({ items, className, testId }: CarouselProps) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const renderedItems = items.map((item, index) => (
     <Banner key={index} {...item} />
@@ -23,7 +23,10 @@ export const Carousel = ({ items, className }: CarouselProps) => {
   }, [items.length])
 
   return (
-    <div className={`carousel${className ? ` ${className}` : ''}`}>
+    <div
+      data-testid={testId}
+      className={`carousel${className ? ` ${className}` : ''}`}
+    >
       <Flex
         className="slider"
         style={{

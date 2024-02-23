@@ -11,13 +11,17 @@ export const Cards = ({
   columns,
   heading,
   level = 3,
+  testId,
 }: CardsProps) => {
   const renderedCards = items.map((item, index) => {
     return <Card key={index} {...item} />
   })
 
   return (
-    <div className={`cards${className ? ` ${className}` : ''}`}>
+    <div
+      data-testid={testId}
+      className={`cards${className ? ` ${className}` : ''}`}
+    >
       {heading && (
         <SectionHeading
           heading={heading}

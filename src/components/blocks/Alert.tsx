@@ -6,7 +6,13 @@ import { useEffect, useState } from 'react'
 import * as Icon from '@phosphor-icons/react'
 import { parseMarkdownToHTML } from '@utils/parseMarkdownToHTML'
 
-export const Alert = ({ type, className, alertId, message }: AlertProps) => {
+export const Alert = ({
+  type,
+  testId,
+  className,
+  alertId,
+  message,
+}: AlertProps) => {
   const [remove, setRemove] = useState(false)
   const [loading, setLoading] = useState(true)
 
@@ -36,6 +42,7 @@ export const Alert = ({ type, className, alertId, message }: AlertProps) => {
 
   return (
     <div
+      data-testid={testId}
       id={alertId}
       className={`alert ${type}${className ? ` ${className}` : ''}${
         loading || remove ? ' hide' : ''

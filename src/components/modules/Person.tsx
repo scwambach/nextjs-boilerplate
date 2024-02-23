@@ -11,9 +11,13 @@ export const Person = ({
   image,
   socials,
   title,
+  testId,
 }: PersonProps) => {
   return (
-    <div className={`person${className ? ` ${className}` : ''}`}>
+    <div
+      data-testid={testId}
+      className={`person${className ? ` ${className}` : ''}`}
+    >
       <Flex direction="column" gap="xxs" alignItems="stretch">
         <div className="image">
           <ImageObject {...image} isBackground />

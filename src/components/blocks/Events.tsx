@@ -10,10 +10,14 @@ export const Events = ({
   heading,
   subheading,
   level,
+  testId,
   items,
 }: EventsProps) => {
   return (
-    <div className={`events${className ? ` ${className}` : ''}`}>
+    <div
+      className={`events${className ? ` ${className}` : ''}`}
+      data-testid={testId}
+    >
       <div className="container narrower">
         {heading && (
           <SectionHeading

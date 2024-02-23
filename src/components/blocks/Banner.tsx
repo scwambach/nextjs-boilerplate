@@ -13,6 +13,7 @@ export const Banner = ({
   message,
   headingLevel = 2,
   links,
+  testId,
   style,
 }: BannerProps) => {
   return (
@@ -20,6 +21,7 @@ export const Banner = ({
       className={`banner ${bgColor}${className ? ` ${className}` : ''}${
         img ? ' has-image' : ''
       }`}
+      data-testid={testId}
       style={style}
     >
       {img && (

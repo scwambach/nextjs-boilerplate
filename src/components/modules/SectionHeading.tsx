@@ -6,9 +6,13 @@ export const SectionHeading = ({
   heading,
   level = 3,
   subheading,
+  testId,
 }: SectionHeadingProps) => {
   return (
-    <div className={`sectionHeading${className ? ` ${className}` : ''}`}>
+    <div
+      data-testid={testId}
+      className={`sectionHeading${className ? ` ${className}` : ''}`}
+    >
       {heading && <Heading level={level}>{heading}</Heading>}
       {subheading && <Markdown>{subheading}</Markdown>}
     </div>

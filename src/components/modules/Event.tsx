@@ -20,6 +20,7 @@ export const Event = ({
   doorsOpenTime,
   endTime,
   links,
+  testId,
   poster,
   date,
 }: EventProps) => {
@@ -61,7 +62,10 @@ export const Event = ({
   }
 
   return (
-    <div className={`event${className ? ` ${className}` : ''}`}>
+    <div
+      data-testid={testId}
+      className={`event${className ? ` ${className}` : ''}`}
+    >
       <Flex
         alignItems="flex-start"
         gap={poster ? 'xxs' : 'sm'}

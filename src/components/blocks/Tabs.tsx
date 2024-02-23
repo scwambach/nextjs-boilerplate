@@ -8,6 +8,7 @@ import { useState } from 'react'
 
 export const Tabs = ({
   className,
+  testId,
   heading,
   level,
   theme = 'primary',
@@ -17,7 +18,10 @@ export const Tabs = ({
   const [activeTab, setActiveTab] = useState(0)
   const [menuOpen, setMenuOpen] = useState(false)
   return (
-    <div className={`tabs${className ? ` ${className}` : ''}`}>
+    <div
+      data-testid={testId}
+      className={`tabs${className ? ` ${className}` : ''}`}
+    >
       {heading && (
         <SectionHeading
           heading={heading}

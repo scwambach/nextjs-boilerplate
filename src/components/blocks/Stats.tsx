@@ -9,13 +9,17 @@ export const Stats = ({
   subheading,
   className,
   items,
+  testId,
   gap = 'xs',
 }: StatsProps) => {
   const columns =
     items && items.length > 0 ? (items.length > 6 ? 6 : items.length) : 1
 
   return (
-    <div className={`stats${className ? ` ${className}` : ''}`}>
+    <div
+      data-testid={testId}
+      className={`stats${className ? ` ${className}` : ''}`}
+    >
       {heading && (
         <SectionHeading
           heading={heading}

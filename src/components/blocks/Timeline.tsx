@@ -9,10 +9,14 @@ export const Timeline = ({
   level,
   events,
   subheading,
+  testId,
   className,
 }: TimelineProps) => {
   return (
-    <div className={`timeline${className ? ` ${className}` : ''}`}>
+    <div
+      data-testid={testId}
+      className={`timeline${className ? ` ${className}` : ''}`}
+    >
       {heading && (
         <SectionHeading
           heading={heading}

@@ -9,6 +9,7 @@ export const People = ({
   columns = 3,
   subheading,
   heading,
+  testId,
   level = 3,
   gap = 'sm',
 }: PeopleProps) => {
@@ -17,7 +18,10 @@ export const People = ({
   })
 
   return (
-    <div className={`people${className ? ` ${className}` : ''}`}>
+    <div
+      data-testid={testId}
+      className={`people${className ? ` ${className}` : ''}`}
+    >
       {heading && (
         <SectionHeading
           heading={heading}
