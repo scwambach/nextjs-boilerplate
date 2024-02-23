@@ -1,20 +1,21 @@
 .button {
-  appearance: none;
-  border: none;
-  outline-offset: $size-2;
-  padding: 0.5rem 1rem;
-  display: inline-flex;
   align-items: center;
-  gap: $size-5;
+  appearance: none;
   background: $blue;
   border-radius: $size-4;
+  border: none;
   color: $white;
   cursor: pointer;
+  display: inline-flex;
+  font-size: $size-16;
+  gap: $size-5;
   letter-spacing: $size-1 / 2;
-  text-align: center;
-  transition: $transition;
   line-height: 1;
+  outline-offset: $size-2;
+  padding: $size-8 $size-16;
+  text-align: center;
   transition-property: background-color, color, box-shadow;
+  transition: $transition;
 
   &:focus {
     @media screen and (min-width: ($sm)) {
@@ -33,6 +34,7 @@
   }
 
   &.small {
+    padding: $size-6 $size-12;
     font-size: $size-12;
   }
 

@@ -55,7 +55,7 @@ export default async function Home() {
         subheading="Upcoming Events"
         items={[
           {
-            date: '2022-01-01',
+            date: '2024-01-01',
             title: 'New Year',
             startTime: '5:00 PM',
             doorsOpenTime: '4:00 PM',

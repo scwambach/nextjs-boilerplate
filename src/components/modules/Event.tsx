@@ -27,6 +27,9 @@ export const Event = ({
     }
     document.addEventListener('keydown', closeOnEscape)
   }, [])
+
+  const isDateThisYear = dayjs(date).isSame(new Date(), 'year')
+
   return (
     <div className={`event${className ? ` ${className}` : ''}`}>
       <Flex
@@ -44,6 +47,7 @@ export const Event = ({
             <Heading level={3} nonHeadingElement="p">
               {dayjs(date).format('DD')}
             </Heading>
+            {!isDateThisYear && <span>{dayjs(date).format('YYYY')}</span>}
           </div>
           <Flex gap="xxs" alignItems="stretch" fill className="info">
             {poster && (
