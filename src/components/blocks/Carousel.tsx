@@ -5,6 +5,8 @@ import { Dots } from '@components/modules/Dots'
 import { Flex } from '@components/utility'
 import { useEffect, useState } from 'react'
 
+// TODO: Create tests
+
 export const Carousel = ({ items, className }: CarouselProps) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const renderedItems = items.map((item, index) => (
