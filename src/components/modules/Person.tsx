@@ -11,6 +11,7 @@ export const Person = ({
   image,
   socials,
   title,
+  company,
   testId,
 }: PersonProps) => {
   return (
@@ -25,7 +26,8 @@ export const Person = ({
         <p className={headingFont.className}>
           {firstName} {lastName}
         </p>
-        <p>{title}</p>
+        {title && <p>{title}</p>}
+        {company && <p>{company}</p>}
         {socials && (
           <Flex
             columnBreak="none"

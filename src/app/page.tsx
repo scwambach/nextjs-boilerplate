@@ -1,4 +1,4 @@
-import { Banner, Videos } from '@components/blocks'
+import { Banner, Quote, Videos } from '@components/blocks'
 import { PageLayout } from '@components/global'
 import { GlobalProps } from '@utils/types'
 
@@ -47,6 +47,32 @@ export default async function Home() {
             label: 'Check out the GitHub Repo',
           },
         ]}
+      />
+      <Quote
+        quote="Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra."
+        cite="Scott Wambach"
+        person={{
+          firstName: 'Scott',
+          lastName: 'Wambach',
+          title: 'Founder',
+          company: 'Wambach Media',
+          image: {
+            src: 'https://source.unsplash.com/random/400x400?person',
+            alt: 'Scott Wambach',
+          },
+          socials: [
+            {
+              href: 'https://twitter.com/scwambach',
+              icon: 'TwitterLogo',
+              screenReader: 'Twitter',
+            },
+            {
+              href: 'https://www.linkedin.com/in/scwambach/',
+              icon: 'LinkedinLogo',
+              screenReader: 'LinkedIn',
+            },
+          ],
+        }}
       />
       <Videos
         heading="Nam felis"

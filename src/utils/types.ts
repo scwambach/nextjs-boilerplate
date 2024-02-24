@@ -306,6 +306,7 @@ export interface PersonProps extends ComponentProps {
   title?: string
   href?: string
   image: ImageObjectProps
+  company?: string
   socials?: {
     icon: keyof typeof Icon
     screenReader: string
@@ -534,6 +535,7 @@ export type Elements =
   | 'textarea'
   | 'img'
   | 'picture'
+  | 'cite'
   | 'figure'
   | 'figcaption'
   | 'h1'
