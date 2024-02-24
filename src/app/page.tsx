@@ -1,6 +1,5 @@
-import { Banner } from '@components/blocks'
+import { Banner, Videos } from '@components/blocks'
 import { PageLayout } from '@components/global'
-import { VideoBlock } from '@components/modules/VideoBlock'
 import { GlobalProps } from '@utils/types'
 
 async function getData() {
@@ -49,18 +48,43 @@ export default async function Home() {
           },
         ]}
       />
-      <div className="container narrower">
-        <VideoBlock
-          url="https://www.youtube.com/embed/7e90gBu4pas"
-          title="Official Music Video on YouTube"
-          copy="Watch the official music video for 'Nam felis' on YouTube."
-          poster={{
-            alt: 'Nam felis',
-            query: 'corporate',
-            src: 'https://source.unsplash.com/random/800x400?corporate',
-          }}
-        />
-      </div>
+      <Videos
+        heading="Nam felis"
+        level={2}
+        subheading="Nam felis"
+        items={[
+          {
+            url: 'https://www.youtube.com/embed/7e90gBu4pas',
+            title: 'Official Music Video on YouTube',
+            copy: 'Watch the official music video for "Nam felis" on YouTube.',
+            poster: {
+              alt: 'Nam felis',
+              query: 'corporate',
+              src: 'https://source.unsplash.com/random/800x400?corporate%201',
+            },
+          },
+          {
+            url: 'https://www.youtube.com/embed/7e90gBu4pas',
+            title: 'Official Music Video on YouTube',
+            copy: 'Watch the official music video for "Nam felis" on YouTube.',
+            poster: {
+              alt: 'Nam felis',
+              query: 'corporate',
+              src: 'https://source.unsplash.com/random/800x400?corporate%202',
+            },
+          },
+          {
+            url: 'https://www.youtube.com/embed/7e90gBu4pas',
+            title: 'Official Music Video on YouTube',
+            copy: 'Watch the official music video for "Nam felis" on YouTube.',
+            poster: {
+              alt: 'Nam felis',
+              query: 'corporate',
+              src: 'https://source.unsplash.com/random/800x400?corporate%203',
+            },
+          },
+        ]}
+      />
     </PageLayout>
   )
 }

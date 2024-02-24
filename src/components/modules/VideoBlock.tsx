@@ -1,19 +1,12 @@
 'use client'
-import { ComponentProps, ImageObjectProps } from '@utils/types'
+import { VideoBlockProps } from '@utils/types'
 import { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
 import { Play } from '@phosphor-icons/react/dist/ssr'
 import { Flex, Heading, Markdown } from '@components/utility'
 import { colors } from '@utils/settings'
 
-// TODO: Create VideoBlock component
-
-interface VideoBlockProps extends ComponentProps {
-  url: string
-  title?: string
-  copy?: string
-  poster?: ImageObjectProps
-}
+// TODO: Create VideoBlock tests and stories
 
 export const VideoBlock = ({
   url,

@@ -342,6 +342,13 @@ export interface TagProps extends ComponentProps {
   elementTag?: 'div' | 'span' | 'li'
 }
 
+export interface VideoBlockProps extends ComponentProps {
+  url: string
+  title?: string
+  copy?: string
+  poster?: ImageObjectProps
+}
+
 //////////////////////////
 //////////////////////////
 ///////// BLOCKS /////////
