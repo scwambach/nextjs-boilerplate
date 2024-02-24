@@ -101,11 +101,4 @@ export const Timeline: Story = {
       },
     ],
   },
-  decorators: [
-    (Story) => (
-      <div className="container narrow">
-        <Story />
-      </div>
-    ),
-  ],
 }

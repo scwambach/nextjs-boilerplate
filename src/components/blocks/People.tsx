@@ -1,6 +1,6 @@
 import { Person } from '@components/modules'
 import { SectionHeading } from '@components/modules/SectionHeading'
-import { Grid } from '@components/utility'
+import { Container, Grid } from '@components/utility'
 import { PeopleProps } from '@utils/types'
 
 export const People = ({
@@ -8,6 +8,7 @@ export const People = ({
   items,
   columns = 3,
   subheading,
+  container,
   heading,
   testId,
   level = 3,
@@ -22,16 +23,18 @@ export const People = ({
       data-testid={testId}
       className={`people${className ? ` ${className}` : ''}`}
     >
-      {heading && (
-        <SectionHeading
-          heading={heading}
-          level={level}
-          subheading={subheading}
-        />
-      )}
-      <Grid columns={columns} gap={gap}>
-        {renderedPeople}
-      </Grid>
+      <Container containerClass={container}>
+        {heading && (
+          <SectionHeading
+            heading={heading}
+            level={level}
+            subheading={subheading}
+          />
+        )}
+        <Grid columns={columns} gap={gap}>
+          {renderedPeople}
+        </Grid>
+      </Container>
     </div>
   )
 }

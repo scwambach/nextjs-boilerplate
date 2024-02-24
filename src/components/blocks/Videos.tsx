@@ -1,6 +1,6 @@
 import { Button, SectionHeading } from '@components/modules'
 import { VideoBlock } from '@components/modules/VideoBlock'
-import { Flex, Grid, Spacer } from '@components/utility'
+import { Container, Flex, Grid, Spacer } from '@components/utility'
 import {
   BlockProps,
   ButtonProps,
@@ -27,6 +27,7 @@ export const Videos = ({
   items,
   button,
   columns = 2,
+  container,
   gap = 'md',
 }: VideosProps) => {
   return (
@@ -34,7 +35,7 @@ export const Videos = ({
       data-testid={testId}
       className={`videos${className ? ` ${className}` : ''}`}
     >
-      <div className="container">
+      <Container containerClass={container}>
         {heading && (
           <SectionHeading
             heading={heading}
@@ -56,7 +57,7 @@ export const Videos = ({
             </Flex>
           </>
         )}
-      </div>
+      </Container>
     </div>
   )
 }

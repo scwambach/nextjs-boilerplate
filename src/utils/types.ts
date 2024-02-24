@@ -27,6 +27,7 @@ export interface BlockProps extends ComponentProps {
   heading?: string
   level?: HeadingLevel
   subheading?: string
+  container?: ContainerClasses
 }
 
 export interface FlexGridProps extends ComponentProps {
@@ -56,6 +57,11 @@ export interface GlobalProps {
 ///////// UTILITY /////////
 ///////////////////////////
 ///////////////////////////
+
+export interface ContainerProps extends ComponentProps {
+  containerClass?: ContainerClasses
+  children: ReactNode
+}
 
 export interface DrawerProps extends ComponentProps {
   triggerCopy: string
@@ -412,6 +418,7 @@ export interface PeopleProps extends BlockProps {
 export interface RiverProps extends ComponentProps {
   theme?: Themes
   headingLevel?: HeadingLevel
+  container?: ContainerClasses
   items: {
     title?: string
     description: string
@@ -499,6 +506,8 @@ export interface FormDataProps {
 export interface SetFormDataProps {
   (formData: FormDataProps): void
 }
+
+export type ContainerClasses = 'wider' | 'wide' | 'narrow' | 'narrower'
 
 export type Themes = 'primary' | 'secondary' | 'tertiary'
 

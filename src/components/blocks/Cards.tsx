@@ -1,6 +1,6 @@
 import { Card } from '@components/modules/Card'
 import { SectionHeading } from '@components/modules/SectionHeading'
-import { Grid } from '@components/utility'
+import { Container, Grid } from '@components/utility'
 import { CardsProps } from '@utils/types'
 
 export const Cards = ({
@@ -10,6 +10,7 @@ export const Cards = ({
   subheading,
   columns,
   heading,
+  container,
   level = 3,
   testId,
 }: CardsProps) => {
@@ -22,16 +23,18 @@ export const Cards = ({
       data-testid={testId}
       className={`cards${className ? ` ${className}` : ''}`}
     >
-      {heading && (
-        <SectionHeading
-          heading={heading}
-          level={level}
-          subheading={subheading}
-        />
-      )}
-      <Grid gap={gap} columns={columns}>
-        {renderedCards}
-      </Grid>
+      <Container containerClass={container}>
+        {heading && (
+          <SectionHeading
+            heading={heading}
+            level={level}
+            subheading={subheading}
+          />
+        )}
+        <Grid gap={gap} columns={columns}>
+          {renderedCards}
+        </Grid>
+      </Container>
     </div>
   )
 }

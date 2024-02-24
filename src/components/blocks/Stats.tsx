@@ -1,6 +1,6 @@
 import { Stat } from '@components/modules'
 import { SectionHeading } from '@components/modules/SectionHeading'
-import { Grid } from '@components/utility'
+import { Container, Grid } from '@components/utility'
 import { ColumnSize, StatsProps } from '@utils/types'
 
 export const Stats = ({
@@ -8,6 +8,7 @@ export const Stats = ({
   level,
   subheading,
   className,
+  container,
   items,
   testId,
   gap = 'xs',
@@ -20,18 +21,20 @@ export const Stats = ({
       data-testid={testId}
       className={`stats${className ? ` ${className}` : ''}`}
     >
-      {heading && (
-        <SectionHeading
-          heading={heading}
-          level={level}
-          subheading={subheading}
-        />
-      )}
-      <Grid columns={columns as ColumnSize} gap={gap}>
-        {items?.map((item, index) => (
-          <Stat key={index + item.value} {...item} />
-        ))}
-      </Grid>
+      <Container containerClass={container}>
+        {heading && (
+          <SectionHeading
+            heading={heading}
+            level={level}
+            subheading={subheading}
+          />
+        )}
+        <Grid columns={columns as ColumnSize} gap={gap}>
+          {items?.map((item, index) => (
+            <Stat key={index + item.value} {...item} />
+          ))}
+        </Grid>
+      </Container>
     </div>
   )
 }

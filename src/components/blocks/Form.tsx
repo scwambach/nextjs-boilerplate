@@ -1,5 +1,6 @@
 import { Button } from '@components/modules'
 import { SectionHeading } from '@components/modules/SectionHeading'
+import { Container } from '@components/utility'
 import { FormProps } from '@utils/types'
 
 const Form = ({
@@ -10,6 +11,7 @@ const Form = ({
   heading,
   subheading,
   level,
+  container,
   testId,
 }: FormProps) => {
   return (
@@ -17,22 +19,24 @@ const Form = ({
       className={`form${className ? ` ${className}` : ''}`}
       data-testid={testId}
     >
-      {heading && (
-        <SectionHeading
-          heading={heading}
-          level={level}
-          subheading={subheading}
-        />
-      )}
-      <form
-        onSubmit={(e) => {
-          e.preventDefault()
-          onSubmit && onSubmit(e)
-        }}
-      >
-        <fieldset>{children}</fieldset>
-        <Button type="submit">{submitCopy || 'Submit'}</Button>
-      </form>
+      <Container containerClass={container}>
+        {heading && (
+          <SectionHeading
+            heading={heading}
+            level={level}
+            subheading={subheading}
+          />
+        )}
+        <form
+          onSubmit={(e) => {
+            e.preventDefault()
+            onSubmit && onSubmit(e)
+          }}
+        >
+          <fieldset>{children}</fieldset>
+          <Button type="submit">{submitCopy || 'Submit'}</Button>
+        </form>
+      </Container>
     </div>
   )
 }

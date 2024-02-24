@@ -100,11 +100,4 @@ export const Form: Story = {
       </Grid>
     ),
   },
-  decorators: [
-    (Story) => (
-      <div className="container narrow">
-        <Story />
-      </div>
-    ),
-  ],
 }

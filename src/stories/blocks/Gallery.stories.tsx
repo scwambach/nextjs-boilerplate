@@ -68,11 +68,4 @@ export const Gallery: Story = {
       },
     ],
   },
-  decorators: [
-    (Story) => (
-      <div className="container narrow">
-        <Story />
-      </div>
-    ),
-  ],
 }

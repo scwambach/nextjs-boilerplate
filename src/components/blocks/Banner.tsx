@@ -1,5 +1,5 @@
 import { Breadcrumbs, Button, ImageObject } from '@components/modules'
-import { Heading } from '@components/utility'
+import { Container, Heading } from '@components/utility'
 import { parseMarkdownToHTML } from '@utils/parseMarkdownToHTML'
 import { BannerProps } from '@utils/types'
 
@@ -33,7 +33,7 @@ export const Banner = ({
           sizes="(max-width: 767px) 100vw, 50vw"
         />
       )}
-      <div className="container">
+      <Container>
         {crumbs && crumbs.items && (
           <Breadcrumbs current={crumbs.current} crumbs={crumbs.items} />
         )}
@@ -60,7 +60,7 @@ export const Banner = ({
             ))}
           </div>
         )}
-      </div>
+      </Container>
     </div>
   )
 }

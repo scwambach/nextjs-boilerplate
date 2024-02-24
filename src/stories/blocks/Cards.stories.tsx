@@ -91,13 +91,6 @@ export const Standard: Story = {
       },
     ],
   },
-  decorators: [
-    (Story) => (
-      <div className="container">
-        <Story />
-      </div>
-    ),
-  ],
 }
 
 export const Clickable: Story = {
@@ -145,11 +138,4 @@ export const Clickable: Story = {
       },
     ],
   },
-  decorators: [
-    (Story) => (
-      <div className="container">
-        <Story />
-      </div>
-    ),
-  ],
 }

@@ -1,6 +1,6 @@
 import { Event } from '@components/modules/Event'
 import { SectionHeading } from '@components/modules/SectionHeading'
-import { Flex } from '@components/utility'
+import { Container, Flex } from '@components/utility'
 import { Spacer } from '@components/utility'
 import { EventsProps } from '@utils/types'
 import { Fragment } from 'react'
@@ -12,13 +12,14 @@ export const Events = ({
   level,
   testId,
   items,
+  container = 'narrower',
 }: EventsProps) => {
   return (
     <div
       className={`events${className ? ` ${className}` : ''}`}
       data-testid={testId}
     >
-      <div className="container narrower">
+      <Container containerClass={container}>
         {heading && (
           <SectionHeading
             heading={heading}
@@ -34,7 +35,7 @@ export const Events = ({
             </Fragment>
           ))}
         </Flex>
-      </div>
+      </Container>
     </div>
   )
 }
