@@ -39,7 +39,7 @@ describe('Timeline Component', () => {
 
   it('renders correct number of events', () => {
     const { container } = render(<Timeline {...defaultProps} />)
-    const events = container.querySelectorAll('.timeline .event')
+    const events = container.querySelectorAll('.timeline .eventItem')
     expect(events.length).toBe(defaultProps.events.length)
   })
 
