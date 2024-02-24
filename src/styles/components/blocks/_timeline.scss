@@ -1,7 +1,7 @@
 .timeline {
   @include vertical-spacing-margin;
 
-  .events {
+  .eventItems {
     position: relative;
 
     &:before {
@@ -39,7 +39,7 @@
       }
     }
 
-    .event {
+    .eventItem {
       display: flex;
       flex-direction: row;
       position: relative;

@@ -26,9 +26,9 @@ export const Timeline = ({
             subheading={subheading}
           />
         )}
-        <div className="events">
+        <div className="eventItems">
           {events.map((event) => (
-            <div key={event.date} className="event">
+            <div key={event.date} className="eventItem">
               <Flex className="inner" direction="column" gap="xxs">
                 <div className="info">
                   <p className="year">{dayjs(event.date).format('YYYY')}</p>
