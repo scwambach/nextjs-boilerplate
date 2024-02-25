@@ -1,5 +1,6 @@
 'use client'
 import { Button } from '@components/modules'
+import { Box } from '@components/utility'
 import { AccordionProps } from '@utils/types'
 import { useEffect, useRef, useState } from 'react'
 
@@ -54,7 +55,9 @@ export const Accordion = ({
       >
         {heading}
       </Button>
-      <div
+      <Box
+        shadow={2}
+        overflow
         className="content"
         style={{
           height: `${height}px`,
@@ -62,7 +65,7 @@ export const Accordion = ({
         }}
       >
         <div className="inner">{children}</div>
-      </div>
+      </Box>
     </div>
   )
 }

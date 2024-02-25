@@ -1,5 +1,5 @@
 import { Button, ImageObject } from '@components/modules'
-import { Container, Flex, Heading, Markdown } from '@components/utility'
+import { Box, Container, Flex, Heading, Markdown } from '@components/utility'
 import { RiverProps } from '@utils/types'
 
 export const River = ({
@@ -14,7 +14,7 @@ export const River = ({
     <Flex
       direction="column"
       gap="sm"
-      data-testid={testId}
+      testId={testId}
       className={`river${className ? ` ${className}` : ''}`}
     >
       <Container containerClass={container}>
@@ -29,9 +29,9 @@ export const River = ({
               alignItems="stretch"
               key={index + (item.title || item.description)}
             >
-              <div className="image">
+              <Box overflow className="image">
                 <ImageObject {...item.image} isBackground />
-              </div>
+              </Box>
               <div className="copy">
                 <Heading level={headingLevel}>{item.title}</Heading>
                 <Markdown>{item.description}</Markdown>

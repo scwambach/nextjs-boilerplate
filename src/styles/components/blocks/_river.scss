@@ -10,8 +10,6 @@
 
   .image {
     position: relative;
-    border-radius: $size-8;
-    overflow: hidden;
     box-shadow: $box-shadow-2;
 
     @media screen and (max-width: ($md - 1)) {

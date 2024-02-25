@@ -1,5 +1,5 @@
 import { ImageObject, SectionHeading } from '@components/modules'
-import { Container, Flex, Markdown } from '@components/utility'
+import { Box, Container, Flex, Markdown } from '@components/utility'
 import { headingFont } from '@utils/fonts'
 import { TimelineProps } from '@utils/types'
 import dayjs from 'dayjs'
@@ -44,7 +44,11 @@ export const Timeline = ({
                     </div>
                   )}
                 </div>
-                {event.image && <ImageObject {...event.image} />}
+                {event.image && (
+                  <Box overflow>
+                    <ImageObject {...event.image} />
+                  </Box>
+                )}
               </Flex>
             </div>
           ))}

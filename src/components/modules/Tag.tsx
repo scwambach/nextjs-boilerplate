@@ -1,17 +1,23 @@
 import { TagProps } from '@utils/types'
 import { LinkObject } from '@components/modules'
+import { Box } from '@components/utility'
 
 export const Tag = ({
   className,
   label,
   elementTag = 'span',
   href,
+  testId,
   theme = 'primary',
 }: TagProps) => {
-  const Element = elementTag as keyof JSX.IntrinsicElements
   return (
-    <Element className={`tagItem ${theme}${className ? ` ${className}` : ''}`}>
+    <Box
+      radius={4}
+      testId={testId}
+      elementTag={elementTag}
+      className={`tagItem ${theme}${className ? ` ${className}` : ''}`}
+    >
       {href ? <LinkObject href={href}>{label}</LinkObject> : label}
-    </Element>
+    </Box>
   )
 }

@@ -53,10 +53,6 @@ html {
   }
 }
 
-.box {
-  @include vertical-spacing-padding;
-}
-
 .gap-none {
   gap: 0;
 }

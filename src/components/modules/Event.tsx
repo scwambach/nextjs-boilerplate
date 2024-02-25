@@ -1,5 +1,5 @@
 'use client'
-import { Flex, Heading } from '@components/utility'
+import { Box, Flex, Heading } from '@components/utility'
 import { EventProps } from '@utils/types'
 import {
   ImageObject,
@@ -62,10 +62,7 @@ export const Event = ({
   }
 
   return (
-    <div
-      data-testid={testId}
-      className={`event${className ? ` ${className}` : ''}`}
-    >
+    <Box testId={testId} className={`event${className ? ` ${className}` : ''}`}>
       <Flex
         alignItems="flex-start"
         gap={poster ? 'xxs' : 'sm'}
@@ -76,16 +73,16 @@ export const Event = ({
           gap={poster ? 'xxs' : 'sm'}
           className="details"
         >
-          <div className="date">
+          <Box radius={4} className="date">
             <span>{dayjs(date).format('MMM')}</span>
             <Heading level={3} nonHeadingElement="p">
               {dayjs(date).format('DD')}
             </Heading>
             {!isDateThisYear && <span>{dayjs(date).format('YYYY')}</span>}
-          </div>
+          </Box>
           <Flex gap="xxs" alignItems="stretch" fill className="info">
             {poster && (
-              <div className="poster">
+              <Box overflow className="poster">
                 <Button
                   unstyled
                   style={{
@@ -113,7 +110,7 @@ export const Event = ({
                   activeIndex={0}
                   controls={false}
                 />
-              </div>
+              </Box>
             )}
             <div>
               <Heading level={4} nonHeadingElement="p">
@@ -169,6 +166,6 @@ export const Event = ({
           </Flex>
         )}
       </Flex>
-    </div>
+    </Box>
   )
 }

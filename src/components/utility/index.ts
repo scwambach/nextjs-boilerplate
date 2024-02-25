@@ -1,3 +1,4 @@
+export { Box } from './Box'
 export { Container } from './Container'
 export { Drawer } from './Drawer'
 export { Flex } from './Flex'

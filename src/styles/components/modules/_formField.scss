@@ -2,15 +2,14 @@
   input,
   textarea,
   select {
+    @include radius4;
     appearance: none;
     font-size: $size-16;
     box-shadow: none;
-    border: none;
     display: block;
     border: $size-1 solid $lightBlue;
     padding: $size-4 $size-8;
     min-height: $size-32;
-    border-radius: $size-4;
     outline-offset: $size-2;
     width: 100%;
 
@@ -42,7 +41,7 @@
 
     &.checkbox {
       [class$='indicator'] {
-        border-radius: $size-4;
+        @include radius4;
       }
     }
 
@@ -157,10 +156,10 @@
     }
 
     .dropzone {
+      @include radius4;
       cursor: pointer;
       width: 100%;
       padding: $size-16;
-      border-radius: $size-4;
       border: $size-1 solid $lightBlue;
       background-color: $white;
 
@@ -186,11 +185,11 @@
     }
 
     [class$='-control'] {
-      border-radius: 0;
       min-height: $size-32;
       border: $size-1 solid $lightBlue;
-      border-radius: $size-4;
+      @include radius4;
     }
+
     [class$='-ValueContainer'] {
       padding: $size-5 $size-8 $size-4;
 

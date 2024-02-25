@@ -3,7 +3,7 @@ import { VideoBlockProps } from '@utils/types'
 import { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
 import { Play } from '@phosphor-icons/react/dist/ssr'
-import { Flex, Heading, Markdown } from '@components/utility'
+import { Box, Flex, Heading, Markdown } from '@components/utility'
 import { colors } from '@utils/settings'
 
 // TODO: Create VideoBlock tests and stories
@@ -31,9 +31,9 @@ export const VideoBlock = ({
       gap="xxs"
       alignItems="stretch"
       className={`videoBlock${className ? ` ${className}` : ''}`}
-      data-testid={testId}
+      testId={testId}
     >
-      <div className="frame">
+      <Box>
         {hasWindow && (
           <ReactPlayer
             url={url}
@@ -48,7 +48,7 @@ export const VideoBlock = ({
             playing={isPlaying}
           />
         )}
-      </div>
+      </Box>
       <Flex direction="column" gap="micro" className="info">
         <Heading level={2} nonHeadingElement="p">
           {title}

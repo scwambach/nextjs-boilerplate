@@ -1,4 +1,4 @@
-import { Heading, IconSelector, Flex } from '@components/utility'
+import { Heading, IconSelector, Flex, Box } from '@components/utility'
 import { Tag } from '@components/modules'
 import { addCommas } from '@utils/addCommas'
 import { toUsCurrency } from '@utils/toUsCurrency'
@@ -34,9 +34,10 @@ export const Stat = ({
   }
 
   return (
-    <div
+    <Box
+      shadow={2}
       className={`stat ${theme}${className ? ` ${className}` : ''}`}
-      data-testid={testId}
+      testId={testId}
     >
       <Flex columnBreak="xxs" gap="xs">
         {icon && (
@@ -71,6 +72,6 @@ export const Stat = ({
           )}
         </Flex>
       </Flex>
-    </div>
+    </Box>
   )
 }

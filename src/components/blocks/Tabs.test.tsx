@@ -32,7 +32,7 @@ describe('Tabs Component', () => {
 
   it('renders correct number of tabs', () => {
     const { container } = render(<Tabs {...defaultProps} />)
-    const tabs = container.querySelectorAll('.tabs__item')
+    const tabs = container.querySelectorAll('.item')
     expect(tabs.length).toBe(defaultProps.items.length)
   })
 

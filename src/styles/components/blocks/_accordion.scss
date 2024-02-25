@@ -22,10 +22,7 @@
 
   .content {
     background-color: $white;
-    border-radius: $size-8;
-    box-shadow: $box-shadow-2;
     transition: $transition;
-    overflow: hidden;
     margin: $size-4 0;
 
     .inner {

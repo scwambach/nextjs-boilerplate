@@ -45,14 +45,13 @@
   }
 
   .menu {
+    @include radius8;
     display: none;
     position: absolute;
     box-shadow: $box-shadow-3;
     border-left: $size-1 solid $lightGray;
     border-right: $size-1 solid $lightGray;
     border-bottom: $size-1 solid $lightGray;
-    overflow: hidden;
-    border-radius: $size-8;
     min-width: $size-200;
     background-color: $white;
     z-index: 10;

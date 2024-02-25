@@ -1,6 +1,6 @@
 import { CardProps, PersonProps } from '@utils/types'
 import { Button, ImageObject, Avatar, Tag } from '@components/modules'
-import { Heading, Markdown, Flex } from '@components/utility'
+import { Heading, Markdown, Flex, Box } from '@components/utility'
 import dayjs from 'dayjs'
 
 const compileAuthorNames = (authors: PersonProps[]) => {
@@ -27,12 +27,13 @@ export const Content = ({
   authors,
   tags,
   links,
+  testId,
   href,
   headingLevel = 3,
   image,
 }: CardProps) => {
   return (
-    <div className={className}>
+    <Box testId={testId} className={className}>
       {tags && (
         <Flex gap="xxs" className="tags" columnBreak="none">
           {tags.map((tag, index) => (
@@ -41,9 +42,9 @@ export const Content = ({
         </Flex>
       )}
       {image && (
-        <div className="image">
+        <Box overflow className="image">
           <ImageObject {...image} isBackground />
-        </div>
+        </Box>
       )}
       <div className="inner">
         <div>
@@ -86,7 +87,7 @@ export const Content = ({
           </Flex>
         )}
       </div>
-    </div>
+    </Box>
   )
 }
 

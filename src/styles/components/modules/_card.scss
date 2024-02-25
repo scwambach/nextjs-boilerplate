@@ -8,7 +8,6 @@ button.card.unstyled {
   position: relative;
   box-shadow: 0;
   box-shadow: $box-shadow-1;
-  border-radius: $size-8;
 
   .tags {
     position: absolute;
@@ -94,8 +93,6 @@ button.card.unstyled {
 
   .image {
     margin-bottom: $size-16;
-    border-radius: $size-8;
-    overflow: hidden;
   }
 
   .links {
@@ -126,7 +123,6 @@ button.card.unstyled {
 
   .image {
     position: relative;
-    overflow: hidden;
     height: 0;
     z-index: 1;
     padding-bottom: 56.25%;
@@ -138,6 +134,7 @@ a.card.unstyled {
   transition: $transition;
   transform: translateZ(0);
   width: 100%;
+  @include radius8;
 
   > div {
     width: 100%;

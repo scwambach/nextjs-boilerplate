@@ -1,7 +1,7 @@
 'use client'
 import { Button } from '@components/modules'
 import { SectionHeading } from '@components/modules'
-import { Container, Flex } from '@components/utility'
+import { Box, Container, Flex } from '@components/utility'
 import { IconSelector } from '@components/utility'
 import { TabsProps } from '@utils/types'
 import { useState } from 'react'
@@ -60,7 +60,7 @@ export const Tabs = ({
           gap="micro"
         >
           {items.map((item, index) => (
-            <li key={index} className="tabs__item">
+            <li key={index} className="item">
               <Button
                 theme={theme}
                 onClick={() => {
@@ -74,7 +74,9 @@ export const Tabs = ({
             </li>
           ))}
         </Flex>
-        <div className="panel">{items[activeTab].content}</div>
+        <Box shadow={2} className="panel">
+          {items[activeTab].content}
+        </Box>
       </Container>
     </div>
   )

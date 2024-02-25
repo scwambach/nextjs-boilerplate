@@ -107,11 +107,13 @@
     .inner {
       background-color: $white;
       padding: $size-24;
-      border-radius: $size-8;
       box-shadow: $box-shadow-2;
       width: calc(50% - ($size-48 + 0.1rem));
+      @include radius8;
 
-      @media screen and (min-width: ($sm)) {
+      @media screen and (min-width: (
+            $sm,
+          )) {
         position: relative;
       }
 
@@ -174,8 +176,6 @@
 
       .imageObject {
         width: 100%;
-        border-radius: $size-8;
-        overflow: hidden;
       }
     }
   }
