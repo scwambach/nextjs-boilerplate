@@ -33,7 +33,7 @@ export const VideoBlock = ({
       className={`videoBlock${className ? ` ${className}` : ''}`}
       testId={testId}
     >
-      <Box>
+      <Box overflow>
         {hasWindow && (
           <ReactPlayer
             url={url}
