@@ -24,13 +24,16 @@
     "body": [
       "import { ComponentProps } from '@utils/types'",
       "",
-      "// TODO: Create ${TM_FILENAME_BASE/(.*)/${1}/} component",
+      "// TODO: Create ${TM_FILENAME_BASE/(.*)/${1}/} tests and stories",
       "",
       "interface ${TM_FILENAME_BASE/(.*)/${1}/}Props extends ComponentProps {}",
       "",
-      "export const ${TM_FILENAME_BASE/(.*)/${1}/} = (props: ${TM_FILENAME_BASE/(.*)/${1}/}Props) => {",
+      "export const ${TM_FILENAME_BASE/(.*)/${1}/} = ({ className, testId }: ${TM_FILENAME_BASE/(.*)/${1}/}Props) => {",
       "  return (",
-      "    <div className={`${TM_FILENAME_BASE/(.*)/${1:/camelcase}/}${props.className ? ` ${props.className}` : ''}`}>",
+      "    <div"
+      "      data-testid={testId}"
+      "      className={`${TM_FILENAME_BASE/(.*)/${1:/camelcase}/}${className ? ` ${${className}}` : ''}`}"
+      "    >",
       "      <code>",
       "        <pre",
       "          style={{",
@@ -43,7 +46,7 @@
       "            whiteSpace: 'pre-wrap',",
       "          }}",
       "        >",
-      "          {JSON.stringify(props, null, '    ')}",
+      "          {JSON.stringify('props', null, '    ')}",
       "        </pre>",
       "      </code>",
       "    </div>",

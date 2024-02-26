@@ -1,4 +1,4 @@
-import { Banner, Quote, Videos } from '@components/blocks'
+import { Banner, Map, Quote, Videos } from '@components/blocks'
 import { PageLayout } from '@components/global'
 import { GlobalProps } from '@utils/types'
 
@@ -45,6 +45,18 @@ export default async function Home() {
           {
             href: 'https://github.com/scwambach/nextjs-boilerplate',
             label: 'Check out the GitHub Repo',
+          },
+        ]}
+      />
+      <Map
+        markers={[
+          {
+            lat: 37.963211,
+            lng: -87.56678,
+          },
+          {
+            lat: 37.961391,
+            lng: -87.565758,
           },
         ]}
       />

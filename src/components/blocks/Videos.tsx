@@ -9,7 +9,7 @@ import {
   VideoBlockProps,
 } from '@utils/types'
 
-// TODO: Create Videos stories and tests
+// TODO: Create Videos tests and stories
 
 interface VideosProps extends BlockProps {
   items: VideoBlockProps[]

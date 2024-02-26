@@ -1,7 +1,7 @@
 import { ComponentProps } from '@utils/types'
 import { CSSProperties, ReactNode } from 'react'
 
-// TODO: Create Box component
+// TODO: Create Box tests and stories
 
 interface BoxProps extends ComponentProps {
   children: ReactNode
