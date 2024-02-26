@@ -1,14 +1,13 @@
 'use client'
 import { Markdown } from '@components/utility'
-import data from '@data/global.json'
 
-export const Footer = ({ copy }: { copy?: string }) => {
+export const Footer = ({ copy, title }: { copy?: string; title: string }) => {
   const year = new Date().getFullYear()
   return (
     <footer>
       <div className="container">
         <p>
-          &copy; {year} {data.siteTitle}
+          &copy; {year} {title}
         </p>
         {copy && <Markdown>{copy}</Markdown>}
       </div>

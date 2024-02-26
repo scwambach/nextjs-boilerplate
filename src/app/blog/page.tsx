@@ -1,0 +1,62 @@
+import { Banner, Cards } from '@components/blocks'
+import { PageLayout } from '@components/global'
+import { CardProps, GlobalProps } from '@utils/types'
+
+async function getData() {
+  const globalRes = await fetch(`${process.env.SITE_URL}/api/getData`)
+  const globalData = await globalRes.json()
+
+  const blogRes = await fetch(`${process.env.SITE_URL}/api/getBlogRoll`)
+  const blogData = await blogRes.json()
+
+  return { globalData, blogData }
+}
+
+export const revalidate = 0
+
+export async function generateMetadata({}) {
+  const globalData: any = await fetch(`${process.env.SITE_URL}/api/getData`)
+
+  return {
+    title: 'Blog | Next.js Starter',
+    description: globalData.body.siteDescription,
+    icons: {
+      icon: '/favicon.png',
+    },
+  }
+}
+
+export default async function Home() {
+  const {
+    blogData,
+    globalData,
+  }: {
+    globalData: { body: GlobalProps }
+    blogData: {
+      body: {
+        posts: CardProps[]
+      }
+    }
+  } = await getData()
+
+  return (
+    <PageLayout global={globalData.body}>
+      <Banner
+        img={{
+          alt: 'A person typing on a laptop',
+          query: 'person typing',
+        }}
+        heading="This is the title of a blog post about something"
+        message="This is a short description of the blog post. We will use this to entice the reader to click on the post and read more."
+        headingLevel={1}
+        links={[
+          {
+            href: '/blog/post',
+            label: 'Read More',
+          },
+        ]}
+      />
+      <Cards heading="Recent Blog Posts" items={blogData.body.posts} />
+    </PageLayout>
+  )
+}

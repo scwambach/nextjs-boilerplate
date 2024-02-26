@@ -1,6 +1,4 @@
-.card,
-a.card.unstyled,
-button.card.unstyled {
+.card {
   background-color: $white;
   border: $size-1 solid $lightGray;
   color: $black;
@@ -8,6 +6,47 @@ button.card.unstyled {
   position: relative;
   box-shadow: 0;
   box-shadow: $box-shadow-1;
+
+  &.link {
+    transition: $transition;
+    transform: translateZ(0);
+    width: 100%;
+    @include radius8;
+
+    > div {
+      width: 100%;
+    }
+
+    &:hover {
+      transform: translateY(-$size-4);
+      box-shadow: $box-shadow-4;
+      background-color: $lightBlue;
+      opacity: 1;
+
+      text-decoration: none;
+    }
+
+    &.primary {
+      &:hover {
+        background-color: $lightBlue;
+        color: $black;
+      }
+    }
+
+    &.secondary {
+      &:hover {
+        background-color: $lightGreen;
+        color: $black;
+      }
+    }
+
+    &.tertiary {
+      &:hover {
+        background-color: $lightOrange;
+        color: $black;
+      }
+    }
+  }
 
   .tags {
     position: absolute;
@@ -122,51 +161,14 @@ button.card.unstyled {
   }
 
   .image {
+    a {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
     position: relative;
     height: 0;
     z-index: 1;
     padding-bottom: 56.25%;
-  }
-}
-
-button.card.unstyled,
-a.card.unstyled {
-  transition: $transition;
-  transform: translateZ(0);
-  width: 100%;
-  @include radius8;
-
-  > div {
-    width: 100%;
-  }
-
-  &:hover {
-    transform: translateY(-$size-4);
-    box-shadow: $box-shadow-4;
-    background-color: $lightBlue;
-    opacity: 1;
-
-    text-decoration: none;
-  }
-
-  &.primary {
-    &:hover {
-      background-color: $lightBlue;
-      color: $black;
-    }
-  }
-
-  &.secondary {
-    &:hover {
-      background-color: $lightGreen;
-      color: $black;
-    }
-  }
-
-  &.tertiary {
-    &:hover {
-      background-color: $lightOrange;
-      color: $black;
-    }
   }
 }

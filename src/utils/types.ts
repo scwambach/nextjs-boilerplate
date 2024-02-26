@@ -213,6 +213,7 @@ export interface CardProps extends ComponentProps {
   description?: string
   theme?: Themes
   href?: string
+  contentElement?: Elements
   headingLevel?: HeadingLevel
   links?: ButtonProps[]
 }
@@ -387,6 +388,7 @@ export interface CardsProps extends BlockProps {
   items: CardProps[]
   gap?: Gaps
   columns?: ColumnSize
+  button?: ButtonProps
 }
 
 export interface CarouselProps extends ComponentProps {

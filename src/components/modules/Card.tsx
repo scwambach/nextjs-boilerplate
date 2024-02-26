@@ -1,5 +1,12 @@
+'use client'
 import { CardProps, PersonProps } from '@utils/types'
-import { Button, ImageObject, Avatar, Tag } from '@components/modules'
+import {
+  Button,
+  ImageObject,
+  Avatar,
+  Tag,
+  LinkObject,
+} from '@components/modules'
 import { Heading, Markdown, Flex, Box } from '@components/utility'
 import dayjs from 'dayjs'
 
@@ -19,21 +26,24 @@ const compileAuthorNames = (authors: PersonProps[]) => {
   return `${names.join(', ')}, and ${lastName}`
 }
 
-export const Content = ({
-  className,
-  title,
-  description,
-  date,
+export const Card = ({
   authors,
-  tags,
-  links,
-  testId,
+  className,
+  date,
+  description,
+  headingLevel = 2,
   href,
-  headingLevel = 3,
   image,
+  links,
+  tags,
+  title,
+  testId,
 }: CardProps) => {
   return (
-    <Box testId={testId} className={className}>
+    <Box
+      testId={testId}
+      className={`card${href ? ' link' : ''}${className ? ` ${className}` : ''}`}
+    >
       {tags && (
         <Flex gap="xxs" className="tags" columnBreak="none">
           {tags.map((tag, index) => (
@@ -41,7 +51,14 @@ export const Content = ({
           ))}
         </Flex>
       )}
-      {image && (
+      {image && href && (
+        <Box overflow className="image">
+          <LinkObject href={href}>
+            <ImageObject {...image} isBackground />
+          </LinkObject>
+        </Box>
+      )}
+      {image && !href && (
         <Box overflow className="image">
           <ImageObject {...image} isBackground />
         </Box>
@@ -49,7 +66,14 @@ export const Content = ({
       <div className="inner">
         <div>
           {date && <p className="date">{dayjs(date).format('MMM DD, YYYY')}</p>}
-          <Heading level={headingLevel}>{title}</Heading>
+          {href ? (
+            <Heading level={headingLevel}>
+              <LinkObject href={href}>{title}</LinkObject>
+            </Heading>
+          ) : (
+            <Heading level={headingLevel}>{title}</Heading>
+          )}
+
           {description && <Markdown className="copy">{description}</Markdown>}
           {authors && (
             <Flex
@@ -88,27 +112,5 @@ export const Content = ({
         )}
       </div>
     </Box>
-  )
-}
-
-export const Card = (props: CardProps) => {
-  return (
-    <>
-      {props.href ? (
-        <Button
-          href={props.href}
-          unstyled
-          type="link"
-          className={`card link${props.theme ? ` ${props.theme}` : ''}${props.className ? ` ${props.className}` : ''}`}
-        >
-          <Content {...props} />
-        </Button>
-      ) : (
-        <Content
-          {...props}
-          className={`card${props.theme ? ` ${props.theme}` : ''}${props.className ? ` ${props.className}` : ''}`}
-        />
-      )}
-    </>
   )
 }

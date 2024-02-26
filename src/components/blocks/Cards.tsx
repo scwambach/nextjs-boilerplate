@@ -1,6 +1,7 @@
+import { Button } from '@components/modules'
 import { Card } from '@components/modules/Card'
 import { SectionHeading } from '@components/modules/SectionHeading'
-import { Container, Grid } from '@components/utility'
+import { Container, Flex, Grid, Spacer } from '@components/utility'
 import { CardsProps } from '@utils/types'
 
 export const Cards = ({
@@ -13,6 +14,7 @@ export const Cards = ({
   container,
   level = 3,
   testId,
+  button,
 }: CardsProps) => {
   const renderedCards = items.map((item, index) => {
     return <Card key={index} {...item} />
@@ -34,6 +36,14 @@ export const Cards = ({
         <Grid gap={gap} columns={columns}>
           {renderedCards}
         </Grid>
+        {button && (
+          <>
+            <Spacer size={2} />
+            <Flex justifyContent="center" alignItems="center">
+              <Button {...button} />
+            </Flex>
+          </>
+        )}
       </Container>
     </div>
   )

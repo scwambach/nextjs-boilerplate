@@ -17,7 +17,7 @@ export const PageLayout = ({
       <div id="bodyContent" tabIndex={-1}>
         {children}
       </div>
-      <Footer />
+      <Footer title={global.siteTitle} />
     </main>
   )
 }
