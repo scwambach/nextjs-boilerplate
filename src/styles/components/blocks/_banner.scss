@@ -52,6 +52,15 @@
     }
   }
 
+  .date {
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .tags {
+    margin-bottom: $size-16;
+  }
+
   .container {
     z-index: 2;
     position: relative;

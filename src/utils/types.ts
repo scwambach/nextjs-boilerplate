@@ -378,9 +378,12 @@ export interface BannerProps extends ComponentProps {
   heading: string
   headingLevel?: HeadingLevel
   img?: ImageObjectProps
+  authors?: PersonProps[]
+  date?: string
   links?: ButtonProps[]
   message?: string
   style?: CSSProperties
+  tags?: TagProps[]
   subheading?: string
 }
 
