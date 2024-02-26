@@ -12228,6 +12228,7 @@ __metadata:
     prettier: "npm:^3.1.0"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
+    react-paginate: "npm:^8.2.0"
     react-player: "npm:^2.14.1"
     react-select: "npm:^5.8.0"
     sass: "npm:^1.69.5"
@@ -13268,7 +13269,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.6.0, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15, prop-types@npm:^15.6.0, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -13614,6 +13615,17 @@ __metadata:
   version: 18.2.0
   resolution: "react-is@npm:18.2.0"
   checksum: 10c0/6eb5e4b28028c23e2bfcf73371e72cd4162e4ac7ab445ddae2afe24e347a37d6dc22fae6e1748632cd43c6d4f9b8f86dcf26bf9275e1874f436d129952528ae0
+  languageName: node
+  linkType: hard
+
+"react-paginate@npm:^8.2.0":
+  version: 8.2.0
+  resolution: "react-paginate@npm:8.2.0"
+  dependencies:
+    prop-types: "npm:^15"
+  peerDependencies:
+    react: ^16 || ^17 || ^18
+  checksum: 10c0/3d436f5e56e6b14b809767718da46f22d4315221c972c4990e7c22de3b8074235852fa2ad00f6849aad50fa0df16aa14adc2243e767fe4851f0c1ba154ef8b15
   languageName: node
   linkType: hard
 

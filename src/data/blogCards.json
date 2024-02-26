@@ -185,6 +185,41 @@
           "company": "Wambach Media"
         }
       ]
+    },
+    {
+      "title": "Blog Post Title",
+      "date": "2023-05-20",
+      "description":
+        "This is a short description of the blog post. We will use this to entice the reader to click on the post and read more.",
+      "image": {
+        "query": "person typing 7",
+        "alt": "A person typing on a laptop"
+      },
+      "href": "/blog/post",
+      "tags": [
+        {
+          "label": "Tag 1",
+          "href": "/tag1",
+          "theme": "primary"
+        },
+        {
+          "label": "Tag 2",
+          "href": "/tag2",
+          "theme": "secondary"
+        }
+      ],
+      "authors": [
+        {
+          "firstName": "Scott",
+          "lastName": "Wambach",
+          "image": {
+            "query": "person 7",
+            "alt": "Scott Wambach"
+          },
+          "title": "Founder",
+          "company": "Wambach Media"
+        }
+      ]
     }
   ]
 }

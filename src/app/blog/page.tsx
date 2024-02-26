@@ -87,7 +87,11 @@ export default async function Home() {
           },
         ]}
       />
-      <Cards heading="Recent Blog Posts" items={blogData.body.posts} />
+      <Cards
+        heading="Recent Blog Posts"
+        items={blogData.body.posts}
+        paginated
+      />
     </PageLayout>
   )
 }
