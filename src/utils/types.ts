@@ -393,6 +393,7 @@ export interface CardsProps extends BlockProps {
   gap?: Gaps
   columns?: ColumnSize
   paginated?: boolean
+  itemsPerPage?: number
   button?: ButtonProps
 }
 

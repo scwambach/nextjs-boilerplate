@@ -19,9 +19,12 @@ export async function generateMetadata({}) {
   const globalData: any = await fetch(`${process.env.SITE_URL}/api/getData`)
   const postData: any = await fetch(`${process.env.SITE_URL}/api/getBlogPost`)
 
+  const postJson = await postData.json()
+  const globalJson = await globalData.json()
+
   return {
-    title: `${postData.title} | Blog | Next.js Starter`,
-    description: globalData.summary,
+    title: `${postJson.body.title} | Blog | ${globalJson.body.siteTitle}`,
+    description: postJson.body.summary,
     icons: {
       icon: '/favicon.png',
     },

@@ -12,10 +12,11 @@ export const revalidate = 0
 
 export async function generateMetadata({}) {
   const data: any = await fetch(`${process.env.SITE_URL}/api/getData`)
+  const globalData = await data.json()
 
   return {
-    title: 'Next.js Starter',
-    description: data.siteDescription,
+    title: globalData.body.siteTitle,
+    description: globalData.body.siteDescription,
     icons: {
       icon: '/favicon.png',
     },

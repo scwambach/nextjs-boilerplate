@@ -16,10 +16,11 @@ export const revalidate = 0
 
 export async function generateMetadata({}) {
   const globalData: any = await fetch(`${process.env.SITE_URL}/api/getData`)
+  const globalJson = await globalData.json()
 
   return {
-    title: 'Blog | Next.js Starter',
-    description: globalData.body.siteDescription,
+    title: `Blog | ${globalJson.body.siteTitle}`,
+    description: globalJson.body.siteDescription,
     icons: {
       icon: '/favicon.png',
     },
@@ -88,9 +89,10 @@ export default async function Home() {
         ]}
       />
       <Cards
-        heading="Recent Blog Posts"
+        heading="Blog Posts"
         items={blogData.body.posts}
         paginated
+        itemsPerPage={12}
       />
     </PageLayout>
   )

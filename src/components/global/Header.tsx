@@ -1,5 +1,5 @@
 'use client'
-import { Button, Dropdown } from '@components/modules'
+import { Button, Dropdown, LinkObject } from '@components/modules'
 import { Flex, Heading } from '@components/utility'
 import { ButtonTypes, GlobalProps } from '@utils/types'
 import { useState } from 'react'
@@ -18,10 +18,13 @@ export const Header = ({
         <Flex
           columnBreak="none"
           elementTag="nav"
+          alignItems="center"
           justifyContent="space-between"
         >
           <Heading level={1} nonHeadingElement="p">
-            {title}
+            <LinkObject href="/" ariaLabel={title}>
+              {title}
+            </LinkObject>
           </Heading>
           <Button
             unstyled
