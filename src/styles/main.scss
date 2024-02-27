@@ -57,7 +57,12 @@
 @import './components/modules/linkObject';
 @import './components/modules/person';
 @import './components/modules/sectionHeading';
+@import './components/modules/tableOfContents';
 @import './components/modules/stat';
 @import './components/modules/table';
 @import './components/modules/tag';
 @import './components/modules/videoBlock';
+
+// PAGES
+
+@import './pages/post';

@@ -1,5 +1,6 @@
 import MarkdownIt from 'markdown-it'
 import { headingFont } from './fonts'
+import { slugify } from './slugify'
 
 const mdParser = new MarkdownIt()
 
@@ -23,6 +24,7 @@ mdParser.use((md) => {
   const defaultHeadingRender = md.renderer.rules.heading_open
   md.renderer.rules.heading_open = function (tokens, idx, options, env, self) {
     tokens[idx].attrJoin('class', headingFont.className)
+    tokens[idx].attrJoin('id', `${slugify(tokens[idx + 1].content)}`)
     if (defaultHeadingRender) {
       return defaultHeadingRender(tokens, idx, options, env, self)
     } else {

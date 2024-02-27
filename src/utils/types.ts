@@ -119,6 +119,7 @@ export interface IconSelectorProps {
 
 export interface MarkdownProps {
   elementTag?: Elements
+  elementId?: string
   children: string
   className?: string
 }
@@ -299,7 +300,7 @@ export interface LinkObjectProps {
   onMouseOut?: () => void
   onFocus?: () => void
   onBlur?: () => void
-  onClick?: () => void
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
 export interface PersonProps extends ComponentProps {

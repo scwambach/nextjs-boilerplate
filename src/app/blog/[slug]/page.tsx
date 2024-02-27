@@ -1,6 +1,7 @@
 import { Banner, Cards } from '@components/blocks'
 import { PageLayout } from '@components/global'
-import { Container, Markdown } from '@components/utility'
+import { TableOfContents } from '@components/modules/TableOfContents'
+import { Container, Flex, Markdown } from '@components/utility'
 import { GlobalProps } from '@utils/types'
 
 async function getData() {
@@ -45,7 +46,7 @@ export default async function Home() {
   } = await getData()
 
   return (
-    <PageLayout global={globalData.body}>
+    <PageLayout global={globalData.body} pageClasses="post">
       <Banner
         img={postData.body.image}
         heading={postData.body.title}
@@ -55,8 +56,16 @@ export default async function Home() {
         authors={postData.body.authors}
         tags={postData.body.tags}
       />
-      <Container padded containerClass="narrower">
-        <Markdown>{postData.body.content}</Markdown>
+      <Container padded className="bodyContainer">
+        <Flex
+          gap="lg"
+          breakpoint="lg"
+          columnBreak="lg"
+          customLayout="one-quarter-three-quarters"
+        >
+          <TableOfContents targetId="postContent" />
+          <Markdown elementId="postContent">{postData.body.content}</Markdown>
+        </Flex>
       </Container>
 
       {postData.body.related && postData.body.related.length > 0 && (

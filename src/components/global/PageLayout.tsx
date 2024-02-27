@@ -6,12 +6,14 @@ import { GlobalProps } from '@utils/types'
 export const PageLayout = ({
   children,
   global,
+  pageClasses,
 }: {
+  pageClasses?: string
   children: ReactNode
   global: GlobalProps
 }) => {
   return (
-    <main>
+    <main className={pageClasses}>
       <SkipToMain />
       <Header menu={global.navigation} title={global.siteTitle} />
       <div id="bodyContent" tabIndex={-1}>

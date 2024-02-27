@@ -1,48 +1,48 @@
 @mixin customLayouts {
   &.one-third-two-thirds {
     & > *:first-child {
-      flex: 0 0 33.3333%;
+      flex: 0 33.3333%;
       max-width: 33.3333%;
     }
 
     & > *:last-child {
-      flex: 0 0 66.6667%;
+      flex: 0 66.6667%;
       max-width: 66.6667%;
     }
   }
 
   &.two-thirds-one-third {
     & > *:first-child {
-      flex: 0 0 66.6667%;
+      flex: 0 66.6667%;
       max-width: 66.6667%;
     }
 
     & > *:last-child {
-      flex: 0 0 33.3333%;
+      flex: 0 33.3333%;
       max-width: 33.3333%;
     }
   }
 
   &.one-quarter-three-quarters {
     & > *:first-child {
-      flex: 0 0 25%;
+      flex: 0 25%;
       max-width: 25%;
     }
 
     & > *:last-child {
-      flex: 0 0 75%;
+      flex: 0 75%;
       max-width: 75%;
     }
   }
 
   &.three-quarters-one-quarter {
     & > *:first-child {
-      flex: 0 0 75%;
+      flex: 0 75%;
       max-width: 75%;
     }
 
     & > *:last-child {
-      flex: 0 0 25%;
+      flex: 0 25%;
       max-width: 25%;
     }
   }

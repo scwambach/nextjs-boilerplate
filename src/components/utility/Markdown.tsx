@@ -4,6 +4,7 @@ import { MarkdownProps } from '@utils/types'
 export const Markdown = ({
   children,
   className,
+  elementId,
   elementTag,
 }: MarkdownProps) => {
   const elm = elementTag || 'div'
@@ -11,6 +12,7 @@ export const Markdown = ({
 
   return (
     <Element
+      id={elementId}
       className={`markdown${className ? ` ${className}` : ''}`}
       dangerouslySetInnerHTML={{
         __html: parseMarkdownToHTML(children),
