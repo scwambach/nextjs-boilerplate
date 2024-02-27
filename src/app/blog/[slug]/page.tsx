@@ -1,7 +1,8 @@
 import { Banner, Cards } from '@components/blocks'
 import { PageLayout } from '@components/global'
+import { ShareButtons } from '@components/modules/ShareButtons'
 import { TableOfContents } from '@components/modules/TableOfContents'
-import { Container, Flex, Markdown } from '@components/utility'
+import { Container, Flex, Markdown, Spacer } from '@components/utility'
 import { GlobalProps } from '@utils/types'
 
 async function getData() {
@@ -57,6 +58,8 @@ export default async function Home() {
         tags={postData.body.tags}
       />
       <Container padded className="bodyContainer">
+        <ShareButtons title={postData.body.title} slug={postData.body.slug} />
+        <Spacer size={2} />
         <Flex
           gap="lg"
           breakpoint="lg"
