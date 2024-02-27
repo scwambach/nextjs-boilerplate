@@ -3,18 +3,28 @@ import { headingFont } from './fonts'
 
 const mdParser = new MarkdownIt()
 
-mdParser.use((md: any) => {
-  const defaultRender = md.renderer.rules.heading_open
-  md.renderer.rules.heading_open = function (
-    tokens: any,
-    idx: number,
-    options: any,
-    env: any,
-    self: any
-  ) {
+// Add custom image rendering
+mdParser.use((md) => {
+  md.renderer.rules.image = function (tokens, idx) {
+    const token = tokens[idx]
+    const src =
+      token.attrs && token.attrs[0] && token.attrs[0][1]
+        ? token.attrs[0][1]
+        : ''
+    const alt = token.content ? token.content : ''
+    return `<div class="articleImage"><img src="${src}" title="${alt}" alt="${alt}"  />${
+      alt ? `<div class="imageTitle">${alt}</div>` : ''
+    }</div>`
+  }
+})
+
+// Add custom heading rendering
+mdParser.use((md) => {
+  const defaultHeadingRender = md.renderer.rules.heading_open
+  md.renderer.rules.heading_open = function (tokens, idx, options, env, self) {
     tokens[idx].attrJoin('class', headingFont.className)
-    if (defaultRender) {
-      return defaultRender(tokens, idx, options, env, self)
+    if (defaultHeadingRender) {
+      return defaultHeadingRender(tokens, idx, options, env, self)
     } else {
       return self.renderToken(tokens, idx, options)
     }

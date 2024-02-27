@@ -8,15 +8,27 @@
   &.primary {
     color: darken($blue, 0%);
     background-color: $lightBlue;
+
+    a {
+      color: darken($blue, 0%);
+    }
   }
 
   &.secondary {
     color: darken($green, 10%);
     background-color: $lightGreen;
+
+    a {
+      color: darken($green, 10%);
+    }
   }
 
   &.tertiary {
     color: darken($orange, 30%);
     background-color: $lightOrange;
+
+    a {
+      color: darken($orange, 30%);
+    }
   }
 }

@@ -61,6 +61,7 @@ export interface GlobalProps {
 export interface ContainerProps extends ComponentProps {
   containerClass?: ContainerClasses
   children: ReactNode
+  padded?: boolean
 }
 
 export interface DrawerProps extends ComponentProps {

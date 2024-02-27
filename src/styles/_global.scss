@@ -32,6 +32,16 @@ html {
   margin: 0 auto;
   position: relative;
 
+  &.padded {
+    padding-top: $vertical-spacing;
+    padding-bottom: $vertical-spacing;
+
+    @media screen and (max-width: ($md - 1)) {
+      padding-top: $vertical-spacing-mobile;
+      padding-bottom: $vertical-spacing-mobile;
+    }
+  }
+
   &.wide {
     max-width: $xxl + $sm;
   }

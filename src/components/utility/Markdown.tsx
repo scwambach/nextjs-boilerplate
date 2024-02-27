@@ -11,7 +11,7 @@ export const Markdown = ({
 
   return (
     <Element
-      className={className}
+      className={`markdown${className ? ` ${className}` : ''}`}
       dangerouslySetInnerHTML={{
         __html: parseMarkdownToHTML(children),
       }}
