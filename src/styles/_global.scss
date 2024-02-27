@@ -126,3 +126,29 @@ html {
     left: $size-10;
   }
 }
+
+.desktopOnly {
+  @media screen and (max-width: ($md - 1)) {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+}
+
+.mobileOnly {
+  @media screen and (min-width: $md) {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+}
