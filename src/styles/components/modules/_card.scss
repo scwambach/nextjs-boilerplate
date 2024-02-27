@@ -136,14 +136,14 @@
     &:hover {
       .author {
         + .author {
-          @media screen and (min-width: ($sm)) {
+          @media screen and (min-width: ($md)) {
             margin-left: $size-4;
           }
         }
       }
 
       .authorNames {
-        @media screen and (min-width: ($sm)) {
+        @media screen and (min-width: ($md)) {
           margin-left: -$size-36;
         }
       }

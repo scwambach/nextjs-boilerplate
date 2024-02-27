@@ -3,6 +3,7 @@ import { Button } from '@components/modules'
 import { Card } from '@components/modules/Card'
 import { SectionHeading } from '@components/modules/SectionHeading'
 import { Container, Flex, Grid, Spacer } from '@components/utility'
+import { CaretLeft, CaretRight } from '@phosphor-icons/react'
 import { CardsProps } from '@utils/types'
 import { useState } from 'react'
 import ReactPaginate from 'react-paginate'
@@ -69,12 +70,11 @@ export const Cards = ({
         {paginated && items && items.length > itemsPerPage && (
           <ReactPaginate
             breakLabel="..."
-            className="pagination unstyled flex gap-xs justify-center"
-            nextLabel="next >"
+            className="pagination align-center unstyled flex gap-xs justify-center"
+            nextLabel={<CaretRight size={30} />}
             onPageChange={handlePageClick}
-            pageRangeDisplayed={5}
             pageCount={pageCount}
-            previousLabel="< previous"
+            previousLabel={<CaretLeft size={30} />}
             renderOnZeroPageCount={null}
           />
         )}
