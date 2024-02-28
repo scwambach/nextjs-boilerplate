@@ -1,22 +1,7 @@
 import { Button, SectionHeading } from '@components/modules'
 import { VideoBlock } from '@components/modules/VideoBlock'
 import { Container, Flex, Grid, Spacer } from '@components/utility'
-import {
-  BlockProps,
-  ButtonProps,
-  ColumnSize,
-  Gaps,
-  VideoBlockProps,
-} from '@utils/types'
-
-// TODO: Create Videos tests and stories
-
-interface VideosProps extends BlockProps {
-  items: VideoBlockProps[]
-  columns?: ColumnSize
-  gap?: Gaps
-  button?: ButtonProps
-}
+import { VideosProps } from '@utils/types'
 
 export const Videos = ({
   className,

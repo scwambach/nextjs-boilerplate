@@ -323,6 +323,11 @@ export interface SectionHeadingProps extends ComponentProps {
   subheading?: string
 }
 
+export interface ShareButtonsProps extends ComponentProps {
+  title: string
+  slug: string
+}
+
 export interface StatProps extends ComponentProps {
   title?: string
   value: number
@@ -419,10 +424,25 @@ export interface GalleryProps extends BlockProps {
   columns?: ColumnSize
 }
 
+export interface MapProps extends ComponentProps {
+  style?: CSSProperties
+  markers: {
+    lat: number
+    lng: number
+  }[]
+}
+
 export interface PeopleProps extends BlockProps {
   items: PersonProps[]
   columns?: ColumnSize
   gap?: Gaps
+}
+
+export interface QuoteProps extends ComponentProps {
+  quote: string
+  cite?: string
+  person?: PersonProps
+  bgColor?: Colors
 }
 
 export interface RiverProps extends ComponentProps {
@@ -457,6 +477,13 @@ export interface TimelineProps extends BlockProps {
     description?: string
     image?: ImageObjectProps
   }[]
+}
+
+export interface VideosProps extends BlockProps {
+  items: VideoBlockProps[]
+  columns?: ColumnSize
+  gap?: Gaps
+  button?: ButtonProps
 }
 
 //////////////////////////

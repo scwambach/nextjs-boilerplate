@@ -6,8 +6,6 @@ import { Play } from '@phosphor-icons/react/dist/ssr'
 import { Box, Flex, Heading, Markdown } from '@components/utility'
 import { colors } from '@utils/settings'
 
-// TODO: Create VideoBlock tests and stories
-
 export const VideoBlock = ({
   url,
   className,

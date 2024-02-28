@@ -2,16 +2,7 @@ import { Avatar } from '@components/modules'
 import { Container, Flex, Markdown } from '@components/utility'
 import { Minus, Quotes } from '@phosphor-icons/react/dist/ssr'
 import { headingFont } from '@utils/fonts'
-import { Colors, ComponentProps, PersonProps } from '@utils/types'
-
-// TODO: Create Quote tests and stories
-
-interface QuoteProps extends ComponentProps {
-  quote: string
-  cite?: string
-  person?: PersonProps
-  bgColor?: Colors
-}
+import { QuoteProps } from '@utils/types'
 
 export const Quote = ({
   className,

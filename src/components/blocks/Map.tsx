@@ -1,23 +1,13 @@
 'use client'
-import { ComponentProps } from '@utils/types'
+import { MapProps } from '@utils/types'
 import {
   GoogleMap,
   Libraries,
   Marker,
   useLoadScript,
 } from '@react-google-maps/api'
-import { CSSProperties, useCallback, useRef } from 'react'
+import { useCallback, useRef } from 'react'
 import mapStyle from '@utils/mapStyles'
-
-// TODO: Create Map tests and stories
-
-interface MapProps extends ComponentProps {
-  style?: CSSProperties
-  markers: {
-    lat: number
-    lng: number
-  }[]
-}
 
 const libraries = ['places'] as Libraries
 

@@ -136,3 +136,47 @@ export const WithImage: Story = {
     },
   },
 }
+
+export const AsPost: Story = {
+  args: {
+    bgColor: 'blue',
+    heading: 'Quisque iaculis tincidunt',
+    links: [
+      {
+        label: 'Learn More',
+        href: '/learn-more',
+      },
+    ],
+    tags: [
+      {
+        label: 'Tag',
+        href: '/tag',
+      },
+      {
+        label: 'Another Tag',
+        href: '/another-tag',
+        theme: 'secondary',
+      },
+    ],
+    message:
+      'Suspendisse facilisis in est vel consectetur. Integer eget malesuada dui. Maecenas vel egestas quam, a pretium mi. Curabitur sit amet.',
+    headingLevel: 1,
+    subheading: 'Quisque iaculis tincidunt',
+    img: {
+      alt: 'A placeholder image',
+      query: 'nature',
+    },
+    date: '2021-01-01',
+    authors: [
+      {
+        firstName: 'John',
+        lastName: 'Doe',
+        title: 'CEO',
+        image: {
+          alt: 'A placeholder image',
+          query: 'nature',
+        },
+      },
+    ],
+  },
+}
