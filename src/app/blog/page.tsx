@@ -19,8 +19,8 @@ export async function generateMetadata({}) {
   const globalJson = await globalData.json()
 
   return {
-    title: `Blog | ${globalJson.body.siteTitle}`,
-    description: globalJson.body.siteDescription,
+    title: `Blog | ${globalJson.siteTitle}`,
+    description: globalJson.siteDescription,
     icons: {
       icon: '/favicon.png',
     },
@@ -32,16 +32,14 @@ export default async function Home() {
     blogData,
     globalData,
   }: {
-    globalData: { body: GlobalProps }
+    globalData: GlobalProps
     blogData: {
-      body: {
-        posts: CardProps[]
-      }
+      posts: CardProps[]
     }
   } = await getData()
 
   return (
-    <PageLayout global={globalData.body}>
+    <PageLayout global={globalData}>
       <Banner
         img={{
           alt: 'A person typing on a laptop',
@@ -90,7 +88,7 @@ export default async function Home() {
       />
       <Cards
         heading="Blog Posts"
-        items={blogData.body.posts}
+        items={blogData.posts}
         paginated
         itemsPerPage={12}
       />

@@ -15,8 +15,8 @@ export async function generateMetadata({}) {
   const globalData = await data.json()
 
   return {
-    title: globalData.body.siteTitle,
-    description: globalData.body.siteDescription,
+    title: globalData.siteTitle,
+    description: globalData.siteDescription,
     icons: {
       icon: '/favicon.png',
     },
@@ -24,12 +24,10 @@ export async function generateMetadata({}) {
 }
 
 export default async function Home() {
-  const globalData: {
-    body: GlobalProps
-  } = await getData()
+  const globalData: GlobalProps = await getData()
 
   return (
-    <PageLayout global={globalData.body}>
+    <PageLayout global={globalData}>
       <Banner
         heading="Welcome to the Next.js Starter"
         message="This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and Tailwind CSS."

@@ -4,6 +4,6 @@ import data from '@data/global.json'
 export async function GET() {
   return NextResponse.json({
     status: 200,
-    body: data,
+    ...data,
   })
 }

@@ -52,6 +52,18 @@ export interface GlobalProps {
   }[]
 }
 
+export interface PostDetailsProps {
+  title: string
+  slug: string
+  publishedAt: string
+  summary: string
+  image: ImageObjectProps
+  tags?: TagProps[]
+  authors: PersonProps[]
+  content: string
+  related?: CardProps[]
+}
+
 ///////////////////////////
 ///////////////////////////
 ///////// UTILITY /////////

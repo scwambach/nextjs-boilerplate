@@ -3,14 +3,14 @@ import { PageLayout } from '@components/global'
 import { ShareButtons } from '@components/modules/ShareButtons'
 import { TableOfContents } from '@components/modules/TableOfContents'
 import { Container, Flex, Markdown, Spacer } from '@components/utility'
-import { GlobalProps } from '@utils/types'
+import { GlobalProps, PostDetailsProps } from '@utils/types'
 
 async function getData() {
   const globalRes = await fetch(`${process.env.SITE_URL}/api/getData`)
-  const globalData = await globalRes.json()
-
   const blogRes = await fetch(`${process.env.SITE_URL}/api/getBlogPost`)
-  const postData = await blogRes.json()
+
+  const globalData: GlobalProps = await globalRes.json()
+  const postData: PostDetailsProps = await blogRes.json()
 
   return { globalData, postData }
 }
@@ -21,12 +21,12 @@ export async function generateMetadata({}) {
   const globalData: any = await fetch(`${process.env.SITE_URL}/api/getData`)
   const postData: any = await fetch(`${process.env.SITE_URL}/api/getBlogPost`)
 
-  const postJson = await postData.json()
-  const globalJson = await globalData.json()
+  const globalJson: GlobalProps = await globalData.json()
+  const postJson: PostDetailsProps = await postData.json()
 
   return {
-    title: `${postJson.body.title} | Blog | ${globalJson.body.siteTitle}`,
-    description: postJson.body.summary,
+    title: `${postJson.title} | Blog | ${globalJson.siteTitle}`,
+    description: postJson.summary,
     icons: {
       icon: '/favicon.png',
     },
@@ -40,25 +40,23 @@ export default async function Home() {
     postData,
     globalData,
   }: {
-    globalData: { body: GlobalProps }
-    postData: {
-      body: any
-    }
+    globalData: GlobalProps
+    postData: PostDetailsProps
   } = await getData()
 
   return (
-    <PageLayout global={globalData.body} pageClasses="post">
+    <PageLayout global={globalData} pageClasses="post">
       <Banner
-        img={postData.body.image}
-        heading={postData.body.title}
-        message={postData.body.summary}
+        img={postData.image}
+        heading={postData.title}
+        message={postData.summary}
         headingLevel={1}
-        date={postData.body.publishedAt}
-        authors={postData.body.authors}
-        tags={postData.body.tags}
+        date={postData.publishedAt}
+        authors={postData.authors}
+        tags={postData.tags}
       />
       <Container padded className="bodyContainer">
-        <ShareButtons title={postData.body.title} slug={postData.body.slug} />
+        <ShareButtons title={postData.title} slug={postData.slug} />
         <Spacer size={2} />
         <Flex
           gap="lg"
@@ -67,12 +65,12 @@ export default async function Home() {
           customLayout="one-quarter-three-quarters"
         >
           <TableOfContents targetId="postContent" />
-          <Markdown elementId="postContent">{postData.body.content}</Markdown>
+          <Markdown elementId="postContent">{postData.content}</Markdown>
         </Flex>
       </Container>
 
-      {postData.body.related && postData.body.related.length > 0 && (
-        <Cards heading="Related Posts" items={postData.body.related} />
+      {postData.related && postData.related.length > 0 && (
+        <Cards heading="Related Posts" items={postData.related} />
       )}
     </PageLayout>
   )
