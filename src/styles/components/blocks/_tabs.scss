@@ -8,6 +8,10 @@
         display: none;
       }
 
+      li {
+        margin: 0;
+      }
+
       &.open {
         @media screen and (max-width: ($sm - 1)) {
           display: flex;
