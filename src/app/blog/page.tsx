@@ -1,13 +1,13 @@
 import { Banner, Cards } from '@components/blocks'
 import { PageLayout } from '@components/global'
-import { CardProps, GlobalProps } from '@utils/types'
+import { BlogRollProps, GlobalProps } from '@utils/types'
 
 async function getData() {
   const globalRes = await fetch(`${process.env.SITE_URL}/api/getData`)
   const globalData = await globalRes.json()
 
   const blogRes = await fetch(`${process.env.SITE_URL}/api/getBlogRoll`)
-  const blogData = await blogRes.json()
+  const blogData: BlogRollProps = await blogRes.json()
 
   return { globalData, blogData }
 }
@@ -15,8 +15,8 @@ async function getData() {
 export const revalidate = 0
 
 export async function generateMetadata({}) {
-  const globalData: any = await fetch(`${process.env.SITE_URL}/api/getData`)
-  const globalJson = await globalData.json()
+  const globalData = await fetch(`${process.env.SITE_URL}/api/getData`)
+  const globalJson: GlobalProps = await globalData.json()
 
   return {
     title: `Blog | ${globalJson.siteTitle}`,
@@ -33,9 +33,7 @@ export default async function Home() {
     globalData,
   }: {
     globalData: GlobalProps
-    blogData: {
-      posts: CardProps[]
-    }
+    blogData: BlogRollProps
   } = await getData()
 
   return (

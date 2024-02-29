@@ -11,8 +11,8 @@ async function getData() {
 export const revalidate = 0
 
 export async function generateMetadata({}) {
-  const data: any = await fetch(`${process.env.SITE_URL}/api/getData`)
-  const globalData = await data.json()
+  const data = await fetch(`${process.env.SITE_URL}/api/getData`)
+  const globalData: GlobalProps = await data.json()
 
   return {
     title: globalData.siteTitle,

@@ -52,6 +52,10 @@ export interface GlobalProps {
   }[]
 }
 
+export interface BlogRollProps {
+  posts: CardProps[]
+}
+
 export interface PostDetailsProps {
   title: string
   slug: string
