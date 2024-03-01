@@ -47,7 +47,7 @@ export default async function Home() {
   return (
     <PageLayout global={globalData} pageClasses="post">
       <Banner
-        img={postData.image}
+        backgroundImage={postData.image}
         heading={postData.title}
         message={postData.summary}
         headingLevel={1}

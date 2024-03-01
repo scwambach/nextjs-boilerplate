@@ -1,6 +1,8 @@
 import { Banner, Map, Quote, Videos } from '@components/blocks'
 import { PageLayout } from '@components/global'
-import { GlobalProps } from '@utils/types'
+import { GlobalProps, ImageObjectProps } from '@utils/types'
+import marketing from '@images/marketing.png'
+import { ImageObject } from '@components/modules'
 
 async function getData() {
   const res = await fetch(`${process.env.SITE_URL}/api/getData`)
@@ -32,7 +34,8 @@ export default async function Home() {
         heading="Welcome to the Next.js Starter"
         message="This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and Tailwind CSS."
         headingLevel={1}
-        bgColor="blue"
+        foregroundMedia={<ImageObject {...(marketing as ImageObjectProps)} />}
+        bgColor="green"
         crumbs={{
           current: 'Nam felis',
           items: [

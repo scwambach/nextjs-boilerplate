@@ -39,7 +39,7 @@ export default async function Home() {
   return (
     <PageLayout global={globalData}>
       <Banner
-        img={{
+        backgroundImage={{
           alt: 'A person typing on a laptop',
           query: 'person typing',
         }}

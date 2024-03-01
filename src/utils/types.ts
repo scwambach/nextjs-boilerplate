@@ -400,7 +400,8 @@ export interface BannerProps extends ComponentProps {
   }
   heading: string
   headingLevel?: HeadingLevel
-  img?: ImageObjectProps
+  backgroundImage?: ImageObjectProps
+  foregroundMedia?: ReactNode
   authors?: PersonProps[]
   date?: string
   links?: ButtonProps[]
