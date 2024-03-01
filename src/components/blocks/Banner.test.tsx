@@ -13,7 +13,7 @@ describe('Banner', () => {
         heading="Test Heading"
         subheading="Test Subheading"
         message="Test Message"
-        img={{
+        backgroundImage={{
           alt: 'Banner Image',
           width: 900,
           height: 500,
