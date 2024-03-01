@@ -130,7 +130,7 @@ export const WithImage: Story = {
       'Suspendisse facilisis in est vel consectetur. Integer eget malesuada dui. Maecenas vel egestas quam, a pretium mi. Curabitur sit amet.',
     headingLevel: 1,
     subheading: 'Quisque iaculis tincidunt',
-    img: {
+    backgroundImage: {
       alt: 'A placeholder image',
       query: 'nature',
     },
@@ -162,7 +162,7 @@ export const AsPost: Story = {
       'Suspendisse facilisis in est vel consectetur. Integer eget malesuada dui. Maecenas vel egestas quam, a pretium mi. Curabitur sit amet.',
     headingLevel: 1,
     subheading: 'Quisque iaculis tincidunt',
-    img: {
+    backgroundImage: {
       alt: 'A placeholder image',
       query: 'nature',
     },

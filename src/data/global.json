@@ -15,14 +15,14 @@
       "href": "/about",
       "subnav": [
         {
-          "copy": "Our Team",
-          "href": "/team"
-        },
-        {
           "copy": "About Us",
           "href": "/about"
+        },
+        {
+          "copy": "Our Team",
+          "href": "/team"
         }
-      ]
+        ]
     },
     {
       "label": "Blog",

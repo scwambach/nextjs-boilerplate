@@ -40,7 +40,7 @@ export const Carousel: Story = {
       },
       {
         heading: 'Card 4',
-        img: {
+        backgroundImage: {
           query: 'nature 1',
           alt: 'Placeholder image',
         },

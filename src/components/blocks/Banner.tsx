@@ -33,6 +33,7 @@ export const Banner = ({
   const content = (alone: boolean) => (
     <>
       <Flex
+        className={alone ? 'innerContent' : undefined}
         justifyContent={alone ? 'flex-start' : 'center'}
         alignItems={alone ? 'flex-start' : 'center'}
       >
