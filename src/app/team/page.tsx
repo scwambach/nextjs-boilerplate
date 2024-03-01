@@ -15,7 +15,7 @@ export async function generateMetadata({}) {
   const globalData: GlobalProps = await data.json()
 
   return {
-    title: globalData.siteTitle,
+    title: `Our Team | ${globalData.siteTitle}`,
     description: globalData.siteDescription,
     icons: {
       icon: '/favicon.png',
