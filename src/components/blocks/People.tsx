@@ -19,7 +19,7 @@ export const People = ({
   })
 
   return (
-    <div
+    <section
       data-testid={testId}
       className={`people${className ? ` ${className}` : ''}`}
     >
@@ -35,6 +35,6 @@ export const People = ({
           {renderedPeople}
         </Grid>
       </Container>
-    </div>
+    </section>
   )
 }

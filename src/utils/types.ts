@@ -192,11 +192,11 @@ export interface BadgeProps extends ComponentProps {
 }
 
 export interface BreadcrumbsProps extends ComponentProps {
-  crumbs: {
+  crumbs?: {
     label: string
     href: string
   }[]
-  current: string
+  current?: string
 }
 
 export interface ButtonProps extends ComponentProps {
@@ -395,8 +395,8 @@ export interface AlertProps extends ComponentProps {
 export interface BannerProps extends ComponentProps {
   bgColor?: Colors
   crumbs?: {
-    current: string
-    items: BreadcrumbsProps['crumbs']
+    current?: string
+    items?: BreadcrumbsProps['crumbs']
   }
   heading: string
   headingLevel?: HeadingLevel
@@ -465,6 +465,7 @@ export interface QuoteProps extends ComponentProps {
 export interface RiverProps extends ComponentProps {
   theme?: Themes
   headingLevel?: HeadingLevel
+  reverse?: boolean
   container?: ContainerClasses
   items: {
     title?: string

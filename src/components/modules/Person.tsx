@@ -26,8 +26,20 @@ export const Person = ({
         <p className={headingFont.className}>
           {firstName} {lastName}
         </p>
-        {title && <p>{title}</p>}
-        {company && <p>{company}</p>}
+        {title && (
+          <p>
+            {title}
+            <>
+              {' '}
+              {company && (
+                <>
+                  <span> @ {company}</span>
+                </>
+              )}
+            </>
+          </p>
+        )}
+
         {socials && (
           <Flex
             columnBreak="none"

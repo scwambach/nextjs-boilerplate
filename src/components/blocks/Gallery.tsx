@@ -27,7 +27,7 @@ export const Gallery = ({
   }, [activeIndex])
 
   return (
-    <div
+    <section
       data-testid={testId}
       className={`gallery${className ? ` ${className}` : ''}`}
     >
@@ -65,6 +65,6 @@ export const Gallery = ({
           controls
         />
       </Container>
-    </div>
+    </section>
   )
 }

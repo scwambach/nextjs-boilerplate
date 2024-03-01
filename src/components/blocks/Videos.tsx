@@ -16,7 +16,7 @@ export const Videos = ({
   gap = 'md',
 }: VideosProps) => {
   return (
-    <div
+    <section
       data-testid={testId}
       className={`videos${className ? ` ${className}` : ''}`}
     >
@@ -43,6 +43,6 @@ export const Videos = ({
           </>
         )}
       </Container>
-    </div>
+    </section>
   )
 }

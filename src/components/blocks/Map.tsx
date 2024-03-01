@@ -62,7 +62,7 @@ export const Map = ({
     )
 
   return (
-    <div
+    <section
       data-testid={testId}
       style={style}
       className={`map${className ? ` ${className}` : ''}`}
@@ -82,6 +82,6 @@ export const Map = ({
         ))}
         map
       </GoogleMap>
-    </div>
+    </section>
   )
 }

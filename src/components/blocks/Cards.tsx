@@ -64,7 +64,7 @@ export const Cards = ({
   }, [itemOffset])
 
   return (
-    <div
+    <section
       data-testid={testId}
       className={`cards${className ? ` ${className}` : ''}`}
     >
@@ -134,6 +134,6 @@ export const Cards = ({
           />
         )}
       </Container>
-    </div>
+    </section>
   )
 }

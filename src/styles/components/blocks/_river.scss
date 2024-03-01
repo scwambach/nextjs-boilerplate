@@ -21,7 +21,7 @@
     padding: $size-64 0;
 
     @media screen and (max-width: ($md - 1)) {
-      padding: $size-32 0;
+      padding: 0 0 $size-32 0;
     }
   }
 

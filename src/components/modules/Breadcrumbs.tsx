@@ -22,7 +22,7 @@ export const Breadcrumbs = ({
           className="unstyled"
         >
           <IconSelector icon="Compass" weight="bold" size={20} />
-          {crumbs.map((crumb) => (
+          {crumbs?.map((crumb) => (
             <Flex
               noBreak
               elementTag="li"
@@ -34,9 +34,11 @@ export const Breadcrumbs = ({
               <IconSelector icon="CaretRight" weight="bold" />
             </Flex>
           ))}
-          <li>
-            <span>{current}</span>
-          </li>
+          {current && (
+            <li>
+              <span>{current}</span>
+            </li>
+          )}
         </Flex>
       </nav>
     </div>

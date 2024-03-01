@@ -13,7 +13,7 @@ export const Quote = ({
   person,
 }: QuoteProps) => {
   return (
-    <div
+    <section
       data-testid={testId}
       className={`quote ${bgColor}${className ? ` ${className}` : ''}`}
     >
@@ -50,6 +50,6 @@ export const Quote = ({
           </Flex>
         )}
       </Container>
-    </div>
+    </section>
   )
 }

@@ -1,8 +1,6 @@
-import { Banner, Cards, Quote, River } from '@components/blocks'
+import { People, Quote, River } from '@components/blocks'
 import { PageLayout } from '@components/global'
-import { GlobalProps, ImageObjectProps } from '@utils/types'
-import marketing from '@images/marketing.png'
-import { ImageObject } from '@components/modules'
+import { GlobalProps } from '@utils/types'
 
 async function getData() {
   const res = await fetch(`${process.env.SITE_URL}/api/getData`)
@@ -30,38 +28,91 @@ export default async function Home() {
 
   return (
     <PageLayout global={globalData}>
-      <Banner
-        heading="Welcome to the Next.js Starter"
-        message="This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and Tailwind CSS."
-        headingLevel={1}
-        foregroundMedia={<ImageObject {...(marketing as ImageObjectProps)} />}
-        bgColor="green"
-        crumbs={{
-          current: 'Home',
-        }}
-        links={[
-          {
-            href: 'https://github.com/scwambach/nextjs-boilerplate',
-            label: 'Check out the GitHub Repo',
-          },
-        ]}
-      />
-      <River
+      <People
+        heading="Our Team"
+        level={1}
+        columns={4}
+        subheading="Sed quis nulla molestie, ornare nisl et, venenatis metus."
         items={[
           {
-            description:
-              'Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.',
-            title: 'Nam felis',
+            firstName: 'Scott',
+            lastName: 'Wambach',
+            title: 'Founder',
+            company: 'Wambach Media',
             image: {
-              query: 'corporate 1',
-              alt: 'Nam felis',
+              query: 'human face 1',
+              alt: 'Scott Wambach',
             },
-            links: [
-              {
-                href: '/about',
-                label: 'Learn More',
-              },
-            ],
+          },
+          {
+            firstName: 'Scott',
+            lastName: 'Wambach',
+            title: 'Founder',
+            company: 'Wambach Media',
+            image: {
+              query: 'human face 2',
+              alt: 'Scott Wambach',
+            },
+          },
+          {
+            firstName: 'Scott',
+            lastName: 'Wambach',
+            title: 'Founder',
+            company: 'Wambach Media',
+            image: {
+              query: 'human face 3',
+              alt: 'Scott Wambach',
+            },
+          },
+          {
+            firstName: 'Scott',
+            lastName: 'Wambach',
+            title: 'Founder',
+            company: 'Wambach Media',
+            image: {
+              query: 'human face 4',
+              alt: 'Scott Wambach',
+            },
+          },
+          {
+            firstName: 'Scott',
+            lastName: 'Wambach',
+            title: 'Founder',
+            company: 'Wambach Media',
+            image: {
+              query: 'human face 5',
+              alt: 'Scott Wambach',
+            },
+          },
+          {
+            firstName: 'Scott',
+            lastName: 'Wambach',
+            title: 'Founder',
+            company: 'Wambach Media',
+            image: {
+              query: 'human face 6',
+              alt: 'Scott Wambach',
+            },
+          },
+          {
+            firstName: 'Scott',
+            lastName: 'Wambach',
+            title: 'Founder',
+            company: 'Wambach Media',
+            image: {
+              query: 'human face 7',
+              alt: 'Scott Wambach',
+            },
+          },
+          {
+            firstName: 'Scott',
+            lastName: 'Wambach',
+            title: 'Founder',
+            company: 'Wambach Media',
+            image: {
+              query: 'human face 8',
+              alt: 'Scott Wambach',
+            },
           },
         ]}
       />
@@ -91,51 +142,7 @@ export default async function Home() {
           ],
         }}
       />
-      <Cards
-        heading="Nam felis"
-        columns={4}
-        subheading="Sed quis nulla molestie, ornare nisl et, venenatis metus."
-        items={[
-          {
-            title: 'Nam felis',
-            description:
-              'Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.',
-            image: {
-              alt: 'Nam felis',
-              query: 'corporate 2',
-            },
-          },
-          {
-            title: 'Nam felis',
-            description:
-              'Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.',
-            image: {
-              alt: 'Nam felis',
-              query: 'corporate 3',
-            },
-          },
-          {
-            title: 'Nam felis',
-            description:
-              'Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.',
-            image: {
-              alt: 'Nam felis',
-              query: 'corporate 4',
-            },
-          },
-          {
-            title: 'Nam felis',
-            description:
-              'Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.',
-            image: {
-              alt: 'Nam felis',
-              query: 'corporate 5',
-            },
-          },
-        ]}
-      />
       <River
-        reverse
         items={[
           {
             description:
@@ -143,6 +150,36 @@ export default async function Home() {
             title: 'Nam felis',
             image: {
               query: 'corporate 6',
+              alt: 'Nam felis',
+            },
+            links: [
+              {
+                href: '/about',
+                label: 'Learn More',
+              },
+            ],
+          },
+          {
+            description:
+              'Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.',
+            title: 'Nam felis',
+            image: {
+              query: 'corporate 7',
+              alt: 'Nam felis',
+            },
+            links: [
+              {
+                href: '/about',
+                label: 'Learn More',
+              },
+            ],
+          },
+          {
+            description:
+              'Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.',
+            title: 'Nam felis',
+            image: {
+              query: 'corporate 8',
               alt: 'Nam felis',
             },
             links: [

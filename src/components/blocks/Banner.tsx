@@ -37,7 +37,7 @@ export const Banner = ({
         alignItems={alone ? 'flex-start' : 'center'}
       >
         <div>
-          {crumbs && crumbs.items && (
+          {crumbs && (crumbs.items || crumbs.current) && (
             <Breadcrumbs current={crumbs.current} crumbs={crumbs.items} />
           )}
           {tags && tags.length > 0 && (
@@ -117,7 +117,7 @@ export const Banner = ({
   )
 
   return (
-    <div
+    <section
       className={`banner ${bgColor}${className ? ` ${className}` : ''}${
         backgroundImage ? ' has-image' : ''
       }`}
@@ -141,6 +141,6 @@ export const Banner = ({
           content(true)
         )}
       </Container>
-    </div>
+    </section>
   )
 }

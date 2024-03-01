@@ -15,7 +15,7 @@ const Form = ({
   testId,
 }: FormProps) => {
   return (
-    <div
+    <section
       className={`form${className ? ` ${className}` : ''}`}
       data-testid={testId}
     >
@@ -37,7 +37,7 @@ const Form = ({
           <Button type="submit">{submitCopy || 'Submit'}</Button>
         </form>
       </Container>
-    </div>
+    </section>
   )
 }
 

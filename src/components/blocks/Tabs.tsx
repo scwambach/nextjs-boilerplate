@@ -19,7 +19,7 @@ export const Tabs = ({
   const [activeTab, setActiveTab] = useState(0)
   const [menuOpen, setMenuOpen] = useState(false)
   return (
-    <div
+    <section
       data-testid={testId}
       className={`tabs${className ? ` ${className}` : ''}`}
     >
@@ -78,6 +78,6 @@ export const Tabs = ({
           {items[activeTab].content}
         </Box>
       </Container>
-    </div>
+    </section>
   )
 }

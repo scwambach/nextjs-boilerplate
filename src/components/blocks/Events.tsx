@@ -15,7 +15,7 @@ export const Events = ({
   container = 'narrower',
 }: EventsProps) => {
   return (
-    <div
+    <section
       className={`events${className ? ` ${className}` : ''}`}
       data-testid={testId}
     >
@@ -36,6 +36,6 @@ export const Events = ({
           ))}
         </Flex>
       </Container>
-    </div>
+    </section>
   )
 }

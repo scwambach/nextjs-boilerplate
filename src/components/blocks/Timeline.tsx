@@ -14,7 +14,7 @@ export const Timeline = ({
   container,
 }: TimelineProps) => {
   return (
-    <div
+    <section
       data-testid={testId}
       className={`timeline${className ? ` ${className}` : ''}`}
     >
@@ -54,6 +54,6 @@ export const Timeline = ({
           ))}
         </div>
       </Container>
-    </div>
+    </section>
   )
 }
