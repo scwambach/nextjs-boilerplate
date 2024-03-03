@@ -19,6 +19,8 @@ export interface Breakpoints {
 }
 
 export interface ComponentProps {
+  _type?: string
+  _key?: string
   className?: string
   testId?: string
 }

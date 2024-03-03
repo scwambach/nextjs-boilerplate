@@ -6,6 +6,7 @@ import {
   Tag,
 } from '@components/modules'
 import { Box, Container, Flex, Grid, Heading } from '@components/utility'
+import { BlockFactory } from '@components/utility/BlockFactory'
 import { compileAuthorNames } from '@utils/compileAuthorNames'
 import { parseMarkdownToHTML } from '@utils/parseMarkdownToHTML'
 import { BannerProps } from '@utils/types'
@@ -110,7 +111,7 @@ export const Banner = ({
               width: '100%',
             }}
           >
-            {foregroundMedia}
+            <BlockFactory items={[foregroundMedia]} />
           </Box>
         </Flex>
       )}
