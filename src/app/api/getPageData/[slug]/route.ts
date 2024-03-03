@@ -21,4 +21,12 @@ export async function GET({ url }: any) {
       ...data,
     })
   }
+
+  if (slug === 'team') {
+    const data = await import(`@data/teamPage.json`)
+    return NextResponse.json({
+      status: 200,
+      ...data,
+    })
+  }
 }
