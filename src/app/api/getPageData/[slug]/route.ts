@@ -14,7 +14,8 @@ export async function GET({ url }: any) {
   }
 
   if (slug === 'about') {
-    const data = await import(`@data/aboutPage.json`)
+    const { default: data } = await import(`@data/aboutPage.json`)
+
     return NextResponse.json({
       status: 200,
       ...data,
