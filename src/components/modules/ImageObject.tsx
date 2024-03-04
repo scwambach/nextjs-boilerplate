@@ -26,7 +26,7 @@ export const ImageObject = ({
       {imageSrc && (
         <Image
           src={`${imageSrc}`}
-          alt={alt}
+          alt={`${alt}`}
           fill={isBackground}
           sizes={sizes}
           width={!isBackground ? width : undefined}
