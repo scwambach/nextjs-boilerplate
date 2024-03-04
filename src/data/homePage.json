@@ -1,4 +1,8 @@
 {
+  "title": "Welcome",
+  "description": "This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and Tailwind CSS.",
+  "keywords": ["Next.js", "TypeScript", "ESLint", "Prettier", "Tailwind CSS"],
+  "slug": "/",
   "pageComponents": [
     {
       "_type": "Banner",

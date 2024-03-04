@@ -33,8 +33,6 @@ export async function generateMetadata({}) {
   }
 }
 
-// TODO: create Types for pages like this one
-
 export default async function Home() {
   const {
     postData,

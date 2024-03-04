@@ -1,4 +1,8 @@
 {
+  "title": "Team",
+  "slug": "team",
+  "keywords": ["Next.js", "TypeScript", "ESLint", "Prettier", "Tailwind CSS"],
+  "description": "Sed quis nulla molestie, ornare nisl et, venenatis metus.",
   "pageComponents": [
     {
       "_type": "People",

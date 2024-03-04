@@ -1,4 +1,8 @@
 {
+  "title": "About Us",
+  "slug": "about",
+  "description": "Proin vel molestie purus, vel tempus nibh. Vestibulum dolor sapien, semper ut sapien ac, facilisis dapibus urna. In imperdiet nisi a pharetra ultricies. Pellentesque quis.",
+  "keywords": ["about", "us", "company", "information"],
   "pageComponents": [
     {
       "_type": "Banner",
@@ -43,7 +47,6 @@
     },
     {
       "_type": "River",
-      "container":"wide",
       "items": [
         {
           "description":

@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "title": "Blog Post Title",
+      "title": "Blog Post Title 1",
       "date": "2023-05-20",
       "description":
         "This is a short description of the blog post. We will use this to entice the reader to click on the post and read more.",
@@ -36,7 +36,7 @@
       ]
     },
     {
-      "title": "Blog Post Title",
+      "title": "Blog Post Title 2",
       "date": "2023-05-20",
       "description":
         "This is a short description of the blog post. We will use this to entice the reader to click on the post and read more.",

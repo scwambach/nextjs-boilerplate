@@ -73,7 +73,7 @@ export const Map = ({
         mapContainerStyle={style}
         options={options}
       >
-        {markers.map((marker) => (
+        {markers?.map((marker) => (
           <Marker
             key={marker.lat + marker.lng}
             position={marker}

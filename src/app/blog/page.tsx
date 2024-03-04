@@ -36,57 +36,21 @@ export default async function Home() {
     blogData: BlogRollProps
   } = await getData()
 
+  const firstPost = blogData.posts[0]
+  const allOtherPosts = blogData.posts.slice(1)
+
   return (
     <PageLayout global={globalData}>
       <Banner
-        backgroundImage={{
-          alt: 'A person typing on a laptop',
-          query: 'person typing',
-        }}
-        heading="This is the title of a blog post about something"
-        message="This is a short description of the blog post. We will use this to entice the reader to click on the post and read more."
+        {...firstPost}
+        backgroundImage={firstPost.image}
+        heading={firstPost.title}
+        message={firstPost.description}
         headingLevel={1}
-        date="2022-01-01"
-        authors={[
-          {
-            firstName: 'John',
-            lastName: 'Doe',
-
-            image: {
-              alt: 'John Doe',
-              query: 'John Doe',
-            },
-          },
-          {
-            firstName: 'Jane',
-            lastName: 'Doe',
-
-            image: {
-              alt: 'Jane Doe',
-              query: 'Jane Doe',
-            },
-          },
-        ]}
-        tags={[
-          {
-            label: 'Tag 1',
-            href: '/blog/tag1',
-          },
-          {
-            label: 'Tag 2',
-            href: '/blog/tag2',
-          },
-        ]}
-        links={[
-          {
-            href: '/blog/post',
-            label: 'Read More',
-          },
-        ]}
       />
       <Cards
         heading="Blog Posts"
-        items={blogData.posts}
+        items={allOtherPosts}
         paginated
         itemsPerPage={12}
       />
