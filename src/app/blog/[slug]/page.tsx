@@ -4,10 +4,15 @@ import { ShareButtons } from '@components/modules/ShareButtons'
 import { TableOfContents } from '@components/modules/TableOfContents'
 import { Container, Flex, Markdown, Spacer } from '@components/utility'
 import { GlobalProps, PostDetailsProps } from '@utils/types'
+import { notFound } from 'next/navigation'
 
 async function getData() {
   const globalRes = await fetch(`${process.env.SITE_URL}/api/getData`)
   const blogRes = await fetch(`${process.env.SITE_URL}/api/getBlogPost`)
+
+  if (!blogRes.ok) {
+    return notFound()
+  }
 
   const globalData: GlobalProps = await globalRes.json()
   const postData: PostDetailsProps = await blogRes.json()

@@ -1,11 +1,18 @@
 import { PageBuilder } from '@components/global'
 import { GlobalProps } from '@utils/types'
+import { notFound } from 'next/navigation'
 
 async function getData(slug: string) {
   const global = await fetch(`${process.env.SITE_URL}/api/getData`)
   const page = await fetch(`${process.env.SITE_URL}/api/getPageData/${slug}`)
+
+  if (!page.ok) {
+    return notFound()
+  }
+
   const globalData = await global.json()
   const pageData = await page.json()
+
   return {
     globalData,
     pageData,
