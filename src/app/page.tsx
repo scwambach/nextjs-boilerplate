@@ -2,7 +2,7 @@ import { PageBuilder } from '@components/global'
 import { GlobalProps } from '@utils/types'
 
 async function getData() {
-  const global = await fetch(`${process.env.SITE_URL}/api/getData`)
+  const global = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
   const page = await fetch(`${process.env.SITE_URL}/api/getPageData/home`)
   const globalData = await global.json()
   const pageData = await page.json()

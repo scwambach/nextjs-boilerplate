@@ -3,7 +3,7 @@ import { GlobalProps } from '@utils/types'
 import { notFound } from 'next/navigation'
 
 async function getData(slug: string) {
-  const global = await fetch(`${process.env.SITE_URL}/api/getData`)
+  const global = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
   const page = await fetch(`${process.env.SITE_URL}/api/getPageData/${slug}`)
 
   if (!page.ok) {

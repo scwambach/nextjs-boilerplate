@@ -3,7 +3,7 @@ import { PageLayout } from '@components/global'
 import { BlogRollProps, GlobalProps } from '@utils/types'
 
 async function getData() {
-  const globalRes = await fetch(`${process.env.SITE_URL}/api/getData`)
+  const globalRes = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
   const globalData = await globalRes.json()
 
   const blogRes = await fetch(`${process.env.SITE_URL}/api/getBlogRoll`)
@@ -15,7 +15,7 @@ async function getData() {
 export const revalidate = 0
 
 export async function generateMetadata({}) {
-  const globalData = await fetch(`${process.env.SITE_URL}/api/getData`)
+  const globalData = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
   const globalJson: GlobalProps = await globalData.json()
 
   return {

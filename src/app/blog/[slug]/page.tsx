@@ -7,7 +7,7 @@ import { GlobalProps, PostDetailsProps } from '@utils/types'
 import { notFound } from 'next/navigation'
 
 async function getData() {
-  const globalRes = await fetch(`${process.env.SITE_URL}/api/getData`)
+  const globalRes = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
   const blogRes = await fetch(`${process.env.SITE_URL}/api/getBlogPost`)
 
   if (!blogRes.ok) {
@@ -23,7 +23,9 @@ async function getData() {
 export const revalidate = 0
 
 export async function generateMetadata({}) {
-  const globalData: any = await fetch(`${process.env.SITE_URL}/api/getData`)
+  const globalData: any = await fetch(
+    `${process.env.SITE_URL}/api/getGlobalData`
+  )
   const postData: any = await fetch(`${process.env.SITE_URL}/api/getBlogPost`)
 
   const globalJson: GlobalProps = await globalData.json()
