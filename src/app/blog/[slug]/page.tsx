@@ -33,7 +33,7 @@ export async function generateMetadata({}) {
     title: `${postJson.title} | Blog | ${globalJson.siteTitle}`,
     description: postJson.summary,
     icons: {
-      icon: '/favicon.png',
+      icon: '/favicon.svg',
     },
   }
 }

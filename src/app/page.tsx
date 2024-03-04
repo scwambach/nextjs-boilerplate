@@ -24,7 +24,7 @@ export async function generateMetadata() {
       : globalData.siteTitle,
     description: globalData.siteDescription,
     icons: {
-      icon: '/favicon.png',
+      icon: '/favicon.svg',
     },
   }
 }

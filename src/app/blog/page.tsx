@@ -22,7 +22,7 @@ export async function generateMetadata({}) {
     title: `Blog | ${globalJson.siteTitle}`,
     description: globalJson.siteDescription,
     icons: {
-      icon: '/favicon.png',
+      icon: '/favicon.svg',
     },
   }
 }
