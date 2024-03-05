@@ -12,8 +12,6 @@ import { parseMarkdownToHTML } from '@utils/parseMarkdownToHTML'
 import { BannerProps } from '@utils/types'
 import dayjs from 'dayjs'
 
-// TODO: Create Banner tests and stories with updated props
-
 export const Banner = ({
   backgroundImage,
   className,
