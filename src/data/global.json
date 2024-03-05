@@ -28,6 +28,10 @@
       "label": "Blog",
       "href": "/blog",
       "type": "link"
+    },{
+      "label": "Storybook",
+      "href": "https://65da9cbdd5f49ca4900b50d2-twncspjpgq.chromatic.com/",
+      "type": "link"
     }
   ]
 }
