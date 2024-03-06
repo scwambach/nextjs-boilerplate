@@ -6,19 +6,18 @@ name: Node.js CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   test:
+    name: Test
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-
       - name: Install Dependencies
-        run: npm install
+        run: |
+          echo "Installing Dependencies..."
+          npm install
 
       - name: Build
         run: npm run build
