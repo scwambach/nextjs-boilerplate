@@ -4,6 +4,8 @@
 name: Node.js CI
 
 on:
+  push:
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -23,7 +25,7 @@ jobs:
           echo "Installing Dependencies..."
           npm install
 
-      - name: Bu ild
+      - name: Build
         run: npm run build
 
       - name: Run Tests
