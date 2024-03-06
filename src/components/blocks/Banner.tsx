@@ -13,21 +13,24 @@ import { BannerProps } from '@utils/types'
 import dayjs from 'dayjs'
 
 export const Banner = ({
+  authors,
   backgroundImage,
-  className,
-  heading,
-  subheading,
-  crumbs,
   bgColor = 'blue',
-  tags,
-  message,
+  className,
+  contained,
+  containedWidth = 'narrow',
+  crumbs,
+  date,
   foregroundMedia,
+  heading,
   headingLevel = 2,
   links,
-  testId,
+  message,
+  overlap,
   style,
-  date,
-  authors,
+  subheading,
+  tags,
+  testId,
 }: BannerProps) => {
   const content = (alone: boolean) => (
     <>
@@ -118,13 +121,15 @@ export const Banner = ({
 
   return (
     <section
-      className={`banner ${bgColor}${className ? ` ${className}` : ''}${
+      className={`banner ${bgColor}${contained && overlap ? ' overlap' : ''}${
+        contained ? ' contained' : ''
+      }${className ? ` ${className}` : ''}${
         backgroundImage ? ' has-image' : ''
       }`}
       data-testid={testId}
       style={style}
     >
-      {backgroundImage && (
+      {!contained && backgroundImage && (
         <ImageObject
           {...backgroundImage}
           isBackground
@@ -132,14 +137,25 @@ export const Banner = ({
           sizes="(max-width: 767px) 100vw, 50vw"
         />
       )}
-      <Container>
-        {foregroundMedia ? (
-          <Grid columns={2} gap="lg">
-            {content(false)}
-          </Grid>
-        ) : (
-          content(true)
-        )}
+      <Container containerClass={contained ? containedWidth : undefined}>
+        <div className="inner">
+          {contained && backgroundImage && (
+            <ImageObject
+              {...backgroundImage}
+              isBackground
+              testId="banner-image"
+              sizes="(max-width: 767px) 100vw, 50vw"
+            />
+          )}
+
+          {foregroundMedia ? (
+            <Grid columns={2} gap="lg">
+              {content(false)}
+            </Grid>
+          ) : (
+            content(true)
+          )}
+        </div>
       </Container>
     </section>
   )

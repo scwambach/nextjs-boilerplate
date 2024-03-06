@@ -395,22 +395,25 @@ export interface AlertProps extends ComponentProps {
 }
 
 export interface BannerProps extends ComponentProps {
+  authors?: PersonProps[]
+  backgroundImage?: ImageObjectProps
   bgColor?: Colors
+  contained?: boolean
+  containedWidth?: ContainerClasses
   crumbs?: {
     current?: string
     items?: BreadcrumbsProps['crumbs']
   }
+  date?: string
+  foregroundMedia?: any
   heading: string
   headingLevel?: HeadingLevel
-  backgroundImage?: ImageObjectProps
-  foregroundMedia?: any
-  authors?: PersonProps[]
-  date?: string
   links?: ButtonProps[]
   message?: string
+  overlap?: boolean
   style?: CSSProperties
-  tags?: TagProps[]
   subheading?: string
+  tags?: TagProps[]
 }
 
 export interface CardsProps extends BlockProps {
@@ -564,7 +567,13 @@ export interface SetFormDataProps {
   (formData: FormDataProps): void
 }
 
-export type ContainerClasses = 'wider' | 'wide' | 'narrow' | 'narrower'
+export type ContainerClasses =
+  | 'wider'
+  | 'wide'
+  | 'normal'
+  | 'narrow'
+  | 'narrower'
+  | 'full'
 
 export type Themes = 'primary' | 'secondary' | 'tertiary'
 

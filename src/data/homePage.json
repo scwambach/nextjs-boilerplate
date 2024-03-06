@@ -16,7 +16,6 @@
         "src": "/marketing.png",
         "height": 682,
         "width": 1232,
-        "blurDataURL": "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmarketing.7987a04c.png&w=8&q=70",
         "blurWidth": 8,
         "blurHeight": 4
       },
@@ -49,6 +48,30 @@
               "label": "Learn More"
             }
           ]
+        }
+      ]
+    },
+    {
+      "_type": "Banner",
+      "_key": "ipwuernvp8",
+      "heading":"Welcome to the Next.js Starter",
+      "message":"This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and Tailwind CSS.",
+      "headingLevel": 1,
+      "backgroundImage": {
+        "query": "nature",
+        "alt": "Nature"
+      },
+      "contained": true,
+      "overlap": true,
+      "bgColor":"blue",
+      "crumbs": {
+        "current": "Home"
+      },
+      "links":[
+        {
+          "theme": "tertiary",
+          "href": "https://github.com/scwambach/nextjs-boilerplate",
+          "label": "Check out the GitHub Repo"
         }
       ]
     },

@@ -43,15 +43,15 @@ html {
   }
 
   &.wide {
-    max-width: $xxl + $sm;
+    max-width: $xl + $sm;
   }
 
   &.wider {
-    max-width: $xxl + $md;
+    max-width: $xl + $md;
   }
 
   &.narrow {
-    max-width: $lg;
+    max-width: $xl;
   }
 
   &.narrower {
