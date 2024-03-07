@@ -26,7 +26,6 @@ export const ShareButtons = ({
           style={{ background: '#1DA1F2' }}
           href={`https://twitter.com/intent/tweet?text=${title}&url=https://sproutyourdesign.com/blog/${slug}`}
         >
-          twitter
           <span className="desktopOnly">Share on</span>{' '}
           <TwitterLogo weight="fill" />
         </Button>

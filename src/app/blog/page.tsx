@@ -48,6 +48,7 @@ export default async function Home() {
         message={firstPost.description}
         headingLevel={1}
       />
+
       <Cards
         heading="Blog Posts"
         items={allOtherPosts}

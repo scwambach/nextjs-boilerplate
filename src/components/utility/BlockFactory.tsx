@@ -9,7 +9,8 @@ export const BlockFactory = (props: any) => {
           object.blockType === 'module'
             ? Module[object._type as keyof typeof Module]
             : Block[object._type as keyof typeof Block]
-        return <Component {...object} key={`object${object._type + index}`} />
+        const uniqueId = `${object.blockType}_${object._type}_${index}`
+        return <Component {...object} componentId={uniqueId} key={uniqueId} />
       })}
     </>
   )
