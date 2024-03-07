@@ -23,6 +23,7 @@ export interface ComponentProps {
   _key?: string
   className?: string
   testId?: string
+  componentId?: string
 }
 
 export interface BlockProps extends ComponentProps {
@@ -117,29 +118,24 @@ export interface GridProps extends FlexGridProps {
   columns?: ColumnSize
 }
 
-export interface HeadingProps {
+export interface HeadingProps extends ComponentProps {
   level: HeadingLevel
   children: ReactNode
-  testId?: string
-  className?: string
   nonHeadingElement?: 'p' | 'span'
 }
 
-export interface IconSelectorProps {
+export interface IconSelectorProps extends ComponentProps {
   icon: keyof typeof Icon
   alt?: string
   color?: string
   size?: string | number
   weight?: Icon.IconWeight
   mirrored?: boolean
-  className?: string
 }
 
-export interface MarkdownProps {
+export interface MarkdownProps extends ComponentProps {
   elementTag?: Elements
-  elementId?: string
   children: string
-  className?: string
 }
 
 export interface ModalProps extends ComponentProps {
@@ -262,7 +258,7 @@ export interface EventProps extends ComponentProps {
   links?: ButtonProps[]
 }
 
-export interface FieldProps extends ComponentProps {
+export interface FieldProps extends Omit<ComponentProps, 'componentId'> {
   choices?: {
     id: string
     copy: string
@@ -290,11 +286,9 @@ export interface FieldProps extends ComponentProps {
   type?: FieldTypes
 }
 
-export interface ImageObjectProps {
+export interface ImageObjectProps extends ComponentProps {
   alt: string
-  className?: string
   isBackground?: boolean
-  testId?: string
   query?: string
   sizes?: string
   src?: string
@@ -305,12 +299,10 @@ export interface ImageObjectProps {
   blurDataURL?: string
 }
 
-export interface LinkObjectProps {
+export interface LinkObjectProps extends ComponentProps {
   children?: ReactNode
-  className?: string
   style?: CSSProperties
   role?: string
-  testId?: string
   copy?: string
   href: string
   ariaLabel?: string
@@ -389,7 +381,6 @@ export interface VideoBlockProps extends ComponentProps {
 //////////////////////////
 
 export interface AlertProps extends ComponentProps {
-  alertId?: string
   message: string
   type: AlertTypes
 }

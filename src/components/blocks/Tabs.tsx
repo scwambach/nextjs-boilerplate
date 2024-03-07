@@ -8,18 +8,20 @@ import { useState } from 'react'
 
 export const Tabs = ({
   className,
-  testId,
-  heading,
-  level,
-  theme = 'primary',
-  subheading,
+  componentId,
   container,
+  heading,
   items,
+  level,
+  subheading,
+  testId,
+  theme = 'primary',
 }: TabsProps) => {
   const [activeTab, setActiveTab] = useState(0)
   const [menuOpen, setMenuOpen] = useState(false)
   return (
     <section
+      id={componentId}
       data-testid={testId}
       className={`tabs${className ? ` ${className}` : ''}`}
     >

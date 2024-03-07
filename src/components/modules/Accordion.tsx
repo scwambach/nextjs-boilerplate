@@ -5,11 +5,12 @@ import { AccordionProps } from '@utils/types'
 import { useEffect, useRef, useState } from 'react'
 
 export const Accordion = ({
-  heading,
-  theme,
-  testId,
   children,
   className,
+  componentId,
+  heading,
+  testId,
+  theme,
 }: AccordionProps) => {
   const [open, setOpen] = useState(false)
   const [height, setHeight] = useState<number | undefined>(0)
@@ -40,6 +41,7 @@ export const Accordion = ({
 
   return (
     <div
+      id={componentId}
       data-testid={testId}
       ref={ref}
       className={`accordion${

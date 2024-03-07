@@ -3,13 +3,15 @@ import { LinkObject } from '@components/modules'
 import { IconSelector, Flex } from '@components/utility'
 
 export const Breadcrumbs = ({
+  className,
+  componentId,
   crumbs,
   current,
   testId,
-  className,
 }: BreadcrumbsProps) => {
   return (
     <div
+      id={componentId}
       data-testid={testId}
       className={`breadcrumbs${className ? ` ${className}` : ''}`}
     >

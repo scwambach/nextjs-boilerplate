@@ -7,7 +7,12 @@ import { useEffect, useState } from 'react'
 
 // TODO: Create tests
 
-export const Carousel = ({ items, className, testId }: CarouselProps) => {
+export const Carousel = ({
+  className,
+  componentId,
+  items,
+  testId,
+}: CarouselProps) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const renderedItems = items.map((item, index) => (
     <Banner key={index} {...item} />
@@ -24,6 +29,7 @@ export const Carousel = ({ items, className, testId }: CarouselProps) => {
 
   return (
     <div
+      id={componentId}
       data-testid={testId}
       className={`carousel${className ? ` ${className}` : ''}`}
     >

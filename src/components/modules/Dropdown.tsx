@@ -35,6 +35,7 @@ export const Dropdown = ({ items, ...props }: DropdownProps) => {
 
   return (
     <div
+      id={props.componentId}
       ref={ref}
       className={`dropdown${open ? ' open' : ''}${props.className ? ` ${props.className}` : ''}`}
     >

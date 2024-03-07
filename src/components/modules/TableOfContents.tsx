@@ -18,8 +18,9 @@ interface HeadingItem {
 
 export const TableOfContents = ({
   className,
-  testId,
+  componentId,
   targetId,
+  testId,
 }: TableOfContentsProps) => {
   const [headingsArray, setHeadingsArray] = useState<HeadingItem[]>([])
   const [loading, setLoading] = useState(true)
@@ -48,6 +49,7 @@ export const TableOfContents = ({
 
   return (
     <div
+      id={componentId}
       data-testid={testId}
       className={`tableOfContents${className ? ` ${className}` : ''}`}
     >

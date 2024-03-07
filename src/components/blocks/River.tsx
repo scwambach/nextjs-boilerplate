@@ -4,15 +4,17 @@ import { RiverProps } from '@utils/types'
 
 export const River = ({
   className,
-  testId,
+  componentId,
   container = 'narrow',
-  reverse,
-  items,
   headingLevel = 3,
+  items,
+  reverse,
+  testId,
   theme = 'primary',
 }: RiverProps) => {
   return (
     <Flex
+      componentId={componentId}
       direction="column"
       elementTag="section"
       gap="sm"

@@ -4,14 +4,16 @@ import { Box } from '@components/utility'
 
 export const Tag = ({
   className,
-  label,
+  componentId,
   elementTag = 'span',
   href,
+  label,
   testId,
   theme = 'primary',
 }: TagProps) => {
   return (
     <Box
+      componentId={componentId}
       radius={4}
       testId={testId}
       elementTag={elementTag}

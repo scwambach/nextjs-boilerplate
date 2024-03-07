@@ -1,19 +1,21 @@
 import { GridProps } from '@utils/types'
 
 export const Grid = ({
-  elementTag,
   children,
   className,
-  testId,
+  columns = 3,
+  componentId,
+  elementTag,
   gap,
   style,
-  columns = 3,
+  testId,
 }: GridProps) => {
   const elm = elementTag || 'div'
   const Element = elm as keyof JSX.IntrinsicElements
 
   return (
     <Element
+      id={componentId}
       style={style}
       className={`grid gap-${gap} columns-${columns}${className ? ` ${className}` : ''}`}
       data-testid={testId}

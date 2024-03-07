@@ -5,17 +5,19 @@ import { LinkObject, ImageObject } from '@components/modules'
 import { headingFont } from '@utils/fonts'
 
 export const Person = ({
-  firstName,
-  lastName,
   className,
-  image,
-  socials,
-  title,
   company,
+  componentId,
+  firstName,
+  image,
+  lastName,
+  socials,
   testId,
+  title,
 }: PersonProps) => {
   return (
     <div
+      id={componentId}
       data-testid={testId}
       className={`person${className ? ` ${className}` : ''}`}
     >

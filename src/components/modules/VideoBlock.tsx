@@ -7,12 +7,13 @@ import { Box, Flex, Heading, Markdown } from '@components/utility'
 import { colors } from '@utils/settings'
 
 export const VideoBlock = ({
-  url,
   className,
-  testId,
-  title,
+  componentId,
   copy,
   poster,
+  testId,
+  title,
+  url,
 }: VideoBlockProps) => {
   const [hasWindow, setHasWindow] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -25,6 +26,7 @@ export const VideoBlock = ({
 
   return (
     <Flex
+      componentId={componentId}
       direction="column"
       gap="xxs"
       alignItems="stretch"

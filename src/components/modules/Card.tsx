@@ -14,6 +14,7 @@ import { compileAuthorNames } from '@utils/compileAuthorNames'
 export const Card = ({
   authors,
   className,
+  componentId,
   date,
   description,
   headingLevel = 2,
@@ -21,11 +22,12 @@ export const Card = ({
   image,
   links,
   tags,
-  title,
   testId,
+  title,
 }: CardProps) => {
   return (
     <Box
+      componentId={componentId}
       testId={testId}
       className={`card${href ? ' link' : ''}${className ? ` ${className}` : ''}`}
     >

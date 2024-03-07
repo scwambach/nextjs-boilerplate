@@ -14,15 +14,16 @@ import { convertTime } from '@utils/convertTime'
 
 export const Event = ({
   className,
-  location,
-  title,
-  startTime,
+  componentId,
+  date,
   doorsOpenTime,
   endTime,
   links,
-  testId,
+  location,
   poster,
-  date,
+  startTime,
+  testId,
+  title,
 }: EventProps) => {
   const [posterOpen, setPosterOpen] = useState(false)
   useEffect(() => {
@@ -62,7 +63,11 @@ export const Event = ({
   }
 
   return (
-    <Box testId={testId} className={`event${className ? ` ${className}` : ''}`}>
+    <Box
+      componentId={componentId}
+      testId={testId}
+      className={`event${className ? ` ${className}` : ''}`}
+    >
       <Flex
         alignItems="flex-start"
         gap={poster ? 'xxs' : 'sm'}

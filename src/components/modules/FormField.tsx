@@ -27,24 +27,24 @@ const Label = ({
 }
 
 export const FormField = ({
+  choiceGridColumns = 4,
   choices,
   className,
+  defaultValue,
   description,
   disabled,
   id,
-  choiceGridColumns = 4,
   label,
   multiChoices,
   onChange,
   onChangeArea,
   onChangeSelect,
-  defaultValue,
-  value,
   placeholder,
   readOnly,
   required,
   testId,
   type,
+  value,
 }: FieldProps) => {
   const fieldId = `${label ? slugify(label) : 'input'}_${id}`
   const fieldArgs = {

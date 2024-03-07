@@ -10,24 +10,24 @@ export const Alert = ({
   type,
   testId,
   className,
-  alertId,
+  componentId,
   message,
 }: AlertProps) => {
   const [remove, setRemove] = useState(false)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    if (!alertId) {
+    if (!componentId) {
       setLoading(false)
       return
     }
 
-    if (sessionStorage.getItem(`alert_${alertId}`)) {
+    if (sessionStorage.getItem(`alert_${componentId}`)) {
       setRemove(true)
     }
 
     if (remove) {
-      sessionStorage.setItem(`alert_${alertId}`, 'true')
+      sessionStorage.setItem(`alert_${componentId}`, 'true')
     }
 
     setLoading(false)
@@ -43,7 +43,7 @@ export const Alert = ({
   return (
     <div
       data-testid={testId}
-      id={alertId}
+      id={componentId}
       className={`alert ${type}${className ? ` ${className}` : ''}${
         loading || remove ? ' hide' : ''
       }`}
@@ -58,13 +58,13 @@ export const Alert = ({
           __html: parseMarkdownToHTML(message),
         }}
       />
-      {alertId && (
+      {componentId && (
         <Button
           type="button"
           unstyled
           testId="closeButton"
           onClick={() => {
-            sessionStorage.setItem(`alert_${alertId}`, 'true')
+            sessionStorage.setItem(`alert_${componentId}`, 'true')
             setRemove(true)
           }}
         >

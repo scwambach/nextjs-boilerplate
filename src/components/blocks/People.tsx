@@ -5,14 +5,15 @@ import { PeopleProps } from '@utils/types'
 
 export const People = ({
   className,
-  items,
   columns = 3,
-  subheading,
+  componentId,
   container,
-  heading,
-  testId,
-  level = 3,
   gap = 'sm',
+  heading,
+  items,
+  level = 3,
+  subheading,
+  testId,
 }: PeopleProps) => {
   const renderedPeople = items.map((item, index) => {
     return <Person key={index} {...item} />
@@ -20,6 +21,7 @@ export const People = ({
 
   return (
     <section
+      id={componentId}
       data-testid={testId}
       className={`people${className ? ` ${className}` : ''}`}
     >

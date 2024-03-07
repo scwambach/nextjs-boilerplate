@@ -5,15 +5,17 @@ import { headingFont } from '@utils/fonts'
 import { QuoteProps } from '@utils/types'
 
 export const Quote = ({
-  className,
-  testId,
-  quote,
-  cite,
   bgColor = 'green',
+  cite,
+  className,
+  componentId,
   person,
+  quote,
+  testId,
 }: QuoteProps) => {
   return (
     <section
+      id={componentId}
       data-testid={testId}
       className={`quote ${bgColor}${className ? ` ${className}` : ''}`}
     >

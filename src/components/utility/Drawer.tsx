@@ -5,12 +5,13 @@ import { DrawerProps } from '@utils/types'
 import { useEffect, useState } from 'react'
 
 export const Drawer = ({
-  className,
   children,
-  triggerCopy,
-  open,
-  triggerTheme,
+  className,
+  componentId,
   direction = 'right',
+  open,
+  triggerCopy,
+  triggerTheme,
   triggerUnstyled,
 }: DrawerProps) => {
   const [isOpen, setIsOpen] = useState(open || false)
@@ -22,7 +23,10 @@ export const Drawer = ({
     document.addEventListener('keydown', closeOnEscape)
   }, [])
   return (
-    <span className={`drawer${className ? ` ${className}` : ''}`}>
+    <span
+      id={componentId}
+      className={`drawer${className ? ` ${className}` : ''}`}
+    >
       <Button
         type="button"
         label={triggerCopy}

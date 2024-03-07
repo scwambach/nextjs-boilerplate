@@ -6,16 +6,18 @@ const getFirstLetters = (firstName: string, lastName: string) => {
 }
 
 export const Avatar = ({
-  testId,
+  badge,
   className,
-  image,
+  componentId,
   firstName,
+  image,
   lastName,
   size = 5,
-  badge,
+  testId,
 }: AvatarProps) => {
   return (
     <div
+      id={componentId}
       data-testid={testId}
       title={`${firstName} ${lastName}`}
       style={{

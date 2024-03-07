@@ -70,7 +70,7 @@ export default async function Home() {
           customLayout="one-quarter-three-quarters"
         >
           <TableOfContents targetId="postContent" />
-          <Markdown elementId="postContent">{postData.content}</Markdown>
+          <Markdown componentId="postContent">{postData.content}</Markdown>
         </Flex>
       </Container>
 

@@ -5,16 +5,18 @@ import { TimelineProps } from '@utils/types'
 import dayjs from 'dayjs'
 
 export const Timeline = ({
+  className,
+  componentId,
+  container,
+  events,
   heading,
   level,
-  events,
   subheading,
   testId,
-  className,
-  container,
 }: TimelineProps) => {
   return (
     <section
+      id={componentId}
       data-testid={testId}
       className={`timeline${className ? ` ${className}` : ''}`}
     >

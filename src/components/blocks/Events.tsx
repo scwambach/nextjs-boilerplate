@@ -7,15 +7,17 @@ import { Fragment } from 'react'
 
 export const Events = ({
   className,
-  heading,
-  subheading,
-  level,
-  testId,
-  items,
+  componentId,
   container = 'narrower',
+  heading,
+  items,
+  level,
+  subheading,
+  testId,
 }: EventsProps) => {
   return (
     <section
+      id={componentId}
       className={`events${className ? ` ${className}` : ''}`}
       data-testid={testId}
     >

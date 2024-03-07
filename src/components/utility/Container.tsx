@@ -1,14 +1,16 @@
 import { ContainerProps } from '@utils/types'
 
 export const Container = ({
-  className,
-  testId,
   children,
-  padded,
+  className,
+  componentId,
   containerClass,
+  padded,
+  testId,
 }: ContainerProps) => {
   return (
     <div
+      id={componentId}
       data-testid={testId}
       className={`container${padded ? ` padded` : ''}${
         containerClass ? ` ${containerClass}` : ''

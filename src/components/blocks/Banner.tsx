@@ -19,6 +19,7 @@ export const Banner = ({
   className,
   contained,
   containedWidth = 'narrow',
+  componentId,
   crumbs,
   date,
   foregroundMedia,
@@ -121,6 +122,7 @@ export const Banner = ({
 
   return (
     <section
+      id={componentId}
       className={`banner ${bgColor}${contained && overlap ? ' overlap' : ''}${
         contained ? ' contained' : ''
       }${className ? ` ${className}` : ''}${

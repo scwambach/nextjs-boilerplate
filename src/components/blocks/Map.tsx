@@ -19,12 +19,13 @@ const options = {
 
 export const Map = ({
   className,
-  testId,
+  componentId,
   markers,
   style = {
     width: '100%',
     minHeight: '600px',
   },
+  testId,
 }: MapProps) => {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.GOOGLE_MAP_API_KEY as string,
@@ -38,7 +39,12 @@ export const Map = ({
 
   if (loadError)
     return (
-      <Flex justifyContent="center" alignItems="center" style={style}>
+      <Flex
+        componentId={componentId}
+        justifyContent="center"
+        alignItems="center"
+        style={style}
+      >
         <Heading level={1} nonHeadingElement="p">
           {' '}
           Something went wrong
@@ -48,6 +54,7 @@ export const Map = ({
   if (!isLoaded)
     return (
       <Flex
+        componentId={componentId}
         justifyContent="center"
         direction="column"
         alignItems="center"
@@ -63,6 +70,7 @@ export const Map = ({
 
   return (
     <section
+      id={componentId}
       data-testid={testId}
       style={style}
       className={`map${className ? ` ${className}` : ''}`}

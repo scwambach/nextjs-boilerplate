@@ -9,12 +9,14 @@ import {
 
 export const ShareButtons = ({
   className,
+  componentId,
+  slug,
   testId,
   title,
-  slug,
 }: ShareButtonsProps) => {
   return (
     <div
+      id={componentId}
       data-testid={testId}
       className={`shareButtons${className ? ` ${className}` : ''}`}
     >

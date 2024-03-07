@@ -6,15 +6,16 @@ import { StatProps } from '@utils/types'
 
 export const Stat = ({
   className,
+  componentId,
+  decimals,
   icon,
+  maxValue,
   numberPrefix,
   numberSuffix,
   subtitle,
   tags,
   testId,
-  decimals,
   theme = 'primary',
-  maxValue,
   title,
   type,
   value,
@@ -35,6 +36,7 @@ export const Stat = ({
 
   return (
     <Box
+      componentId={componentId}
       shadow={2}
       className={`stat ${theme}${className ? ` ${className}` : ''}`}
       testId={testId}

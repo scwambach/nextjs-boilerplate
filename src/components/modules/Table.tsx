@@ -3,12 +3,16 @@ import { TableProps } from '@utils/types'
 
 export const Table = ({
   className,
+  componentId,
+  controlCell,
   headingRow,
   rows,
-  controlCell,
 }: TableProps) => {
   return (
-    <table className={`table${className ? ` ${className}` : ''}`}>
+    <table
+      id={componentId}
+      className={`table${className ? ` ${className}` : ''}`}
+    >
       {headingRow && headingRow.length > 0 && (
         <thead className={headingFont.className}>
           <tr>

@@ -16,18 +16,19 @@ import { useEffect, useState } from 'react'
 import ReactPaginate from 'react-paginate'
 
 export const Cards = ({
-  items,
+  button,
   className,
-  gap = 'xs',
-  subheading,
-  paginated,
   columns,
-  heading,
+  componentId,
   container,
+  gap = 'xs',
+  heading,
+  items,
   itemsPerPage = 6,
   level = 3,
+  paginated,
+  subheading,
   testId,
-  button,
 }: CardsProps) => {
   const [itemOffset, setItemOffset] = useState(0)
   const [activePage, setActivePage] = useState(1)
@@ -65,6 +66,7 @@ export const Cards = ({
 
   return (
     <section
+      id={componentId}
       data-testid={testId}
       className={`cards${className ? ` ${className}` : ''}`}
     >

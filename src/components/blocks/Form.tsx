@@ -6,16 +6,18 @@ import { FormProps } from '@utils/types'
 const Form = ({
   children,
   className,
-  submitCopy,
-  onSubmit,
-  heading,
-  subheading,
-  level,
+  componentId,
   container,
+  heading,
+  level,
+  onSubmit,
+  subheading,
+  submitCopy,
   testId,
 }: FormProps) => {
   return (
     <section
+      id={componentId}
       className={`form${className ? ` ${className}` : ''}`}
       data-testid={testId}
     >

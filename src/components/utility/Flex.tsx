@@ -4,16 +4,17 @@ export const Flex = ({
   alignItems = 'flex-start',
   breakpoint,
   children,
-  direction = 'row',
   className,
   columnBreak = 'sm',
+  componentId,
   customLayout,
+  direction = 'row',
   elementTag,
   fill,
-  style,
   gap = 'md',
   justifyContent = 'flex-start',
   noBreak,
+  style,
   testId,
 }: FlexProps) => {
   const elm = elementTag || 'div'
@@ -21,6 +22,7 @@ export const Flex = ({
 
   return (
     <Element
+      id={componentId}
       style={style}
       className={`flex direction-${direction} align-${alignItems} justify-${justifyContent} gap-${gap} column-${
         columnBreak && !noBreak ? columnBreak : ''

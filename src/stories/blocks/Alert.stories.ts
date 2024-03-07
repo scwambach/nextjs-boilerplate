@@ -12,7 +12,7 @@ type Story = StoryObj<typeof Alert>
 
 export const Warning: Story = {
   args: {
-    alertId: 'warning',
+    componentId: 'warning',
     message: 'This is a warning message',
     type: 'warning',
   },
@@ -20,7 +20,7 @@ export const Warning: Story = {
 
 export const Error: Story = {
   args: {
-    alertId: 'error',
+    componentId: 'error',
     message: 'This is an error message',
     type: 'error',
   },
@@ -28,7 +28,7 @@ export const Error: Story = {
 
 export const Success: Story = {
   args: {
-    alertId: 'success',
+    componentId: 'success',
     message: 'This is a success message',
     type: 'success',
   },
@@ -36,7 +36,7 @@ export const Success: Story = {
 
 export const Info: Story = {
   args: {
-    alertId: 'info',
+    componentId: 'info',
     message: 'This is an info message',
     type: 'info',
   },

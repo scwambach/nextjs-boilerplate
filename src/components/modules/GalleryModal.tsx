@@ -14,15 +14,19 @@ interface GalleryModalProps extends ComponentProps {
 }
 
 export const GalleryModal = ({
-  isModalOpen,
   activeIndex = 0,
+  componentId,
+  controls = true,
+  isModalOpen,
+  items,
   setActiveIndex,
   setIsModalOpen,
-  items,
-  controls = true,
 }: GalleryModalProps) => {
   return (
-    <div className={`galleryModal ${isModalOpen ? 'open' : 'closed'}`}>
+    <div
+      id={componentId}
+      className={`galleryModal ${isModalOpen ? 'open' : 'closed'}`}
+    >
       <Button
         className="close"
         type="button"

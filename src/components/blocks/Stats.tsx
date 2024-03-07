@@ -4,20 +4,22 @@ import { Container, Grid } from '@components/utility'
 import { ColumnSize, StatsProps } from '@utils/types'
 
 export const Stats = ({
+  className,
+  componentId,
+  container,
+  gap = 'xs',
   heading,
+  items,
   level,
   subheading,
-  className,
-  container,
-  items,
   testId,
-  gap = 'xs',
 }: StatsProps) => {
   const columns =
     items && items.length > 0 ? (items.length > 6 ? 6 : items.length) : 1
 
   return (
     <div
+      id={componentId}
       data-testid={testId}
       className={`stats${className ? ` ${className}` : ''}`}
     >

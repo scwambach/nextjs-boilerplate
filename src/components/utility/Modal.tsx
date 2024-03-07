@@ -5,13 +5,14 @@ import { Button } from '@components/modules'
 import { ModalProps } from '@utils/types'
 
 export const Modal = ({
-  className,
-  children,
   buttons,
-  triggerCopy,
-  open,
-  triggerTheme,
   buttonTheme,
+  children,
+  className,
+  componentId,
+  open,
+  triggerCopy,
+  triggerTheme,
   triggerUnstyled,
 }: ModalProps) => {
   const [isOpen, setIsOpen] = useState(open || false)
@@ -23,7 +24,10 @@ export const Modal = ({
     document.addEventListener('keydown', closeOnEscape)
   }, [])
   return (
-    <span className={`modal${className ? ` ${className}` : ''}`}>
+    <span
+      id={componentId}
+      className={`modal${className ? ` ${className}` : ''}`}
+    >
       <Button
         type="button"
         label={triggerCopy}

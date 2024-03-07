@@ -7,14 +7,15 @@ import { useEffect, useState } from 'react'
 
 export const Gallery = ({
   className,
+  columns = 4,
+  componentId,
+  container,
+  gap,
   heading,
+  items,
   level,
   subheading,
   testId,
-  columns = 4,
-  gap,
-  items,
-  container,
 }: GalleryProps) => {
   const [activeIndex, setActiveIndex] = useState<number>(0)
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
@@ -28,6 +29,7 @@ export const Gallery = ({
 
   return (
     <section
+      id={componentId}
       data-testid={testId}
       className={`gallery${className ? ` ${className}` : ''}`}
     >

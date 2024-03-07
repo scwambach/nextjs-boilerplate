@@ -3,14 +3,15 @@ import Image from 'next/image'
 
 export const ImageObject = ({
   alt,
+  blurDataURL,
   className,
+  componentId,
   height,
   isBackground,
-  blurDataURL,
   query,
-  testId,
   sizes,
   src,
+  testId,
   width,
 }: ImageObjectProps) => {
   const imageSrc = query
@@ -19,6 +20,7 @@ export const ImageObject = ({
       `https://fakeimg.pl/${height && width ? `${width}x${height}` : '600x400'}?text=url+is+broken&font=bebas`
   return (
     <div
+      id={componentId}
       data-testid={testId}
       className={`imageObject${className ? ` ${className}` : ''}`}
       data-label={`${isBackground ? 'background' : 'image'}-container`}

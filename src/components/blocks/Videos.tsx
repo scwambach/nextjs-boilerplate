@@ -4,19 +4,21 @@ import { Container, Flex, Grid, Spacer } from '@components/utility'
 import { VideosProps } from '@utils/types'
 
 export const Videos = ({
-  className,
-  testId,
-  heading,
-  level,
-  subheading,
-  items,
   button,
+  className,
   columns = 2,
+  componentId,
   container,
   gap = 'md',
+  heading,
+  items,
+  level,
+  subheading,
+  testId,
 }: VideosProps) => {
   return (
     <section
+      id={componentId}
       data-testid={testId}
       className={`videos${className ? ` ${className}` : ''}`}
     >

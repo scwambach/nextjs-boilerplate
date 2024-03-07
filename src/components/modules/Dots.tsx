@@ -3,13 +3,14 @@ import { Button } from '@components/modules'
 import { Flex, IconSelector } from '@components/utility'
 
 export const Dots = ({
-  className,
-  count,
   activeIndex,
+  className,
+  componentId,
+  count,
   setActiveIndex,
 }: DotsProps) => {
   return (
-    <div className={`dots${className ? ` ${className}` : ''}`}>
+    <div id={componentId} className={`dots${className ? ` ${className}` : ''}`}>
       <Flex gap="xxs" justifyContent="center" noBreak>
         {Array.from({ length: count }, (_, i) => (
           <Button unstyled key={i} onClick={() => setActiveIndex(i)}>

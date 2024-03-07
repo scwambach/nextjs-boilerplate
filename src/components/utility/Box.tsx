@@ -16,6 +16,7 @@ export const Box = ({
   children,
   shadow,
   overflow,
+  componentId,
   radius = 8,
   style,
   elementTag = 'div',
@@ -24,6 +25,7 @@ export const Box = ({
 
   return (
     <Element
+      id={componentId}
       style={style}
       data-testid={testId}
       className={`box${shadow ? ` shadow-${shadow}` : ''}${

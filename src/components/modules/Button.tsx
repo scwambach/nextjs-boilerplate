@@ -4,28 +4,29 @@ import { IconSelector } from '@components/utility'
 import { LinkObject } from '@components/modules'
 
 export const Button = ({
-  type = 'button',
-  href,
-  unstyled,
-  disabled,
-  icon,
-  small,
-  role = 'button',
-  suffixIcon,
-  className,
-  children,
-  onClick,
-  onMouseOver,
-  onMouseOut,
-  onBlur,
-  onFocus,
-  label,
-  theme,
-  style,
-  ariaExpanded,
   ariaControls,
+  ariaExpanded,
   ariaLabel,
+  children,
+  className,
+  componentId,
+  disabled,
+  href,
+  icon,
+  label,
+  onBlur,
+  onClick,
+  onFocus,
+  onMouseOut,
+  onMouseOver,
+  role = 'button',
+  small,
+  style,
+  suffixIcon,
   testId,
+  theme,
+  type = 'button',
+  unstyled,
 }: ButtonProps) => {
   const classList = `button ${
     headingFont.className
@@ -42,6 +43,7 @@ export const Button = ({
           testId={testId}
           className={classList}
           onClick={onClick}
+          componentId={componentId}
           onMouseOut={onMouseOut}
           onMouseOver={onMouseOver}
           onFocus={onFocus}
@@ -72,6 +74,7 @@ export const Button = ({
           style={style}
           className={classList}
           onClick={onClick}
+          id={componentId}
           onMouseOver={onMouseOver}
           onMouseOut={onMouseOut}
           role={role}

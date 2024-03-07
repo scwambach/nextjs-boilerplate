@@ -10,6 +10,7 @@ export const LinkObject = ({
   style,
   role,
   ariaLabel,
+  componentId,
   onClick,
   onMouseOver,
   onMouseOut,
@@ -20,6 +21,7 @@ export const LinkObject = ({
   return isInternal ? (
     <Link
       role={role}
+      id={componentId}
       style={style}
       data-testid={testId}
       aria-label={ariaLabel}
@@ -36,6 +38,7 @@ export const LinkObject = ({
   ) : (
     <a
       role={role}
+      id={componentId}
       style={style}
       data-testid={testId}
       className={`linkObject${className ? ` ${className}` : ''}`}
