@@ -1,9 +1,6 @@
-import { Banner, Cards, LogoRow } from '@components/blocks'
+import { Banner, Cards } from '@components/blocks'
 import { PageLayout } from '@components/global'
 import { BlogRollProps, GlobalProps } from '@utils/types'
-import logo1 from '@images/logoipsum-230.svg'
-import logo2 from '@images/logoipsum-231.svg'
-import logo3 from '@images/logoipsum-232.svg'
 
 async function getData() {
   const globalRes = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
@@ -52,13 +49,6 @@ export default async function Home() {
         headingLevel={1}
       />
 
-      <LogoRow
-        items={[
-          { title: 'Logo 1', image: logo1 },
-          { title: 'Logo 2', image: logo2 },
-          { title: 'Logo 3', image: logo3 },
-        ]}
-      />
       <Cards
         heading="Blog Posts"
         items={allOtherPosts}

@@ -7,7 +7,14 @@ import {
   Tag,
   LinkObject,
 } from '@components/modules'
-import { Heading, Markdown, Flex, Box } from '@components/utility'
+import {
+  Heading,
+  Markdown,
+  Flex,
+  Box,
+  IconSelector,
+  Spacer,
+} from '@components/utility'
 import dayjs from 'dayjs'
 import { compileAuthorNames } from '@utils/compileAuthorNames'
 
@@ -23,6 +30,7 @@ export const Card = ({
   links,
   tags,
   testId,
+  icon,
   title,
 }: CardProps) => {
   return (
@@ -53,6 +61,12 @@ export const Card = ({
       <div className="inner">
         <div>
           {date && <p className="date">{dayjs(date).format('MMM DD, YYYY')}</p>}
+          {icon && (
+            <>
+              <IconSelector icon={icon} size={60} className="icon" />
+              <Spacer size={0.5} />
+            </>
+          )}
           {href ? (
             <Heading level={headingLevel}>
               <LinkObject href={href}>{title}</LinkObject>

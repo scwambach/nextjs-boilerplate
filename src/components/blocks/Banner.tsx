@@ -16,11 +16,11 @@ export const Banner = ({
   authors,
   backgroundImage,
   bgColor = 'blue',
-  className,
-  contained,
   boxBgColor = 'white',
-  containedWidth = 'narrow',
+  className,
   componentId,
+  contained,
+  containedWidth = 'narrow',
   crumbs,
   date,
   foregroundMedia,
@@ -28,6 +28,7 @@ export const Banner = ({
   headingLevel = 2,
   links,
   message,
+  micro,
   overlap,
   style,
   subheading,
@@ -128,7 +129,7 @@ export const Banner = ({
         contained ? ' contained' : ''
       }${className ? ` ${className}` : ''}${
         backgroundImage ? ' has-image' : ''
-      }`}
+      }${contained && micro ? ' micro' : ''}`}
       data-testid={testId}
       style={style}
     >

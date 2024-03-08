@@ -64,11 +64,17 @@
 
       &.black {
         background-color: $black;
-        color: $white;
+        color: $eggShell;
       }
 
       &.white {
-        background-color: $white;
+        background-color: $eggShell;
+      }
+    }
+
+    &.micro {
+      .inner {
+        padding: $size-32;
       }
     }
   }
@@ -87,6 +93,15 @@
 
   &.orange {
     background-color: $lightOrange;
+  }
+
+  &.black {
+    background-color: $black;
+    color: $eggShell;
+  }
+
+  &.white {
+    background-color: $eggShell;
   }
 
   &.has-image {

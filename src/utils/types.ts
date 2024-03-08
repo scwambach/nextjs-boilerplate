@@ -225,6 +225,7 @@ export interface CardProps extends ComponentProps {
   title: string
   tags?: TagProps[]
   authors?: PersonProps[]
+  icon?: keyof typeof Icon
   date?: string
   description?: string
   theme?: Themes
@@ -402,6 +403,7 @@ export interface BannerProps extends ComponentProps {
   headingLevel?: HeadingLevel
   links?: ButtonProps[]
   message?: string
+  micro?: boolean
   overlap?: boolean
   style?: CSSProperties
   subheading?: string
