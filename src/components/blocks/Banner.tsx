@@ -18,6 +18,7 @@ export const Banner = ({
   bgColor = 'blue',
   className,
   contained,
+  boxBgColor = 'white',
   containedWidth = 'narrow',
   componentId,
   crumbs,
@@ -140,7 +141,9 @@ export const Banner = ({
         />
       )}
       <Container containerClass={contained ? containedWidth : undefined}>
-        <div className="inner">
+        <div
+          className={`inner${contained && boxBgColor && !backgroundImage ? ` ${boxBgColor}` : ''}`}
+        >
           {contained && backgroundImage && (
             <ImageObject
               {...backgroundImage}

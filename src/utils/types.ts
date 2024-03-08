@@ -389,6 +389,7 @@ export interface BannerProps extends ComponentProps {
   authors?: PersonProps[]
   backgroundImage?: ImageObjectProps
   bgColor?: Colors
+  boxBgColor?: Colors
   contained?: boolean
   containedWidth?: ContainerClasses
   crumbs?: {
@@ -516,7 +517,7 @@ export type BreakNames =
   | 'xl'
   | 'xxl'
 
-export type Colors = 'red' | 'blue' | 'green' | 'orange'
+export type Colors = 'red' | 'blue' | 'green' | 'orange' | 'black' | 'white'
 
 export type AlertTypes = 'success' | 'warning' | 'error' | 'info'
 
