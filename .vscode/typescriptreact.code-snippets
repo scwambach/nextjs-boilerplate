@@ -28,11 +28,12 @@
       "",
       "interface ${TM_FILENAME_BASE/(.*)/${1}/}Props extends ComponentProps {}",
       "",
-      "export const ${TM_FILENAME_BASE/(.*)/${1}/} = ({ className, testId }: ${TM_FILENAME_BASE/(.*)/${1}/}Props) => {",
+      "export const ${TM_FILENAME_BASE/(.*)/${1}/} = ({ className, testId, componentId }: ${TM_FILENAME_BASE/(.*)/${1}/}Props) => {",
       "  return (",
-      "    <div"
-      "      data-testid={testId}"
-      "      className={`${TM_FILENAME_BASE/(.*)/${1:/camelcase}/}${className ? ` ${${className}}` : ''}`}"
+      "    <div",
+      "      id={componentId}",
+      "      data-testid={testId}",
+      "      className={`${TM_FILENAME_BASE/(.*)/${1:/camelcase}/}${className ? ` ${${className}}` : ''}`}",
       "    >",
       "      <code>",
       "        <pre",
