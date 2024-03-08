@@ -1,14 +1,8 @@
 import { ImageObject } from '@components/modules'
 import { Flex } from '@components/utility'
-import { ComponentProps, ImageObjectProps } from '@utils/types'
+import { LogoBannerProps } from '@utils/types'
 
 // TODO: Create LogoBanner tests and stories
-
-interface LogoBannerProps extends ComponentProps {
-  backgroundImage?: ImageObjectProps
-  copy: string
-  logo?: ImageObjectProps
-}
 
 export const LogoBanner = ({
   backgroundImage,

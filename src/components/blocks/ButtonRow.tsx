@@ -1,12 +1,8 @@
 import { Button, SectionHeading } from '@components/modules'
 import { Container, Flex } from '@components/utility'
-import { BlockProps, ButtonProps } from '@utils/types'
+import { ButtonRowProps } from '@utils/types'
 
 // TODO: Create ButtonRow tests and stories
-
-interface ButtonRowProps extends BlockProps {
-  items: ButtonProps[]
-}
 
 export const ButtonRow = ({
   className,

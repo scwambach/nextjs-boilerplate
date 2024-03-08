@@ -77,6 +77,15 @@ export interface PostDetailsProps {
 ///////////////////////////
 ///////////////////////////
 
+export interface BoxProps extends ComponentProps {
+  children: ReactNode
+  elementTag?: keyof JSX.IntrinsicElements
+  radius?: 4 | 8 | 12
+  overflow?: boolean
+  shadow?: 1 | 2 | 3 | 4
+  style?: CSSProperties
+}
+
 export interface ContainerProps extends ComponentProps {
   containerClass?: ContainerClasses
   children: ReactNode
@@ -410,6 +419,10 @@ export interface BannerProps extends ComponentProps {
   tags?: TagProps[]
 }
 
+export interface ButtonRowProps extends BlockProps {
+  items: ButtonProps[]
+}
+
 export interface CardsProps extends BlockProps {
   items: CardProps[]
   gap?: Gaps
@@ -438,6 +451,19 @@ export interface GalleryProps extends BlockProps {
   items: ImageObjectProps[]
   gap?: Gaps
   columns?: ColumnSize
+}
+
+export interface LogoBannerProps extends ComponentProps {
+  backgroundImage?: ImageObjectProps
+  copy: string
+  logo?: ImageObjectProps
+}
+
+export interface LogoRowProps extends ComponentProps {
+  items: {
+    title: string
+    image: ImageObjectProps
+  }[]
 }
 
 export interface MapProps extends ComponentProps {

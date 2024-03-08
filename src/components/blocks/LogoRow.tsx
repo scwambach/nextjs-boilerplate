@@ -1,15 +1,8 @@
 import { ImageObject } from '@components/modules'
 import { Flex } from '@components/utility'
-import { ComponentProps, ImageObjectProps } from '@utils/types'
+import { LogoRowProps } from '@utils/types'
 
 // TODO: Create LogoRow tests and stories
-
-interface LogoRowProps extends ComponentProps {
-  items: {
-    title: string
-    image: ImageObjectProps
-  }[]
-}
 
 export const LogoRow = ({
   className,

@@ -1,14 +1,4 @@
-import { ComponentProps } from '@utils/types'
-import { CSSProperties, ReactNode } from 'react'
-
-interface BoxProps extends ComponentProps {
-  children: ReactNode
-  elementTag?: keyof JSX.IntrinsicElements
-  radius?: 4 | 8 | 12
-  overflow?: boolean
-  shadow?: 1 | 2 | 3 | 4
-  style?: CSSProperties
-}
+import { BoxProps } from '@utils/types'
 
 export const Box = ({
   className,
