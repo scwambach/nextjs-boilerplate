@@ -468,6 +468,7 @@ export interface RiverProps extends ComponentProps {
   container?: ContainerClasses
   items: {
     title?: string
+    video?: VideoBlockProps
     description: string
     image: ImageObjectProps
     links?: ButtonProps[]

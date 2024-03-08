@@ -49,12 +49,17 @@ export const VideoBlock = ({
           />
         )}
       </Box>
-      <Flex direction="column" gap="micro" className="info">
-        <Heading level={2} nonHeadingElement="p">
-          {title}
-        </Heading>
-        {copy && <Markdown>{copy}</Markdown>}
-      </Flex>
+      {title ||
+        (copy && (
+          <Flex direction="column" gap="micro" className="info">
+            {title && (
+              <Heading level={2} nonHeadingElement="p">
+                {title}
+              </Heading>
+            )}
+            {copy && <Markdown>{copy}</Markdown>}
+          </Flex>
+        ))}
     </Flex>
   )
 }

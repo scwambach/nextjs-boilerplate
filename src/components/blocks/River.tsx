@@ -1,4 +1,4 @@
-import { Button, ImageObject } from '@components/modules'
+import { Button, ImageObject, VideoBlock } from '@components/modules'
 import { Box, Container, Flex, Heading, Markdown } from '@components/utility'
 import { RiverProps } from '@utils/types'
 
@@ -35,9 +35,18 @@ export const River = ({
                 key={index + (item.title || item.description)}
               >
                 <Box overflow className="image">
-                  <ImageObject {...item.image} isBackground />
+                  {item.video ? (
+                    <VideoBlock url={item.video.url} poster={item.image} />
+                  ) : (
+                    <ImageObject {...item.image} isBackground />
+                  )}
                 </Box>
-                <div className="copy">
+                <Flex
+                  direction="column"
+                  justifyContent="center"
+                  className="copy"
+                  gap="none"
+                >
                   <Heading level={headingLevel}>{item.title}</Heading>
                   <Markdown>{item.description}</Markdown>
                   {item.links && item.links.length > 0 && (
@@ -51,7 +60,7 @@ export const River = ({
                       ))}
                     </div>
                   )}
-                </div>
+                </Flex>
               </Flex>
             )
           })}
