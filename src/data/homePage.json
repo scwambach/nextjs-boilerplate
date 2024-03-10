@@ -1,14 +1,14 @@
 {
   "title": "Welcome",
-  "description": "This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and Tailwind CSS.",
-  "keywords": ["Next.js", "TypeScript", "ESLint", "Prettier", "Tailwind CSS"],
+  "description": "This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and SCSS.",
+  "keywords": ["Next.js", "TypeScript", "ESLint", "Prettier", "SCSS"],
   "slug": "/",
   "pageComponents": [
     {
       "_type": "Banner",
       "_key": "ipwuernvp8",
       "heading":"Welcome to the Next.js Starter",
-      "message":"This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and Tailwind CSS.",
+      "message":"This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and SCSS.",
       "headingLevel": 1,
       "foregroundMedia": {
         "blockType": "module",
@@ -55,7 +55,7 @@
       "_type": "Banner",
       "_key": "ipwuernvp8",
       "heading":"Welcome to the Next.js Starter",
-      "message":"This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and Tailwind CSS.",
+      "message":"This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and SCSS.",
       "headingLevel": 1,
       "backgroundImage": {
         "query": "nature",
