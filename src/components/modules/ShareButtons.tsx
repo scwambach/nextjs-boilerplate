@@ -20,30 +20,27 @@ export const ShareButtons = ({
       data-testid={testId}
       className={`shareButtons${className ? ` ${className}` : ''}`}
     >
-      <Flex columnBreak="none" gap="xxs">
+      <Flex columnBreak="none" gap="xxs" justifyContent="flex-start">
         <Button
           type="link"
-          style={{ background: '#1DA1F2' }}
           href={`https://twitter.com/intent/tweet?text=${title}&url=https://sproutyourdesign.com/blog/${slug}`}
         >
-          <span className="desktopOnly">Share on</span>{' '}
-          <TwitterLogo weight="fill" />
+          <span className="desktopOnly">Share on</span>
+          <TwitterLogo weight="fill" size={22} />
         </Button>
         <Button
-          style={{ background: '#0077B5' }}
           type="link"
           href={`https://www.linkedin.com/shareArticle?mini=true&url=https://sproutyourdesign.com/blog/${slug}`}
         >
-          <span className="desktopOnly">Share on</span>{' '}
-          <LinkedinLogo weight="fill" />
+          <span className="desktopOnly">Share on</span>
+          <LinkedinLogo weight="fill" size={22} />
         </Button>
         <Button
-          style={{ background: '#316FF6' }}
           type="link"
           href={`https://www.facebook.com/sharer/sharer.php?u=https://sproutyourdesign.com/blog/${slug}`}
         >
-          <span className="desktopOnly">Share on</span>{' '}
-          <FacebookLogo weight="fill" />
+          <span className="desktopOnly">Share on</span>
+          <FacebookLogo weight="fill" size={22} />
         </Button>
       </Flex>
     </div>

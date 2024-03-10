@@ -62,8 +62,7 @@
       width: 100%;
       padding: $size-8 $size-16;
 
-      &:hover,
-      &:focus {
+      &:hover {
         text-decoration: none;
         opacity: 1;
         background-color: $lightGray;

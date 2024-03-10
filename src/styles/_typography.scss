@@ -97,12 +97,6 @@ a {
       text-decoration: underline;
     }
   }
-
-  &:focus {
-    @media screen and (min-width: ($sm)) {
-      outline: $size-2 solid $blue;
-    }
-  }
 }
 
 ul,

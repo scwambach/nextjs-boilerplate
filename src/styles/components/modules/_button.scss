@@ -19,7 +19,7 @@
 
   &:focus {
     @media screen and (min-width: ($sm)) {
-      outline: $size-4 solid $blue;
+      outline: $size-4 solid $red;
     }
   }
 

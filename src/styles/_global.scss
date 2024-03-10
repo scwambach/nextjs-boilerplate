@@ -6,10 +6,21 @@ html {
   }
 }
 
+* {
+  &:focus {
+    outline-offset: $size-2;
+    outline: $size-4 solid $red;
+  }
+}
+
 ::selection {
   background: $orange;
   color: $white;
   text-shadow: -1px 1px 3px $black;
+}
+
+#bodyContent {
+  outline: none;
 }
 
 .hide {
