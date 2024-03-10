@@ -25,7 +25,7 @@ export const Button = ({
   suffixIcon,
   testId,
   theme,
-  type = 'button',
+  type = 'link',
   unstyled,
 }: ButtonProps) => {
   const classList = `button ${

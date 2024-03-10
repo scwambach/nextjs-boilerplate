@@ -49,6 +49,7 @@ export const Accordion = ({
       }${className ? ` ${className}` : ''}`}
     >
       <Button
+        type="button"
         theme={theme}
         suffixIcon="CaretDown"
         onClick={() => setOpen(!open)}

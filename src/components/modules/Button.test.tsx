@@ -4,7 +4,9 @@ import { Button } from './Button'
 describe('Button Component', () => {
   it('renders button with default type', () => {
     const { getByTestId } = render(
-      <Button testId="test-button">Click me</Button>
+      <Button type="button" testId="test-button">
+        Click me
+      </Button>
     )
     const button = getByTestId('test-button')
     expect(button.tagName).toBe('BUTTON')
