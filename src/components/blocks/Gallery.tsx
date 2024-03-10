@@ -54,7 +54,7 @@ export const Gallery = ({
                 setActiveIndex(items.indexOf(item))
               }}
             >
-              <ImageObject {...item} isBackground width={200} height={200} />
+              <ImageObject {...item} isBackground width={400} height={400} />
             </Button>
           ))}
         </Grid>

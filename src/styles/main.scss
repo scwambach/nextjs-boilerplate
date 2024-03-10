@@ -31,6 +31,7 @@
 @import './components/blocks/calendar';
 @import './components/blocks/cards';
 @import './components/blocks/carousel';
+@import './components/blocks/compareTables';
 @import './components/blocks/events';
 @import './components/blocks/form';
 @import './components/blocks/gallery';
@@ -50,20 +51,21 @@
 @import './components/modules/article';
 @import './components/modules/avatar';
 @import './components/modules/badge';
-@import './components/modules/pagination';
 @import './components/modules/breadcrumbs';
 @import './components/modules/button';
 @import './components/modules/card';
+@import './components/modules/compareTable';
 @import './components/modules/dropdown';
 @import './components/modules/event';
 @import './components/modules/formField';
 @import './components/modules/imageObject';
 @import './components/modules/linkObject';
+@import './components/modules/pagination';
 @import './components/modules/person';
 @import './components/modules/sectionHeading';
-@import './components/modules/tableOfContents';
 @import './components/modules/stat';
 @import './components/modules/table';
+@import './components/modules/tableOfContents';
 @import './components/modules/tag';
 @import './components/modules/videoBlock';
 

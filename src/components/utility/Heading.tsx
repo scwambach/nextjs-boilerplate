@@ -5,7 +5,7 @@ export const Heading = ({
   children,
   className,
   componentId,
-  level,
+  level = 3,
   nonHeadingElement,
   testId,
 }: HeadingProps) => {

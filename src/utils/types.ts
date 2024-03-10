@@ -44,6 +44,7 @@ export interface GlobalProps {
   favicon: string
   siteDescription: string
   siteTitle: string
+  footerCopy?: string
   navigation: {
     label: string
     href?: string
@@ -128,7 +129,7 @@ export interface GridProps extends FlexGridProps {
 }
 
 export interface HeadingProps extends ComponentProps {
-  level: HeadingLevel
+  level?: HeadingLevel
   children: ReactNode
   nonHeadingElement?: 'p' | 'span'
 }
@@ -242,6 +243,11 @@ export interface CardProps extends ComponentProps {
   contentElement?: Elements
   headingLevel?: HeadingLevel
   links?: ButtonProps[]
+}
+
+export interface CompareTablesProps extends BlockProps {
+  items: CompareTableProps[]
+  overallTheme?: Themes
 }
 
 export interface DotsProps extends ComponentProps {
@@ -434,6 +440,17 @@ export interface CardsProps extends BlockProps {
 
 export interface CarouselProps extends ComponentProps {
   items: BannerProps[]
+}
+
+export interface CompareTableProps extends ComponentProps {
+  eyebrow?: string
+  heading: string
+  highlight?: boolean
+  items: string[]
+  link?: ButtonProps
+  subheading?: string
+  tag?: string
+  theme?: Themes
 }
 
 export interface EventsProps extends BlockProps {

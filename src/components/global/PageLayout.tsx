@@ -19,7 +19,8 @@ export const PageLayout = ({
       <div id="bodyContent" tabIndex={-1}>
         {children}
       </div>
-      <Footer title={global.siteTitle} />
+
+      <Footer title={global.siteTitle} copy={global.footerCopy} />
     </main>
   )
 }

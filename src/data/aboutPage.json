@@ -96,6 +96,65 @@
       ]
     },
     {
+      "_type": "Gallery",
+      "heading": "Nam felis",
+      "subheading": "Sed quis nulla molestie, ornare nisl et, venenatis metus.",
+      "gap": "xxs",
+      "columns": 5,
+      "items": [{
+        "query": "party 1",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 2",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 3",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 4",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 5",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 6",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 7",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 8",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 9",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 10",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      }
+    ]
+    },
+    {
       "_type": "Cards",
       "heading": "Nam felis",
       "columns": 4,
