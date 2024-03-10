@@ -58,6 +58,7 @@
           },
           "links": [
             {
+              "type": "link",
               "href": "/about",
               "label": "Learn More"
             }
@@ -73,6 +74,7 @@
           },
           "links": [
             {
+              "type": "link",
               "href": "/about",
               "label": "Learn More"
             }
@@ -88,6 +90,7 @@
           },
           "links": [
             {
+              "type": "link",
               "href": "/about",
               "label": "Learn More"
             }
@@ -239,6 +242,7 @@
           },
           "links": [
             {
+              "type": "link",
               "href": "/about",
               "label": "Learn More"
             }

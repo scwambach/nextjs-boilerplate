@@ -25,6 +25,7 @@
       },
       "links":[
         {
+          "type": "link",
           "href": "https://github.com/scwambach/nextjs-boilerplate",
           "label": "Check out the GitHub Repo"
         }
@@ -44,6 +45,7 @@
           },
           "links": [
             {
+              "type": "link",
               "href": "/about",
               "label": "Learn More"
             }
@@ -70,6 +72,7 @@
       "links":[
         {
           "theme": "tertiary",
+          "type": "link",
           "href": "https://github.com/scwambach/nextjs-boilerplate",
           "label": "Check out the GitHub Repo"
         }
@@ -163,6 +166,7 @@
           },
           "links": [
             {
+              "type": "link",
               "href": "/about",
               "label": "Learn More"
             }
