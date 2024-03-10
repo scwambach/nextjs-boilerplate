@@ -1,20 +1,10 @@
 'use client'
-import { ComponentProps } from '@utils/types'
+import { HeadingItem, TableOfContentsProps } from '@utils/types'
 import { useEffect, useState } from 'react'
 import { LinkObject } from './LinkObject'
 import { Flex, Heading, Spinner } from '@components/utility'
 
 // TODO: Create TableOfContents tests and stories
-
-interface TableOfContentsProps extends ComponentProps {
-  targetId: string
-}
-
-interface HeadingItem {
-  id: string
-  text: string
-  index: number
-}
 
 export const TableOfContents = ({
   className,

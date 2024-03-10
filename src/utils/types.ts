@@ -302,6 +302,12 @@ export interface FieldProps extends Omit<ComponentProps, 'componentId'> {
   type?: FieldTypes
 }
 
+export interface HeadingItem {
+  id: string
+  text: string
+  index: number
+}
+
 export interface ImageObjectProps extends ComponentProps {
   alt: string
   isBackground?: boolean
@@ -366,6 +372,10 @@ export interface StatProps extends ComponentProps {
   maxValue?: number
   decimals?: boolean
   tags?: string[]
+}
+
+export interface TableOfContentsProps extends ComponentProps {
+  targetId: string
 }
 
 export interface TableProps extends ComponentProps {
@@ -502,6 +512,17 @@ export interface QuoteProps extends ComponentProps {
   cite?: string
   person?: PersonProps
   bgColor?: Colors
+}
+
+export interface RichTextProps extends ComponentProps {
+  centered?: boolean
+  column2Copy?: string
+  column3Copy?: string
+  column4Copy?: string
+  componentId?: string
+  container?: ContainerClasses
+  copy: string
+  gap?: Gaps
 }
 
 export interface RiverProps extends ComponentProps {
