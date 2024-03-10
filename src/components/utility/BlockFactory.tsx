@@ -10,7 +10,14 @@ export const BlockFactory = (props: any) => {
             ? Module[object._type as keyof typeof Module]
             : Block[object._type as keyof typeof Block]
         const uniqueId = `${object.blockType}_${object._type}_${index}`
-        return <Component {...object} componentId={uniqueId} key={uniqueId} />
+        return (
+          <Component
+            {...object}
+            componentId={uniqueId}
+            key={uniqueId}
+            info={object._type === 'ContactBlock' && props.global.contact}
+          />
+        )
       })}
     </>
   )

@@ -40,20 +40,49 @@ export interface FlexGridProps extends ComponentProps {
   gap?: Gaps
 }
 
+export interface AddressProps {
+  street: string
+  city: string
+  state: string
+  zip: string
+}
+
+export interface HoursProps {
+  days: string
+  hours: string
+}
+
+export interface SocialProps {
+  icon: keyof typeof Icon
+  screenReader: string
+  href: string
+}
+
+export interface ContactInfoProps {
+  phone?: string
+  email?: string
+  address?: AddressProps
+  hours?: HoursProps[]
+  socials?: SocialProps[]
+}
+
+export interface NavProps {
+  label: string
+  href?: string
+  type?: ButtonTypes
+  subnav?: {
+    label: string
+    href: string
+  }[]
+}
+
 export interface GlobalProps {
   favicon: string
   siteDescription: string
   siteTitle: string
   footerCopy?: string
-  navigation: {
-    label: string
-    href?: string
-    type?: ButtonTypes
-    subnav?: {
-      label: string
-      href: string
-    }[]
-  }[]
+  navigation: NavProps[]
+  contact: ContactInfoProps
 }
 
 export interface BlogRollProps {
@@ -248,6 +277,12 @@ export interface CardProps extends ComponentProps {
 export interface CompareTablesProps extends BlockProps {
   items: CompareTableProps[]
   overallTheme?: Themes
+}
+
+export interface ContactBlockProps extends BlockProps {
+  marker?: MapMarker
+  info: ContactInfoProps
+  container?: ContainerClasses
 }
 
 export interface DotsProps extends ComponentProps {
@@ -495,10 +530,12 @@ export interface LogoRowProps extends ComponentProps {
 
 export interface MapProps extends ComponentProps {
   style?: CSSProperties
-  markers: {
-    lat: number
-    lng: number
-  }[]
+  markers: MapMarker[]
+}
+
+export interface MapMarker {
+  lat: number
+  lng: number
 }
 
 export interface PeopleProps extends BlockProps {

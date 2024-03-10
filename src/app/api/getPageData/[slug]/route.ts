@@ -29,4 +29,12 @@ export async function GET({ url }: any) {
       ...data,
     })
   }
+
+  if (slug === 'contact') {
+    const data = await import(`@data/contactPage.json`)
+    return NextResponse.json({
+      status: 200,
+      ...data,
+    })
+  }
 }

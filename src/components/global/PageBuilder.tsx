@@ -10,7 +10,7 @@ export const PageBuilder = ({
 }) => {
   return (
     <PageLayout global={globalData}>
-      <BlockFactory items={pageData.pageComponents} />
+      <BlockFactory items={pageData.pageComponents} global={globalData} />
     </PageLayout>
   )
 }
