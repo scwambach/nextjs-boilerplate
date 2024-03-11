@@ -30,7 +30,7 @@
     display: flex;
     gap: $size-3;
     margin-bottom: $size-8;
-    line-height: 1;
+    line-height: $line-height-single;
   }
 
   &.primary {

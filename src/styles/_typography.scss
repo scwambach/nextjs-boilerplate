@@ -1,6 +1,8 @@
-main {
+main,
+body {
   line-height: $line-height-base;
   color: $black;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1,

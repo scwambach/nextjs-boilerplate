@@ -1,6 +1,6 @@
 .pagination {
   margin-top: $size-32;
-  line-height: 1;
+  line-height: $line-height-single;
   flex-wrap: wrap;
 
   li {

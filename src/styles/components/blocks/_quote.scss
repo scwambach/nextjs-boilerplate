@@ -36,7 +36,7 @@
   cite {
     display: flex;
     gap: $size-8;
-    line-height: 1;
+    line-height: $line-height-single;
     justify-content: center;
     margin-top: $size-32;
 

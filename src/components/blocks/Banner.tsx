@@ -59,7 +59,7 @@ export const Banner = ({
             {heading}
           </Heading>
           {subheading && (
-            <p>
+            <p className="subheading">
               <strong>{subheading}</strong>
             </p>
           )}

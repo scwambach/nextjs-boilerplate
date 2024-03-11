@@ -10,7 +10,7 @@
   font-size: $size-16;
   gap: $size-5;
   letter-spacing: $size-1 / 2;
-  line-height: 1;
+  line-height: $line-height-single;
   outline-offset: $size-2;
   padding: $size-8 $size-16;
   text-align: center;
