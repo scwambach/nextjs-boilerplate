@@ -8,10 +8,13 @@
     }
   }
 
-  .image {
+  .image,
+  .video {
     position: relative;
     box-shadow: $box-shadow-2;
+  }
 
+  .image {
     @media screen and (max-width: ($md - 1)) {
       padding-bottom: 66.6666666667%;
     }

@@ -1,4 +1,4 @@
-import { Flex, Heading } from '@components/utility'
+import { Box, Flex, Heading } from '@components/utility'
 import { CompareTableProps } from '@utils/types'
 import { Button } from './Button'
 import { Check } from '@phosphor-icons/react/dist/ssr'
@@ -29,8 +29,9 @@ export const CompareTable = ({
           : 'primary'
 
   return (
-    <div
-      id={componentId}
+    <Box
+      radius={8}
+      componentId={componentId}
       data-testid={testId}
       className={`compareTable ${theme}${className ? ` ${className}` : ''}${
         highlight ? ' highlight' : ''
@@ -65,6 +66,6 @@ export const CompareTable = ({
         </Flex>
         {link && <Button {...link} theme={accent} />}
       </Flex>
-    </div>
+    </Box>
   )
 }

@@ -26,7 +26,7 @@ export const Quote = ({
         </blockquote>
         {cite && !person && (
           <cite className={headingFont.className}>
-            <Minus weight="bold" /> {cite}
+            <Minus weight="bold" size={16} /> {cite}
           </cite>
         )}
         {person && (

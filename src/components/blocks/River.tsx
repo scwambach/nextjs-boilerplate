@@ -31,10 +31,10 @@ export const River = ({
                 gap="sm"
                 testId={testId ? `item-${index}` : undefined}
                 direction={isEven ? 'row' : 'row-reverse'}
-                alignItems="stretch"
+                alignItems={item.video ? 'center' : 'stretch'}
                 key={index + (item.title || item.description)}
               >
-                <Box overflow className="image">
+                <Box overflow className={item.video ? 'video' : 'image'}>
                   {item.video ? (
                     <VideoBlock url={item.video.url} poster={item.image} />
                   ) : (
