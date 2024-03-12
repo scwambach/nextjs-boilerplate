@@ -2,6 +2,7 @@ import { FlexProps } from '@utils/types'
 
 export const Flex = ({
   alignItems = 'flex-start',
+  ariaLabel,
   breakpoint,
   children,
   className,
@@ -14,6 +15,7 @@ export const Flex = ({
   gap = 'md',
   justifyContent = 'flex-start',
   noBreak,
+  role,
   style,
   testId,
 }: FlexProps) => {
@@ -23,7 +25,9 @@ export const Flex = ({
   return (
     <Element
       id={componentId}
+      role={role}
       style={style}
+      aria-label={ariaLabel}
       className={`flex direction-${direction} align-${alignItems} justify-${justifyContent} gap-${gap} column-${
         columnBreak && !noBreak ? columnBreak : ''
       }${className ? ` ${className}` : ''}${

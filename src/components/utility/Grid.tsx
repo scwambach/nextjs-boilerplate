@@ -1,12 +1,14 @@
 import { GridProps } from '@utils/types'
 
 export const Grid = ({
+  ariaLabel,
   children,
   className,
   columns = 3,
   componentId,
   elementTag,
   gap,
+  role,
   style,
   testId,
 }: GridProps) => {
@@ -15,6 +17,8 @@ export const Grid = ({
 
   return (
     <Element
+      role={role}
+      aria-label={ariaLabel}
       id={componentId}
       style={style}
       className={`grid gap-${gap} columns-${columns}${className ? ` ${className}` : ''}`}

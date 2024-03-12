@@ -53,6 +53,15 @@ export const Cards = ({
   )
 
   useEffect(() => {
+    // remove role and aria-label from all ul elements
+    const uls = document.querySelectorAll('ul')
+    uls.forEach((ul) => {
+      ul.removeAttribute('role')
+      ul.removeAttribute('aria-label')
+    })
+  }, [])
+
+  useEffect(() => {
     if (paginated) {
       const url = new URL(window.location.href)
       const page = url.searchParams.get('page')
@@ -115,25 +124,28 @@ export const Cards = ({
           </>
         )}
         {paginated && items && items.length > itemsPerPage && (
-          <ReactPaginate
-            breakLabel="..."
-            className="pagination align-center unstyled flex gap-xs justify-center"
-            nextLabel={<CaretRight size={30} />}
-            onPageChange={handlePageClick}
-            forcePage={activePage - 1}
-            onClick={(e) => {
-              const newUrl = new URL(window.location.href)
-              newUrl.searchParams.set(
-                'page',
-                `${e.nextSelectedPage ? e.nextSelectedPage + 1 : 1}`
-              )
-              setActivePage(e.nextSelectedPage ? e.nextSelectedPage + 1 : 1)
-              window.history.pushState({}, '', newUrl.toString())
-            }}
-            pageCount={pageCount}
-            previousLabel={<CaretLeft size={30} />}
-            renderOnZeroPageCount={null}
-          />
+          <nav role="navigation" aria-label="Pagination">
+            <ReactPaginate
+              ariaLabelBuilder={(page) => `Go to page ${page}`}
+              breakLabel="..."
+              className="pagination align-center unstyled flex gap-xs justify-center"
+              nextLabel={<CaretRight size={30} />}
+              onPageChange={handlePageClick}
+              forcePage={activePage - 1}
+              onClick={(e) => {
+                const newUrl = new URL(window.location.href)
+                newUrl.searchParams.set(
+                  'page',
+                  `${e.nextSelectedPage ? e.nextSelectedPage + 1 : 1}`
+                )
+                setActivePage(e.nextSelectedPage ? e.nextSelectedPage + 1 : 1)
+                window.history.pushState({}, '', newUrl.toString())
+              }}
+              pageCount={pageCount}
+              previousLabel={<CaretLeft size={30} />}
+              renderOnZeroPageCount={null}
+            />
+          </nav>
         )}
       </Container>
     </section>

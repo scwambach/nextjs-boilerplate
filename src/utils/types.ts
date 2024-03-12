@@ -36,6 +36,8 @@ export interface BlockProps extends ComponentProps {
 export interface FlexGridProps extends ComponentProps {
   children: ReactNode
   elementTag?: Elements
+  role?: string
+  ariaLabel?: string
   style?: CSSProperties
   gap?: Gaps
 }
@@ -270,7 +272,6 @@ export interface CardProps extends ComponentProps {
   theme?: Themes
   href?: string
   contentElement?: Elements
-  headingLevel?: HeadingLevel
   links?: ButtonProps[]
 }
 

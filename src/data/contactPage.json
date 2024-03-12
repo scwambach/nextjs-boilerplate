@@ -8,6 +8,7 @@
     {
       "_type": "ContactBlock",
       "heading": "Contact Us",
+      "level": 1,
       "subheading": "Sed quis nulla molestie, ornare nisl et, venenatis metus.",
       "marker": {
         "lat": 40.7128,

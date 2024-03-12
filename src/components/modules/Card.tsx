@@ -24,7 +24,6 @@ export const Card = ({
   componentId,
   date,
   description,
-  headingLevel = 2,
   href,
   image,
   links,
@@ -68,11 +67,11 @@ export const Card = ({
             </>
           )}
           {href ? (
-            <Heading level={headingLevel}>
+            <Heading nonHeadingElement="p">
               <LinkObject href={href}>{title}</LinkObject>
             </Heading>
           ) : (
-            <Heading level={headingLevel}>{title}</Heading>
+            <Heading nonHeadingElement="p">{title}</Heading>
           )}
 
           {description && <Markdown className="copy">{description}</Markdown>}

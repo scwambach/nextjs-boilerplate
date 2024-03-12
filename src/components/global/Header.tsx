@@ -16,7 +16,9 @@ export const Header = ({
     <header>
       <div className="container">
         <Flex
+          ariaLabel="Main Navigation"
           columnBreak="none"
+          role="navigation"
           elementTag="nav"
           alignItems="center"
           justifyContent="space-between"

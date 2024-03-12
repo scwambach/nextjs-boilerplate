@@ -47,6 +47,7 @@
     },
     {
       "_type": "River",
+      "headingLevel": 2,
       "items": [
         {
           "description":
@@ -104,6 +105,7 @@
       "subheading": "Sed quis nulla molestie, ornare nisl et, venenatis metus.",
       "gap": "xxs",
       "columns": 5,
+      "level": 3,
       "items": [{
         "query": "party 1",
         "alt": "Nam felis",
@@ -160,6 +162,7 @@
     {
       "_type": "Cards",
       "heading": "Nam felis",
+      "level": 4,
       "columns": 4,
       "subheading": "Sed quis nulla molestie, ornare nisl et, venenatis metus.",
       "items": [
@@ -231,6 +234,7 @@
     {
       "_type": "River",
       "reverse": true,
+      "headingLevel": 4,
       "items": [
         {
           "description":

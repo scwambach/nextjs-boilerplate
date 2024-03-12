@@ -1,4 +1,9 @@
 describe('Navigation', () => {
+  it('should be accessible', () => {
+    cy.visit('http://localhost:3030/')
+    cy.injectAxe()
+    cy.checkA11y()
+  })
   it('should navigate to the about page', () => {
     // Start from the index page
     cy.visit('http://localhost:3030/')
