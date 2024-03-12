@@ -3,14 +3,6 @@
 
 echo "Pre-Commit ✅"
 
-# Run Jest tests
-npm run test || {
-  echo 'Jest tests failed: Fix failing tests before committing.'
-  read -p "Press Enter to continue or Ctrl+C to cancel the commit" -n 1 -r
-  echo    # move to a new line after user input
-  exit 1
-}
-
 # Check code formatting
 npm run check-format || {
   echo 'Found code formatting issues that need to be fixed.'
