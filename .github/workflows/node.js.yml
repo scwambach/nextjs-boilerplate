@@ -13,6 +13,9 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
+    env:
+      SITE_URL: ${{ vars.SITE_URL }}
+      GOOGLE_MAP_API_KEY: ${{ vars.GOOGLE_MAP_API_KEY }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
