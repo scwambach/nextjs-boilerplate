@@ -3,11 +3,6 @@
     margin-top: $size-32;
     margin-bottom: $size-32;
 
-    @media screen and (min-width: ($xxl)) {
-      margin-left: -($size-132 / 2);
-      width: calc(100% + $size-132);
-    }
-
     img {
       height: auto;
       width: 100%;
