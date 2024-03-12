@@ -23,7 +23,7 @@ jobs:
       - name: Install Dependencies
         run: |
           echo "Installing Dependencies..."
-          yarn --immutable --immutable-cache
+          npm install
 
       # - name: Build
       #   run: npm run build
@@ -34,6 +34,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          install-command: yarn --immutable --immutable-cache
+          install-command: npm install
           build: npm run build
           start: npm start
