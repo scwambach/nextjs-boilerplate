@@ -13,6 +13,10 @@ jobs:
     env:
       SITE_URL: ${{ vars.SITE_URL }}
       GOOGLE_MAP_API_KEY: ${{ vars.GOOGLE_MAP_API_KEY }}
+      NEXTAUTH_URL: ${{ vars.NEXTAUTH_URL }}
+      NEXTAUTH_SECRET: ${{ vars.NEXTAUTH_SECRET }}
+      NEXTAUTH_GITHUB_ID: ${{ vars.NEXTAUTH_GITHUB_ID }}
+      NEXTAUTH_GITHUB_SECRET: ${{ vars.NEXTAUTH_GITHUB_SECRET }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -23,7 +27,7 @@ jobs:
       - name: Install Dependencies
         run: |
           echo "Installing Dependencies..."
-          npm install
+          npm install --legacy-peer-deps
 
       - name: Run Tests
         run: npm test
@@ -32,6 +36,6 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           config-file: cypress.config.ts
-          install-command: npm install
+          install-command: npm install --legacy-peer-deps
           build: npm run build
           start: npm start

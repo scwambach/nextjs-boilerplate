@@ -26,6 +26,11 @@ const nextConfig = {
         hostname: 'fakeimg.pl',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+        port: '',
+      },
     ],
   }
 }
