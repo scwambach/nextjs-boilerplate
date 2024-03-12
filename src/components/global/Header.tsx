@@ -30,39 +30,7 @@ export const Header = ({
               {title}
             </LinkObject>
           </Heading>
-          {session ? (
-            <>
-              {session.user && session.user.name && (
-                <Avatar
-                  firstName={session.user?.name.split(' ')[0]}
-                  lastName={session.user?.name.split(' ')[1]}
-                  image={{
-                    src: session.user?.image as string,
-                    alt: session.user?.name as string,
-                  }}
-                />
-              )}
-              <Button onClick={() => signOut()} type="button">
-                Sign Out
-              </Button>
-            </>
-          ) : (
-            <Button onClick={() => signIn()} type="button">
-              Sign In
-            </Button>
-          )}
-          <Button
-            unstyled
-            className={`navToggle${menuOpen ? ' open' : ''}`}
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <span />
-            <span />
-            <span />
-            <div className="srOnly">
-              <span>Toggle Menu</span>
-            </div>
-          </Button>
+
           <Flex
             elementTag="ul"
             className={`unstyled mainNav${menuOpen ? ' open' : ''} `}
@@ -90,6 +58,40 @@ export const Header = ({
               </li>
             ))}
           </Flex>
+          {session ? (
+            <>
+              {session.user && session.user.name && (
+                <Avatar
+                  firstName={session.user?.name.split(' ')[0]}
+                  lastName={session.user?.name.split(' ')[1]}
+                  image={{
+                    src: session.user?.image as string,
+                    alt: session.user?.name as string,
+                  }}
+                />
+              )}
+              <Button onClick={() => signOut()} type="button">
+                Sign Out
+              </Button>
+            </>
+          ) : (
+            <Button onClick={() => signIn()} type="button">
+              Sign In
+            </Button>
+          )}
+          <Button
+            unstyled
+            type="button"
+            className={`navToggle${menuOpen ? ' open' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span />
+            <span />
+            <span />
+            <div className="srOnly">
+              <span>Toggle Menu</span>
+            </div>
+          </Button>
         </Flex>
       </div>
     </header>
