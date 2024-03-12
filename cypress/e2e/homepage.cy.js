@@ -7,8 +7,8 @@ describe('Navigation', () => {
   it('should navigate to the about page', () => {
     // Start from the index page
     cy.visit('/')
-    // look for the first button in the header and click it
-    cy.get('header button').click()
+    // look for the first of 3 button in the header and click it
+    cy.get('button').first().click()
     // find the link that says "About Us" and click it
     cy.get('a').contains('About Us').click()
     // wait for the about page to be loaded
