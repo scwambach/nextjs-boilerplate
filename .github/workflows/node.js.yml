@@ -23,7 +23,7 @@ jobs:
       - name: Install Dependencies
         run: |
           echo "Installing Dependencies..."
-          npm install
+          yarn --immutable --immutable-cache
 
       # - name: Build
       #   run: npm run build
