@@ -6,9 +6,9 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "dev": "next dev -p 3030",
-    "dev:test": "concurrently \"next dev -p 3030\" \"yarn test:watch\"",
-    "dev:storybook": "concurrently \"next dev -p 3030\" \"yarn storybook\"",
-    "dev:fullapp": "concurrently \"next dev -p 3030\" \"yarn storybook\" \"yarn test:watch\"",
+    "dev:test": "concurrently \"next dev -p 3030\" \"npm run test:watch\"",
+    "dev:storybook": "concurrently \"next dev -p 3030\" \"npm run storybook\"",
+    "dev:fullapp": "concurrently \"next dev -p 3030\" \"npm run storybook\" \"npm run test:watch\"",
     "build": "next build",
     "start": "next start -p 3030",
     "lint": "next lint",
@@ -20,6 +20,9 @@
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
     "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build"
+  },
+  "engines": {
+    "yarn": "please-use-npm"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.15",
@@ -73,6 +76,5 @@
     "prettier": "^3.2.5",
     "sass": "^1.71.1",
     "storybook": "^7.6.17"
-  },
-  "packageManager": "yarn@4.1.0"
+  }
 }
