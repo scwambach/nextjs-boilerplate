@@ -3,6 +3,7 @@
   "siteTitle": "Next.js Starter Boilerplate",
   "siteDescription": "My site description",
   "favicon": "/favicon.ico",
+  "siteImage": "/image2.jpg",
   "navigation": [
     {
       "label": "Home",

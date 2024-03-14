@@ -1,5 +1,6 @@
 {
   "title": "Contact Us",
+  "ogImage": "/image4.jpg",
   "slug": "contact",
   "level": 1,
   "keywords": ["Next.js", "TypeScript", "ESLint", "Prettier", "Tailwind CSS"],

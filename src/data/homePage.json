@@ -3,6 +3,7 @@
   "description": "This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and SCSS.",
   "keywords": ["Next.js", "TypeScript", "ESLint", "Prettier", "SCSS"],
   "slug": "/",
+  "ogImage": "/image1.jpg",
   "pageComponents": [
     {
       "_type": "Banner",
