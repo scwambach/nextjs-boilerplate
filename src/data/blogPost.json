@@ -1,6 +1,7 @@
 {
   "title": "Aenean fermentum luctus dui eu ullamcorper",
   "slug": "post",
+  "ogImage": "/image3.jpg",
   "publishedAt": "2022-01-01T00:00:00Z",
   "summary": "Quisque diam est, feugiat ut volutpat vitae, varius sed justo. In vel condimentum nisl. Fusce ullamcorper, mauris vel tempus tincidunt, mi lorem tempus nisl, non faucibus turpis leo a nibh. Sed eu felis ac risus pharetra tincidunt sed ac urna. Praesent ornare venenatis ante ornare aliquam. Ut aliquet lacinia massa sit amet condimentum. Vestibulum a urna lectus. Nulla at euismod eros.",
   "image": {

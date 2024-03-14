@@ -82,6 +82,7 @@ export interface GlobalProps {
   favicon: string
   siteDescription: string
   siteTitle: string
+  siteImage?: string
   footerCopy?: string
   navigation: NavProps[]
   contact: ContactInfoProps
@@ -95,6 +96,7 @@ export interface PostDetailsProps {
   title: string
   slug: string
   publishedAt: string
+  ogImage?: ImageObjectProps
   summary: string
   image: ImageObjectProps
   tags?: TagProps[]

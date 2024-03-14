@@ -1,6 +1,7 @@
 {
   "title": "Team",
   "slug": "team",
+  "ogImage": "/image5.jpg",
   "keywords": ["Next.js", "TypeScript", "ESLint", "Prettier", "Tailwind CSS"],
   "description": "Sed quis nulla molestie, ornare nisl et, venenatis metus.",
   "pageComponents": [

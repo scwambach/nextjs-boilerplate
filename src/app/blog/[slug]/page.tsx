@@ -20,7 +20,9 @@ async function getData() {
   return { globalData, postData }
 }
 
-export const revalidate = 0
+const oneDay = 60 * 60 * 24
+
+export const revalidate = process.env.NODE_ENV === 'development' ? 0 : oneDay
 
 export async function generateMetadata({}) {
   const globalData: any = await fetch(
@@ -30,10 +32,15 @@ export async function generateMetadata({}) {
 
   const globalJson: GlobalProps = await globalData.json()
   const postJson: PostDetailsProps = await postData.json()
+  const ogImage = postData.ogImage ? postData.ogImage : globalData.siteImage
+  const description = postData.description || globalData.siteDescription
 
   return {
     title: `${postJson.title} | Blog | ${globalJson.siteTitle}`,
-    description: postJson.summary,
+    description,
+    openGraph: {
+      images: [ogImage],
+    },
     icons: {
       icon: '/favicon.svg',
     },

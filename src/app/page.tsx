@@ -12,17 +12,25 @@ async function getData() {
   }
 }
 
-export const revalidate = 0
+const oneDay = 60 * 60 * 24
+
+export const revalidate = process.env.NODE_ENV === 'development' ? 0 : oneDay
 
 export async function generateMetadata() {
   const { globalData, pageData }: { globalData: GlobalProps; pageData: any } =
     await getData()
 
+  const ogImage = pageData.ogImage ? pageData.ogImage : globalData.siteImage
+  const description = pageData.description || globalData.siteDescription
+
   return {
     title: pageData.title
       ? `${pageData.title} | ${globalData.siteTitle}`
       : globalData.siteTitle,
-    description: globalData.siteDescription,
+    description,
+    openGraph: {
+      images: [ogImage],
+    },
     icons: {
       icon: '/favicon.svg',
     },
