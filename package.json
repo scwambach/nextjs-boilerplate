@@ -26,7 +26,6 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.15",
-    "@picocss/pico": "^2.0.6",
     "@react-google-maps/api": "^2.19.3",
     "@types/node": "20.11.27",
     "@types/react-dom": "18.2.22",
