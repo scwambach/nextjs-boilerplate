@@ -133,7 +133,6 @@ export const WidthForeground: Story = {
     subheading: 'Quisque iaculis tincidunt',
     foregroundMedia: {
       _type: 'ImageObject',
-      blockType: 'module',
       ...ForegroundImage,
     },
   },

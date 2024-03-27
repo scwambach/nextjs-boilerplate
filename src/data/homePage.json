@@ -12,7 +12,6 @@
       "message":"This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and SCSS.",
       "headingLevel": 1,
       "foregroundMedia": {
-        "blockType": "module",
         "_type": "ImageObject",
         "src": "/marketing.png",
         "height": 682,

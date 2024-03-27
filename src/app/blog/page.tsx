@@ -1,5 +1,5 @@
 import { Banner, Cards } from '@components/blocks'
-import { PageLayout } from '@components/global'
+import { PageLayout } from '@components/global/PageLayout'
 import { BlogRollProps, GlobalProps } from '@utils/types'
 
 async function getData() {

@@ -1,5 +1,5 @@
 import { Banner, Cards } from '@components/blocks'
-import { PageLayout } from '@components/global'
+import { PageLayout } from '@components/global/PageLayout'
 import { ShareButtons } from '@components/modules/ShareButtons'
 import { TableOfContents } from '@components/modules/TableOfContents'
 import { Container, Flex, Markdown, Spacer } from '@components/utility'
