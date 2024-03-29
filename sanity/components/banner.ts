@@ -1,27 +1,20 @@
 import { Flag } from '@phosphor-icons/react'
-import { colors, headingProps, widths } from '../docTypes/common'
+import {
+  colors,
+  groups,
+  headingProps,
+  settingsProps,
+  widths,
+} from '../docTypes/common'
 
 export const banner = {
   name: 'banner',
   title: 'Banner',
   type: 'object',
-  groups: [
-    {
-      name: 'settings',
-      title: 'Settings',
-    },
-    {
-      name: 'common',
-      title: 'Common',
-    },
-    {
-      name: 'content',
-      title: 'Content',
-      default: true,
-    },
-  ],
+  groups,
   fields: [
     ...headingProps({ group: 'content' }),
+    ...settingsProps({}),
     {
       name: 'contained',
       title: 'Contained',

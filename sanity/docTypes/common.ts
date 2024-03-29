@@ -34,6 +34,15 @@ export const seo = [
   },
 ]
 
+export const settingsProps = (props: { group?: string }) => [
+  {
+    name: 'className',
+    title: 'Class Name',
+    group: props.group || 'settings',
+    type: 'string',
+  },
+]
+
 export const headingProps = (props: { group?: string }) => [
   {
     name: 'heading',
@@ -121,4 +130,26 @@ export const colors = [
   { title: 'Orange', value: 'orange' },
   { title: 'Black', value: 'black' },
   { title: 'White', value: 'white' },
+]
+
+export const themes = [
+  { title: 'Default', value: 'default' },
+  { title: 'Primary', value: 'primary' },
+  { title: 'Secondary', value: 'secondary' },
+]
+
+export const groups = [
+  {
+    name: 'settings',
+    title: 'Settings',
+  },
+  {
+    name: 'common',
+    title: 'Common',
+  },
+  {
+    name: 'content',
+    title: 'Content',
+    default: true,
+  },
 ]

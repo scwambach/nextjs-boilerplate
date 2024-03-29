@@ -10,7 +10,7 @@ export const page = {
       name: 'pageComponents',
       title: 'Page Components',
       type: 'array',
-      of: [{ type: 'banner' }],
+      of: [{ type: 'banner' }, { type: 'buttonRow' }, { type: 'cards' }],
     },
   ],
 }

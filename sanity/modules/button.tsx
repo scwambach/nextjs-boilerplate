@@ -1,4 +1,7 @@
+import * as Icon from '@phosphor-icons/react'
+import { RadioButton } from '@phosphor-icons/react'
 import { icons } from '../icons'
+import { IconSelector } from '@components/utility'
 
 export const button = {
   name: 'button',
@@ -113,4 +116,30 @@ export const button = {
         }),
     },
   ],
+  preview: {
+    select: {
+      label: 'label',
+      theme: 'theme',
+      icon: 'icon',
+      suffix: 'suffixIcon',
+    },
+    prepare(selection: {
+      label: string
+      theme: string
+      icon: keyof typeof Icon
+      suffix: keyof typeof Icon
+    }) {
+      const { label, theme, icon, suffix } = selection
+
+      const mediaIcon = icon || suffix
+
+      return {
+        title: label || 'Button',
+        subtitle: `${label ? 'Button ' : ''}${theme || 'Primary'}${
+          icon ? ` with ${icon}` : ''
+        }`,
+        media: mediaIcon ? <IconSelector icon={mediaIcon} /> : RadioButton,
+      }
+    },
+  },
 }
