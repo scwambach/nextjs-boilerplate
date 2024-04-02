@@ -1,4 +1,3 @@
-import * as Icon from '@phosphor-icons/react'
 import { RadioButton } from '@phosphor-icons/react'
 import { icons } from '../icons'
 import { IconSelector } from '@components/utility'
@@ -7,22 +6,15 @@ export const button = {
   name: 'button',
   title: 'Button',
   type: 'object',
-  fieldsets: [
+  groups: [
     {
       name: 'settings',
       title: 'Settings',
-      options: {
-        collapsible: true,
-        collapsed: true,
-      },
     },
     {
       name: 'content',
       title: 'Content',
-      options: {
-        collapsible: true,
-        collapsed: false,
-      },
+      default: true,
     },
   ],
   fields: [
@@ -30,19 +22,19 @@ export const button = {
       name: 'label',
       title: 'Label',
       type: 'string',
-      fieldset: 'content',
+      group: 'content',
     },
     {
       name: 'role',
       title: 'Role',
       type: 'string',
-      fieldset: 'settings',
+      group: 'settings',
     },
     {
       name: 'theme',
       title: 'Theme',
       type: 'string',
-      fieldset: 'content',
+      group: 'content',
       options: {
         list: [
           { title: 'Primary', value: 'primary' },
@@ -55,43 +47,43 @@ export const button = {
       name: 'small',
       title: 'Small',
       type: 'boolean',
-      fieldset: 'settings',
+      group: 'settings',
     },
     {
       name: 'disabled',
       title: 'Disabled',
       type: 'boolean',
-      fieldset: 'settings',
+      group: 'settings',
     },
     {
       name: 'unstyled',
       title: 'Unstyled',
       type: 'boolean',
-      fieldset: 'settings',
+      group: 'settings',
     },
     {
       name: 'ariaExpanded',
       title: 'Aria Expanded',
       type: 'boolean',
-      fieldset: 'settings',
+      group: 'settings',
     },
     {
       name: 'ariaControls',
       title: 'Aria Controls',
       type: 'string',
-      fieldset: 'settings',
+      group: 'settings',
     },
     {
       name: 'ariaLabel',
       title: 'Aria Label',
       type: 'string',
-      fieldset: 'settings',
+      group: 'settings',
     },
     {
       name: 'icon',
       title: 'Icon',
       type: 'string',
-      fieldset: 'content',
+      group: 'content',
       options: {
         list: icons,
       },
@@ -100,7 +92,7 @@ export const button = {
       name: 'suffixIcon',
       title: 'Suffix Icon',
       type: 'string',
-      fieldset: 'content',
+      group: 'content',
       options: {
         list: icons,
       },
@@ -109,7 +101,7 @@ export const button = {
       name: 'href',
       title: 'Href',
       type: 'url',
-      fieldset: 'content',
+      group: 'content',
       validation: (Rule: any) =>
         Rule.uri({
           allowRelative: true,
@@ -123,12 +115,7 @@ export const button = {
       icon: 'icon',
       suffix: 'suffixIcon',
     },
-    prepare(selection: {
-      label: string
-      theme: string
-      icon: keyof typeof Icon
-      suffix: keyof typeof Icon
-    }) {
+    prepare(selection: any) {
       const { label, theme, icon, suffix } = selection
 
       const mediaIcon = icon || suffix

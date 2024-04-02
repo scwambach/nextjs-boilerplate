@@ -105,6 +105,13 @@ export const headingProps = (props: { group?: string }) => [
   },
 ]
 
+export const pageComponents = [
+  { type: 'banner' },
+  { type: 'buttonRow' },
+  { type: 'cards' },
+  { type: 'compareTables' },
+]
+
 export const headings = [
   { title: 'H1', value: '1' },
   { title: 'H2', value: '2' },

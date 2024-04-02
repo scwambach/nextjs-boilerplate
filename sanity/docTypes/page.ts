@@ -1,4 +1,4 @@
-import { seo } from './common'
+import { pageComponents, seo } from './common'
 
 export const page = {
   name: 'page',
@@ -10,7 +10,7 @@ export const page = {
       name: 'pageComponents',
       title: 'Page Components',
       type: 'array',
-      of: [{ type: 'banner' }, { type: 'buttonRow' }, { type: 'cards' }],
+      of: pageComponents,
     },
   ],
 }
