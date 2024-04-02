@@ -109,7 +109,9 @@ export const pageComponents = [
   { type: 'banner' },
   { type: 'buttonRow' },
   { type: 'cards' },
+  { type: 'carousel' },
   { type: 'compareTables' },
+  { type: 'contactBlock' },
 ]
 
 export const headings = [

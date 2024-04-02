@@ -1,9 +1,11 @@
+import { Star } from '@phosphor-icons/react'
 import { groups, settingsProps, themes } from '../docTypes/common'
 
 export const compareTable = {
   name: 'compareTable',
   title: 'Compare Table',
   type: 'object',
+  icon: Star,
   groups,
   fields: [
     ...settingsProps({}),
