@@ -112,6 +112,7 @@ export const pageComponents = [
   { type: 'carousel' },
   { type: 'compareTables' },
   { type: 'contactBlock' },
+  { type: 'events' },
 ]
 
 export const headings = [

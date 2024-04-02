@@ -11,6 +11,8 @@ import { type SchemaTypeDefinition } from 'sanity'
 import { marker } from './modules/marker'
 import { social } from './modules/social'
 import { contactBlock } from './components/contactBlock'
+import { event } from './docTypes/event'
+import { events } from './components/events'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -23,6 +25,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     compareTable,
     compareTables,
     contactBlock,
+    event,
+    events,
     marker,
     page,
     social,
