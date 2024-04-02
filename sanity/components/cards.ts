@@ -1,5 +1,11 @@
 import { Cards } from '@phosphor-icons/react'
-import { groups, headingProps, settingsProps } from '../docTypes/common'
+import {
+  columnSizes,
+  gaps,
+  groups,
+  headingProps,
+  settingsProps,
+} from '../docTypes/common'
 
 export const cards = {
   name: 'cards',
@@ -10,8 +16,8 @@ export const cards = {
     ...headingProps({ group: 'content' }),
     ...settingsProps({}),
     {
-      name: 'cards',
-      title: 'Cards',
+      name: 'items',
+      title: 'Items',
       type: 'array',
       group: 'content',
       of: [
@@ -20,14 +26,44 @@ export const cards = {
         },
       ],
     },
+    {
+      name: 'gap',
+      title: 'Gap',
+      type: 'string',
+      group: 'settings',
+      options: {
+        list: gaps,
+      },
+    },
+    {
+      name: 'columns',
+      title: 'Columns',
+      group: 'settings',
+      type: 'string',
+      options: {
+        list: columnSizes,
+      },
+    },
+    {
+      name: 'paginated',
+      title: 'Paginated',
+      type: 'boolean',
+      group: 'settings',
+    },
+    {
+      name: 'button',
+      title: 'Button',
+      type: 'button',
+      group: 'content',
+    },
   ],
   preview: {
     select: {
-      title: 'title',
-      cards: 'cards',
+      title: 'heading',
+      cards: 'items',
     },
     prepare(selection: any) {
-      const { title, cards } = selection
+      const { title, cards = [] } = selection
       return {
         title: title || 'Cards',
         subtitle: `${title ? 'Cards ' : ''}${cards.length} cards`,

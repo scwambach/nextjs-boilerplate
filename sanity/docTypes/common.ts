@@ -124,6 +124,8 @@ export const headings = [
   { title: 'H6', value: '6' },
 ]
 
+export const columnSizes = [1, 2, 3, 4, 5, 6]
+
 export const widths = [
   { title: 'Wider', value: 'wider' },
   { title: 'Wide', value: 'wide' },
@@ -146,6 +148,19 @@ export const themes = [
   { title: 'Default', value: 'default' },
   { title: 'Primary', value: 'primary' },
   { title: 'Secondary', value: 'secondary' },
+]
+
+export const gaps = [
+  { title: 'None', value: 'none' },
+  { title: 'Micro', value: 'miro' },
+  { title: 'XX Small', value: 'xxs' },
+  { title: 'Extra Small', value: 'xs' },
+  { title: 'Small', value: 'sm' },
+  { title: 'Medium', value: 'md' },
+  { title: 'Large', value: 'lg' },
+  { title: 'Extra Large', value: 'xl' },
+  { title: 'XX Large', value: 'xxl' },
+  { title: 'Mega', value: 'mega' },
 ]
 
 export const groups = [
