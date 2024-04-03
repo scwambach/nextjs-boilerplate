@@ -19,6 +19,8 @@ import { quote } from './components/quote'
 import { river } from './components/river'
 import { riverObject } from './modules/riverObject'
 import { social } from './modules/social'
+import { stat } from './modules/stat'
+import { stats } from './components/stats'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -42,5 +44,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     river,
     riverObject,
     social,
+    stat,
+    stats,
   ],
 }

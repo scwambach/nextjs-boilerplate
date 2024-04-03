@@ -126,6 +126,7 @@ export const pageComponents = [
   { type: 'logoBanner' },
   { type: 'quote' },
   { type: 'river' },
+  { type: 'stats' },
 ]
 
 export const headings = [
