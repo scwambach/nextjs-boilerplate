@@ -113,6 +113,9 @@ export const pageComponents = [
   { type: 'compareTables' },
   { type: 'contactBlock' },
   { type: 'events' },
+  { type: 'gallery' },
+  { type: 'logoBanner' },
+  { type: 'quote' },
 ]
 
 export const headings = [
