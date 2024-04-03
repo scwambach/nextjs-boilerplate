@@ -16,35 +16,6 @@ export const banner = {
     ...headingProps({ group: 'content' }),
     ...settingsProps({}),
     {
-      name: 'contained',
-      title: 'Contained',
-      group: 'settings',
-      type: 'boolean',
-    },
-    {
-      name: 'overlap',
-      title: 'Overlap',
-      group: 'settings',
-      type: 'boolean',
-    },
-    {
-      name: 'micro',
-      title: 'Micro',
-      group: 'settings',
-      type: 'boolean',
-      description:
-        'Enabling this will make the banner much smaller, used for things like mid-page callouts.',
-    },
-    {
-      name: 'containedWidth',
-      title: 'Contained Width',
-      group: 'settings',
-      type: 'string',
-      options: {
-        list: widths,
-      },
-    },
-    {
       name: 'bgColor',
       group: 'settings',
       title: 'Background Color',
@@ -54,9 +25,43 @@ export const banner = {
       },
     },
     {
+      name: 'contained',
+      title: 'Contained',
+      group: 'settings',
+      hidden: ({ parent }: any) => parent?.overlap,
+      type: 'boolean',
+    },
+    {
+      name: 'overlap',
+      title: 'Overlap',
+      group: 'settings',
+      hidden: ({ parent }: any) => parent?.contained,
+      type: 'boolean',
+    },
+    {
+      name: 'micro',
+      title: 'Micro',
+      hidden: ({ parent }: any) => !parent?.contained,
+      group: 'settings',
+      type: 'boolean',
+      description:
+        'Enabling this will make the banner much smaller, used for things like mid-page callouts.',
+    },
+    {
+      name: 'containedWidth',
+      hidden: ({ parent }: any) => !parent?.contained,
+      title: 'Contained Width',
+      group: 'settings',
+      type: 'string',
+      options: {
+        list: widths,
+      },
+    },
+    {
       name: 'boxBgColor',
       title: 'Box Background Color',
       group: 'settings',
+      hidden: ({ parent }: any) => !parent?.contained,
       description:
         'This is the background color of the inner box, but only works when `contained` is active.',
       type: 'string',

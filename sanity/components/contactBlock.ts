@@ -13,6 +13,7 @@ export const contactBlock = {
       name: 'marker',
       title: 'Marker',
       group: 'content',
+      validation: (Rule: any) => Rule.required(),
       type: 'marker',
     },
     {

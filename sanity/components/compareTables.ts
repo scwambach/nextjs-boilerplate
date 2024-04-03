@@ -22,6 +22,7 @@ export const compareTables = {
       name: 'items',
       title: 'Items',
       type: 'array',
+      validation: (Rule: any) => Rule.min(1).max(4),
       group: 'content',
       of: [{ type: 'compareTable' }],
     },

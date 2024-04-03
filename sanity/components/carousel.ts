@@ -12,6 +12,7 @@ export const carousel = {
       name: 'items',
       title: 'Items',
       type: 'array',
+      validation: (Rule: any) => Rule.min(1),
       group: 'content',
       of: [{ type: 'banner' }],
     },
