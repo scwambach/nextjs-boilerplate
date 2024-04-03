@@ -19,6 +19,7 @@ export const contactBlock = {
     {
       name: 'info',
       title: 'Contact Info',
+      validation: (Rule: any) => Rule.required(),
       group: 'content',
       type: 'object',
       fields: [
