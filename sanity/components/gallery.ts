@@ -1,4 +1,4 @@
-import { Image } from '@phosphor-icons/react'
+import { Images } from '@phosphor-icons/react'
 import {
   columnSizes,
   gaps,
@@ -54,7 +54,7 @@ export const gallery = {
       return {
         title: title || 'Gallery',
         subtitle: `${items.length} items`,
-        media: Image,
+        media: Images,
       }
     },
   },
