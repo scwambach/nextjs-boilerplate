@@ -1,3 +1,4 @@
+import { type SchemaTypeDefinition } from 'sanity'
 import { banner } from './components/banner'
 import { button } from './modules/button'
 import { buttonRow } from './components/buttonRow'
@@ -15,8 +16,9 @@ import { marker } from './modules/marker'
 import { page } from './docTypes/page'
 import { person } from './docTypes/person'
 import { quote } from './components/quote'
+import { river } from './components/river'
+import { riverObject } from './modules/riverObject'
 import { social } from './modules/social'
-import { type SchemaTypeDefinition } from 'sanity'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -32,11 +34,13 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     event,
     events,
     gallery,
-    person,
     logoBanner,
     marker,
     page,
+    person,
     quote,
+    river,
+    riverObject,
     social,
   ],
 }

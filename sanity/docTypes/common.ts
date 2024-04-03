@@ -59,10 +59,19 @@ export const headingProps = (props: { group?: string }) => [
       list: headings,
     },
   },
-  {
+  richTextObject({
     name: 'subheading',
     title: 'Subheading',
+    group: props.group,
+  }),
+]
+
+export const richTextObject = (props: any) => {
+  return {
+    name: props.name,
+    title: props.title,
     type: 'array',
+    validation: props.validation,
     group: props.group,
     of: [
       {
@@ -102,8 +111,8 @@ export const headingProps = (props: { group?: string }) => [
         },
       },
     ],
-  },
-]
+  }
+}
 
 export const pageComponents = [
   { type: 'banner' },
@@ -116,6 +125,7 @@ export const pageComponents = [
   { type: 'gallery' },
   { type: 'logoBanner' },
   { type: 'quote' },
+  { type: 'river' },
 ]
 
 export const headings = [
