@@ -1,6 +1,7 @@
 import { RadioButton } from '@phosphor-icons/react'
 import { icons } from '../icons'
 import { IconSelector } from '@components/utility'
+import { themes } from '../docTypes/common'
 
 export const button = {
   name: 'button',
@@ -23,6 +24,7 @@ export const button = {
       title: 'Label',
       type: 'string',
       group: 'content',
+      validation: (Rule: any) => Rule.required(),
     },
     {
       name: 'role',
@@ -36,11 +38,7 @@ export const button = {
       type: 'string',
       group: 'content',
       options: {
-        list: [
-          { title: 'Primary', value: 'primary' },
-          { title: 'Secondary', value: 'secondary' },
-          { title: 'Tertiary', value: 'tertiary' },
-        ],
+        list: themes,
       },
     },
     {
@@ -105,7 +103,7 @@ export const button = {
       validation: (Rule: any) =>
         Rule.uri({
           allowRelative: true,
-        }),
+        }).required(),
     },
   ],
   preview: {

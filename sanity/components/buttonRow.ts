@@ -14,11 +14,8 @@ export const buttonRow = {
       title: 'Buttons',
       type: 'array',
       group: 'content',
-      of: [
-        {
-          type: 'button',
-        },
-      ],
+      validation: (Rule: any) => Rule.required().min(1).max(3),
+      of: [{ type: 'button' }],
     },
   ],
   preview: {
