@@ -1,50 +1,64 @@
 import { type SchemaTypeDefinition } from 'sanity'
-import { banner } from './components/banner'
-import { button } from './modules/button'
-import { buttonRow } from './components/buttonRow'
-import { card } from './modules/card'
-import { cards } from './components/cards'
-import { carousel } from './components/carousel'
-import { compareTable } from './modules/compareTable'
-import { compareTables } from './components/compareTables'
-import { contactBlock } from './components/contactBlock'
+// docTypes
 import { event } from './docTypes/event'
-import { events } from './components/events'
-import { gallery } from './components/gallery'
-import { logoBanner } from './components/logoBanner'
-import { marker } from './modules/marker'
 import { page } from './docTypes/page'
 import { person } from './docTypes/person'
-import { quote } from './components/quote'
-import { river } from './components/river'
+// modules
+import { button } from './modules/button'
+import { card } from './modules/card'
+import { compareTable } from './modules/compareTable'
+import { marker } from './modules/marker'
 import { riverObject } from './modules/riverObject'
 import { social } from './modules/social'
 import { stat } from './modules/stat'
+import { tab } from './modules/tab'
+// components
+import { banner } from './components/banner'
+import { buttonRow } from './components/buttonRow'
+import { cards } from './components/cards'
+import { carousel } from './components/carousel'
+import { compareTables } from './components/compareTables'
+import { contactBlock } from './components/contactBlock'
+import { events } from './components/events'
+import { gallery } from './components/gallery'
+import { logoBanner } from './components/logoBanner'
+import { map } from './components/map'
+import { people } from './components/people'
+import { quote } from './components/quote'
+import { river } from './components/river'
 import { stats } from './components/stats'
+import { tabs } from './components/tabs'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
-    banner,
-    button,
-    buttonRow,
-    card,
-    cards,
-    carousel,
-    compareTable,
-    compareTables,
-    contactBlock,
+    // docTypes
     event,
-    events,
-    gallery,
-    logoBanner,
-    marker,
     page,
     person,
-    quote,
-    river,
+    // modules
+    button,
+    card,
+    compareTable,
+    marker,
     riverObject,
     social,
     stat,
+    tab,
+    // components
+    banner,
+    buttonRow,
+    cards,
+    carousel,
+    compareTables,
+    contactBlock,
+    events,
+    gallery,
+    logoBanner,
+    map,
+    people,
+    quote,
+    river,
     stats,
+    tabs,
   ],
 }

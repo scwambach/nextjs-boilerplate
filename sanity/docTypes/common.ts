@@ -124,9 +124,12 @@ export const pageComponents = [
   { type: 'events' },
   { type: 'gallery' },
   { type: 'logoBanner' },
+  { type: 'people' },
+  { type: 'map' },
   { type: 'quote' },
   { type: 'river' },
   { type: 'stats' },
+  { type: 'tabs' },
 ]
 
 export const headings = [
