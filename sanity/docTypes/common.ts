@@ -77,6 +77,7 @@ export const richTextObject = (props: any) => {
     type: 'array',
     validation: props.validation,
     group: props.group,
+    fieldset: props.fieldset,
     of: [
       {
         type: 'block',

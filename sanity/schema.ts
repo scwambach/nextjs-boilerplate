@@ -35,6 +35,8 @@ import { tabs } from './components/tabs'
 import { timeline } from './components/timeline'
 import { videos } from './components/videos'
 import { navigation } from './docTypes/navigation'
+import { post } from './docTypes/post'
+import { tag } from './docTypes/tag'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -43,6 +45,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     globalSettings,
     page,
     person,
+    post,
+    tag,
     navigation,
     // modules
     button,
