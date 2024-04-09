@@ -12,6 +12,7 @@ import { riverObject } from './modules/riverObject'
 import { social } from './modules/social'
 import { stat } from './modules/stat'
 import { tab } from './modules/tab'
+import { video } from './modules/video'
 // components
 import { banner } from './components/banner'
 import { buttonRow } from './components/buttonRow'
@@ -28,6 +29,8 @@ import { quote } from './components/quote'
 import { river } from './components/river'
 import { stats } from './components/stats'
 import { tabs } from './components/tabs'
+import { logoRow } from './components/logoRow'
+import { videos } from './components/videos'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -44,6 +47,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     social,
     stat,
     tab,
+    video,
     // components
     banner,
     buttonRow,
@@ -54,11 +58,13 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     events,
     gallery,
     logoBanner,
+    logoRow,
     map,
     people,
     quote,
     river,
     stats,
     tabs,
+    videos,
   ],
 }

@@ -3,11 +3,13 @@ export const seo = [
     name: 'title',
     title: 'Title',
     type: 'string',
+    validation: (Rule: any) => Rule.required(),
   },
   {
     name: 'slug',
     title: 'Slug',
     type: 'slug',
+    validation: (Rule: any) => Rule.required(),
     options: {
       source: 'title',
     },
@@ -16,6 +18,7 @@ export const seo = [
     name: 'ogImage',
     title: 'Open Graph Image',
     type: 'image',
+    validation: (Rule: any) => Rule.required(),
     options: {
       hotspot: true,
     },
@@ -23,6 +26,7 @@ export const seo = [
   {
     name: 'description',
     title: 'Description',
+    validation: (Rule: any) => Rule.required(),
     type: 'text',
     rows: 3,
   },
@@ -124,12 +128,14 @@ export const pageComponents = [
   { type: 'events' },
   { type: 'gallery' },
   { type: 'logoBanner' },
+  { type: 'logoRow' },
   { type: 'people' },
   { type: 'map' },
   { type: 'quote' },
   { type: 'river' },
   { type: 'stats' },
   { type: 'tabs' },
+  { type: 'videos' },
 ]
 
 export const headings = [
