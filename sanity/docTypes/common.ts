@@ -82,6 +82,7 @@ export const richTextObject = (props: any) => {
         type: 'block',
         styles: [
           { title: 'Normal', value: 'normal' },
+          { title: 'H1', value: 'h1' },
           { title: 'H2', value: 'h2' },
           { title: 'H3', value: 'h3' },
           { title: 'H4', value: 'h4' },
@@ -132,9 +133,11 @@ export const pageComponents = [
   { type: 'people' },
   { type: 'map' },
   { type: 'quote' },
+  { type: 'richText' },
   { type: 'river' },
   { type: 'stats' },
   { type: 'tabs' },
+  { type: 'timeline' },
   { type: 'videos' },
 ]
 
