@@ -1,6 +1,9 @@
+import { CalendarCheck } from '@phosphor-icons/react'
+
 export const event = {
   name: 'event',
   title: 'Event',
+  icon: CalendarCheck,
   type: 'document',
   fields: [
     {
@@ -64,4 +67,19 @@ export const event = {
       of: [{ type: 'button' }],
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+      date: 'date',
+      media: 'poster',
+    },
+    prepare(selection: any) {
+      const { title, date, media } = selection
+      return {
+        title,
+        subtitle: date,
+        media,
+      }
+    },
+  },
 }
