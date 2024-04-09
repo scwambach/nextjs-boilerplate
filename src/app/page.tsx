@@ -12,10 +12,6 @@ async function getData() {
   }
 }
 
-const oneDay = 60 * 60 * 24
-
-export const revalidate = process.env.NODE_ENV === 'development' ? 0 : oneDay
-
 export async function generateMetadata() {
   const { globalData, pageData }: { globalData: GlobalProps; pageData: any } =
     await getData()

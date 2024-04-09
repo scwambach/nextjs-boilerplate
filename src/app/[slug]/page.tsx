@@ -19,10 +19,6 @@ async function getData(slug: string) {
   }
 }
 
-const oneDay = 60 * 60 * 24
-
-export const revalidate = process.env.NODE_ENV === 'development' ? 0 : oneDay
-
 export async function generateMetadata({
   params: { slug },
 }: {

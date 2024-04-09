@@ -12,10 +12,6 @@ async function getData() {
   return { globalData, blogData }
 }
 
-const oneDay = 60 * 60 * 24
-
-export const revalidate = process.env.NODE_ENV === 'development' ? 0 : oneDay
-
 export async function generateMetadata({}) {
   const globalData = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
   const globalJson: GlobalProps = await globalData.json()
