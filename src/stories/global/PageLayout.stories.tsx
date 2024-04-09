@@ -18,6 +18,7 @@ export const PageLayout: Story = {
     global: {
       siteTitle: 'Next.js Starter Boilerplate',
       siteDescription: 'A starter boilerplate for Next.js',
+      siteImage: '/images/og-image.jpg',
       favicon: '/favicon.ico',
       contact: {
         phone: '555-555-5555',

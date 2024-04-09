@@ -1,6 +1,7 @@
 import { type SchemaTypeDefinition } from 'sanity'
 // docTypes
 import { event } from './docTypes/event'
+import { globalSettings } from './docTypes/globalSettings'
 import { page } from './docTypes/page'
 import { person } from './docTypes/person'
 // modules
@@ -33,13 +34,16 @@ import { stats } from './components/stats'
 import { tabs } from './components/tabs'
 import { timeline } from './components/timeline'
 import { videos } from './components/videos'
+import { navigation } from './docTypes/navigation'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     // docTypes
     event,
+    globalSettings,
     page,
     person,
+    navigation,
     // modules
     button,
     card,
