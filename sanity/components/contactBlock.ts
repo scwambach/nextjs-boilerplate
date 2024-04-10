@@ -74,6 +74,20 @@ export const contactBlock = {
                   type: 'string',
                 },
               ],
+              preview: {
+                select: {
+                  days: 'days',
+                  hours: 'hours',
+                },
+                prepare(selection: any) {
+                  const { days, hours } = selection
+                  return {
+                    title: days,
+                    subtitle: hours,
+                    media: Clock,
+                  }
+                },
+              },
             },
           ],
         },

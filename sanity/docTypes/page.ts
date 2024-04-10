@@ -4,6 +4,16 @@ export const page = {
   name: 'page',
   title: 'Page',
   type: 'document',
+  fieldsets: [
+    {
+      name: 'seo',
+      title: 'Page Settings',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+    },
+  ],
   fields: [
     ...seo,
     {

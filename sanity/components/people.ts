@@ -35,7 +35,7 @@ export const people = {
       name: 'columns',
       title: 'Columns',
       group: 'settings',
-      type: 'string',
+      type: 'number',
       options: {
         list: columnSizes,
       },

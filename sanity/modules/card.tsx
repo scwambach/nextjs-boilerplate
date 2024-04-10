@@ -1,5 +1,5 @@
 import { IconSelector } from '@components/utility'
-import { groups, headingProps, settingsProps, themes } from '../docTypes/common'
+import { groups, settingsProps, themes } from '../docTypes/common'
 import { icons } from '../icons'
 import { Cards } from '@phosphor-icons/react'
 
@@ -9,13 +9,21 @@ export const card = {
   type: 'object',
   groups,
   fields: [
-    ...headingProps({ group: 'content' }),
     ...settingsProps({}),
     {
       name: 'title',
       title: 'Title',
       group: 'content',
       type: 'string',
+    },
+    {
+      name: 'image',
+      title: 'Image',
+      group: 'content',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: 'icon',
@@ -86,12 +94,13 @@ export const card = {
       title: 'title',
       icon: 'icon',
       description: 'description',
+      media: 'image',
     },
-    prepare: ({ title, icon, description }: any) => {
+    prepare: ({ title, icon, description, media }: any) => {
       return {
         title: title || 'Card',
         subtitle: description || 'Description',
-        media: icon ? <IconSelector icon={icon} /> : Cards,
+        media: media ? media : icon ? <IconSelector icon={icon} /> : Cards,
       }
     },
   },

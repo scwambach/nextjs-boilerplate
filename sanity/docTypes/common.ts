@@ -17,6 +17,7 @@ export const seo = [
   {
     name: 'ogImage',
     title: 'Open Graph Image',
+    fieldset: 'seo',
     type: 'image',
     validation: (Rule: any) => Rule.required(),
     options: {
@@ -26,6 +27,7 @@ export const seo = [
   {
     name: 'description',
     title: 'Description',
+    fieldset: 'seo',
     validation: (Rule: any) => Rule.required(),
     type: 'text',
     rows: 3,
@@ -33,6 +35,7 @@ export const seo = [
   {
     name: 'keywords',
     title: 'Keywords',
+    fieldset: 'seo',
     type: 'array',
     of: [{ type: 'string' }],
   },
@@ -172,9 +175,9 @@ export const colors = [
 ]
 
 export const themes = [
-  { title: 'Default', value: 'default' },
   { title: 'Primary', value: 'primary' },
   { title: 'Secondary', value: 'secondary' },
+  { title: 'Tertiary', value: 'tertiary' },
 ]
 
 export const gaps = [

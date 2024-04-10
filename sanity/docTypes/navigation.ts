@@ -1,4 +1,4 @@
-import { Compass } from '@phosphor-icons/react'
+import { Compass, Link } from '@phosphor-icons/react'
 
 export const navigation = {
   name: 'navigation',
@@ -60,10 +60,41 @@ export const navigation = {
                         }).required(),
                     },
                   ],
+                  preview: {
+                    select: {
+                      title: 'label',
+                      subtitle: 'href',
+                    },
+                    prepare(selection: any) {
+                      const { title, subtitle } = selection
+                      return {
+                        title,
+                        subtitle,
+                        media: Link,
+                      }
+                    },
+                  },
                 },
               ],
             },
           ],
+          preview: {
+            select: {
+              title: 'label',
+              subtitle: 'href',
+              subNav: 'subNav',
+            },
+            prepare(selection: any) {
+              const { title, subtitle, subNav } = selection
+              return {
+                title,
+                subtitle: `${subtitle}${
+                  subNav ? ` (${subNav.length} sub items)` : ''
+                }`,
+                media: Link,
+              }
+            },
+          },
         },
       ],
     },

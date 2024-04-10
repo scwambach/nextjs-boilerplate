@@ -22,13 +22,13 @@ export const tag = {
       },
     },
     {
-      name: 'href',
-      title: 'Href',
-      type: 'url',
-      validation: (Rule: any) =>
-        Rule.uri({
-          allowRelative: true,
-        }),
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'label',
+      },
+      validation: (Rule: any) => Rule.required(),
     },
   ],
 }

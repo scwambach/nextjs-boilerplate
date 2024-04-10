@@ -40,7 +40,7 @@ export const cards = {
       name: 'columns',
       title: 'Columns',
       group: 'settings',
-      type: 'string',
+      type: 'number',
       options: {
         list: columnSizes,
       },
@@ -56,6 +56,10 @@ export const cards = {
       title: 'Button',
       type: 'button',
       group: 'content',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
     },
   ],
   preview: {

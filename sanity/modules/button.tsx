@@ -27,6 +27,16 @@ export const button = {
       validation: (Rule: any) => Rule.required(),
     },
     {
+      name: 'href',
+      title: 'Href',
+      type: 'url',
+      group: 'content',
+      validation: (Rule: any) =>
+        Rule.uri({
+          allowRelative: true,
+        }).required(),
+    },
+    {
       name: 'role',
       title: 'Role',
       type: 'string',
@@ -94,16 +104,6 @@ export const button = {
       options: {
         list: icons,
       },
-    },
-    {
-      name: 'href',
-      title: 'Href',
-      type: 'url',
-      group: 'content',
-      validation: (Rule: any) =>
-        Rule.uri({
-          allowRelative: true,
-        }).required(),
     },
   ],
   preview: {

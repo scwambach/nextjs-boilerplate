@@ -89,8 +89,10 @@ export const banner = {
       name: 'foregroundMedia',
       title: 'Foreground Media',
       group: 'content',
-      type: 'reference',
-      to: [{ type: 'image' }],
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     },
   ],
   preview: {
