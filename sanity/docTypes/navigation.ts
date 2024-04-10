@@ -45,7 +45,7 @@ export const navigation = {
                   type: 'object',
                   fields: [
                     {
-                      name: 'label',
+                      name: 'copy',
                       title: 'Label',
                       type: 'string',
                       validation: (Rule: any) => Rule.required(),
@@ -62,7 +62,7 @@ export const navigation = {
                   ],
                   preview: {
                     select: {
-                      title: 'label',
+                      title: 'copy',
                       subtitle: 'href',
                     },
                     prepare(selection: any) {

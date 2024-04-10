@@ -33,6 +33,8 @@ export async function generateMetadata() {
   }
 }
 
+export const revalidate = 0
+
 export default async function Home() {
   const { globalData, pageData }: { globalData: GlobalProps; pageData: any } =
     await getData()

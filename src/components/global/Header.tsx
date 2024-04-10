@@ -39,12 +39,12 @@ export const Header = ({
           >
             {menu.map((item) => (
               <li key={item.href}>
-                {item.subnav ? (
+                {item.subNav ? (
                   <Dropdown
                     unstyled
                     href={item.href}
                     label={item.label}
-                    items={item.subnav}
+                    items={item.subNav}
                   />
                 ) : item.href ? (
                   <Button

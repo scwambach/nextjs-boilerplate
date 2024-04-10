@@ -72,7 +72,7 @@ export interface NavProps {
   label: string
   href?: string
   type?: ButtonTypes
-  subnav?: {
+  subNav?: {
     label: string
     href: string
   }[]
