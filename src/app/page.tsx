@@ -1,5 +1,6 @@
 import { PageBuilder } from '@components/global'
 import { GlobalProps } from '@utils/types'
+import { PageProps } from '@utils/types/pages'
 
 async function getData() {
   const global = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
@@ -13,8 +14,10 @@ async function getData() {
 }
 
 export async function generateMetadata() {
-  const { globalData, pageData }: { globalData: GlobalProps; pageData: any } =
-    await getData()
+  const {
+    globalData,
+    pageData,
+  }: { globalData: GlobalProps; pageData: PageProps } = await getData()
 
   const ogImage = pageData.ogImage ? pageData.ogImage : globalData.siteImage
   const description = pageData.description || globalData.siteDescription
@@ -24,9 +27,11 @@ export async function generateMetadata() {
       ? `${pageData.title} | ${globalData.siteTitle}`
       : globalData.siteTitle,
     description,
-    openGraph: {
-      images: [ogImage],
-    },
+    openGraph: ogImage?.src
+      ? {
+          images: [ogImage.src],
+        }
+      : undefined,
     icons: {
       icon: '/favicon.svg',
     },

@@ -6,7 +6,7 @@ export async function GET() {
     "siteTitle": title,
     "siteDescription": description,
     footerCopy,
-    favicon,
+    "favicon": favicon.asset->url,
     socials,
     "navigation": *[_type == "navigation" && title == "Main Navigation"][0].items[]
   }`)
