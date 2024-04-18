@@ -81,6 +81,11 @@ export interface MarkdownProps extends ComponentProps {
   children: string
 }
 
+export interface PortableProps extends ComponentProps {
+  content: any[]
+  elementTag?: Elements
+}
+
 export interface ModalProps extends ComponentProps {
   triggerCopy: string
   triggerUnstyled?: boolean

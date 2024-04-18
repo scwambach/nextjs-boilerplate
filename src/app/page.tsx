@@ -1,10 +1,11 @@
 import { PageBuilder } from '@components/global'
-import { GlobalProps } from '@utils/types'
-import { PageProps } from '@utils/types/pages'
+import { GlobalProps, PageProps } from '@utils/types'
 
 async function getData() {
   const global = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
-  const page = await fetch(`${process.env.SITE_URL}/api/getPageData/home`)
+  const page = await fetch(
+    `${process.env.SITE_URL}/api/getClientPage?slug=home`
+  )
   const globalData = await global.json()
   const pageData = await page.json()
   return {
@@ -33,7 +34,7 @@ export async function generateMetadata() {
         }
       : undefined,
     icons: {
-      icon: '/favicon.svg',
+      icon: globalData.favicon,
     },
   }
 }
@@ -41,8 +42,10 @@ export async function generateMetadata() {
 export const revalidate = 0
 
 export default async function Home() {
-  const { globalData, pageData }: { globalData: GlobalProps; pageData: any } =
-    await getData()
+  const {
+    globalData,
+    pageData,
+  }: { globalData: GlobalProps; pageData: PageProps } = await getData()
 
   return <PageBuilder pageData={pageData} globalData={globalData} />
 }

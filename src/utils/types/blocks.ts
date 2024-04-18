@@ -30,6 +30,7 @@ export interface BannerProps extends ComponentProps {
   authors?: PersonProps[]
   backgroundImage?: ImageObjectProps
   bgColor?: Colors
+  markdown?: boolean
   boxBgColor?: Colors
   contained?: boolean
   containedWidth?: ContainerClasses
@@ -46,7 +47,7 @@ export interface BannerProps extends ComponentProps {
   micro?: boolean
   overlap?: boolean
   style?: CSSProperties
-  subheading?: string
+  subheading?: string | any[]
   tags?: TagProps[]
 }
 
@@ -125,32 +126,36 @@ export interface PeopleProps extends BlockProps {
 }
 
 export interface QuoteProps extends ComponentProps {
-  quote: string
+  quote: string | any[]
   cite?: string
   person?: PersonProps
   bgColor?: Colors
+  markdown?: boolean
 }
 
 export interface RichTextProps extends ComponentProps {
   centered?: boolean
-  column2Copy?: string
-  column3Copy?: string
-  column4Copy?: string
+  column2Copy?: string | any[]
+  column3Copy?: string | any[]
+  column4Copy?: string | any[]
   componentId?: string
   container?: ContainerClasses
-  copy: string
+  copy: string | any[]
   gap?: Gaps
+  markdown?: boolean
 }
 
 export interface RiverProps extends ComponentProps {
   theme?: Themes
   headingLevel?: HeadingLevel
+  markdown?: boolean
   reverse?: boolean
   container?: ContainerClasses
   items: {
+    _key: string
     title?: string
     video?: VideoBlockProps
-    description: string
+    description: string | any[]
     image: ImageObjectProps
     links?: ButtonProps[]
   }[]
@@ -170,10 +175,11 @@ export interface TabsProps extends BlockProps {
 }
 
 export interface TimelineProps extends BlockProps {
+  markdown?: boolean
   events: {
     date: string
     title: string
-    description?: string
+    description?: string | any[]
     image?: ImageObjectProps
   }[]
 }

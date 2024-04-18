@@ -14,6 +14,7 @@ import {
   Box,
   IconSelector,
   Spacer,
+  Portable,
 } from '@components/utility'
 import dayjs from 'dayjs'
 import { compileAuthorNames } from '@utils/compileAuthorNames'
@@ -25,11 +26,12 @@ export const Card = ({
   date,
   description,
   href,
+  icon,
   image,
   links,
+  markdown,
   tags,
   testId,
-  icon,
   title,
 }: CardProps) => {
   return (
@@ -74,7 +76,15 @@ export const Card = ({
             <Heading nonHeadingElement="p">{title}</Heading>
           )}
 
-          {description && <Markdown className="copy">{description}</Markdown>}
+          {description && (
+            <>
+              {markdown ? (
+                <Markdown className="copy">{description as string}</Markdown>
+              ) : (
+                <Portable content={description as any[]} />
+              )}
+            </>
+          )}
           {authors && (
             <Flex
               gap="xxs"

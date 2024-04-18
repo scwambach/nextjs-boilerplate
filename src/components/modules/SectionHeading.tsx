@@ -1,4 +1,4 @@
-import { Markdown, Heading } from '@components/utility'
+import { Markdown, Heading, Portable } from '@components/utility'
 import { SectionHeadingProps } from '@utils/types'
 
 export const SectionHeading = ({
@@ -7,6 +7,7 @@ export const SectionHeading = ({
   heading,
   level = 3,
   subheading,
+  markdown,
   testId,
 }: SectionHeadingProps) => {
   return (
@@ -16,7 +17,15 @@ export const SectionHeading = ({
       className={`sectionHeading${className ? ` ${className}` : ''}`}
     >
       {heading && <Heading level={level}>{heading}</Heading>}
-      {subheading && <Markdown>{subheading}</Markdown>}
+      {subheading && (
+        <>
+          {markdown ? (
+            <Markdown>{subheading as string}</Markdown>
+          ) : (
+            <Portable content={subheading as any[]} />
+          )}
+        </>
+      )}
     </div>
   )
 }

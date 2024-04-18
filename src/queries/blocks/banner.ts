@@ -1,15 +1,10 @@
-import { heading, imageQuery } from 'queries/common'
+import { imageQuery, richTextProps } from 'queries/common'
 
 export const banner = `_type == "banner" => {
-  ${heading},
-  className,
-  bgColor,
-  contained,
-  overlap,
-  micro,
-  containedWidth,
-  boxBgColor,
-  links,
+  ...,
+  subheading[] {
+    ${richTextProps}
+  },
   ${imageQuery('backgroundImage', true)},
   ${imageQuery('foregroundMedia')},
 }`

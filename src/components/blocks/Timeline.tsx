@@ -1,5 +1,5 @@
 import { ImageObject, SectionHeading } from '@components/modules'
-import { Box, Container, Flex, Markdown } from '@components/utility'
+import { Box, Container, Flex, Markdown, Portable } from '@components/utility'
 import { headingFont } from '@utils/fonts'
 import { TimelineProps } from '@utils/types'
 import dayjs from 'dayjs'
@@ -13,6 +13,7 @@ export const Timeline = ({
   level,
   subheading,
   testId,
+  markdown,
 }: TimelineProps) => {
   return (
     <section
@@ -42,7 +43,11 @@ export const Timeline = ({
                   </p>
                   {event.description && (
                     <div className="description">
-                      <Markdown>{event.description}</Markdown>
+                      {markdown ? (
+                        <Markdown>{event.description as string}</Markdown>
+                      ) : (
+                        <Portable content={event.description as any[]} />
+                      )}
                     </div>
                   )}
                 </div>

@@ -105,3 +105,15 @@ export interface PostDetailsProps {
   content: string
   related?: CardProps[]
 }
+
+export interface PageProps {
+  _createdAt?: string
+  _rev?: string
+  _type?: string
+  description?: string
+  keywords?: string[]
+  ogImage: ImageObjectProps
+  pageComponents?: unknown[]
+  slug: string
+  title: string
+}

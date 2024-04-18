@@ -9,6 +9,7 @@ import {
   Globe,
   Pencil,
   Scroll,
+  Ticket,
   UsersThree,
 } from '@phosphor-icons/react'
 
@@ -35,6 +36,10 @@ export default defineConfig({
               .title('People')
               .child(S.documentTypeList('person').title('People'))
               .icon(UsersThree),
+            S.listItem()
+              .title('Events')
+              .child(S.documentTypeList('event').title('Events'))
+              .icon(Ticket),
             S.listItem()
               .title('Global Info')
               .child(

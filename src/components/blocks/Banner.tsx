@@ -5,7 +5,14 @@ import {
   ImageObject,
   Tag,
 } from '@components/modules'
-import { Box, Container, Flex, Grid, Heading } from '@components/utility'
+import {
+  Box,
+  Container,
+  Flex,
+  Grid,
+  Heading,
+  Portable,
+} from '@components/utility'
 import { compileAuthorNames } from '@utils/compileAuthorNames'
 import { parseMarkdownToHTML } from '@utils/parseMarkdownToHTML'
 import { BannerProps } from '@utils/types'
@@ -26,6 +33,7 @@ export const Banner = ({
   heading,
   headingLevel = 2,
   links,
+  markdown,
   message,
   micro,
   overlap,
@@ -58,9 +66,15 @@ export const Banner = ({
             {heading}
           </Heading>
           {subheading && (
-            <p className="subheading">
-              <strong>{subheading}</strong>
-            </p>
+            <>
+              {markdown ? (
+                <p className="subheading">
+                  <strong>{subheading as string}</strong>
+                </p>
+              ) : (
+                <Portable content={subheading as any[]} />
+              )}
+            </>
           )}
           {message && (
             <div
@@ -106,6 +120,7 @@ export const Banner = ({
           )}
         </div>
       </Flex>
+
       {foregroundMedia && (
         <Flex alignItems="center" justifyContent="center">
           <Box
@@ -114,9 +129,7 @@ export const Banner = ({
               width: '100%',
             }}
           >
-            {foregroundMedia._type === 'ImageObject' && (
-              <ImageObject {...foregroundMedia} />
-            )}
+            <ImageObject {...foregroundMedia} />
           </Box>
         </Flex>
       )}

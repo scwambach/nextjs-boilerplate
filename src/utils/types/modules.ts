@@ -72,7 +72,8 @@ export interface CardProps extends ComponentProps {
   authors?: PersonProps[]
   icon?: keyof typeof Icon
   date?: string
-  description?: string
+  description?: string | any[]
+  markdown?: boolean
   theme?: Themes
   href?: string
   contentElement?: Elements
@@ -192,7 +193,8 @@ export interface PersonProps extends ComponentProps {
 export interface SectionHeadingProps extends ComponentProps {
   heading?: string
   level?: HeadingLevel
-  subheading?: string
+  markdown?: boolean
+  subheading?: string | any[]
 }
 
 export interface ShareButtonsProps extends ComponentProps {
@@ -227,15 +229,16 @@ export interface TableProps extends ComponentProps {
 }
 
 export interface TagProps extends ComponentProps {
+  elementTag?: 'div' | 'span' | 'li'
+  href?: string
   label: string
   theme?: Themes
-  href?: string
-  elementTag?: 'div' | 'span' | 'li'
 }
 
 export interface VideoBlockProps extends ComponentProps {
-  url: string
-  title?: string
-  copy?: string
+  copy?: string | any[]
+  markdown?: boolean
   poster?: ImageObjectProps
+  title?: string
+  url: string
 }

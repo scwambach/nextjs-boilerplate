@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.4",
+    "@portabletext/react": "^3.0.18",
     "@react-google-maps/api": "^2.19.3",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.36.2",

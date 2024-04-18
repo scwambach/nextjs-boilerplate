@@ -11,22 +11,6 @@ export const PageBuilder = ({
 }) => {
   return (
     <PageLayout global={globalData}>
-      <code>
-        <pre
-          style={{
-            fontFamily: 'monospace',
-            display: 'block',
-            padding: '50px',
-            color: '#88ffbf',
-            backgroundColor: 'black',
-            textAlign: 'left',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {JSON.stringify(pageData, null, '    ')}
-        </pre>
-      </code>
-
       <BlockFactory items={pageData.pageComponents} global={globalData} />
     </PageLayout>
   )
