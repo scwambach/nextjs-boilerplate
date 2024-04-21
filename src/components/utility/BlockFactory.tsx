@@ -12,7 +12,7 @@ export const BlockFactory = (props: any) => {
           object.blockType === 'module'
             ? Module[captializedType as keyof typeof Module]
             : Block[captializedType as keyof typeof Block]
-        const uniqueId = `${object.blockType}_${object._type}_${index}`
+        const uniqueId = `${object._type}_${index}`
         return (
           <Component
             {...object}

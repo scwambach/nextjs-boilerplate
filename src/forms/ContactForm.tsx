@@ -1,10 +1,12 @@
-import { Button, FormField } from '@components/modules'
+'use client'
+import { Form } from '@components/blocks'
+import { FormField } from '@components/modules'
+import { FormProps } from '@utils/types'
 
-export const ContactForm = () => {
+export const ContactForm = (props: FormProps) => {
   return (
-    <form>
+    <Form componentId="contactForm" {...props}>
       <FormField label="Name" type="text" id="name" />
-      <Button type="submit">Submit</Button>
-    </form>
+    </Form>
   )
 }

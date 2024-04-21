@@ -22,6 +22,7 @@ import { carousel } from './components/carousel'
 import { compareTables } from './components/compareTables'
 import { contactBlock } from './components/contactBlock'
 import { events } from './components/events'
+import { formSelector } from './components/formSelector'
 import { gallery } from './components/gallery'
 import { logoBanner } from './components/logoBanner'
 import { logoRow } from './components/logoRow'
@@ -66,6 +67,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     compareTables,
     contactBlock,
     events,
+    formSelector,
     gallery,
     logoBanner,
     logoRow,

@@ -10,6 +10,7 @@ const Form = ({
   container,
   heading,
   level,
+  markdown,
   onSubmit,
   subheading,
   submitCopy,
@@ -26,6 +27,7 @@ const Form = ({
           <SectionHeading
             heading={heading}
             level={level}
+            markdown={markdown}
             subheading={subheading}
           />
         )}

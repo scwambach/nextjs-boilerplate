@@ -123,6 +123,8 @@ export const richTextObject = (props: any) => {
   }
 }
 
+export const forms = [{ title: 'Contact', value: 'ContactForm' }]
+
 export const pageComponents = [
   { type: 'banner' },
   { type: 'buttonRow' },
@@ -131,6 +133,7 @@ export const pageComponents = [
   { type: 'compareTables' },
   { type: 'contactBlock' },
   { type: 'events' },
+  { type: 'formSelector' },
   { type: 'gallery' },
   { type: 'logoBanner' },
   { type: 'logoRow' },

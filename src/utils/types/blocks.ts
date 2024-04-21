@@ -1,5 +1,6 @@
 import { CSSProperties, FormEvent, ReactNode } from 'react'
 import { BlockProps, ComponentProps } from './global'
+import * as Form from '@forms/index'
 import {
   BreadcrumbsProps,
   ButtonProps,
@@ -85,9 +86,16 @@ export interface EventsProps extends BlockProps {
 
 export interface FormProps extends BlockProps {
   children?: ReactNode
+  markdown?: boolean
   submitCopy?: string
   onSubmit?: (e: FormEvent<HTMLFormElement>) => void
   onChange?: (e: FormEvent<HTMLFieldSetElement>) => void
+}
+
+export interface FormSelectorProps extends BlockProps {
+  formName: keyof typeof Form
+  markdown?: boolean
+  submitCopy?: string
 }
 
 export interface GalleryProps extends BlockProps {

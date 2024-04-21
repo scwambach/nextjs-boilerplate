@@ -20,7 +20,7 @@ export const ContactBlock: Story = {
       lat: 40.7128,
       lng: -74.006,
     },
-    info: {
+    information: {
       address: {
         street: '123 Main St',
         city: 'New York',

@@ -5,6 +5,7 @@ import { carousel } from './blocks/carousel'
 import { compareTables } from './blocks/compareTables'
 import { contactBlock } from './blocks/contactBlock'
 import { events } from './blocks/events'
+import { formSelector } from './blocks/formSelector'
 import { gallery } from './blocks/gallery'
 import { logoBanner } from './blocks/logoBanner'
 import { logoRow } from './blocks/logoRow'
@@ -32,6 +33,7 @@ export const PAGE_QUERY = `*[_type == "page" && slug.current == $slug][0] {
     ${compareTables},
     ${contactBlock},
     ${events},
+    ${formSelector},
     ${gallery},
     ${logoBanner},
     ${logoRow},
