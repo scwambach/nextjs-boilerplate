@@ -39,12 +39,14 @@ type Story = StoryObj<typeof RichTextItem>
 
 export const SingleColumn: Story = {
   args: {
+    markdown: true,
     copy: markdownCopy(true),
   },
 }
 
 export const TwoColumn: Story = {
   args: {
+    markdown: true,
     copy: markdownCopy(false),
     column2Copy: markdownCopy(false),
   },
@@ -52,6 +54,7 @@ export const TwoColumn: Story = {
 
 export const ThreeColumn: Story = {
   args: {
+    markdown: true,
     copy: markdownCopy(false),
     column2Copy: markdownCopy(false),
     column3Copy: markdownCopy(false),
@@ -60,6 +63,7 @@ export const ThreeColumn: Story = {
 
 export const FourColumn: Story = {
   args: {
+    markdown: true,
     copy: markdownCopy(false),
     column2Copy: markdownCopy(false),
     column3Copy: markdownCopy(false),

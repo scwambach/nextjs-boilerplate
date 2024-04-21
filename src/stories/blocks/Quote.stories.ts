@@ -12,6 +12,7 @@ type Story = StoryObj<typeof QuoteItem>
 
 export const Blue: Story = {
   args: {
+    markdown: true,
     bgColor: 'blue',
     cite: 'John Doe',
     quote:
@@ -22,6 +23,7 @@ export const Blue: Story = {
 
 export const Green: Story = {
   args: {
+    markdown: true,
     bgColor: 'green',
     cite: 'John Doe',
     quote:
@@ -32,6 +34,7 @@ export const Green: Story = {
 
 export const Red: Story = {
   args: {
+    markdown: true,
     bgColor: 'red',
     quote:
       'Aenean faucibus elit eget metus faucibus accumsan. Vestibulum non consequat est. Aenean malesuada sagittis nec ac nulla.',
@@ -41,6 +44,7 @@ export const Red: Story = {
 
 export const Orange: Story = {
   args: {
+    markdown: true,
     bgColor: 'orange',
     cite: 'John Doe',
     quote:
@@ -51,6 +55,7 @@ export const Orange: Story = {
 
 export const PersonQuote: Story = {
   args: {
+    markdown: true,
     bgColor: 'green',
     cite: 'John Doe',
     person: {

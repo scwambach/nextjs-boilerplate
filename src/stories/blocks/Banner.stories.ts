@@ -13,6 +13,7 @@ type Story = StoryObj<typeof Banner>
 
 export const Blue: Story = {
   args: {
+    markdown: true,
     bgColor: 'blue',
     crumbs: {
       current: 'Quisque iaculis tincidunt',
@@ -39,6 +40,7 @@ export const Blue: Story = {
 
 export const Green: Story = {
   args: {
+    markdown: true,
     bgColor: 'green',
     crumbs: {
       current: 'Quisque iaculis tincidunt',
@@ -70,6 +72,7 @@ export const Green: Story = {
 
 export const Orange: Story = {
   args: {
+    markdown: true,
     bgColor: 'orange',
     crumbs: {
       current: 'Quisque iaculis tincidunt',
@@ -110,6 +113,7 @@ export const Orange: Story = {
 
 export const WidthForeground: Story = {
   args: {
+    markdown: true,
     bgColor: 'blue',
     crumbs: {
       current: 'Quisque iaculis tincidunt',
@@ -140,6 +144,7 @@ export const WidthForeground: Story = {
 
 export const WithImage: Story = {
   args: {
+    markdown: true,
     bgColor: 'blue',
     crumbs: {
       current: 'Quisque iaculis tincidunt',
@@ -170,6 +175,7 @@ export const WithImage: Story = {
 
 export const AsPost: Story = {
   args: {
+    markdown: true,
     bgColor: 'blue',
     heading: 'Quisque iaculis tincidunt',
     links: [
@@ -214,6 +220,7 @@ export const AsPost: Story = {
 
 export const Contained: Story = {
   args: {
+    markdown: true,
     bgColor: 'blue',
     contained: true,
     heading: 'Quisque iaculis tincidunt',
@@ -236,6 +243,7 @@ export const Contained: Story = {
 
 export const CalloutBox: Story = {
   args: {
+    markdown: true,
     bgColor: 'green',
     boxBgColor: 'black',
     contained: true,

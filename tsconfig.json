@@ -38,6 +38,9 @@
       ],
       "@images/*": [
         "./images/*"
+      ],
+      "@forms/*": [
+        "./forms/*"
       ]
     },
     "plugins": [

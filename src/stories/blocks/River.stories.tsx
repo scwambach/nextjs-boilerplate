@@ -15,8 +15,10 @@ type Story = StoryObj<typeof RiverItem>
 export const Default: Story = {
   args: {
     headingLevel: 2,
+    markdown: true,
     items: [
       {
+        _key: '1',
         title: 'Title 1',
         description:
           'Fusce semper ut odio eget laoreet. Fusce nec libero molestie, tempus lorem eget, finibus eros. __Aenean ut volutpat__ libero, ut vehicula quam. Donec et nisi fringilla, venenatis nulla vitae, vestibulum mauris. Suspendisse eu condimentum est, at consectetur ipsum. Etiam hendrerit.',
@@ -32,6 +34,7 @@ export const Default: Story = {
         ],
       },
       {
+        _key: '2',
         title: 'Title 2',
         description:
           'Pellentesque dignissim viverra turpis at sodales. Integer vitae ligula fermentum, sodales nunc in, tincidunt felis. Nullam non posuere metus. Vestibulum in sapien urna. Praesent laoreet fermentum rutrum. Donec libero turpis, scelerisque eget fringilla ac, efficitur quis tortor. Maecenas interdum tempor mi, ac mattis mi ornare ut. Aenean vulputate consequat velit, vitae facilisis nisl luctus id.',
@@ -52,8 +55,10 @@ export const Default: Story = {
 export const Videos: Story = {
   args: {
     headingLevel: 2,
+    markdown: true,
     items: [
       {
+        _key: '1',
         title: 'Title 1',
         description:
           'Fusce semper ut odio eget laoreet. Fusce nec libero molestie, tempus lorem eget, finibus eros. __Aenean ut volutpat__ libero, ut vehicula quam. Donec et nisi fringilla, venenatis nulla vitae, vestibulum mauris. Suspendisse eu condimentum est, at consectetur ipsum. Etiam hendrerit.',
@@ -72,6 +77,7 @@ export const Videos: Story = {
         ],
       },
       {
+        _key: '2',
         title: 'Title 2',
         description:
           'Pellentesque dignissim viverra turpis at sodales. Integer vitae ligula fermentum, sodales nunc in, tincidunt felis. Nullam non posuere metus. Vestibulum in sapien urna. Praesent laoreet fermentum rutrum. Donec libero turpis, scelerisque eget fringilla ac, efficitur quis tortor. Maecenas interdum tempor mi, ac mattis mi ornare ut. Aenean vulputate consequat velit, vitae facilisis nisl luctus id.',
