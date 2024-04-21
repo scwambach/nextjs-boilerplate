@@ -1,19 +1,20 @@
 import { Avatar } from '@components/modules'
-import { Container, Flex, Markdown, Portable } from '@components/utility'
+import { Container, Flex, Markdown } from '@components/utility'
 import { Minus, Quotes } from '@phosphor-icons/react/dist/ssr'
 import { headingFont } from '@utils/fonts'
 import { QuoteProps } from '@utils/types'
 
-export const Quote = ({
-  bgColor = 'green',
-  cite,
-  className,
-  componentId,
-  person,
-  quote,
-  testId,
-  markdown,
-}: QuoteProps) => {
+export const Quote = (props: QuoteProps) => {
+  const {
+    bgColor = 'green',
+    cite,
+    className,
+    componentId,
+    person,
+    quote,
+    testId,
+    markdown,
+  } = props
   return (
     <section
       id={componentId}
@@ -22,12 +23,9 @@ export const Quote = ({
     >
       <Container containerClass="narrower">
         <Quotes size={40} />
+
         <blockquote>
-          {markdown ? (
-            <Markdown>{quote as string}</Markdown>
-          ) : (
-            <Portable content={quote as any[]} />
-          )}
+          {markdown ? <Markdown>{quote as string}</Markdown> : <p>{quote}</p>}
         </blockquote>
         {cite && !person && (
           <cite className={headingFont.className}>

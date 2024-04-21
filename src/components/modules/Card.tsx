@@ -14,7 +14,6 @@ import {
   Box,
   IconSelector,
   Spacer,
-  Portable,
 } from '@components/utility'
 import dayjs from 'dayjs'
 import { compileAuthorNames } from '@utils/compileAuthorNames'
@@ -81,7 +80,7 @@ export const Card = ({
               {markdown ? (
                 <Markdown className="copy">{description as string}</Markdown>
               ) : (
-                <Portable content={description as any[]} />
+                <p>{description}</p>
               )}
             </>
           )}

@@ -1,13 +1,13 @@
 import { PageBuilder } from '@components/global'
+import { client } from '@utils/client'
 import { GlobalProps, PageProps } from '@utils/types'
+import { GLOBAL_QUERY } from 'queries/global'
+import { PAGE_QUERY } from 'queries/page'
 
 async function getData() {
-  const global = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
-  const page = await fetch(
-    `${process.env.SITE_URL}/api/getClientPage?slug=home`
-  )
-  const globalData = await global.json()
-  const pageData = await page.json()
+  const globalData = await client.fetch(GLOBAL_QUERY)
+  const pageData = await client.fetch(PAGE_QUERY, { slug: 'home' })
+
   return {
     globalData,
     pageData,

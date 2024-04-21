@@ -54,7 +54,7 @@ export const gallery = {
       const { title, items = [] } = selection
       return {
         title: title || 'Gallery',
-        subtitle: `${items.length} items`,
+        subtitle: `${title ? 'Gallery with ' : ''}${items.length} items`,
         media: Images,
       }
     },

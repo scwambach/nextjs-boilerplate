@@ -72,7 +72,7 @@ export interface CardProps extends ComponentProps {
   authors?: PersonProps[]
   icon?: keyof typeof Icon
   date?: string
-  description?: string | any[]
+  description?: string
   markdown?: boolean
   theme?: Themes
   href?: string

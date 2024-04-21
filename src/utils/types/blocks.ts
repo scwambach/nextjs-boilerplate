@@ -126,7 +126,7 @@ export interface PeopleProps extends BlockProps {
 }
 
 export interface QuoteProps extends ComponentProps {
-  quote: string | any[]
+  quote: string
   cite?: string
   person?: PersonProps
   bgColor?: Colors

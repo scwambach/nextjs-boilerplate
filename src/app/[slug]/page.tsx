@@ -1,17 +1,17 @@
 import { PageBuilder } from '@components/global'
+import { client } from '@utils/client'
 import { GlobalProps } from '@utils/types'
 import { notFound } from 'next/navigation'
+import { GLOBAL_QUERY } from 'queries/global'
+import { PAGE_QUERY } from 'queries/page'
 
 async function getData(slug: string) {
-  const global = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
-  const page = await fetch(`${process.env.SITE_URL}/api/getPageData/${slug}`)
+  const globalData = await client.fetch(GLOBAL_QUERY)
+  const pageData = await client.fetch(PAGE_QUERY, { slug })
 
-  if (!page.ok) {
-    return notFound()
+  if (!pageData) {
+    notFound()
   }
-
-  const globalData = await global.json()
-  const pageData = await page.json()
 
   return {
     globalData,
