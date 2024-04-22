@@ -1,6 +1,6 @@
 import { PageBuilder } from '@components/global'
 import { client } from '@utils/client'
-import { GlobalProps } from '@utils/types'
+import { GlobalProps, PageProps } from '@utils/types'
 import { notFound } from 'next/navigation'
 import { GLOBAL_QUERY } from 'queries/global'
 import { PAGE_QUERY } from 'queries/page'
@@ -26,8 +26,10 @@ export async function generateMetadata({
     slug: string
   }
 }) {
-  const { globalData, pageData }: { globalData: GlobalProps; pageData: any } =
-    await getData(slug)
+  const {
+    globalData,
+    pageData,
+  }: { globalData: GlobalProps; pageData: PageProps } = await getData(slug)
 
   const ogImage = pageData.ogImage ? pageData.ogImage : globalData.siteImage
   const description = pageData.description || globalData.siteDescription
@@ -37,9 +39,11 @@ export async function generateMetadata({
       ? `${pageData.title} | ${globalData.siteTitle}`
       : globalData.siteTitle,
     description,
-    openGraph: {
-      images: [ogImage],
-    },
+    openGraph: ogImage?.src
+      ? {
+          images: [ogImage.src],
+        }
+      : undefined,
     icons: {
       icon: '/favicon.svg',
     },

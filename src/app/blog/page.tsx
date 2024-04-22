@@ -1,13 +1,13 @@
 import { Banner, Cards } from '@components/blocks'
 import { PageLayout } from '@components/global/PageLayout'
+import { client } from '@utils/client'
 import { BlogRollProps, GlobalProps } from '@utils/types'
+import { BLOG_ROLL_QUERY } from 'queries/blogRoll'
 
 async function getData() {
   const globalRes = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
   const globalData = await globalRes.json()
-
-  const blogRes = await fetch(`${process.env.SITE_URL}/api/getBlogRoll`)
-  const blogData: BlogRollProps = await blogRes.json()
+  const blogData = await client.fetch(BLOG_ROLL_QUERY)
 
   return { globalData, blogData }
 }
@@ -19,9 +19,11 @@ export async function generateMetadata({}) {
   return {
     title: `Blog | ${globalJson.siteTitle}`,
     description: globalJson.siteDescription,
-    openGraph: {
-      images: [globalJson.siteImage],
-    },
+    openGraph: globalJson.siteImage
+      ? {
+          images: [globalJson.siteImage?.src || ''],
+        }
+      : undefined,
     icons: {
       icon: '/favicon.svg',
     },
