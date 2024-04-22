@@ -3,25 +3,24 @@ import { PageLayout } from '@components/global/PageLayout'
 import { client } from '@utils/client'
 import { BlogRollProps, GlobalProps } from '@utils/types'
 import { BLOG_ROLL_QUERY } from 'queries/blogRoll'
+import { GLOBAL_QUERY } from 'queries/global'
 
 async function getData() {
-  const globalRes = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
-  const globalData = await globalRes.json()
+  const globalData = await client.fetch(GLOBAL_QUERY)
   const blogData = await client.fetch(BLOG_ROLL_QUERY)
 
   return { globalData, blogData }
 }
 
 export async function generateMetadata({}) {
-  const globalData = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
-  const globalJson: GlobalProps = await globalData.json()
+  const globalData = await client.fetch(GLOBAL_QUERY)
 
   return {
-    title: `Blog | ${globalJson.siteTitle}`,
-    description: globalJson.siteDescription,
-    openGraph: globalJson.siteImage
+    title: `Blog | ${globalData.siteTitle}`,
+    description: globalData.siteDescription,
+    openGraph: globalData.siteImage
       ? {
-          images: [globalJson.siteImage?.src || ''],
+          images: [globalData.siteImage?.src || ''],
         }
       : undefined,
     icons: {
