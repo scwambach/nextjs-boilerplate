@@ -20,3 +20,22 @@ _type == 'image' => {
   "height": asset->metadata.dimensions.height,
   "width": asset->metadata.dimensions.width,
 }`
+
+export const tagProps = `_id,
+theme,
+label,
+"href": "/blog/category/" + slug.current`
+
+export const postCardProps = `_id,
+title,
+"description": summary,
+"date": publishedAt,
+tags[]->{
+ ${tagProps}
+},
+authors[]->{
+  ...,
+  ${imageQuery('image ')},
+},
+${imageQuery('image ')},
+"href": "/blog/" + slug.current,`

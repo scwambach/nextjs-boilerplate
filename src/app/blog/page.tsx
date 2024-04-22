@@ -49,6 +49,12 @@ export default async function Home() {
         heading={firstPost.title}
         message={firstPost.description}
         headingLevel={1}
+        links={[
+          {
+            label: 'Read More',
+            href: firstPost.href,
+          },
+        ]}
       />
       <Cards
         heading="Blog Posts"

@@ -38,35 +38,37 @@ export const TableOfContents = ({
   }
 
   return (
-    <div
-      id={componentId}
-      data-testid={testId}
-      className={`tableOfContents${className ? ` ${className}` : ''}`}
-    >
-      <Heading level={2} nonHeadingElement="p">
-        Table of Contents
-      </Heading>
-      {loading ? (
-        <Flex
-          justifyContent="center"
-          alignItems="center"
-          style={{
-            paddingRight: '5rem',
-          }}
-        >
-          <Spinner size={50} />
-        </Flex>
-      ) : (
-        <ul>
-          {headingsArray.map((item) => (
-            <li key={item.id + item.index}>
-              <LinkObject href={`#${item.id}`} onClick={handleClickedLink}>
-                {item.text}
-              </LinkObject>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+    headingsArray.length > 0 && (
+      <div
+        id={componentId}
+        data-testid={testId}
+        className={`tableOfContents${className ? ` ${className}` : ''}`}
+      >
+        <Heading level={2} nonHeadingElement="p">
+          Table of Contents
+        </Heading>
+        {loading ? (
+          <Flex
+            justifyContent="center"
+            alignItems="center"
+            style={{
+              paddingRight: '5rem',
+            }}
+          >
+            <Spinner size={50} />
+          </Flex>
+        ) : (
+          <ul>
+            {headingsArray.map((item) => (
+              <li key={item.id + item.index}>
+                <LinkObject href={`#${item.id}`} onClick={handleClickedLink}>
+                  {item.text}
+                </LinkObject>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    )
   )
 }

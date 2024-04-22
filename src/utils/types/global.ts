@@ -102,7 +102,7 @@ export interface PostDetailsProps {
   image: ImageObjectProps
   tags?: TagProps[]
   authors: PersonProps[]
-  content: string
+  content: any[]
   related?: CardProps[]
 }
 
