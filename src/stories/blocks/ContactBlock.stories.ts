@@ -14,13 +14,13 @@ type Story = StoryObj<typeof ContactBlockItem>
 export const ContactBlock: Story = {
   args: {
     heading: 'Contact Us',
-    level: 2,
+    headingLevel: 2,
     subheading: "We're here to help",
     marker: {
       lat: 40.7128,
       lng: -74.006,
     },
-    info: {
+    information: {
       address: {
         street: '123 Main St',
         city: 'New York',

@@ -36,12 +36,28 @@ describe('People Component', () => {
 
   it('renders correct heading and subheading when provided', () => {
     const heading = 'People List'
-    const subheading = 'A list of amazing people'
+    const subheading = [
+      {
+        children: [
+          {
+            _type: 'span',
+            marks: [],
+            text: 'People Subheading',
+            _key: 'd9986fb8c9440',
+          },
+        ],
+        _type: 'block',
+        style: 'normal',
+        _key: '2977d788040d',
+        markDefs: [],
+      },
+    ]
+
     const { getByText } = render(
       <People items={[]} heading={heading} subheading={subheading} />
     )
     expect(getByText(heading)).toBeInTheDocument()
-    expect(getByText(subheading)).toBeInTheDocument()
+    expect(getByText('People Subheading')).toBeInTheDocument()
   })
 
   it('renders default column size when not provided', () => {

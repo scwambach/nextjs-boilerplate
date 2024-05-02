@@ -3,6 +3,7 @@ const nextConfig = {
   env: {
     SITE_URL: process.env.SITE_URL,
     GOOGLE_MAP_API_KEY: process.env.GOOGLE_MAP_API_KEY,
+    PREVIEW_TOKEN: process.env.PREVIEW_TOKEN,
   },
   images: {
     remotePatterns: [

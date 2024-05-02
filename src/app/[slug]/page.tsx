@@ -1,17 +1,19 @@
 import { PageBuilder } from '@components/global'
-import { GlobalProps } from '@utils/types'
+import { client, previewClient } from '@utils/client'
+import { GlobalProps, PageProps } from '@utils/types'
 import { notFound } from 'next/navigation'
+import { GLOBAL_QUERY } from 'queries/global'
+import { PAGE_QUERY } from 'queries/page'
 
-async function getData(slug: string) {
-  const global = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
-  const page = await fetch(`${process.env.SITE_URL}/api/getPageData/${slug}`)
+async function getData(slug: string, preview?: boolean) {
+  const sanityClient = preview ? previewClient : client
 
-  if (!page.ok) {
-    return notFound()
+  const globalData = await sanityClient.fetch(GLOBAL_QUERY)
+  const pageData = await sanityClient.fetch(PAGE_QUERY, { slug })
+
+  if (!pageData || slug === 'home') {
+    notFound()
   }
-
-  const globalData = await global.json()
-  const pageData = await page.json()
 
   return {
     globalData,
@@ -19,19 +21,24 @@ async function getData(slug: string) {
   }
 }
 
-const oneDay = 60 * 60 * 24
-
-export const revalidate = process.env.NODE_ENV === 'development' ? 0 : oneDay
-
 export async function generateMetadata({
   params: { slug },
+  searchParams: { preview },
 }: {
+  searchParams: {
+    preview: string
+  }
   params: {
     slug: string
   }
 }) {
-  const { globalData, pageData }: { globalData: GlobalProps; pageData: any } =
-    await getData(slug)
+  const {
+    globalData,
+    pageData,
+  }: { globalData: GlobalProps; pageData: PageProps } = await getData(
+    slug,
+    preview === process.env.PREVIEW_TOKEN
+  )
 
   const ogImage = pageData.ogImage ? pageData.ogImage : globalData.siteImage
   const description = pageData.description || globalData.siteDescription
@@ -41,9 +48,11 @@ export async function generateMetadata({
       ? `${pageData.title} | ${globalData.siteTitle}`
       : globalData.siteTitle,
     description,
-    openGraph: {
-      images: [ogImage],
-    },
+    openGraph: ogImage?.src
+      ? {
+          images: [ogImage.src],
+        }
+      : undefined,
     icons: {
       icon: '/favicon.svg',
     },
@@ -52,13 +61,17 @@ export async function generateMetadata({
 
 export default async function Home({
   params: { slug },
+  searchParams: { preview },
 }: {
+  searchParams: {
+    preview: string
+  }
   params: {
     slug: string
   }
 }) {
   const { globalData, pageData }: { globalData: GlobalProps; pageData: any } =
-    await getData(slug)
+    await getData(slug, preview === process.env.PREVIEW_TOKEN)
 
   return <PageBuilder pageData={pageData} globalData={globalData} />
 }

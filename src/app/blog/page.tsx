@@ -1,31 +1,28 @@
 import { Banner, Cards } from '@components/blocks'
 import { PageLayout } from '@components/global/PageLayout'
+import { client } from '@utils/client'
 import { BlogRollProps, GlobalProps } from '@utils/types'
+import { BLOG_ROLL_QUERY } from 'queries/blogRoll'
+import { GLOBAL_QUERY } from 'queries/global'
 
 async function getData() {
-  const globalRes = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
-  const globalData = await globalRes.json()
-
-  const blogRes = await fetch(`${process.env.SITE_URL}/api/getBlogRoll`)
-  const blogData: BlogRollProps = await blogRes.json()
+  const globalData = await client.fetch(GLOBAL_QUERY)
+  const blogData = await client.fetch(BLOG_ROLL_QUERY)
 
   return { globalData, blogData }
 }
 
-const oneDay = 60 * 60 * 24
-
-export const revalidate = process.env.NODE_ENV === 'development' ? 0 : oneDay
-
 export async function generateMetadata({}) {
-  const globalData = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
-  const globalJson: GlobalProps = await globalData.json()
+  const globalData = await client.fetch(GLOBAL_QUERY)
 
   return {
-    title: `Blog | ${globalJson.siteTitle}`,
-    description: globalJson.siteDescription,
-    openGraph: {
-      images: [globalJson.siteImage],
-    },
+    title: `Blog | ${globalData.siteTitle}`,
+    description: globalData.siteDescription,
+    openGraph: globalData.siteImage
+      ? {
+          images: [globalData.siteImage?.src || ''],
+        }
+      : undefined,
     icons: {
       icon: '/favicon.svg',
     },
@@ -52,11 +49,17 @@ export default async function Home() {
         heading={firstPost.title}
         message={firstPost.description}
         headingLevel={1}
+        links={[
+          {
+            label: 'Read More',
+            href: firstPost.href,
+          },
+        ]}
       />
       <Cards
         heading="Blog Posts"
         items={allOtherPosts}
-        level={2}
+        headingLevel={2}
         paginated
         itemsPerPage={12}
       />

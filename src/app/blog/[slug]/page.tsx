@@ -2,59 +2,79 @@ import { Banner, Cards } from '@components/blocks'
 import { PageLayout } from '@components/global/PageLayout'
 import { ShareButtons } from '@components/modules/ShareButtons'
 import { TableOfContents } from '@components/modules/TableOfContents'
-import { Container, Flex, Markdown, Spacer } from '@components/utility'
+import { Container, Flex, Portable, Spacer } from '@components/utility'
+import { client, previewClient } from '@utils/client'
 import { GlobalProps, PostDetailsProps } from '@utils/types'
 import { notFound } from 'next/navigation'
+import { GLOBAL_QUERY } from 'queries/global'
+import { POST_QUERY } from 'queries/post'
 
-async function getData() {
-  const globalRes = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
-  const blogRes = await fetch(`${process.env.SITE_URL}/api/getBlogPost`)
+async function getData(slug: string, preview?: boolean) {
+  const sanityClient = preview ? previewClient : client
 
-  if (!blogRes.ok) {
+  const globalData = await sanityClient.fetch(GLOBAL_QUERY)
+  const postData = await sanityClient.fetch(POST_QUERY, { slug })
+
+  if (!postData) {
     return notFound()
   }
-
-  const globalData: GlobalProps = await globalRes.json()
-  const postData: PostDetailsProps = await blogRes.json()
 
   return { globalData, postData }
 }
 
-const oneDay = 60 * 60 * 24
+export const revalidate = 0
 
-export const revalidate = process.env.NODE_ENV === 'development' ? 0 : oneDay
-
-export async function generateMetadata({}) {
-  const globalData: any = await fetch(
-    `${process.env.SITE_URL}/api/getGlobalData`
+export async function generateMetadata({
+  params: { slug },
+  searchParams: { preview },
+}: {
+  searchParams: {
+    preview: string
+  }
+  params: {
+    slug: string
+  }
+}) {
+  const { globalData, postData } = await getData(
+    slug,
+    preview === process.env.PREVIEW_TOKEN
   )
-  const postData: any = await fetch(`${process.env.SITE_URL}/api/getBlogPost`)
 
-  const globalJson: GlobalProps = await globalData.json()
-  const postJson: PostDetailsProps = await postData.json()
   const ogImage = postData.ogImage ? postData.ogImage : globalData.siteImage
   const description = postData.description || globalData.siteDescription
 
   return {
-    title: `${postJson.title} | Blog | ${globalJson.siteTitle}`,
+    title: `${postData.title} | Blog | ${globalData.siteTitle}`,
     description,
-    openGraph: {
-      images: [ogImage],
-    },
+    openGraph: ogImage?.src
+      ? {
+          images: [ogImage.src],
+        }
+      : undefined,
     icons: {
       icon: '/favicon.svg',
     },
   }
 }
 
-export default async function Home() {
+export default async function Post({
+  params: { slug },
+  searchParams: { preview },
+}: {
+  searchParams: {
+    preview: string
+  }
+  params: {
+    slug: string
+  }
+}) {
   const {
     postData,
     globalData,
   }: {
     globalData: GlobalProps
     postData: PostDetailsProps
-  } = await getData()
+  } = await getData(slug, preview === process.env.PREVIEW_TOKEN)
 
   return (
     <PageLayout global={globalData} pageClasses="post">
@@ -67,6 +87,7 @@ export default async function Home() {
         authors={postData.authors}
         tags={postData.tags}
       />
+
       <Container padded className="bodyContainer">
         <ShareButtons title={postData.title} slug={postData.slug} />
         <Spacer size={2} />
@@ -77,7 +98,7 @@ export default async function Home() {
           customLayout="one-quarter-three-quarters"
         >
           <TableOfContents targetId="postContent" />
-          <Markdown componentId="postContent">{postData.content}</Markdown>
+          <Portable content={postData.content} componentId="postContent" />
         </Flex>
       </Container>
 

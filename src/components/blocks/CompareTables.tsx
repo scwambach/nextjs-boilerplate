@@ -10,7 +10,7 @@ export const CompareTables = ({
   componentId,
   heading,
   subheading,
-  level,
+  headingLevel,
   items,
   overallTheme,
 }: CompareTablesProps) => {
@@ -24,7 +24,7 @@ export const CompareTables = ({
         {heading && (
           <SectionHeading
             heading={heading}
-            level={level}
+            headingLevel={headingLevel}
             subheading={subheading}
           />
         )}

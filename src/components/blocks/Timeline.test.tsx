@@ -2,13 +2,47 @@ import { render } from '@testing-library/react'
 import { Timeline } from './Timeline'
 import { TimelineProps } from '@utils/types'
 
+const subheading = [
+  {
+    children: [
+      {
+        _type: 'span',
+        marks: [],
+        text: 'Timeline Subheading',
+        _key: 'd9986fb8c9440',
+      },
+    ],
+    _type: 'block',
+    style: 'normal',
+    _key: '2977d788040d',
+    markDefs: [],
+  },
+]
+
+const description = [
+  {
+    children: [
+      {
+        _type: 'span',
+        marks: [],
+        text: 'Description 1',
+        _key: 'd9986fb8c9440',
+      },
+    ],
+    _type: 'block',
+    style: 'normal',
+    _key: '2977d788040d',
+    markDefs: [],
+  },
+]
+
 describe('Timeline Component', () => {
   const defaultProps: TimelineProps = {
     events: [
       {
         date: '2023-01-01',
         title: 'Event 1',
-        description: 'Description 1',
+        description,
         image: { query: 'history', alt: 'Image 1', width: 100, height: 100 },
       },
       {
@@ -18,8 +52,8 @@ describe('Timeline Component', () => {
     ],
     className: 'custom-class',
     heading: 'Timeline Heading',
-    level: 3,
-    subheading: 'Timeline Subheading',
+    headingLevel: 3,
+    subheading,
   }
 
   it('renders without crashing', () => {
@@ -34,7 +68,7 @@ describe('Timeline Component', () => {
 
   it('renders subheading when provided', () => {
     const { getByText } = render(<Timeline {...defaultProps} />)
-    expect(getByText(defaultProps.subheading as string)).toBeInTheDocument()
+    expect(getByText('Timeline Subheading')).toBeInTheDocument()
   })
 
   it('renders correct number of events', () => {

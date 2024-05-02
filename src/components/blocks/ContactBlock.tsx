@@ -6,17 +6,18 @@ import { Map } from './Map'
 
 // TODO: Create ContactBlock tests and stories
 
-export const ContactBlock = ({
-  className,
-  testId,
-  componentId,
-  heading,
-  subheading,
-  marker,
-  level,
-  info,
-  container,
-}: ContactBlockProps) => {
+export const ContactBlock = (props: ContactBlockProps) => {
+  const {
+    className,
+    testId,
+    componentId,
+    heading,
+    subheading,
+    marker,
+    headingLevel,
+    information,
+    container,
+  } = props
   return (
     <section
       id={componentId}
@@ -30,36 +31,36 @@ export const ContactBlock = ({
               <SectionHeading
                 heading={heading}
                 subheading={subheading}
-                level={level}
+                headingLevel={headingLevel}
               />
               <Flex className="infoBox" direction="column" gap="sm">
-                {info.address && (
+                {information.address && (
                   <div>
                     <Heading nonHeadingElement="p">Get Directions:</Heading>
                     <LinkObject
-                      href={`https://www.google.com/maps/place/${info.address?.street}+${info.address?.city}+${info.address?.state}+${info.address?.zip}/`}
+                      href={`https://www.google.com/maps/place/${information.address?.street}+${information.address?.city}+${information.address?.state}+${information.address?.zip}/`}
                     >
-                      {`${info.address?.street}, ${info.address?.city}, ${info.address?.state} ${info.address?.zip}`}
+                      {`${information.address?.street}, ${information.address?.city}, ${information.address?.state} ${information.address?.zip}`}
                     </LinkObject>
                   </div>
                 )}
-                {info.phone && (
+                {information.phone && (
                   <div>
                     <Heading nonHeadingElement="p">Phone:</Heading>
-                    <LinkObject href={`tel:${info.phone}`}>
-                      {info.phone}
+                    <LinkObject href={`tel:${information.phone}`}>
+                      {information.phone}
                     </LinkObject>
                   </div>
                 )}
-                {info.email && (
+                {information.email && (
                   <div>
                     <Heading nonHeadingElement="p">Email:</Heading>
-                    <LinkObject href={`mailto:${info.email}`}>
-                      {info.email}
+                    <LinkObject href={`mailto:${information.email}`}>
+                      {information.email}
                     </LinkObject>
                   </div>
                 )}
-                {info.hours && (
+                {information.hours && (
                   <div>
                     <Heading nonHeadingElement="p">Hours:</Heading>
 
@@ -69,7 +70,7 @@ export const ContactBlock = ({
                       className="unstyled"
                       elementTag="ul"
                     >
-                      {info.hours.map((hour, index) => (
+                      {information.hours.map((hour, index) => (
                         <li key={index}>
                           <strong>{hour.days}:</strong> {hour.hours}
                         </li>

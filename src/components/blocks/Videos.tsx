@@ -12,7 +12,7 @@ export const Videos = ({
   gap = 'md',
   heading,
   items,
-  level,
+  headingLevel,
   subheading,
   testId,
 }: VideosProps) => {
@@ -26,7 +26,7 @@ export const Videos = ({
         {heading && (
           <SectionHeading
             heading={heading}
-            level={level}
+            headingLevel={headingLevel}
             subheading={subheading}
           />
         )}

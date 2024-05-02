@@ -1,5 +1,12 @@
 import { Button, ImageObject, VideoBlock } from '@components/modules'
-import { Box, Container, Flex, Heading, Markdown } from '@components/utility'
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  Markdown,
+  Portable,
+} from '@components/utility'
 import { RiverProps } from '@utils/types'
 
 export const River = ({
@@ -10,6 +17,7 @@ export const River = ({
   items,
   reverse,
   testId,
+  markdown,
   theme = 'primary',
 }: RiverProps) => {
   return (
@@ -32,7 +40,7 @@ export const River = ({
                 testId={testId ? `item-${index}` : undefined}
                 direction={isEven ? 'row' : 'row-reverse'}
                 alignItems={item.video ? 'center' : 'stretch'}
-                key={index + (item.title || item.description)}
+                key={item._key}
               >
                 <Box overflow className={item.video ? 'video' : 'image'}>
                   {item.video ? (
@@ -48,7 +56,11 @@ export const River = ({
                   gap="none"
                 >
                   <Heading level={headingLevel}>{item.title}</Heading>
-                  <Markdown>{item.description}</Markdown>
+                  {markdown ? (
+                    <Markdown>{item.description as string}</Markdown>
+                  ) : (
+                    <Portable content={item.description as any[]} />
+                  )}
                   {item.links && item.links.length > 0 && (
                     <div className="links">
                       {item.links.map((link, index) => (

@@ -15,6 +15,6 @@ export const SectionHeading: Story = {
     heading: 'Section Heading',
     subheading:
       'Praesent ex ligula, varius consectetur ipsum ut, molestie ultricies ligula. Praesent vitae metus pellentesque.',
-    level: 2,
+    headingLevel: 2,
   },
 }

@@ -1,24 +1,31 @@
 import { PageBuilder } from '@components/global'
-import { GlobalProps } from '@utils/types'
+import { client, previewClient } from '@utils/client'
+import { GlobalProps, PageProps } from '@utils/types'
+import { notFound } from 'next/navigation'
+import { GLOBAL_QUERY } from 'queries/global'
+import { PAGE_QUERY } from 'queries/page'
 
-async function getData() {
-  const global = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
-  const page = await fetch(`${process.env.SITE_URL}/api/getPageData/home`)
-  const globalData = await global.json()
-  const pageData = await page.json()
+async function getData(slug: string, preview?: boolean) {
+  const sanityClient = preview ? previewClient : client
+
+  const globalData = await sanityClient.fetch(GLOBAL_QUERY)
+  const pageData = await sanityClient.fetch(PAGE_QUERY, { slug })
+
+  if (!pageData) {
+    notFound()
+  }
+
   return {
     globalData,
     pageData,
   }
 }
 
-const oneDay = 60 * 60 * 24
-
-export const revalidate = process.env.NODE_ENV === 'development' ? 0 : oneDay
-
 export async function generateMetadata() {
-  const { globalData, pageData }: { globalData: GlobalProps; pageData: any } =
-    await getData()
+  const {
+    globalData,
+    pageData,
+  }: { globalData: GlobalProps; pageData: PageProps } = await getData('home')
 
   const ogImage = pageData.ogImage ? pageData.ogImage : globalData.siteImage
   const description = pageData.description || globalData.siteDescription
@@ -28,18 +35,28 @@ export async function generateMetadata() {
       ? `${pageData.title} | ${globalData.siteTitle}`
       : globalData.siteTitle,
     description,
-    openGraph: {
-      images: [ogImage],
-    },
+    openGraph: ogImage?.src
+      ? {
+          images: [ogImage.src],
+        }
+      : undefined,
     icons: {
-      icon: '/favicon.svg',
+      icon: globalData.favicon,
     },
   }
 }
 
-export default async function Home() {
+export const revalidate = 0
+
+export default async function Home({
+  searchParams: { preview },
+}: {
+  searchParams: {
+    preview: string
+  }
+}) {
   const { globalData, pageData }: { globalData: GlobalProps; pageData: any } =
-    await getData()
+    await getData('home', preview === process.env.PREVIEW_TOKEN)
 
   return <PageBuilder pageData={pageData} globalData={globalData} />
 }

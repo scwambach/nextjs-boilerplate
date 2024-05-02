@@ -13,7 +13,7 @@ export const Gallery = ({
   gap,
   heading,
   items,
-  level,
+  headingLevel,
   subheading,
   testId,
 }: GalleryProps) => {
@@ -37,7 +37,7 @@ export const Gallery = ({
         {heading && (
           <SectionHeading
             heading={heading}
-            level={level}
+            headingLevel={headingLevel}
             subheading={subheading}
           />
         )}

@@ -4,15 +4,17 @@ import { Minus, Quotes } from '@phosphor-icons/react/dist/ssr'
 import { headingFont } from '@utils/fonts'
 import { QuoteProps } from '@utils/types'
 
-export const Quote = ({
-  bgColor = 'green',
-  cite,
-  className,
-  componentId,
-  person,
-  quote,
-  testId,
-}: QuoteProps) => {
+export const Quote = (props: QuoteProps) => {
+  const {
+    bgColor = 'green',
+    cite,
+    className,
+    componentId,
+    person,
+    quote,
+    testId,
+    markdown,
+  } = props
   return (
     <section
       id={componentId}
@@ -21,8 +23,9 @@ export const Quote = ({
     >
       <Container containerClass="narrower">
         <Quotes size={40} />
+
         <blockquote>
-          <Markdown>{quote}</Markdown>
+          {markdown ? <Markdown>{quote as string}</Markdown> : <p>{quote}</p>}
         </blockquote>
         {cite && !person && (
           <cite className={headingFont.className}>

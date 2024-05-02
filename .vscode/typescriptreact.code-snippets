@@ -1,4 +1,23 @@
 {
+  "New Sanity Object": {
+    "prefix": "newSanityObject",
+    "body": [
+      "import { groups, headingProps, settingsProps } from '../docTypes/common'",
+      "",
+      "export const ${TM_FILENAME_BASE/([^.]+).*/${1}/} = {",
+      "  name: '${TM_FILENAME_BASE/([^.]+).*/${1}/}',",
+      "  title: '$1',",
+      "  type: 'object',",
+      "  groups,",
+      "  fields: [",
+      "    ...headingProps({ group: 'content' }),",
+      "    ...settingsProps({}),",
+      "    $2",
+      "  ],",
+      "}",
+    ],
+    "description": "New Sanity Object"
+  },
   "New Test": {
     "prefix": "newTest",
     "body": [

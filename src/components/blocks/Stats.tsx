@@ -10,7 +10,7 @@ export const Stats = ({
   gap = 'xs',
   heading,
   items,
-  level,
+  headingLevel,
   subheading,
   testId,
 }: StatsProps) => {
@@ -27,7 +27,7 @@ export const Stats = ({
         {heading && (
           <SectionHeading
             heading={heading}
-            level={level}
+            headingLevel={headingLevel}
             subheading={subheading}
           />
         )}

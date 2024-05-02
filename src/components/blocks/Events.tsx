@@ -11,7 +11,7 @@ export const Events = ({
   container = 'narrower',
   heading,
   items,
-  level,
+  headingLevel,
   subheading,
   testId,
 }: EventsProps) => {
@@ -25,7 +25,7 @@ export const Events = ({
         {heading && (
           <SectionHeading
             heading={heading}
-            level={level}
+            headingLevel={headingLevel}
             subheading={subheading}
           />
         )}

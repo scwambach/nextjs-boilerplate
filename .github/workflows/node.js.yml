@@ -25,6 +25,11 @@ jobs:
       EMAIL_SERVER: ${{ vars.EMAIL_SERVER }}
       GOOGLE_CLIENT_ID: ${{ vars.GOOGLE_CLIENT_ID }}
       GOOGLE_CLIENT_SECRET: ${{ vars.GOOGLE_CLIENT_SECRET }}
+      NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+      NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET }}
+      SANITY_API_READ_TOKEN: ${{ vars.SANITY_API_READ_TOKEN }}
+      NEXT_PUBLIC_VERCEL_ENV: ${{ vars.NEXT_PUBLIC_VERCEL_ENV }}
+      PREVIEW_TOKEN: ${{ vars.PREVIEW_TOKEN }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2

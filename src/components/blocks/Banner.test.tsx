@@ -13,6 +13,7 @@ describe('Banner', () => {
         heading="Test Heading"
         subheading="Test Subheading"
         message="Test Message"
+        markdown
         backgroundImage={{
           alt: 'Banner Image',
           width: 900,

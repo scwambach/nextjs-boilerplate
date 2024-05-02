@@ -13,7 +13,7 @@ type Story = StoryObj<typeof ButtonRowItem>
 export const ButtonRow: Story = {
   args: {
     heading: 'Button Row',
-    level: 2,
+    headingLevel: 2,
     subheading: 'A row of buttons',
     items: [
       {
