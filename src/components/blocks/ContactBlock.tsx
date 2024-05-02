@@ -14,7 +14,7 @@ export const ContactBlock = (props: ContactBlockProps) => {
     heading,
     subheading,
     marker,
-    level,
+    headingLevel,
     information,
     container,
   } = props
@@ -31,7 +31,7 @@ export const ContactBlock = (props: ContactBlockProps) => {
               <SectionHeading
                 heading={heading}
                 subheading={subheading}
-                level={level}
+                headingLevel={headingLevel}
               />
               <Flex className="infoBox" direction="column" gap="sm">
                 {information.address && (

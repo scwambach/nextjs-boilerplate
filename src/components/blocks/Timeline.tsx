@@ -10,7 +10,7 @@ export const Timeline = ({
   container,
   events,
   heading,
-  level,
+  headingLevel,
   subheading,
   testId,
   markdown,
@@ -25,7 +25,7 @@ export const Timeline = ({
         {heading && (
           <SectionHeading
             heading={heading}
-            level={level}
+            headingLevel={headingLevel}
             subheading={subheading}
           />
         )}

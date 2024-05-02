@@ -9,7 +9,7 @@ const Form = ({
   componentId,
   container,
   heading,
-  level,
+  headingLevel,
   markdown,
   onSubmit,
   subheading,
@@ -26,7 +26,7 @@ const Form = ({
         {heading && (
           <SectionHeading
             heading={heading}
-            level={level}
+            headingLevel={headingLevel}
             markdown={markdown}
             subheading={subheading}
           />

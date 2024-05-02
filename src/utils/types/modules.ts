@@ -192,7 +192,7 @@ export interface PersonProps extends ComponentProps {
 
 export interface SectionHeadingProps extends ComponentProps {
   heading?: string
-  level?: HeadingLevel
+  headingLevel?: HeadingLevel
   markdown?: boolean
   subheading?: string | any[]
 }

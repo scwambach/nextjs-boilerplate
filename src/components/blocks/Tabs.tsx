@@ -12,7 +12,7 @@ export const Tabs = ({
   container,
   heading,
   items,
-  level,
+  headingLevel,
   subheading,
   testId,
   theme = 'primary',
@@ -29,7 +29,7 @@ export const Tabs = ({
         {heading && (
           <SectionHeading
             heading={heading}
-            level={level}
+            headingLevel={headingLevel}
             subheading={subheading}
           />
         )}

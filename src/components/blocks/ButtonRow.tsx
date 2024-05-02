@@ -9,7 +9,7 @@ export const ButtonRow = ({
   componentId,
   heading,
   items,
-  level,
+  headingLevel,
   subheading,
   testId,
 }: ButtonRowProps) => {
@@ -23,7 +23,7 @@ export const ButtonRow = ({
         {heading && (
           <SectionHeading
             heading={heading}
-            level={level}
+            headingLevel={headingLevel}
             subheading={subheading}
           />
         )}

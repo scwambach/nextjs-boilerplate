@@ -6,7 +6,7 @@ describe('SectionHeading Component', () => {
   const defaultProps: SectionHeadingProps = {
     className: 'custom-class',
     heading: 'Section Heading',
-    level: 3,
+    headingLevel: 3,
     markdown: true,
     subheading: 'Section Subheading',
   }
@@ -28,7 +28,7 @@ describe('SectionHeading Component', () => {
 
   it('renders heading with correct level', () => {
     const { container } = render(<SectionHeading {...defaultProps} />)
-    const heading = container.querySelector(`h${defaultProps.level}`)
+    const heading = container.querySelector(`h${defaultProps.headingLevel}`)
     expect(heading).toBeInTheDocument()
   })
 

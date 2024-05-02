@@ -25,7 +25,7 @@ export const Cards = ({
   heading,
   items,
   itemsPerPage = 6,
-  level = 3,
+  headingLevel = 3,
   paginated,
   subheading,
   testId,
@@ -83,7 +83,7 @@ export const Cards = ({
         {heading && (
           <SectionHeading
             heading={heading}
-            level={level}
+            headingLevel={headingLevel}
             subheading={
               paginated
                 ? `${subheading ? `${subheading}\n\n` : ''}${loading ? '' : `Page ${activePage}`}`

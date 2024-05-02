@@ -5,7 +5,7 @@ export const SectionHeading = ({
   className,
   componentId,
   heading,
-  level = 3,
+  headingLevel = 3,
   subheading,
   markdown,
   testId,
@@ -16,7 +16,7 @@ export const SectionHeading = ({
       data-testid={testId}
       className={`sectionHeading${className ? ` ${className}` : ''}`}
     >
-      {heading && <Heading level={level}>{heading}</Heading>}
+      {heading && <Heading level={headingLevel}>{heading}</Heading>}
       {subheading && (
         <>
           {markdown ? (
