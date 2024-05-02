@@ -59,7 +59,7 @@ export default async function Home() {
       <Cards
         heading="Blog Posts"
         items={allOtherPosts}
-        level={2}
+        headingLevel={2}
         paginated
         itemsPerPage={12}
       />
