@@ -4,12 +4,15 @@ import { RiverProps } from '@utils/types'
 
 describe('River Component', () => {
   const defaultProps: RiverProps = {
+    markdown: true,
     items: [
       {
+        _key: '1',
         description: 'Description 1',
         image: { query: 'nature', alt: 'Image 1' },
       },
       {
+        _key: '1',
         title: 'Title 2',
         description: 'Description 2',
         image: { query: 'nature', alt: 'Image 2' },

@@ -7,6 +7,7 @@ describe('SectionHeading Component', () => {
     className: 'custom-class',
     heading: 'Section Heading',
     level: 3,
+    markdown: true,
     subheading: 'Section Subheading',
   }
 

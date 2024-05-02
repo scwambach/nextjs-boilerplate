@@ -2,6 +2,23 @@ import { render } from '@testing-library/react'
 import { Stats } from './Stats'
 import { StatsProps } from '@utils/types'
 
+const subheading = [
+  {
+    children: [
+      {
+        _type: 'span',
+        marks: [],
+        text: 'Stats Subheading',
+        _key: 'd9986fb8c9440',
+      },
+    ],
+    _type: 'block',
+    style: 'normal',
+    _key: '2977d788040d',
+    markDefs: [],
+  },
+]
+
 describe('Stats Component', () => {
   const defaultProps: StatsProps = {
     items: [
@@ -18,7 +35,7 @@ describe('Stats Component', () => {
     className: 'custom-class',
     heading: 'Stats Heading',
     level: 3,
-    subheading: 'Stats Subheading',
+    subheading,
     gap: 'sm',
   }
 
@@ -34,7 +51,7 @@ describe('Stats Component', () => {
 
   it('renders subheading when provided', () => {
     const { getByText } = render(<Stats {...defaultProps} />)
-    expect(getByText(defaultProps.subheading as string)).toBeInTheDocument()
+    expect(getByText('Stats Subheading')).toBeInTheDocument()
   })
 
   it('renders correct number of items', () => {

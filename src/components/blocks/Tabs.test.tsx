@@ -2,6 +2,23 @@ import { render, fireEvent } from '@testing-library/react'
 import { Tabs } from './Tabs'
 import { TabsProps } from '@utils/types'
 
+const subheading = [
+  {
+    children: [
+      {
+        _type: 'span',
+        marks: [],
+        text: 'Tabs Subheading',
+        _key: 'd9986fb8c9440',
+      },
+    ],
+    _type: 'block',
+    style: 'normal',
+    _key: '2977d788040d',
+    markDefs: [],
+  },
+]
+
 describe('Tabs Component', () => {
   const defaultProps: TabsProps = {
     items: [
@@ -12,7 +29,7 @@ describe('Tabs Component', () => {
     heading: 'Tabs Heading',
     level: 3,
     theme: 'primary',
-    subheading: 'Tabs Subheading',
+    subheading,
   }
 
   it('renders without crashing', () => {
@@ -27,7 +44,7 @@ describe('Tabs Component', () => {
 
   it('renders subheading when provided', () => {
     const { getByText } = render(<Tabs {...defaultProps} />)
-    expect(getByText(defaultProps.subheading as string)).toBeInTheDocument()
+    expect(getByText('Tabs Subheading')).toBeInTheDocument()
   })
 
   it('renders correct number of tabs', () => {

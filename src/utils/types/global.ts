@@ -31,7 +31,7 @@ export interface ComponentProps {
 export interface BlockProps extends ComponentProps {
   heading?: string
   level?: HeadingLevel
-  subheading?: string
+  subheading?: string | any[]
   container?: ContainerClasses
 }
 

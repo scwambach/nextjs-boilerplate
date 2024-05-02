@@ -7,13 +7,30 @@ const mockItems = [
   { title: 'Card 2', description: 'Description 2' },
 ]
 
+const subheading = [
+  {
+    children: [
+      {
+        _type: 'span',
+        marks: [],
+        text: 'Cards Subheading',
+        _key: 'd9986fb8c9440',
+      },
+    ],
+    _type: 'block',
+    style: 'normal',
+    _key: '2977d788040d',
+    markDefs: [],
+  },
+]
+
 describe('Cards component', () => {
   it('renders with items', () => {
     const { getByText } = render(
       <Cards
         items={mockItems}
         heading="Cards Heading"
-        subheading="Cards Subheading"
+        subheading={subheading}
       />
     )
 

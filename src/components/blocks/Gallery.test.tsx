@@ -9,13 +9,30 @@ describe('Gallery Component', () => {
     { query: 'technology 3', alt: 'Image 3', width: 100, height: 100 },
   ]
 
+  const subheading = [
+    {
+      children: [
+        {
+          _type: 'span',
+          marks: [],
+          text: 'Gallery Subheading',
+          _key: 'd9986fb8c9440',
+        },
+      ],
+      _type: 'block',
+      style: 'normal',
+      _key: '2977d788040d',
+      markDefs: [],
+    },
+  ]
+
   const defaultProps: GalleryProps = {
     items,
     className: 'custom-class',
     heading: 'Gallery Heading',
     level: 3,
     testId: 'galleryTestId',
-    subheading: 'Gallery Subheading',
+    subheading,
     columns: 4,
     gap: 'md',
   }
@@ -32,7 +49,7 @@ describe('Gallery Component', () => {
 
   it('renders subheading when provided', () => {
     const { getByText } = render(<Gallery {...defaultProps} />)
-    expect(getByText(defaultProps.subheading as string)).toBeInTheDocument()
+    expect(getByText('Gallery Subheading')).toBeInTheDocument()
   })
 
   it('renders correct number of items', () => {
