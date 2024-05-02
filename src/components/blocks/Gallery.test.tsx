@@ -30,7 +30,7 @@ describe('Gallery Component', () => {
     items,
     className: 'custom-class',
     heading: 'Gallery Heading',
-    level: 3,
+    headingLevel: 3,
     testId: 'galleryTestId',
     subheading,
     columns: 4,

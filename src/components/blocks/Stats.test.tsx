@@ -34,7 +34,7 @@ describe('Stats Component', () => {
     ],
     className: 'custom-class',
     heading: 'Stats Heading',
-    level: 3,
+    headingLevel: 3,
     subheading,
     gap: 'sm',
   }

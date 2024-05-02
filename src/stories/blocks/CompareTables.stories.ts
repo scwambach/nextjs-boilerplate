@@ -13,7 +13,7 @@ type Story = StoryObj<typeof CompareTablesItem>
 export const Primary: Story = {
   args: {
     heading: 'Compare Tables',
-    level: 2,
+    headingLevel: 2,
     overallTheme: 'primary',
     subheading: 'A row of tables',
     items: [
@@ -84,7 +84,7 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     heading: 'Compare Tables',
-    level: 2,
+    headingLevel: 2,
     overallTheme: 'secondary',
     subheading: 'A row of tables',
     items: [
@@ -155,7 +155,7 @@ export const Secondary: Story = {
 export const Tertiary: Story = {
   args: {
     heading: 'Compare Tables',
-    level: 2,
+    headingLevel: 2,
     overallTheme: 'tertiary',
     subheading: 'A row of tables',
     items: [
@@ -226,7 +226,7 @@ export const Tertiary: Story = {
 export const Mixed: Story = {
   args: {
     heading: 'Compare Tables',
-    level: 2,
+    headingLevel: 2,
     subheading: 'A row of tables',
     items: [
       {

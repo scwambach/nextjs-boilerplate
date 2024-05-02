@@ -27,7 +27,7 @@ describe('Tabs Component', () => {
     ],
     className: 'custom-class',
     heading: 'Tabs Heading',
-    level: 3,
+    headingLevel: 3,
     theme: 'primary',
     subheading,
   }

@@ -52,7 +52,7 @@ describe('Timeline Component', () => {
     ],
     className: 'custom-class',
     heading: 'Timeline Heading',
-    level: 3,
+    headingLevel: 3,
     subheading,
   }
 
