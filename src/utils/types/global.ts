@@ -109,6 +109,7 @@ export interface PostDetailsProps {
 export interface PageProps {
   _createdAt?: string
   _rev?: string
+  _id?: string
   _type?: string
   description?: string
   keywords?: string[]

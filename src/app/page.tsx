@@ -1,12 +1,19 @@
 import { PageBuilder } from '@components/global'
-import { client } from '@utils/client'
+import { client, previewClient } from '@utils/client'
 import { GlobalProps, PageProps } from '@utils/types'
+import { notFound } from 'next/navigation'
 import { GLOBAL_QUERY } from 'queries/global'
 import { PAGE_QUERY } from 'queries/page'
 
-async function getData() {
-  const globalData = await client.fetch(GLOBAL_QUERY)
-  const pageData = await client.fetch(PAGE_QUERY, { slug: 'home' })
+async function getData(slug: string, preview?: boolean) {
+  const sanityClient = preview ? previewClient : client
+
+  const globalData = await sanityClient.fetch(GLOBAL_QUERY)
+  const pageData = await sanityClient.fetch(PAGE_QUERY, { slug })
+
+  if (!pageData) {
+    notFound()
+  }
 
   return {
     globalData,
@@ -18,7 +25,7 @@ export async function generateMetadata() {
   const {
     globalData,
     pageData,
-  }: { globalData: GlobalProps; pageData: PageProps } = await getData()
+  }: { globalData: GlobalProps; pageData: PageProps } = await getData('home')
 
   const ogImage = pageData.ogImage ? pageData.ogImage : globalData.siteImage
   const description = pageData.description || globalData.siteDescription
@@ -41,11 +48,15 @@ export async function generateMetadata() {
 
 export const revalidate = 0
 
-export default async function Home() {
-  const {
-    globalData,
-    pageData,
-  }: { globalData: GlobalProps; pageData: PageProps } = await getData()
+export default async function Home({
+  searchParams: { preview },
+}: {
+  searchParams: {
+    preview: string
+  }
+}) {
+  const { globalData, pageData }: { globalData: GlobalProps; pageData: any } =
+    await getData('home', preview === process.env.PREVIEW_TOKEN)
 
   return <PageBuilder pageData={pageData} globalData={globalData} />
 }
