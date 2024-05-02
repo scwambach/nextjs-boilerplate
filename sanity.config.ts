@@ -12,6 +12,7 @@ import {
   Ticket,
   UsersThree,
 } from '@phosphor-icons/react'
+import { defaultDocumentNode } from './defaultDocumentNode'
 
 export default defineConfig({
   basePath: '/studio',
@@ -20,6 +21,7 @@ export default defineConfig({
   schema,
   plugins: [
     structureTool({
+      defaultDocumentNode,
       structure: (S) =>
         S.list()
           .title('Content')

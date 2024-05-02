@@ -3,15 +3,17 @@ import { PageLayout } from '@components/global/PageLayout'
 import { ShareButtons } from '@components/modules/ShareButtons'
 import { TableOfContents } from '@components/modules/TableOfContents'
 import { Container, Flex, Portable, Spacer } from '@components/utility'
-import { client } from '@utils/client'
+import { client, previewClient } from '@utils/client'
 import { GlobalProps, PostDetailsProps } from '@utils/types'
 import { notFound } from 'next/navigation'
 import { GLOBAL_QUERY } from 'queries/global'
 import { POST_QUERY } from 'queries/post'
 
-async function getData(slug: string) {
-  const globalData = await client.fetch(GLOBAL_QUERY)
-  const postData = await client.fetch(POST_QUERY, { slug })
+async function getData(slug: string, preview?: boolean) {
+  const sanityClient = preview ? previewClient : client
+
+  const globalData = await sanityClient.fetch(GLOBAL_QUERY)
+  const postData = await sanityClient.fetch(POST_QUERY, { slug })
 
   if (!postData) {
     return notFound()
@@ -24,13 +26,19 @@ export const revalidate = 0
 
 export async function generateMetadata({
   params: { slug },
+  searchParams: { preview },
 }: {
+  searchParams: {
+    preview: string
+  }
   params: {
     slug: string
   }
 }) {
-  const globalData = await client.fetch(GLOBAL_QUERY)
-  const postData = await client.fetch(POST_QUERY, { slug })
+  const { globalData, postData } = await getData(
+    slug,
+    preview === process.env.PREVIEW_TOKEN
+  )
 
   const ogImage = postData.ogImage ? postData.ogImage : globalData.siteImage
   const description = postData.description || globalData.siteDescription
@@ -51,7 +59,11 @@ export async function generateMetadata({
 
 export default async function Post({
   params: { slug },
+  searchParams: { preview },
 }: {
+  searchParams: {
+    preview: string
+  }
   params: {
     slug: string
   }
@@ -62,7 +74,7 @@ export default async function Post({
   }: {
     globalData: GlobalProps
     postData: PostDetailsProps
-  } = await getData(slug)
+  } = await getData(slug, preview === process.env.PREVIEW_TOKEN)
 
   return (
     <PageLayout global={globalData} pageClasses="post">
