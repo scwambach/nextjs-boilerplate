@@ -1,5 +1,5 @@
 import { Card } from '@components/modules'
-import { Grid as GridItem } from '@components/utility/Grid'
+import { Grid as GridItem } from '@components/utility'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof GridItem> = {

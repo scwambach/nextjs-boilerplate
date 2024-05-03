@@ -1,5 +1,5 @@
 import { ImageObject } from '@components/modules'
-import { Box as BoxItem } from '@components/utility/Box'
+import { Box as BoxItem } from '@components/utility'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof BoxItem> = {

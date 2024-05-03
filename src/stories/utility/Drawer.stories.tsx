@@ -1,4 +1,4 @@
-import { Drawer as DrawerItem } from '@components/utility/Drawer'
+import { Drawer as DrawerItem } from '@components/utility'
 import { Heading } from '@components/utility/Heading'
 import type { Meta, StoryObj } from '@storybook/react'
 

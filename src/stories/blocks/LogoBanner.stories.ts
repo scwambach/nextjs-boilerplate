@@ -1,4 +1,4 @@
-import { LogoBanner as LogoBannerItem } from '@components/blocks/LogoBanner'
+import { LogoBanner as LogoBannerItem } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 import Logo from '@images/logoipsum-300.svg'
 

@@ -1,4 +1,4 @@
-import { Carousel as CarouselItem } from '@components/blocks/Carousel'
+import { Carousel as CarouselItem } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof CarouselItem> = {

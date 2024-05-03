@@ -1,4 +1,4 @@
-import { Timeline as TimelineItem } from '@components/blocks/Timeline'
+import { Timeline as TimelineItem } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof TimelineItem> = {

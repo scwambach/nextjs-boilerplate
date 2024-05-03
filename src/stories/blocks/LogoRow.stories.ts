@@ -1,4 +1,4 @@
-import { LogoRow as LogoRowItem } from '@components/blocks/LogoRow'
+import { LogoRow as LogoRowItem } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 import Logo1 from '@images/logoipsum-230.svg'
 import Logo2 from '@images/logoipsum-231.svg'

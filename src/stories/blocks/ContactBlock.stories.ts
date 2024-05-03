@@ -1,4 +1,4 @@
-import { ContactBlock as ContactBlockItem } from '@components/blocks/ContactBlock'
+import { ContactBlock as ContactBlockItem } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Icon from '@phosphor-icons/react'
 

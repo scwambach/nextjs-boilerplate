@@ -1,4 +1,4 @@
-import { Badge as BadgeItem } from '@components/modules/Badge'
+import { Badge as BadgeItem } from '@components/modules'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof BadgeItem> = {

@@ -1,4 +1,4 @@
-import { Heading as HeadingItem } from '@components/utility/Heading'
+import { Heading as HeadingItem } from '@components/utility'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof HeadingItem> = {

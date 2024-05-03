@@ -1,4 +1,4 @@
-import { Dropdown as DropdownItem } from '@components/modules/Dropdown'
+import { Dropdown as DropdownItem } from '@components/modules'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof DropdownItem> = {

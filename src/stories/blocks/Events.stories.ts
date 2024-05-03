@@ -1,4 +1,4 @@
-import { Events as EventsItem } from '@components/blocks/Events'
+import { Events as EventsItem } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof EventsItem> = {

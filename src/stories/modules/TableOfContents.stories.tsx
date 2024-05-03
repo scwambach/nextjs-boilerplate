@@ -1,4 +1,4 @@
-import { TableOfContents as TableOfContentsItem } from '@components/modules/TableOfContents'
+import { TableOfContents as TableOfContentsItem } from '@components/modules'
 import { Flex, Markdown } from '@components/utility'
 import type { Meta, StoryObj } from '@storybook/react'
 

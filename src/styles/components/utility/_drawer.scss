@@ -43,7 +43,7 @@
 
     &.right {
       border-left: $size-4 solid $green;
-      right: -$size-200 * 3;
+      right: -$size-200 * 3.5;
 
       &.open {
         right: 0;
@@ -52,7 +52,7 @@
 
     &.left {
       border-right: $size-4 solid $green;
-      left: -$size-200 * 3;
+      left: -$size-200 * 3.5;
 
       &.open {
         left: 0;
@@ -61,7 +61,7 @@
 
     &.top {
       border-bottom: $size-4 solid $green;
-      top: -$size-200;
+      top: -$size-200 - $size-100;
 
       &.open {
         top: 0;
@@ -70,7 +70,7 @@
 
     &.bottom {
       border-top: $size-4 solid $green;
-      bottom: -$size-200;
+      bottom: -$size-200 - $size-100;
 
       &.open {
         bottom: 0;

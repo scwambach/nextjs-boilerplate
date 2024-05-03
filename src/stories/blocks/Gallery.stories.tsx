@@ -1,4 +1,4 @@
-import { Gallery as GalleryItem } from '@components/blocks/Gallery'
+import { Gallery as GalleryItem } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof GalleryItem> = {

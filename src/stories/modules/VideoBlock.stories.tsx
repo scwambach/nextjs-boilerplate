@@ -1,4 +1,4 @@
-import { VideoBlock as VideoBlockItem } from '@components/modules/VideoBlock'
+import { VideoBlock as VideoBlockItem } from '@components/modules'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof VideoBlockItem> = {

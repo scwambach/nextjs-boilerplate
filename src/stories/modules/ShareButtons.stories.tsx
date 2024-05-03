@@ -1,4 +1,4 @@
-import { ShareButtons as ShareButtonsItem } from '@components/modules/ShareButtons'
+import { ShareButtons as ShareButtonsItem } from '@components/modules'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof ShareButtonsItem> = {

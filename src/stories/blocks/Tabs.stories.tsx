@@ -1,4 +1,4 @@
-import { Tabs as TabsItem } from '@components/blocks/Tabs'
+import { Tabs as TabsItem } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof TabsItem> = {

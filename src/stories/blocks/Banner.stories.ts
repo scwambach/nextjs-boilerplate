@@ -1,4 +1,4 @@
-import { Banner } from '@components/blocks/Banner'
+import { Banner } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 import ForegroundImage from '@images/marketing.png'
 

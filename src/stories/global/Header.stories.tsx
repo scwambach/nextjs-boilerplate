@@ -1,6 +1,7 @@
-import { Header as HeaderItem } from '@components/global/Header'
+import { Header as HeaderItem } from '@components/global'
 import type { Meta, StoryObj } from '@storybook/react'
 import { GlobalProps } from '@utils/types'
+import { SessionProvider } from 'next-auth/react'
 
 const meta: Meta<typeof HeaderItem> = {
   title: 'Components/Global',
@@ -42,4 +43,13 @@ export const Header: Story = {
       },
     ] as GlobalProps['navigation'],
   },
+  decorators: [
+    (Story) => {
+      return (
+        <SessionProvider>
+          <Story />
+        </SessionProvider>
+      )
+    },
+  ],
 }

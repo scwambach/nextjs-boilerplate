@@ -1,5 +1,5 @@
-import { FormField } from '../../components/modules/FormField'
-import { Form as FormItem } from '@components/blocks/Form'
+import { FormField } from '../../components/modules'
+import { Form as FormItem } from '@components/blocks'
 import { Grid } from '@components/utility'
 import type { Meta, StoryObj } from '@storybook/react'
 

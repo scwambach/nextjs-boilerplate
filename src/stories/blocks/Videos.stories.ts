@@ -1,4 +1,4 @@
-import { Videos as VideosItem } from '@components/blocks/Videos'
+import { Videos as VideosItem } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof VideosItem> = {

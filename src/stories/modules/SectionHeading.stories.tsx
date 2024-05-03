@@ -1,4 +1,4 @@
-import { SectionHeading as SectionHeadingItem } from '@components/modules/SectionHeading'
+import { SectionHeading as SectionHeadingItem } from '@components/modules'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof SectionHeadingItem> = {

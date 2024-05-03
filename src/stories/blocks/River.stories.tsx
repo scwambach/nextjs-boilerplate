@@ -1,4 +1,4 @@
-import { River as RiverItem } from '@components/blocks/River'
+import { River as RiverItem } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 import image1 from '@images/nature.webp'
 import image2 from '@images/nature2.webp'

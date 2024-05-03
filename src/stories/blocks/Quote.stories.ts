@@ -1,4 +1,4 @@
-import { Quote as QuoteItem } from '@components/blocks/Quote'
+import { Quote as QuoteItem } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof QuoteItem> = {

@@ -1,4 +1,4 @@
-import { Event as EventItem } from '@components/modules/Event'
+import { Event as EventItem } from '@components/modules'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof EventItem> = {

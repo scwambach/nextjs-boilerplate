@@ -1,4 +1,4 @@
-import { Avatar as AvatarItem } from '@components/modules/Avatar'
+import { Avatar as AvatarItem } from '@components/modules'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof AvatarItem> = {

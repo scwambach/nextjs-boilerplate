@@ -1,4 +1,4 @@
-import { Map as MapItem } from '@components/blocks/Map'
+import { Map as MapItem } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof MapItem> = {

@@ -1,4 +1,4 @@
-import { Spacer as SpacerItem } from '@components/utility/Spacer'
+import { Spacer as SpacerItem } from '@components/utility'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof SpacerItem> = {

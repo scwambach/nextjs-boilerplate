@@ -1,4 +1,4 @@
-import { Card as CardItem } from '@components/modules/Card'
+import { Card as CardItem } from '@components/modules'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof CardItem> = {

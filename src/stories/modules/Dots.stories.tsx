@@ -1,4 +1,4 @@
-import { Dots as DotsItem } from '@components/modules/Dots'
+import { Dots as DotsItem } from '@components/modules'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof DotsItem> = {

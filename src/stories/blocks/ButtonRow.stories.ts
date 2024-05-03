@@ -1,4 +1,4 @@
-import { ButtonRow as ButtonRowItem } from '@components/blocks/ButtonRow'
+import { ButtonRow as ButtonRowItem } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof ButtonRowItem> = {

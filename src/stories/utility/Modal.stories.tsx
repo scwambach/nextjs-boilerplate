@@ -1,4 +1,4 @@
-import { Modal as ModalItem } from '@components/utility/Modal'
+import { Modal as ModalItem } from '@components/utility'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof ModalItem> = {

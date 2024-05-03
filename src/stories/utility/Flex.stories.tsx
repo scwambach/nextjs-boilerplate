@@ -1,5 +1,5 @@
 import { Card } from '@components/modules'
-import { Flex as FlexItem } from '@components/utility/Flex'
+import { Flex as FlexItem } from '@components/utility'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof FlexItem> = {

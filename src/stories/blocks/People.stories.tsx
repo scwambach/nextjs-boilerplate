@@ -1,4 +1,4 @@
-import { People as PeopleItem } from '@components/blocks/People'
+import { People as PeopleItem } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof PeopleItem> = {

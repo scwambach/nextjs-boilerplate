@@ -1,4 +1,4 @@
-import { Stats as StatsItem } from '@components/blocks/Stats'
+import { Stats as StatsItem } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof StatsItem> = {

@@ -1,4 +1,4 @@
-import { Markdown as MarkdownItem } from '@components/utility/Markdown'
+import { Markdown as MarkdownItem } from '@components/utility'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof MarkdownItem> = {

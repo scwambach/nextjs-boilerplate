@@ -1,4 +1,4 @@
-import { FormField as FormFieldItem } from '@components/modules/FormField'
+import { FormField as FormFieldItem } from '@components/modules'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof FormFieldItem> = {

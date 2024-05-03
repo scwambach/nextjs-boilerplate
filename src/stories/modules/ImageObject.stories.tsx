@@ -1,4 +1,4 @@
-import { ImageObject as ImageObjectItem } from '@components/modules/ImageObject'
+import { ImageObject as ImageObjectItem } from '@components/modules'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof ImageObjectItem> = {

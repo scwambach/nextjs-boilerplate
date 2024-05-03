@@ -1,4 +1,4 @@
-import { Tooltip as TooltipItem } from '@components/utility/Tooltip'
+import { Tooltip as TooltipItem } from '@components/utility'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof TooltipItem> = {

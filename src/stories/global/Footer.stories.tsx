@@ -1,4 +1,4 @@
-import { Footer as FooterItem } from '@components/global/Footer'
+import { Footer as FooterItem } from '@components/global'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof FooterItem> = {

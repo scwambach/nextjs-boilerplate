@@ -1,4 +1,4 @@
-import { Alert } from '@components/blocks/Alert'
+import { Alert } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Alert> = {
