@@ -1,6 +1,5 @@
 'use client'
-import { Form } from '@components/blocks'
-import { FormField } from '@components/modules'
+import { Form, FormField } from '@wambach-dev/react-library'
 import { FormProps } from '@utils/types'
 
 export const ContactForm = (props: FormProps) => {

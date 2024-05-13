@@ -20,6 +20,7 @@ const options = {
 export const Map = ({
   className,
   componentId,
+  googleMapsApiKey,
   markers,
   style = {
     width: '100%',
@@ -28,7 +29,7 @@ export const Map = ({
   testId,
 }: MapProps) => {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.GOOGLE_MAP_API_KEY as string,
+    googleMapsApiKey,
     libraries,
   })
 

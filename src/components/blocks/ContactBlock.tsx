@@ -1,8 +1,13 @@
 'use client'
-import { LinkObject, SectionHeading } from '@components/modules'
-import { Container, Flex, Heading } from '@components/utility'
+import {
+  Map,
+  Container,
+  Flex,
+  Heading,
+  LinkObject,
+  SectionHeading,
+} from '@wambach-dev/react-library'
 import { ContactBlockProps } from '@utils/types'
-import { Map } from './Map'
 
 // TODO: Create ContactBlock tests and stories
 
@@ -81,7 +86,12 @@ export const ContactBlock = (props: ContactBlockProps) => {
               </Flex>
             </div>
           )}
-          {marker && <Map markers={[marker]} />}
+          {marker && (
+            <Map
+              markers={[marker]}
+              googleMapsApiKey={process.env.GOOGLE_MAP_API_KEY as string}
+            />
+          )}
         </Flex>
       </Container>
     </section>

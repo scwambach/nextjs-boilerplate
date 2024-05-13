@@ -4,15 +4,13 @@ import {
   Button,
   ImageObject,
   Tag,
-} from '@components/modules'
-import {
   Box,
   Container,
   Flex,
   Grid,
   Heading,
   Portable,
-} from '@components/utility'
+} from '@wambach-dev/react-library'
 import { compileAuthorNames } from '@utils/compileAuthorNames'
 import { parseMarkdownToHTML } from '@utils/parseMarkdownToHTML'
 import { BannerProps } from '@utils/types'

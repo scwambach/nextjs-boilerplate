@@ -119,6 +119,7 @@ export interface LogoRowProps extends ComponentProps {
 
 export interface MapProps extends ComponentProps {
   style?: CSSProperties
+  googleMapsApiKey: string
   markers: MapMarker[]
 }
 

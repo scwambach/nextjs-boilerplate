@@ -1,4 +1,4 @@
-import { Banner, Cards } from '@components/blocks'
+import { Banner, Cards } from '@wambach-dev/react-library'
 import { PageLayout } from '@components/global/PageLayout'
 import { client } from '@utils/client'
 import { BlogRollProps, GlobalProps } from '@utils/types'
