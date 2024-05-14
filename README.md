@@ -4,6 +4,7 @@ This is a comprehensive boilerplate starter for building web applications using 
 
 - Next.js
 - Husky (Git hooks)
+- Github Workflows
 - Prettier (Code formatting)
 - ESLint (Code linting)
 - TypeScript
@@ -35,29 +36,35 @@ To get started with this boilerplate, follow these steps:
 
 ```
 nextjs-boilerplate/
-├── public/                  # Static assets
+├── public/                         # Static assets
 ├── src/
-│   ├── app/                 # Next.js pages and layout
-│   │   ├── favicon.ico      # Favicon
-│   │   ├── layout.tsx       # Layout component
-│   │   ├── page.tsx         # Sample page component
-│   ├── components/          # React components
-│   │   ├── blocks/
-│   │   ├── global/
-│   │   ├── modules/
-│   │   ├── utility/
-│   ├── data/                # Data assets
-│   ├── hooks/               # React hooks
-│   ├── images/              # Static images
-│   ├── styles/              # SCSS styles
-│   └── styles/              # SCSS styles
-├── .eslintrc.json           # ESLint configuration
-├── jest.config.js           # Jest configuration
-├── cypress.json             # Cypress configuration
-├── tsconfig.json            # TypeScript configuration
-└── .prettierrc              # Prettier configuration
+│   ├── app/                        # Next.js pages and layout
+│   │   ├── [slug]/                 # Wildcard page template
+│   │   ├── api/                    # Next.js api directory
+│   │   │   └── auth/               # NextAuth folder
+│   │   │       └── [...nextauth]/  # Wildcard page for all of NextAuth
+│   │   ├── blog/
+│   │   │   └── [slug]/
+│   │   ├── favicon.ico             # Favicon
+│   │   ├── layout.tsx              # Layout component
+│   │   ├── page.tsx                # Sample page component
+│   ├── components/                 # React components
+│   │   ├── blocks/                 # All Block-level components
+│   │   ├── global/                 # All Global components
+│   │   ├── modules/                # All Module-level components
+│   │   ├── utility/                # All Utility-level components
+│   ├── forms/                      # Form library
+│   ├── queries/                    # Sanity GROQ Queries
+│   ├── styles/                     # SCSS styles
+│   └── utils/                      # Utility functions
+├── .eslintrc.json                  # ESLint configuration
+├── jest.config.js                  # Jest configuration
+├── cypress.json                    # Cypress configuration
+├── tsconfig.json                   # TypeScript configuration
+└── .prettierrc                     # Prettier configuration
 
 ```
+I'm sure there's more, but you get the idea...
 
 ## License
 Feel free to customize this README according to your specific project needs.
