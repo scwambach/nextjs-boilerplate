@@ -1,4 +1,4 @@
-import { handleRadioChange } from '@utils/handleRadioChange'
+import { handleRadioChange } from './handleRadioChange'
 import {
   FormDataProps,
   SetFormDataProps,

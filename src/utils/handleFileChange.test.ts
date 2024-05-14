@@ -1,4 +1,4 @@
-import { handleFileChange } from '@utils/handleFileChange'
+import { handleFileChange } from './handleFileChange'
 import {
   FormDataProps,
   SetFormDataProps,

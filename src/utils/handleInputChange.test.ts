@@ -1,4 +1,4 @@
-import { handleInputChange } from '@utils/handleInputChange'
+import { handleInputChange } from './handleInputChange'
 import {
   FormDataProps,
   SetFormDataProps,

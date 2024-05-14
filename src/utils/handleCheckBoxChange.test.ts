@@ -1,7 +1,4 @@
-import {
-  checkboxArray,
-  handleCheckBoxChange,
-} from '@utils/handleCheckBoxChange'
+import { checkboxArray, handleCheckBoxChange } from './handleCheckBoxChange'
 import {
   FormDataProps,
   SetFormDataProps,
