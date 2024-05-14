@@ -10,7 +10,7 @@ export default async function RootLayout({
 }) {
   const session = await getServerSession()
   return (
-    <html lang="en">
+    <html lang="en" className="theme-override">
       <body>
         <SessionProvider session={session}>{children}</SessionProvider>
       </body>

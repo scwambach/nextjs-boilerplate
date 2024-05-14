@@ -1,83 +1,85 @@
 :root {
-  --break-micro: #{$micro};
-  --break-xxs: #{$xxs};
-  --break-xs: #{$xs};
-  --break-sm: #{$sm};
-  --break-md: #{$md};
-  --break-lg: #{$lg};
-  --break-xl: #{$xl};
-  --break-xxl: #{$xxl};
-  --break-mega: #{$mega};
+  &.theme-override {
+    --break-micro: #{$micro};
+    --break-xxs: #{$xxs};
+    --break-xs: #{$xs};
+    --break-sm: #{$sm};
+    --break-md: #{$md};
+    --break-lg: #{$lg};
+    --break-xl: #{$xl};
+    --break-xxl: #{$xxl};
+    --break-mega: #{$mega};
 
-  --container-wide: #{$xl + $sm};
-  --container-wider: #{$xl + $md};
-  --container-narrow: #{$xl};
-  --container-narrower: #{$md};
+    --container-wide: #{$xl + $sm};
+    --container-wider: #{$xl + $md};
+    --container-narrow: #{$xl};
+    --container-narrower: #{$md};
 
-  --gap-micro: #{$size-4};
-  --gap-xxs: #{$size-16};
-  --gap-xs: #{$size-20};
-  --gap-sm: #{$size-32};
-  --gap-md: #{$size-40};
-  --gap-lg: #{$size-52};
-  --gap-xl: #{$size-72};
-  --gap-xxl: #{$size-84};
-  --gap-mega: #{$size-120};
+    --gap-micro: #{$size-4};
+    --gap-xxs: #{$size-16};
+    --gap-xs: #{$size-20};
+    --gap-sm: #{$size-32};
+    --gap-md: #{$size-40};
+    --gap-lg: #{$size-52};
+    --gap-xl: #{$size-72};
+    --gap-xxl: #{$size-84};
+    --gap-mega: #{$size-120};
 
-  --vp-sm: #{$vp_sm};
-  --vp-md: #{$vp_md};
-  --vp-lg: #{$vp_lg};
-  --vp-xl: #{$vp_xl};
-  --vp-xxl: #{$vp_xxl};
+    --vp-sm: #{$vp_sm};
+    --vp-md: #{$vp_md};
+    --vp-lg: #{$vp_lg};
+    --vp-xl: #{$vp_xl};
+    --vp-xxl: #{$vp_xxl};
 
-  --small-size: #{$size-14};
+    --small-size: #{$size-14};
 
-  --color-primary: #{$blue};
-  --color-primary-light: #{$lightBlue};
-  --color-secondary: #{$green};
-  --color-secondary-light: #{$lightGreen};
-  --color-tertiary: #{$orange};
-  --color-tertiary-light: #{$lightOrange};
-  --color-quaternary: #{$red};
-  --color-quaternary-light: #{$lightRed};
-  --color-white: #{$white};
-  --color-black: #{$black};
-  --color-offwhite: #{$eggShell};
-  --color-gray: #{$gray};
-  --color-gray-light: #{$lightGray};
+    --color-primary: #{$blue};
+    --color-primary-light: #{$lightBlue};
+    --color-secondary: #{$green};
+    --color-secondary-light: #{$lightGreen};
+    --color-tertiary: #{$orange};
+    --color-tertiary-light: #{$lightOrange};
+    --color-quaternary: #{$red};
+    --color-quaternary-light: #{$lightRed};
+    --color-white: #{$white};
+    --color-black: #{$black};
+    --color-offwhite: #{$eggShell};
+    --color-gray: #{$gray};
+    --color-gray-light: #{$lightGray};
 
-  --color-error: #{$error};
-  --color-success: #{$success};
-  --color-warning: #{$warning};
-  --color-info: #{$info};
+    --color-error: #{$error};
+    --color-success: #{$success};
+    --color-warning: #{$warning};
+    --color-info: #{$info};
 
-  --color-link: #{$blue};
+    --color-link: #{$blue};
 
-  --line-height-single: #{$line-height-single};
-  --line-height-base: #{$line-height-base};
-  --line-height-tight: #{$line-height-tight};
-  --line-height-wide: #{$line-height-wide};
+    --line-height-single: #{$line-height-single};
+    --line-height-base: #{$line-height-base};
+    --line-height-tight: #{$line-height-tight};
+    --line-height-wide: #{$line-height-wide};
 
-  --vertical-spacing: #{$vertical-spacing};
-  --vertical-spacing-mobile: #{$vertical-spacing-mobile};
+    --vertical-spacing: #{$vertical-spacing};
+    --vertical-spacing-mobile: #{$vertical-spacing-mobile};
 
-  --font-body: 'Roboto', sans-serif;
-  --font-heading: 'Georgia', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --font-heading: 'Alfa Slab One', sans-serif;
 
-  --heading-one-size: #{$size-48};
-  --heading-two-size: #{$size-40};
-  --heading-three-size: #{$size-32};
-  --heading-four-size: #{$size-24};
-  --heading-five-size: #{$size-20};
-  --heading-six-size: #{$size-18};
+    --heading-one-size: #{$size-48};
+    --heading-two-size: #{$size-40};
+    --heading-three-size: #{$size-32};
+    --heading-four-size: #{$size-24};
+    --heading-five-size: #{$size-20};
+    --heading-six-size: #{$size-18};
 
-  --heading-margin: #{$size-24} 0;
+    --heading-margin: #{$size-24} 0;
 
-  --body-margin: #{$size-8} 0;
+    --body-margin: #{$size-8} 0;
 
-  --transition: #{$transition};
+    --transition: #{$transition};
 
-  --border-radius-small: #{$size-4};
-  --border-radius-medium: #{$size-8};
-  --border-radius-large: #{$size-12};
+    --border-radius-small: #{$size-4};
+    --border-radius-medium: #{$size-8};
+    --border-radius-large: #{$size-12};
+  }
 }
