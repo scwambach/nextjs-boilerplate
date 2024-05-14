@@ -41,7 +41,7 @@
   "New Component": {
     "prefix": "newComponent",
     "body": [
-      "import { ComponentProps } from '@utils/types'",
+      "import { ComponentProps } from '@wambach-dev/react-library/src/utils/types'",
       "",
       "// TODO: Create ${TM_FILENAME_BASE/(.*)/${1}/} tests and stories",
       "",

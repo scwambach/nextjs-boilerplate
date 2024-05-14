@@ -10,7 +10,6 @@ This is a comprehensive boilerplate starter for building web applications using 
 - Jest (Unit testing)
 - Cypress (End-to-end testing)
 - SCSS (Sass for styling)
-- Storybook (Component documentation)
 
 ## Getting Started
 

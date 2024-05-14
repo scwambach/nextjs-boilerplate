@@ -1,5 +1,5 @@
 'use client'
-import { Markdown } from '@components/utility'
+import { Markdown } from '@wambach-dev/react-library'
 
 export const Footer = ({ copy, title }: { copy?: string; title: string }) => {
   const year = new Date().getFullYear()

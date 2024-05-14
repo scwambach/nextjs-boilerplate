@@ -1,5 +1,5 @@
-import '@styles/main.scss'
-import { bodyFont } from '@utils/fonts'
+import '@wambach-dev/react-library/src/styles/main.scss'
+import 'styles/main.scss'
 import { getServerSession } from 'next-auth'
 import SessionProvider from '@components/global/SessionProvider'
 
@@ -10,7 +10,7 @@ export default async function RootLayout({
 }) {
   const session = await getServerSession()
   return (
-    <html lang="en" className={bodyFont.className}>
+    <html lang="en">
       <body>
         <SessionProvider session={session}>{children}</SessionProvider>
       </body>

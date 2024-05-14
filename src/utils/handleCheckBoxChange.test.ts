@@ -2,7 +2,10 @@ import {
   checkboxArray,
   handleCheckBoxChange,
 } from '@utils/handleCheckBoxChange'
-import { FormDataProps, SetFormDataProps } from '@utils/types'
+import {
+  FormDataProps,
+  SetFormDataProps,
+} from '@wambach-dev/react-library/src/utils/types'
 
 describe('handleCheckBoxChange', () => {
   let formData: FormDataProps
