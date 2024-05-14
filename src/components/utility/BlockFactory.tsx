@@ -1,5 +1,5 @@
-import * as Block from '@components/blocks'
-import * as Module from '@components/modules'
+import * as Block from '@wambach-dev/react-library/src/components/blocks'
+import * as Module from '@wambach-dev/react-library/src/components/modules'
 
 export const BlockFactory = (props: any) => {
   return (
@@ -18,6 +18,7 @@ export const BlockFactory = (props: any) => {
             {...object}
             componentId={uniqueId}
             key={uniqueId}
+            googleMapsApiKey={process.env.GOOGLE_MAP_API_KEY as string}
             info={object._type === 'ContactBlock' && props.global.contact}
           />
         )

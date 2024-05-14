@@ -1,6 +1,9 @@
 import { PageBuilder } from '@components/global'
 import { client, previewClient } from '@utils/client'
-import { GlobalProps, PageProps } from '@utils/types'
+import {
+  GlobalProps,
+  PageProps,
+} from '@wambach-dev/react-library/src/utils/types'
 import { notFound } from 'next/navigation'
 import { GLOBAL_QUERY } from 'queries/global'
 import { PAGE_QUERY } from 'queries/page'

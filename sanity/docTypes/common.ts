@@ -169,10 +169,10 @@ export const widths = [
 ]
 
 export const colors = [
-  { title: 'Red', value: 'red' },
-  { title: 'Blue', value: 'blue' },
-  { title: 'Green', value: 'green' },
-  { title: 'Orange', value: 'orange' },
+  { title: 'Red', value: 'quaternary' },
+  { title: 'Blue', value: 'primary' },
+  { title: 'Green', value: 'secondary' },
+  { title: 'Orange', value: 'tertiary' },
   { title: 'Black', value: 'black' },
   { title: 'White', value: 'white' },
 ]

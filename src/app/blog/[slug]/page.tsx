@@ -1,10 +1,19 @@
-import { Banner, Cards } from '@components/blocks'
+import {
+  Container,
+  Flex,
+  Portable,
+  Spacer,
+  Banner,
+  Cards,
+  TableOfContents,
+} from '@wambach-dev/react-library'
 import { PageLayout } from '@components/global/PageLayout'
 import { ShareButtons } from '@components/modules/ShareButtons'
-import { TableOfContents } from '@components/modules/TableOfContents'
-import { Container, Flex, Portable, Spacer } from '@components/utility'
 import { client, previewClient } from '@utils/client'
-import { GlobalProps, PostDetailsProps } from '@utils/types'
+import {
+  GlobalProps,
+  PostDetailsProps,
+} from '@wambach-dev/react-library/src/utils/types'
 import { notFound } from 'next/navigation'
 import { GLOBAL_QUERY } from 'queries/global'
 import { POST_QUERY } from 'queries/post'

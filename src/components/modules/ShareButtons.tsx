@@ -1,6 +1,5 @@
-import { ShareButtonsProps } from '@utils/types'
-import { Button } from './Button'
-import { Flex } from '@components/utility'
+import { ShareButtonsProps } from '@wambach-dev/react-library/src/utils/types'
+import { Flex, Button } from '@wambach-dev/react-library'
 import {
   FacebookLogo,
   LinkedinLogo,

@@ -11,6 +11,7 @@ export const quote = {
     {
       name: 'bgColor',
       title: 'Background Color',
+      group: 'settings',
       type: 'string',
       options: {
         list: colors,

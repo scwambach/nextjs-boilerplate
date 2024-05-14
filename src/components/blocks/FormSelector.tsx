@@ -1,6 +1,6 @@
 'use client'
 import * as Form from '@forms/index'
-import { FormSelectorProps } from '@utils/types/blocks'
+import { FormSelectorProps } from '@wambach-dev/react-library/src/utils/types/blocks'
 
 export const FormSelector = ({
   className,

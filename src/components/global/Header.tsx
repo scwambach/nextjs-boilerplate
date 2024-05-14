@@ -1,7 +1,13 @@
 'use client'
-import { Avatar, Button, Dropdown, LinkObject } from '@components/modules'
-import { Flex, Heading } from '@components/utility'
-import { ButtonTypes, GlobalProps } from '@utils/types'
+import {
+  Avatar,
+  Button,
+  Dropdown,
+  Flex,
+  Heading,
+  LinkObject,
+} from '@wambach-dev/react-library'
+import { GlobalProps } from '@wambach-dev/react-library/src/utils/types'
 import { useState } from 'react'
 import { signIn, signOut, useSession } from 'next-auth/react'
 
@@ -47,11 +53,7 @@ export const Header = ({
                     items={item.subNav}
                   />
                 ) : item.href ? (
-                  <Button
-                    unstyled
-                    type={item.type as ButtonTypes}
-                    href={item.href}
-                  >
+                  <Button unstyled type={item.type} href={item.href}>
                     {item.label}
                   </Button>
                 ) : (

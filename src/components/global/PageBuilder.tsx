@@ -1,6 +1,6 @@
 import { BlockFactory } from '@components/utility/BlockFactory'
 import { PageLayout } from './PageLayout'
-import { GlobalProps } from '@utils/types'
+import { GlobalProps } from '@wambach-dev/react-library/src/utils/types'
 
 export const PageBuilder = ({
   pageData,

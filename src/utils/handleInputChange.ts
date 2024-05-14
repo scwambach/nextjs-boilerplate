@@ -1,4 +1,7 @@
-import { FormDataProps, SetFormDataProps } from './types'
+import {
+  FormDataProps,
+  SetFormDataProps,
+} from '@wambach-dev/react-library/src/utils/types'
 
 export const handleInputChange = (
   e: any,
