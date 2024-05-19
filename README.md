@@ -16,54 +16,74 @@ This is a comprehensive boilerplate starter for building web applications using 
 
 To get started with this boilerplate, follow these steps:
 
-1. Clone the repository:
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/your-username/nextjs-boilerplate.git
-2. Navigate to the project directory: `cd nextjs-boilerplate`
-3. Use correct Node version: `nvm use`
-4. Install dependencies: `npm i`
-5. Start the development server: `npm run dev`
+   ```
+2. **Navigate to the project directory**: `cd nextjs-boilerplate`
+3. **Use correct Node version**: `nvm use`
+4. **Install dependencies**: `npm i`
+5. **Setup Sanity**
+   * If you don't have the Sanity CLI, install if globally
+     `npm install -g @sanity/cli`
+   * Initialize a new Sanity project:
+     `sanity init`
+   * Follow the prompts to create a new project or link to an existing one.
+   * Once Sanity is set up, copy the necessary configuration files to your project.
+6. **Start the development server**: `npm run dev`
 
-Available Scripts
-In the project directory, you can run:
+## Scripts:
 
 `npm run dev`
+
 - Runs the app in the development mode. Open http://localhost:3000 to view it in the browser.
 
 `npm run build`
+
 - Builds the app for production to the .next folder.
 
 `npm run start`
+
 - Starts the production build.
 
 `npm run lint`
+
 - Runs the Next.js linter.
 
 `npm run test`
+
 - Runs the tests using Jest.
 
 `npm run test:watch`
+
 - Runs the tests in watch mode.
 
 `npm run coverage`
+
 - Generates test coverage reports.
 
 `npm run prepare`
+
 - Installs Husky for Git hooks.
 
 `npm run cypress:open`
+
 - Opens the Cypress test runner.
 
 `npm run cypress:run`
+
 - Runs the Cypress tests.
 
 `npm run check-format`
+
 - Formats the codebase using Prettier.
 
 `npm run check-lint`
+
 - Lints the codebase using ESLint.
 
 `npm run dev:test`
+
 - Runs the development server and tests in watch mode concurrently.
 
 ```
@@ -96,7 +116,9 @@ nextjs-boilerplate/
 └── .prettierrc                     # Prettier configuration
 
 ```
+
 I'm sure there's more, but you get the idea...
 
 ## License
+
 Feel free to customize this README according to your specific project needs.
