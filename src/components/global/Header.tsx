@@ -42,6 +42,7 @@ export const Header = ({
 
           <Flex
             elementTag="ul"
+            alignItems='center'
             className={`unstyled mainNav${menuOpen ? ' open' : ''} `}
           >
             {menu.map((item) => (
@@ -62,7 +63,6 @@ export const Header = ({
                 )}
               </li>
             ))}
-          </Flex>
           {session ? (
             <>
               {session.user && session.user.name && (
@@ -97,6 +97,7 @@ export const Header = ({
               <span>Toggle Menu</span>
             </div>
           </Button>
+          </Flex>
         </Flex>
       </Container>
     </header>
