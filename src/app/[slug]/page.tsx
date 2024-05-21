@@ -1,4 +1,5 @@
-import { PageBuilder } from '@components/global'
+import { PageLayout } from '@components/global/PageLayout'
+import { BlockFactory } from '@components/utility/BlockFactory'
 import { client, previewClient } from '@utils/client'
 import {
   GlobalProps,
@@ -76,5 +77,9 @@ export default async function Home({
   const { globalData, pageData }: { globalData: GlobalProps; pageData: any } =
     await getData(slug, preview === process.env.PREVIEW_TOKEN)
 
-  return <PageBuilder pageData={pageData} globalData={globalData} />
+  return (
+    <PageLayout global={globalData}>
+      <BlockFactory items={pageData.pageComponents} global={globalData} />
+    </PageLayout>
+  )
 }

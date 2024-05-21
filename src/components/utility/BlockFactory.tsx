@@ -1,3 +1,4 @@
+import mapStyle from '@utils/mapStyles'
 import * as Block from '@wambach-dev/react-library/src/components/blocks'
 import * as Module from '@wambach-dev/react-library/src/components/modules'
 
@@ -18,8 +19,19 @@ export const BlockFactory = (props: any) => {
             {...object}
             componentId={uniqueId}
             key={uniqueId}
-            googleMapsApiKey={process.env.GOOGLE_MAP_API_KEY as string}
-            info={object._type === 'ContactBlock' && props.global.contact}
+            mapStyle={
+              object._type === 'map' || object._type === 'contactBlock'
+                ? mapStyle
+                : undefined
+            }
+            googleMapsApiKey={
+              object._type === 'map' || object._type === 'contactBlock'
+                ? (process.env.GOOGLE_MAP_API_KEY as string)
+                : undefined
+            }
+            info={
+              object._type === 'contactBlock' ? props.global.contact : undefined
+            }
           />
         )
       })}
