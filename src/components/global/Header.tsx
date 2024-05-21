@@ -3,6 +3,7 @@ import {
   Avatar,
   Button,
   Dropdown,
+  Container,
   Flex,
   Heading,
   LinkObject,
@@ -23,8 +24,8 @@ export const Header = ({
   const [menuOpen, setMenuOpen] = useState(false)
   const { data: session } = useSession()
   return (
-    <header>
-      <div className="container">
+    <header className="wdrlscw-header">
+      <Container>
         <Flex
           ariaLabel="Main Navigation"
           columnBreak="none"
@@ -97,7 +98,7 @@ export const Header = ({
             </div>
           </Button>
         </Flex>
-      </div>
+      </Container>
     </header>
   )
 }
