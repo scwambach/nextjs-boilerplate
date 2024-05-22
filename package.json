@@ -20,6 +20,7 @@
     "ncu:update": "ncu -u"
   },
   "engines": {
+    "node": ">=20.11.0",
     "yarn": "please-use-npm"
   },
   "dependencies": {
