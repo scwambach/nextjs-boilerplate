@@ -170,9 +170,13 @@ export const widths = [
 
 export const colors = [
   { title: 'Red', value: 'quaternary' },
+  { title: 'Light Red', value: 'quaternary-light' },
   { title: 'Blue', value: 'primary' },
+  { title: 'Light Blue', value: 'primary-light' },
   { title: 'Green', value: 'secondary' },
+  { title: 'Light Green', value: 'secondary-light' },
   { title: 'Orange', value: 'tertiary' },
+  { title: 'Light Orange', value: 'tertiary-light' },
   { title: 'Black', value: 'black' },
   { title: 'White', value: 'white' },
 ]
@@ -185,7 +189,7 @@ export const themes = [
 
 export const gaps = [
   { title: 'None', value: 'none' },
-  { title: 'Micro', value: 'miro' },
+  { title: 'Micro', value: 'micro' },
   { title: 'XX Small', value: 'xxs' },
   { title: 'Extra Small', value: 'xs' },
   { title: 'Small', value: 'sm' },

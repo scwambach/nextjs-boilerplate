@@ -1,4 +1,3 @@
-import '@wambach-dev/react-library/src/styles/main.scss'
 import 'styles/main.scss'
 import { getServerSession } from 'next-auth'
 import SessionProvider from '@components/global/SessionProvider'

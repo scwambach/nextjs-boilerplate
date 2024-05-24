@@ -84,20 +84,20 @@ export const Header = ({
                 Sign In
               </Button>
             )}
-            <Button
-              unstyled
-              type="button"
-              className={`navToggle${menuOpen ? ' open' : ''}`}
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
-              <span />
-              <span />
-              <span />
-              <div className="srOnly">
-                <span>Toggle Menu</span>
-              </div>
-            </Button>
           </Flex>
+          <Button
+            unstyled
+            type="button"
+            className={`navToggle${menuOpen ? ' open' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span />
+            <span />
+            <span />
+            <div className="srOnly">
+              <span>Toggle Menu</span>
+            </div>
+          </Button>
         </Flex>
       </Container>
     </header>
