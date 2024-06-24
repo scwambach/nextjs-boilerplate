@@ -7,6 +7,7 @@ import {
   Flex,
   Heading,
   LinkObject,
+  Box,
 } from '@wambach-dev/react-library'
 import { GlobalProps } from '@wambach-dev/react-library/src/utils/types'
 import { useState } from 'react'
@@ -24,7 +25,7 @@ export const Header = ({
   const [menuOpen, setMenuOpen] = useState(false)
   const { data: session } = useSession()
   return (
-    <header className="wdrlscw-header">
+    <Box elementTag="header" className="wdrlscw-header">
       <Container>
         <Flex
           ariaLabel="Main Navigation"
@@ -94,12 +95,12 @@ export const Header = ({
             <span />
             <span />
             <span />
-            <div className="srOnly">
+            <Box className="srOnly">
               <span>Toggle Menu</span>
-            </div>
+            </Box>
           </Button>
         </Flex>
       </Container>
-    </header>
+    </Box>
   )
 }

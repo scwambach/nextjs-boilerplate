@@ -19,6 +19,7 @@ export const BlockFactory = (props: any) => {
             {...object}
             componentId={uniqueId}
             key={uniqueId}
+            boxRadius="8"
             mapStyle={
               object._type === 'map' || object._type === 'contactBlock'
                 ? mapStyle

@@ -1,5 +1,5 @@
 import { ShareButtonsProps } from '@wambach-dev/react-library/src/utils/types'
-import { Flex, Button } from '@wambach-dev/react-library'
+import { Flex, Button, Box } from '@wambach-dev/react-library'
 import {
   FacebookLogo,
   LinkedinLogo,
@@ -14,9 +14,9 @@ export const ShareButtons = ({
   title,
 }: ShareButtonsProps) => {
   return (
-    <div
-      id={componentId}
-      data-testid={testId}
+    <Box
+      componentId={componentId}
+      testId={testId}
       className={`shareButtons${className ? ` ${className}` : ''}`}
     >
       <Flex columnBreak="none" gap="xxs" justifyContent="flex-start">
@@ -42,6 +42,6 @@ export const ShareButtons = ({
           <FacebookLogo weight="fill" size={22} />
         </Button>
       </Flex>
-    </div>
+    </Box>
   )
 }

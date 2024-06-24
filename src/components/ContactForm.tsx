@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { FormField, Grid, Form } from '@wambach-dev/react-library'
+import { FormField, Grid, Form, Box } from '@wambach-dev/react-library'
 import { ComponentProps } from '@wambach-dev/react-library/src/utils/types'
 import { handleInputChange } from '@utils/handleInputChange'
 import { handleRadioChange } from '@utils/handleRadioChange'
@@ -17,7 +17,7 @@ export const ContactForm = (props: ContactFormProps) => {
   }
 
   return (
-    <div
+    <Box
       className={`contactForm${props.className ? ` ${props.className}` : ''}`}
     >
       <Form
@@ -27,7 +27,7 @@ export const ContactForm = (props: ContactFormProps) => {
         subheading="Nunc nunc tortor, viverra id diam non, commodo lobortis elit. In nec finibus justo, in consectetur arcu. Aliquam aliquet egestas."
         onSubmit={(e) => e.preventDefault()}
       >
-        <div>
+        <Box>
           <Grid gap="sm" columns={2}>
             <FormField
               id="firstName"
@@ -101,8 +101,8 @@ export const ContactForm = (props: ContactFormProps) => {
               }}
             />
           </Grid>
-        </div>
+        </Box>
       </Form>
-    </div>
+    </Box>
   )
 }
