@@ -1,0 +1,73 @@
+@mixin vertical-spacing-padding {
+  padding: var(--vertical-spacing) 0;
+
+  @media screen and (max-width: ($md - 1)) {
+    padding: var(--vertical-spacing-mobile) 0;
+  }
+}
+
+@mixin vertical-spacing-margin {
+  margin: var(--vertical-spacing) 0;
+
+  @media screen and (max-width: ($md - 1)) {
+    margin: var(--vertical-spacing-mobile) 0;
+  }
+}
+
+@mixin unstyledButton {
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: $size-5;
+  background: none;
+  outline: none;
+  color: inherit;
+  border: none;
+  text-align: left;
+  font: inherit;
+  border-radius: 0;
+  width: auto;
+  height: fit-content;
+  margin: 0;
+
+  &:hover {
+    @media screen and (min-width: ($sm)) {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+  }
+
+  &:focus {
+    @media screen and (min-width: ($sm)) {
+      outline: $size-4 solid var(--color-focus-outline);
+    }
+  }
+}
+
+// customizable border radius mixin
+@mixin radius4 {
+  border-radius: var(--border-radius-small);
+}
+
+@mixin radius8 {
+  border-radius: var(--border-radius-medium);
+}
+
+@mixin radius12 {
+  border-radius: var(--border-radius-large);
+}
+
+@mixin radius4overflow {
+  @include radius4;
+  overflow: hidden;
+}
+
+@mixin radius8overflow {
+  @include radius8;
+  overflow: hidden;
+}
+
+@mixin radius12overflow {
+  @include radius12;
+  overflow: hidden;
+}

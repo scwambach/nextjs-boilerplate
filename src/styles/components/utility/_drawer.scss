@@ -1,0 +1,88 @@
+.drawer {
+  .screen {
+    background-color: var(--overlay-primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 19;
+    opacity: 0;
+    transition: var(--transition);
+
+    &.open {
+      opacity: 1;
+    }
+
+    &.closed {
+      pointer-events: none;
+    }
+  }
+  .drawerBox {
+    position: fixed;
+    overflow: auto;
+    width: 100%;
+    z-index: 20;
+    background-color: var(--color-secondary-light);
+    padding: $size-32 $size-16;
+    transition: var(--transition);
+    -webkit-overflow-scrolling: touch;
+
+    &.right,
+    &.left {
+      max-width: $size-200 * 3;
+      top: 0;
+      height: 100%;
+    }
+
+    &.top,
+    &.bottom {
+      min-height: $size-200;
+      left: 0;
+    }
+
+    &.right {
+      border-left: $size-4 solid var(--color-secondary);
+      right: -$size-200 * 3.5;
+
+      &.open {
+        right: 0;
+      }
+    }
+
+    &.left {
+      border-right: $size-4 solid var(--color-secondary);
+      left: -$size-200 * 3.5;
+
+      &.open {
+        left: 0;
+      }
+    }
+
+    &.top {
+      border-bottom: $size-4 solid var(--color-secondary);
+      top: -$size-200 - $size-100;
+
+      &.open {
+        top: 0;
+      }
+    }
+
+    &.bottom {
+      border-top: $size-4 solid var(--color-secondary);
+      bottom: -$size-200 - $size-100;
+
+      &.open {
+        bottom: 0;
+      }
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: $size-8;
+    right: $size-8;
+    padding: $size-8;
+    cursor: pointer;
+  }
+}

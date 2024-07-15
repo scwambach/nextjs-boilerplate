@@ -1,17 +1,9 @@
 'use client'
-import {
-  Avatar,
-  Button,
-  Dropdown,
-  Container,
-  Flex,
-  Heading,
-  LinkObject,
-  Box,
-} from '@wambach-dev/react-library'
-import { GlobalProps } from '@wambach-dev/react-library/src/utils/types'
 import { useState } from 'react'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import { GlobalProps } from '@utils/types'
+import { Box, Container, Flex, Heading } from '@components/utility'
+import { Avatar, Button, Dropdown, LinkObject } from '@components/modules'
 
 // deploy
 
@@ -25,7 +17,7 @@ export const Header = ({
   const [menuOpen, setMenuOpen] = useState(false)
   const { data: session } = useSession()
   return (
-    <Box elementTag="header" className="wdrlscw-header">
+    <Box elementTag="header" className="header">
       <Container>
         <Flex
           ariaLabel="Main Navigation"

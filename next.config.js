@@ -5,7 +5,6 @@ const nextConfig = {
     GOOGLE_MAP_API_KEY: process.env.GOOGLE_MAP_API_KEY,
     PREVIEW_TOKEN: process.env.PREVIEW_TOKEN,
   },
-  transpilePackages: ['@wambach-dev/react-library'],
   images: {
     remotePatterns: [
       {

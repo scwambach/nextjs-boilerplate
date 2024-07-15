@@ -1,12 +1,9 @@
-import { Banner, Cards } from '@wambach-dev/react-library'
 import { PageLayout } from '@components/global/PageLayout'
 import { client } from '@utils/client'
-import {
-  BlogRollProps,
-  GlobalProps,
-} from '@wambach-dev/react-library/src/utils/types'
 import { BLOG_ROLL_QUERY } from 'queries/blogRoll'
 import { GLOBAL_QUERY } from 'queries/global'
+import { BlogRollProps, GlobalProps } from '@utils/types'
+import { Banner, Cards } from '@components/blocks'
 
 async function getData() {
   const globalData = await client.fetch(GLOBAL_QUERY)

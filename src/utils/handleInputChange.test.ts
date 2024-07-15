@@ -1,8 +1,5 @@
 import { handleInputChange } from './handleInputChange'
-import {
-  FormDataProps,
-  SetFormDataProps,
-} from '@wambach-dev/react-library/src/utils/types'
+import { FormDataProps, SetFormDataProps } from './types'
 
 describe('handleInputChange', () => {
   let formData: FormDataProps

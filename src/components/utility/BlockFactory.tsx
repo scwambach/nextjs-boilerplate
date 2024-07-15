@@ -1,6 +1,6 @@
 import mapStyle from '@utils/mapStyles'
-import * as Block from '@wambach-dev/react-library/src/components/blocks'
-import * as Module from '@wambach-dev/react-library/src/components/modules'
+import * as Block from '@components/blocks'
+import * as Module from '@components/modules'
 
 export const BlockFactory = (props: any) => {
   return (

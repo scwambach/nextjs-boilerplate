@@ -1,8 +1,5 @@
 import { handleRadioChange } from './handleRadioChange'
-import {
-  FormDataProps,
-  SetFormDataProps,
-} from '@wambach-dev/react-library/src/utils/types'
+import { FormDataProps, SetFormDataProps } from './types'
 
 describe('handleRadioChange', () => {
   let formData: FormDataProps

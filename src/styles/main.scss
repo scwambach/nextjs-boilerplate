@@ -1,8 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import '../../node_modules/@wambach-dev/react-library/src/styles/main.scss';
-@import './settings';
-@import './overrides';
 
-section.wdrlscw-form {
-  margin: var(--vertical-spacing) 0;
-}
+@import './mixins';
+@import './reset';
+@import './overrides';
+@import './settings';
+@import './variables';
+@import './global';
+@import './typography';
+
+// Components GLOBAL
+@import './components/global/header';
+@import './components/global/footer';
+
+// Components UTILITY
+
+@import './components/utility/box';
+@import './components/utility/drawer';
+@import './components/utility/flex';
+@import './components/utility/grid';
+@import './components/utility/markdown';
+@import './components/utility/modal';
+@import './components/utility/spinner';
+@import './components/utility/tooltip';
+
+// Components BLOCKS
+
+@import './components/blocks/accordion';
+@import './components/blocks/alert';
+@import './components/blocks/articles';
+@import './components/blocks/banner';
+@import './components/blocks/buttonRow';
+@import './components/blocks/blockWrapper';
+@import './components/blocks/calendar';
+@import './components/blocks/cards';
+@import './components/blocks/carousel';
+@import './components/blocks/compareTables';
+@import './components/blocks/contactBlock';
+@import './components/blocks/events';
+@import './components/blocks/form';
+@import './components/blocks/gallery';
+@import './components/blocks/logoBanner';
+@import './components/blocks/logoRow';
+@import './components/blocks/people';
+@import './components/blocks/quote';
+@import './components/blocks/richText';
+@import './components/blocks/river';
+@import './components/blocks/stats';
+@import './components/blocks/tabs';
+@import './components/blocks/timeline';
+@import './components/blocks/videos';
+
+// Components MODULES
+
+@import './components/modules/article';
+@import './components/modules/avatar';
+@import './components/modules/badge';
+@import './components/modules/breadcrumbs';
+@import './components/modules/button';
+@import './components/modules/card';
+@import './components/modules/compareTable';
+@import './components/modules/dropdown';
+@import './components/modules/event';
+@import './components/modules/formField';
+@import './components/modules/imageObject';
+@import './components/modules/linkObject';
+@import './components/modules/pagination';
+@import './components/modules/person';
+@import './components/modules/sectionHeading';
+@import './components/modules/stat';
+@import './components/modules/table';
+@import './components/modules/tableOfContents';
+@import './components/modules/tag';
+@import './components/modules/videoBlock';
+
+// PAGES
+
+@import './pages/post';

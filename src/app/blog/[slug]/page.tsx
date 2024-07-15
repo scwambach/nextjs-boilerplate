@@ -1,22 +1,12 @@
-import {
-  Container,
-  Flex,
-  Portable,
-  Spacer,
-  Banner,
-  Cards,
-  TableOfContents,
-} from '@wambach-dev/react-library'
 import { PageLayout } from '@components/global/PageLayout'
-import { ShareButtons } from '@components/modules/ShareButtons'
 import { client, previewClient } from '@utils/client'
-import {
-  GlobalProps,
-  PostDetailsProps,
-} from '@wambach-dev/react-library/src/utils/types'
 import { notFound } from 'next/navigation'
 import { GLOBAL_QUERY } from 'queries/global'
 import { POST_QUERY } from 'queries/post'
+import { GlobalProps, PostDetailsProps } from '@utils/types'
+import { Banner, Cards } from '@components/blocks'
+import { TableOfContents, ShareButtons } from '@components/modules'
+import { Container, Spacer, Flex, Portable } from '@components/utility'
 
 async function getData(slug: string, preview?: boolean) {
   const sanityClient = preview ? previewClient : client

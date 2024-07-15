@@ -11,7 +11,6 @@ This is a comprehensive boilerplate starter for building web applications using 
 - Jest (Unit testing)
 - Cypress (End-to-end testing)
 - SCSS (Sass for styling)
-- @wambach-dev/react-library
 
 ## Getting Started
 

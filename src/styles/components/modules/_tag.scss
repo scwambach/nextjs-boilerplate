@@ -1,0 +1,34 @@
+.tagItem {
+  display: inline-block;
+  padding: $size-4 $size-8;
+  font-size: $size-12;
+  letter-spacing: $size-1;
+  font-weight: 800;
+
+  &.primary {
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+
+    a {
+      color: var(--color-primary);
+    }
+  }
+
+  &.secondary {
+    color: var(--color-secondary-dark);
+    background-color: var(--color-secondary-light);
+
+    a {
+      color: var(--color-secondary-dark);
+    }
+  }
+
+  &.tertiary {
+    color: var(--color-tertiary-dark);
+    background-color: var(--color-tertiary-light);
+
+    a {
+      color: var(--color-tertiary-dark);
+    }
+  }
+}

@@ -1,8 +1,5 @@
 import { handleFileChange } from './handleFileChange'
-import {
-  FormDataProps,
-  SetFormDataProps,
-} from '@wambach-dev/react-library/src/utils/types'
+import { FormDataProps, SetFormDataProps } from './types'
 
 describe('handleFileChange', () => {
   let formData: FormDataProps

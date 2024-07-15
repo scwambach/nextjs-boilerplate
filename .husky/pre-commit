@@ -19,4 +19,12 @@ npm run check-lint || {
   exit 1
 }
 
+# Run tests
+npm run test || {
+  echo 'Tests failed. Please fix the issues before committing.'
+  read -p "Press Enter to continue or Ctrl+C to cancel the commit" -n 1 -r
+  echo    # move to a new line after user input
+  exit 1
+}
+
 echo 'All checks passed! Committing now.'

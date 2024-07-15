@@ -1,11 +1,13 @@
 'use client'
 import { useState } from 'react'
-import { FormField, Grid, Form, Box } from '@wambach-dev/react-library'
-import { ComponentProps } from '@wambach-dev/react-library/src/utils/types'
 import { handleInputChange } from '@utils/handleInputChange'
 import { handleRadioChange } from '@utils/handleRadioChange'
 import { handleCheckBoxChange } from '@utils/handleCheckBoxChange'
 import { handleFileChange } from '@utils/handleFileChange'
+import { ComponentProps } from '@utils/types'
+import { Box, Grid } from '@components/utility'
+import { Form } from '@components/blocks'
+import { FormField } from '@components/modules'
 
 interface ContactFormProps extends ComponentProps {}
 

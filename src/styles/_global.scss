@@ -1,0 +1,165 @@
+html {
+  background-color: var(--color-black);
+
+  main {
+    background-color: var(--color-offwhite);
+  }
+}
+
+* {
+  &:focus {
+    outline-offset: var(--focus-offset);
+    outline: $size-4 solid var(--color-focus-outline);
+  }
+}
+
+::selection {
+  background: var(--color-tertiary);
+  color: var(--color-white);
+  text-shadow: -1px 1px 3px var(--color-black);
+}
+
+#bodyContent {
+  outline: none;
+}
+
+.hide {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  visibility: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--break-xxl);
+  padding: 0 var(--container-padding);
+  margin: 0 auto;
+  position: relative;
+
+  &.padded {
+    padding-top: var(--vertical-spacing);
+    padding-bottom: var(--vertical-spacing);
+
+    @media screen and (max-width: ($md - 1)) {
+      padding-top: var(--vertical-spacing-mobile);
+      padding-bottom: var(--vertical-spacing-mobile);
+    }
+  }
+
+  &.wide {
+    max-width: var(--container-wide);
+  }
+
+  &.wider {
+    max-width: var(--container-wider);
+  }
+
+  &.narrow {
+    max-width: var(--container-narrow);
+  }
+
+  &.narrower {
+    max-width: var(--container-narrower);
+  }
+
+  &.full {
+    max-width: 100%;
+  }
+}
+
+.gap-none {
+  gap: 0;
+}
+
+.gap-micro {
+  gap: var(--gap-micro);
+}
+
+.gap-xxs {
+  gap: var(--gap-xxs);
+}
+
+.gap-xs {
+  gap: var(--gap-xs);
+}
+
+.gap-sm {
+  gap: var(--gap-sm);
+}
+
+.gap-md {
+  gap: var(--gap-md);
+}
+
+.gap-lg {
+  gap: var(--gap-lg);
+}
+
+.gap-xl {
+  gap: var(--gap-xl);
+}
+
+.gap-xxl {
+  gap: var(--gap-xxl);
+}
+
+.gap-mega {
+  gap: var(--gap-mega);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skipToMain {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  z-index: 999;
+
+  &:focus {
+    top: $size-10;
+    left: $size-10;
+  }
+}
+
+.desktopOnly {
+  @media screen and (max-width: ($md - 1)) {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+}
+
+.mobileOnly {
+  @media screen and (min-width: $md) {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+}

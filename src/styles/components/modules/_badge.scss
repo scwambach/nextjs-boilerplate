@@ -1,0 +1,28 @@
+.badge {
+  align-items: center;
+  border-radius: 24px;
+  color: var(--color-white);
+  display: inline-flex;
+  font-size: $size-12;
+  justify-content: center;
+  line-height: var(--line-height-single);
+  min-height: 24px;
+  min-width: 24px;
+  padding: $size-4 $size-8;
+
+  &.quaternary {
+    background-color: var(--color-quaternary);
+  }
+
+  &.primary {
+    background-color: var(--color-primary);
+  }
+
+  &.secondary {
+    background-color: var(--color-secondary);
+  }
+
+  &.tertiary {
+    background-color: var(--color-tertiary);
+  }
+}

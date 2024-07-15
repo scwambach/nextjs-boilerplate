@@ -1,0 +1,52 @@
+.quote {
+  @include vertical-spacing-padding;
+
+  @media screen and (min-width: ($sm)) {
+    text-align: center;
+  }
+
+  &.quaternary {
+    background-color: var(--color-quaternary-light);
+  }
+
+  &.primary {
+    background-color: var(--color-primary-light);
+  }
+
+  &.secondary {
+    background-color: var(--color-secondary-light);
+  }
+
+  &.tertiary {
+    background-color: var(--color-tertiary-light);
+  }
+
+  blockquote {
+    font-size: $size-32;
+    font-weight: bold;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+
+    @media screen and (max-width: ($sm - 1)) {
+      font-size: $size-24;
+    }
+  }
+
+  cite {
+    display: flex;
+    gap: $size-8;
+    line-height: var(--line-height-single);
+    justify-content: center;
+    margin-top: $size-32;
+
+    > div {
+      &.flex {
+        @media screen and (max-width: ($sm - 1)) {
+          width: 100%;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+}

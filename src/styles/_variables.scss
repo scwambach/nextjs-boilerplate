@@ -1,0 +1,113 @@
+:root {
+  --break-micro: #{$micro};
+  --break-xxs: #{$xxs};
+  --break-xs: #{$xs};
+  --break-sm: #{$sm};
+  --break-md: #{$md};
+  --break-lg: #{$lg};
+  --break-xl: #{$xl};
+  --break-xxl: #{$xxl};
+  --break-mega: #{$mega};
+
+  --container-wide: #{$xl + $sm};
+  --container-wider: #{$xl + $md};
+  --container-narrow: #{$xl};
+  --container-narrower: #{$md};
+
+  --gap-micro: #{$size-4};
+  --gap-xxs: #{$size-16};
+  --gap-xs: #{$size-20};
+  --gap-sm: #{$size-32};
+  --gap-md: #{$size-40};
+  --gap-lg: #{$size-52};
+  --gap-xl: #{$size-72};
+  --gap-xxl: #{$size-84};
+  --gap-mega: #{$size-120};
+
+  --container-padding: #{$size-32};
+
+  --vp-sm: #{$vp_sm};
+  --vp-md: #{$vp_md};
+  --vp-lg: #{$vp_lg};
+  --vp-xl: #{$vp_xl};
+  --vp-xxl: #{$vp_xxl};
+
+  --small-size: #{$size-14};
+
+  --color-primary: #{$blue};
+  --color-primary-light: #{$lightBlue};
+  --color-primary-dark: #{darken($blue, 10%)};
+  --color-secondary: #{$green};
+  --color-secondary-light: #{$lightGreen};
+  --color-secondary-dark: #{darken($green, 10%)};
+  --color-tertiary: #{$orange};
+  --color-tertiary-light: #{$lightOrange};
+  --color-tertiary-dark: #{darken($orange, 35%)};
+  --color-quaternary: #{$red};
+  --color-quaternary-light: #{$lightRed};
+  --color-quaternary-dark: #{darken($red, 10%)};
+  --color-white: #{$white};
+  --color-black: #{$black};
+  --color-offwhite: #{$eggShell};
+  --color-gray: #{$gray};
+  --color-gray-light: #{$lightGray};
+
+  --overlay-primary: #{rgba($blue, 0.8)};
+  --overlay-secondary: #{rgba($green, 0.8)};
+  --overlay-tertiary: #{rgba($orange, 0.8)};
+  --overlay-quaternary: #{rgba($red, 0.8)};
+  --overlay-white: #{rgba($white, 0.8)};
+  --overlay-black: #{rgba($black, 0.8)};
+  --overlay-offwhite: #{rgba($eggShell, 0.8)};
+  --overlay-gray: #{rgba($gray, 0.8)};
+
+  --color-error: #{$error};
+  --color-success: #{$success};
+  --color-warning: #{$warning};
+  --color-info: #{$info};
+
+  --color-link: #{$blue};
+
+  --line-height-single: #{$line-height-single};
+  --line-height-base: #{$line-height-base};
+  --line-height-tight: #{$line-height-tight};
+  --line-height-wide: #{$line-height-wide};
+
+  --vertical-spacing: #{$vertical-spacing};
+  --vertical-spacing-mobile: #{$vertical-spacing-mobile};
+
+  --header-spacing: #{$vertical-spacing / 2};
+  --header-spacing-mobile: #{$vertical-spacing-mobile / 2};
+
+  --footer-spacing: #{$vertical-spacing / 3};
+  --footer-spacing-mobile: #{$vertical-spacing-mobile / 3};
+
+  --section-heading-spacing: #{$vertical-spacing / 1.5};
+  --section-heading-spacing-mobile: #{$vertical-spacing-mobile / 1.5};
+
+  --font-body: 'Roboto', sans-serif;
+  --font-heading: 'Georgia', sans-serif;
+
+  --heading-one-size: #{$size-48};
+  --heading-two-size: #{$size-40};
+  --heading-three-size: #{$size-32};
+  --heading-four-size: #{$size-24};
+  --heading-five-size: #{$size-20};
+  --heading-six-size: #{$size-18};
+  --heading-margin: #{$size-24} 0;
+
+  --body-margin: #{$size-8} 0;
+
+  --transition: #{$transition};
+
+  --border-radius-small: #{$size-4};
+  --border-radius-medium: #{$size-8};
+  --border-radius-large: #{$size-12};
+
+  --border-radius-buttons: #{$size-4};
+  --border-radius-input: #{$size-4};
+
+  --color-focus-outline: #{$red};
+  --color-focus-outline-secondary: #{$blue};
+  --focus-offset: #{$size-2};
+}

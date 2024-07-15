@@ -1,10 +1,7 @@
 import { PageLayout } from '@components/global/PageLayout'
 import { BlockFactory } from '@components/utility/BlockFactory'
 import { client, previewClient } from '@utils/client'
-import {
-  GlobalProps,
-  PageProps,
-} from '@wambach-dev/react-library/src/utils/types'
+import { GlobalProps, PageProps } from '@utils/types'
 import { notFound } from 'next/navigation'
 import { GLOBAL_QUERY } from 'queries/global'
 import { PAGE_QUERY } from 'queries/page'

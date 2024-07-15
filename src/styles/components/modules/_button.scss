@@ -1,0 +1,71 @@
+.button {
+  border-radius: var(--border-radius-buttons);
+  align-items: center;
+  appearance: none;
+  background: var(--color-primary);
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: $size-16;
+  gap: $size-5;
+  letter-spacing: $size-1 / 2;
+  line-height: var(--line-height-single);
+  outline-offset: var(--focus-offset);
+  padding: $size-8 $size-16;
+  text-align: center;
+  transition-property: background-color, color, box-shadow;
+  transition: var(--transition);
+
+  &:focus {
+    @media screen and (min-width: ($sm)) {
+      outline: $size-4 solid var(--color-focus-outline);
+    }
+  }
+
+  &:hover {
+    @media screen and (min-width: ($sm)) {
+      text-decoration: none;
+      background-color: var(--color-primary-light);
+      opacity: 1;
+      color: var(--color-black);
+      box-shadow: $box-shadow-1;
+    }
+  }
+
+  &.small {
+    padding: $size-6 $size-12;
+    font-size: $size-12;
+  }
+
+  &.unstyled {
+    @include unstyledButton;
+  }
+
+  &.secondary {
+    background-color: var(--color-secondary);
+
+    &:hover {
+      background-color: var(--color-secondary-light);
+      color: var(--color-black);
+    }
+  }
+
+  &.tertiary {
+    background-color: var(--color-tertiary);
+
+    &:hover {
+      background-color: var(--color-tertiary-light);
+      color: var(--color-black);
+    }
+  }
+
+  &.quaternary {
+    background-color: var(--color-quaternary);
+
+    &:hover {
+      background-color: var(--color-quaternary-light);
+      color: var(--color-black);
+    }
+  }
+}

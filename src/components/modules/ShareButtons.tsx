@@ -1,10 +1,11 @@
-import { ShareButtonsProps } from '@wambach-dev/react-library/src/utils/types'
-import { Flex, Button, Box } from '@wambach-dev/react-library'
+import { Box, Flex } from '@components/utility'
 import {
   FacebookLogo,
   LinkedinLogo,
   TwitterLogo,
 } from '@phosphor-icons/react/dist/ssr'
+import { ShareButtonsProps } from '@utils/types'
+import { Button } from './Button'
 
 export const ShareButtons = ({
   className,

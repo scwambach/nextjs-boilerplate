@@ -1,6 +1,6 @@
 'use client'
 import * as Icon from '@phosphor-icons/react'
-import { IconSelectorProps } from '@wambach-dev/react-library/src/utils/types'
+import { IconSelectorProps } from '@utils/types'
 import { ComponentType } from 'react'
 
 export const IconSelector = ({
