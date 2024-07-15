@@ -1,4 +1,3 @@
-import { widths } from './../../../sanity/docTypes/common'
 import { Banner } from '@components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 import ForegroundImage from '@images/marketing.png'
