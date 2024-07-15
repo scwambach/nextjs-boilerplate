@@ -159,7 +159,6 @@ export interface HeadingItem {
 export interface ImageObjectProps extends ComponentProps {
   alt: string
   isBackground?: boolean
-  query?: string
   sizes?: string
   src?: string
   height?: number

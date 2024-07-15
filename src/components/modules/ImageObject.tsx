@@ -8,16 +8,14 @@ export const ImageObject = ({
   componentId,
   height,
   isBackground,
-  query,
   sizes,
   src,
   testId,
   width,
 }: ImageObjectProps) => {
-  const imageSrc = query
-    ? `https://source.unsplash.com/random/${width}x${height}?${query}`
-    : src ||
-      `https://fakeimg.pl/${height && width ? `${width}x${height}` : '600x400'}?text=url+is+broken&font=bebas`
+  const imageSrc =
+    src ||
+    `https://fakeimg.pl/${height && width ? `${width}x${height}` : '600x400'}?text=url+is+broken&font=bebas`
   return (
     <div
       id={componentId}
@@ -33,12 +31,8 @@ export const ImageObject = ({
           sizes={sizes}
           width={!isBackground ? width : undefined}
           height={!isBackground ? height : undefined}
-          placeholder={blurDataURL || query ? 'blur' : undefined}
-          blurDataURL={
-            query
-              ? `https://source.unsplash.com/random/10x10?${query}`
-              : blurDataURL
-          }
+          placeholder={blurDataURL ? 'blur' : undefined}
+          blurDataURL={blurDataURL}
         />
       )}
     </div>

@@ -20,7 +20,7 @@ describe('Banner', () => {
           alt: 'Banner Image',
           width: 900,
           height: 500,
-          query: 'tech',
+          src: '/image.jpg',
         }}
         links={[{ label: 'Button 1' }, { label: 'Button 2' }]}
         crumbs={{
