@@ -1,3 +1,4 @@
+import React from 'react'
 import { render } from '@testing-library/react'
 import { People } from './People'
 import { PeopleProps } from '../../utils/types'

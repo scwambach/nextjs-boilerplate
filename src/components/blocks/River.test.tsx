@@ -1,6 +1,7 @@
-import { render } from '@testing-library/react'
+import React from 'react'
 import { River } from './River'
 import { RiverProps } from '../../utils/types'
+import { render } from '@testing-library/react'
 
 describe('River Component', () => {
   const defaultProps: RiverProps = {
@@ -12,7 +13,7 @@ describe('River Component', () => {
         image: { query: 'nature', alt: 'Image 1' },
       },
       {
-        _key: '1',
+        _key: '2',
         title: 'Title 2',
         description: 'Description 2',
         image: { query: 'nature', alt: 'Image 2' },

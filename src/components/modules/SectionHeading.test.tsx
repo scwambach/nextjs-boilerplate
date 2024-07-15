@@ -1,3 +1,4 @@
+import React from 'react'
 import { render } from '@testing-library/react'
 import { SectionHeading } from './SectionHeading'
 import { SectionHeadingProps } from '../../utils/types'

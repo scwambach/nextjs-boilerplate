@@ -6,7 +6,7 @@
       "dom.iterable",
       "esnext"
     ],
-    "types": ["jest"],
+    "types": ["@testing-library/jest-dom", "jest"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -57,6 +57,9 @@
   ],
   "exclude": [
     "node_modules",
+    "**/*.test.js",
+    "**/*.test.jsx",
+    "**/*.test.tsx",
     "**/*.test.ts"
   ]
 }

@@ -1,3 +1,4 @@
+import React from 'react'
 import { render } from '@testing-library/react'
 import { Avatar } from './Avatar'
 import { Colors } from '../../utils/types'
@@ -31,7 +32,7 @@ describe('Avatar', () => {
   it('renders with badge', () => {
     const badge = {
       number: 3,
-      color: 'red' as 'red' | 'blue' | 'green' | 'orange',
+      color: 'red' as Colors,
     }
     const { getByText } = render(
       <Avatar firstName="John" lastName="Doe" badge={badge} />

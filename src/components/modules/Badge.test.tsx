@@ -1,5 +1,7 @@
+import React from 'react'
 import { render } from '@testing-library/react'
 import { Badge } from './Badge'
+import { Colors } from '../../utils/types'
 
 describe('Badge', () => {
   it('renders with required props', () => {
@@ -8,7 +10,7 @@ describe('Badge', () => {
   })
 
   it('renders with custom color', () => {
-    const { container } = render(<Badge number={42} color="blue" />)
+    const { container } = render(<Badge number={42} color={'blue' as Colors} />)
     const badgeElement = container.firstChild
     expect(badgeElement).toHaveClass('badge blue')
   })

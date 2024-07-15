@@ -1,3 +1,4 @@
+import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import { Gallery } from './Gallery'
 import { GalleryProps } from '../../utils/types'

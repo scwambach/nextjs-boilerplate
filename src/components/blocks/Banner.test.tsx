@@ -1,5 +1,7 @@
+import React from 'react'
 import { render } from '@testing-library/react'
 import { Banner } from './Banner'
+import { Colors } from '../../utils/types'
 
 describe('Banner', () => {
   it('renders with required props', () => {
@@ -53,7 +55,7 @@ describe('Banner', () => {
 
   it('renders with custom bgColor', () => {
     const { container } = render(
-      <Banner heading="Test Heading" bgColor="red" />
+      <Banner heading="Test Heading" bgColor={'red' as Colors} />
     )
     expect(container.firstChild).toHaveClass('banner red')
   })

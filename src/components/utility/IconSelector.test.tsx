@@ -1,3 +1,4 @@
+import React from 'react'
 import { IconSelector } from './IconSelector'
 import { render } from '@testing-library/react'
 
