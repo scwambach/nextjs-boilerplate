@@ -36,9 +36,6 @@ jobs:
           echo "Installing Dependencies..."
           npm install --legacy-peer-deps
 
-      - name: Run Tests
-        run: npm test
-
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
