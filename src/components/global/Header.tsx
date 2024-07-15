@@ -56,28 +56,28 @@ export const Header = ({
                 )}
               </li>
             ))}
-            {session ? (
-              <>
-                {session.user && session.user.name && (
-                  <Avatar
-                    firstName={session.user?.name.split(' ')[0]}
-                    lastName={session.user?.name.split(' ')[1]}
-                    image={{
-                      src: session.user?.image as string,
-                      alt: session.user?.name as string,
-                    }}
-                  />
-                )}
-                <Button onClick={() => signOut()} type="button">
-                  Sign Out
-                </Button>
-              </>
-            ) : (
-              <Button onClick={() => signIn()} type="button">
-                Sign In
-              </Button>
-            )}
           </Flex>
+          {session ? (
+            <>
+              {session.user && session.user.name && (
+                <Avatar
+                  firstName={session.user?.name.split(' ')[0]}
+                  lastName={session.user?.name.split(' ')[1]}
+                  image={{
+                    src: session.user?.image as string,
+                    alt: session.user?.name as string,
+                  }}
+                />
+              )}
+              <Button onClick={() => signOut()} type="button">
+                Sign Out
+              </Button>
+            </>
+          ) : (
+            <Button onClick={() => signIn()} type="button">
+              Sign In
+            </Button>
+          )}
           <Button
             unstyled
             type="button"
