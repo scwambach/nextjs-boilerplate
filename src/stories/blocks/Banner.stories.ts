@@ -258,3 +258,31 @@ export const CalloutBox: Story = {
     headingLevel: 1,
   },
 }
+
+export const VideoBackground: Story = {
+  args: {
+    markdown: true,
+    bgColor: 'primary',
+    crumbs: {
+      current: 'Quisque iaculis tincidunt',
+      items: [
+        {
+          label: 'Home',
+          href: '/',
+        },
+      ],
+    },
+    heading: 'Quisque iaculis tincidunt',
+    links: [
+      {
+        label: 'Learn More',
+        href: '/learn-more',
+      },
+    ],
+    message:
+      'Suspendisse facilisis in est vel consectetur. Integer eget malesuada dui. Maecenas vel egestas quam, a pretium mi. Curabitur sit amet.',
+    headingLevel: 1,
+    subheading: 'Quisque iaculis tincidunt',
+    backgroundVideo: 'https://www.w3schools.com/html/mov_bbb.mp4',
+  },
+}

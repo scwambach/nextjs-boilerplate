@@ -7,4 +7,5 @@ export const banner = `_type == "banner" => {
   },
   ${imageQuery('backgroundImage', true)},
   ${imageQuery('foregroundMedia')},
+  "backgroundVideo": backgroundVideo.asset->url
 }`

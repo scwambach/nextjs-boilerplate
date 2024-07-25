@@ -1,0 +1,78 @@
+.videoBackground {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .overlay {
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:after {
+      opacity: 1;
+      mix-blend-mode: color;
+    }
+
+    &:before {
+      opacity: 0.5;
+    }
+
+    &.primary {
+      &:after,
+      &:before {
+        background-color: var(--color-primary-light);
+      }
+    }
+
+    &.secondary {
+      &:after,
+      &:before {
+        background-color: var(--color-secondary-light);
+      }
+    }
+
+    &.tertiary {
+      &:after,
+      &:before {
+        background-color: var(--color-tertiary-light);
+      }
+    }
+
+    &.quaternary {
+      &:after,
+      &:before {
+        background-color: var(--color-quaternary-light);
+      }
+    }
+
+    &.black {
+      &:after,
+      &:before {
+        background-color: var(--color-black);
+        color: var(--color-offwhite);
+      }
+    }
+
+    &.white {
+      &:after,
+      &:before {
+        background-color: var(--color-offwhite);
+      }
+    }
+  }
+}

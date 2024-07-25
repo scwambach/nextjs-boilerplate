@@ -4,9 +4,11 @@ import { compileAuthorNames } from '../../utils/compileAuthorNames'
 import { parseMarkdownToHTML } from '../../utils/parseMarkdownToHTML'
 import { BannerProps } from '../../utils/types'
 import dayjs from 'dayjs'
+import { VideoBackground } from '@components/modules/VideoBackground'
 
 export const Banner = ({
   authors,
+  backgroundVideo,
   backgroundImage,
   bgColor = 'primary',
   boxBgColor = 'white',
@@ -130,12 +132,19 @@ export const Banner = ({
       className={`banner ${bgColor}${contained && overlap ? ' overlap' : ''}${
         contained ? ' contained' : ''
       }${className ? ` ${className}` : ''}${
-        backgroundImage ? ' has-image' : ''
+        backgroundImage || backgroundVideo ? ' has-image' : ''
       }${contained && micro ? ' micro' : ''}`}
       testId={testId}
       elementTag="section"
       style={style}
     >
+      {backgroundVideo && (
+        <VideoBackground
+          bgColor="black"
+          video={backgroundVideo}
+          image={backgroundImage}
+        />
+      )}
       {!contained && backgroundImage && (
         <ImageObject
           {...backgroundImage}

@@ -94,6 +94,12 @@ export const banner = {
         hotspot: true,
       },
     },
+    {
+      name: 'backgroundVideo',
+      title: 'Background Video',
+      group: 'content',
+      type: 'file',
+    },
   ],
   preview: {
     select: {

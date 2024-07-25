@@ -32,6 +32,7 @@ export interface AlertProps extends ComponentProps {
 export interface BannerProps extends BlockProps {
   authors?: PersonProps[]
   markdown?: boolean
+  backgroundVideo?: string
   boxBgColor?: Colors
   contained?: boolean
   boxRadius?: Radius
