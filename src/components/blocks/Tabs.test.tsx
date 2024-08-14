@@ -3,22 +3,7 @@ import { render, fireEvent } from '@testing-library/react'
 import { Tabs } from './Tabs'
 import { TabsProps } from '../../utils/types'
 
-const subheading = [
-  {
-    children: [
-      {
-        _type: 'span',
-        marks: [],
-        text: 'Tabs Subheading',
-        _key: 'd9986fb8c9440',
-      },
-    ],
-    _type: 'block',
-    style: 'normal',
-    _key: '2977d788040d',
-    markDefs: [],
-  },
-]
+const subheading = 'Tabs Subheading'
 
 describe('Tabs Component', () => {
   const defaultProps: TabsProps = {

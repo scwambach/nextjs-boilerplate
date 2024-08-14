@@ -3,22 +3,7 @@ import { render } from '@testing-library/react'
 import { Stats } from './Stats'
 import { StatsProps } from '../../utils/types'
 
-const subheading = [
-  {
-    children: [
-      {
-        _type: 'span',
-        marks: [],
-        text: 'Stats Subheading',
-        _key: 'd9986fb8c9440',
-      },
-    ],
-    _type: 'block',
-    style: 'normal',
-    _key: '2977d788040d',
-    markDefs: [],
-  },
-]
+const subheading = 'Stats Subheading'
 
 describe('Stats Component', () => {
   const defaultProps: StatsProps = {

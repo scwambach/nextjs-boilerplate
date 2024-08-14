@@ -6,7 +6,7 @@ import { PersonProps } from '../../utils/types'
 
 describe('Person Component', () => {
   const imageObjectProps = {
-    query: 'face',
+    src: 'https://via.placeholder.com/150',
     alt: 'Person Image',
   }
 

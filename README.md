@@ -23,14 +23,7 @@ To get started with this boilerplate, follow these steps:
 2. **Navigate to the project directory**: `cd nextjs-boilerplate`
 3. **Use correct Node version**: `nvm use`
 4. **Install dependencies**: `npm i`
-5. **Setup Sanity**
-   * If you don't have the Sanity CLI, install if globally
-     `npm install -g @sanity/cli`
-   * Initialize a new Sanity project:
-     `sanity init`
-   * Follow the prompts to create a new project or link to an existing one.
-   * Once Sanity is set up, copy the necessary configuration files to your project.
-6. **Start the development server**: `npm run dev`
+5. **Start the development server**: `npm run dev`
 
 ## Scripts:
 

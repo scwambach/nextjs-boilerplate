@@ -11,7 +11,7 @@ describe('Avatar', () => {
 
   it('renders with image and alt text', () => {
     const image = {
-      query: 'avatar',
+      src: 'https://via.placeholder.com/150',
       alt: 'Avatar Image',
     }
     const { getByAltText } = render(

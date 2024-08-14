@@ -49,7 +49,7 @@ export const Gallery = ({
             <Button
               testId={testId ? `${testId}-item-${index}` : undefined}
               className="galleryItem"
-              key={item.query || item.src}
+              key={`${item.src}_${index}}`}
               type="button"
               unstyled
               onClick={() => {

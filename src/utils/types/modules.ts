@@ -75,7 +75,6 @@ export interface CardProps extends ComponentProps {
   date?: string
   boxRadius?: Radius
   description?: string
-  markdown?: boolean
   theme?: Themes
   href?: string
   contentElement?: Elements
@@ -200,7 +199,6 @@ export interface PersonProps extends ComponentProps {
 export interface SectionHeadingProps extends ComponentProps {
   heading?: string
   headingLevel?: HeadingLevel
-  markdown?: boolean
   subheading?: string | any[]
 }
 
@@ -245,7 +243,6 @@ export interface TagProps extends ComponentProps {
 
 export interface VideoBlockProps extends ComponentProps {
   copy?: string | any[]
-  markdown?: boolean
   poster?: ImageObjectProps
   boxRadius?: Radius
   title?: string

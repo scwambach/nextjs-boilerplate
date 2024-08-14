@@ -31,7 +31,6 @@ export interface AlertProps extends ComponentProps {
 
 export interface BannerProps extends BlockProps {
   authors?: PersonProps[]
-  markdown?: boolean
   backgroundVideo?: string
   boxBgColor?: Colors
   contained?: boolean
@@ -87,7 +86,6 @@ export interface EventsProps extends BlockProps {
 
 export interface FormProps extends BlockProps {
   children?: ReactNode
-  markdown?: boolean
   submitCopy?: string
   onSubmit?: (e: FormEvent<HTMLFormElement>) => void
   onChange?: (e: FormEvent<HTMLFieldSetElement>) => void
@@ -95,7 +93,6 @@ export interface FormProps extends BlockProps {
 
 export interface FormSelectorProps extends BlockProps {
   formName: keyof typeof Form
-  markdown?: boolean
   submitCopy?: string
 }
 
@@ -143,7 +140,6 @@ export interface QuoteProps extends ComponentProps {
   cite?: string
   person?: PersonProps
   bgColor?: Colors
-  markdown?: boolean
 }
 
 export interface RichTextProps extends ComponentProps {
@@ -156,7 +152,6 @@ export interface RichTextProps extends ComponentProps {
   container?: ContainerClasses
   copy: string | any[]
   gap?: Gaps
-  markdown?: boolean
   bgColor?: Colors
 }
 
@@ -164,7 +159,6 @@ export interface RiverProps extends ComponentProps {
   theme?: Themes
   bgColor?: Colors
   headingLevel?: HeadingLevel
-  markdown?: boolean
   reverse?: boolean
   boxRadius?: Radius
   container?: ContainerClasses
@@ -195,7 +189,6 @@ export interface TabsProps extends BlockProps {
 
 export interface TimelineProps extends BlockProps {
   boxRadius?: Radius
-  markdown?: boolean
   events: {
     date: string
     title: string

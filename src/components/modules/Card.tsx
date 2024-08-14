@@ -17,7 +17,6 @@ export const Card = ({
   icon,
   image,
   links,
-  markdown,
   tags,
   testId,
   title,
@@ -68,13 +67,7 @@ export const Card = ({
           )}
 
           {description && (
-            <>
-              {markdown ? (
-                <Markdown className="copy">{description as string}</Markdown>
-              ) : (
-                <p>{description}</p>
-              )}
-            </>
+            <Markdown className="copy">{description as string}</Markdown>
           )}
           {authors && (
             <Flex

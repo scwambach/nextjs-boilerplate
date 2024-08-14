@@ -15,11 +15,11 @@ describe('Quote Component', () => {
       title: 'Developer',
       company: 'ABC Inc',
       image: {
-        query: 'person',
+        src: 'https://via.placeholder.com/150',
         alt: 'John Doe',
       },
     },
-    bgColor: 'green',
+    bgColor: 'primary',
   }
 
   it('renders quote and citation without person', () => {
@@ -37,6 +37,6 @@ describe('Quote Component', () => {
 
   it('renders quote with custom background color', () => {
     const { container } = render(<Quote {...quoteProps} />)
-    expect(container.firstChild).toHaveClass('quote green')
+    expect(container.firstChild).toHaveClass('quote primary')
   })
 })

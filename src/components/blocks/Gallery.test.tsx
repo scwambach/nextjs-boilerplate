@@ -6,27 +6,27 @@ import { GalleryProps } from '../../utils/types'
 
 describe('Gallery Component', () => {
   const items = [
-    { query: 'technology 1', alt: 'Image 1', width: 100, height: 100 },
-    { query: 'technology 2', alt: 'Image 2', width: 100, height: 100 },
-    { query: 'technology 3', alt: 'Image 3', width: 100, height: 100 },
-  ]
-
-  const subheading = [
     {
-      children: [
-        {
-          _type: 'span',
-          marks: [],
-          text: 'Gallery Subheading',
-          _key: 'd9986fb8c9440',
-        },
-      ],
-      _type: 'block',
-      style: 'normal',
-      _key: '2977d788040d',
-      markDefs: [],
+      src: 'https://via.placeholder.com/150',
+      alt: 'Image 1',
+      width: 100,
+      height: 100,
+    },
+    {
+      src: 'https://via.placeholder.com/150',
+      alt: 'Image 2',
+      width: 100,
+      height: 100,
+    },
+    {
+      src: 'https://via.placeholder.com/150',
+      alt: 'Image 3',
+      width: 100,
+      height: 100,
     },
   ]
+
+  const subheading = 'Gallery Subheading'
 
   const defaultProps: GalleryProps = {
     items,

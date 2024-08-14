@@ -1,5 +1,5 @@
 import { Avatar, Breadcrumbs, Button, ImageObject, Tag } from '../modules'
-import { Box, Container, Flex, Grid, Heading, Portable } from '../utility'
+import { Box, Container, Flex, Grid, Heading } from '../utility'
 import { compileAuthorNames } from '../../utils/compileAuthorNames'
 import { parseMarkdownToHTML } from '../../utils/parseMarkdownToHTML'
 import { BannerProps } from '../../utils/types'
@@ -23,7 +23,6 @@ export const Banner = ({
   heading,
   headingLevel = 2,
   links,
-  markdown,
   message,
   micro,
   overlap,
@@ -56,15 +55,9 @@ export const Banner = ({
             {heading}
           </Heading>
           {subheading && (
-            <>
-              {markdown ? (
-                <p className="subheading">
-                  <strong>{subheading as string}</strong>
-                </p>
-              ) : (
-                <Portable content={subheading as any[]} />
-              )}
-            </>
+            <p className="subheading">
+              <strong>{subheading as string}</strong>
+            </p>
           )}
           {message && (
             <div

@@ -37,22 +37,7 @@ describe('People Component', () => {
 
   it('renders correct heading and subheading when provided', () => {
     const heading = 'People List'
-    const subheading = [
-      {
-        children: [
-          {
-            _type: 'span',
-            marks: [],
-            text: 'People Subheading',
-            _key: 'd9986fb8c9440',
-          },
-        ],
-        _type: 'block',
-        style: 'normal',
-        _key: '2977d788040d',
-        markDefs: [],
-      },
-    ]
+    const subheading = 'People Subheading'
 
     const { getByText } = render(
       <People items={[]} heading={heading} subheading={subheading} />

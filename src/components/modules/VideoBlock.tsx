@@ -3,7 +3,7 @@ import { VideoBlockProps } from '../../utils/types'
 import { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
 import { Play } from '@phosphor-icons/react/dist/ssr'
-import { Box, Flex, Heading, Markdown, Portable } from '../utility'
+import { Box, Flex, Heading, Markdown } from '../utility'
 import { colors } from '../../utils/settings'
 
 export const VideoBlock = ({
@@ -12,7 +12,6 @@ export const VideoBlock = ({
   copy,
   poster,
   testId,
-  markdown,
   boxRadius,
   title,
   url,
@@ -59,15 +58,7 @@ export const VideoBlock = ({
                 {title}
               </Heading>
             )}
-            {copy && (
-              <>
-                {markdown ? (
-                  <Markdown>{copy as string}</Markdown>
-                ) : (
-                  <Portable content={copy as any[]} />
-                )}
-              </>
-            )}
+            {copy && <Markdown>{copy as string}</Markdown>}
           </Flex>
         ))}
     </Flex>

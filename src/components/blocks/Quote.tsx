@@ -12,7 +12,6 @@ export const Quote = (props: QuoteProps) => {
     person,
     quote,
     testId,
-    markdown,
   } = props
   return (
     <Box
@@ -25,7 +24,7 @@ export const Quote = (props: QuoteProps) => {
         <Quotes size={40} />
 
         <blockquote>
-          {markdown ? <Markdown>{quote as string}</Markdown> : <p>{quote}</p>}
+          <Markdown>{quote as string}</Markdown>
         </blockquote>
         {cite && !person && (
           <cite>

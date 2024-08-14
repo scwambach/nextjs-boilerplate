@@ -17,7 +17,12 @@ describe('Event Component', () => {
       { label: 'Register', href: 'https://example.com/register' },
       { label: 'Learn More', href: 'https://example.com/details' },
     ],
-    poster: { query: 'party', alt: 'Poster Image', width: 1200, height: 800 },
+    poster: {
+      src: 'https://via.placeholder.com/150',
+      alt: 'Poster Image',
+      width: 1200,
+      height: 800,
+    },
     date: '2023-03-29',
   }
 

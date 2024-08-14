@@ -1,5 +1,5 @@
 import { ImageObject, SectionHeading } from '../modules'
-import { Box, Container, Flex, Markdown, Portable } from '../utility'
+import { Box, Container, Flex, Markdown } from '../utility'
 import { TimelineProps } from '../../utils/types'
 import dayjs from 'dayjs'
 import { Radius } from '../../utils/types/types'
@@ -14,7 +14,6 @@ export const Timeline = ({
   headingLevel,
   subheading,
   testId,
-  markdown,
 }: TimelineProps) => {
   // const rounded = boxRadius === 4 ? boxRadius : boxRadius ? boxRadius - 4 : undefined
   const rounded =
@@ -47,11 +46,7 @@ export const Timeline = ({
                     <p className={`title `}>{event.title}</p>
                     {event.description && (
                       <Box className="description">
-                        {markdown ? (
-                          <Markdown>{event.description as string}</Markdown>
-                        ) : (
-                          <Portable content={event.description as any[]} />
-                        )}
+                        <Markdown>{event.description as string}</Markdown>
                       </Box>
                     )}
                   </Box>

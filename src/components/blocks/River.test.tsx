@@ -5,18 +5,17 @@ import { render } from '@testing-library/react'
 
 describe('River Component', () => {
   const defaultProps: RiverProps = {
-    markdown: true,
     items: [
       {
         _key: '1',
         description: 'Description 1',
-        image: { query: 'nature', alt: 'Image 1' },
+        image: { src: 'https://via.placeholder.com/150', alt: 'Image 1' },
       },
       {
         _key: '2',
         title: 'Title 2',
         description: 'Description 2',
-        image: { query: 'nature', alt: 'Image 2' },
+        image: { src: 'https://via.placeholder.com/150', alt: 'Image 2' },
         links: [{ label: 'Link 1', onClick: jest.fn() }],
       },
     ],

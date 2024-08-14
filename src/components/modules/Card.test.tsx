@@ -13,13 +13,13 @@ describe('Card Component', () => {
       {
         firstName: 'John',
         lastName: 'Doe',
-        image: { query: 'person', alt: 'John Doe' },
+        image: { src: 'https://via.placeholder.com/150', alt: 'John Doe' },
       },
     ] as PersonProps[],
     tags: [{ label: 'Tag 1' }, { label: 'Tag 2' }],
     links: [{ label: 'Link 1', href: 'https://example.com' }],
     image: {
-      query: 'image',
+      src: 'https://via.placeholder.com/150',
       alt: 'Image Alt',
       width: 800,
       height: 600,
@@ -36,13 +36,13 @@ describe('Card Component', () => {
       {
         firstName: 'John',
         lastName: 'Doe',
-        image: { query: 'person', alt: 'John Doe' },
+        image: { src: 'https://via.placeholder.com/150', alt: 'John Doe' },
       },
     ] as PersonProps[],
     tags: [{ label: 'Tag 1' }, { label: 'Tag 2' }],
     href: 'https://example.com/card',
     image: {
-      query: 'image',
+      src: 'https://via.placeholder.com/150',
       alt: 'Image Alt',
       width: 800,
       height: 600,

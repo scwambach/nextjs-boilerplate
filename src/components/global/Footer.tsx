@@ -1,5 +1,3 @@
-'use client'
-
 import { Box, Container, Markdown } from '@components/utility'
 
 export const Footer = ({ copy, title }: { copy?: string; title: string }) => {

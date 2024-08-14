@@ -3,39 +3,9 @@ import { render } from '@testing-library/react'
 import { Timeline } from './Timeline'
 import { TimelineProps } from '../../utils/types'
 
-const subheading = [
-  {
-    children: [
-      {
-        _type: 'span',
-        marks: [],
-        text: 'Timeline Subheading',
-        _key: 'd9986fb8c9440',
-      },
-    ],
-    _type: 'block',
-    style: 'normal',
-    _key: '2977d788040d',
-    markDefs: [],
-  },
-]
+const subheading = 'Timeline Subheading'
 
-const description = [
-  {
-    children: [
-      {
-        _type: 'span',
-        marks: [],
-        text: 'Description 1',
-        _key: 'd9986fb8c9440',
-      },
-    ],
-    _type: 'block',
-    style: 'normal',
-    _key: '2977d788040d',
-    markDefs: [],
-  },
-]
+const description = 'Description 1'
 
 describe('Timeline Component', () => {
   const defaultProps: TimelineProps = {
@@ -44,7 +14,12 @@ describe('Timeline Component', () => {
         date: '2023-01-01',
         title: 'Event 1',
         description,
-        image: { query: 'history', alt: 'Image 1', width: 100, height: 100 },
+        image: {
+          src: 'https://via.placeholder.com/150',
+          alt: 'Image 1',
+          width: 100,
+          height: 100,
+        },
       },
       {
         date: '2023-02-01',

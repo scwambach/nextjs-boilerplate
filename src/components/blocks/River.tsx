@@ -6,7 +6,6 @@ import {
   Flex,
   Heading,
   Markdown,
-  Portable,
 } from '../utility'
 import { RiverProps } from '../../utils/types'
 
@@ -19,7 +18,6 @@ export const River = ({
   reverse,
   testId,
   boxRadius,
-  markdown,
   bgColor,
   theme = 'primary',
 }: RiverProps) => {
@@ -62,11 +60,7 @@ export const River = ({
                     gap="none"
                   >
                     <Heading level={headingLevel}>{item.title}</Heading>
-                    {markdown ? (
-                      <Markdown>{item.description as string}</Markdown>
-                    ) : (
-                      <Portable content={item.description as any[]} />
-                    )}
+                    <Markdown>{item.description as string}</Markdown>
                     {item.links && item.links.length > 0 && (
                       <Box className="links">
                         {item.links.map((link, index) => (
