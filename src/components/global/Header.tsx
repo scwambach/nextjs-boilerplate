@@ -1,9 +1,8 @@
 'use client'
 import { useState } from 'react'
-import { signIn, signOut, useSession } from 'next-auth/react'
 import { GlobalProps } from '@utils/types'
 import { Box, Container, Flex, Heading } from '@components/utility'
-import { Avatar, Button, Dropdown, LinkObject } from '@components/modules'
+import { Button, Dropdown, LinkObject } from '@components/modules'
 
 // deploy
 
@@ -15,7 +14,7 @@ export const Header = ({
   title: GlobalProps['siteTitle']
 }) => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const { data: session } = useSession()
+
   return (
     <Box elementTag="header" className="header">
       <Container>
@@ -57,27 +56,6 @@ export const Header = ({
               </li>
             ))}
           </Flex>
-          {session ? (
-            <>
-              {session.user && session.user.name && (
-                <Avatar
-                  firstName={session.user?.name.split(' ')[0]}
-                  lastName={session.user?.name.split(' ')[1]}
-                  image={{
-                    src: session.user?.image as string,
-                    alt: session.user?.name as string,
-                  }}
-                />
-              )}
-              <Button onClick={() => signOut()} type="button">
-                Sign Out
-              </Button>
-            </>
-          ) : (
-            <Button onClick={() => signIn()} type="button">
-              Sign In
-            </Button>
-          )}
           <Button
             unstyled
             type="button"

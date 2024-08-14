@@ -92,9 +92,6 @@ nextjs-boilerplate/
 ├── src/
 │   ├── app/                        # Next.js pages and layout
 │   │   ├── [slug]/                 # Wildcard page template
-│   │   ├── api/                    # Next.js api directory
-│   │   │   └── auth/               # NextAuth folder
-│   │   │       └── [...nextauth]/  # Wildcard page for all of NextAuth
 │   │   ├── blog/
 │   │   │   └── [slug]/
 │   │   ├── favicon.ico             # Favicon
