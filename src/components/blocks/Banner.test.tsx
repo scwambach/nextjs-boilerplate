@@ -15,12 +15,11 @@ describe('Banner', () => {
         heading="Test Heading"
         subheading="Test Subheading"
         message="Test Message"
-        markdown
         backgroundImage={{
           alt: 'Banner Image',
           width: 900,
           height: 500,
-          src: '/image.jpg',
+          src: 'https://via.placeholder.com/150',
         }}
         links={[{ label: 'Button 1' }, { label: 'Button 2' }]}
         crumbs={{
