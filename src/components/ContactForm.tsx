@@ -9,9 +9,7 @@ import { Box, Grid } from '@components/utility'
 import { Form } from '@components/blocks'
 import { FormField } from '@components/modules'
 
-interface ContactFormProps extends ComponentProps {}
-
-export const ContactForm = (props: ContactFormProps) => {
+export const ContactForm = (props: ComponentProps) => {
   const [formData, setFormData] = useState<any>({})
   const handleSelectChange = (e: any) => {
     const labelText = e.target.previousElementSibling?.innerHTML as string

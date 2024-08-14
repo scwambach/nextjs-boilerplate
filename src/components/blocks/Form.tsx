@@ -36,6 +36,7 @@ const Form = ({
         <form
           onSubmit={(e) => {
             e.preventDefault()
+            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
             onSubmit && onSubmit(e)
           }}
         >

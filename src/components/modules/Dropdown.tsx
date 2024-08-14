@@ -59,6 +59,7 @@ export const Dropdown = ({ items, ...props }: DropdownProps) => {
             }}
             onBlur={() => {
               setTimeout(() => {
+                // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                 doAnyListItemsHaveFocus() ? setOpen(true) : setOpen(false)
               }, 10)
             }}
