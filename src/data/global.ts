@@ -3,13 +3,13 @@ import logo from '../images/logoipsum-300.svg'
 import { GlobalProps } from '@utils/types'
 
 export const globalData = {
-  favicon: 'favicon.ico',
+  favicon: logo.src,
   siteDescription:
-    'A Gatsby starter for creating a blog site using Contentful as a headless CMS.',
-  siteTitle: 'Gatsby Contentful Blog Starter',
+    'A starter template to build amazing static websites with Next.js and TypeScript.',
+  siteTitle: 'Next.js Basic Starter',
   siteImage,
   logo,
-  footerCopy: '© 2021 Gatsby Contentful Blog Starter',
+  // footerCopy: 'This is the footer',
   navigation: [
     {
       label: 'Home',
@@ -18,10 +18,6 @@ export const globalData = {
     {
       label: 'About',
       href: '/about',
-    },
-    {
-      label: 'Blog',
-      href: '/blog',
     },
     {
       label: 'Contact',
