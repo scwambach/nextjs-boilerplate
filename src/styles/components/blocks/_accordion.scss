@@ -16,13 +16,13 @@
     font-size: $size-20;
 
     .suffix {
-      transition: var(--transition);
+      transition: $transition;
     }
   }
 
   .content {
-    background-color: var(--color-white);
-    transition: var(--transition);
+    background-color: $white;
+    transition: $transition;
     margin: $size-4 0;
 
     .inner {

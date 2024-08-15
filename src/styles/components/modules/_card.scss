@@ -1,14 +1,14 @@
 .card {
-  background-color: var(--color-white);
-  border: $size-1 solid var(--color-gray-light);
-  color: var(--color-black);
+  background-color: $white;
+  border: $size-1 solid $gray-light;
+  color: $black;
   padding: $size-8;
   position: relative;
   box-shadow: 0;
   box-shadow: $box-shadow-1;
 
   &.link {
-    transition: var(--transition);
+    transition: $transition;
     transform: translateZ(0);
     width: 100%;
     @include radius8;
@@ -20,7 +20,7 @@
     &:hover {
       transform: translateY(-$size-4);
       box-shadow: $box-shadow-4;
-      background-color: var(--color-primary-light);
+      background-color: $primary-light;
       opacity: 1;
 
       text-decoration: none;
@@ -28,22 +28,22 @@
 
     &.primary {
       &:hover {
-        background-color: var(--color-primary-light);
-        color: var(--color-black);
+        background-color: $primary-light;
+        color: $black;
       }
     }
 
     &.secondary {
       &:hover {
-        background-color: var(--color-secondary-light);
-        color: var(--color-black);
+        background-color: $secondary-light;
+        color: $black;
       }
     }
 
     &.tertiary {
       &:hover {
-        background-color: var(--color-tertiary-light);
-        color: var(--color-black);
+        background-color: $tertiary-light;
+        color: $black;
       }
     }
   }
@@ -152,12 +152,12 @@
 
   .authorNames {
     position: relative;
-    transition: var(--transition);
+    transition: $transition;
   }
 
   .author {
     position: relative;
-    transition: var(--transition);
+    transition: $transition;
 
     + .author {
       margin-left: $size-8;
@@ -168,7 +168,7 @@
 
     .avatar {
       border-radius: 100%;
-      outline: $size-1 solid var(--color-white);
+      outline: $size-1 solid $white;
       position: relative;
       z-index: 2;
     }

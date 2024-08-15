@@ -18,60 +18,60 @@
   &.secondary,
   &.quaternary,
   &.black {
-    color: var(--color-white);
+    color: $white;
 
     hr {
-      border-color: var(--color-white);
+      border-color: $white;
     }
 
     a:not(.button) {
-      color: var(--color-primary-light);
+      color: $primary-light;
     }
   }
 
   &.primary {
-    background-color: var(--color-primary);
+    background-color: $primary;
   }
 
   &.primary-light {
-    background-color: var(--color-primary-light);
+    background-color: $primary-light;
   }
 
   &.secondary {
-    background-color: var(--color-secondary);
+    background-color: $secondary;
   }
 
   &.secondary-light {
-    background-color: var(--color-secondary-light);
+    background-color: $secondary-light;
   }
 
   &.tertiary {
-    background-color: var(--color-tertiary);
+    background-color: $tertiary;
   }
 
   &.tertiary-light {
-    background-color: var(--color-tertiary-light);
+    background-color: $tertiary-light;
   }
 
   &.quaternary {
-    background-color: var(--color-quaternary);
+    background-color: $quaternary;
   }
 
   &.quaternary-light {
-    background-color: var(--color-quaternary-light);
+    background-color: $quaternary-light;
   }
 
   &.black {
-    background-color: var(--color-black);
-    color: var(--color-offwhite);
+    background-color: $black;
+    color: $offwhite;
   }
 
   &.white {
-    background-color: var(--color-offwhite);
+    background-color: $offwhite;
   }
 
   &.hasBgImage {
-    color: var(--color-white);
+    color: $white;
 
     &:before,
     &:after {
@@ -85,11 +85,11 @@
     }
 
     &:before {
-      background: var(--overlay-black);
+      background: $overlay-black;
     }
 
     &:after {
-      background: var(--color-black);
+      background: $black;
       opacity: 0.8;
       mix-blend-mode: multiply;
     }
@@ -103,74 +103,74 @@
     &.primary,
     &.primary-light {
       &:before {
-        background: var(--overlay-primary);
+        background: $overlay-primary;
       }
 
       &:after {
-        background: var(--color-primary);
+        background: $primary;
       }
     }
 
     &.secondary,
     &.secondary-light {
       &:before {
-        background: var(--overlay-secondary);
+        background: $overlay-secondary;
       }
 
       &:after {
-        background: var(--color-secondary);
+        background: $secondary;
       }
     }
 
     &.tertiary,
     &.tertiary-light {
       &:before {
-        background: var(--overlay-tertiary);
+        background: $overlay-tertiary;
       }
 
       &:after {
-        background: var(--color-tertiary);
+        background: $tertiary;
       }
     }
 
     &.quaternary,
     &.quaternary-light {
       &:before {
-        background: var(--overlay-quaternary);
+        background: $overlay-quaternary;
       }
 
       &:after {
-        background: var(--color-quaternary);
+        background: $quaternary;
       }
     }
 
     &.black {
       &:before {
-        background: var(--overlay-black);
+        background: $overlay-black;
       }
 
       &:after {
-        background: var(--color-black);
+        background: $black;
       }
     }
 
     &.white {
       &:before {
-        background: var(--overlay-offwhite);
+        background: $overlay-offwhite;
       }
 
       &:after {
-        background: var(--color-offwhite);
+        background: $offwhite;
       }
     }
 
     &.gray {
       &:before {
-        background: var(--overlay-gray);
+        background: $overlay-gray;
       }
 
       &:after {
-        background: var(--color-gray);
+        background: $gray;
       }
     }
   }

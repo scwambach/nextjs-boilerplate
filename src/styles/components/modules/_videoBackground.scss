@@ -35,43 +35,43 @@
     &.primary {
       &:after,
       &:before {
-        background-color: var(--color-primary-light);
+        background-color: $primary-light;
       }
     }
 
     &.secondary {
       &:after,
       &:before {
-        background-color: var(--color-secondary-light);
+        background-color: $secondary-light;
       }
     }
 
     &.tertiary {
       &:after,
       &:before {
-        background-color: var(--color-tertiary-light);
+        background-color: $tertiary-light;
       }
     }
 
     &.quaternary {
       &:after,
       &:before {
-        background-color: var(--color-quaternary-light);
+        background-color: $quaternary-light;
       }
     }
 
     &.black {
       &:after,
       &:before {
-        background-color: var(--color-black);
-        color: var(--color-offwhite);
+        background-color: $black;
+        color: $offwhite;
       }
     }
 
     &.white {
       &:after,
       &:before {
-        background-color: var(--color-offwhite);
+        background-color: $offwhite;
       }
     }
   }

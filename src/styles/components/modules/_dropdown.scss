@@ -13,7 +13,7 @@
   }
 
   .suffix {
-    transition: var(--transition);
+    transition: $transition;
   }
 
   &.touch {
@@ -49,15 +49,15 @@
     display: none;
     position: absolute;
     box-shadow: $box-shadow-3;
-    border-left: $size-1 solid var(--color-gray-light);
-    border-right: $size-1 solid var(--color-gray-light);
-    border-bottom: $size-1 solid var(--color-gray-light);
+    border-left: $size-1 solid $gray-light;
+    border-right: $size-1 solid $gray-light;
+    border-bottom: $size-1 solid $gray-light;
     min-width: $size-200;
-    background-color: var(--color-white);
+    background-color: $white;
     z-index: 10;
 
     .linkObject {
-      color: var(--color-black);
+      color: $black;
       display: block;
       width: 100%;
       padding: $size-8 $size-16;
@@ -65,7 +65,7 @@
       &:hover {
         text-decoration: none;
         opacity: 1;
-        background-color: var(--color-gray-light);
+        background-color: $gray-light;
       }
     }
   }
