@@ -1,7 +1,7 @@
 ul.pagination,
 .pagination {
   margin-top: $size-32;
-  line-height: var(--line-height-single);
+  line-height: $line-height-single;
   flex-wrap: wrap;
 
   li {
@@ -21,7 +21,7 @@ ul.pagination,
 
     &[rel='canonical'] {
       pointer-events: none;
-      color: var(--color-black);
+      color: $black;
     }
 
     &[aria-disabled='true'] {

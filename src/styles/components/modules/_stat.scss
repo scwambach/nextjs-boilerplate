@@ -1,6 +1,6 @@
 .stat {
-  border: $size-1 solid var(--color-gray-light);
-  background-color: var(--color-white);
+  border: $size-1 solid $gray-light;
+  background-color: $white;
   padding: $size-16;
 
   p {
@@ -30,24 +30,24 @@
     display: flex;
     gap: $size-3;
     margin-bottom: $size-8;
-    line-height: var(--line-height-single);
+    line-height: $line-height-single;
   }
 
   &.primary {
     .icon {
-      background-color: var(--color-primary-light);
+      background-color: $primary-light;
     }
   }
 
   &.secondary {
     .icon {
-      background-color: var(--color-secondary-light);
+      background-color: $secondary-light;
     }
   }
 
   &.tertiary {
     .icon {
-      background-color: var(--color-tertiary-light);
+      background-color: $tertiary-light;
     }
   }
 

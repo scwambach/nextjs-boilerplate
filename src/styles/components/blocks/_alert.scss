@@ -1,5 +1,5 @@
 .alert {
-  background: var(--color-primary-light);
+  background: $primary-light;
   padding: $size-16;
   box-shadow: $box-shadow-1;
   justify-content: center;
@@ -16,20 +16,20 @@
   }
 
   &.info {
-    background: var(--color-info);
+    background: $info;
   }
 
   &.success {
-    background: var(--color-success);
-    color: var(--color-white);
+    background: $success;
+    color: $white;
   }
 
   &.warning {
-    background: var(--color-warning);
+    background: $warning;
   }
 
   &.error {
-    background: var(--color-error);
-    color: var(--color-white);
+    background: $error;
+    color: $white;
   }
 }

@@ -5,7 +5,7 @@
   .imageObject {
     border-radius: 100%;
     overflow: hidden;
-    background-color: var(--color-quaternary-light);
+    background-color: $quaternary-light;
     display: flex;
     align-items: center;
     justify-content: center;

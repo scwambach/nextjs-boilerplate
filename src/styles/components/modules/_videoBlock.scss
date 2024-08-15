@@ -3,7 +3,7 @@
     height: 0;
     position: relative;
     padding-bottom: 56.25%;
-    background-color: var(--color-black);
+    background-color: $black;
     // overflow: visible;
 
     @media screen and (max-width: ($sm - 1)) {
@@ -20,12 +20,12 @@
   }
 
   .react-player__preview {
-    outline-offset: var(--focus-offset);
+    outline-offset: $size-2;
     overflow: hidden;
 
     &:focus {
       @media screen and (min-width: ($sm)) {
-        outline: $size-4 solid var(--color-focus-outline);
+        outline: $size-4 solid $focus-outline;
       }
     }
   }

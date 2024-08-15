@@ -2,21 +2,21 @@
   input,
   textarea,
   select {
-    border-radius: var(--border-radius-input);
+    border-radius: $size-4;
     appearance: none;
     font-size: $size-16;
     box-shadow: none;
     display: block;
-    border: $size-1 solid var(--color-primary-light);
+    border: $size-1 solid $primary-light;
     padding: $size-4 $size-8;
     min-height: $size-32;
-    outline-offset: var(--focus-offset);
+    outline-offset: $size-2;
     width: 100%;
 
     &:focus {
       @media screen and (min-width: ($sm)) {
         outline: none;
-        outline: $size-4 solid var(--color-focus-outline);
+        outline: $size-4 solid $focus-outline;
       }
     }
   }
@@ -29,7 +29,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      outline: $size-1 solid var(--color-gray);
+      outline: $size-1 solid $gray;
       outline-offset: -$size-3;
     }
 
@@ -46,7 +46,7 @@
     }
 
     span {
-      line-height: var(--line-height-single);
+      line-height: $line-height-single;
     }
 
     svg {
@@ -55,11 +55,11 @@
 
     label {
       > div {
-        outline-offset: var(--focus-offset);
+        outline-offset: $size-2;
         &.focused {
           @media screen and (min-width: ($sm)) {
             outline: none;
-            outline: $size-4 solid var(--color-focus-outline);
+            outline: $size-4 solid $focus-outline;
           }
         }
       }
@@ -76,7 +76,7 @@
       &:focus {
         @media screen and (min-width: ($sm)) {
           outline: none;
-          outline: $size-4 solid var(--color-focus-outline);
+          outline: $size-4 solid $focus-outline;
         }
       }
 
@@ -84,7 +84,7 @@
         outline-color: transparent;
 
         svg {
-          color: var(--color-primary);
+          color: $primary;
           opacity: 1;
         }
       }
@@ -142,14 +142,14 @@
       appearance: none;
 
       + .dropzone {
-        outline-offset: var(--focus-offset);
+        outline-offset: $size-2;
       }
 
       &:focus {
         + .dropzone {
           @media screen and (min-width: ($sm)) {
-            background-color: var(--color-primary-light);
-            outline: $size-4 solid var(--color-focus-outline-secondary);
+            background-color: $primary-light;
+            outline: $size-4 solid $focus-outline-secondary;
           }
         }
       }
@@ -160,12 +160,12 @@
       cursor: pointer;
       width: 100%;
       padding: $size-16;
-      border: $size-1 solid var(--color-primary-light);
-      background-color: var(--color-white);
+      border: $size-1 solid $primary-light;
+      background-color: $white;
 
       &:hover {
         @media screen and (min-width: ($sm)) {
-          background-color: var(--color-primary-light);
+          background-color: $primary-light;
         }
       }
     }
@@ -179,14 +179,14 @@
     .focused {
       @media screen and (min-width: ($sm)) {
         width: 100%;
-        outline-offset: var(--focus-offset);
-        outline: $size-4 solid var(--color-focus-outline-secondary);
+        outline-offset: $size-2;
+        outline: $size-4 solid $focus-outline-secondary;
       }
     }
 
     [class$='-control'] {
       min-height: $size-32;
-      border: $size-1 solid var(--color-primary-light);
+      border: $size-1 solid $primary-light;
       @include radius4;
     }
 
@@ -194,7 +194,7 @@
       padding: $size-5 $size-8 $size-4;
 
       [class$='-placeholder'] {
-        color: var(--color-black);
+        color: $black;
       }
 
       [class$='-Input'] {
@@ -211,7 +211,7 @@
       padding-bottom: 0;
 
       svg {
-        color: var(--color-black);
+        color: $black;
       }
     }
   }

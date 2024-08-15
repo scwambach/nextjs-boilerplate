@@ -75,25 +75,46 @@ $size-192: 12rem;
 $size-196: 12.25rem;
 $size-200: 12.5rem;
 
-$gray: #787878;
-$lightGray: #f2f2f2;
-
-$red: #b8343a;
-$lightRed: #f7d5d8;
-$blue: #12657c;
-$lightBlue: #d5e3f7;
-$green: #0f7173;
-$lightGreen: #d5f7f6;
-$orange: #f7a25d;
-$lightOrange: #f7e9d5;
-$black: #123346;
+$primary: #12657c;
+$secondary: #0f7173;
+$tertiary: #f7a25d;
+$quaternary: #b8343a;
+$gray: #afafaf;
 $white: #ffffff;
-$eggShell: #f7f7f7;
+$black: #123346;
+$offwhite: #f7f7f7;
 
-$error: $red;
-$success: $green;
-$warning: $orange;
-$info: $lightBlue;
+$primary-light: lighten($primary, 50%);
+$primary-dark: darken($primary, 10%);
+$secondary-light: lighten($secondary, 65%);
+$secondary-dark: darken($secondary, 10%);
+$tertiary-light: lighten($tertiary, 25%);
+$tertiary-dark: darken($tertiary, 10%);
+$quaternary-light: lighten($quaternary, 10%);
+$quaternary-dark: darken($quaternary, 10%);
+$gray-light: lighten($gray, 10%);
+$gray-dark: darken($gray, 10%);
+
+$error: #b8343a;
+$success: #0f7173;
+$warning: #f7a25d;
+$info: #d5e3f7;
+$link: #12657c;
+
+$overlay-primary: rgba($primary, 0.8);
+$overlay-secondary: rgba($secondary, 0.8);
+$overlay-tertiary: rgba($tertiary, 0.8);
+$overlay-quaternary: rgba($quaternary, 0.8);
+$overlay-white: rgba($white, 0.8);
+$overlay-black: rgba($black, 0.8);
+$overlay-offwhite: rgba($offwhite, 0.8);
+$overlay-gray: rgba($gray, 0.8);
+
+$focus-outline: $quaternary;
+$focus-outline-secondary: $primary;
+
+$font-body: 'Roboto', sans-serif;
+$font-heading: 'Georgia', sans-serif;
 
 $box-shadow-1: 0 10px 25px -22px rgba($black, 0.3);
 $box-shadow-2: 0 10px 25px -20px rgba($black, 0.5);

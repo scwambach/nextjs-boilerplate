@@ -17,7 +17,7 @@
           display: flex;
           z-index: 10;
           position: absolute;
-          background-color: var(--color-white);
+          background-color: $white;
           box-shadow: $box-shadow-2;
           left: 50%;
           transform: translateX(-50%);
@@ -27,7 +27,7 @@
           gap: 0;
           align-items: stretch;
           padding: 0;
-          border: $size-1 solid var(--color-gray-light);
+          border: $size-1 solid $gray-light;
 
           li {
             margin: 0;
@@ -38,27 +38,27 @@
             padding: $size-8 $size-16;
             width: 100%;
             font-weight: bold;
-            color: var(--color-gray);
+            color: $gray;
 
             &:hover {
               text-decoration: none;
 
               &.primary {
-                background-color: var(--color-primary);
-                color: var(--color-white);
+                background-color: $primary;
+                color: $white;
               }
 
               &.secondary {
-                background-color: var(--color-secondary);
-                color: var(--color-white);
+                background-color: $secondary;
+                color: $white;
               }
 
               &.tertiary {
-                background-color: var(--color-tertiary);
-                color: var(--color-white);
+                background-color: $tertiary;
+                color: $white;
               }
 
-              background-color: var(--color-gray-light);
+              background-color: $gray-light;
             }
           }
         }
@@ -73,23 +73,23 @@
       }
 
       @media screen and (max-width: ($sm - 1)) {
-        background-color: var(--color-gray-light);
+        background-color: $gray-light;
         font-weight: bold;
         padding: $size-8;
 
         &.primary {
-          background-color: var(--color-primary-light);
-          color: var(--color-primary-dark);
+          background-color: $primary-light;
+          color: $primary-dark;
         }
 
         &.secondary {
-          background-color: var(--color-secondary-light);
-          color: var(--color-secondary);
+          background-color: $secondary-light;
+          color: $secondary;
         }
 
         &.tertiary {
-          background-color: var(--color-tertiary-light);
-          color: var(--color-tertiary-dark);
+          background-color: $tertiary-light;
+          color: $tertiary-dark;
         }
 
         &.open {
@@ -98,7 +98,7 @@
           }
         }
         .indicator {
-          transition: var(--transition);
+          transition: $transition;
         }
       }
     }
@@ -113,7 +113,7 @@
           width: 100%;
           position: absolute;
           bottom: calc(100% + $size-8);
-          background-color: var(--color-gray);
+          background-color: $gray;
           left: 0;
         }
       }
@@ -121,9 +121,9 @@
   }
 
   .panel {
-    border: $size-1 solid var(--color-gray-light);
+    border: $size-1 solid $gray-light;
     padding: $size-16;
-    background-color: var(--color-white);
+    background-color: $white;
 
     @media screen and (max-width: ($sm - 1)) {
       margin-top: $size-16;

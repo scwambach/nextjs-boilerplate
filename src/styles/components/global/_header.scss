@@ -1,8 +1,8 @@
 .header {
-  padding: var(--header-spacing) 0;
+  padding: $vertical-spacing / 2 0;
 
   @media screen and (max-width: ($md - 1)) {
-    padding: var(--header-spacing-mobile) 0;
+    padding: $vertical-spacing-mobile / 2 0;
   }
 
   .heading {
@@ -28,8 +28,8 @@
 
         a {
           &.linkObject {
-            border-bottom: 1px solid var(--color-white);
-            color: var(--color-white);
+            border-bottom: 1px solid $white;
+            color: $white;
           }
         }
       }
@@ -42,7 +42,7 @@
       z-index: 101;
       display: flex;
       flex-direction: column;
-      transition: var(--transition);
+      transition: $transition;
 
       @media screen and (min-width: ($sm)) {
         display: none;
@@ -51,16 +51,16 @@
       span {
         display: block;
         position: relative;
-        background-color: var(--color-black);
+        background-color: $black;
         height: $size-2;
         width: $size-24;
-        transition: var(--transition);
+        transition: $transition;
       }
 
       &.open {
         transform: rotate(180deg);
         span {
-          background-color: var(--color-white);
+          background-color: $white;
 
           &:nth-child(1) {
             transform: rotate(45deg);
@@ -82,7 +82,7 @@
     @media screen and (max-width: ($sm - 1)) {
       opacity: 0;
       pointer-events: none;
-      transition: var(--transition);
+      transition: $transition;
       margin: 0;
 
       &.open {
@@ -97,10 +97,10 @@
         height: 100%;
         width: 100%;
         z-index: 100;
-        background-color: var(--overlay-primary);
+        background-color: $overlay-primary;
         top: 0;
         left: 0;
-        color: var(--color-white);
+        color: $white;
         justify-content: center;
         align-items: center;
         text-align: center;
