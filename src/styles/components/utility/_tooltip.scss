@@ -3,7 +3,7 @@
   cursor: pointer;
   display: inline-block;
   text-decoration: underline;
-  text-decoration-color: var(--color-primary-light);
+  text-decoration-color: $primary-light;
 
   &:hover {
     span {
@@ -13,8 +13,8 @@
 
   span {
     display: none;
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: $black;
+    color: $white;
     font-size: $size-14;
     position: absolute;
     bottom: calc(100% + $size-5);
@@ -32,7 +32,7 @@
       left: 50%;
       border-width: $size-8;
       border-style: solid;
-      border-color: var(--color-black) transparent transparent transparent;
+      border-color: $black transparent transparent transparent;
       transform: translateX(-50%);
     }
   }

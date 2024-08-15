@@ -7,7 +7,7 @@
   justify-content: center;
 
   @media screen and (min-width: ($lg)) {
-    min-height: var(--break-xs);
+    min-height: $xs;
   }
 
   &.contained {
@@ -46,28 +46,28 @@
       }
 
       &.quaternary {
-        background-color: var(--color-quaternary-light);
+        background-color: $quaternary-light;
       }
 
       &.primary {
-        background-color: var(--color-primary-light);
+        background-color: $primary-light;
       }
 
       &.secondary {
-        background-color: var(--color-secondary-light);
+        background-color: $secondary-light;
       }
 
       &.tertiary {
-        background-color: var(--color-tertiary-light);
+        background-color: $tertiary-light;
       }
 
       &.black {
-        background-color: var(--color-black);
-        color: var(--color-offwhite);
+        background-color: $black;
+        color: $offwhite;
       }
 
       &.white {
-        background-color: var(--color-offwhite);
+        background-color: $offwhite;
       }
     }
 
@@ -79,32 +79,32 @@
   }
 
   &.primary {
-    background-color: var(--color-primary-light);
+    background-color: $primary-light;
   }
 
   &.secondary {
-    background-color: var(--color-secondary-light);
+    background-color: $secondary-light;
   }
 
   &.tertiary {
-    background-color: var(--color-tertiary-light);
+    background-color: $tertiary-light;
   }
 
   &.quaternary {
-    background-color: var(--color-quaternary-light);
+    background-color: $quaternary-light;
   }
 
   &.black {
-    background-color: var(--color-black);
-    color: var(--color-offwhite);
+    background-color: $black;
+    color: $offwhite;
   }
 
   &.white {
-    background-color: var(--color-offwhite);
+    background-color: $offwhite;
   }
 
   &.has-image {
-    color: var(--color-white);
+    color: $white;
 
     &:before {
       content: '';
@@ -118,12 +118,12 @@
     }
 
     .links {
-      color: var(--color-white);
+      color: $white;
     }
 
     .breadcrumbs {
       a {
-        color: var(--color-white);
+        color: $white;
       }
     }
   }
@@ -133,7 +133,7 @@
   }
 
   .innerContent {
-    max-width: var(--break-md);
+    max-width: $md;
   }
 
   .date {

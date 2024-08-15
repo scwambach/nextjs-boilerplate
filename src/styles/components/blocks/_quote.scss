@@ -6,19 +6,19 @@
   }
 
   &.quaternary {
-    background-color: var(--color-quaternary-light);
+    background-color: $quaternary-light;
   }
 
   &.primary {
-    background-color: var(--color-primary-light);
+    background-color: $primary-light;
   }
 
   &.secondary {
-    background-color: var(--color-secondary-light);
+    background-color: $secondary-light;
   }
 
   &.tertiary {
-    background-color: var(--color-tertiary-light);
+    background-color: $tertiary-light;
   }
 
   blockquote {
@@ -36,7 +36,7 @@
   cite {
     display: flex;
     gap: $size-8;
-    line-height: var(--line-height-single);
+    line-height: $line-height-single;
     justify-content: center;
     margin-top: $size-32;
 

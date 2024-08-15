@@ -8,8 +8,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--overlay-primary);
-    transition: var(--transition);
+    background: $overlay-primary;
+    transition: $transition;
 
     &.closed {
       pointer-events: none;
@@ -24,11 +24,11 @@
   .contentBox {
     position: relative;
     top: 0;
-    background-color: var(--color-white);
-    transition: var(--transition);
+    background-color: $white;
+    transition: $transition;
     border-radius: $size-8;
     width: 100%;
-    max-width: var(--break-sm);
+    max-width: $sm;
     margin: 0 $size-16;
     padding: $size-32 $size-16;
     max-height: 90vh;

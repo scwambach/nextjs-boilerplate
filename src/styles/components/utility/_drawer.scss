@@ -1,6 +1,6 @@
 .drawer {
   .screen {
-    background-color: var(--overlay-primary);
+    background-color: $overlay-primary;
     position: fixed;
     top: 0;
     left: 0;
@@ -8,7 +8,7 @@
     height: 100%;
     z-index: 19;
     opacity: 0;
-    transition: var(--transition);
+    transition: $transition;
 
     &.open {
       opacity: 1;
@@ -23,9 +23,9 @@
     overflow: auto;
     width: 100%;
     z-index: 20;
-    background-color: var(--color-secondary-light);
+    background-color: $secondary-light;
     padding: $size-32 $size-16;
-    transition: var(--transition);
+    transition: $transition;
     -webkit-overflow-scrolling: touch;
 
     &.right,
@@ -42,7 +42,7 @@
     }
 
     &.right {
-      border-left: $size-4 solid var(--color-secondary);
+      border-left: $size-4 solid $secondary;
       right: -$size-200 * 3.5;
 
       &.open {
@@ -51,7 +51,7 @@
     }
 
     &.left {
-      border-right: $size-4 solid var(--color-secondary);
+      border-right: $size-4 solid $secondary;
       left: -$size-200 * 3.5;
 
       &.open {
@@ -60,7 +60,7 @@
     }
 
     &.top {
-      border-bottom: $size-4 solid var(--color-secondary);
+      border-bottom: $size-4 solid $secondary;
       top: -$size-200 - $size-100;
 
       &.open {
@@ -69,7 +69,7 @@
     }
 
     &.bottom {
-      border-top: $size-4 solid var(--color-secondary);
+      border-top: $size-4 solid $secondary;
       bottom: -$size-200 - $size-100;
 
       &.open {

@@ -1,16 +1,16 @@
 @mixin vertical-spacing-padding {
-  padding: var(--vertical-spacing) 0;
+  padding: $vertical-spacing 0;
 
   @media screen and (max-width: ($md - 1)) {
-    padding: var(--vertical-spacing-mobile) 0;
+    padding: $vertical-spacing-mobile 0;
   }
 }
 
 @mixin vertical-spacing-margin {
-  margin: var(--vertical-spacing) 0;
+  margin: $vertical-spacing 0;
 
   @media screen and (max-width: ($md - 1)) {
-    margin: var(--vertical-spacing-mobile) 0;
+    margin: $vertical-spacing-mobile 0;
   }
 }
 
@@ -39,22 +39,22 @@
 
   &:focus {
     @media screen and (min-width: ($sm)) {
-      outline: $size-4 solid var(--color-focus-outline);
+      outline: $size-4 solid $focus-outline;
     }
   }
 }
 
 // customizable border radius mixin
 @mixin radius4 {
-  border-radius: var(--border-radius-small);
+  border-radius: $size-4;
 }
 
 @mixin radius8 {
-  border-radius: var(--border-radius-medium);
+  border-radius: $size-8;
 }
 
 @mixin radius12 {
-  border-radius: var(--border-radius-large);
+  border-radius: $size-12;
 }
 
 @mixin radius4overflow {

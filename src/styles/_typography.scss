@@ -1,8 +1,8 @@
 main,
 body {
-  line-height: var(--line-height-base);
-  color: var(--color-black);
-  font-family: var(--font-body);
+  line-height: $line-height-base;
+  color: $black;
+  font-family: $font-body;
 }
 
 h1,
@@ -34,7 +34,7 @@ li,
 ul,
 ol,
 blockquote {
-  font-family: var(--font-body);
+  font-family: $font-body;
 }
 
 h1,
@@ -49,9 +49,9 @@ h6,
 .heading-four,
 .heading-five,
 .heading-six {
-  line-height: var(--line-height-tight);
-  margin: var(--heading-margin);
-  font-family: var(--font-heading);
+  line-height: $line-height-tight;
+  margin: $size-24 0;
+  font-family: $font-heading;
 }
 
 p,
@@ -59,41 +59,41 @@ li,
 ul,
 ol,
 blockquote {
-  margin: var(--body-margin);
+  margin: $size-8 0;
 }
 
 h1,
 .heading-one {
-  font-size: var(--heading-one-size);
+  font-size: $size-48;
 }
 
 h2,
 .heading-two {
-  font-size: var(--heading-two-size);
+  font-size: $size-40;
 }
 
 h3,
 .heading-three {
-  font-size: var(--heading-three-size);
+  font-size: $size-32;
 }
 
 h4,
 .heading-four {
-  font-size: var(--heading-four-size);
+  font-size: $size-24;
 }
 
 h5,
 .heading-five {
-  font-size: var(--heading-five-size);
+  font-size: $size-20;
 }
 
 h6,
 .heading-six {
-  font-size: var(--heading-six-size);
+  font-size: $size-18;
 }
 
 .heading {
-  font-family: var(--font-heading);
+  font-family: $font-heading;
 }
 
 em,
@@ -107,13 +107,13 @@ b {
 }
 
 small {
-  font-size: var(--small-size);
+  font-size: $size-14;
 }
 
 a {
-  color: var(--color-link);
+  color: $link;
   text-decoration: none;
-  transition: var(--transition);
+  transition: $transition;
   transition-property: opacity;
 
   &:hover {
@@ -148,6 +148,6 @@ ol {
 
 hr {
   border: 0;
-  border-top: $size-1 solid var(--color-black);
+  border-top: $size-1 solid $black;
   margin: 0;
 }
