@@ -1,48 +1,48 @@
 .quote {
   @include vertical-spacing-padding;
 
-  @media screen and (min-width: ($sm)) {
+  @media screen and (min-width: (576px)) {
     text-align: center;
   }
 
   &.quaternary {
-    background-color: $quaternary-light;
+    background-color: var(--color-quaternary-light);
   }
 
   &.primary {
-    background-color: $primary-light;
+    background-color: var(--color-primary-light);
   }
 
   &.secondary {
-    background-color: $secondary-light;
+    background-color: var(--color-secondary-light);
   }
 
   &.tertiary {
-    background-color: $tertiary-light;
+    background-color: var(--color-tertiary-light);
   }
 
   blockquote {
-    font-size: $size-32;
+    font-size: 32px;
     font-weight: bold;
     font-style: italic;
     margin: 0;
     padding: 0;
 
-    @media screen and (max-width: ($sm - 1)) {
-      font-size: $size-24;
+    @media screen and (max-width: (576px - 1)) {
+      font-size: 24px;
     }
   }
 
   cite {
     display: flex;
-    gap: $size-8;
-    line-height: $line-height-single;
+    gap: 8px;
+    line-height: 1;
     justify-content: center;
-    margin-top: $size-32;
+    margin-top: 32px;
 
     > div {
       &.flex {
-        @media screen and (max-width: ($sm - 1)) {
+        @media screen and (max-width: (576px - 1)) {
           width: 100%;
           align-items: flex-start;
         }

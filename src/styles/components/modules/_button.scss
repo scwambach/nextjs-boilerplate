@@ -1,41 +1,41 @@
 .button {
-  border-radius: $size-4;
+  border-radius: 4px;
   align-items: center;
   appearance: none;
-  background: $primary;
+  background: var(--color-primary);
   border: none;
-  color: $white;
+  color: var(--color-white);
   cursor: pointer;
   display: inline-flex;
-  font-size: $size-16;
-  gap: $size-5;
-  letter-spacing: $size-1 / 2;
-  line-height: $line-height-single;
-  outline-offset: $size-2;
-  padding: $size-8 $size-16;
+  font-size: 16px;
+  gap: 5px;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  outline-offset: 2px;
+  padding: 8px 16px;
   text-align: center;
   transition-property: background-color, color, box-shadow;
-  transition: $transition;
+  transition: all 0.2s ease-in-out;
 
   &:focus {
-    @media screen and (min-width: ($sm)) {
-      outline: $size-4 solid $focus-outline;
+    @media screen and (min-width: (576px)) {
+      outline: 4px solid var(--color-focus-outline);
     }
   }
 
   &:hover {
-    @media screen and (min-width: ($sm)) {
+    @media screen and (min-width: (576px)) {
       text-decoration: none;
-      background-color: $primary-light;
+      background-color: var(--color-primary-light);
       opacity: 1;
-      color: $black;
-      box-shadow: $box-shadow-1;
+      color: var(--color-black);
+      box-shadow: 0 10px 25px -22px rgb(from var(--color-black) r g b / 0.3);
     }
   }
 
   &.small {
-    padding: $size-6 $size-12;
-    font-size: $size-12;
+    padding: 6px 12px;
+    font-size: 12px;
   }
 
   &.unstyled {
@@ -43,29 +43,29 @@
   }
 
   &.secondary {
-    background-color: $secondary;
+    background-color: var(--color-secondary);
 
     &:hover {
-      background-color: $secondary-light;
-      color: $black;
+      background-color: var(--color-secondary-light);
+      color: var(--color-black);
     }
   }
 
   &.tertiary {
-    background-color: $tertiary;
+    background-color: var(--color-tertiary);
 
     &:hover {
-      background-color: $tertiary-light;
-      color: $black;
+      background-color: var(--color-tertiary-light);
+      color: var(--color-black);
     }
   }
 
   &.quaternary {
-    background-color: $quaternary;
+    background-color: var(--color-quaternary);
 
     &:hover {
-      background-color: $quaternary-light;
-      color: $black;
+      background-color: var(--color-quaternary-light);
+      color: var(--color-black);
     }
   }
 }

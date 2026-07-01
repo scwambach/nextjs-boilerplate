@@ -1,57 +1,57 @@
 .stat {
-  border: $size-1 solid $gray-light;
-  background-color: $white;
-  padding: $size-16;
+  border: 1px solid var(--color-gray-light);
+  background-color: var(--color-white);
+  padding: 16px;
 
   p {
     margin: 0;
   }
 
   .title {
-    font-size: $size-20;
+    font-size: 20px;
     margin: 0;
   }
 
   .icon {
-    height: $size-44;
-    width: $size-44;
+    height: 44px;
+    width: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 100%;
 
     + div {
-      width: calc(100% - $size-48);
+      width: calc(100% - 48px);
     }
   }
 
   .value {
-    font-size: $size-32;
+    font-size: 32px;
     display: flex;
-    gap: $size-3;
-    margin-bottom: $size-8;
-    line-height: $line-height-single;
+    gap: 3px;
+    margin-bottom: 8px;
+    line-height: 1;
   }
 
   &.primary {
     .icon {
-      background-color: $primary-light;
+      background-color: var(--color-primary-light);
     }
   }
 
   &.secondary {
     .icon {
-      background-color: $secondary-light;
+      background-color: var(--color-secondary-light);
     }
   }
 
   &.tertiary {
     .icon {
-      background-color: $tertiary-light;
+      background-color: var(--color-tertiary-light);
     }
   }
 
   .tags {
-    margin-top: $size-8;
+    margin-top: 8px;
   }
 }

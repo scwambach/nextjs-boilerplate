@@ -1,22 +1,22 @@
 html {
-  background-color: $black;
+  background-color: var(--color-black);
 
   main {
-    background-color: $offwhite;
+    background-color: var(--color-offwhite);
   }
 }
 
 * {
   &:focus {
-    outline-offset: $size-2;
-    outline: $size-4 solid $focus-outline;
+    outline-offset: 2px;
+    outline: 4px solid var(--color-focus-outline);
   }
 }
 
 ::selection {
-  background: $tertiary;
-  color: $white;
-  text-shadow: -1px 1px 3px $black;
+  background: var(--color-tertiary);
+  color: var(--color-white);
+  text-shadow: -1px 1px 3px var(--color-black);
 }
 
 #bodyContent {
@@ -38,35 +38,35 @@ html {
 
 .container {
   width: 100%;
-  max-width: $xxl;
-  padding: 0 $size-32;
+  max-width: 1440px;
+  padding: 0 32px;
   margin: 0 auto;
   position: relative;
 
   &.padded {
-    padding-top: $vertical-spacing;
-    padding-bottom: $vertical-spacing;
+    padding-top: 80px;
+    padding-bottom: 80px;
 
-    @media screen and (max-width: ($md - 1)) {
-      padding-top: $vertical-spacing-mobile;
-      padding-bottom: $vertical-spacing-mobile;
+    @media screen and (max-width: (768px - 1)) {
+      padding-top: 40px;
+      padding-bottom: 40px;
     }
   }
 
   &.wide {
-    max-width: $xl + $sm;
+    max-width: 1200px + 576px;
   }
 
   &.wider {
-    max-width: $xl + $md;
+    max-width: 1200px + 768px;
   }
 
   &.narrow {
-    max-width: $xl;
+    max-width: 1200px;
   }
 
   &.narrower {
-    max-width: $md;
+    max-width: 768px;
   }
 
   &.full {
@@ -79,39 +79,39 @@ html {
 }
 
 .gap-micro {
-  gap: $size-4;
+  gap: 4px;
 }
 
 .gap-xxs {
-  gap: $size-16;
+  gap: 16px;
 }
 
 .gap-xs {
-  gap: $size-20;
+  gap: 20px;
 }
 
 .gap-sm {
-  gap: $size-32;
+  gap: 32px;
 }
 
 .gap-md {
-  gap: $size-40;
+  gap: 40px;
 }
 
 .gap-lg {
-  gap: $size-52;
+  gap: 52px;
 }
 
 .gap-xl {
-  gap: $size-72;
+  gap: 72px;
 }
 
 .gap-xxl {
-  gap: $size-84;
+  gap: 84px;
 }
 
 .gap-mega {
-  gap: $size-120;
+  gap: 120px;
 }
 
 .srOnly {
@@ -133,13 +133,13 @@ html {
   z-index: 999;
 
   &:focus {
-    top: $size-10;
-    left: $size-10;
+    top: 10px;
+    left: 10px;
   }
 }
 
 .desktopOnly {
-  @media screen and (max-width: ($md - 1)) {
+  @media screen and (max-width: (768px - 1)) {
     opacity: 0;
     pointer-events: none;
     position: absolute;
@@ -152,7 +152,7 @@ html {
 }
 
 .mobileOnly {
-  @media screen and (min-width: $md) {
+  @media screen and (min-width: 768px) {
     opacity: 0;
     pointer-events: none;
     position: absolute;

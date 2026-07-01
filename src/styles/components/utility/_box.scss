@@ -24,18 +24,18 @@
   }
 
   &.shadow-1 {
-    box-shadow: $box-shadow-1;
+    box-shadow: 0 10px 25px -22px rgb(from var(--color-black) r g b / 0.3);
   }
 
   &.shadow-2 {
-    box-shadow: $box-shadow-2;
+    box-shadow: 0 10px 25px -20px rgb(from var(--color-black) r g b / 0.5);
   }
 
   &.shadow-3 {
-    box-shadow: $box-shadow-3;
+    box-shadow: 0 10px 25px -18px rgb(from var(--color-black) r g b / 0.7);
   }
 
   &.shadow-4 {
-    box-shadow: $box-shadow-4;
+    box-shadow: 0 10px 25px -14px rgb(from var(--color-black) r g b / 1);
   }
 }

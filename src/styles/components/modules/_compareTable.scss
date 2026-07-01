@@ -1,56 +1,56 @@
 .compareTable {
-  padding: $size-32 $size-16;
-  max-width: $size-200 + $size-164;
+  padding: 32px 16px;
+  max-width: 200px + 164px;
 
   .heading {
-    font-size: $size-52;
+    font-size: 52px;
   }
 
   .eyebrow,
   .subheading {
-    font-size: $size-20;
+    font-size: 20px;
     text-transform: uppercase;
     font-weight: 900;
   }
 
   &.highlight {
-    color: $offwhite;
+    color: var(--color-offwhite);
   }
 
   &.primary {
-    background-color: $primary-light;
-    color: $black;
+    background-color: var(--color-primary-light);
+    color: var(--color-black);
 
     &.highlight {
-      background: $primary;
-      color: $offwhite;
+      background: var(--color-primary);
+      color: var(--color-offwhite);
     }
   }
   &.secondary {
-    background-color: $secondary-light;
-    color: $black;
+    background-color: var(--color-secondary-light);
+    color: var(--color-black);
 
     &.highlight {
-      background: $secondary;
-      color: $white;
+      background: var(--color-secondary);
+      color: var(--color-white);
     }
   }
   &.tertiary {
-    background-color: $tertiary-light;
-    color: $black;
+    background-color: var(--color-tertiary-light);
+    color: var(--color-black);
 
     &.highlight {
-      background: $tertiary;
+      background: var(--color-tertiary);
     }
   }
 
   &.quaternary {
-    background-color: $quaternary-light;
-    color: $black;
+    background-color: var(--color-quaternary-light);
+    color: var(--color-black);
 
     &.highlight {
-      background: $quaternary;
-      color: $white;
+      background: var(--color-quaternary);
+      color: var(--color-white);
     }
   }
 }

@@ -1,6 +1,6 @@
 .drawer {
   .screen {
-    background-color: $overlay-primary;
+    background-color: var(--color-overlay-primary);
     position: fixed;
     top: 0;
     left: 0;
@@ -8,7 +8,7 @@
     height: 100%;
     z-index: 19;
     opacity: 0;
-    transition: $transition;
+    transition: all 0.2s ease-in-out;
 
     &.open {
       opacity: 1;
@@ -23,27 +23,27 @@
     overflow: auto;
     width: 100%;
     z-index: 20;
-    background-color: $secondary-light;
-    padding: $size-32 $size-16;
-    transition: $transition;
+    background-color: var(--color-secondary-light);
+    padding: 32px 16px;
+    transition: all 0.2s ease-in-out;
     -webkit-overflow-scrolling: touch;
 
     &.right,
     &.left {
-      max-width: $size-200 * 3;
+      max-width: 200px * 3;
       top: 0;
       height: 100%;
     }
 
     &.top,
     &.bottom {
-      min-height: $size-200;
+      min-height: 200px;
       left: 0;
     }
 
     &.right {
-      border-left: $size-4 solid $secondary;
-      right: -$size-200 * 3.5;
+      border-left: 4px solid var(--color-secondary);
+      right: -200px * 3.5;
 
       &.open {
         right: 0;
@@ -51,8 +51,8 @@
     }
 
     &.left {
-      border-right: $size-4 solid $secondary;
-      left: -$size-200 * 3.5;
+      border-right: 4px solid var(--color-secondary);
+      left: -200px * 3.5;
 
       &.open {
         left: 0;
@@ -60,8 +60,8 @@
     }
 
     &.top {
-      border-bottom: $size-4 solid $secondary;
-      top: -$size-200 - $size-100;
+      border-bottom: 4px solid var(--color-secondary);
+      top: -200px - 100px;
 
       &.open {
         top: 0;
@@ -69,8 +69,8 @@
     }
 
     &.bottom {
-      border-top: $size-4 solid $secondary;
-      bottom: -$size-200 - $size-100;
+      border-top: 4px solid var(--color-secondary);
+      bottom: -200px - 100px;
 
       &.open {
         bottom: 0;
@@ -80,9 +80,9 @@
 
   .close {
     position: absolute;
-    top: $size-8;
-    right: $size-8;
-    padding: $size-8;
+    top: 8px;
+    right: 8px;
+    padding: 8px;
     cursor: pointer;
   }
 }

@@ -1,10 +1,10 @@
 .post {
   .tableOfContents {
-    width: $xxs;
+    width: 320px;
 
-    @media screen and (min-width: ($lg)) {
+    @media screen and (min-width: (992px)) {
       position: sticky;
-      top: $size-16;
+      top: 16px;
     }
   }
 }

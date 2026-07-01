@@ -16,17 +16,17 @@
   td {
     padding: 10px;
     text-align: left;
-    border-top: $size-1 solid $gray;
+    border-top: 1px solid var(--color-gray);
   }
 
   th {
-    border-bottom: $size-1 solid $gray;
+    border-bottom: 1px solid var(--color-gray);
   }
 
   tbody {
     tr {
       &:hover {
-        background-color: $white;
+        background-color: var(--color-white);
       }
     }
   }

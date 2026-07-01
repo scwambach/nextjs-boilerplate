@@ -9,18 +9,18 @@
 
         .box {
           position: relative;
-          height: $size-156;
+          height: 156px;
         }
       }
     }
   }
 
   .grid {
-    @media screen and (max-width: ($sm - 1)) {
+    @media screen and (max-width: (576px - 1)) {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @media screen and (max-width: ($micro - 1)) {
+    @media screen and (max-width: (240px - 1)) {
       grid-template-columns: repeat(1, 1fr);
     }
   }
@@ -33,8 +33,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: $overlay-primary;
-  transition: $transition;
+  background: var(--color-overlay-primary);
+  transition: all 0.2s ease-in-out;
 
   .activeImage {
     position: absolute;
@@ -42,7 +42,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 90%;
-    transition: $transition;
+    transition: all 0.2s ease-in-out;
     max-height: 90%;
     height: 100%;
     overflow: hidden;
@@ -56,15 +56,15 @@
       width: auto;
       max-width: 100%;
       max-height: 100%;
-      box-shadow: $box-shadow-4;
+      box-shadow: 0 10px 25px -14px rgb(from var(--color-black) r g b / 1);
     }
   }
 
   .close {
     position: absolute;
-    top: $size-8;
-    right: $size-8;
-    padding: $size-8;
+    top: 8px;
+    right: 8px;
+    padding: 8px;
     cursor: pointer;
   }
 
@@ -72,11 +72,11 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: $size-24;
-    height: $size-24;
-    background: $white;
+    width: 24px;
+    height: 24px;
+    background: var(--color-white);
     border-radius: 50%;
-    transition: $transition;
+    transition: all 0.2s ease-in-out;
     cursor: pointer;
     z-index: 99;
 
@@ -87,11 +87,11 @@
     }
 
     &.prev {
-      left: $size-8;
+      left: 8px;
     }
 
     &.next {
-      right: $size-8;
+      right: 8px;
     }
   }
 
@@ -100,15 +100,15 @@
     opacity: 0;
 
     .activeImage {
-      top: calc(50% - $size-100);
+      top: calc(50% - 100px);
     }
     .control {
       &.prev {
-        left: -$size-16;
+        left: -16px;
       }
 
       &.next {
-        right: -$size-16;
+        right: -16px;
       }
     }
   }

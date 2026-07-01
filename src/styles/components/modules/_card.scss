@@ -1,14 +1,14 @@
 .card {
-  background-color: $white;
-  border: $size-1 solid $gray-light;
-  color: $black;
-  padding: $size-8;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-light);
+  color: var(--color-black);
+  padding: 8px;
   position: relative;
   box-shadow: 0;
-  box-shadow: $box-shadow-1;
+  box-shadow: 0 10px 25px -22px rgb(from var(--color-black) r g b / 0.3);
 
   &.link {
-    transition: $transition;
+    transition: all 0.2s ease-in-out;
     transform: translateZ(0);
     width: 100%;
     @include radius8;
@@ -18,9 +18,9 @@
     }
 
     &:hover {
-      transform: translateY(-$size-4);
-      box-shadow: $box-shadow-4;
-      background-color: $primary-light;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px -14px rgb(from var(--color-black) r g b / 1);
+      background-color: var(--color-primary-light);
       opacity: 1;
 
       text-decoration: none;
@@ -28,37 +28,37 @@
 
     &.primary {
       &:hover {
-        background-color: $primary-light;
-        color: $black;
+        background-color: var(--color-primary-light);
+        color: var(--color-black);
       }
     }
 
     &.secondary {
       &:hover {
-        background-color: $secondary-light;
-        color: $black;
+        background-color: var(--color-secondary-light);
+        color: var(--color-black);
       }
     }
 
     &.tertiary {
       &:hover {
-        background-color: $tertiary-light;
-        color: $black;
+        background-color: var(--color-tertiary-light);
+        color: var(--color-black);
       }
     }
   }
 
   .tags {
     position: absolute;
-    top: $size-16;
-    left: $size-16;
+    top: 16px;
+    left: 16px;
     z-index: 2;
   }
 
   .date {
     font-weight: bold;
     font-style: italic;
-    margin-bottom: $size-16;
+    margin-bottom: 16px;
   }
 
   .avatars {
@@ -67,8 +67,8 @@
   }
 
   .heading {
-    font-size: $size-24;
-    margin: 0 0 $size-16 0;
+    font-size: 24px;
+    margin: 0 0 16px 0;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -83,11 +83,11 @@
   }
 
   .image {
-    margin-bottom: $size-16;
+    margin-bottom: 16px;
   }
 
   .links {
-    margin-top: $size-32;
+    margin-top: 32px;
   }
 }
 
@@ -97,7 +97,7 @@
   justify-content: space-between;
 
   .inner {
-    padding: $size-8;
+    padding: 8px;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -126,9 +126,9 @@
 }
 
 .authors {
-  margin-top: $size-32;
+  margin-top: 32px;
 
-  @media screen and (max-width: ($md - 1)) {
+  @media screen and (max-width: (768px - 1)) {
     align-items: flex-start;
   }
 
@@ -136,15 +136,15 @@
     &:hover {
       .author {
         + .author {
-          @media screen and (min-width: ($md)) {
-            margin-left: $size-4;
+          @media screen and (min-width: (768px)) {
+            margin-left: 4px;
           }
         }
       }
 
       .authorNames {
-        @media screen and (min-width: ($md)) {
-          margin-left: -$size-36;
+        @media screen and (min-width: (768px)) {
+          margin-left: -36px;
         }
       }
     }
@@ -152,23 +152,23 @@
 
   .authorNames {
     position: relative;
-    transition: $transition;
+    transition: all 0.2s ease-in-out;
   }
 
   .author {
     position: relative;
-    transition: $transition;
+    transition: all 0.2s ease-in-out;
 
     + .author {
-      margin-left: $size-8;
-      @media screen and (min-width: ($md)) {
-        margin-left: -$size-28;
+      margin-left: 8px;
+      @media screen and (min-width: (768px)) {
+        margin-left: -28px;
       }
     }
 
     .avatar {
       border-radius: 100%;
-      outline: $size-1 solid $white;
+      outline: 1px solid var(--color-white);
       position: relative;
       z-index: 2;
     }

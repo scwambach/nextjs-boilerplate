@@ -1,12 +1,12 @@
 .logoBanner {
   position: relative;
-  padding: $size-32;
+  padding: 32px;
   height: 80svh;
-  max-height: $xl;
+  max-height: 1200px;
 
-  @media screen and (max-width: ($md - 1)) {
+  @media screen and (max-width: (768px - 1)) {
     height: auto;
-    padding: $size-100 $size-48;
+    padding: 100px 48px;
   }
 
   .flex {
@@ -15,6 +15,6 @@
 
   .logo {
     width: 100%;
-    max-width: $xs;
+    max-width: 480px;
   }
 }

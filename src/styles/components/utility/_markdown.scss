@@ -1,8 +1,8 @@
 .markdown,
 .portable {
   .articleImage {
-    margin-top: $size-32;
-    margin-bottom: $size-32;
+    margin-top: 32px;
+    margin-bottom: 32px;
 
     img {
       height: auto;
@@ -10,8 +10,8 @@
     }
 
     .imageTitle {
-      font-size: $size-14;
-      margin-top: $size-8;
+      font-size: 14px;
+      margin-top: 8px;
       text-align: center;
       font-style: italic;
     }

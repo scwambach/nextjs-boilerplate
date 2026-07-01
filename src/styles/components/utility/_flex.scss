@@ -50,43 +50,43 @@
 
 @mixin columnBreaks {
   &.column-xxs {
-    @media screen and (max-width: ($xxs - 1)) {
+    @media screen and (max-width: (320px - 1)) {
       flex-direction: column;
     }
   }
 
   &.column-xs {
-    @media screen and (max-width: ($xs - 1)) {
+    @media screen and (max-width: (480px - 1)) {
       flex-direction: column;
     }
   }
 
   &.column-sm {
-    @media screen and (max-width: ($sm - 1)) {
+    @media screen and (max-width: (576px - 1)) {
       flex-direction: column;
     }
   }
 
   &.column-md {
-    @media screen and (max-width: ($md - 1)) {
+    @media screen and (max-width: (768px - 1)) {
       flex-direction: column;
     }
   }
 
   &.column-lg {
-    @media screen and (max-width: ($lg - 1)) {
+    @media screen and (max-width: (992px - 1)) {
       flex-direction: column;
     }
   }
 
   &.column-xl {
-    @media screen and (max-width: ($xl - 1)) {
+    @media screen and (max-width: (1200px - 1)) {
       flex-direction: column;
     }
   }
 
   &.column-xxl {
-    @media screen and (max-width: ($xxl - 1)) {
+    @media screen and (max-width: (1440px - 1)) {
       flex-direction: column;
     }
   }
@@ -165,43 +165,43 @@
   }
 
   &.break-xxs {
-    @media screen and (min-width: ($xxs)) {
+    @media screen and (min-width: (320px)) {
       @include customLayouts;
     }
   }
 
   &.break-xs {
-    @media screen and (min-width: ($xs)) {
+    @media screen and (min-width: (480px)) {
       @include customLayouts;
     }
   }
 
   &.break-sm {
-    @media screen and (min-width: ($sm)) {
+    @media screen and (min-width: (576px)) {
       @include customLayouts;
     }
   }
 
   &.break-md {
-    @media screen and (min-width: ($md)) {
+    @media screen and (min-width: (768px)) {
       @include customLayouts;
     }
   }
 
   &.break-lg {
-    @media screen and (min-width: $lg) {
+    @media screen and (min-width: 992px) {
       @include customLayouts;
     }
   }
 
   &.break-xl {
-    @media screen and (min-width: $xl) {
+    @media screen and (min-width: 1200px) {
       @include customLayouts;
     }
   }
 
   &.break-xxl {
-    @media screen and (min-width: $xxl) {
+    @media screen and (min-width: 1440px) {
       @include customLayouts;
     }
   }

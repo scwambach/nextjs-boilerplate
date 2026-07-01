@@ -1,6 +1,6 @@
 .river {
   > .flex {
-    @media screen and (max-width: ($md - 1)) {
+    @media screen and (max-width: (768px - 1)) {
       flex-direction: column;
       gap: 0;
     }
@@ -9,24 +9,24 @@
   .image,
   .video {
     position: relative;
-    box-shadow: $box-shadow-2;
+    box-shadow: 0 10px 25px -20px rgb(from var(--color-black) r g b / 0.5);
   }
 
   .image {
-    @media screen and (max-width: ($md - 1)) {
+    @media screen and (max-width: (768px - 1)) {
       padding-bottom: 66.6666666667%;
     }
   }
 
   .copy {
-    padding: $size-64 0;
+    padding: 64px 0;
 
-    @media screen and (max-width: ($md - 1)) {
-      padding: 0 0 $size-32 0;
+    @media screen and (max-width: (768px - 1)) {
+      padding: 0 0 32px 0;
     }
   }
 
   .links {
-    margin-top: $size-32;
+    margin-top: 32px;
   }
 }

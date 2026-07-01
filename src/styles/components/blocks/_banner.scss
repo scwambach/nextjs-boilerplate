@@ -6,8 +6,8 @@
   align-items: center;
   justify-content: center;
 
-  @media screen and (min-width: ($lg)) {
-    min-height: $xs;
+  @media screen and (min-width: (992px)) {
+    min-height: 480px;
   }
 
   &.contained {
@@ -24,7 +24,7 @@
           left: 0;
           width: 100%;
           height: 100%;
-          background: rgba($black, 0.5);
+          background: rgb(from var(--color-black) r g b / 0.5);
           z-index: 1;
         }
       }
@@ -33,11 +33,11 @@
     .inner {
       position: relative;
       overflow: hidden;
-      padding: $size-120;
-      box-shadow: $box-shadow-4;
+      padding: 120px;
+      box-shadow: 0 10px 25px -14px rgb(from var(--color-black) r g b / 1);
 
-      @media screen and (max-width: ($md - 1)) {
-        padding: $size-80 $size-16;
+      @media screen and (max-width: (768px - 1)) {
+        padding: 80px 16px;
       }
 
       > div:not(.imageObject) {
@@ -46,65 +46,65 @@
       }
 
       &.quaternary {
-        background-color: $quaternary-light;
+        background-color: var(--color-quaternary-light);
       }
 
       &.primary {
-        background-color: $primary-light;
+        background-color: var(--color-primary-light);
       }
 
       &.secondary {
-        background-color: $secondary-light;
+        background-color: var(--color-secondary-light);
       }
 
       &.tertiary {
-        background-color: $tertiary-light;
+        background-color: var(--color-tertiary-light);
       }
 
       &.black {
-        background-color: $black;
-        color: $offwhite;
+        background-color: var(--color-black);
+        color: var(--color-offwhite);
       }
 
       &.white {
-        background-color: $offwhite;
+        background-color: var(--color-offwhite);
       }
     }
 
     &.micro {
       .inner {
-        padding: $size-32;
+        padding: 32px;
       }
     }
   }
 
   &.primary {
-    background-color: $primary-light;
+    background-color: var(--color-primary-light);
   }
 
   &.secondary {
-    background-color: $secondary-light;
+    background-color: var(--color-secondary-light);
   }
 
   &.tertiary {
-    background-color: $tertiary-light;
+    background-color: var(--color-tertiary-light);
   }
 
   &.quaternary {
-    background-color: $quaternary-light;
+    background-color: var(--color-quaternary-light);
   }
 
   &.black {
-    background-color: $black;
-    color: $offwhite;
+    background-color: var(--color-black);
+    color: var(--color-offwhite);
   }
 
   &.white {
-    background-color: $offwhite;
+    background-color: var(--color-offwhite);
   }
 
   &.has-image {
-    color: $white;
+    color: var(--color-white);
 
     &:before {
       content: '';
@@ -113,27 +113,27 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba($black, 0.5);
+      background: rgb(from var(--color-black) r g b / 0.5);
       z-index: 1;
     }
 
     .links {
-      color: $white;
+      color: var(--color-white);
     }
 
     .breadcrumbs {
       a {
-        color: $white;
+        color: var(--color-white);
       }
     }
   }
 
   .subheading {
-    font-size: $size-24;
+    font-size: 24px;
   }
 
   .innerContent {
-    max-width: $md;
+    max-width: 768px;
   }
 
   .date {
@@ -142,7 +142,7 @@
   }
 
   .tags {
-    margin-bottom: $size-16;
+    margin-bottom: 16px;
   }
 
   .container {
@@ -151,32 +151,32 @@
   }
 
   .links {
-    margin-top: $size-32;
+    margin-top: 32px;
     display: flex;
     align-items: center;
     flex-direction: column;
     align-items: flex-start;
-    gap: $size-16;
+    gap: 16px;
 
-    @media screen and (min-width: ($sm)) {
+    @media screen and (min-width: (576px)) {
       align-items: center;
       flex-direction: row;
     }
   }
 
   .heading {
-    font-size: $size-48;
+    font-size: 48px;
 
-    @media screen and (max-width: ($md - 1)) {
-      font-size: $size-40;
+    @media screen and (max-width: (768px - 1)) {
+      font-size: 40px;
     }
 
-    @media screen and (max-width: ($sm - 1)) {
-      font-size: $size-32;
+    @media screen and (max-width: (576px - 1)) {
+      font-size: 32px;
     }
   }
 
   .breadcrumbs {
-    margin-bottom: $size-16;
+    margin-bottom: 16px;
   }
 }

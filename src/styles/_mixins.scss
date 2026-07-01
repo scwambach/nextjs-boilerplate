@@ -1,16 +1,16 @@
 @mixin vertical-spacing-padding {
-  padding: $vertical-spacing 0;
+  padding: 80px 0;
 
-  @media screen and (max-width: ($md - 1)) {
-    padding: $vertical-spacing-mobile 0;
+  @media screen and (max-width: (768px - 1)) {
+    padding: 40px 0;
   }
 }
 
 @mixin vertical-spacing-margin {
-  margin: $vertical-spacing 0;
+  margin: 80px 0;
 
-  @media screen and (max-width: ($md - 1)) {
-    margin: $vertical-spacing-mobile 0;
+  @media screen and (max-width: (768px - 1)) {
+    margin: 40px 0;
   }
 }
 
@@ -18,7 +18,7 @@
   padding: 0;
   display: inline-flex;
   align-items: center;
-  gap: $size-5;
+  gap: 5px;
   background: none;
   outline: none;
   color: inherit;
@@ -31,30 +31,30 @@
   margin: 0;
 
   &:hover {
-    @media screen and (min-width: ($sm)) {
+    @media screen and (min-width: (576px)) {
       opacity: 0.8;
       text-decoration: underline;
     }
   }
 
   &:focus {
-    @media screen and (min-width: ($sm)) {
-      outline: $size-4 solid $focus-outline;
+    @media screen and (min-width: (576px)) {
+      outline: 4px solid var(--color-focus-outline);
     }
   }
 }
 
 // customizable border radius mixin
 @mixin radius4 {
-  border-radius: $size-4;
+  border-radius: 4px;
 }
 
 @mixin radius8 {
-  border-radius: $size-8;
+  border-radius: 8px;
 }
 
 @mixin radius12 {
-  border-radius: $size-12;
+  border-radius: 12px;
 }
 
 @mixin radius4overflow {

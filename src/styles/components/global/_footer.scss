@@ -1,10 +1,10 @@
 .footer {
-  background-color: $black;
-  color: $white;
+  background-color: var(--color-black);
+  color: var(--color-white);
   text-align: center;
-  padding: $vertical-spacing / 3 0;
+  padding: 80px / 3 0;
 
-  @media screen and (max-width: ($md - 1)) {
-    padding: $vertical-spacing-mobile / 3 0;
+  @media screen and (max-width: (768px - 1)) {
+    padding: 40px / 3 0;
   }
 }
