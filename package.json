@@ -15,7 +15,6 @@
     "coverage": "jest --coverage",
     "prepare": "husky install",
     "check-format": "prettier --write .",
-    "check-lint": "eslint . --ext ts --ext tsx --ext js",
     "ncu": "ncu",
     "ncu:update": "ncu -u",
     "storybook": "storybook dev -p 6006 --no-open",

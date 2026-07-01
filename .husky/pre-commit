@@ -12,7 +12,7 @@ npm run check-format || {
 }
 
 # Check ESLint standards
-npm run check-lint || {
+npm run lint || {
   echo 'Found linting issues that need to be fixed.'
   read -p "Press Enter to continue or Ctrl+C to cancel the commit" -n 1 -r
   echo    # move to a new line after user input
