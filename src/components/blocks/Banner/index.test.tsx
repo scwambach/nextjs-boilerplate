@@ -151,7 +151,12 @@ describe('Banner', () => {
             _type: 'person',
             firstName: 'John',
             lastName: 'Doe',
-            image: { src: '/avatar.jpg', alt: 'John Doe', width: 100, height: 100 },
+            image: {
+              src: '/avatar.jpg',
+              alt: 'John Doe',
+              width: 100,
+              height: 100,
+            },
           },
         ]}
       />
@@ -169,14 +174,24 @@ describe('Banner', () => {
             _type: 'person',
             firstName: 'John',
             lastName: 'Doe',
-            image: { src: '/avatar1.jpg', alt: 'John Doe', width: 100, height: 100 },
+            image: {
+              src: '/avatar1.jpg',
+              alt: 'John Doe',
+              width: 100,
+              height: 100,
+            },
           },
           {
             _id: '2',
             _type: 'person',
             firstName: 'Jane',
             lastName: 'Smith',
-            image: { src: '/avatar2.jpg', alt: 'Jane Smith', width: 100, height: 100 },
+            image: {
+              src: '/avatar2.jpg',
+              alt: 'Jane Smith',
+              width: 100,
+              height: 100,
+            },
           },
         ]}
       />
@@ -193,7 +208,9 @@ describe('Banner', () => {
           {
             _type: 'block',
             _key: '1',
-            children: [{ _type: 'span', _key: '2', text: 'Portable subheading' }],
+            children: [
+              { _type: 'span', _key: '2', text: 'Portable subheading' },
+            ],
           },
         ]}
         markdown={false}
@@ -273,4 +290,3 @@ describe('Banner', () => {
     expect(getByText('About')).toBeInTheDocument()
   })
 })
-

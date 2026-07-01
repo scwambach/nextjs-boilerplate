@@ -108,11 +108,12 @@ describe('createItemBlurHandler', () => {
   it('closes dropdown when no menu items have focus after blur', () => {
     const setOpen = jest.fn()
     const ref = { current: document.createElement('div') }
-    ref.current.innerHTML = '<div class="menu"><a class="linkObject" href="/a">A</a></div>'
-    
+    ref.current.innerHTML =
+      '<div class="menu"><a class="linkObject" href="/a">A</a></div>'
+
     const handler = createItemBlurHandler(ref, setOpen)
     handler()
-    
+
     jest.advanceTimersByTime(10)
     expect(setOpen).toHaveBeenCalledWith(false)
   })
@@ -120,15 +121,16 @@ describe('createItemBlurHandler', () => {
   it('keeps dropdown open when a menu item has focus after blur', () => {
     const setOpen = jest.fn()
     const ref = { current: document.createElement('div') }
-    ref.current.innerHTML = '<div class="menu"><a class="linkObject" href="/a">A</a></div>'
+    ref.current.innerHTML =
+      '<div class="menu"><a class="linkObject" href="/a">A</a></div>'
     document.body.appendChild(ref.current)
-    
+
     const link = ref.current.querySelector('.linkObject') as HTMLElement
     link.focus()
-    
+
     const handler = createItemBlurHandler(ref, setOpen)
     handler()
-    
+
     jest.advanceTimersByTime(10)
     expect(setOpen).toHaveBeenCalledWith(true)
   })

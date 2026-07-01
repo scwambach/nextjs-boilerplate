@@ -71,7 +71,8 @@ describe('VideoBlock', () => {
     const { container } = render(
       <VideoBlock {...baseProps} className="custom-video" />
     )
-    expect(container.querySelector('.videoBlock.custom-video')).toBeInTheDocument()
+    expect(
+      container.querySelector('.videoBlock.custom-video')
+    ).toBeInTheDocument()
   })
 })
-

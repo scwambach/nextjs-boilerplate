@@ -53,7 +53,9 @@ describe('compileAuthorNames', () => {
         lastName: 'Johnson',
       } as PersonProps,
     ]
-    expect(compileAuthorNames(authors)).toBe('John Doe, Jane Smith, and Bob Johnson')
+    expect(compileAuthorNames(authors)).toBe(
+      'John Doe, Jane Smith, and Bob Johnson'
+    )
   })
 
   it('returns multiple author names with proper formatting', () => {
@@ -83,6 +85,8 @@ describe('compileAuthorNames', () => {
         lastName: 'Miller',
       } as PersonProps,
     ]
-    expect(compileAuthorNames(authors)).toBe('Alice Williams, Bob Brown, Charlie Davis, and Diana Miller')
+    expect(compileAuthorNames(authors)).toBe(
+      'Alice Williams, Bob Brown, Charlie Davis, and Diana Miller'
+    )
   })
 })

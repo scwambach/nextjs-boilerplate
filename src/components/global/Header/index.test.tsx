@@ -95,9 +95,7 @@ describe('Header Component', () => {
   })
 
   it('renders span for menu items without href', () => {
-    const menuWithoutHref: GlobalProps['navigation'] = [
-      { label: 'No Link' },
-    ]
+    const menuWithoutHref: GlobalProps['navigation'] = [{ label: 'No Link' }]
 
     render(<Header menu={menuWithoutHref} title="Test" />)
     expect(screen.getByText('No Link')).toBeInTheDocument()
@@ -114,4 +112,3 @@ describe('Header Component', () => {
     expect(screen.getByText('Sign Out')).toBeInTheDocument()
   })
 })
-

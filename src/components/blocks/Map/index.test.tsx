@@ -7,8 +7,12 @@ import { useLoadScript } from '@react-google-maps/api'
 jest.mock('@react-google-maps/api', () => ({
   ...jest.requireActual('@react-google-maps/api'),
   useLoadScript: jest.fn(),
-  GoogleMap: ({ children }: any) => <div data-testid="google-map">{children}</div>,
-  Marker: ({ position }: any) => <div data-testid="marker">{JSON.stringify(position)}</div>,
+  GoogleMap: ({ children }: any) => (
+    <div data-testid="google-map">{children}</div>
+  ),
+  Marker: ({ position }: any) => (
+    <div data-testid="marker">{JSON.stringify(position)}</div>
+  ),
   Libraries: jest.fn(),
 }))
 
@@ -66,8 +70,8 @@ describe('Map component', () => {
 
     const multipleMarkers = [
       { lat: 40.7128, lng: -74.006 },
-      { lat: 40.7580, lng: -73.9855 },
-      { lat: 40.7489, lng: -73.9680 },
+      { lat: 40.758, lng: -73.9855 },
+      { lat: 40.7489, lng: -73.968 },
     ]
 
     const { getAllByTestId } = render(<Map markers={multipleMarkers} />)
@@ -80,7 +84,9 @@ describe('Map component', () => {
       loadError: undefined,
     })
 
-    const { container } = render(<Map markers={markers} className="custom-map" />)
+    const { container } = render(
+      <Map markers={markers} className="custom-map" />
+    )
     expect(container.querySelector('.map.custom-map')).toBeInTheDocument()
   })
 
@@ -97,4 +103,3 @@ describe('Map component', () => {
     })
   })
 })
-

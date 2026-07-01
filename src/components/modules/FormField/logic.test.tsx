@@ -67,16 +67,16 @@ describe('handleMultiSelectFocus / handleMultiSelectBlur', () => {
     const parent = document.createElement('div')
     const container = document.createElement('div')
     const input = document.createElement('input')
-    
+
     container.appendChild(input)
     parent.appendChild(container)
     grandParent.appendChild(parent)
     greatGrandParent.appendChild(grandParent)
-    
+
     handleMultiSelectFocus({
       target: input,
     } as unknown as React.FocusEvent<HTMLInputElement>)
-    
+
     expect(greatGrandParent.classList.contains('focused')).toBe(true)
   })
 
@@ -86,17 +86,17 @@ describe('handleMultiSelectFocus / handleMultiSelectBlur', () => {
     const parent = document.createElement('div')
     const container = document.createElement('div')
     const input = document.createElement('input')
-    
+
     greatGrandParent.classList.add('focused')
     container.appendChild(input)
     parent.appendChild(container)
     grandParent.appendChild(parent)
     greatGrandParent.appendChild(grandParent)
-    
+
     handleMultiSelectBlur({
       target: input,
     } as unknown as React.FocusEvent<HTMLInputElement>)
-    
+
     expect(greatGrandParent.classList.contains('focused')).toBe(false)
   })
 })
