@@ -24,3 +24,37 @@ describe('getEventTimeCopy', () => {
     expect(result.time).not.toContain('-')
   })
 })
+
+import { createEscapeHandler, handlePosterToggle } from './logic'
+
+describe('createEscapeHandler', () => {
+  it('calls close function when Escape key is pressed', () => {
+    const close = jest.fn()
+    const handler = createEscapeHandler(close)
+    handler({ key: 'Escape' } as KeyboardEvent)
+    expect(close).toHaveBeenCalled()
+  })
+
+  it('does not call close for other keys', () => {
+    const close = jest.fn()
+    const handler = createEscapeHandler(close)
+    handler({ key: 'Enter' } as KeyboardEvent)
+    expect(close).not.toHaveBeenCalled()
+  })
+})
+
+describe('handlePosterToggle', () => {
+  it('toggles poster state from false to true', () => {
+    const setPosterOpen = jest.fn()
+    const toggle = handlePosterToggle(false, setPosterOpen)
+    toggle()
+    expect(setPosterOpen).toHaveBeenCalledWith(true)
+  })
+
+  it('toggles poster state from true to false', () => {
+    const setPosterOpen = jest.fn()
+    const toggle = handlePosterToggle(true, setPosterOpen)
+    toggle()
+    expect(setPosterOpen).toHaveBeenCalledWith(false)
+  })
+})

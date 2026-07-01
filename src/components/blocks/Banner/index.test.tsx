@@ -119,4 +119,158 @@ describe('Banner', () => {
     const headingEl = getByTestId('banner-heading')
     expect(headingEl.tagName).toBe('H2')
   })
+
+  it('renders with tags', () => {
+    const { getByText } = render(
+      <Banner
+        heading="Test Heading"
+        tags={[
+          { label: 'Tag 1', href: '/tag-1' },
+          { label: 'Tag 2', href: '/tag-2' },
+        ]}
+      />
+    )
+    expect(getByText('Tag 1')).toBeInTheDocument()
+    expect(getByText('Tag 2')).toBeInTheDocument()
+  })
+
+  it('renders with date', () => {
+    const { getByText } = render(
+      <Banner heading="Test Heading" date="2024-01-15" />
+    )
+    expect(getByText('Jan 15, 2024')).toBeInTheDocument()
+  })
+
+  it('renders with authors (single)', () => {
+    const { getByText } = render(
+      <Banner
+        heading="Test Heading"
+        authors={[
+          {
+            _id: '1',
+            _type: 'person',
+            firstName: 'John',
+            lastName: 'Doe',
+            image: { src: '/avatar.jpg', alt: 'John Doe', width: 100, height: 100 },
+          },
+        ]}
+      />
+    )
+    expect(getByText('John Doe')).toBeInTheDocument()
+  })
+
+  it('renders with multiple authors', () => {
+    const { getByText, container } = render(
+      <Banner
+        heading="Test Heading"
+        authors={[
+          {
+            _id: '1',
+            _type: 'person',
+            firstName: 'John',
+            lastName: 'Doe',
+            image: { src: '/avatar1.jpg', alt: 'John Doe', width: 100, height: 100 },
+          },
+          {
+            _id: '2',
+            _type: 'person',
+            firstName: 'Jane',
+            lastName: 'Smith',
+            image: { src: '/avatar2.jpg', alt: 'Jane Smith', width: 100, height: 100 },
+          },
+        ]}
+      />
+    )
+    expect(getByText('John Doe and Jane Smith')).toBeInTheDocument()
+    expect(container.querySelector('.authors.multiple')).toBeInTheDocument()
+  })
+
+  it('renders with portable content subheading (non-markdown)', () => {
+    const { container } = render(
+      <Banner
+        heading="Test Heading"
+        subheading={[
+          {
+            _type: 'block',
+            _key: '1',
+            children: [{ _type: 'span', _key: '2', text: 'Portable subheading' }],
+          },
+        ]}
+        markdown={false}
+      />
+    )
+    expect(container).toBeInTheDocument()
+  })
+
+  it('renders with background video', () => {
+    const { container } = render(
+      <Banner
+        heading="Test Heading"
+        backgroundVideo={{
+          url: 'https://example.com/video.mp4',
+        }}
+      />
+    )
+    expect(container.querySelector('.has-image')).toBeInTheDocument()
+  })
+
+  it('renders with foreground media', () => {
+    const { container } = render(
+      <Banner
+        heading="Test Heading"
+        foregroundMedia={{
+          src: '/foreground.jpg',
+          alt: 'Foreground',
+          width: 800,
+          height: 600,
+        }}
+      />
+    )
+    expect(container.querySelector('img[alt="Foreground"]')).toBeInTheDocument()
+  })
+
+  it('renders with contained and overlap styles', () => {
+    const { container } = render(
+      <Banner heading="Test Heading" contained overlap />
+    )
+    expect(container.querySelector('.overlap')).toBeInTheDocument()
+    expect(container.querySelector('.contained')).toBeInTheDocument()
+  })
+
+  it('renders with contained and micro styles', () => {
+    const { container } = render(
+      <Banner heading="Test Heading" contained micro />
+    )
+    expect(container.querySelector('.micro')).toBeInTheDocument()
+    expect(container.querySelector('.contained')).toBeInTheDocument()
+  })
+
+  it('renders with crumbs having only current', () => {
+    const { getByText } = render(
+      <Banner
+        heading="Test Heading"
+        crumbs={{
+          current: 'Current Page',
+        }}
+      />
+    )
+    expect(getByText('Current Page')).toBeInTheDocument()
+  })
+
+  it('renders with crumbs having only items', () => {
+    const { getByText } = render(
+      <Banner
+        heading="Test Heading"
+        crumbs={{
+          items: [
+            { label: 'Home', href: '/' },
+            { label: 'About', href: '/about' },
+          ],
+        }}
+      />
+    )
+    expect(getByText('Home')).toBeInTheDocument()
+    expect(getByText('About')).toBeInTheDocument()
+  })
 })
+

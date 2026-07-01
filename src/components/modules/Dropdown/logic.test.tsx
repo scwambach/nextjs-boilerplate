@@ -68,3 +68,68 @@ describe('createKeyDownHandler', () => {
     expect(setOpen).not.toHaveBeenCalled()
   })
 })
+
+import { handleToggle, handleItemClick, createItemBlurHandler } from './logic'
+
+describe('handleToggle', () => {
+  it('toggles open state to true when currently false', () => {
+    const setOpen = jest.fn()
+    const toggle = handleToggle(false, setOpen)
+    toggle()
+    expect(setOpen).toHaveBeenCalledWith(true)
+  })
+
+  it('toggles open state to false when currently true', () => {
+    const setOpen = jest.fn()
+    const toggle = handleToggle(true, setOpen)
+    toggle()
+    expect(setOpen).toHaveBeenCalledWith(false)
+  })
+})
+
+describe('handleItemClick', () => {
+  it('closes the dropdown when an item is clicked', () => {
+    const setOpen = jest.fn()
+    const handler = handleItemClick(setOpen)
+    handler()
+    expect(setOpen).toHaveBeenCalledWith(false)
+  })
+})
+
+describe('createItemBlurHandler', () => {
+  beforeEach(() => {
+    jest.useFakeTimers()
+  })
+
+  afterEach(() => {
+    jest.useRealTimers()
+  })
+
+  it('closes dropdown when no menu items have focus after blur', () => {
+    const setOpen = jest.fn()
+    const ref = { current: document.createElement('div') }
+    ref.current.innerHTML = '<div class="menu"><a class="linkObject" href="/a">A</a></div>'
+    
+    const handler = createItemBlurHandler(ref, setOpen)
+    handler()
+    
+    jest.advanceTimersByTime(10)
+    expect(setOpen).toHaveBeenCalledWith(false)
+  })
+
+  it('keeps dropdown open when a menu item has focus after blur', () => {
+    const setOpen = jest.fn()
+    const ref = { current: document.createElement('div') }
+    ref.current.innerHTML = '<div class="menu"><a class="linkObject" href="/a">A</a></div>'
+    document.body.appendChild(ref.current)
+    
+    const link = ref.current.querySelector('.linkObject') as HTMLElement
+    link.focus()
+    
+    const handler = createItemBlurHandler(ref, setOpen)
+    handler()
+    
+    jest.advanceTimersByTime(10)
+    expect(setOpen).toHaveBeenCalledWith(true)
+  })
+})

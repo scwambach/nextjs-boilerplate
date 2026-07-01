@@ -4,6 +4,8 @@ import {
   getGroupId,
   handleIndicatorBlur,
   handleIndicatorFocus,
+  handleMultiSelectFocus,
+  handleMultiSelectBlur,
 } from './logic'
 
 describe('getFieldId', () => {
@@ -55,5 +57,46 @@ describe('handleIndicatorFocus / handleIndicatorBlur', () => {
       target: input,
     } as unknown as React.FocusEvent<HTMLInputElement>)
     expect(parent.classList.contains('focused')).toBe(false)
+  })
+})
+
+describe('handleMultiSelectFocus / handleMultiSelectBlur', () => {
+  it('adds focused class to the multi-select wrapper on focus', () => {
+    const greatGrandParent = document.createElement('div')
+    const grandParent = document.createElement('div')
+    const parent = document.createElement('div')
+    const container = document.createElement('div')
+    const input = document.createElement('input')
+    
+    container.appendChild(input)
+    parent.appendChild(container)
+    grandParent.appendChild(parent)
+    greatGrandParent.appendChild(grandParent)
+    
+    handleMultiSelectFocus({
+      target: input,
+    } as unknown as React.FocusEvent<HTMLInputElement>)
+    
+    expect(greatGrandParent.classList.contains('focused')).toBe(true)
+  })
+
+  it('removes focused class from the multi-select wrapper on blur', () => {
+    const greatGrandParent = document.createElement('div')
+    const grandParent = document.createElement('div')
+    const parent = document.createElement('div')
+    const container = document.createElement('div')
+    const input = document.createElement('input')
+    
+    greatGrandParent.classList.add('focused')
+    container.appendChild(input)
+    parent.appendChild(container)
+    grandParent.appendChild(parent)
+    greatGrandParent.appendChild(grandParent)
+    
+    handleMultiSelectBlur({
+      target: input,
+    } as unknown as React.FocusEvent<HTMLInputElement>)
+    
+    expect(greatGrandParent.classList.contains('focused')).toBe(false)
   })
 })

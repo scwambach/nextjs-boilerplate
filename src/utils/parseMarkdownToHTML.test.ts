@@ -31,4 +31,30 @@ describe('parseMarkdownToHTML', () => {
     const markdown = '   '
     expect(parseMarkdownToHTML(markdown)).toBe('')
   })
+
+  it('correctly handles Markdown with images', () => {
+    const markdown = '![Alt text](https://example.com/image.jpg)'
+    const result = parseMarkdownToHTML(markdown)
+    expect(result).toContain('<div class="articleImage">')
+    expect(result).toContain('<img src="https://example.com/image.jpg"')
+    expect(result).toContain('title="Alt text"')
+    expect(result).toContain('alt="Alt text"')
+    expect(result).toContain('<div class="imageTitle">Alt text</div>')
+  })
+
+  it('correctly handles images without alt text', () => {
+    const markdown = '![](https://example.com/image.jpg)'
+    const result = parseMarkdownToHTML(markdown)
+    expect(result).toContain('<div class="articleImage">')
+    expect(result).toContain('<img src="https://example.com/image.jpg"')
+    expect(result).not.toContain('<div class="imageTitle">')
+  })
+
+  it('correctly handles images without src', () => {
+    const markdown = '![Alt text]()'
+    const result = parseMarkdownToHTML(markdown)
+    expect(result).toContain('<div class="articleImage">')
+    expect(result).toContain('src=""')
+    expect(result).toContain('alt="Alt text"')
+  })
 })

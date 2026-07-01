@@ -44,8 +44,8 @@ export const Header = ({ menu, title }: HeaderProps) => {
             alignItems="center"
             className={getMainNavClassName(menuOpen)}
           >
-            {menu.map((item) => (
-              <li key={item.href}>
+            {menu.map((item, index) => (
+              <li key={item.href || `${item.label}-${index}`}>
                 {item.subNav ? (
                   <Dropdown
                     unstyled

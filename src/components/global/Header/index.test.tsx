@@ -77,4 +77,41 @@ describe('Header Component', () => {
       screen.getByRole('navigation', { name: 'Main Navigation' })
     ).toBeInTheDocument()
   })
+
+  it('renders dropdown for menu items with subNav', () => {
+    const menuWithSubnav: GlobalProps['navigation'] = [
+      {
+        label: 'Products',
+        href: '/products',
+        subNav: [
+          { label: 'Product 1', href: '/products/1' },
+          { label: 'Product 2', href: '/products/2' },
+        ],
+      },
+    ]
+
+    render(<Header menu={menuWithSubnav} title="Test" />)
+    expect(screen.getByText('Products')).toBeInTheDocument()
+  })
+
+  it('renders span for menu items without href', () => {
+    const menuWithoutHref: GlobalProps['navigation'] = [
+      { label: 'No Link' },
+    ]
+
+    render(<Header menu={menuWithoutHref} title="Test" />)
+    expect(screen.getByText('No Link')).toBeInTheDocument()
+  })
+
+  it('handles session with user name and image', () => {
+    useSessionMock.mockReturnValue({
+      data: {
+        user: { name: 'John Doe', image: '/john.png' },
+      },
+    })
+
+    render(<Header {...defaultProps} />)
+    expect(screen.getByText('Sign Out')).toBeInTheDocument()
+  })
 })
+
