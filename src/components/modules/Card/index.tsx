@@ -6,7 +6,14 @@ import { ImageObject } from '../ImageObject'
 import { Avatar } from '../Avatar'
 import { Tag } from '../Tag'
 import { LinkObject } from '../LinkObject'
-import { Heading, Markdown, Flex, Box, IconSelector, Spacer } from '../../utility'
+import {
+  Heading,
+  Markdown,
+  Flex,
+  Box,
+  IconSelector,
+  Spacer,
+} from '../../utility'
 import { compileAuthorNames } from '../../../utils/compileAuthorNames'
 import { getInnerImageRadius } from './logic'
 import './styles.scss'

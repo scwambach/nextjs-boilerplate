@@ -63,15 +63,11 @@ describe('Cards component', () => {
     const { getByRole } = render(
       <Cards items={manyItems} paginated itemsPerPage={6} />
     )
-    expect(
-      getByRole('navigation', { name: 'Pagination' })
-    ).toBeInTheDocument()
+    expect(getByRole('navigation', { name: 'Pagination' })).toBeInTheDocument()
   })
 
   it('shows a fallback heading when there are no items for the current page', () => {
     const { getByText } = render(<Cards items={[]} />)
-    expect(
-      getByText('There are no items for page 1.')
-    ).toBeInTheDocument()
+    expect(getByText('There are no items for page 1.')).toBeInTheDocument()
   })
 })

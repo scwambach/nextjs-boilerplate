@@ -18,7 +18,12 @@ describe('CompareTable', () => {
 
   it('reflects the highlight and tag props by rendering the accent tag', () => {
     const { getByText } = render(
-      <CompareTable {...baseProps} highlight tag="Most popular" theme="primary" />
+      <CompareTable
+        {...baseProps}
+        highlight
+        tag="Most popular"
+        theme="primary"
+      />
     )
     expect(getByText('Most popular')).toBeInTheDocument()
   })
@@ -27,7 +32,10 @@ describe('CompareTable', () => {
   // component (the optional CTA is a Button, which owns its own a11y/tests).
   it('renders the optional link as a Button when provided', () => {
     const { getByText } = render(
-      <CompareTable {...baseProps} link={{ label: 'Choose plan', href: '/plan' }} />
+      <CompareTable
+        {...baseProps}
+        link={{ label: 'Choose plan', href: '/plan' }}
+      />
     )
     const link = getByText('Choose plan')
     expect(link.closest('a')).toHaveAttribute('href', '/plan')

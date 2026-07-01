@@ -113,7 +113,9 @@ describe('Banner', () => {
   })
 
   it('renders the heading with an accessible heading level', () => {
-    const { getByTestId } = render(<Banner heading="Test Heading" headingLevel={2} />)
+    const { getByTestId } = render(
+      <Banner heading="Test Heading" headingLevel={2} />
+    )
     const headingEl = getByTestId('banner-heading')
     expect(headingEl.tagName).toBe('H2')
   })

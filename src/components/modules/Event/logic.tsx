@@ -38,9 +38,10 @@ export const getEventTimeCopy = (
   }
 }
 
-export const createEscapeHandler = (close: () => void) => (e: KeyboardEvent) => {
-  if (e.key === 'Escape') close()
-}
+export const createEscapeHandler =
+  (close: () => void) => (e: KeyboardEvent) => {
+    if (e.key === 'Escape') close()
+  }
 
 export const handlePosterToggle =
   (posterOpen: boolean, setPosterOpen: (open: boolean) => void) => () => {

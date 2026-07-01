@@ -17,12 +17,17 @@ export const measureContentHeight = (
   return open ? content.scrollHeight : 0
 }
 
-export const handleToggle = (open: boolean, setOpen: (open: boolean) => void) => () => {
-  setOpen(!open)
-}
+export const handleToggle =
+  (open: boolean, setOpen: (open: boolean) => void) => () => {
+    setOpen(!open)
+  }
 
 export const createResizeHandler =
-  (open: boolean, setOpen: (open: boolean) => void, setHeight: (height: number) => void) =>
+  (
+    open: boolean,
+    setOpen: (open: boolean) => void,
+    setHeight: (height: number) => void
+  ) =>
   () => {
     if (open) {
       setHeight(0)

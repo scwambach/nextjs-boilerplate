@@ -41,11 +41,15 @@ describe('TableOfContents', () => {
 
     const { container } = render(<TableOfContents targetId="article" />)
     await waitFor(() =>
-      expect(container.querySelector('nav a[href="#intro"]')).toBeInTheDocument()
+      expect(
+        container.querySelector('nav a[href="#intro"]')
+      ).toBeInTheDocument()
     )
 
     const link = container.querySelector('nav a[href="#intro"]') as HTMLElement
-    link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }))
+    link.dispatchEvent(
+      new MouseEvent('click', { bubbles: true, cancelable: true })
+    )
 
     expect(heading.scrollIntoView).toHaveBeenCalledWith({ behavior: 'smooth' })
   })

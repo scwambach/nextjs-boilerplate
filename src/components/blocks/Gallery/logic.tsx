@@ -17,7 +17,10 @@ export const useGalleryModal = () => {
     return () => document.removeEventListener('keydown', closeOnEscape)
   }, [activeIndex])
 
-  const openItem = (items: GalleryProps['items'], item: GalleryProps['items'][number]) => {
+  const openItem = (
+    items: GalleryProps['items'],
+    item: GalleryProps['items'][number]
+  ) => {
     setIsModalOpen(true)
     setActiveIndex(items.indexOf(item))
   }

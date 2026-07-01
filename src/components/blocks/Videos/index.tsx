@@ -1,6 +1,12 @@
 import { Button, SectionHeading } from '@components/modules'
 import { VideoBlock } from '@components/modules/VideoBlock'
-import { BlockWrapper, Container, Flex, Grid, Spacer } from '@components/utility'
+import {
+  BlockWrapper,
+  Container,
+  Flex,
+  Grid,
+  Spacer,
+} from '@components/utility'
 import { VideosProps } from '@utils/types'
 import './styles.scss'
 

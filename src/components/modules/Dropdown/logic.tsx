@@ -5,7 +5,9 @@ import { RefObject } from 'react'
  * Used to decide whether a blur event should actually close the menu
  * (it shouldn't, if focus simply moved to another item inside it).
  */
-export const doAnyListItemsHaveFocus = (ref: RefObject<HTMLDivElement>): boolean => {
+export const doAnyListItemsHaveFocus = (
+  ref: RefObject<HTMLDivElement>
+): boolean => {
   if (!ref.current) {
     return false
   }
@@ -40,9 +42,10 @@ export const createKeyDownHandler =
     }
   }
 
-export const handleToggle = (open: boolean, setOpen: (open: boolean) => void) => () => {
-  setOpen(!open)
-}
+export const handleToggle =
+  (open: boolean, setOpen: (open: boolean) => void) => () => {
+    setOpen(!open)
+  }
 
 export const handleItemClick = (setOpen: (open: boolean) => void) => () => {
   setOpen(false)

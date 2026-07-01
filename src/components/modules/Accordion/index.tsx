@@ -3,7 +3,11 @@ import { useEffect, useRef, useState } from 'react'
 import { Button } from '../Button'
 import { Box } from '../../utility'
 import { AccordionProps } from '../../../utils/types'
-import { createResizeHandler, handleToggle, measureContentHeight } from './logic'
+import {
+  createResizeHandler,
+  handleToggle,
+  measureContentHeight,
+} from './logic'
 import './styles.scss'
 
 export const Accordion = ({

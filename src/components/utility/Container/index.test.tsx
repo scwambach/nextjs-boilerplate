@@ -21,11 +21,7 @@ describe('Container Component', () => {
 
   it('applies the containerClass and className props', () => {
     const { getByTestId } = render(
-      <Container
-        testId="container"
-        containerClass="narrow"
-        className="custom"
-      >
+      <Container testId="container" containerClass="narrow" className="custom">
         Content
       </Container>
     )

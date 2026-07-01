@@ -10,8 +10,10 @@ import { StatProps } from '../../../utils/types'
 export const getLimitedValue = (value: number, maxValue?: number): number =>
   maxValue ? Math.min(value, maxValue) : value
 
-export const hasExceededMaxValue = (value: number, maxValue?: number): boolean =>
-  maxValue ? value > maxValue : false
+export const hasExceededMaxValue = (
+  value: number,
+  maxValue?: number
+): boolean => (maxValue ? value > maxValue : false)
 
 /**
  * Formats the numeric value according to the stat's declared type.

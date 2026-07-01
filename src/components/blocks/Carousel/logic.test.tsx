@@ -11,7 +11,9 @@ describe('useCarouselAutoAdvance', () => {
   })
 
   it('advances the active index after the interval elapses', () => {
-    const { result } = renderHook(() => useCarouselAutoAdvance(3, '.never-hovered', 1000))
+    const { result } = renderHook(() =>
+      useCarouselAutoAdvance(3, '.never-hovered', 1000)
+    )
     expect(result.current.activeIndex).toBe(0)
 
     act(() => {

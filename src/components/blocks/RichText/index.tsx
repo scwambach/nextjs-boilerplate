@@ -1,4 +1,10 @@
-import { BlockWrapper, Container, Grid, Markdown, Portable } from '@components/utility'
+import {
+  BlockWrapper,
+  Container,
+  Grid,
+  Markdown,
+  Portable,
+} from '@components/utility'
 import { RichTextProps } from '@utils/types'
 import { getColumnCount } from './logic'
 import './styles.scss'

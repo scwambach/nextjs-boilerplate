@@ -27,7 +27,9 @@ export const VideoBackground = ({
       <video autoPlay loop muted playsInline className="video">
         <source src={video} type="video/mp4" />
       </video>
-      {image && <ImageObject {...image} isBackground className="fallbackImage" />}
+      {image && (
+        <ImageObject {...image} isBackground className="fallbackImage" />
+      )}
     </div>
   )
 }

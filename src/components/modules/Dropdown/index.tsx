@@ -17,7 +17,9 @@ export const Dropdown = ({ items, ...props }: DropdownProps) => {
   const [open, setOpen] = useState(false)
 
   const ref = useRef<HTMLDivElement>(null)
-  const menuId = props.componentId ? `${props.componentId}-menu` : 'dropdown-menu'
+  const menuId = props.componentId
+    ? `${props.componentId}-menu`
+    : 'dropdown-menu'
 
   useEffect(() => {
     // click anywhere outside the ref to close the dropdown

@@ -19,7 +19,9 @@ describe('Portable Component', () => {
   ]
 
   it('renders without crashing with required props', () => {
-    const { container } = render(<Portable content={content} testId="portable" />)
+    const { container } = render(
+      <Portable content={content} testId="portable" />
+    )
     expect(container).toBeInTheDocument()
   })
 
@@ -38,7 +40,9 @@ describe('Portable Component', () => {
   })
 
   it('renders portable text headings with slugified ids for in-page navigation (accessibility)', () => {
-    const { getByText } = render(<Portable content={content} testId="portable" />)
+    const { getByText } = render(
+      <Portable content={content} testId="portable" />
+    )
     const heading = getByText('Section Title')
     expect(heading.tagName).toBe('H2')
     expect(heading).toHaveAttribute('id', 'section-title')

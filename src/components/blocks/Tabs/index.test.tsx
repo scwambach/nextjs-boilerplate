@@ -83,9 +83,7 @@ describe('Tabs Component', () => {
 
   it('exposes the mobile menu toggle expanded state via aria-expanded for accessibility', () => {
     const { container } = render(<Tabs {...defaultProps} />)
-    const toggleButton = container.querySelector(
-      'button.toggle'
-    ) as HTMLElement
+    const toggleButton = container.querySelector('button.toggle') as HTMLElement
     expect(toggleButton).toHaveAttribute('aria-expanded', 'false')
     fireEvent.click(toggleButton)
     expect(toggleButton).toHaveAttribute('aria-expanded', 'true')

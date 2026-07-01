@@ -52,9 +52,7 @@ describe('LinkObject', () => {
         External Link
       </LinkObject>
     )
-    expect(getByTestId('external-link')).toHaveTextContent(
-      'opens in a new tab'
-    )
+    expect(getByTestId('external-link')).toHaveTextContent('opens in a new tab')
   })
 
   it('treats in-page anchor links (#id) as internal, not opening a new tab', () => {

@@ -25,10 +25,7 @@ describe('PageBuilder Component', () => {
 
   it('renders without crashing', () => {
     const { container } = render(
-      <PageBuilder
-        pageData={{ pageComponents: [] }}
-        globalData={globalData}
-      />
+      <PageBuilder pageData={{ pageComponents: [] }} globalData={globalData} />
     )
     expect(container).toBeInTheDocument()
   })
@@ -49,10 +46,7 @@ describe('PageBuilder Component', () => {
 
   it('delegates layout landmarks to PageLayout, which owns the accessible structure', () => {
     render(
-      <PageBuilder
-        pageData={{ pageComponents: [] }}
-        globalData={globalData}
-      />
+      <PageBuilder pageData={{ pageComponents: [] }} globalData={globalData} />
     )
     expect(screen.getByTestId('page-layout')).toBeInTheDocument()
   })

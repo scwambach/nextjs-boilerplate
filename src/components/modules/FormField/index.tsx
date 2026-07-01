@@ -139,10 +139,18 @@ export const FormField = ({
                     />
                     <div className={`${type}-indicator`}>
                       {type === 'radio' && (
-                        <RadioButton size={20} weight="fill" aria-hidden="true" />
+                        <RadioButton
+                          size={20}
+                          weight="fill"
+                          aria-hidden="true"
+                        />
                       )}
                       {type === 'checkbox' && (
-                        <CheckSquare size={20} weight="fill" aria-hidden="true" />
+                        <CheckSquare
+                          size={20}
+                          weight="fill"
+                          aria-hidden="true"
+                        />
                       )}
                     </div>
                   </Flex>

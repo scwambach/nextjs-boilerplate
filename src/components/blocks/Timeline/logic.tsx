@@ -5,9 +5,7 @@ import { Radius } from '@utils/types/types'
  * outer box radius (since the inner image sits inset within the padded
  * card), capped so a radius of 4 stays at 4.
  */
-export const getInnerRadius = (
-  boxRadius?: Radius
-): Radius | undefined => {
+export const getInnerRadius = (boxRadius?: Radius): Radius | undefined => {
   if (boxRadius === 4) return boxRadius
   return boxRadius ? ((boxRadius - 4) as Radius) : undefined
 }

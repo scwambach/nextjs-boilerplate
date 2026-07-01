@@ -40,7 +40,9 @@ describe('handleIndicatorFocus / handleIndicatorBlur', () => {
     const parent = document.createElement('label')
     const input = document.createElement('input')
     parent.appendChild(input)
-    handleIndicatorFocus({ target: input } as unknown as React.FocusEvent<HTMLInputElement>)
+    handleIndicatorFocus({
+      target: input,
+    } as unknown as React.FocusEvent<HTMLInputElement>)
     expect(parent.classList.contains('focused')).toBe(true)
   })
 
@@ -49,7 +51,9 @@ describe('handleIndicatorFocus / handleIndicatorBlur', () => {
     parent.classList.add('focused')
     const input = document.createElement('input')
     parent.appendChild(input)
-    handleIndicatorBlur({ target: input } as unknown as React.FocusEvent<HTMLInputElement>)
+    handleIndicatorBlur({
+      target: input,
+    } as unknown as React.FocusEvent<HTMLInputElement>)
     expect(parent.classList.contains('focused')).toBe(false)
   })
 })

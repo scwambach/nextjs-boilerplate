@@ -26,9 +26,7 @@ describe('BlockFactory Component', () => {
   it('does not crash when props.global is missing for a contactBlock item', () => {
     expect(() =>
       render(
-        <BlockFactory
-          items={[{ _type: 'contactBlock', blockType: 'block' }]}
-        />
+        <BlockFactory items={[{ _type: 'contactBlock', blockType: 'block' }]} />
       )
     ).not.toThrow()
   })

@@ -21,7 +21,8 @@ export const resolveComponent = (object: any) => {
 export const getBlockId = (type: string, index: number): string =>
   `${type}_${index}`
 
-const isMapOrContact = (type: string) => type === 'map' || type === 'contactBlock'
+const isMapOrContact = (type: string) =>
+  type === 'map' || type === 'contactBlock'
 
 /**
  * Derives the extra props a block needs beyond its own CMS data — map
