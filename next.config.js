@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  sassOptions: {
+    includePaths: [`${__dirname}/src/styles`],
+    additionalData: `@import "mixins";`,
+  },
   env: {
     SITE_URL: process.env.SITE_URL,
     GOOGLE_MAP_API_KEY: process.env.GOOGLE_MAP_API_KEY,

@@ -161,6 +161,7 @@ export interface ImageObjectProps extends ComponentProps {
   isBackground?: boolean
   sizes?: string
   src?: string
+  query?: string
   height?: number
   width?: number
   blurWidth?: number

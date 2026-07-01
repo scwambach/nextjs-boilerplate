@@ -1,0 +1,19 @@
+.markdown,
+.portable {
+  .articleImage {
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+
+    .imageTitle {
+      font-size: 14px;
+      margin-top: 8px;
+      text-align: center;
+      font-style: italic;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.gallery {
+  @include vertical-spacing-margin;
+
+  button {
+    &.button {
+      &.galleryItem {
+        display: block;
+        position: relative;
+
+        .box {
+          position: relative;
+          height: 156px;
+        }
+      }
+    }
+  }
+
+  .grid {
+    @media screen and (max-width: (576px - 1)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: (240px - 1)) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
