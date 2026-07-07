@@ -2,7 +2,7 @@ import React from 'react'
 import '@testing-library/jest-dom'
 import { render, fireEvent } from '@testing-library/react'
 import { Gallery } from './index'
-import { GalleryProps } from '@utils/types'
+import { GalleryProps } from '@/utils/types'
 
 describe('Gallery Component', () => {
   const items = [

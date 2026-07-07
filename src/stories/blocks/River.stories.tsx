@@ -1,7 +1,7 @@
-import { River as RiverItem } from '@components/blocks'
+import { River as RiverItem } from '@/components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
-import image1 from '@images/nature.webp'
-import image2 from '@images/nature2.webp'
+import image1 from '@/images/nature.webp'
+import image2 from '@/images/nature2.webp'
 
 const meta: Meta<typeof RiverItem> = {
   title: 'Components/Blocks/River',

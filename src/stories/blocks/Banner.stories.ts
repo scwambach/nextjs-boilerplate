@@ -1,7 +1,7 @@
-import { Banner } from '@components/blocks'
+import { Banner } from '@/components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
-import ForegroundImage from '@images/marketing.png'
-import Nature from '@images/nature.webp'
+import ForegroundImage from '@/images/marketing.png'
+import Nature from '@/images/nature.webp'
 
 const meta: Meta<typeof Banner> = {
   title: 'Components/Blocks/Banner',

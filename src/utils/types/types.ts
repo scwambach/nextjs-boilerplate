@@ -1,12 +1,5 @@
 export type BreakNames =
-  | 'none'
-  | 'xxs'
-  | 'xs'
-  | 'sm'
-  | 'md'
-  | 'lg'
-  | 'xl'
-  | 'xxl'
+  'none' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 
 export type Colors =
   | 'primary'
@@ -61,12 +54,7 @@ export interface SetFormDataProps {
 }
 
 export type ContainerClasses =
-  | 'wider'
-  | 'wide'
-  | 'normal'
-  | 'narrow'
-  | 'narrower'
-  | 'full'
+  'wider' | 'wide' | 'normal' | 'narrow' | 'narrower' | 'full'
 
 export type Themes = 'primary' | 'secondary' | 'tertiary' | 'quaternary'
 

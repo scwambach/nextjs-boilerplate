@@ -1,8 +1,8 @@
-import { Videos as VideosItem } from '@components/blocks'
+import { Videos as VideosItem } from '@/components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
-import Image1 from '@images/placeholder2.webp'
-import Image2 from '@images/placeholder3.webp'
-import Image3 from '@images/placeholder4.webp'
+import Image1 from '@/images/placeholder2.webp'
+import Image2 from '@/images/placeholder3.webp'
+import Image3 from '@/images/placeholder4.webp'
 
 const meta: Meta<typeof VideosItem> = {
   title: 'Components/Blocks',

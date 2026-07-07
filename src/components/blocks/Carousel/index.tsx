@@ -1,8 +1,8 @@
 'use client'
-import { CarouselProps } from '@utils/types'
-import { Banner } from '@components/blocks/Banner'
-import { Dots } from '@components/modules/Dots'
-import { Box, Flex } from '@components/utility'
+import { CarouselProps } from '@/utils/types'
+import { Banner } from '@/components/blocks/Banner'
+import { Dots } from '@/components/modules/Dots'
+import { Box, Flex } from '@/components/utility'
 import { useCarouselAutoAdvance } from './logic'
 import './styles.scss'
 

@@ -47,11 +47,7 @@ export interface FlexProps extends FlexGridProps {
   fill?: boolean
   alignItems?: 'center' | 'flex-start' | 'flex-end' | 'stretch'
   justifyContent?:
-    | 'center'
-    | 'flex-start'
-    | 'flex-end'
-    | 'space-between'
-    | 'space-around'
+    'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around'
   customLayout?:
     | `one-third-two-thirds`
     | `two-thirds-one-third`

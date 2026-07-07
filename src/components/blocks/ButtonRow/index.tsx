@@ -1,6 +1,6 @@
-import { Button, SectionHeading } from '@components/modules'
-import { BlockWrapper, Container, Flex } from '@components/utility'
-import { ButtonRowProps } from '@utils/types'
+import { Button, SectionHeading } from '@/components/modules'
+import { BlockWrapper, Container, Flex } from '@/components/utility'
+import { ButtonRowProps } from '@/utils/types'
 import './styles.scss'
 
 export const ButtonRow = ({

@@ -3,8 +3,8 @@ import {
   LinkedinLogo,
   TwitterLogo,
 } from '@phosphor-icons/react/dist/ssr'
-import { Box, Flex } from '@components/utility'
-import { ShareButtonsProps } from '@utils/types'
+import { Box, Flex } from '@/components/utility'
+import { ShareButtonsProps } from '@/utils/types'
 import { Button } from '../Button'
 import { getShareUrl } from './logic'
 import './styles.scss'

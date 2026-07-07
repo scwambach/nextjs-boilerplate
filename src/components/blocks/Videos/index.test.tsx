@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { Videos } from './index'
-import { VideosProps } from '@utils/types'
+import { VideosProps } from '@/utils/types'
 
 jest.mock('react-player', () => () => null)
 

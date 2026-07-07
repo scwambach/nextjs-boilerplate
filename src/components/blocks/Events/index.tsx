@@ -1,7 +1,7 @@
-import { Event } from '@components/modules/Event'
-import { SectionHeading } from '@components/modules/SectionHeading'
-import { BlockWrapper, Container, Flex, Spacer } from '@components/utility'
-import { EventsProps } from '@utils/types'
+import { Event } from '@/components/modules/Event'
+import { SectionHeading } from '@/components/modules/SectionHeading'
+import { BlockWrapper, Container, Flex, Spacer } from '@/components/utility'
+import { EventsProps } from '@/utils/types'
 import { Fragment } from 'react'
 import './styles.scss'
 

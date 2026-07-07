@@ -1,4 +1,4 @@
-import { IconSelector } from '@components/utility'
+import { IconSelector } from '@/components/utility'
 import { groups, settingsProps, themes } from '../docTypes/common'
 import { icons } from '../icons'
 import { Cards } from '@phosphor-icons/react'

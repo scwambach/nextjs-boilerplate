@@ -1,6 +1,6 @@
-import { Cards as CardsItem } from '@components/blocks'
+import { Cards as CardsItem } from '@/components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
-import Nature from '@images/nature2.webp'
+import Nature from '@/images/nature2.webp'
 
 const meta: Meta<typeof CardsItem> = {
   title: 'Components/Blocks/Cards',

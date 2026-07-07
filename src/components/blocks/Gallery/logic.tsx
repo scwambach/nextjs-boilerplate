@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { GalleryProps } from '@utils/types'
+import { GalleryProps } from '@/utils/types'
 
 /**
  * Manages the Gallery's lightbox modal state: which image is active and

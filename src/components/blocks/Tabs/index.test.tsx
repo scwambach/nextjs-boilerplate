@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import { Tabs } from './index'
-import { TabsProps } from '@utils/types'
+import { TabsProps } from '@/utils/types'
 
 const subheading = [
   {

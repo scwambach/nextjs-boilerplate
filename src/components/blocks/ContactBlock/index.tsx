@@ -1,8 +1,8 @@
 'use client'
-import { LinkObject, SectionHeading } from '@components/modules'
-import { Box, Container, Flex, Heading } from '@components/utility'
-import { ContactBlockProps } from '@utils/types'
-import { Map } from '@components/blocks/Map'
+import { LinkObject, SectionHeading } from '@/components/modules'
+import { Box, Container, Flex, Heading } from '@/components/utility'
+import { ContactBlockProps } from '@/utils/types'
+import { Map } from '@/components/blocks/Map'
 import './styles.scss'
 
 export const ContactBlock = (props: ContactBlockProps) => {

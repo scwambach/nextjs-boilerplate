@@ -1,4 +1,4 @@
-import { RichText as RichTextItem } from '@components/blocks'
+import { RichText as RichTextItem } from '@/components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const markdownCopy = (image: boolean) => ` # Title: Placeholder Markdown Text

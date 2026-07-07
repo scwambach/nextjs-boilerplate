@@ -1,5 +1,5 @@
-import { Drawer as DrawerItem } from '@components/utility'
-import { Heading } from '@components/utility/Heading'
+import { Drawer as DrawerItem } from '@/components/utility'
+import { Heading } from '@/components/utility/Heading'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof DrawerItem> = {

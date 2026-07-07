@@ -1,6 +1,6 @@
-import { Quote as QuoteItem } from '@components/blocks'
+import { Quote as QuoteItem } from '@/components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
-import Image from '@images/placeholder1.webp'
+import Image from '@/images/placeholder1.webp'
 
 const meta: Meta<typeof QuoteItem> = {
   title: 'Components/Blocks/Quote',

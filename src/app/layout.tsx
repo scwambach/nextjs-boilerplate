@@ -1,6 +1,6 @@
 import 'styles/main.scss'
 import { getServerSession } from 'next-auth'
-import SessionProvider from '@components/global/SessionProvider'
+import SessionProvider from '@/components/global/SessionProvider'
 
 export default async function RootLayout({
   children,

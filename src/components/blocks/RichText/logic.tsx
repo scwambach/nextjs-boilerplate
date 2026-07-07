@@ -1,4 +1,4 @@
-import { ColumnSize, RichTextProps } from '@utils/types'
+import { ColumnSize, RichTextProps } from '@/utils/types'
 
 /**
  * Derives the number of populated copy columns (1-4) so the Grid can size

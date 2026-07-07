@@ -5,7 +5,7 @@ import {
   Button,
   ImageObject,
   Tag,
-} from '@components/modules'
+} from '@/components/modules'
 import {
   Box,
   Container,
@@ -13,12 +13,12 @@ import {
   Grid,
   Heading,
   Portable,
-} from '@components/utility'
-import { compileAuthorNames } from '@utils/compileAuthorNames'
-import { parseMarkdownToHTML } from '@utils/parseMarkdownToHTML'
-import { BannerProps } from '@utils/types'
+} from '@/components/utility'
+import { compileAuthorNames } from '@/utils/compileAuthorNames'
+import { parseMarkdownToHTML } from '@/utils/parseMarkdownToHTML'
+import { BannerProps } from '@/utils/types'
 import dayjs from 'dayjs'
-import { VideoBackground } from '@components/modules/VideoBackground'
+import { VideoBackground } from '@/components/modules/VideoBackground'
 
 export const Banner = ({
   authors,

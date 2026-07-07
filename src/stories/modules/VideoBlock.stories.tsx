@@ -1,6 +1,6 @@
-import { VideoBlock as VideoBlockItem } from '@components/modules'
+import { VideoBlock as VideoBlockItem } from '@/components/modules'
 import type { Meta, StoryObj } from '@storybook/react'
-import Image from '@images/placeholder1.webp'
+import Image from '@/images/placeholder1.webp'
 
 const meta: Meta<typeof VideoBlockItem> = {
   title: 'Components/Modules',

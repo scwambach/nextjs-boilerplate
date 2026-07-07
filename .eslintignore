@@ -1,1 +1,12 @@
 jest.config.js
+node_modules/
+.next/
+out/
+build/
+dist/
+coverage/
+storybook-static/
+*.config.js
+*.config.ts
+.storybook/
+public/

@@ -1,6 +1,6 @@
 import { RadioButton } from '@phosphor-icons/react'
 import { icons } from '../icons'
-import { IconSelector } from '@components/utility'
+import { IconSelector } from '@/components/utility'
 import { themes } from '../docTypes/common'
 
 export const button = {

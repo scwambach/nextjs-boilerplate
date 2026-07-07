@@ -1,9 +1,9 @@
 'use client'
 import { useState } from 'react'
 import { signIn, signOut, useSession } from 'next-auth/react'
-import { GlobalProps } from '@utils/types'
-import { Box, Container, Flex, Heading } from '@components/utility'
-import { Avatar, Button, Dropdown, LinkObject } from '@components/modules'
+import { GlobalProps } from '@/utils/types'
+import { Box, Container, Flex, Heading } from '@/components/utility'
+import { Avatar, Button, Dropdown, LinkObject } from '@/components/modules'
 import {
   getMainNavClassName,
   getNavToggleClassName,

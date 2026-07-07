@@ -1,6 +1,6 @@
 'use client'
 import * as Icon from '@phosphor-icons/react'
-import { IconSelectorProps } from '@utils/types'
+import { IconSelectorProps } from '@/utils/types'
 import { ComponentType } from 'react'
 
 // No styles.scss: this component renders no wrapping element or className of

@@ -1,4 +1,4 @@
-import { Button, Table as TableItem } from '@components/modules'
+import { Button, Table as TableItem } from '@/components/modules'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof TableItem> = {

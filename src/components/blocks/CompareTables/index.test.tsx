@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { CompareTables } from './index'
-import { CompareTablesProps } from '@utils/types'
+import { CompareTablesProps } from '@/utils/types'
 
 describe('CompareTables component', () => {
   const items: CompareTablesProps['items'] = [

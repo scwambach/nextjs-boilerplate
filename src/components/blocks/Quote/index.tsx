@@ -1,7 +1,7 @@
-import { Avatar } from '@components/modules'
-import { Box, Container, Flex, Markdown } from '@components/utility'
+import { Avatar } from '@/components/modules'
+import { Box, Container, Flex, Markdown } from '@/components/utility'
 import { Minus, Quotes } from '@phosphor-icons/react/dist/ssr'
-import { QuoteProps } from '@utils/types'
+import { QuoteProps } from '@/utils/types'
 import './styles.scss'
 
 export const Quote = (props: QuoteProps) => {

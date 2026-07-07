@@ -1,6 +1,6 @@
-import { Events as EventsItem } from '@components/blocks'
+import { Events as EventsItem } from '@/components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
-import Image from '@images/placeholder2.webp'
+import Image from '@/images/placeholder2.webp'
 
 const meta: Meta<typeof EventsItem> = {
   title: 'Components/Blocks',

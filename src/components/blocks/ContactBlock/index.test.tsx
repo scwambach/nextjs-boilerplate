@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { ContactBlock } from './index'
-import { ContactBlockProps } from '@utils/types'
+import { ContactBlockProps } from '@/utils/types'
 
 describe('ContactBlock component', () => {
   const information: ContactBlockProps['information'] = {

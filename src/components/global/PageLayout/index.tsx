@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
-import { Header, Footer } from '@components/global'
-import { GlobalProps } from '@utils/types'
-import { SkipToMain } from '@components/utility'
+import { Header, Footer } from '@/components/global'
+import { GlobalProps } from '@/utils/types'
+import { SkipToMain } from '@/components/utility'
 
 export interface PageLayoutProps {
   pageClasses?: string

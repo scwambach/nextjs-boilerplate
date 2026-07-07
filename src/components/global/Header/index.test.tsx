@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
 import { Header } from './index'
-import { GlobalProps } from '@utils/types'
+import { GlobalProps } from '@/utils/types'
 
 const useSessionMock = jest.fn()
 

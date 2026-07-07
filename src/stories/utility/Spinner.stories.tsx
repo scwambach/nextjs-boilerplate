@@ -1,4 +1,4 @@
-import { Spinner as SpinnerItem } from '@components/utility'
+import { Spinner as SpinnerItem } from '@/components/utility'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof SpinnerItem> = {

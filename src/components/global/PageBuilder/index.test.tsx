@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { PageBuilder } from './index'
-import { GlobalProps } from '@utils/types'
+import { GlobalProps } from '@/utils/types'
 
 jest.mock('../../utility/BlockFactory', () => ({
   BlockFactory: ({ items }: { items: unknown[] }) => (

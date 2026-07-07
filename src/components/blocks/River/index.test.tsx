@@ -1,6 +1,6 @@
 import React from 'react'
 import { River } from './index'
-import { RiverProps } from '@utils/types'
+import { RiverProps } from '@/utils/types'
 import { render } from '@testing-library/react'
 
 describe('River Component', () => {

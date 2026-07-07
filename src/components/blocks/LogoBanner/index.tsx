@@ -1,6 +1,6 @@
-import { ImageObject } from '@components/modules'
-import { Box, Flex } from '@components/utility'
-import { LogoBannerProps } from '@utils/types'
+import { ImageObject } from '@/components/modules'
+import { Box, Flex } from '@/components/utility'
+import { LogoBannerProps } from '@/utils/types'
 import './styles.scss'
 
 export const LogoBanner = ({

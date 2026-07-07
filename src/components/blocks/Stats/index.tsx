@@ -1,7 +1,7 @@
-import { Stat } from '@components/modules'
-import { SectionHeading } from '@components/modules/SectionHeading'
-import { BlockWrapper, Container, Grid } from '@components/utility'
-import { StatsProps } from '@utils/types'
+import { Stat } from '@/components/modules'
+import { SectionHeading } from '@/components/modules/SectionHeading'
+import { BlockWrapper, Container, Grid } from '@/components/utility'
+import { StatsProps } from '@/utils/types'
 import { getStatsColumns } from './logic'
 import './styles.scss'
 

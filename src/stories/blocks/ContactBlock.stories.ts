@@ -1,7 +1,7 @@
-import { ContactBlock as ContactBlockItem } from '@components/blocks'
+import { ContactBlock as ContactBlockItem } from '@/components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
 import * as Icon from '@phosphor-icons/react'
-import mapStyle from '@utils/mapStyles'
+import mapStyle from '@/utils/mapStyles'
 
 const meta: Meta<typeof ContactBlockItem> = {
   title: 'Components/Blocks',

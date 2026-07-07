@@ -1,7 +1,7 @@
-import { Button } from '@components/modules'
-import { SectionHeading } from '@components/modules/SectionHeading'
-import { BlockWrapper, Container } from '@components/utility'
-import { FormProps } from '@utils/types'
+import { Button } from '@/components/modules'
+import { SectionHeading } from '@/components/modules/SectionHeading'
+import { BlockWrapper, Container } from '@/components/utility'
+import { FormProps } from '@/utils/types'
 import './styles.scss'
 
 const Form = ({

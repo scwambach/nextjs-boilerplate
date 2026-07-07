@@ -1,4 +1,4 @@
-import { IconSelector as IconSelectorItem } from '@components/utility'
+import { IconSelector as IconSelectorItem } from '@/components/utility'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof IconSelectorItem> = {

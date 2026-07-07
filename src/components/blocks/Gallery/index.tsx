@@ -1,8 +1,8 @@
 'use client'
-import { Button, ImageObject, GalleryModal } from '@components/modules'
-import { SectionHeading } from '@components/modules/SectionHeading'
-import { BlockWrapper, Box, Container, Grid } from '@components/utility'
-import { GalleryProps } from '@utils/types'
+import { Button, ImageObject, GalleryModal } from '@/components/modules'
+import { SectionHeading } from '@/components/modules/SectionHeading'
+import { BlockWrapper, Box, Container, Grid } from '@/components/utility'
+import { GalleryProps } from '@/utils/types'
 import { useGalleryModal } from './logic'
 import './styles.scss'
 

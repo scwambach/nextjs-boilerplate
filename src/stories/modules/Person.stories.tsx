@@ -1,6 +1,6 @@
-import { Person as PersonItem } from '@components/modules'
+import { Person as PersonItem } from '@/components/modules'
 import type { Meta, StoryObj } from '@storybook/react'
-import Image from '@images/placeholder1.webp'
+import Image from '@/images/placeholder1.webp'
 
 const meta: Meta<typeof PersonItem> = {
   title: 'Components/Modules',

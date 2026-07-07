@@ -1,6 +1,6 @@
-import { CompareTable, SectionHeading } from '@components/modules'
-import { BlockWrapper, Container, Flex } from '@components/utility'
-import { CompareTablesProps } from '@utils/types'
+import { CompareTable, SectionHeading } from '@/components/modules'
+import { BlockWrapper, Container, Flex } from '@/components/utility'
+import { CompareTablesProps } from '@/utils/types'
 import './styles.scss'
 
 export const CompareTables = ({

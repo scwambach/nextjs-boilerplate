@@ -1,5 +1,5 @@
 'use client'
-import { MapProps } from '@utils/types'
+import { MapProps } from '@/utils/types'
 import {
   GoogleMap,
   Libraries,
@@ -7,7 +7,7 @@ import {
   useLoadScript,
 } from '@react-google-maps/api'
 import { useCallback, useRef } from 'react'
-import { Box, Flex, Heading, Spinner } from '@components/utility'
+import { Box, Flex, Heading, Spinner } from '@/components/utility'
 import './styles.scss'
 
 const libraries = ['places'] as Libraries

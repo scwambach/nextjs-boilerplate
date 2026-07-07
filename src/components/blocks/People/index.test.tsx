@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { People } from './index'
-import { PeopleProps } from '@utils/types'
+import { PeopleProps } from '@/utils/types'
 
 // Mocked data for testing
 const mockedPeople: PeopleProps['items'] = [

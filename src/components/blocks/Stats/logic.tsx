@@ -1,4 +1,4 @@
-import { ColumnSize, StatsProps } from '@utils/types'
+import { ColumnSize, StatsProps } from '@/utils/types'
 
 /**
  * Derives the Grid column count for Stats: one column per item, capped at

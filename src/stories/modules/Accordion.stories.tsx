@@ -1,5 +1,5 @@
-import { Accordion as AccordionItem } from '@components/modules'
-import { Heading } from '@components/utility/Heading'
+import { Accordion as AccordionItem } from '@/components/modules'
+import { Heading } from '@/components/utility/Heading'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof AccordionItem> = {

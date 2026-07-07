@@ -1,4 +1,4 @@
-import { Radius } from '@utils/types/types'
+import { Radius } from '@/utils/types/types'
 
 /**
  * Derives the inner image radius for a Timeline event: 4px less than the

@@ -1,6 +1,6 @@
 import { FormField } from '../../components/modules'
-import { Form as FormItem } from '@components/blocks'
-import { Grid } from '@components/utility'
+import { Form as FormItem } from '@/components/blocks'
+import { Grid } from '@/components/utility'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof FormItem> = {

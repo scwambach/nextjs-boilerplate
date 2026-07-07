@@ -1,13 +1,13 @@
 'use client'
 import { useState } from 'react'
-import { handleInputChange } from '@utils/handleInputChange'
-import { handleRadioChange } from '@utils/handleRadioChange'
-import { handleCheckBoxChange } from '@utils/handleCheckBoxChange'
-import { handleFileChange } from '@utils/handleFileChange'
-import { ComponentProps } from '@utils/types'
-import { Box, Grid } from '@components/utility'
-import { Form } from '@components/blocks'
-import { FormField } from '@components/modules'
+import { handleInputChange } from '@/utils/handleInputChange'
+import { handleRadioChange } from '@/utils/handleRadioChange'
+import { handleCheckBoxChange } from '@/utils/handleCheckBoxChange'
+import { handleFileChange } from '@/utils/handleFileChange'
+import { ComponentProps } from '@/utils/types'
+import { Box, Grid } from '@/components/utility'
+import { Form } from '@/components/blocks'
+import { FormField } from '@/components/modules'
 
 export const ContactForm = (props: ComponentProps) => {
   const [formData, setFormData] = useState<any>({})

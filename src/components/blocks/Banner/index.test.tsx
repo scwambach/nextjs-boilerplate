@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { Banner } from './index'
-import { Colors } from '@utils/types'
+import { Colors } from '@/utils/types'
 
 describe('Banner', () => {
   it('renders with required props', () => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { PageLayout } from './index'
-import { GlobalProps } from '@utils/types'
+import { GlobalProps } from '@/utils/types'
 
 // Header/Footer/SkipToMain are rendered for real (each has its own
 // dedicated unit tests); PageLayout's own tests focus on composition and

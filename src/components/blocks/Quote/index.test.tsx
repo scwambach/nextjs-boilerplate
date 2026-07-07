@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { Quote } from './index'
-import { QuoteProps } from '@utils/types'
+import { QuoteProps } from '@/utils/types'
 
 describe('Quote Component', () => {
   const quoteProps: QuoteProps = {

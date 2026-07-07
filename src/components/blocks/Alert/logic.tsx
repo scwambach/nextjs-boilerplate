@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { AlertProps } from '@utils/types'
+import { AlertProps } from '@/utils/types'
 
 const iconMap = {
   success: 'Confetti',
@@ -36,7 +36,6 @@ export const useAlertVisibility = (componentId?: string) => {
     }
 
     setLoading(false)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [remove])
 
   const dismiss = () => {

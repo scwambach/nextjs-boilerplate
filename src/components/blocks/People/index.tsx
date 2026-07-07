@@ -1,7 +1,7 @@
-import { Person } from '@components/modules'
-import { SectionHeading } from '@components/modules/SectionHeading'
-import { BlockWrapper, Container, Grid } from '@components/utility'
-import { PeopleProps } from '@utils/types'
+import { Person } from '@/components/modules'
+import { SectionHeading } from '@/components/modules/SectionHeading'
+import { BlockWrapper, Container, Grid } from '@/components/utility'
+import { PeopleProps } from '@/utils/types'
 import './styles.scss'
 
 export const People = ({

@@ -1,7 +1,7 @@
-import { Card as CardItem } from '@components/modules'
+import { Card as CardItem } from '@/components/modules'
 import type { Meta, StoryObj } from '@storybook/react'
-import Image from '@images/nature2.webp'
-import Image2 from '@images/nature.webp'
+import Image from '@/images/nature2.webp'
+import Image2 from '@/images/nature.webp'
 
 const meta: Meta<typeof CardItem> = {
   title: 'Components/Modules/Card',

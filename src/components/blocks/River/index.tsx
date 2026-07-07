@@ -1,4 +1,4 @@
-import { Button, ImageObject, VideoBlock } from '@components/modules'
+import { Button, ImageObject, VideoBlock } from '@/components/modules'
 import {
   BlockWrapper,
   Box,
@@ -7,8 +7,8 @@ import {
   Heading,
   Markdown,
   Portable,
-} from '@components/utility'
-import { RiverProps } from '@utils/types'
+} from '@/components/utility'
+import { RiverProps } from '@/utils/types'
 import './styles.scss'
 
 export const River = ({

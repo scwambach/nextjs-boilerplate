@@ -1,12 +1,12 @@
-import { PageLayout } from '@components/global/PageLayout'
-import { client, previewClient } from '@utils/client'
+import { PageLayout } from '@/components/global/PageLayout'
+import { client, previewClient } from '@/utils/client'
 import { notFound } from 'next/navigation'
 import { GLOBAL_QUERY } from 'queries/global'
 import { POST_QUERY } from 'queries/post'
-import { GlobalProps, PostDetailsProps } from '@utils/types'
-import { Banner, Cards } from '@components/blocks'
-import { TableOfContents, ShareButtons } from '@components/modules'
-import { Container, Spacer, Flex, Portable } from '@components/utility'
+import { GlobalProps, PostDetailsProps } from '@/utils/types'
+import { Banner, Cards } from '@/components/blocks'
+import { TableOfContents, ShareButtons } from '@/components/modules'
+import { Container, Spacer, Flex, Portable } from '@/components/utility'
 
 async function getData(slug: string, preview?: boolean) {
   const sanityClient = preview ? previewClient : client

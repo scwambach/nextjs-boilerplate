@@ -1,4 +1,4 @@
-import { Colors, ComponentProps, ImageObjectProps } from '@utils/types'
+import { Colors, ComponentProps, ImageObjectProps } from '@/utils/types'
 import { ImageObject } from '../ImageObject'
 import './styles.scss'
 

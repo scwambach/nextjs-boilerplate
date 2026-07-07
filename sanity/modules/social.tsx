@@ -1,4 +1,4 @@
-import { IconSelector } from '@components/utility'
+import { IconSelector } from '@/components/utility'
 import { icons } from '../icons'
 
 export const social = {

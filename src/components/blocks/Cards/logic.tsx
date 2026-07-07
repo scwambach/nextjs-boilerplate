@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { CardsProps } from '@utils/types'
+import { CardsProps } from '@/utils/types'
 
 /**
  * Manages Cards pagination state: current page, item slicing/offset, and
@@ -50,7 +50,6 @@ export const useCardsPagination = (
       }
       setLoading(false)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [itemOffset])
 
   return {

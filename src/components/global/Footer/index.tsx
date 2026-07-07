@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Container, Markdown } from '@components/utility'
+import { Box, Container, Markdown } from '@/components/utility'
 import './styles.scss'
 
 export interface FooterProps {

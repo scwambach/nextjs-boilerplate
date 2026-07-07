@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { Stats } from './index'
-import { StatsProps } from '@utils/types'
+import { StatsProps } from '@/utils/types'
 
 const subheading = [
   {

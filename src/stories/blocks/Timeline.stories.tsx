@@ -1,11 +1,11 @@
-import { Timeline as TimelineItem } from '@components/blocks'
+import { Timeline as TimelineItem } from '@/components/blocks'
 import type { Meta, StoryObj } from '@storybook/react'
-import Image1 from '@images/placeholder1.webp'
-import Image2 from '@images/placeholder2.webp'
-import Image3 from '@images/placeholder3.webp'
-import Image4 from '@images/placeholder4.webp'
-import Image5 from '@images/placeholder5.webp'
-import Image6 from '@images/placeholder6.webp'
+import Image1 from '@/images/placeholder1.webp'
+import Image2 from '@/images/placeholder2.webp'
+import Image3 from '@/images/placeholder3.webp'
+import Image4 from '@/images/placeholder4.webp'
+import Image5 from '@/images/placeholder5.webp'
+import Image6 from '@/images/placeholder6.webp'
 
 const meta: Meta<typeof TimelineItem> = {
   title: 'Components/Blocks',

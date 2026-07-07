@@ -1,6 +1,6 @@
-import mapStyle from '@utils/mapStyles'
-import * as Block from '@components/blocks'
-import * as Module from '@components/modules'
+import mapStyle from '@/utils/mapStyles'
+import * as Block from '@/components/blocks'
+import * as Module from '@/components/modules'
 
 /** Capitalizes the first letter of a Sanity `_type` string, e.g. "map" -> "Map". */
 export const capitalizeType = (type: string): string =>
