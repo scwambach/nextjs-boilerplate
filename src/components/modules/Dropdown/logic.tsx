@@ -55,7 +55,8 @@ export const handleItemClick = (setOpen: (open: boolean) => void) => () => {
  * On blur, keep the menu open only if focus moved to another item inside it.
  */
 export const createItemBlurHandler =
-  (ref: RefObject<HTMLDivElement | null>, setOpen: (open: boolean) => void) => () => {
+  (ref: RefObject<HTMLDivElement | null>, setOpen: (open: boolean) => void) =>
+  () => {
     setTimeout(() => {
       setOpen(doAnyListItemsHaveFocus(ref))
     }, 10)

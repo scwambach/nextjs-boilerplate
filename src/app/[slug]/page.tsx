@@ -23,16 +23,18 @@ async function getData(slug: string, preview?: boolean) {
 }
 
 export async function generateMetadata({
-  params: { slug },
-  searchParams: { preview },
+  params,
+  searchParams,
 }: {
-  searchParams: {
+  searchParams: Promise<{
     preview: string
-  }
-  params: {
+  }>
+  params: Promise<{
     slug: string
-  }
+  }>
 }) {
+  const { slug } = await params
+  const { preview } = await searchParams
   const {
     globalData,
     pageData,
@@ -61,16 +63,18 @@ export async function generateMetadata({
 }
 
 export default async function Home({
-  params: { slug },
-  searchParams: { preview },
+  params,
+  searchParams,
 }: {
-  searchParams: {
+  searchParams: Promise<{
     preview: string
-  }
-  params: {
+  }>
+  params: Promise<{
     slug: string
-  }
+  }>
 }) {
+  const { slug } = await params
+  const { preview } = await searchParams
   const { globalData, pageData }: { globalData: GlobalProps; pageData: any } =
     await getData(slug, preview === process.env.PREVIEW_TOKEN)
 

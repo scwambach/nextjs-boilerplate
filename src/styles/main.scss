@@ -1,3 +1,18 @@
+@use './reset';
+@use './global';
+@use './typography';
+
+// Components BLOCKS (orphaned partials with no matching component — kept)
+@use './components/blocks/articles';
+@use './components/blocks/calendar';
+
+// Components MODULES (orphaned partials with no matching component — kept)
+@use './components/modules/article';
+@use './components/modules/pagination';
+
+// PAGES
+@use './pages/post';
+
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
@@ -39,21 +54,3 @@
   --color-focus-outline: var(--color-quaternary);
   --color-focus-outline-secondary: var(--color-primary);
 }
-
-@import './reset';
-@import './global';
-@import './typography';
-
-// Components BLOCKS (orphaned partials with no matching component — kept)
-
-@import './components/blocks/articles';
-@import './components/blocks/calendar';
-
-// Components MODULES (orphaned partials with no matching component — kept)
-
-@import './components/modules/article';
-@import './components/modules/pagination';
-
-// PAGES
-
-@import './pages/post';

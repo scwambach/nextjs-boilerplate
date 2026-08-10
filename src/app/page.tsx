@@ -50,12 +50,13 @@ export async function generateMetadata() {
 export const revalidate = 0
 
 export default async function Home({
-  searchParams: { preview },
+  searchParams,
 }: {
-  searchParams: {
+  searchParams: Promise<{
     preview: string
-  }
+  }>
 }) {
+  const { preview } = await searchParams
   const { globalData, pageData }: { globalData: GlobalProps; pageData: any } =
     await getData('home', preview === process.env.PREVIEW_TOKEN)
 

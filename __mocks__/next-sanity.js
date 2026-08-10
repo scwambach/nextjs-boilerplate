@@ -22,13 +22,14 @@ const PortableText = ({ value, components }) => {
       if (block._type === 'image') {
         const ImageComponent = components?.types?.image
         return ImageComponent
-          ? React.createElement(ImageComponent, { key: block._key ?? index, value: block })
+          ? React.createElement(ImageComponent, {
+              key: block._key ?? index,
+              value: block,
+            })
           : null
       }
 
-      const text = (block.children || [])
-        .map((span) => span.text)
-        .join('')
+      const text = (block.children || []).map((span) => span.text).join('')
       const children = (block.children || []).map((span) => span.text)
 
       const BlockComponent = components?.block?.[block.style]
