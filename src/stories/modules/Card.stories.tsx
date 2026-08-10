@@ -1,5 +1,5 @@
 import { Card as CardItem } from '@/components/modules'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import Image from '@/images/nature2.webp'
 import Image2 from '@/images/nature.webp'
 

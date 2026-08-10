@@ -52,7 +52,7 @@
   }
 
   .menu {
-    @include radius8;
+    border-radius: 8px;
     display: none;
     position: absolute;
     box-shadow: 0 10px 25px -18px rgb(from var(--color-black) r g b / 0.7);

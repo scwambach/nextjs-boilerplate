@@ -39,7 +39,7 @@ export const VideoBlock = ({
       <Box radius={boxRadius} overflow>
         {hasWindow && (
           <ReactPlayer
-            url={url}
+            src={url}
             width="100%"
             height="100%"
             playIcon={<Play size={80} color={colors.white} weight="fill" />}

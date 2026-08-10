@@ -1,26 +1,29 @@
 .box {
   &.radius-4 {
-    @include radius4;
+    border-radius: 4x;
   }
 
   &.radius-8 {
-    @include radius8;
+    border-radius: 8px;
   }
 
   &.radius-12 {
-    @include radius12;
+    border-radius: 12px;
   }
 
   &.radius-4-overflow {
-    @include radius4overflow;
+    border-radius: 4px;
+    overflow: hidden;
   }
 
   &.radius-8-overflow {
-    @include radius8overflow;
+    border-radius: 8px;
+    overflow: hidden;
   }
 
   &.radius-12-overflow {
-    @include radius12overflow;
+    border-radius: 12px;
+    overflow: hidden;
   }
 
   &.shadow-1 {

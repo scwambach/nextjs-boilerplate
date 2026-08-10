@@ -1,3 +1,4 @@
+import type { JSX } from 'react'
 import { HeadingProps } from '../../../utils/types'
 
 // No styles.scss: `.heading` is already defined in `src/styles/_typography.scss`

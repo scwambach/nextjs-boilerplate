@@ -1,4 +1,4 @@
-import { imageQuery, richTextProps } from 'queries/common'
+import { imageQuery, richTextProps } from '@/queries/common'
 
 export const carousel = `_type == "carousel" => {
   ...,

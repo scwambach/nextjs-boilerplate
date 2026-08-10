@@ -2,7 +2,6 @@
 const nextConfig = {
   sassOptions: {
     includePaths: [`${__dirname}/src/styles`],
-    additionalData: `@import "mixins";`,
   },
   env: {
     SITE_URL: process.env.SITE_URL,

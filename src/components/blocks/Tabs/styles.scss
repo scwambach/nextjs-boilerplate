@@ -1,5 +1,9 @@
 .tabs {
-  @include vertical-spacing-margin;
+  margin: 80px 0;
+
+  @media screen and (max-width: (768px - 1)) {
+    margin: 40px 0;
+  }
   position: relative;
 
   ul {
@@ -34,14 +38,38 @@
           }
 
           .button {
-            @include unstyledButton;
             padding: 8px 16px;
             width: 100%;
             font-weight: bold;
             color: var(--color-gray);
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: none;
+            outline: none;
+            color: inherit;
+            border: none;
+            text-align: left;
+            font: inherit;
+            border-radius: 0;
+            width: auto;
+            height: fit-content;
+            margin: 0;
+
+            &:focus {
+              @media screen and (min-width: (576px)) {
+                outline: 4px solid var(--color-focus-outline);
+              }
+            }
 
             &:hover {
               text-decoration: none;
+
+              @media screen and (min-width: (576px)) {
+                opacity: 0.8;
+                text-decoration: underline;
+              }
 
               &.primary {
                 background-color: var(--color-primary);

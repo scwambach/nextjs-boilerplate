@@ -1,5 +1,5 @@
 import { RichText as RichTextItem } from '@/components/blocks'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const markdownCopy = (image: boolean) => ` # Title: Placeholder Markdown Text
 

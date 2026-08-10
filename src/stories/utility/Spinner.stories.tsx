@@ -1,5 +1,5 @@
 import { Spinner as SpinnerItem } from '@/components/utility'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof SpinnerItem> = {
   title: 'Components/Utility',

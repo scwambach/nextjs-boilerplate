@@ -1,5 +1,5 @@
 import { Spacer as SpacerItem } from '@/components/utility'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof SpacerItem> = {
   title: 'Components/Utility/Spacer',

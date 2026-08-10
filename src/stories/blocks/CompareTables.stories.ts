@@ -1,5 +1,5 @@
 import { CompareTables as CompareTablesItem } from '@/components/blocks'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof CompareTablesItem> = {
   title: 'Components/Blocks/CompareTables',

@@ -6,7 +6,7 @@ import { RefObject } from 'react'
  * (it shouldn't, if focus simply moved to another item inside it).
  */
 export const doAnyListItemsHaveFocus = (
-  ref: RefObject<HTMLDivElement>
+  ref: RefObject<HTMLDivElement | null>
 ): boolean => {
   if (!ref.current) {
     return false
@@ -25,7 +25,7 @@ export const doAnyListItemsHaveFocus = (
  * Closes the dropdown when a mousedown happens outside of it.
  */
 export const createOutsideClickHandler =
-  (ref: RefObject<HTMLDivElement>, setOpen: (open: boolean) => void) =>
+  (ref: RefObject<HTMLDivElement | null>, setOpen: (open: boolean) => void) =>
   (e: MouseEvent) => {
     if (ref.current && !ref.current.contains(e.target as Node)) {
       setOpen(false)
@@ -55,7 +55,7 @@ export const handleItemClick = (setOpen: (open: boolean) => void) => () => {
  * On blur, keep the menu open only if focus moved to another item inside it.
  */
 export const createItemBlurHandler =
-  (ref: RefObject<HTMLDivElement>, setOpen: (open: boolean) => void) => () => {
+  (ref: RefObject<HTMLDivElement | null>, setOpen: (open: boolean) => void) => () => {
     setTimeout(() => {
       setOpen(doAnyListItemsHaveFocus(ref))
     }, 10)

@@ -1,5 +1,5 @@
 import { Dots as DotsItem } from '@/components/modules'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof DotsItem> = {
   title: 'Components/Modules',

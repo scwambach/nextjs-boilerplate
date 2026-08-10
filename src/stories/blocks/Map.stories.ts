@@ -1,5 +1,5 @@
 import { Map as MapItem } from '@/components/blocks'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import mapStyle from '../../utils/mapStyles'
 
 const meta: Meta<typeof MapItem> = {

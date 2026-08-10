@@ -6,12 +6,20 @@
     z-index: 1;
   }
 
-  @include vertical-spacing-margin;
+  margin: 80px 0;
+
+  @media screen and (max-width: (768px - 1)) {
+    margin: 40px 0;
+  }
 
   &.padded {
     margin-top: 0;
     margin-bottom: 0;
-    @include vertical-spacing-padding;
+    padding: 80px 0;
+
+    @media screen and (max-width: (768px - 1)) {
+      padding: 40px 0;
+    }
   }
 
   &.primary,

@@ -1,6 +1,6 @@
 import { TableOfContents as TableOfContentsItem } from '@/components/modules'
 import { Flex, Markdown } from '@/components/utility'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof TableOfContentsItem> = {
   title: 'Components/Modules',

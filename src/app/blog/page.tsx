@@ -1,7 +1,7 @@
 import { PageLayout } from '@/components/global/PageLayout'
 import { client } from '@/utils/client'
-import { BLOG_ROLL_QUERY } from 'queries/blogRoll'
-import { GLOBAL_QUERY } from 'queries/global'
+import { BLOG_ROLL_QUERY } from '@/queries/blogRoll'
+import { GLOBAL_QUERY } from '@/queries/global'
 import { BlogRollProps, GlobalProps } from '@/utils/types'
 import { Banner, Cards } from '@/components/blocks'
 

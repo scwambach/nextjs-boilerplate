@@ -1,4 +1,4 @@
-import { imageQuery, richTextProps } from 'queries/common'
+import { imageQuery, richTextProps } from '@/queries/common'
 
 export const timeline = `_type == "timeline" => {
   ...,

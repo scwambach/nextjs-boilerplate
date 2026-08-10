@@ -1,5 +1,5 @@
 import { Events as EventsItem } from '@/components/blocks'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import Image from '@/images/placeholder2.webp'
 
 const meta: Meta<typeof EventsItem> = {

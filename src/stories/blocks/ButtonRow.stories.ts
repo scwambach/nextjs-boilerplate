@@ -1,5 +1,5 @@
 import { ButtonRow as ButtonRowItem } from '@/components/blocks'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof ButtonRowItem> = {
   title: 'Components/Blocks',

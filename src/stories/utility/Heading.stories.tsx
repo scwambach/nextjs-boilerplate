@@ -1,5 +1,5 @@
 import { Heading as HeadingItem } from '@/components/utility'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof HeadingItem> = {
   title: 'Components/Utility',

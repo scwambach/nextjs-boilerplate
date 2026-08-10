@@ -34,7 +34,7 @@ export const Map = ({
     disableDefaultUI: true,
   }
 
-  const mapRef = useRef()
+  const mapRef = useRef(null)
   const onMapLoad = useCallback((map: any) => {
     mapRef.current = map
   }, [])

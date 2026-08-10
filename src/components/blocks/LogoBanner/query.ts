@@ -1,4 +1,4 @@
-import { imageQuery } from 'queries/common'
+import { imageQuery } from '@/queries/common'
 
 export const logoBanner = `_type == "logoBanner" => {
   ...,

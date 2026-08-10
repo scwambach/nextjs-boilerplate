@@ -1,10 +1,14 @@
 .banner {
-  @include vertical-spacing-padding;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 80px 0;
+
+  @media screen and (max-width: (768px - 1)) {
+    padding: 40px 0;
+  }
 
   @media screen and (min-width: (992px)) {
     min-height: 480px;

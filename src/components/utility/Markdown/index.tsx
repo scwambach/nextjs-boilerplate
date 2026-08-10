@@ -1,3 +1,4 @@
+import type { JSX } from 'react'
 import { parseMarkdownToHTML } from '../../../utils/parseMarkdownToHTML'
 import { MarkdownProps } from '../../../utils/types'
 import './styles.scss'

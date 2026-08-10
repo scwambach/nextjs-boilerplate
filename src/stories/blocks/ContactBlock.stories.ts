@@ -1,5 +1,5 @@
 import { ContactBlock as ContactBlockItem } from '@/components/blocks'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import * as Icon from '@phosphor-icons/react'
 import mapStyle from '@/utils/mapStyles'
 

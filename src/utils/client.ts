@@ -1,20 +1,20 @@
-import { createClient } from '@sanity/client'
+import { createClient } from 'next-sanity'
 
 export const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
   useCdn: true,
-  apiVersion: '2022-04-10',
-  perspective: 'published',
-  ignoreBrowserTokenWarning: false,
+  apiVersion: '2024-01-01',
 })
 
 export const previewClient = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-  apiVersion: '2022-04-10',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+  apiVersion: '2024-01-01',
   useCdn: false,
-  perspective: 'previewDrafts',
   token: process.env.SANITY_API_READ_TOKEN,
-  ignoreBrowserTokenWarning: true,
+  stega: {
+    enabled: true,
+    studioUrl: '/studio',
+  },
 })

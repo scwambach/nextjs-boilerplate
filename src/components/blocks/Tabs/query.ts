@@ -1,4 +1,4 @@
-import { richTextProps } from 'queries/common'
+import { richTextProps } from '@/queries/common'
 
 export const tabs = `_type == "tabs" => {
   ...,

@@ -1,6 +1,6 @@
 import { Card } from '@/components/modules'
 import { Flex as FlexItem } from '@/components/utility'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof FlexItem> = {
   title: 'Components/Utility/Flex',

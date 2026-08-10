@@ -1,3 +1,4 @@
+import type { JSX } from 'react'
 import { ImageObject } from '../../modules'
 import { Heading } from '../Heading'
 import { slugify } from '../../../utils/slugify'

@@ -1,3 +1,4 @@
+import type { JSX } from 'react'
 import { BoxProps } from '../../../utils/types'
 import './styles.scss'
 

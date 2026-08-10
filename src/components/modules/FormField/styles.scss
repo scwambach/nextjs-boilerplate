@@ -53,7 +53,7 @@
 
     &.checkbox {
       [class$='indicator'] {
-        @include radius4;
+        border-radius: 4px;
       }
     }
 
@@ -168,7 +168,8 @@
     }
 
     .dropzone {
-      @include radius4;
+      border-radius: 4px;
+
       cursor: pointer;
       width: 100%;
       padding: 16px;
@@ -199,7 +200,7 @@
     [class$='-control'] {
       min-height: 32px;
       border: 1px solid var(--color-primary-light);
-      @include radius4;
+      border-radius: 4px;
     }
 
     [class$='-ValueContainer'] {

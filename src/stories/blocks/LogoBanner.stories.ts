@@ -1,5 +1,5 @@
 import { LogoBanner as LogoBannerItem } from '@/components/blocks'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import Logo from '@/images/logoipsum-300.svg'
 import Image from '@/images/nature.webp'
 

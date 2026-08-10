@@ -1,5 +1,5 @@
 import * as Icon from '@phosphor-icons/react'
-import { CSSProperties, ReactNode } from 'react'
+import { CSSProperties, JSX, ReactNode } from 'react'
 import { ComponentProps, FlexGridProps } from './global'
 import {
   BreakNames,

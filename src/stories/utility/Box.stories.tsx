@@ -1,6 +1,6 @@
 import { ImageObject } from '@/components/modules'
 import { Box as BoxItem } from '@/components/utility'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import Image1 from '@/images/placeholder2.webp'
 import Image2 from '@/images/placeholder3.webp'
 import Image3 from '@/images/placeholder4.webp'

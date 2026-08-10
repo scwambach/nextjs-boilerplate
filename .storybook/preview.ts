@@ -1,4 +1,4 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/nextjs-vite";
 import "../src/styles/main.scss";
 import "./storybook.css";
 import DocumentationTemplate from "./DocumentationTemplate.mdx";
@@ -15,6 +15,7 @@ const preview: Preview = {
     },
     docs: {
       page: DocumentationTemplate,
+      codePanel: true
     },
   },
 };

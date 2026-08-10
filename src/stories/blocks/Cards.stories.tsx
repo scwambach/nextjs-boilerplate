@@ -1,5 +1,5 @@
 import { Cards as CardsItem } from '@/components/blocks'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import Nature from '@/images/nature2.webp'
 
 const meta: Meta<typeof CardsItem> = {

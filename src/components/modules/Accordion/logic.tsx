@@ -6,7 +6,7 @@ import { RefObject } from 'react'
  * viewport resizes while open (so stale pixel heights don't get stuck).
  */
 export const measureContentHeight = (
-  ref: RefObject<HTMLDivElement>,
+  ref: RefObject<HTMLDivElement | null>,
   open: boolean
 ): number | undefined => {
   if (!ref.current) return 0

@@ -1,5 +1,5 @@
 import { Avatar as AvatarItem } from '@/components/modules'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import Image from '@/images/placeholder4.webp'
 
 const meta: Meta<typeof AvatarItem> = {

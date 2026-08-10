@@ -1,3 +1,4 @@
+import type { JSX } from 'react'
 import { PortableProps } from '../../../utils/types/utility'
 import { PortableText } from 'next-sanity'
 import { getPortableTextComponents } from './logic'

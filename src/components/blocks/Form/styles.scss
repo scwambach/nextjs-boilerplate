@@ -1,5 +1,9 @@
 .form {
-  @include vertical-spacing-margin;
+  margin: 80px 0;
+
+  @media screen and (max-width: (768px - 1)) {
+    margin: 40px 0;
+  }
 
   button[type='submit'] {
     margin-top: 32px;

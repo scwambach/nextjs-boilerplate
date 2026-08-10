@@ -1,6 +1,6 @@
 import { Drawer as DrawerItem } from '@/components/utility'
 import { Heading } from '@/components/utility/Heading'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof DrawerItem> = {
   title: 'Components/Utility/Drawer',

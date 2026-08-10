@@ -1,3 +1,4 @@
+import type { JSX } from 'react'
 import { addCommas } from '../../../utils/addCommas'
 import { maxPlus } from '../../../utils/maxPlus'
 import { BadgeProps } from '../../../utils/types'

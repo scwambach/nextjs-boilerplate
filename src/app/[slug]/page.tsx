@@ -3,8 +3,8 @@ import { BlockFactory } from '@/components/utility/BlockFactory'
 import { client, previewClient } from '@/utils/client'
 import { GlobalProps, PageProps } from '@/utils/types'
 import { notFound } from 'next/navigation'
-import { GLOBAL_QUERY } from 'queries/global'
-import { PAGE_QUERY } from 'queries/page'
+import { GLOBAL_QUERY } from '@/queries/global'
+import { PAGE_QUERY } from '@/queries/page'
 
 async function getData(slug: string, preview?: boolean) {
   const sanityClient = preview ? previewClient : client

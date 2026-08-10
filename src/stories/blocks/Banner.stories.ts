@@ -1,5 +1,5 @@
 import { Banner } from '@/components/blocks'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import ForegroundImage from '@/images/marketing.png'
 import Nature from '@/images/nature.webp'
 

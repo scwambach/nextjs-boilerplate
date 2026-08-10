@@ -1,3 +1,4 @@
+import type { JSX } from 'react'
 import { FlexProps } from '../../../utils/types'
 import './styles.scss'
 

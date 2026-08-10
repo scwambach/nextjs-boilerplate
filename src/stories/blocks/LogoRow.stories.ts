@@ -1,5 +1,5 @@
 import { LogoRow as LogoRowItem } from '@/components/blocks'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import Logo1 from '@/images/logoipsum-230.svg'
 import Logo2 from '@/images/logoipsum-231.svg'
 import Logo3 from '@/images/logoipsum-232.svg'

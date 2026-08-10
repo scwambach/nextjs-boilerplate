@@ -1,5 +1,5 @@
 import { Gallery as GalleryItem } from '@/components/blocks'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import Image1 from '@/images/placeholder1.webp'
 import Image2 from '@/images/placeholder2.webp'
 import Image3 from '@/images/placeholder3.webp'
