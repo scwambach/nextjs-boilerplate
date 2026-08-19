@@ -1,13 +1,42 @@
+/* ========================================
+   CSS VARIABLES
+   ======================================== */
+
 :root {
   --main-font: "Geist", sans-serif;
   --main-font-mono: "Geist Mono", monospace;
   --box-shadow: 5px 5px 20px -15px #000;
+  --color-white: #f5f2ef;
+  --color-gray: #dddddf;
+  --color-black: #41484e;
+  --color-primary: #eab464;
+  --color-primary-light: #f0c68b;
+  --color-primary-lighter: #f7d8a3;
+  --color-secondary: #dcccbb;
+  --color-secondary-light: #e0d4b8;
+  --color-secondary-lighter: #e8dfc4;
+  --color-tertiary: #8d98a7;
+  --color-tertiary-light: #a0aab7;
+  --color-tertiary-lighter: #b3bac4;
+  --color-quaternary: #646e78;
+  --color-quaternary-light: #7a858f;
+  --color-quaternary-lighter: #8f99a3;
 }
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
 
 body {
   font-family: var(--main-font);
   line-height: 1.1;
+  background: var(--color-white);
+  color: var(--color-black);
 }
+
+/* ========================================
+   LAYOUT COMPONENTS
+   ======================================== */
 
 .container {
   max-width: 1200px;
@@ -31,18 +60,11 @@ footer,
   align-items: flex-start;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
 
-video {
-  max-width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  box-shadow: var(--box-shadow);
-}
-
+/* Headings */
 h1,
 h2,
 h3,
@@ -83,6 +105,52 @@ h6,
   font-size: 0.875rem;
 }
 
+/* Text Formatting */
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+small {
+  font-size: 0.75rem;
+}
+
+sub {
+  font-size: 0.75rem;
+  vertical-align: sub;
+}
+
+sup {
+  font-size: 0.75rem;
+  vertical-align: super;
+}
+
+ins {
+  text-decoration: underline;
+}
+
+abbr,
+time {
+  font-family: var(--main-font-mono);
+  font-weight: bold;
+}
+
+blockquote {
+  font-style: italic;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 4px solid var(--color-primary);
+  background-color: white;
+  box-shadow: var(--box-shadow);
+}
+
+/* ========================================
+   LISTS
+   ======================================== */
+
 ul,
 ol {
   padding-left: 1.5rem;
@@ -100,38 +168,12 @@ ol {
 ul {
   list-style-type: disc;
 }
+
 ol {
   list-style-type: decimal;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #ddd;
-  box-shadow: var(--box-shadow);
-}
-
-thead {
-  font-weight: bold;
-  background-color: #f5f5f5;
-}
-
-th {
-  font-weight: bold;
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-}
-
-td {
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-}
-
-tfoot {
-  font-weight: bold;
-  background-color: #f5f5f5;
-}
-
+/* Definition Lists */
 dl {
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -148,6 +190,43 @@ dd {
   grid-column-start: 2;
 }
 
+/* ========================================
+   TABLES
+   ======================================== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--color-black);
+  box-shadow: var(--box-shadow);
+}
+
+thead {
+  font-weight: bold;
+  background-color: var(--color-gray);
+}
+
+th {
+  font-weight: bold;
+  padding: 0.5rem;
+  border: 1px solid var(--color-black);
+}
+
+td {
+  padding: 0.5rem;
+  border: 1px solid var(--color-black);
+}
+
+tfoot {
+  font-weight: bold;
+  background-color: var(--color-gray);
+}
+
+/* ========================================
+   FORMS
+   ======================================== */
+
+/* Labels */
 label {
   display: flex;
   flex-direction: column;
@@ -165,11 +244,17 @@ label:has(input[type="radio"]) {
   font-weight: normal;
 }
 
+/* Inputs */
 input,
 select,
 textarea {
   padding: 0.5rem;
   width: 100%;
+  background: var(--color-white);
+  border-radius: 4px;
+  background-color: white;
+  color: var(--color-black);
+  border: 1px solid var(--color-secondary);
 
   &::placeholder {
     font-family: var(--main-font-mono);
@@ -186,6 +271,7 @@ textarea {
   }
 }
 
+/* Buttons */
 .button,
 button,
 input[type="submit"],
@@ -211,78 +297,25 @@ input[type="button"]:hover {
   background-color: #005bb5;
 }
 
-audio {
-  width: 100%;
+/* ========================================
+   MEDIA ELEMENTS
+   ======================================== */
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 video {
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  box-shadow: var(--box-shadow);
   width: 100%;
 }
 
-details[open] {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-em {
-  font-style: italic;
-}
-
-strong {
-  font-weight: bold;
-}
-
-sub {
-  font-size: 0.75rem;
-  vertical-align: sub;
-}
-
-sup {
-  font-size: 0.75rem;
-  vertical-align: super;
-}
-
-ins {
-  text-decoration: underline;
-}
-
-samp,
-code,
-var,
-pre {
-  font-family: var(--main-font-mono);
-  font-size: 0.875rem;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  display: inline-block;
-}
-
-samp {
-  background-color: #f5f5f5;
-}
-
-code {
-  background-color: #efecec;
-}
-
-var {
-  background-color: #d3d2d2;
-}
-
-blockquote {
-  font-style: italic;
-  margin: 1rem 0;
-  padding: 0.5rem 1rem;
-  border-left: 4px solid #ddd;
-  background-color: #f9f9f9;
-  box-shadow: var(--box-shadow);
-}
-
-pre {
-  padding: 0.5rem 1rem;
-  background-color: #ececec;
-  overflow-x: auto;
+audio {
+  width: 100%;
 }
 
 figure {
@@ -295,5 +328,65 @@ figure {
   figcaption {
     font-style: italic;
     text-align: center;
+  }
+}
+
+/* ========================================
+   CODE ELEMENTS
+   ======================================== */
+
+samp,
+code,
+var,
+kbd,
+pre {
+  font-family: var(--main-font-mono);
+  font-size: 0.875rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  display: inline-block;
+  background-color: var(--color-gray);
+}
+
+pre {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-gray);
+  overflow-x: auto;
+}
+
+/* ========================================
+   OTHER ELEMENTS
+   ======================================== */
+
+details[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+address {
+  font-style: normal;
+  line-height: 1.5;
+  margin: 1rem 0;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(43, 92, 226);
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+    text-decoration-thickness: 0.1rem;
+  }
+
+  &:visited {
+    color: rgb(43, 162, 226);
   }
 }

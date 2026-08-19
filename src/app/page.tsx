@@ -3,14 +3,12 @@ import photo from "@/images/photo.jpg";
 export default function Home() {
   return (
     <div className="container content">
-      <header>
-        <h1>Main Heading (H1)</h1>
-        <nav>
-          <a href="#section1">Section 1</a>
-          <a href="#section2">Section 2</a>
-          <a href="#section3">Section 3</a>
-        </nav>
-      </header>
+      <h1>Main Heading (H1)</h1>
+      <nav>
+        <a href="#section1">Section 1</a>
+        <a href="#section2">Section 2</a>
+        <a href="#section3">Section 3</a>
+      </nav>
 
       <main>
         <article>
