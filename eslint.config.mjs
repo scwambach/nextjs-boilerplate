@@ -1,31 +1,18 @@
-import tsPlugin from '@typescript-eslint/eslint-plugin'
-import prettierConfig from 'eslint-config-prettier'
-import storybookPlugin from 'eslint-plugin-storybook'
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
 
-export default [
-  {
-    ignores: [
-      'node_modules/**',
-      '.next/**',
-      'out/**',
-      'build/**',
-      'dist/**',
-      'coverage/**',
-      'storybook-static/**',
-      '**/*.config.js',
-      '**/*.config.ts',
-      '.storybook/**',
-      'public/**',
-    ],
-  },
-  ...tsPlugin.configs['flat/recommended'],
-  ...storybookPlugin.configs['flat/recommended'],
-  prettierConfig,
-  {
-    rules: {
-      '@typescript-eslint/ban-ts-comment': 'off',
-      '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-non-null-assertion': 'off',
-    },
-  },
-]
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
+  // Override default ignores of eslint-config-next.
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+  ]),
+]);
+
+export default eslintConfig;

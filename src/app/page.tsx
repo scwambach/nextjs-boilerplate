@@ -1,68 +1,275 @@
-import { PageLayout } from '@/components/global/PageLayout'
-import { BlockFactory } from '@/components/utility/BlockFactory'
-import { client, previewClient } from '@/utils/client'
-import { GlobalProps, PageProps } from '@/utils/types'
-import { notFound } from 'next/navigation'
-import { GLOBAL_QUERY } from '@/queries/global'
-import { PAGE_QUERY } from '@/queries/page'
-
-async function getData(slug: string, preview?: boolean) {
-  const sanityClient = preview ? previewClient : client
-
-  const globalData = await sanityClient.fetch(GLOBAL_QUERY)
-  const pageData = await sanityClient.fetch(PAGE_QUERY, { slug })
-
-  if (!pageData) {
-    notFound()
-  }
-
-  return {
-    globalData,
-    pageData,
-  }
-}
-
-export async function generateMetadata() {
-  const {
-    globalData,
-    pageData,
-  }: { globalData: GlobalProps; pageData: PageProps } = await getData('home')
-
-  const ogImage = pageData.ogImage ? pageData.ogImage : globalData.siteImage
-  const description = pageData.description || globalData.siteDescription
-
-  return {
-    title: pageData.title
-      ? `${pageData.title} | ${globalData.siteTitle}`
-      : globalData.siteTitle,
-    description,
-    openGraph: ogImage?.src
-      ? {
-          images: [ogImage.src],
-        }
-      : undefined,
-    icons: {
-      icon: globalData.favicon,
-    },
-  }
-}
-
-export const revalidate = 0
-
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: Promise<{
-    preview: string
-  }>
-}) {
-  const { preview } = await searchParams
-  const { globalData, pageData }: { globalData: GlobalProps; pageData: any } =
-    await getData('home', preview === process.env.PREVIEW_TOKEN)
-
+import Image from "next/image";
+import photo from "@/images/photo.jpg";
+export default function Home() {
   return (
-    <PageLayout global={globalData}>
-      <BlockFactory items={pageData.pageComponents} global={globalData} />
-    </PageLayout>
-  )
+    <div className="container content">
+      <header>
+        <h1>Main Heading (H1)</h1>
+        <nav>
+          <a href="#section1">Section 1</a>
+          <a href="#section2">Section 2</a>
+          <a href="#section3">Section 3</a>
+        </nav>
+      </header>
+
+      <main>
+        <article>
+          <h2>Article Heading (H2)</h2>
+          <p>
+            This is a paragraph with some <strong>strong text</strong>,{" "}
+            <em>emphasized text</em>, and <mark>marked text</mark>.
+          </p>
+
+          <h3>Subheading (H3)</h3>
+          <p>
+            Another paragraph with <small>small text</small>,{" "}
+            <del>deleted text</del>, and <ins>inserted text</ins>.
+          </p>
+
+          <h4>Fourth Level Heading (H4)</h4>
+          <p>
+            Text with <sub>subscript</sub> and <sup>superscript</sup>.
+          </p>
+
+          <h5>Fifth Level Heading (H5)</h5>
+          <p>
+            A paragraph with <code>inline code</code>, <kbd>keyboard input</kbd>
+            , <samp>sample output</samp>, and <var>variable</var>.
+          </p>
+
+          <h6>Sixth Level Heading (H6)</h6>
+          <p>The smallest heading level.</p>
+
+          <blockquote>
+            This is a blockquote. It contains quoted text from another source.
+          </blockquote>
+
+          <pre>
+            This is preformatted text. It preserves spaces and line breaks.
+          </pre>
+
+          <h3>Unordered List</h3>
+          <ul>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+          </ul>
+
+          <h3>Ordered List</h3>
+          <ol>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+          </ol>
+
+          <h3>Definition List</h3>
+          <dl>
+            <dt>Term 1</dt>
+            <dd>Definition for term 1</dd>
+            <dt>Term 2</dt>
+            <dd>Definition for term 2</dd>
+          </dl>
+
+          <h3>Table</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th>Header 3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Row 1, Cell 1</td>
+                <td>Row 1, Cell 2</td>
+                <td>Row 1, Cell 3</td>
+              </tr>
+              <tr>
+                <td>Row 2, Cell 1</td>
+                <td>Row 2, Cell 2</td>
+                <td>Row 2, Cell 3</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Footer 1</td>
+                <td>Footer 2</td>
+                <td>Footer 3</td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <h3>Form</h3>
+          <form>
+            <fieldset>
+              <legend>Personal Information</legend>
+
+              <label>
+                Name:
+                <input type="text" name="name" placeholder="Enter your name" />
+              </label>
+
+              <label>
+                Email:
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="email@example.com"
+                />
+              </label>
+
+              <label>
+                Password:
+                <input type="password" name="password" />
+              </label>
+
+              <label>
+                Date:
+                <input type="date" name="date" />
+              </label>
+
+              <label>
+                Number:
+                <input type="number" name="number" min="0" max="100" />
+              </label>
+
+              <label>
+                Range:
+                <input type="range" name="range" min="0" max="100" />
+              </label>
+
+              <label>
+                Color:
+                <input type="color" name="color" />
+              </label>
+
+              <label>
+                File:
+                <input type="file" name="file" />
+              </label>
+
+              <label>
+                <input type="checkbox" name="checkbox" />
+                Checkbox
+              </label>
+
+              <label>
+                <input type="radio" name="radio" value="option1" />
+                Radio Option 1
+              </label>
+              <label>
+                <input type="radio" name="radio" value="option2" />
+                Radio Option 2
+              </label>
+
+              <label>
+                Select:
+                <select name="select">
+                  <option value="">Choose an option</option>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
+              </label>
+
+              <label>
+                Textarea:
+                <textarea
+                  name="textarea"
+                  rows={4}
+                  placeholder="Enter multiple lines of text"
+                ></textarea>
+              </label>
+
+              <button type="submit">Submit Button</button>
+              <button type="reset">Reset Button</button>
+              <button type="button">Regular Button</button>
+            </fieldset>
+          </form>
+
+          <h3>Figure</h3>
+          <figure>
+            <Image
+              src={photo.src}
+              alt="Placeholder image"
+              width={photo.width}
+              height={photo.height}
+              placeholder="blur"
+              blurDataURL={photo.blurDataURL}
+            />
+            <figcaption>
+              This is a figure caption describing the image above
+            </figcaption>
+          </figure>
+
+          <h3>Media Elements</h3>
+          <audio controls>
+            <source src="/audio.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+
+          <video controls width="320" height="240" poster={photo.src}>
+            <source
+              src="https://stream.mux.com/BV3YZtogl89mg9VcNBhhnHm02Y34zI1nlMuMQfAbl3dM/highest.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video element.
+          </video>
+
+          <h3>Details/Summary</h3>
+          <details>
+            <summary>Click to expand</summary>
+            <p>
+              This content is hidden by default and can be toggled by clicking
+              the summary.
+            </p>
+          </details>
+
+          <h3>Other Text Elements</h3>
+          <p>
+            <abbr title="HyperText Markup Language">HTML</abbr> is the standard
+            markup language.
+          </p>
+          <p>
+            <cite>The Great Gatsby</cite> by F. Scott Fitzgerald
+          </p>
+          <p>
+            Published on <time dateTime="2026-08-19">August 19, 2026</time>
+          </p>
+          <p>
+            Use <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy
+          </p>
+
+          <address>
+            Contact: email@example.com 123 Main Street City, State 12345
+          </address>
+        </article>
+
+        <aside>
+          <h3>Sidebar Content</h3>
+          <p>This is an aside element, typically used for sidebar content.</p>
+        </aside>
+
+        <section id="section1">
+          <h2>Section 1</h2>
+          <p>This is the first section with some content.</p>
+        </section>
+
+        <section id="section2">
+          <h2>Section 2</h2>
+          <p>This is the second section with some content.</p>
+        </section>
+
+        <section id="section3">
+          <h2>Section 3</h2>
+          <p>This is the third section with some content.</p>
+        </section>
+      </main>
+
+      <footer>
+        <p>Footer content goes here. Copyright 2026.</p>
+      </footer>
+    </div>
+  );
 }
