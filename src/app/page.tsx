@@ -181,8 +181,12 @@ export default function Home() {
               </label>
 
               <button type="submit">Submit Button</button>
-              <button type="reset">Reset Button</button>
-              <button type="button">Regular Button</button>
+              <button type="reset" className="secondary">
+                Reset Button
+              </button>
+              <button type="button" className="tertiary">
+                Regular Button
+              </button>
             </fieldset>
           </form>
 

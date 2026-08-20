@@ -9,18 +9,26 @@
   --color-white: #f5f2ef;
   --color-gray: #dddddf;
   --color-black: #41484e;
-  --color-primary: #eab464;
-  --color-primary-light: #f0c68b;
-  --color-primary-lighter: #f7d8a3;
-  --color-secondary: #dcccbb;
-  --color-secondary-light: #e0d4b8;
-  --color-secondary-lighter: #e8dfc4;
-  --color-tertiary: #8d98a7;
-  --color-tertiary-light: #a0aab7;
-  --color-tertiary-lighter: #b3bac4;
-  --color-quaternary: #646e78;
-  --color-quaternary-light: #7a858f;
-  --color-quaternary-lighter: #8f99a3;
+  --color-primary: #647aea;
+  --color-primary-light: #a3bffa;
+  --color-primary-lighter: #cbd6f7;
+  --color-primary-dark: #4a63c2;
+  --color-primary-darker: #2d3a8c;
+  --color-secondary: #51c377;
+  --color-secondary-light: #8ce29a;
+  --color-secondary-lighter: #b3f0c1;
+  --color-secondary-dark: #3da35a;
+  --color-secondary-darker: #2a6b3d;
+  --color-tertiary: #eb7e4f;
+  --color-tertiary-light: #f1a078;
+  --color-tertiary-lighter: #f5c1a3;
+  --color-tertiary-dark: #c25a3a;
+  --color-tertiary-darker: #8c3a26;
+  --color-quaternary: #aa41c6;
+  --color-quaternary-light: #c26ad6;
+  --color-quaternary-lighter: #d8a3f0;
+  --color-quaternary-dark: #8c2d99;
+  --color-quaternary-darker: #5a1a5a;
 }
 
 /* ========================================
@@ -32,6 +40,11 @@ body {
   line-height: 1.1;
   background: var(--color-white);
   color: var(--color-black);
+
+  &::selection {
+    background-color: var(--color-primary-light);
+    color: var(--color-black);
+  }
 }
 
 /* ========================================
@@ -254,7 +267,7 @@ textarea {
   border-radius: 4px;
   background-color: white;
   color: var(--color-black);
-  border: 1px solid var(--color-secondary);
+  border: 1px solid var(--color-black);
 
   &::placeholder {
     font-family: var(--main-font-mono);
@@ -271,6 +284,99 @@ textarea {
   }
 }
 
+/* Checkbox Custom Styling */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-secondary);
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+input[type="checkbox"]:hover {
+  border-color: var(--color-secondary-dark);
+  background-color: var(--color-secondary-lighter);
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+input[type="checkbox"]:checked::before {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+input[type="checkbox"]:focus {
+  outline: 2px solid var(--color-secondary-light);
+  outline-offset: 2px;
+}
+
+input[type="checkbox"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Radio Button Custom Styling */
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-secondary);
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+input[type="radio"]:hover {
+  border-color: var(--color-secondary-dark);
+  background-color: var(--color-secondary-lighter);
+}
+
+input[type="radio"]:checked {
+  border-color: var(--color-secondary);
+}
+
+input[type="radio"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+}
+
+input[type="radio"]:focus {
+  outline: 2px solid var(--color-secondary-light);
+  outline-offset: 2px;
+}
+
+input[type="radio"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* Buttons */
 .button,
 button,
@@ -283,7 +389,7 @@ input[type="button"] {
   cursor: pointer;
   border: none;
   border-radius: 4px;
-  background-color: #0070f3;
+  background-color: var(--color-primary);
   color: white;
   transition: background-color 0.3s ease;
   width: auto;
@@ -294,7 +400,141 @@ button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
-  background-color: #005bb5;
+  background-color: var(--color-primary-dark);
+}
+
+.button.secondary,
+button.secondary,
+input[type="submit"].secondary,
+input[type="reset"].secondary,
+input[type="button"].secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.button.secondary:hover,
+button.secondary:hover,
+input[type="submit"].secondary:hover,
+input[type="reset"].secondary:hover,
+input[type="button"].secondary:hover {
+  background-color: var(--color-secondary-dark);
+}
+
+.button.tertiary,
+button.tertiary,
+input[type="submit"].tertiary,
+input[type="reset"].tertiary,
+input[type="button"].tertiary {
+  background-color: var(--color-tertiary);
+  color: white;
+}
+
+.button.tertiary:hover,
+button.tertiary:hover,
+input[type="submit"].tertiary:hover,
+input[type="reset"].tertiary:hover,
+input[type="button"].tertiary:hover {
+  background-color: var(--color-tertiary-dark);
+}
+
+/* Range Slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: var(--color-tertiary-lighter);
+  border-radius: 10px;
+  outline: none;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+input[type="range"]:hover {
+  background: var(--color-tertiary-light);
+}
+
+/* Webkit (Chrome, Safari, Edge) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--color-tertiary);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: var(--color-tertiary-dark);
+  transform: scale(1.2);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.1);
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--color-tertiary);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: var(--color-tertiary-dark);
+  transform: scale(1.2);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+input[type="range"]::-moz-range-thumb:active {
+  transform: scale(1.1);
+}
+
+input[type="range"]::-moz-range-track {
+  background: var(--color-tertiary-lighter);
+  border-radius: 10px;
+  height: 8px;
+}
+
+/* Microsoft Edge/IE */
+input[type="range"]::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--color-tertiary);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-ms-track {
+  background: var(--color-tertiary-lighter);
+  border-radius: 10px;
+  height: 8px;
+  border: none;
+  color: transparent;
+}
+
+input[type="range"]::-ms-fill-lower {
+  background: var(--color-tertiary-light);
+  border-radius: 10px;
+}
+
+input[type="range"]::-ms-fill-upper {
+  background: var(--color-tertiary-lighter);
+  border-radius: 10px;
 }
 
 /* ========================================
@@ -312,16 +552,108 @@ video {
   height: auto;
   box-shadow: var(--box-shadow);
   width: 100%;
+  border-radius: 8px;
 }
 
+/* Native HTML Audio Element Styles */
 audio {
   width: 100%;
+  height: 54px;
+  border-radius: 12px;
+  background: var(--color-quaternary-lighter);
+  box-shadow: var(--box-shadow);
+  padding: 4px;
+  outline: none;
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+audio::-webkit-media-controls-panel {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  color: #333;
+  font-size: 12px;
+  text-shadow: none;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(89%) saturate(1574%)
+    hue-rotate(226deg) brightness(93%) contrast(92%);
+}
+
+audio::-webkit-media-controls-timeline {
+  border-radius: 10px;
+  background: rgba(102, 126, 234, 0.2);
+}
+
+audio::-webkit-media-controls-timeline::-webkit-slider-thumb {
+  background: #667eea;
+  border-radius: 50%;
+}
+
+audio::-webkit-media-controls-volume-slider {
+  border-radius: 10px;
+  background: rgba(102, 126, 234, 0.2);
+}
+
+/* Firefox */
+audio::-moz-range-track {
+  background: rgba(102, 126, 234, 0.3);
+  border-radius: 10px;
+}
+
+audio::-moz-range-thumb {
+  background: #667eea;
+  border: none;
+  border-radius: 50%;
+}
+
+/* Minimal theme for native audio */
+audio.audio-minimal {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+audio.audio-minimal::-webkit-media-controls-panel {
+  background: #fff;
+}
+
+audio.audio-minimal::-webkit-media-controls-play-button,
+audio.audio-minimal::-webkit-media-controls-mute-button {
+  filter: brightness(0) saturate(100%) invert(20%);
+}
+
+/* Dark theme for native audio */
+audio.audio-dark {
+  background: #1a1a1a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+audio.audio-dark::-webkit-media-controls-panel {
+  background: #2a2a2a;
+}
+
+audio.audio-dark::-webkit-media-controls-current-time-display,
+audio.audio-dark::-webkit-media-controls-time-remaining-display {
+  color: #fff;
+}
+
+audio.audio-dark::-webkit-media-controls-play-button,
+audio.audio-dark::-webkit-media-controls-mute-button {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(89%) saturate(1574%)
+    hue-rotate(226deg) brightness(93%) contrast(92%);
 }
 
 figure {
   align-items: center;
 
   img {
+    border-radius: 8px;
     box-shadow: var(--box-shadow);
   }
 
