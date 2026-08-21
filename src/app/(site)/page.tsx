@@ -1,9 +1,189 @@
 import Image from "next/image";
 import photo from "@/images/photo.jpg";
+import Accordion from "@/components/Accordion";
+import Alert from "@/components/Alert";
+import DialogExamples from "@/components/DialogExamples";
+import Avatar from "@/components/Avatar";
+import BadgeExamples from "@/components/BadgeExamples";
+import ImageGallery from "@/components/ImageGallery";
+import LoadingSpinner from "@/components/LoadingSpinner";
+import {
+  DismissibleAlerts,
+  DismissibleBadges,
+} from "@/components/DismissibleExamples";
+
+const accordionItems = [
+  {
+    id: "1",
+    title: "What is Next.js?",
+    content:
+      "Next.js is a React framework that enables server-side rendering, static site generation, and other powerful features for building modern web applications.",
+  },
+  {
+    id: "2",
+    title: "What are the benefits of TypeScript?",
+    content:
+      "TypeScript adds static typing to JavaScript, helping catch errors during development, improving code quality, and providing better IDE support with autocomplete and IntelliSense.",
+  },
+  {
+    id: "3",
+    title: "How does the accordion work?",
+    content:
+      "This accordion component is built with React hooks and follows accessibility best practices. It supports keyboard navigation, ARIA attributes, and can be configured to allow single or multiple expanded items.",
+  },
+];
+
+const galleryImages = [
+  { src: photo.src, alt: "Beautiful landscape photo 1", width: 1200, height: 900 },
+  { src: photo.src, alt: "Beautiful landscape photo 2", width: 1200, height: 900 },
+  { src: photo.src, alt: "Beautiful landscape photo 3", width: 1200, height: 900 },
+  { src: photo.src, alt: "Beautiful landscape photo 4", width: 1200, height: 900 },
+  { src: photo.src, alt: "Beautiful landscape photo 5", width: 1200, height: 900 },
+  { src: photo.src, alt: "Beautiful landscape photo 6", width: 1200, height: 900 },
+];
+
 export default function Home() {
   return (
     <div className="container content">
       <h1>Main Heading (H1)</h1>
+
+      <section style={{ margin: "2rem 0" }}>
+        <h2>Accordion Component</h2>
+        <Accordion items={accordionItems} />
+      </section>
+
+      <section style={{ margin: "2rem 0" }}>
+        <h2>Alert Component</h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+          <Alert variant="neutral" title="Neutral Alert">
+            This is a neutral alert for general information.
+          </Alert>
+          <Alert variant="info" title="Info Alert">
+            This is an informational alert with helpful details.
+          </Alert>
+          <Alert variant="warning" title="Warning Alert">
+            This is a warning alert to indicate caution is needed.
+          </Alert>
+          <Alert variant="critical" title="Critical Alert">
+            This is a critical alert for serious issues requiring immediate
+            attention.
+          </Alert>
+        </div>
+        <div style={{ marginTop: "2rem" }}>
+          <h3>Dismissible Alerts</h3>
+          <DismissibleAlerts />
+        </div>
+      </section>
+
+      <section style={{ margin: "2rem 0" }}>
+        <h2>Dialog Component</h2>
+        <DialogExamples />
+      </section>
+
+      <section style={{ margin: "2rem 0" }}>
+        <h2>Avatar Component</h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+          <div>
+            <h3>Initials with Random Colors</h3>
+            <div
+              style={{
+                display: "flex",
+                gap: "1rem",
+                alignItems: "center",
+                marginTop: "0.5rem",
+              }}
+            >
+              <Avatar name="John Doe" size="small" />
+              <Avatar name="Jane Smith" size="small" />
+              <Avatar name="Bob Johnson" size="small" />
+              <Avatar name="Alice Williams" size="small" />
+              <Avatar name="Charlie Brown" size="small" />
+            </div>
+          </div>
+
+          <div>
+            <h3>Different Sizes (Initials)</h3>
+            <div
+              style={{
+                display: "flex",
+                gap: "1rem",
+                alignItems: "center",
+                marginTop: "0.5rem",
+              }}
+            >
+              <Avatar name="John Doe" size="small" />
+              <Avatar name="John Doe" size="medium" />
+              <Avatar name="John Doe" size="large" />
+            </div>
+          </div>
+
+          <div>
+            <h3>With Images</h3>
+            <div
+              style={{
+                display: "flex",
+                gap: "1rem",
+                alignItems: "center",
+                marginTop: "0.5rem",
+              }}
+            >
+              <Avatar name="Photo User" src={photo.src} size="small" />
+              <Avatar name="Photo User" src={photo.src} size="medium" />
+              <Avatar name="Photo User" src={photo.src} size="large" />
+            </div>
+          </div>
+
+          <div>
+            <h3>Single Name</h3>
+            <div
+              style={{
+                display: "flex",
+                gap: "1rem",
+                alignItems: "center",
+                marginTop: "0.5rem",
+              }}
+            >
+              <Avatar name="Madonna" />
+              <Avatar name="Prince" />
+              <Avatar name="Cher" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ margin: "2rem 0" }}>
+        <h2>Badge Component</h2>
+        <BadgeExamples />
+        <div style={{ marginTop: "2rem" }}>
+          <h3>Dismissible Badges</h3>
+          <DismissibleBadges />
+        </div>
+      </section>
+
+      <section style={{ margin: "2rem 0" }}>
+        <h2>Loading Spinner Component</h2>
+        <div style={{ display: "flex", gap: "2rem", alignItems: "center", flexWrap: "wrap" }}>
+          <div>
+            <h3>Small</h3>
+            <LoadingSpinner size="small" />
+          </div>
+          <div>
+            <h3>Medium</h3>
+            <LoadingSpinner size="medium" />
+          </div>
+          <div>
+            <h3>Large</h3>
+            <LoadingSpinner size="large" />
+          </div>
+        </div>
+      </section>
+
+      <section style={{ margin: "2rem 0" }}>
+        <h2>Image Gallery Component</h2>
+        <p>Click on any image to open the lightbox. Use arrow keys or navigation buttons to browse.</p>
+        <ImageGallery images={galleryImages} columns={3} />
+      </section>
+
       <nav>
         <a href="#section1">Section 1</a>
         <a href="#section2">Section 2</a>
