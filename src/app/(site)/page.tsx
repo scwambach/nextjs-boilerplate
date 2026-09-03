@@ -5,8 +5,8 @@ import Alert from "@/components/Alert";
 import DialogExamples from "@/components/DialogExamples";
 import Avatar from "@/components/Avatar";
 import BadgeExamples from "@/components/BadgeExamples";
-import ImageGallery from "@/components/ImageGallery";
 import LoadingSpinner from "@/components/LoadingSpinner";
+import ThemeToggle from "@/components/ThemeToggle";
 import {
   DismissibleAlerts,
   DismissibleBadges,
@@ -33,18 +33,10 @@ const accordionItems = [
   },
 ];
 
-const galleryImages = [
-  { src: photo.src, alt: "Beautiful landscape photo 1", width: 1200, height: 900 },
-  { src: photo.src, alt: "Beautiful landscape photo 2", width: 1200, height: 900 },
-  { src: photo.src, alt: "Beautiful landscape photo 3", width: 1200, height: 900 },
-  { src: photo.src, alt: "Beautiful landscape photo 4", width: 1200, height: 900 },
-  { src: photo.src, alt: "Beautiful landscape photo 5", width: 1200, height: 900 },
-  { src: photo.src, alt: "Beautiful landscape photo 6", width: 1200, height: 900 },
-];
-
 export default function Home() {
   return (
     <div className="container content">
+      <ThemeToggle />
       <h1>Main Heading (H1)</h1>
 
       <section style={{ margin: "2rem 0" }}>
@@ -162,7 +154,14 @@ export default function Home() {
 
       <section style={{ margin: "2rem 0" }}>
         <h2>Loading Spinner Component</h2>
-        <div style={{ display: "flex", gap: "2rem", alignItems: "center", flexWrap: "wrap" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "2rem",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
           <div>
             <h3>Small</h3>
             <LoadingSpinner size="small" />
@@ -180,8 +179,10 @@ export default function Home() {
 
       <section style={{ margin: "2rem 0" }}>
         <h2>Image Gallery Component</h2>
-        <p>Click on any image to open the lightbox. Use arrow keys or navigation buttons to browse.</p>
-        <ImageGallery images={galleryImages} columns={3} />
+        <p>
+          Click on any image to open the lightbox. Use arrow keys or navigation
+          buttons to browse.
+        </p>
       </section>
 
       <nav>

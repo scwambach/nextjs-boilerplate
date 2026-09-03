@@ -91,3 +91,21 @@
   border-color: var(--color-quaternary);
   color: var(--color-quaternary-darker);
 }
+
+[data-theme="dark"] .badge-primary {
+  background-color: #c5d0ff;
+  border-color: #91a2f5;
+  color: #17245f;
+}
+
+[data-theme="dark"] .badge-secondary {
+  background-color: #b9edc3;
+  border-color: #70c786;
+  color: #173e24;
+}
+
+[data-theme="dark"] .badge-tertiary {
+  background-color: #ffd2b8;
+  border-color: #f29b6b;
+  color: #57230e;
+}

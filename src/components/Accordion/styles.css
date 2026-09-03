@@ -87,6 +87,15 @@
   transition: padding 0.3s ease;
 }
 
+[data-theme="dark"] .accordion-content {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+[data-theme="dark"] .accordion-trigger {
+  color: #ffffff;
+}
+
 .accordion-panel.expanded .accordion-content {
   padding: 1rem 1.25rem;
 }

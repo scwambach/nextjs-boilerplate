@@ -29,6 +29,20 @@
   --color-quaternary-lighter: #d8a3f0;
   --color-quaternary-dark: #8c2d99;
   --color-quaternary-darker: #5a1a5a;
+  --color-surface: #ffffff;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --color-white: #1b2024;
+  --color-gray: #343b42;
+  --color-black: #edf1f4;
+  --color-primary-light: #7184d9;
+  --color-primary-lighter: #4d5d9c;
+  --color-secondary-lighter: #315d40;
+  --color-tertiary-lighter: #70442f;
+  --color-surface: #252b30;
+  color-scheme: dark;
 }
 
 /* ========================================
@@ -40,6 +54,9 @@ body {
   line-height: 1.1;
   background: var(--color-white);
   color: var(--color-black);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 
   &::selection {
     background-color: var(--color-primary-light);
@@ -156,7 +173,7 @@ blockquote {
   margin: 1rem 0;
   padding: 0.5rem 1rem;
   border-left: 4px solid var(--color-primary);
-  background-color: white;
+  background-color: var(--color-surface);
   box-shadow: var(--box-shadow);
 }
 
@@ -265,7 +282,7 @@ textarea {
   width: 100%;
   background: var(--color-white);
   border-radius: 4px;
-  background-color: white;
+  background-color: var(--color-surface);
   color: var(--color-black);
   border: 1px solid var(--color-black);
 
@@ -292,7 +309,7 @@ input[type="checkbox"] {
   height: 20px;
   border: 2px solid var(--color-secondary);
   border-radius: 4px;
-  background-color: white;
+  background-color: var(--color-surface);
   cursor: pointer;
   position: relative;
   transition: all 0.3s ease;
@@ -465,7 +482,7 @@ input[type="range"]::-webkit-slider-thumb {
   background: var(--color-tertiary);
   border-radius: 50%;
   cursor: pointer;
-  border: 2px solid white;
+  border: 2px solid var(--color-surface);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
@@ -487,7 +504,7 @@ input[type="range"]::-moz-range-thumb {
   background: var(--color-tertiary);
   border-radius: 50%;
   cursor: pointer;
-  border: 2px solid white;
+  border: 2px solid var(--color-surface);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
@@ -739,4 +756,3 @@ a {
   white-space: nowrap;
   border-width: 0;
 }
-

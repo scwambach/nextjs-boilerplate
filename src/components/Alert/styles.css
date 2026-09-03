@@ -140,3 +140,27 @@
 .alert-critical .alert-close:focus-visible {
   outline-color: var(--color-quaternary-darker);
 }
+
+[data-theme="dark"] .alert-info {
+  background-color: #c5d0ff;
+  border-color: #91a2f5;
+  color: #17245f;
+}
+
+[data-theme="dark"] .alert-info .alert-title,
+[data-theme="dark"] .alert-info .alert-close:focus-visible {
+  color: #17245f;
+  outline-color: #17245f;
+}
+
+[data-theme="dark"] .alert-warning {
+  background-color: #ffd2b8;
+  border-color: #f29b6b;
+  color: #57230e;
+}
+
+[data-theme="dark"] .alert-warning .alert-title,
+[data-theme="dark"] .alert-warning .alert-close:focus-visible {
+  color: #57230e;
+  outline-color: #57230e;
+}
