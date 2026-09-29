@@ -1,4 +1,4 @@
-import type { MouseEvent } from "react";
+import type { Dispatch, MouseEvent, SetStateAction } from "react";
 
 /**
  * Handles toggling an accordion item
@@ -13,7 +13,7 @@ export const handleToggle =
     itemId: string,
     allowMultiple: boolean,
     expandedItems: Set<string>,
-    setExpandedItems: (items: Set<string>) => void,
+    setExpandedItems: Dispatch<SetStateAction<Set<string>>>,
   ) =>
   (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();

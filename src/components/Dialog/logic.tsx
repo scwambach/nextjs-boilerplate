@@ -1,4 +1,4 @@
-import type { MouseEvent } from "react";
+import type { Dispatch, MouseEvent, SetStateAction } from "react";
 
 /**
  * Handles closing the dialog
@@ -32,7 +32,7 @@ export const handleBackdropClick =
  * @returns Toggle function
  */
 export const createToggleDialog =
-  (setIsOpen: (isOpen: boolean) => void) => () => {
+  (setIsOpen: Dispatch<SetStateAction<boolean>>) => () => {
     setIsOpen((prev) => !prev);
   };
 
