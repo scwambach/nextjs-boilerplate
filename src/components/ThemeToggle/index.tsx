@@ -2,7 +2,7 @@
 
 import { Moon, Sun } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
-import "./styles.css";
+import "./styles.scss";
 
 type Theme = "light" | "dark";
 

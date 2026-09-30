@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { handleClose } from "./logic";
 import { X } from "@phosphor-icons/react";
-import "./styles.css";
+import "./styles.scss";
 
 export interface DialogProps {
   isOpen: boolean;

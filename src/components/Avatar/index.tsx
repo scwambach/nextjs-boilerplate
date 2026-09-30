@@ -2,7 +2,7 @@
 
 import React from "react";
 import { getInitials, getColorFromName } from "./logic";
-import "./styles.css";
+import "./styles.scss";
 
 export type AvatarSize = "small" | "medium" | "large";
 

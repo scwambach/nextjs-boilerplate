@@ -8,7 +8,7 @@ import {
   CheckCircleIcon,
   InfoIcon,
 } from "@phosphor-icons/react";
-import "./styles.css";
+import "./styles.scss";
 
 export type AlertVariant = "neutral" | "info" | "warning" | "critical";
 

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { handleToggle } from "./logic";
-import "./styles.css";
+import "./styles.scss";
 
 export interface AccordionItem {
   id: string;

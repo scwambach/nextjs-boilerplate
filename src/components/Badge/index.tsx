@@ -3,7 +3,7 @@
 import React from "react";
 import type { Icon } from "@phosphor-icons/react";
 import { X } from "@phosphor-icons/react";
-import "./styles.css";
+import "./styles.scss";
 
 export type BadgeVariant =
   | "neutral"
